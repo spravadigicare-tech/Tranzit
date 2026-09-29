@@ -1181,7 +1181,19 @@ A small road base can later be upgraded modularly with:
 - full workshop modules,
 - spare-parts storage.
 
-One site can provide more than one role, but it does not have to. A cheap parking yard therefore does not need a full workshop, and a regional fleet can share a more distant maintenance base.
+**Tram and trolleybus depots/garages are different:** their basic depot type always includes a minimum workshop/maintenance capability. The player does not build a pure parking-only tram/trolleybus depot.
+
+A basic tram/trolleybus depot therefore includes:
+
+- vehicle storage/parking,
+- dispatch access,
+- basic inspection and routine maintenance workshop capacity,
+- required power/fueling infrastructure for the vehicle type,
+- basic operational staff facilities.
+
+Larger/heavier maintenance capacity can still require expansion modules or a larger central workshop, but every tram/trolleybus depot can perform routine service by default.
+
+One site can provide more than one role, but it does not have to. A cheap road parking yard therefore does not need a full workshop, and a regional road fleet can share a more distant maintenance base.
 
 A Line or Service Pattern can define:
 
@@ -1765,6 +1777,8 @@ Urban transport follows the same physical rules:
 - staff,
 - power/infrastructure,
 - physical capacity.
+
+For tram and trolleybus operations, a basic depot/garage always contains routine workshop capability; parking-only facilities are not the default depot type for these modes.
 
 Urban networks feed intercity stations and can materially influence passenger demand.
 
