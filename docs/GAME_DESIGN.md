@@ -4920,6 +4920,156 @@ A Trip already in progress when the boundary passes keeps the version under whic
 
 The UI keeps prior Pattern versions available for audit/history but only the current/future relevant versions participate in planning.
 
+#### Line and Service Pattern suspension / closure
+
+A running regular service has explicit lifecycle actions rather than being deleted from the simulation.
+
+The player can:
+
+1. **Suspend Service Pattern** — temporarily stop one Pattern while the parent Line remains active.
+2. **Suspend Line** — temporarily stop all active Patterns belonging to that Line.
+3. **Close Service Pattern** — permanently end one Pattern.
+4. **Close Line** — permanently end the Line and all remaining active/future Patterns.
+
+Suspension can be either:
+
+- **scheduled** — start/end date is known in advance;
+- **until further notice** — no planned restart date.
+
+A Line/Pattern in **Suspended until further notice** remains a real company object with its history, configuration and dependencies, but generates no new commercial Trips after the suspension boundary.
+
+A Trip that has already departed before suspension takes effect completes under its existing plan unless a separate emergency/cancellation action explicitly terminates it.
+
+##### Suspension impact check
+
+Suspension uses the same dependency/impact philosophy as Pattern versioning.
+
+Before confirmation, the UI shows the effect on:
+
+- future passenger reservations;
+- protected itineraries/connections;
+- passenger/group contracts;
+- freight contract allocations;
+- municipal/public-service obligations;
+- rail/station capacity agreements;
+- vehicle/fleet utilization;
+- crew/staff demand;
+- feeder/connection Lines;
+- depot/parking demand;
+- expected refunds/compensation;
+- reputation/customer impact where relevant.
+
+Example:
+
+> **Suspend Line R12 from 8 May — until further notice**  
+> 74 passenger reservations affected  
+> 61 can be rebooked automatically  
+> 13 require refund  
+> 2 passenger contracts require replacement transport  
+> 6 rail/station capacity reservations affected  
+> estimated refunds: X  
+> estimated contractual exposure: Y
+
+Commercial Lines can generally be suspended/closed at the player's discretion after accepting these consequences.
+
+A municipal/public-service or other contracted Line may be blocked from suspension where the governing contract/concession does not permit it. The player must first arrange replacement service, obtain agreement, terminate/renegotiate the contract or explicitly accept a breach where the rules allow that action.
+
+##### Passenger handling during suspension/closure
+
+Future ticket sales for affected Trips stop once the suspension/closure is committed and published.
+
+Existing affected bookings are handled in this order:
+
+1. migrate to an equivalent surviving Pattern/Trip where possible;
+2. rebook to another valid itinerary;
+3. use a permitted partner/replacement service;
+4. refund when no acceptable replacement exists.
+
+Refund and compensation use the rules in the Service Pattern versioning and passenger-recovery sections.
+
+Closing/suspending a Line does not silently delete already sold passenger obligations.
+
+##### Freight and contract handling
+
+Freight/customer allocations attached to an affected Pattern/Line are revalidated.
+
+The planner can move the relevant Transport Plan leg to:
+
+- another existing Line/Pattern;
+- a temporary/ad-hoc own movement;
+- an external carrier;
+- another valid transport solution.
+
+If no solution preserves the contract terms, the player is shown the expected SLA/breach/termination consequences before confirming suspension/closure.
+
+##### Infrastructure capacity during suspension
+
+Suspending a service does **not** automatically cancel its rail/station capacity agreements.
+
+For each affected recurring capacity agreement, the player chooses or follows an authorized policy to:
+
+- **Keep reserved capacity** — continue paying reservation charges so restart can reuse the protected slots, subject to the agreement;
+- **Release/cancel capacity** — return it to the infrastructure owner under the existing cancellation rules and pay any applicable cancellation fee;
+- **Reduce/amend capacity** — where the owner offers a temporary lower commitment.
+
+For a short scheduled suspension, keeping slots can be rational.
+
+For **Suspend until further notice**, the UI must explicitly surface the ongoing cost of retaining unused protected capacity and recommend reviewing whether to release it. It must not silently keep years of expensive slots nor silently cancel them.
+
+If capacity is released, the service has no right to reclaim the same slots later.
+
+##### Reopening a suspended service
+
+A suspended Line/Pattern never resumes merely because the player toggles a switch.
+
+The player chooses **Resume service**, after which the Line Planner performs a fresh readiness check using the intended restart date.
+
+It revalidates:
+
+- route/infrastructure availability;
+- required rail/station slots;
+- city/operating permissions;
+- licences;
+- endpoints/stops;
+- fleet and consist;
+- vehicle physical locations/repositioning;
+- crew/staff;
+- depot/parking/maintenance;
+- ticket-sales channels;
+- contracts/allocations;
+- connections;
+- current timetable feasibility.
+
+If previously retained slots remain valid, they can be reused.
+
+If slots were released or expired, new Capacity Orders are required and the new timetable can differ from the old one.
+
+A long suspension can therefore make restart materially different because:
+
+- infrastructure changed;
+- competitors acquired former slots;
+- vehicles were reassigned/sold;
+- licences/permissions changed;
+- demand shifted.
+
+The old Line/Pattern configuration is retained as a starting proposal, not treated as guaranteed current feasibility.
+
+##### Permanent closure
+
+Permanent closure preserves operating history and financial/statistical records but ends future service generation.
+
+Closing a Line does not automatically:
+
+- sell its vehicles;
+- demolish stations/depots;
+- cancel unrelated contracts;
+- sell infrastructure;
+- dismiss staff.
+
+Those resources return to their normal pools/ownership state and can be reassigned or disposed of separately.
+
+Any capacity agreements, passenger bookings and contracts affected by permanent closure must be explicitly resolved through the same systems above.
+
 #### Passenger ticket sales and reservations
 
 Ordinary individual passenger demand is monetized through **ticket sales**, not customer contracts.
