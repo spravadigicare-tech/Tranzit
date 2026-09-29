@@ -842,8 +842,9 @@ Every material requirement is classified into a transparent checklist.
 Typical categories:
 
 - **Fleet / rolling stock** — compatible vehicles, locomotives, wagons and reserve requirement;
+- **Service endpoints** — valid origin/destination station, stop, siding, loading point, terminal, berth or equivalent, including whether customer-provided;
 - **Infrastructure access** — road/legal access, rail sections, station slots, ports, terminals;
-- **Owned facilities** — depot, parking, storage, warehouse, cold store, loading equipment, branch;
+- **Owned or rented facilities** — depot, parking, storage, warehouse, cold store, loading equipment, branch and contracted third-party capacity;
 - **Staff** — operating crews and facility-bound staff;
 - **Maintenance** — suitable workshop coverage and expected maintenance load;
 - **Shunting/yard** — where train formation/transfer requires it;
@@ -911,7 +912,7 @@ For each item, show:
 - dependency on another item;
 - whether the price/capacity is confirmed or only estimated.
 
-The planner can provide actions such as **Buy vehicles**, **Request capacity**, **Build facility**, **Apply for licence** or **Hire carrier**, opening the relevant existing system. **Hire carrier** opens the shared External Transport Order from Section 30.1 with the required leg/cargo/timing already filled in; it is not a separate subcontracting marketplace.
+The planner can provide actions such as **Buy vehicles**, **Request capacity**, **Rent facility/access**, **Build facility**, **Apply for licence** or **Hire carrier**, opening the relevant existing system. **Rent facility/access** uses the shared infrastructure/facility access-agreement rules in Section 19.3. **Hire carrier** opens the shared External Transport Order from Section 30.1 with the required leg/cargo/timing already filled in; it is not a separate subcontracting marketplace.
 
 It must **not automatically spend money or sign third-party agreements** merely because the player opened a contract planner or clicked an automatic feasibility calculation.
 
@@ -1395,6 +1396,56 @@ Loading/unloading takes time based on:
 - handling equipment.
 
 Handling improves historically with mechanization, pumps, cranes, conveyors, containers, etc.
+
+### 12.4 Service endpoints and customer-provided facilities
+
+Every commercial Trip/transport leg needs a **real physical service endpoint** at origin and destination.
+
+Owning a vehicle and having a route is not enough. The vehicle must have a physically valid place where passengers/cargo can board, alight, load, unload or transfer.
+
+A required endpoint can be supplied in one of three main ways:
+
+1. **Customer-provided endpoint** — the customer/authority provides a usable station, stop, siding, loading dock, terminal, berth or other facility as part of the contract.
+2. **Player-owned endpoint** — the player builds/owns the required station, stop, terminal, loading facility or other suitable infrastructure.
+3. **Third-party access** — the player leases/rents/buys access to an existing compatible facility owned by another company, municipality, state or infrastructure owner.
+
+The contract must make clear which endpoints are included and which are the carrier's responsibility.
+
+Customer-provided infrastructure is not free abstract capacity. It is a real physical facility with:
+
+- location and route connectivity;
+- supported vehicle/mode/cargo type;
+- loading/boarding capability;
+- length/size/geometry constraints;
+- operating hours where relevant;
+- handling/passenger capacity;
+- workforce/equipment where supplied by the customer;
+- any access or usage restrictions.
+
+A customer can therefore offer a contract such as:
+
+> Factory A provides its private loading siding and loader. Deliver to Municipal Terminal B, with station access included in the contract.
+
+In that case the player does not have to build those endpoints, but must still provide compatible vehicles, route/access between them and any other required resources.
+
+A different contract may provide only the cargo/customer and require the carrier to arrange both endpoints.
+
+For passenger/public-service contracts, an authority/customer can similarly include access to existing stops, bus stations, rail stations, tram platforms or another public terminal. A private commercial passenger service may instead require the player to own or separately secure access to suitable stops/stations.
+
+Endpoint capacity can be a real bottleneck. A customer-provided loading point can be too small for the player's preferred train length, have insufficient handling rate or be occupied by another operator.
+
+The Contract Planner must show each endpoint explicitly as one of:
+
+- **Included by customer/authority**;
+- **Owned by company**;
+- **Third-party access secured**;
+- **Access required**;
+- **Construction required**;
+- **Incompatible / insufficient capacity**.
+
+The planner must not recommend a service as feasible if there is no physically valid origin/destination service point.
+
+A customer-provided endpoint remains owned/controlled by that customer unless the contract explicitly transfers another right. Contract expiry can therefore remove the player's right to use the facility.
 
 ## 13. Transport modes
 
@@ -2349,7 +2400,64 @@ Parking and workshop capacity are real. If a facility is full, additional assets
 
 Dispatch automation must not double-book assets, exceed physical parking/workshop capacity or silently consume capacity reserved for contracts. If a timetable cannot be covered, the planner must explain the concrete shortage.
 
-### 17.2 Shunting capability
+### 17.2 Owned versus rented operating facilities
+
+The player does **not** need to own every depot, yard, parking area or workshop used by the company.
+
+A small/new carrier can rent or contract capacity in a compatible third-party facility instead of immediately constructing its own.
+
+Possible rented capacity includes:
+
+- road vehicle parking/dispatch spaces;
+- locomotive/rail vehicle staging tracks;
+- wagon sidings/storage;
+- light or heavy workshop capacity;
+- fuel/charging/water facilities;
+- shunting/yard services;
+- crew/dispatch facilities where offered.
+
+A facility owner can be:
+
+- another transport company;
+- a specialist depot/workshop operator;
+- municipality/state/public infrastructure entity;
+- manufacturer/dealer/service partner;
+- another private infrastructure owner.
+
+Rental/access is a real commercial agreement tied to **finite physical capacity**.
+
+A facility cannot rent the same parking track, workshop slot or yard capacity to unlimited companies.
+
+The agreement can define:
+
+- capacity reserved;
+- supported vehicle types;
+- validity period;
+- access/operating hours;
+- recurring fixed fee;
+- per-use fee;
+- priority level;
+- included fuel/service/shunting functions;
+- notice/cancellation terms;
+- Auto-renew where appropriate.
+
+Rented capacity behaves like owned capacity for physical feasibility, but ownership remains with the provider.
+
+A vehicle still physically travels to and occupies the rented site. The provider can become a bottleneck, suffer disruption or refuse expansion beyond the contracted capacity.
+
+This allows an early company to start with, for example:
+
+> 4 rented truck parking spaces + outsourced dealer maintenance
+
+instead of immediately buying land and building a full depot.
+
+Similarly, a rail operator can initially rent a few sidings/staging tracks and maintenance services at an existing yard if the owner offers them.
+
+The player can later replace rented capacity with owned facilities when scale, cost or strategic control makes that worthwhile.
+
+The Contract Planner and Line/Service Pattern planner must treat owned and contracted third-party capacity consistently. If the rental expires or is terminated, services depending on it become at risk rather than continuing with invisible free capacity.
+
+### 17.3 Shunting capability
 
 Any rail depot, yard or freight/passenger facility that regularly assembles, disassembles or rearranges consists needs sufficient **shunting capability**.
 
@@ -2450,7 +2558,31 @@ Outside these cases, a private owner may refuse competitors even when spare capa
 
 Building private rail should be very expensive so sharing existing infrastructure is often rational.
 
-### 19.3 Connection agreements
+### 19.3 Facility and infrastructure access agreements
+
+Ownership is not required to use every facility.
+
+Where the owner is willing, the player can buy/rent access to existing stations, terminals, depots, sidings, parking areas, workshops or other operational infrastructure.
+
+These access agreements reserve or permit real capacity rather than creating abstract rights without physical space.
+
+Terms can include:
+
+- fixed recurring access fee;
+- per-use fee;
+- reserved capacity;
+- operating windows;
+- supported vehicle/cargo/service types;
+- service/shunting/handling included;
+- priority;
+- contract duration and renewal;
+- notice/cancellation rules.
+
+Facility-access agreements use the relevant underlying capacity system. For example, renting depot parking consumes parking capacity; station calls consume station capacity/slots; workshop contracts consume workshop capacity.
+
+The game should reuse the same access-agreement concept across planners rather than create separate unrelated rental systems for every facility type.
+
+### 19.4 Connection agreements
 
 The player cannot simply place a switch into someone else's track.
 
@@ -3140,6 +3272,8 @@ Example patterns can include weekday, weekend, summer, winter or harvest-season 
 Low-volume services can use sparse exact departures such as Monday/Thursday or one/two departures per day. High-frequency rail/urban services can use interval-based patterns when justified by the selected era, demand and operating resources.
 
 Service calendars must respect actual physical fleet availability. Before activation, the planner calculates the number and type of vehicles/consists required from real cycle times, turnaround, depot movements and maintenance assumptions. If the fleet cannot cover the timetable, the game must explain the shortage rather than creating abstract vehicles.
+
+Before activation, each commercial Service Pattern must also have valid service endpoints under Section 12.4 and any required station/terminal/stop access. A vehicle cannot run a commercial Trip to an abstract destination with nowhere to board, load, unload or terminate.
 
 Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
 
