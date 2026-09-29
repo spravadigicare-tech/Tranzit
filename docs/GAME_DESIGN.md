@@ -330,7 +330,7 @@ The player starts with a legally founded but operationally minimal company in th
 - no automatic depot, terminal or operating infrastructure,
 - only the basic company state needed to begin purchasing/constructing the first real assets.
 
-After choosing the starting region, the player must select a city/site and **build the first regional branch/office**. The first branch is therefore an actual physical company building and one of the player's first capital decisions, not a menu-only headquarters granted at game start.
+After choosing the starting region, the player must select a city/site and **establish the first regional branch/office**. This can be a standalone building, rented office space, or an integrated office module in a suitable transport hub if the player already has access to such a site. The first branch is therefore an actual physical commercial location and one of the player's first capital decisions, not a menu-only headquarters granted at game start.
 
 The first branch:
 
@@ -411,6 +411,34 @@ They provide local business presence and office capacity for functions such as:
 - support for the company's nearby operational facilities and Lines.
 
 A branch does **not** automatically provide vehicle parking, maintenance, storage, cargo handling or passenger-terminal capacity. Those remain separate physical facilities unless a specific mixed-use site explicitly includes them.
+
+A branch can be established in three main physical forms:
+
+1. **Standalone owned office** — a dedicated company building/site.
+2. **Rented office space** — leased space in an existing building, with lower upfront cost but recurring rent and limited expansion freedom.
+3. **Integrated transport-hub office module** — an office/branch module built into or attached to a sufficiently large passenger railway station, bus station/terminal or other suitable major passenger hub.
+
+An integrated transport-hub branch is an upgrade/module of that physical hub rather than a second overlapping building placed on the same site.
+
+It can provide:
+
+- local branch/commercial presence;
+- office/admin capacity;
+- customer-facing ticket/sales/service desk functions where historically appropriate;
+- space for local managers/admin staff;
+- direct organizational connection to the passenger hub.
+
+It does **not** automatically increase platform, parking, maintenance or vehicle-handling capacity unless separate hub modules provide those functions.
+
+The hub must have enough physical/building capacity for the office module. A tiny rural halt cannot host a large regional headquarters simply because it has a platform.
+
+If the player owns the station/terminal, the branch module can be constructed as part of the normal modular upgrade system.
+
+If the station/terminal is owned by another party, an integrated branch is possible only if the owner offers suitable commercial/office space and the player signs the corresponding facility/space access agreement. The player does not gain ownership of the station by renting office space inside it.
+
+The office module can later be expanded, relocated to a standalone building or retained as a smaller local branch when a larger headquarters is built elsewhere.
+
+This allows a transport company to grow naturally around major hubs: a busy station can contain both the operating passenger infrastructure and the company's local commercial office while keeping their capacities/accounting separate.
 
 Branch progression is based on several practical sizes rather than a single building with arbitrary percentage bonuses:
 
@@ -2797,6 +2825,8 @@ Other operators may pay for platform, track, storage and terminal use.
 
 Passenger stations are **modular physical facilities**, not single abstract buildings.
 
+Larger passenger stations/terminals can also support an **integrated company branch/office module** under Section 7.2. This module contributes commercial/administrative capacity, not railway platform/track capacity, and follows normal ownership/rental rules.
+
 A passenger rail station can be assembled from functional elements such as:
 
 - platform tracks,
@@ -2812,6 +2842,7 @@ A passenger rail station can be assembled from functional elements such as:
 - concourse/transfer halls,
 - baggage/service facilities,
 - later retail/commercial modules,
+- company branch/office module where the station is large enough,
 - parking and P+R,
 - taxi/drop-off space,
 - adjacent bus/tram/trolleybus/metro interchange modules.
