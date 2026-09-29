@@ -917,6 +917,37 @@ Poor depot geometry can create real operational inefficiency.
 
 Road vehicles need garages/parking/service facilities.
 
+### 17.1 Regional fleet pools and depot assignment
+
+Operational vehicles are not normally hard-bound to one Line. By default, compatible vehicles belong to a **regional fleet pool** and dispatching assigns actual assets to Trips as needed.
+
+The dispatcher must choose from real physical assets and consider:
+
+- current vehicle location,
+- compatibility with the Service Pattern,
+- passenger/cargo capacity,
+- traction and route feasibility,
+- maintenance condition and upcoming service,
+- fuel/energy requirements,
+- reserved-capacity commitments,
+- deadhead/repositioning distance and time,
+- depot/yard/parking capacity,
+- other already-assigned Trips.
+
+A Line or Service Pattern can optionally specify depot rules, including:
+
+- preferred/primary depot,
+- one or more allowed fallback depots,
+- required depot where operationally necessary.
+
+This allows a player to say that a group of services should normally be worked from a specific depot without manually assigning every individual vehicle.
+
+Depot assignment affects real operations. A vehicle allocated from another location must physically deadhead/reposition to the service start, consuming time, infrastructure capacity, fuel/energy and potentially crew resources.
+
+A regional pool does not override maintenance or physical parking requirements. Vehicles still need somewhere real to stand and must physically travel to workshops/depots for service.
+
+Dispatch automation must not double-book assets or silently consume capacity reserved for contracts. If the requested timetable cannot be covered from the regional pool and assigned depots, the planner must explain the concrete shortage.
+
 ## 18. Energy and operating supplies
 
 Fuel and many operating supplies are real goods.
@@ -1379,6 +1410,22 @@ For regular planning, the UI should show expected/typical trip time and a reason
 Feeder/connection planning must use the actual expected stop pattern of the relevant lines/service patterns and enough buffer to avoid creating impossible transfers when several conditional stops activate.
 
 Dispatch automation can later decide individual conditional calls automatically within the rules of that line, but the player must always be able to inspect why a specific trip stopped or skipped a location.
+
+### 32.5 Vehicle assignment from fleet pools
+
+Trips normally receive concrete vehicles/consists dynamically from the relevant regional fleet pool rather than from permanently fixed vehicle-to-line assignments.
+
+A Line or Service Pattern can still define:
+
+- required vehicle capabilities,
+- preferred consist family/type,
+- preferred or required depot,
+- fallback depots,
+- minimum reserve policy.
+
+The timetable planner must include real depot-to-service positioning and return movements when calculating required fleet size and feasibility.
+
+A specific vehicle may be manually pinned to a Line/Pattern as an override where the player wants that level of control, but this is not the default operating model.
 
 ## 33. Urban transport
 
