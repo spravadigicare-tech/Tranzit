@@ -196,6 +196,8 @@ Journey purposes include work, business, school, tourism/leisure, family/social 
 
 Different segments value time, price, comfort and reliability differently.
 
+Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Early-game leisure/tourism demand is limited compared with later eras and should grow only as income, free time, transport accessibility, urbanization and relevant destinations develop. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism, but the game must not project modern travel behaviour backwards into 1820.
+
 ### 6.3 Private cars
 
 Private motoring grows with technology, household prosperity, road quality and vehicle availability.
@@ -387,7 +389,7 @@ Processing/manufacturing industries are more flexible and can choose locations b
 
 New firms and facilities may emerge over time. Existing firms can expand, open new plants, acquire other firms or decline.
 
-### 10.3 Historical commodity demand
+### 10.3 Historical and seasonal demand
 
 Commodity importance changes over time.
 
@@ -397,6 +399,10 @@ Examples:
 - oil and gas rise later,
 - electricity systems alter energy demand,
 - modern renewables change demand again.
+
+Demand can also be seasonal where the underlying economy supports it. Examples include harvests, food processing, heating fuel, construction seasons and other recurring production/consumption cycles.
+
+Seasonality must come from the actual simulated business/population context rather than flat global multipliers. Its intensity and cargo mix can change by era, region, technology and economic development.
 
 Industrial decline can leave physical brownfields.
 
@@ -427,6 +433,8 @@ Contract types include:
 Contract awards should consider transparent factors such as price, capacity, reliability, relevant reputation and customer-specific relationship history. The player must be able to inspect the important decision factors before or after bidding.
 
 Large customers may reserve their most important contracts for carriers with proven history, while still exposing smaller trial jobs that let new entrants build trust.
+
+Contracts can be seasonal or have seasonal volume profiles when the underlying customer demand is seasonal. A seasonal contract must show its expected calendar profile before signing, including peak months/periods, expected baseline volume and likely surge range. Historical plausibility applies: early eras should not generate modern mass-tourism or modern consumption patterns simply because the calendar says summer/winter.
 
 ### 11.2 Contract award models
 
