@@ -502,6 +502,8 @@ Routine bidding can later be delegated to commercial managers using player-defin
 
 AI competitors must bid from their real available capacity, costs, network access, relationship and strategy. They must not generate fake impossible bids simply to beat the player.
 
+Renewal of eligible recurring agreements follows Section 11.12. Auto-renewal does not bypass a required new tender or grant an incumbent an automatic win.
+
 ### 11.3 Exclusivity
 
 Large or strategic contracts can include exclusivity.
@@ -703,6 +705,44 @@ Cargo can have properties such as:
 
 Perishable goods lose value or become unusable if delivered too slowly or without appropriate cold-chain capability.
 
+### 11.12 Optional automatic renewal of recurring contracts
+
+**Auto-renew** is a shared contract feature, not an infrastructure-slot-only feature. Eligible agreements expose the same simple optional checkbox, labelled **Automatically renew contract** / **Automaticky obnovovat smlouvu**.
+
+Eligible recurring agreements can include:
+
+- regular freight transport and recurring passenger-service contracts,
+- fuel, material and other operating-supply contracts,
+- recurring outsourced maintenance and service agreements,
+- carrier-partnership and recurring subcontracting agreements,
+- rail and station capacity agreements.
+
+The feature applies whether the player's company buys or provides the recurring service. One-off shipments, vehicle purchases and completed construction projects do not repeat automatically. A recurring framework can renew without duplicating its completed individual orders.
+
+Enabling the checkbox authorizes the game to arrange the next agreed term before expiry. It does not force the counterparty to accept, override the contract's renewal rights, bypass a required tender or guarantee that demand and capacity still exist. Public/municipal service contracts may renew automatically only where their agreed terms permit renewal; otherwise the next award follows the normal tender process.
+
+Automatic renewal preserves the agreed scope, volume range, service level, exclusivity and renewal duration. Prices may change automatically only through an already accepted adjustment/indexation clause. A new price proposal, larger volume, changed route, stronger guarantee or other material change is a renewal proposal requiring the player or an appropriately authorized manager, not silent acceptance through the checkbox.
+
+Before committing to the next term, revalidate the relevant capacity and dependencies: fleet, crew, maintenance, terminal/storage capacity, route access, licences, supply/service availability, required slots and authorized budget. Existing and newly renewed obligations must not double-book the same resources. Renewal must not promise transportation which the company cannot credibly provide.
+
+Linked agreements remain separate commitments. Renewing a customer contract does not automatically enable renewal of its slot, fuel or subcontracting agreements. The planner checks their coverage for the next term and can coordinate already authorized renewals. Missing or unconfirmed critical coverage blocks unattended acceptance and raises a clear warning; it does not authorize extra purchases or a partially protected service behind the player's back.
+
+For seasonal agreements, renew the next equivalent season and retain the seasonal volume/service calendar. For example, an annually recurring August–October contract renews for August–October of the following year, not for November–January or all twelve months. A continuous agreement renews for its next agreed continuous term. Renewal does not manufacture cargo, passengers or new demand.
+
+The contract detail and overview show:
+
+- Auto-renew on/off and whether renewal is allowed,
+- the current expiry, renewal/notice deadline and proposed next term,
+- agreed price or an explicitly labelled estimate under indexation,
+- renewal status: scheduled, awaiting counterparty, needs approval, blocked or renewed,
+- the concrete reason for a block or change, and the required action.
+
+Routine successful renewals go into a summary; exceptions are raised before the relevant notice/renewal deadline with time to respond. Existing customer history, performance records and unresolved obligations carry forward rather than resetting on renewal.
+
+Turning Auto-renew off prevents the next uncommitted renewal subject to the displayed notice rules. It does not cancel the active term, undo an already committed renewal or waive penalties. Failed renewal likewise does not silently terminate the current agreement; expiry, amendments and early termination still follow Sections 11.6–11.8.
+
+The checkbox remains simple. Optional managerial approval/budget limits use the existing delegation hierarchy and manual overrides rather than a separate mandatory renewal-management system. The same renewal and capacity rules apply to AI companies. Process renewals on scheduled decision dates and relevant changes, not by scanning every contract every frame.
+
 ## 12. Storage and terminals
 
 ### 12.1 Storage
@@ -837,20 +877,9 @@ Capacity reservations can be **permanent/long-running or time-limited**. A carri
 
 The reservation validity can mirror the Service Pattern calendar, including date range, selected weekdays and time windows. When the validity expires, the capacity returns automatically to the infrastructure owner unless a renewal has been agreed.
 
-A capacity agreement can have an **Auto-renew** checkbox.
+Capacity agreements use the shared **Auto-renew** checkbox and rules in Section 11.12. Before renewal, the infrastructure owner must still offer the requested capacity, the slot pattern must match the intended Service Pattern, and the next validity period must pass the same finite-capacity checks as a new reservation.
 
-When enabled, the game automatically attempts to renew the same capacity agreement before expiry for the next equivalent period.
-
-Auto-renew may proceed automatically when:
-
-- the infrastructure owner still offers the required capacity,
-- the slot pattern remains compatible with the current Service Pattern,
-- pricing changes only through terms already allowed by the agreement, such as an agreed indexation clause,
-- no material contractual condition has changed.
-
-If the owner refuses renewal, the capacity is no longer available, or the proposed renewal materially changes price/access conditions beyond the existing agreement, auto-renew pauses and requires player or delegated-manager approval.
-
-The UI must warn sufficiently before expiry if an auto-renewal cannot be completed, so the player has time to modify the Service Pattern or find alternative capacity.
+Renewal preserves the agreed seasonal/date pattern, access class and tolerance unless a change is explicitly approved. Price changes follow the already agreed indexation rules; other material changes or refusals pause unattended renewal and trigger a warning before expiry. Auto-renewal does not create capacity, displace another operator's valid rights or make slots transferable.
 
 ### 13.2.1 Capacity order editor
 
@@ -1228,6 +1257,8 @@ before becoming a serious accident risk.
 
 Infrastructure maintenance can be done in-house or outsourced.
 
+Recurring outsourced maintenance agreements can use Auto-renew under Section 11.12. Renewal extends the agreement, not the contractor's physical workforce or equipment capacity.
+
 ## 17. Depots and operating facilities
 
 Depots are physical infrastructure, not menus.
@@ -1418,6 +1449,8 @@ The player can:
 4. use a recurring supply contract.
 
 Automatic reorder thresholds can be configured and later delegated.
+
+Recurring supply agreements can use Auto-renew under Section 11.12. Renewal extends the commercial agreement; inventory reorder thresholds separately determine actual orders and deliveries. Renewing a supply contract never fills a depot automatically or bypasses physical transport.
 
 Electricity is purchased through physical grid connections/capacity rather than moved as cargo wagons.
 
@@ -1646,6 +1679,8 @@ Slots are sold/reserved against the station's calculated usable capacity by time
 - temporary date ranges for short-term contracts or replacement services.
 
 Station-slot validity can follow the Service Pattern calendar. The Capacity Order editor in Section 13.2.1 should normally request required station calls together with the route capacity so the player does not have to buy them separately.
+
+Station capacity agreements use the common Auto-renew rules in Section 11.12 and the rail-capacity renewal checks in Section 13.2. Renewal must revalidate the complete route and station requirements for the next service period.
 
 The station owner cannot sell unlimited slots. The capacity planner maintains:
 
@@ -1980,6 +2015,8 @@ Companies can also own industrial firms or other business assets, but direct fac
 
 Transport companies can be both competitors and partners.
 
+Recurring partnership and subcontracting frameworks can use Auto-renew under Section 11.12. Their renewal preserves the distinction between purchased transport/seat capacity and non-transferable infrastructure slots; it does not transfer a partner's rail or station slots to the player.
+
 ### 30.1 Cargo subcontracting
 
 A customer may contract the player for an end-to-end move, while parts are subcontracted to other carriers.
@@ -2236,6 +2273,8 @@ A hybrid model is used:
 Municipal operator scope is local: city plus agglomeration, with only limited short intercity reach where plausible.
 
 The player can operate urban transport through a group-wide division or dedicated city subsidiaries.
+
+Optional renewal of a municipal operating contract follows Section 11.12. An agreed extension can renew automatically; a service that requires a new competition must be awarded through that competition rather than retained through a checkbox.
 
 ## 34. Roads inside cities
 
