@@ -82,7 +82,7 @@ These reports can foreshadow technologies, economic changes and future expansion
 
 ### 3.1 Base game and Early Ages scope
 
-The base game's default/earliest selectable start is **1900**. New games can also start in **1925, 1950 or 1975**. The player still chooses a start region and places the first regional office in a city; choosing a later year does not automatically grant a large established company.
+The base game's default/earliest selectable start is **1900**. New games can also start in **1925, 1950 or 1975**. The player chooses a start region, then must **physically establish and construct the first regional office/branch in a chosen city**. Choosing a later year does not automatically grant a large established company or a free prebuilt branch.
 
 The pre-1900 playable period, with an intended beginning around **1820**, is reserved for the first planned DLC, **Early Ages**. Its detailed content and release schedule are not specified here. Early Ages extends the historical content backwards using the same core systems, rather than requiring a second simulation engine or a different calendar.
 
@@ -318,15 +318,28 @@ Cities and their existing historical layers are initialized for 1900, 1925, 1950
 
 ### 7.1 Early game and selected start
 
-The player starts with a small company in the selected year:
+The player starts with a legally founded but operationally minimal company in the selected year:
 
-- one first regional branch/office placed in a chosen city,
-- a small period-appropriate starting fleet or acquisition budget,
-- limited staff,
-- accessible local contracts and passenger demand,
-- one selected **founding-loan package** that provides the company's initial cash.
+- the selected **founding-loan package** provides the initial cash,
+- no free prebuilt regional branch,
+- no free mandatory starting fleet,
+- no automatic depot, terminal or operating infrastructure,
+- only the basic company state needed to begin purchasing/constructing the first real assets.
 
-The first branch is the local commercial hub. Its physical location matters. Exact starting capital, vehicle models and fleet quantities remain balancing/content decisions. A later start does not automatically award a large network or established customer history.
+After choosing the starting region, the player must select a city/site and **build the first regional branch/office**. The first branch is therefore an actual physical company building and one of the player's first capital decisions, not a menu-only headquarters granted at game start.
+
+The first branch:
+
+- costs money to establish/build,
+- takes construction/setup time appropriate to the era and building type,
+- occupies a real site,
+- requires any relevant land/lease and local permission rules,
+- becomes the company's first local commercial/administrative hub once operational,
+- determines the initial local commercial presence/catchment under Section 7.2.
+
+The player cannot operate as if a branch exists before construction/setup is complete. The new-game flow may keep the company setup interface available while the branch is being placed, but it must not silently grant the branch's commercial reach, local staffing capacity or other benefits early.
+
+Exact branch building variants, starting capital, vehicle models and fleet quantities remain balancing/content decisions. A later start does not automatically award a large network, established customer history or free infrastructure.
 
 The mandatory handful-of-horse-drawn-vehicles start belongs to the planned Early Ages experience around 1820, not to every base-game start. Base-game startup options must fit 1900, 1925, 1950 or 1975 and the chosen region. Surviving older vehicles may remain available where appropriate to their date and condition.
 
@@ -363,8 +376,9 @@ The company start is **transport-mode neutral**.
 
 There are no predefined company classes/archetypes such as Road, Rail, Shipping or Mixed, and selecting a start year or founding-loan tier does not silently assign bonuses, penalties or permanent specialization.
 
-After choosing year, region and founding-loan tier, the player decides how to spend the available capital. Depending on the selected date, region and legal framework, this can include:
+After choosing year, region and founding-loan tier, the player decides how to spend the available capital. The **first branch/office is one of the required first expenditures**, after which the player can build out the chosen operation. Depending on the selected date, region and legal framework, spending can include:
 
+- construction/setup of the first regional branch/office,
 - required transport/business licences or concessions,
 - first vehicles/rolling stock,
 - leased or owned infrastructure access,
