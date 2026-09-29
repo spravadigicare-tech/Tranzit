@@ -3431,6 +3431,50 @@ A recently maintained vehicle can still fail, and a vehicle close to its service
 
 When a defect affects an upcoming Trip, the day-of-operation disruption policy in Section 32.6 determines whether the operator substitutes equipment, waits, runs reduced, rebuilds the consist or cancels.
 
+#### In-service breakdowns
+
+Breakdowns that occur **during a running Trip** use a deliberately simple operational model.
+
+The game does not expose dozens of technical failure states to the player. Each defect is resolved into one of four practical outcomes:
+
+1. **Continue to destination** — the vehicle can safely complete the current Trip, possibly with reduced comfort/service, but must be inspected/repaired afterwards.
+2. **Continue with restriction** — the vehicle can continue only with a clear operating restriction such as reduced speed/power. The Trip continues, but delay/slot/connection consequences are recalculated.
+3. **Next suitable stop only** — the vehicle may move only as far as the next suitable station/terminal/safe operating point, where the Trip must be terminated or recovery performed.
+4. **Immobilized / immediate stop** — the vehicle cannot continue under its own normal operation and requires rescue, towing, replacement traction, roadside assistance or another physical recovery action.
+
+The exact technical defect determines which of these outcomes is safe and legal. Player policy cannot override that boundary.
+
+A **suitable stop** is not automatically the next commercial stop. It must be a place where the affected vehicle/consist can realistically be handled, for example:
+
+- sufficient track/platform/roadside space;
+- ability to unload passengers/cargo safely;
+- shunting/turnaround capability where required;
+- access for a replacement locomotive/vehicle;
+- workshop/depot/recovery access where relevant.
+
+For rail, failures can affect only part of the consist.
+
+Examples:
+
+- locomotive failure while coaches remain usable → replacement/rescue locomotive can take over;
+- one coach becomes unfit for further service → reach a suitable station, detach it where physically possible, then continue with reduced capacity;
+- minor passenger-service defect → finish Trip, then repair;
+- major traction/safety defect → stop or reach only the next suitable point.
+
+Recovery remains physical. A rescue locomotive, tow vehicle or replacement vehicle must actually travel from where it is available; it cannot appear instantly.
+
+If a stopped vehicle blocks real infrastructure, that blockage affects other traffic until the asset is moved or the infrastructure is cleared.
+
+After the operational outcome is known, passenger/cargo consequences are handled separately through the existing systems:
+
+- delay and missed connections;
+- rebooking/re-accommodation;
+- refunds;
+- compensation;
+- cargo recovery/SLA consequences.
+
+This keeps breakdown gameplay deep enough to create meaningful disruptions without turning vehicle failures into a component-by-component engineering simulator.
+
 #### Maintenance capacity and reserve fleet
 
 The planner should expose the operational trade-off between workshop policy and spare fleet.
