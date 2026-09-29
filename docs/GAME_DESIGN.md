@@ -911,7 +911,7 @@ For each item, show:
 - dependency on another item;
 - whether the price/capacity is confirmed or only estimated.
 
-The planner can provide actions such as **Buy vehicles**, **Request capacity**, **Build facility**, **Apply for licence** or **Find partner**, opening the relevant existing system.
+The planner can provide actions such as **Buy vehicles**, **Request capacity**, **Build facility**, **Apply for licence** or **Hire carrier**, opening the relevant existing system. **Hire carrier** opens the shared External Transport Order from Section 30.1 with the required leg/cargo/timing already filled in; it is not a separate subcontracting marketplace.
 
 It must **not automatically spend money or sign third-party agreements** merely because the player opened a contract planner or clicked an automatic feasibility calculation.
 
@@ -1956,9 +1956,9 @@ All acquisition sources obey physical continuity.
 
 A vehicle becomes available for normal dispatch only when it has physically reached a valid operating/receiving location.
 
-Buying a vehicle therefore creates or requires a **Vehicle Delivery Order** unless the player is taking possession at a location from which the asset can immediately enter normal operation.
+Buying a vehicle therefore creates a **vehicle delivery requirement** unless the player is taking possession at a location from which the asset can immediately enter normal operation.
 
-The delivery planner first chooses the simplest physically valid delivery method.
+The delivery planner first determines the simplest physically valid delivery method. If an external carrier/provider is required, booking is performed through the single **External Transport Order** system in Section 30.1 rather than through a separate vehicle-delivery marketplace.
 
 #### Rail vehicles with a continuous rail route
 
@@ -2025,7 +2025,7 @@ A provider can have a limited number of suitable:
 
 Therefore purchasing a locomotive from dealer stock does **not** guarantee immediate road delivery.
 
-The Vehicle Delivery Order shows available providers and, where known:
+The pre-filled External Transport Order shows compatible heavy-haul providers and, where known:
 
 - transport price;
 - earliest pickup date;
@@ -2045,11 +2045,11 @@ The player can compare delivery providers, but a quoted **earliest pickup** is p
 
 #### Ordering and integration
 
-The Vehicle Marketplace should offer a **Arrange delivery** action immediately after purchase/lease where delivery is required.
+The Vehicle Marketplace should offer an **Arrange delivery** action immediately after purchase/lease where delivery is required. This is a contextual shortcut into the External Transport Order, pre-filled with the purchased asset, its current location and the intended receiving point.
 
 The player can also leave an owned vehicle at the seller/dealer temporarily and arrange transport later, but it remains physically located there and may incur storage/holding charges where applicable.
 
-The delivery order is a separate service agreement from the vehicle purchase. A dealer may offer dealer-arranged transport, but this still consumes a real third-party or dealer-owned transport resource.
+The transport-service agreement remains separate from the vehicle purchase. A dealer may offer dealer-arranged transport, but accepting it still creates/uses the same underlying External Transport Order and consumes a real dealer-owned or third-party transport resource.
 
 The Contract Planner includes:
 
@@ -2405,7 +2405,7 @@ The player can:
 
 1. buy delivered supply,
 2. buy at source and transport it personally,
-3. buy at source and hire another carrier,
+3. buy at source and hire another carrier through the shared External Transport Order in Section 30.1,
 4. use a recurring supply contract.
 
 Automatic reorder thresholds can be configured and later delegated.
@@ -2977,15 +2977,66 @@ Acquired companies can remain independent subsidiaries or be integrated.
 
 Companies can also own industrial firms or other business assets, but direct factory-building is not a primary early-game focus.
 
-## 30. Carrier cooperation
+## 30. Carrier cooperation and external transport procurement
 
 Transport companies can be both competitors and partners.
 
 Recurring partnership and subcontracting frameworks can use Auto-renew under Section 11.12. Their renewal preserves the distinction between purchased transport/seat capacity and non-transferable infrastructure slots; it does not transfer a partner's rail or station slots to the player.
 
-### 30.1 Cargo subcontracting
+### 30.1 One External Transport Order system
+
+The game has **one shared system for buying transport services from another carrier/provider**: the **External Transport Order**.
+
+Do not create separate transport marketplaces for:
+
+- subcontracting a customer's cargo leg;
+- moving purchased vehicles;
+- specialized heavy-haul transport;
+- hiring a carrier to collect purchased fuel/materials;
+- other one-off external physical transport needs.
+
+Different screens may offer contextual actions such as **Arrange delivery**, **Hire carrier**, **Find subcontractor** or **Order heavy haul**, but these actions all open the same External Transport Order flow with the relevant fields pre-filled.
+
+The canonical order contains, as applicable:
+
+- what is being transported;
+- quantity / number of physical assets;
+- origin and destination;
+- earliest pickup / required delivery window;
+- transport mode(s);
+- special equipment or handling requirements;
+- dimensions/weight/hazard/temperature constraints;
+- SLA/deadline;
+- whether recurring service is required;
+- responsibility for loading/unloading, permits and escort;
+- insurance/liability requirements.
+
+The system then shows compatible providers and offers using their real capabilities and finite capacity.
+
+For each offer, the UI can show:
+
+- provider;
+- price;
+- earliest pickup;
+- estimated arrival;
+- equipment/capacity used;
+- reliability/history where known;
+- important conditions/exclusions;
+- whether the order is one-off or part of an existing framework agreement.
+
+The player chooses one offer and signs one transport-service agreement. The order then becomes a real physical movement or sequence of movements.
+
+Provider availability is not fabricated for convenience. If no suitable carrier/equipment is available in time, the order can remain unfulfilled, require a later date or require a different transport solution.
+
+The same procurement engine supports ordinary carriers and specialized transport firms. A heavy-haul company is therefore not accessed through a separate marketplace; it appears as a compatible provider only when the order requires its specialist equipment.
+
+Contextual screens may hide irrelevant advanced fields, but they must not implement separate pricing, provider-capacity or booking logic.
+
+### 30.2 Cargo subcontracting
 
 A customer may contract the player for an end-to-end move, while parts are subcontracted to other carriers.
+
+One-off subcontracted transport is purchased through the External Transport Order in Section 30.1. Repeated cooperation can instead use a framework/reserved-capacity agreement that the same procurement flow can reference.
 
 Cooperation can range from:
 
@@ -2998,7 +3049,7 @@ Cargo transfer remains physical through real terminals/storage.
 
 The prime contractor remains responsible to the customer and can seek SLA compensation from a failing subcontractor.
 
-### 30.2 Passenger cooperation
+### 30.3 Passenger cooperation
 
 Passenger cooperation is based on fixed services and seats.
 
