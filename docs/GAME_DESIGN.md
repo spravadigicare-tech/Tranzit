@@ -3,12 +3,14 @@
 > **Status:** Living source of truth. This document describes the current agreed design. It is not a chronological idea log.
 >
 > **Maintenance rule:** Before adding or changing any feature, review all affected sections and resolve contradictions. Remove or rewrite obsolete decisions instead of appending conflicting alternatives.
+>
+> **Related specification:** [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md) defines the current proportionate cancellation and early-capacity-release rules.
 
 ## 1. Vision
 
-Tranzit is a long-form transport and business simulation built in Unity. The player starts as a tiny regional carrier around 1820 and can grow into a multinational transport group over roughly 100–150 hours of a normal campaign.
+Tranzit is a long-form transport and business simulation built in Unity. The base game starts around **1900**, with selectable new-game years **1900, 1925, 1950 and 1975**. The player starts as a small regional carrier and can grow into a multinational transport group. Campaign duration follows the unified time model in Section 3; there is no fixed short completion-time target.
 
-The game should feel like a living model railway / model world viewed from above: a large stylized but believable Central European world that changes physically, economically and technologically over two centuries.
+The game should feel like a living model railway / model world viewed from above: a large stylized but believable Central European world that changes physically, economically and technologically over decades. The earlier playable period, originally envisaged from around 1820, is reserved for the first planned DLC, **Early Ages**, rather than the base-game starting experience.
 
 Core pillars:
 
@@ -26,7 +28,7 @@ Core pillars:
 
 The first playable world is based on real European geography, initially focused on Central Europe. The first production scope should prioritize areas corresponding to modern Czechia plus nearby Central European regions; Germany, Austria, Hungary and Poland are natural early expansion targets.
 
-The map must be physically large enough that major cities have meaningful space between them. Travel should feel like travel, not like moving between adjacent miniature towns.
+The map must be physically large enough that major cities have meaningful space between them. Travel should feel like travel, not like moving between adjacent miniature towns. Journey duration follows the common time ratio in Section 3, not a separate visual travel clock.
 
 The long-term architecture must allow a procedural map generator later, but the initial world is authored from real geography.
 
@@ -68,7 +70,7 @@ Regions have different values based on population, industries, resources, infras
 
 Terms can be negotiated with the state, e.g. higher entry fee, infrastructure commitment, required services or local employment in exchange for cheaper/broader access.
 
-When a region becomes active, it is instantiated directly at the current historical date from its macro state. It does not simulate every year since 1820 retroactively. Once activated, it remains simulated.
+When a region becomes active, it is instantiated directly at the current historical date from its macro state. It does not simulate every preceding year retroactively. Once activated, it remains simulated. The same date-appropriate initialization principle applies when starting a new game in 1900, 1925, 1950 or 1975.
 
 ### 2.5 World outside the active map
 
@@ -76,21 +78,90 @@ Inactive Europe and the wider world are not fully simulated, but the player rece
 
 These reports can foreshadow technologies, economic changes and future expansion opportunities.
 
-## 3. Time and historical progression
+## 3. Time, start dates and historical progression
 
-The campaign begins around **1820**.
+### 3.1 Base game and Early Ages scope
+
+The base game's default/earliest selectable start is **1900**. New games can also start in **1925, 1950 or 1975**. The player still chooses a start region and places the first regional office in a city; choosing a later year does not automatically grant a large established company.
+
+The pre-1900 playable period, with an intended beginning around **1820**, is reserved for the first planned DLC, **Early Ages**. Its detailed content and release schedule are not specified here. Early Ages extends the historical content backwards using the same core systems, rather than requiring a second simulation engine or a different calendar.
+
+Earlier-era concepts in this specification are retained where useful as DLC design or as the history of assets surviving into later years. The base game must not require playing through a pre-railway phase. Steam traction, coal/water infrastructure, existing historic buildings, old lines and suitable older second-hand vehicles remain relevant to the base game when appropriate to the selected year. Moving the earlier start to DLC does not remove these shared systems.
+
+In this document, **early game** normally means the small-company stage of the chosen start, not automatically the year 1820. Historically early technologies and behaviours must be filtered by the selected date and content scope.
+
+### 3.2 One simulation clock and a shortened calendar
+
+The game uses **one shared simulation time** for vehicle movement, departures, transfers, loading, cargo perishability, crew shifts, maintenance, production, financial periods, contracts, construction, seasons, research and historical progression. Do not introduce an independently advancing historical-year clock or skip unplayed operating days to force a shorter campaign.
+
+The agreed calendar is:
+
+- 60 simulation seconds per minute;
+- 60 minutes per hour;
+- 24 hours per day;
+- 7 days per week;
+- **14 days per month**, exactly two full weeks;
+- **12 months per year**;
+- **168 days per year**, exactly 24 weeks.
+
+Month names and seasonal meaning remain. A three-month season spans 42 game days. All months have days 1–14; there are no 28–31-day months or leap-day exceptions. Weekday progression remains continuous across month and year boundaries.
+
+At **1×**, **one real second equals one game minute**. This is the base speed, not literal real-time 1:1. Simulation time advances by `real_elapsed_seconds × 60 × speed_multiplier` in simulation seconds.
+
+The speed controls support **0.5×, 1×, 2×, 4×, 8× and 16×**. The slowest running speed is **0.5×** and the maximum selectable acceleration is **16×**. At 0.5× one real second represents 30 game seconds; at 16× it represents 16 game minutes. Changing speed accelerates/slows the whole simulation consistently, including the visible movement of trains and other vehicles.
+
+### 3.3 Resulting duration
+
+At a constant 1×, one game hour takes one real minute, one day 24 real minutes, one week 2 h 48 min, one month 5 h 36 min, and one year **67 h 12 min**.
+
+| Game period | At 0.5× | At 1× | At 16× |
+|---|---:|---:|---:|
+| One day | 48 min | 24 min | 1 min 30 s |
+| One 14-day month | 11 h 12 min | 5 h 36 min | 21 min |
+| One 168-day year | 134 h 24 min | 67 h 12 min | 4 h 12 min |
+
+For the reference endpoint 2020, using exact elapsed year differences:
+
+| Start year | Elapsed years to 2020 | Continuous 0.5× | Continuous 1× | Continuous 16× |
+|---|---:|---:|---:|---:|
+| 1900 | 120 | 16,128 h | 8,064 h | 504 h |
+| 1925 | 95 | 12,768 h | 6,384 h | 399 h |
+| 1950 | 70 | 9,408 h | 4,704 h | 294 h |
+| 1975 | 45 | 6,048 h | 3,024 h | 189 h |
+
+These are arithmetic wall-clock durations at uninterrupted constant speed, assuming the machine sustains the selected rate. They are not guaranteed completion times or performance measurements. Normal mixed-speed play takes a duration determined by the actual speed history. **2020 is a comparison date, not a mandatory ending or victory condition.**
+
+The previous 100–150-hour campaign target is retired. Do not compress years independently to recover it, and do not implement acceleration above 16× to shorten the campaign.
+
+A trip lasting **3.5 game hours** takes **3 min 30 s at 1×**, **7 min at 0.5×**, or **13.125 s at 16×**, excluding any extra game-time delays. The earlier 12–15-real-minute target for this example is retired. Route distance, vehicle performance and operational dwell determine game-time travel; there is no separate arbitrary real-minute duration assigned to a route.
+
+### 3.4 Calendar consistency across systems
+
+Every calendar consumer must use the same 14-day-month model. Do not mix ordinary Gregorian date arithmetic or 365-day financial years with the game calendar.
+
+- Timetables, weekday patterns, seasonal operating windows and rail/station slots use game dates and game minutes.
+- Contract duration, notice/cure periods, cancellation calculations, automatic renewals, research dates and construction schedules use the same dates. Seasonal renewal retains the same season in the next game year.
+- Financial and production data must state their units explicitly: per game hour/day/week/month/year or per trip/tonne/km. Normalize imported assumptions deliberately; do not combine conventional-month expenses with only 14 days of revenue by accident. Calendar rates and physical per-use costs must not be charged twice.
+- Fuel, distance-based wear and material consumption remain tied to actual simulated operation. Speed selection changes wall-clock duration, not the quantity consumed by the same completed work.
+- Population and production growth, vehicle/calendar ageing and technology availability advance with the common clock. Historical regional snapshots are initialized at the selected start year rather than replayed from the DLC era.
+- Day-of-month dates that do not exist in the game calendar, including historical holidays/events after the 14th, need an explicit documented conversion when content is authored. The exact real-date-to-game-date mapping is still to be specified; do not silently create invalid dates or assume a 31-day month.
+- UI must distinguish game time from estimated real playtime. Calendar, contracts and timetables show game-time units consistently.
+
+Test month/year rollover, two complete weeks per month, cross-year winter seasons, seasonal renewals and speed changes during trips, maintenance and construction. For equivalent simulated elapsed time, different selected speeds must not change resource accounting or bypass physical movements, reservation conflicts, deadlines or other events.
+
+### 3.5 Date-appropriate starts and history
 
 The world is historically anchored but not fully deterministic:
 
-- major political and technological shifts happen approximately in their real periods,
-- exact years and severity can vary,
+- major political and technological shifts happen approximately in their real periods;
+- exact years and severity can vary;
 - smaller economic events can diverge significantly between campaigns.
 
-Historically, the 1820 Czech lands are part of the Austrian Empire. Austria-Hungary only appears later if the timeline reaches the relevant historical transition.
+Initialize political boundaries, jurisdictions, licences, population, architecture, existing infrastructure, firms, competitors, manufacturer catalogues, demand and available technologies for the chosen start year. Do not apply the political or technological state of 1820 to every new game. Events preceding the selected date are part of the initialized world, not queued for replay.
 
-The game should take around **100–150 hours** to move from 1820 to roughly 2020 under normal play, with time controls available.
+Technology should not be only year-gated. Historical year is the baseline, but research can bring some technologies forward within plausible bounds. A later start does not require re-researching historical prerequisites that are already established in that start's world; acquiring equipment, staff, facilities and any company-specific permissions still costs resources.
 
-Technology should not be only year-gated. Historical year is the baseline, but research can bring some technologies forward within plausible bounds.
+The 16× setting is a simulation/performance requirement to validate on representative late-game networks, not an already measured capability. Rendering may be culled and updates batched, but insufficient performance must not be hidden by dropping essential simulation events or advancing the calendar while vehicles remain behind.
 
 ## 4. Visual direction
 
@@ -132,6 +203,8 @@ Different levels of detail are used depending on relevance and camera distance:
 - **Standard:** exact operational state without unnecessary visual/physics detail.
 - **Aggregated:** remote areas use scheduled/event-based state transitions rather than continuous simulation.
 
+All levels use the shared simulation clock in Section 3. Changing camera location or time speed must not remove physical occupancy, skip contracted movements or give remote operators different capacity rules.
+
 ### 5.2 Event-driven systems
 
 Do not update everything every frame.
@@ -143,6 +216,8 @@ Examples:
 - route options are cached,
 - pathfinding reruns only when relevant topology/service conditions change,
 - breakdowns can be scheduled probabilistically at trip start instead of rolled every frame.
+
+These intervals are game-time intervals under Section 3, not wall-clock timers. The same events must be processed at 0.5× through 16× without double-counting or silently omitting work.
 
 ### 5.3 Physical continuity
 
@@ -196,7 +271,7 @@ Journey purposes include work, business, school, tourism/leisure, family/social 
 
 Different segments value time, price, comfort and reliability differently.
 
-Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Early-game leisure/tourism demand is limited compared with later eras and should grow only as income, free time, transport accessibility, urbanization and relevant destinations develop. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism, but the game must not project modern travel behaviour backwards into 1820.
+Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Leisure/tourism demand depends on the chosen year, income, free time, transport accessibility, urbanization and relevant destinations, not simply how recently the player founded the company. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism. The Early Ages DLC must not project modern travel behaviour backwards into its earlier period, and a 1975 base-game start must not inherit an 1820 demand profile.
 
 Passenger demand also has historically grounded daily and weekly rhythms. Work shifts, market days, school schedules, religious/rest days, weekends and later modern commuting patterns can shape peaks, but the profile must evolve by era rather than using one modern 24/7 template for the whole campaign.
 
@@ -235,25 +310,33 @@ Protected/historic areas can restrict demolition and construction.
 
 Old industrial sites can become brownfields and later be redeveloped, including adaptive reuse into housing/offices while retaining an industrial visual character.
 
+### 6.5 Start-year initialization
+
+Cities and their existing historical layers are initialized for 1900, 1925, 1950 or 1975 as selected. Existing older buildings and infrastructure can be present without the player having played their construction era. Demand, private motoring and industrial development must match that date; the player's small initial company does not make the whole world technologically young.
+
 ## 7. Company progression and organization
 
-### 7.1 Early game
+### 7.1 Early game and selected start
 
-The player starts with a very small company:
+The player starts with a small company in the selected year:
 
 - one first regional branch/office placed in a chosen city,
-- a handful of horse-drawn vehicles,
+- a small period-appropriate starting fleet or acquisition budget,
 - limited staff,
 - limited capital,
-- local contracts and passenger demand.
+- accessible local contracts and passenger demand.
 
-The first branch is the local commercial hub. Its physical location matters.
+The first branch is the local commercial hub. Its physical location matters. Exact starting capital, vehicle models and fleet quantities remain balancing/content decisions. A later start does not automatically award a large network or established customer history.
+
+The mandatory handful-of-horse-drawn-vehicles start belongs to the planned Early Ages experience around 1820, not to every base-game start. Base-game startup options must fit 1900, 1925, 1950 or 1975 and the chosen region. Surviving older vehicles may remain available where appropriate to their date and condition.
 
 ### 7.2 Branch reach
 
 Branches have a commercial catchment.
 
-Early on, a branch can only serve nearby customers. Telegraph, telephone and later electronic systems expand this reach. Modern digital ordering largely removes the constraint.
+Commercial reach depends on installed period-appropriate communications and staffing. A small company does not have to replay the historical invention of the telegraph or telephone simply because it is newly founded. These technologies can be available from the selected start's catalogue, while their installation and operation still cost resources.
+
+The very local pre-telegraph office progression is primarily Early Ages content. Telegraph, telephone and later electronic systems expand reach where available; modern digital ordering largely removes the geographic ordering constraint. Regional presence and licensing rules remain separate from communication reach.
 
 ### 7.3 Divisions and subsidiaries
 
@@ -354,6 +437,8 @@ Company HR can still recruit and rebalance these employees at a higher level, an
 Sales, contract, HR and general administrative capacity can be aggregated at company/division/office level depending on the system they support.
 
 Insufficient staffing creates concrete operational consequences such as slower maintenance, reduced opening hours, delayed handling, inability to cover all Trips or weaker contract-processing capacity.
+
+Staffing hours, rest periods and wage periods use the shared game clock and explicit rate units in Section 3.4. Changing the speed selector does not change the crew required for the same service.
 
 ## 9. Reputation and customer relationships
 
@@ -486,6 +571,8 @@ Contract awards should consider transparent factors such as price, capacity, rel
 Large customers may reserve their most important contracts for carriers with proven history, while still exposing smaller trial jobs that let new entrants build trust.
 
 Contracts can be seasonal or have seasonal volume profiles when the underlying customer demand is seasonal. A seasonal contract must show its expected calendar profile before signing, including peak months/periods, expected baseline volume and likely surge range. Historical plausibility applies: early eras should not generate modern mass-tourism or modern consumption patterns simply because the calendar says summer/winter.
+
+All contractual periods and volume-rate units use Section 3's calendar. A monthly volume covers 14 game days; a yearly term covers 168. Notice, cancellation, expiry and renewal must use that same basis.
 
 ### 11.2 Contract award models
 
@@ -663,7 +750,7 @@ Voluntary early termination without a contractual cause is possible only where t
 - relevant reputation impact,
 - loss of exclusivity or preferred-carrier status.
 
-The UI must show the expected consequences before the player confirms termination.
+The UI must show the expected consequences before the player confirms termination. Proportionate ordinary cancellation fees and early capacity release follow [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md); its cap is not a waiver of unrelated damage or breach liabilities.
 
 A breach should not cause an arbitrary immediate cancellation unless the contract explicitly allows it. Most long-term agreements should use escalating enforcement:
 
@@ -792,12 +879,14 @@ Handling improves historically with mechanization, pumps, cranes, conveyors, con
 
 ## 13. Transport modes
 
-Initial/primary modes:
+Primary modes in the base game, subject to the selected year and technological availability:
 
-- horse-drawn/road,
+- road transport,
 - railway,
 - inland water/shipping,
 - urban transport: bus, tram, trolleybus, metro.
+
+The early horse-drawn/dostavnik startup progression and the emergence of the first railways are principally Early Ages DLC content. Horse-drawn or older technology can still appear in the base world where appropriate; starting in a later year does not unlock unavailable future modes or force all existing modes to be used by the player.
 
 Aircraft are explicitly out of current scope.
 
@@ -1086,6 +1175,8 @@ Comfort expectations rise over time.
 
 A retrofit can extend usefulness, but cannot make a fundamentally obsolete vehicle equal to a modern one.
 
+Availability is evaluated against the selected start year and region. Do not gate an already established historical feature behind replaying its earlier invention solely because a new company was founded in 1925, 1950 or 1975; compatible vehicles and installed equipment are still required.
+
 ## 15. Vehicle lifecycle
 
 ### 15.1 Purchase and manufacturing
@@ -1116,6 +1207,8 @@ Listings occupy real storage/depot space for the seller.
 Unsold vehicles can be discounted and eventually scrapped.
 
 Imports from inactive foreign regions enter through defined import points and are physically delivered into the active world.
+
+At new-game initialization, period-appropriate used vehicles can already exist with manufacture dates before the chosen start. Their age and condition are initialized rather than manufactured by replaying the earlier decades. Subsequent purchases and movements still obey physical continuity.
 
 ### 15.3 Retrofit
 
@@ -1558,9 +1651,9 @@ A station can therefore become a bottleneck even when the surrounding railway st
 
 Available station modules evolve with history and technology.
 
-Early stations can rely on small buildings, simple platforms and manual ticketing.
+Small stations can rely on simple buildings, platforms and manual ticketing where suitable. The available catalogue is initialized for the selected year; founding a new company in a later year does not reset station technology to the beginning of railways.
 
-Later eras can unlock:
+Depending on era, station modules can include:
 
 - larger covered platforms,
 - improved passenger circulation,
@@ -1868,6 +1961,8 @@ Mitigation consumes extra money, contractor capacity and sometimes temporary lan
 
 Construction speed and capability improve historically through mechanization and specialized equipment, including later track-laying/maintenance trains.
 
+Construction duration, deliveries and contractor work windows use the common game calendar. Later starts initialize the appropriate available construction technology; they do not force an industrial-era contractor back into an earlier manual-only technology stage.
+
 ## 22. Terrain engineering
 
 Terraforming is not a free standalone brush.
@@ -1969,11 +2064,13 @@ Progression includes not only vehicles but also:
 - business systems,
 - logistics automation.
 
+The available technology baseline depends on the selected new-game year (Section 3.5). Pre-1900 invention progression is Early Ages content; already established technology remains available in the base game as appropriate. Availability does not give the player free equipment or erase company-specific installation/training requirements.
+
 ## 28. Automation and information technology
 
 Technological progress changes how much manual management is required.
 
-Possible progression:
+The wider historical progression can include:
 
 - local paper-based offices,
 - telegraph,
@@ -1982,6 +2079,8 @@ Possible progression:
 - electromechanical systems,
 - computer planning,
 - modern electronic ordering/API-like systems.
+
+This is not a mandatory sequence restarted for every new company. Start-year data determines which tools already exist; the player still needs the relevant staff, buildings and installed systems to use them. The pre-1900 progression belongs to Early Ages, while the same technology definitions can remain relevant to inherited infrastructure in later starts.
 
 Automation makes a large modern company manageable without removing the underlying physical simulation.
 
@@ -2001,7 +2100,7 @@ They have:
 
 They can grow, shrink, sell assets or fail.
 
-Early competition is mostly regional. Competition increases naturally as networks and regions connect.
+The player's initial competitive exposure is mostly local because the company starts small. The selected historical year determines how developed existing competitors and networks are; a later start must not reset every rival to a tiny early-industrial business. Competition increases naturally as the player's network and active regions connect.
 
 ### 29.1 Ownership and acquisitions
 
@@ -2066,7 +2165,7 @@ Lower-level manual settings override delegated policies.
 
 Regular passenger lines are available from the start, and freight services can use either scheduled or demand-driven operating patterns.
 
-Low early passenger demand means low frequencies and small vehicles may be the only profitable choice.
+On a low-demand local market, low frequencies and small vehicles may be the only profitable choice. Actual demand depends on the selected year, region and service quality; a newly started company in 1975 does not imply universally low demand in its world.
 
 The player can also use demand-driven departure policies, e.g.:
 
@@ -2114,11 +2213,13 @@ Each service pattern can define:
 - optional departure conditions for demand-driven freight/passenger services,
 - exceptions such as holidays, temporary closures or special-event service.
 
+Use the 14-day-month calendar in Section 3 for every pattern and exception. Each month contains two complete seven-day weeks. Seasonal patterns, cross-year date ranges and slot orders must agree on the same game dates; no pattern can reference a nonexistent day 15–31.
+
 Where the service uses constrained third-party rail/station infrastructure, the same calendar can be passed directly into the Capacity Order editor to request only the capacity needed for those dates/times. Seasonal patterns therefore do not require year-round slot purchases.
 
 Example patterns can include weekday, weekend, summer, winter or harvest-season service.
 
-Early-game services can use sparse exact departures such as Monday/Thursday or one/two departures per day. Later high-frequency rail/urban services can use interval-based patterns.
+Low-volume services can use sparse exact departures such as Monday/Thursday or one/two departures per day. High-frequency rail/urban services can use interval-based patterns when justified by the selected era, demand and operating resources.
 
 Service calendars must respect actual physical fleet availability. Before activation, the planner calculates the number and type of vehicles/consists required from real cycle times, turnaround, depot movements and maintenance assumptions. If the fleet cannot cover the timetable, the game must explain the shortage rather than creating abstract vehicles.
 
@@ -2308,6 +2409,8 @@ Large accidents/destruction caused directly by historical events should be rare.
 
 Economic booms and recessions should emerge as meaningful operating conditions rather than flat income modifiers.
 
+Historical state is initialized at the selected start year under Section 3.5. Events prior to that date contribute to the starting world rather than firing again after game creation. Future events follow the same simulation calendar and historically anchored variation rules.
+
 ## 36. Weather and seasons
 
 Weather is visual and operational.
@@ -2330,6 +2433,8 @@ Rare major events can require direct player decisions:
 - severe drought,
 - landslide,
 - damaged bridge/track.
+
+Season lengths and recurring demand profiles follow the 168-day game year in Section 3. Climate/technology susceptibility is initialized for the chosen era; a new company in a later start is not automatically subject to Early Ages road conditions.
 
 ## 37. Safety and accidents
 
@@ -2379,6 +2484,8 @@ A distressed company can:
 
 Bankruptcy is a process, not an instant failure. Game over occurs only when the company is deeply insolvent with no viable assets/financing path left.
 
+Financial rates, reporting and billing periods use explicit game-time units under Section 3.4. A game month has 14 days and a game year 168 days. Do not use hidden conventional-calendar accruals or accelerate only financial/historical time separately from operations.
+
 ## 39. Infrastructure market
 
 Infrastructure can be bought and sold.
@@ -2419,8 +2526,11 @@ Key expectations:
 - no per-component vehicle maintenance simulation,
 - physical continuity preserved logically even when rendering is culled.
 
+Validate supported speeds from 0.5× to 16× on representative operating loads, including a developed network. The maximum is 16×, not a promise that current unimplemented code already sustains that rate. Higher speed may reduce visual detail but must not skip reservations, physical movement, transfers, service events, contracts or resource accounting. All subsystems advance on the same clock.
+
 ## 42. Current out-of-scope / deferred
 
+- **Early Ages**, the first planned DLC: playable pre-1900 history with an intended start around 1820. Preserve extensibility and earlier-era design context, but do not make this content mandatory for the base game.
 - Aircraft.
 - Full procedural world generator.
 - Deep factory ownership/building gameplay.
@@ -2431,16 +2541,18 @@ Key expectations:
 - Scenario/campaign victory objectives.
 - Mandatory expert railway timetable editor.
 
-These may be revisited later without compromising the current architecture.
+The base-game start choices and time model are defined in Section 3. Older buildings, infrastructure and vehicles that are still relevant in those years are not excluded merely because their origins predate 1900.
+
+These deferred areas may be revisited later without compromising the current architecture. Early Ages has a planned place as the first DLC, not a specified delivery date.
 
 ## 43. Cross-system consistency checklist
 
 Every new feature or design change must be checked against at least:
 
 1. Physical continuity — does anything teleport or bypass required movement/infrastructure?
-2. Time progression — does it make sense in 1820 and in later eras?
-3. Technology — what unlocks or improves it?
-4. Economy — who pays, supplies, consumes and profits?
+2. Time progression — does it use the unified 14-day-month calendar and remain coherent at 0.5× through 16×, for each of the 1900/1925/1950/1975 starts? Is pre-1900 content correctly scoped to Early Ages rather than silently required by the base game?
+3. Technology — what unlocks or improves it, and is already-established technology initialized correctly for a later start?
+4. Economy — who pays, supplies, consumes and profits, and are all calendar-rate units consistent?
 5. Contracts — does it create or consume transport demand?
 6. Ownership/licensing — who owns it and who is allowed to use it?
 7. Infrastructure capacity — where are the bottlenecks?
@@ -2450,6 +2562,6 @@ Every new feature or design change must be checked against at least:
 11. Inactive regions — does it require full simulation outside unlocked territory?
 12. AI competitors — can AI companies use the same rules without cheating?
 13. UI clarity — can the player understand the system without micromanagement?
-14. Existing rules — does it contradict any currently agreed rule in this document?
+14. Existing rules — does it contradict any currently agreed rule in this document or the relevant focused specification?
 
 If a conflict appears, update all affected sections before treating the feature as accepted.
