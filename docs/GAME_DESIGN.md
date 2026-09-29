@@ -1553,12 +1553,12 @@ The player's primary discovery UI for available business is a **filterable Oppor
 
 The board can contain:
 
-- one-off transport jobs,
-- recurring/framework transport contracts,
-- public/state/municipal tenders,
-- private customer tenders,
-- direct customer offers,
-- subcontracting opportunities from other carriers,
+- one-off freight or passenger/group transport jobs;
+- recurring/framework freight or passenger transport contracts;
+- public/state/municipal tenders;
+- private customer tenders, including tour operators/employers/event organizers;
+- direct customer offers;
+- subcontracting opportunities from other carriers;
 - strategically advertised opportunities outside the normal branch network.
 
 The board is a discovery and comparison interface, not a source of fake demand. Every listed opportunity must originate from a real simulated customer, public authority, carrier partner or market need.
@@ -2206,17 +2206,20 @@ The board may use cheaper cached feasibility summaries; the full planner perform
 
 ### 11.1 Contracts are central
 
-Cargo gameplay is primarily contract-driven.
+Cargo gameplay is primarily contract-driven, while passenger gameplay combines normal market demand with **public and commercial passenger contracts**.
 
 Early game emphasizes direct management of individual jobs and vehicles.
 
 Contract types include:
 
-- one-off shipment,
-- recurring/framework contract,
-- state/public contract,
-- carrier subcontract,
-- long-term supply contract.
+- one-off freight shipment;
+- recurring/framework freight contract;
+- state/public/municipal transport contract;
+- carrier subcontract;
+- long-term supply contract;
+- one-off commercial passenger/group transport;
+- recurring commercial passenger/group transport;
+- reserved passenger-capacity agreement on an existing Line.
 
 Contract awards should consider transparent factors such as price, capacity, reliability, relevant reputation and customer-specific relationship history. The player must be able to inspect the important decision factors before or after bidding.
 
@@ -2225,6 +2228,85 @@ Large customers may reserve their most important contracts for carriers with pro
 Contracts can be seasonal or have seasonal volume profiles when the underlying customer demand is seasonal. A seasonal contract must show its expected calendar profile before signing, including peak months/periods, expected baseline volume and likely surge range. Historical plausibility applies: early eras should not generate modern mass-tourism or modern consumption patterns simply because the calendar says summer/winter.
 
 All contractual periods and volume-rate units use Section 3's calendar. A monthly volume covers 14 game days; a yearly term covers 168. Notice, cancellation, expiry and renewal must use that same basis.
+
+#### 11.1.1 Commercial passenger and group-transport contracts
+
+Private organizations can purchase passenger transport in the same simulated market rather than every passenger movement coming only from anonymous individual demand.
+
+Possible customers include:
+
+- tour operators / travel agencies;
+- companies/employers;
+- schools/universities;
+- hotels/resorts;
+- event organizers;
+- clubs/associations;
+- conference organizers;
+- other organizations needing a defined group moved.
+
+Typical contract examples include:
+
+- **Tour-operator excursion:** transport 48 tourists from Praha to Český Krumlov in the morning and return them in the evening;
+- **Multi-day tour movement:** move a tour group between several cities on specified dates;
+- **Corporate shuttle:** recurring employee transport between a station/city and a factory/office;
+- **School trip:** one-off group movement with specified pickup/return windows;
+- **Event transport:** move defined groups to/from a fair, concert or sporting event;
+- **Reserved seats on a regular service:** a tour operator buys 40 seats on selected weekly departures of an existing intercity Line.
+
+These contracts can be fulfilled through the normal **Contract Transport Plan**.
+
+Depending on the requirement, a passenger leg can use:
+
+- an existing passenger Line / Service Pattern with reserved compatible capacity;
+- a dedicated ad-hoc bus/coach/train movement without creating a permanent Line;
+- a newly created recurring Line/Pattern;
+- an external passenger carrier;
+- a customer-provided leg.
+
+A one-off tour does **not** require the player to create a permanent Line simply because the group travels between two cities.
+
+Example:
+
+> Tour operator contract: 52 passengers, Praha hotel → Salzburg hotel  
+> Leg 1: charter bus from hotel to Praha station  
+> Leg 2: 52 reserved seats on player's existing Praha–Salzburg train  
+> Leg 3: external local coach from Salzburg station to hotel
+
+Alternatively, if the player has suitable coaches and the economics work:
+
+> one dedicated charter coach Trip Praha hotel → Salzburg hotel
+
+The Contract Planner compares these alternatives using real capacity, travel time, cost and readiness.
+
+Commercial passenger contracts can specify requirements such as:
+
+- passenger count or range;
+- guaranteed/minimum paid capacity;
+- pickup/drop-off location;
+- departure/arrival window;
+- return journey;
+- baggage requirement;
+- comfort/service class;
+- accessibility;
+- catering/other onboard service where relevant;
+- dedicated vehicle requirement;
+- exclusivity/no-mixing requirement where requested;
+- maximum transfers;
+- SLA / punctuality;
+- cancellation/no-show terms.
+
+A customer can either pay:
+
+- a fixed group/charter price;
+- a per-passenger amount with a guaranteed minimum;
+- a recurring reserved-capacity fee;
+- or another clearly disclosed contract structure.
+
+If a contract reserves seats on a normal passenger Line, those seats become a real capacity commitment for the relevant origin-destination legs and Trips. They do not require a separate train/bus unless the contract explicitly asks for dedicated transport.
+
+Unused contracted passenger capacity can be released after the applicable contractual cutoff/no-show rules, but carrier-caused feeder/connection failure must not be treated as a customer no-show. Recovery follows the same responsibility principle used for freight connections.
+
+Commercial group transport remains distinct from ordinary individual passenger demand. Normal passengers still choose and buy travel from the simulated passenger market; a tour operator or employer contract is a separate commercial commitment.
 
 ### 11.2 Contract award models
 
