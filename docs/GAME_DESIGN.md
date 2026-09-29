@@ -839,6 +839,127 @@ The game should preserve enough continuity that experienced former managers can 
 
 AI companies use the same recruitment constraints and cannot hire unavailable managers.
 
+#### Manager skills
+
+Managers use a **small shared skill model**, not a large RPG character sheet.
+
+The core skill set is:
+
+1. **Leadership** — ability to coordinate people, subordinate managers and departments; improves manageable organizational workload and quality of delegation.
+2. **Commercial** — sales, customer relationships, bidding, pricing and contract negotiation.
+3. **Operations** — scheduling, dispatch, service recovery and day-to-day transport operations.
+4. **Finance & Administration** — budgeting, administrative processing, contracts, licences and financial discipline.
+5. **Technical** — fleet, maintenance, infrastructure and technical-operational understanding.
+6. **People** — staffing, retention, recruitment and workforce organization.
+
+Use a clear bounded scale, such as **0–100**, but do not present a single synthesized "overall rating" as the primary measure of manager quality.
+
+Different roles weight different skills.
+
+Examples:
+
+- Branch Director: Leadership + Commercial + Finance/Admin;
+- Commercial Manager: Commercial + Finance/Admin;
+- Operations Manager: Operations + Leadership;
+- Fleet/Technical Manager: Technical + Operations;
+- HR Manager: People + Leadership;
+- Maintenance Manager: Technical + Operations.
+
+A candidate can therefore be excellent for one role and mediocre for another.
+
+The hiring UI should show **role fit through the relevant skills and concrete expected effects**, rather than hiding the decision behind a generic star rating.
+
+Example:
+
+> **Jan Král — Branch Director candidate**  
+> Leadership 67  
+> Commercial 74  
+> Finance & Administration 61  
+> Operations 42  
+> Technical 28  
+> People 55
+
+The player can inspect all skills, but the UI should visually emphasize the ones relevant to the vacancy.
+
+#### Traits
+
+A manager can have a **small number of meaningful traits**, normally no more than 1–2 prominent traits.
+
+Traits are qualitative specializations or behavioural tendencies, not another layer of ten hidden stats.
+
+Examples can include:
+
+- **Strong Negotiator** — better commercial outcomes in eligible negotiations;
+- **Crisis Operator** — better service-recovery/delegated disruption decisions;
+- **Cost Conscious** — stronger cost control, with effects tied to budgets/procurement;
+- **Customer Focused** — stronger customer-service/relationship handling;
+- **Technical Specialist** — stronger technical decision quality in relevant roles;
+- **Staff Developer** — improves ordinary staff/manager development under their scope;
+- **Conservative Planner** — favours larger operational buffers and lower risk;
+- **Growth Oriented** — more willing to use spare capacity/budget for expansion within delegated limits.
+
+Traits must always have an understandable domain and effect.
+
+Do not generate traits that provide unrelated magic bonuses such as "+5% revenue everywhere".
+
+Where a trait changes automated decision behaviour, the player must be able to understand that tendency before assigning broad delegation authority.
+
+#### Experience and development
+
+Managers can improve over time through the work they actually perform.
+
+Development is **slow and role-related** rather than conventional XP/level grinding.
+
+Examples:
+
+- repeated bidding/customer work can slowly improve Commercial;
+- managing complex operations can improve Operations;
+- supervising a larger team/department can improve Leadership;
+- fleet/maintenance responsibility can improve Technical.
+
+Skills should not increase simply because game time passes.
+
+Growth uses diminishing returns: improving from weak to competent is easier than turning an already exceptional manager into a near-perfect one.
+
+A manager working far outside their strengths can gain experience, but the game should not encourage repeatedly rotating people through every department just to maximize all six stats.
+
+Training/education can exist as a supporting investment where historically appropriate, but it supplements real experience rather than instantly converting money into elite managers.
+
+Manager history should retain meaningful career information such as previous employers, major roles and accumulated experience so experienced individuals remain recognizable when they return to the shared labour market.
+
+#### Manager effects and transparency
+
+Skills and traits affect only systems within the manager's actual scope.
+
+Their impact can include:
+
+- administrative/department throughput;
+- quality/speed of delegated decisions;
+- commercial terms within negotiation limits;
+- staffing efficiency;
+- operational recovery quality;
+- maintenance/fleet planning;
+- budget discipline.
+
+They do not bypass hard constraints.
+
+A 95 Operations manager still cannot dispatch a train without:
+
+- a real vehicle;
+- qualified crew;
+- valid infrastructure access;
+- available capacity;
+- required licences;
+- physical service endpoints.
+
+The UI should translate management effects into understandable operational consequences wherever practical, for example:
+
+> Commercial manager reduces expected routine bid-processing time from 18 h to 14 h.
+
+rather than only:
+
+> Commercial +8%.
+
 #### Cost and performance
 
 Named managers have salaries and skill profiles.
