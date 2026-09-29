@@ -461,6 +461,21 @@ Exclusivity is optional and must be priced as a risk/reward trade-off. It can cr
 
 The customer must still have emergency fallback rights where the contract explicitly allows them, for example after repeated SLA breaches or when the carrier cannot accept the guaranteed volume.
 
+### 11.4 Performance bonuses
+
+Medium, large and strategic contracts can include optional bonus tiers above the minimum SLA.
+
+Examples:
+
+- contract requires delivery within 48 hours, but average delivery under 30 hours earns a higher rate;
+- contract requires 95% on-time performance, while 99% earns a periodic performance bonus;
+- contract guarantees a minimum monthly volume, while handling surge volume without failure earns an additional payment;
+- exceptionally low damage/spoilage can improve payout for sensitive cargo.
+
+Bonuses must be visible before signing and tied to measurable contract KPIs. They should reward operational excellence rather than create hidden modifiers.
+
+Performance above the contractual minimum can also improve customer-specific relationship history and relevant reputation, but the direct financial bonus and the relationship/reputation effect remain separate systems.
+
 ### 11.2 Cargo batches
 
 Cargo is simulated in batches, not per kilogram/item.
