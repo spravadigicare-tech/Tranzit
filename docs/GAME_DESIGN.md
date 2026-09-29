@@ -4775,6 +4775,151 @@ Before activation, each commercial Service Pattern must also have valid service 
 
 Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
 
+#### Service Pattern versions and effective dates
+
+A running Service Pattern is **versioned** rather than edited destructively in place.
+
+When the player changes a materially operational parameter of an active Pattern, the planner creates a **new future version** with an explicit **effective date/time**.
+
+Material changes include, for example:
+
+- stop pattern;
+- route/corridor;
+- departure frequency;
+- timetable/slot pattern;
+- operating days;
+- vehicle/consist requirement;
+- passenger-capacity configuration;
+- reservation policy;
+- operating depot where it changes real movements;
+- major dwell/turnaround rules.
+
+The currently active version continues operating until the transition point.
+
+Example:
+
+> Pattern v3 — active until 5 May, 23:59  
+> Pattern v4 — effective 6 May, 00:00
+
+The player can prepare and validate v4 while v3 continues running normally.
+
+##### Pre-activation impact check
+
+Before a new Pattern version can become active, the Line Planner revalidates all dependencies affected by the change.
+
+The impact check includes:
+
+- route/infrastructure access;
+- rail/station capacity slots;
+- vehicle/consist requirement;
+- fleet availability and repositioning;
+- crew/staff requirement;
+- depot/parking/maintenance capacity;
+- commercial coverage/local presence;
+- passenger ticketing/sales availability;
+- passenger reservations and protected itineraries;
+- freight contract allocations;
+- passenger/group contracts;
+- feeder/connection relationships;
+- tariff/reservation-policy compatibility where relevant.
+
+The UI should summarize concrete impacts, for example:
+
+> **Pattern v4 from 6 May**  
+> 2 new rail capacity orders required  
+> 2 old capacity reservations can be released  
+> 14 passenger reservations affected  
+> 11 can be rebooked automatically  
+> 3 require refund or manual policy decision  
+> Contract A remains feasible  
+> Contract B loses required frequency  
+> Fleet requirement changes from 4 to 5 trainsets
+
+A future version cannot be marked **Ready for activation** while a hard blocker remains unresolved.
+
+##### Rail/station slot transition
+
+A timetable change does not automatically rewrite existing infrastructure agreements.
+
+The new Pattern version must secure its required rail/station capacity through the existing Capacity Order system.
+
+Old capacity remains tied to the old Pattern version until:
+
+- the old version expires;
+- the player releases it early under the access agreement;
+- or a coordinated amendment/replacement is explicitly agreed.
+
+Any cancellation/release fee follows the existing capacity-cancellation rules; versioning does not waive contractual obligations.
+
+This allows a safe overlap period where the company can secure new slots before giving up the old ones, at the cost of temporarily paying for both where necessary.
+
+##### Passenger reservations, rebooking and refunds
+
+When future passenger reservations have already been sold for dates after the new version's effective date, the planner compares them against the replacement timetable/capacity.
+
+For each affected booking, the system first attempts automatic migration/rebooking where the promised journey remains reasonably satisfiable.
+
+Examples:
+
+- departure moved by 4 minutes but the same protected itinerary remains valid → migrate automatically;
+- one stop removed → affected passengers require rebooking or refund;
+- First Class capacity reduced below already sold reservations → unresolved capacity conflict requiring re-accommodation or refund;
+- connection window becomes invalid → itinerary must be reprotected/rebooked or refunded.
+
+If no acceptable replacement itinerary exists, the operator can **refund the affected ticket/reservation**.
+
+Refund handling is aggregate; the player does not manually process individual passengers.
+
+Depending on the fare/product and disruption policy, the system can use:
+
+- **automatic rebooking first, refund if impossible**;
+- **offer rebooking or refund** where passenger choice is modeled;
+- **automatic full refund** when the operator cancels the promised service and no equivalent journey exists.
+
+The refund returns the fare amount covered by the affected ticket/product according to its tariff rules.
+
+Any additional delay/cancellation compensation is separate from the refund. If the operator caused the disruption and the applicable tariff, public-service contract or jurisdiction rules provide compensation, the player can owe both:
+
+- refund/re-accommodation cost;
+- additional compensation/credit.
+
+The impact screen shows aggregate:
+
+- passengers/bookings affected;
+- automatically migrated;
+- automatically rebooked;
+- requiring refund;
+- estimated refund value;
+- estimated additional compensation.
+
+Once a future version is published for sale, new reservations for dates on/after its effective date use that future version rather than the currently active timetable.
+
+##### Freight and passenger contracts
+
+Contracts are not automatically rewritten when a Pattern changes.
+
+Every Transport Plan allocation pointing to the Pattern is revalidated against the new version.
+
+The planner checks:
+
+- required origin/destination stops still exist;
+- required frequency/capacity remains available;
+- SLA/timing remains feasible;
+- reserved passenger/freight capacity still exists;
+- transfers to other legs remain feasible.
+
+If a contract becomes infeasible, activation is blocked or explicitly flagged as a contractual breach risk until the player changes the Pattern, reallocates the contract to another service or accepts the commercial consequence where contract terms allow it.
+
+##### Transition of Trips
+
+Trips before the effective boundary are generated/operated under the old version.
+
+Trips on or after the boundary use the new version.
+
+A Trip already in progress when the boundary passes keeps the version under which it departed; it is not rewritten mid-journey.
+
+The UI keeps prior Pattern versions available for audit/history but only the current/future relevant versions participate in planning.
+
 #### Passenger ticket sales and reservations
 
 Ordinary individual passenger demand is monetized through **ticket sales**, not customer contracts.
