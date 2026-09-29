@@ -438,6 +438,8 @@ If the station/terminal is owned by another party, an integrated branch is possi
 
 The office module can later be expanded, relocated to a standalone building or retained as a smaller local branch when a larger headquarters is built elsewhere.
 
+Integrated, rented and standalone branches all use the same aggregate equipment/staffing model below. The player does not furnish an integrated station office item by item either.
+
 This allows a transport company to grow naturally around major hubs: a busy station can contain both the operating passenger infrastructure and the company's local commercial office while keeping their capacities/accounting separate.
 
 Branch progression is based on several practical sizes rather than a single building with arbitrary percentage bonuses:
@@ -456,6 +458,90 @@ Branch capacity is driven by real workload. Relevant workload can include:
 - locally managed Lines and facilities,
 - licences/regulatory work,
 - managers and office staff assigned to the branch.
+
+#### Branch activation, equipment and staffing
+
+A branch becomes operational when:
+
+- its physical premises are ready or the lease has started;
+- the basic office setup has been purchased/installed;
+- at least the minimum ordinary office staffing required for that branch size is funded and available.
+
+The game does **not** simulate or require the player to buy individual desks, chairs, telephones, filing cabinets, computers or other office items.
+
+Opening a branch includes a single **office setup purchase** appropriate to the selected year and branch type. It represents the normal equipment needed to make the premises functional.
+
+After opening, the player can choose how much to invest in the branch through two simple management dimensions:
+
+1. **Office equipment / systems level**
+2. **Office staffing level**
+
+These are aggregate investment choices, not room-by-room or employee-by-employee micromanagement.
+
+##### Office equipment / systems level
+
+The player can keep the branch at a basic functional standard or invest in better contemporary equipment and internal systems.
+
+A higher level can improve concrete office functions such as:
+
+- administrative throughput;
+- speed of processing bids, contracts and amendments;
+- customer-response speed;
+- efficiency of licence/permit administration;
+- effective workload that the same office staff can handle.
+
+The exact form is era-appropriate. In 1900 this can represent better communications, filing/accounting equipment and office organization; later it can represent improved telephone systems, office machines, computers and internal business systems.
+
+This **equipment-quality investment is separate from major technology unlocks** in Sections 7.2 and 28. Spending more on a 1900 office cannot buy a modern online system before it exists, and ordinary equipment upgrades do not silently remove the branch-at-every-city rule.
+
+Use a small number of understandable levels rather than a continuous equipment inventory, for example:
+
+- **Basic** — cheapest functional setup;
+- **Standard** — normal well-equipped branch;
+- **High** — higher recurring/depreciation cost for better throughput and service.
+
+Names and exact effects can vary by era, but the player should always see the actual cost and operational effect before changing level.
+
+##### Office staffing level
+
+Ordinary office staff are **aggregated**, consistent with the workforce model in Section 8.
+
+The player does not hire every clerk or salesperson as a named character.
+
+Instead the branch has an aggregate staffing level/headcount and wage cost. The player can:
+
+- run lean with lower payroll and less spare administrative capacity;
+- staff around expected workload;
+- deliberately overstaff to create spare capacity and faster response during growth/peaks.
+
+Staffing affects concrete capacity and processing performance. It does not create unrelated global bonuses.
+
+If staffing is below the branch's minimum operating requirement, the branch cannot provide normal commercial service until the shortage is resolved.
+
+If staffing is above the minimum but below current workload, the branch remains open but becomes progressively overloaded.
+
+##### Combined effect and UI
+
+The branch UI should summarize the interaction of:
+
+- physical branch size/capacity;
+- equipment/systems level;
+- aggregate staffing;
+- current workload;
+- any named manager/specialist effects where applicable.
+
+Example:
+
+> **Brno Branch**  
+> Premises: Small office  
+> Equipment: Standard  
+> Office staff: 5 / recommended 6  
+> Administrative load: 91%  
+> Contract processing: slightly delayed
+
+The UI should explain why performance changes. Avoid opaque modifiers such as "+12% branch quality" when the actual effect is increased administrative throughput or faster response.
+
+Investment has diminishing returns and real cost. A lavishly equipped, heavily staffed tiny office cannot exceed hard physical limits indefinitely; at some point the player must expand, move or build a larger branch.
 
 The UI should expose an understandable administrative-load indicator rather than hide capacity in a generic bonus. If a branch is overloaded, consequences can include:
 
