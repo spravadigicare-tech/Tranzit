@@ -1245,15 +1245,17 @@ Managers can optimize within player-defined constraints such as target margin, o
 
 Lower-level manual settings override delegated policies.
 
-## 32. Passenger services and timetables
+## 32. Service lines and timetables
 
-Regular passenger lines are available from the start.
+Regular passenger lines are available from the start, and freight services can use either scheduled or demand-driven operating patterns.
 
-Low early demand means low frequencies and small vehicles may be the only profitable choice.
+Low early passenger demand means low frequencies and small vehicles may be the only profitable choice.
 
 The player can also use demand-driven departure policies, e.g.:
 
 - depart when X passengers are booked,
+- depart when minimum cargo load is reached,
+- depart when a contracted shipment is ready,
 - or after a maximum wait time.
 
 Over time, demand growth supports more frequent and higher-capacity scheduled services.
@@ -1311,6 +1313,40 @@ The player can set high-level preferences such as:
 The system must show the resulting expected transfer quality and any fleet/capacity consequences.
 
 Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
+
+### 32.3 Stop service modes
+
+Each stop/terminal call inside a line or service pattern can define how strongly the vehicle is required to serve it.
+
+Supported modes include:
+
+- **Mandatory:** the service always calls there when the trip runs.
+- **Conditional:** the service calls only when a defined condition is met.
+- **On request / booked:** the stop is skipped unless there is a real passenger booking, cargo order, pickup/drop-off requirement or another configured trigger.
+- **Pass-through only:** the service may traverse the station/terminal infrastructure but performs no commercial stop there.
+
+Typical conditional triggers can include:
+
+- passengers booked to board/alight,
+- cargo batch assigned for pickup or delivery,
+- minimum cargo quantity reached,
+- contract-required call,
+- operational need such as crew/service activity where applicable.
+
+Freight trains should normally skip intermediate freight terminals when they have no assigned work there. This avoids unnecessary dwell time and keeps line capacity usage realistic.
+
+Passenger request stops can be appropriate for low-demand local services, especially in early eras or rural areas. The system should only create the stop when there is real underlying demand rather than cosmetic randomness.
+
+Timetable planning must account for both cases:
+
+- a base running time when the stop is skipped,
+- additional dwell/handling time when the stop is activated.
+
+For regular planning, the UI should show expected/typical trip time and a reasonable worst-case or high-load trip time so the player understands how conditional stops affect connections and fleet requirements.
+
+Feeder/connection planning must use the actual expected stop pattern and enough buffer to avoid creating impossible transfers when several conditional stops activate.
+
+Dispatch automation can later decide individual conditional calls automatically, but the player must always be able to inspect why a specific trip stopped or skipped a location.
 
 ## 33. Urban transport
 
