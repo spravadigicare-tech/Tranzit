@@ -839,6 +839,39 @@ The game should preserve enough continuity that experienced former managers can 
 
 AI companies use the same recruitment constraints and cannot hire unavailable managers.
 
+#### Hiring flow
+
+Manager recruitment is intentionally immediate and does not use salary negotiation or a delayed acceptance mini-game.
+
+Each available candidate listing already shows the employment terms required to hire that person, primarily:
+
+- salary;
+- role/position being considered;
+- relevant skills;
+- traits;
+- previous experience/history where known.
+
+If the candidate is still available and the player clicks **Hire**, the employment agreement is created immediately and the manager joins the company at once.
+
+There is no separate sequence of:
+
+- submitting an offer;
+- waiting several game days;
+- counter-offers;
+- competing salary bids;
+- signing bonuses used to outbid another company.
+
+Because the labour market is shared, availability can still change before the player acts. If another company hires the candidate first, the listing disappears or becomes unavailable.
+
+The player therefore makes a direct trade-off between:
+
+- candidate quality/role fit;
+- salary;
+- current need;
+- risk that a desirable candidate may be hired by another company.
+
+Reassigning an already employed manager inside the player's own company is an internal organizational action and does not send them back through the labour market.
+
 #### Manager skills
 
 Managers use a **small shared skill model**, not a large RPG character sheet.
