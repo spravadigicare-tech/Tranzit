@@ -571,13 +571,58 @@ This creates natural growth paths: a small early contract can expand into a stra
 
 Capacity feasibility uses the same transparent physical accounting as reserved-capacity commitments; the game must warn about concrete fleet, depot, terminal or infrastructure bottlenecks before acceptance.
 
-### 11.8 Cargo batches
+### 11.8 Early termination and breach
+
+Long-running contracts can end before their planned expiry.
+
+Either side can terminate according to the contract's agreed rules, including notice periods, break clauses, breach thresholds and financial penalties.
+
+Possible customer-side termination reasons include:
+
+- repeated SLA failures,
+- failure to provide guaranteed or reserved capacity,
+- serious cargo damage/spoilage,
+- repeated missed deliveries,
+- regulatory or licence loss,
+- insolvency or operational collapse of the carrier.
+
+Possible carrier-side termination reasons include:
+
+- persistent customer non-payment,
+- customer failure to provide agreed minimum volume,
+- unsafe or impossible operating conditions,
+- loss of legal access that cannot reasonably be resolved,
+- strategic withdrawal where the contract permits early exit.
+
+Voluntary early termination without a contractual cause is possible only where the contract allows it and can trigger:
+
+- termination fee / liquidated damages,
+- repayment of bonuses or incentives where specified,
+- customer relationship damage,
+- relevant reputation impact,
+- loss of exclusivity or preferred-carrier status.
+
+The UI must show the expected consequences before the player confirms termination.
+
+A breach should not cause an arbitrary immediate cancellation unless the contract explicitly allows it. Most long-term agreements should use escalating enforcement:
+
+1. warning / breach notice,
+2. cure period or corrective-action requirement,
+3. contractual penalty,
+4. possible renegotiation or temporary restriction,
+5. termination if the breach remains unresolved or is severe enough.
+
+Serious one-off failures can skip parts of this escalation where the contract clearly defines them as material breach.
+
+The same rules apply to AI companies and customers; they cannot cancel contracts without a valid contractual or simulated reason.
+
+### 11.9 Cargo batches
 
 Cargo is simulated in batches, not per kilogram/item.
 
 A batch tracks type, quantity, origin, destination, deadline/quality constraints and contract.
 
-### 11.9 Multi-leg logistics
+### 11.10 Multi-leg logistics
 
 One customer contract can contain multiple transport legs and modes.
 
@@ -587,7 +632,7 @@ Example:
 
 farm → wagon → local terminal → warehouse → regional train → hub → long-distance train → local truck → customer.
 
-### 11.10 Perishability and special requirements
+### 11.11 Perishability and special requirements
 
 Cargo can have properties such as:
 
