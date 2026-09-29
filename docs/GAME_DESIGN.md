@@ -6009,6 +6009,142 @@ For a concrete Trip, the player can inspect which real assets were selected and 
 
 The player can override the automatic selection when desired, but the override must still satisfy all hard physical, contractual and timetable constraints.
 
+#### Trip preparation horizon and concrete asset reservation
+
+A planned Trip does not need all of its concrete physical assets locked far in advance.
+
+Instead, the dispatcher calculates a **preparation horizon** for each Trip: the point before departure at which the company must begin committing specific vehicles/rolling stock and executing the physical work required to make the Trip ready.
+
+The horizon is derived from the actual preparation work rather than one universal fixed value.
+
+Relevant inputs include:
+
+- transport mode and vehicle type;
+- fixed versus criteria-based versus hybrid assignment;
+- current physical location of candidate vehicles;
+- required repositioning/deadhead travel;
+- train consist complexity;
+- shunting/assembly/disassembly work;
+- fueling, charging or other energy preparation;
+- cleaning and servicing;
+- catering, bedding or other passenger-service preparation;
+- cargo-specific wagon/equipment preparation;
+- mandatory technical/safety checks;
+- locomotive exchange staging;
+- depot/yard/workshop capacity and congestion;
+- staff availability;
+- historically appropriate operating technology.
+
+A simple bus Trip from its home garage can therefore have a much shorter preparation horizon than a long-distance passenger train that requires a locomotive, several coach types, catering, cleaning and physical shunting.
+
+##### Player minimum lead-time override
+
+The Line/Service Pattern can define an optional **minimum preparation lead time**.
+
+Example:
+
+> Automatically calculated preparation horizon: 2 h 20 min  
+> Player minimum: 4 h  
+> Effective preparation horizon: 4 h
+
+The override is a minimum, not a promise that preparation can always wait until that point.
+
+If physical repositioning or preparation requires more time, the dispatcher starts earlier.
+
+The player can therefore choose a more conservative operating style without manually setting every Trip's preparation timestamp.
+
+##### Planning versus commitment
+
+Before the preparation horizon, the planner primarily maintains **feasibility coverage**:
+
+- enough suitable fleet is expected to exist;
+- no known maintenance/assignment conflict makes the Trip impossible;
+- reserve margin is visible;
+- likely candidate assets can be identified without necessarily locking them.
+
+At or before the preparation horizon, the dispatcher begins turning the plan into concrete commitments.
+
+This can include:
+
+1. selecting/reserving specific vehicles from the eligible fleet pool;
+2. initiating required repositioning/deadhead movements;
+3. reserving depot/yard/shunting capacity;
+4. assembling the physical consist;
+5. fueling/charging/service preparation;
+6. cleaning/catering/other required servicing;
+7. performing applicable technical/readiness checks;
+8. positioning the completed vehicle/consist for boarding/loading/departure.
+
+Pinned vehicles are already predetermined, but the same preparation logic still determines when they must be physically committed and moved into position.
+
+Criteria-based/hybrid services keep more flexibility until the dispatcher reaches the point where specific assets are needed for real preparation work.
+
+##### Progressive commitment
+
+Preparation can use several internal checkpoints rather than one instantaneous lock.
+
+A typical sequence can be:
+
+> **Planned** — Trip exists in timetable; fleet feasibility checked  
+> **Preparing** — concrete assets are being selected/positioned/serviced  
+> **Assembling** — physical consist/shunting or equivalent preparation in progress  
+> **Ready** — required vehicle/consist, crew and departure prerequisites are available  
+> **Running** — Trip has departed  
+> **Completed** — Trip finished
+
+Not every mode needs every visible state. A bus service may move directly from Preparing to Ready without an assembly phase.
+
+The UI should expose useful operational status without requiring the player to micromanage every intermediate task.
+
+##### Final readiness check
+
+Shortly before departure, the dispatcher performs a **final readiness check** against the actual Trip rather than relying on the earlier planning estimate.
+
+It verifies, as applicable:
+
+- assigned physical vehicles are present;
+- consist is correctly assembled;
+- route/traction/infrastructure compatibility remains valid;
+- required maintenance/safety status is valid;
+- fuel/energy is sufficient;
+- crew capacity is available;
+- required onboard staff are available;
+- passenger/cargo capacity matches the final consist;
+- loading/boarding facility is usable;
+- departure slot/access remains valid;
+- required service equipment is ready.
+
+If all hard requirements are satisfied, the Trip becomes Ready.
+
+If something has failed or is missing, the dispatcher immediately applies the Pattern's **day-of-operation disruption policy** below.
+
+##### Preparation conflicts are real capacity conflicts
+
+Preparation tasks consume real facilities and time.
+
+Two trains cannot simultaneously use the same single shunting track, service bay or fueling point beyond that facility's capacity.
+
+If several upcoming Trips require the same constrained depot/yard resource, the dispatcher must schedule their preparation coherently.
+
+The timetable/fleet planner should therefore detect recurring preparation bottlenecks before activation where they are predictable.
+
+A Trip should not repeatedly fail at departure because a known depot cannot physically prepare the planned number of vehicles in time.
+
+##### Recalculation
+
+The preparation horizon is recalculated when a material input changes, including:
+
+- vehicle assignment rules;
+- operating depot;
+- timetable/departure time;
+- consist size;
+- preparation/service requirements;
+- infrastructure or depot access;
+- significant disruption;
+- manual player reassignment.
+
+The horizon is not recalculated every frame. It is event-driven and scheduled, consistent with the wider simulation architecture.
+
 #### Day-of-operation vehicle failure and disruption policy
 
 A vehicle/consist becoming unavailable shortly before a Trip does not have one universal automatic outcome.
