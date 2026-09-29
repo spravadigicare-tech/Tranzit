@@ -852,7 +852,57 @@ The player should not discover a predictable traction problem only after the tra
 
 Heavy trains may need helpers/bank engines on specific sections.
 
-### 14.4 Passenger classes and comfort
+### 14.4 Locomotive exchange and local traction bases
+
+A long-distance Service Pattern may change locomotives en route, but a locomotive exchange should only exist where it is operationally justified by **local traction availability**.
+
+Typical valid reasons include:
+
+- electrified section changing to non-electrified section,
+- incompatible electrification system,
+- major traction/performance requirement change,
+- route-specific technical or regulatory compatibility,
+- historically plausible operating practice where a local traction base serves a distinct corridor.
+
+A planned exchange point must have a suitable **local operating/dispatch depot or traction base** with compatible locomotives physically available for that onward segment, or another equivalent nearby facility that can realistically stage them.
+
+The planner should not recommend an exchange where both locomotives would have to deadhead from the same distant depot just to swap places. In that case the exchange normally adds pointless movements and should be rejected unless another explicit operational constraint makes it necessary.
+
+For a planned exchange, the local onward locomotive is normally staged from its own nearby depot/pool. The incoming locomotive is then:
+
+- sent to local parking/service,
+- reassigned to another local Trip,
+- or later returned through useful work/repositioning.
+
+The locomotive exchange is a physical station/yard operation:
+
+1. train arrives on a suitable track;
+2. incoming locomotive uncouples and physically clears the consist;
+3. onward locomotive physically approaches and couples;
+4. required checks/preparation occur;
+5. the Trip continues.
+
+The exchange consumes real track/yard capacity and adds dwell time.
+
+The Service Pattern planner can automatically suggest valid exchange points only when all of the following are true:
+
+- onward traction is actually required or materially advantageous,
+- the station/yard geometry supports the operation,
+- a suitable local traction base exists,
+- the regional pool can credibly provide the required onward locomotive,
+- the added dwell and shunting capacity are accounted for.
+
+If no valid local traction base exists, the system should normally recommend one of:
+
+- use a locomotive capable of the entire route,
+- build/establish a traction base at a suitable point,
+- change the route,
+- shorten the service,
+- use another compatible traction solution.
+
+Later technologies such as multi-system, dual-mode or otherwise more versatile vehicles can remove exchange points and thereby reduce dwell time, fleet complexity and station capacity usage.
+
+### 14.5 Passenger classes and comfort
 
 Rail can offer different classes from early periods.
 
@@ -1082,6 +1132,8 @@ Tranzit distinguishes three facility roles:
 1. **Operating/dispatch depot** — configured primarily on a Line or Service Pattern; this is where the service is normally staged, dispatched, turned around or recovered.
 2. **Parking/storage facility** — where an idle vehicle or wagon can physically stand when it is not needed in active service.
 3. **Maintenance facility** — where the vehicle is physically sent for inspections, servicing or repair.
+
+For rail operations, an operating/dispatch depot can also act as a **local traction base** for locomotive exchange. This means it keeps suitable locomotives physically available to work onward segments from that location. A traction base does not have to be a full maintenance workshop.
 
 One site can provide more than one role, but it does not have to. A cheap parking yard therefore does not need a full workshop, and a regional fleet can share a more distant maintenance base.
 
@@ -1624,6 +1676,8 @@ A Line or Service Pattern can still define:
 Parking and maintenance are separate from the Line's operating depot. Individual assets or their fleet group can have separate parking and maintenance facility preferences.
 
 The timetable planner must include real depot-to-service positioning, parking needs, maintenance windows and necessary repositioning movements when calculating required fleet size and feasibility.
+
+If a Service Pattern includes locomotive exchange, the planner must also validate that each exchange point has suitable local traction capacity. It must not assume a replacement locomotive can appear from nowhere or make two locomotives perform pointless long-distance deadheads from the same depot.
 
 A specific vehicle may be manually pinned to a Line/Pattern as an override where the player wants that level of control, but this is not the default operating model.
 
