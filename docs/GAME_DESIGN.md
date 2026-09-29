@@ -393,13 +393,75 @@ The player can therefore start as road-only, rail-focused, mixed-mode or pursue 
 
 A mode that requires infrastructure, permits, staff or capital beyond the selected starting resources is not made artificially available merely because the start is neutral. Neutrality means freedom to choose within real constraints, not bypassing them.
 
-### 7.2 Branch reach
+### 7.2 Branches, administrative capacity and commercial reach
 
-Branches have a commercial catchment.
+Branches are physical **commercial/administrative facilities**, not depots or abstract map unlocks.
 
-Commercial reach depends on installed period-appropriate communications and staffing. A small company does not have to replay the historical invention of the telegraph or telephone simply because it is newly founded. These technologies can be available from the selected start's catalogue, while their installation and operation still cost resources.
+They provide local business presence and office capacity for functions such as:
 
-The very local pre-telegraph office progression is primarily Early Ages content. Telegraph, telephone and later electronic systems expand reach where available; modern digital ordering largely removes the geographic ordering constraint. Regional presence and licensing rules remain separate from communication reach.
+- sales and customer relationships,
+- contract/tender processing,
+- local administration,
+- licence/permit handling,
+- regional management,
+- support for the company's nearby operational facilities and Lines.
+
+A branch does **not** automatically provide vehicle parking, maintenance, storage, cargo handling or passenger-terminal capacity. Those remain separate physical facilities unless a specific mixed-use site explicitly includes them.
+
+Branch progression is based on several practical sizes rather than a single building with arbitrary percentage bonuses:
+
+1. **Small branch / local office** — cheap first presence with limited office staff and administrative throughput.
+2. **Regional branch** — larger office capacity, support for more contracts/operations and space for regional management/specialists.
+3. **Area headquarters / large regional office** — a high-capacity administrative centre that can coordinate several smaller branches and a much larger operating footprint.
+
+Names/visual variants can differ by era and region, but these functional roles remain consistent.
+
+Branch capacity is driven by real workload. Relevant workload can include:
+
+- number and complexity of active contracts,
+- bids/tenders being processed,
+- important customer relationships,
+- locally managed Lines and facilities,
+- licences/regulatory work,
+- managers and office staff assigned to the branch.
+
+The UI should expose an understandable administrative-load indicator rather than hide capacity in a generic bonus. If a branch is overloaded, consequences can include:
+
+- slower processing of bids/contracts/amendments,
+- slower response to customer/admin tasks,
+- reduced effectiveness of delegated regional management,
+- delays in routine local administrative actions.
+
+Overload should degrade performance progressively rather than suddenly disabling an entire region.
+
+Branch size is **not a simple hard kilometre radius**.
+
+Commercial reach depends on a combination of:
+
+- physical/local presence,
+- installed period-appropriate communications,
+- office staffing/capacity,
+- regional/legal access,
+- customer type and contract requirements.
+
+A small company does not have to replay the historical invention of the telegraph or telephone simply because it is newly founded. These technologies can be available from the selected start's catalogue, while their installation and operation still cost resources.
+
+The very local pre-telegraph office progression is primarily Early Ages content. Telegraph, telephone and later electronic systems expand practical commercial reach. Modern digital ordering can make geographic communication much less restrictive, but it does not erase regional licences, legal-presence requirements or situations where a customer/public authority explicitly requires local representation.
+
+Branches can be physically expanded or replaced.
+
+Possible growth paths include:
+
+- extend the existing building/site where land and permissions allow,
+- add office/management capacity through suitable modules or wings,
+- rebuild/replace the branch with a larger office,
+- establish a new larger branch elsewhere and later sell/repurpose the old site.
+
+Branch construction/redevelopment follows the normal land, construction and demolition rules. A central site can therefore become constrained or expensive as the city grows.
+
+The game does **not** simulate individual desks, rooms or office furniture. The physical building/site exists, while its internal office layout is represented through aggregate office/administrative capacity and installed functional modules.
+
+A larger branch should therefore solve a concrete company-scaling problem: more administrative/management capacity and better local support, not a flat revenue multiplier.
 
 ### 7.3 Divisions and subsidiaries
 
@@ -426,10 +488,13 @@ Managers and important specialists are named individuals. Ordinary staff are agg
 Possible management scopes include:
 
 - whole company/division,
-- country/region,
+- country/region or area headquarters,
+- branch/local office,
 - station/depot/terminal,
 - group of lines,
 - specific line/service.
+
+A larger area headquarters can coordinate several subordinate branches. This is an organizational hierarchy over real offices, not a replacement for the physical branch sites or their local workload/capacity.
 
 Manual overrides at a lower level take precedence over higher-level automation.
 
