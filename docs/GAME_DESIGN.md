@@ -2448,7 +2448,10 @@ Each section has practical capacity influenced by:
 - passing loops,
 - speeds,
 - traffic mix,
-- technology.
+- technology,
+- section-level track direction configuration.
+
+Directionality is therefore not a whole-line property. Each physical track in each meaningful section can have its own preferred/bidirectional/one-way operating rule under Section 32.3.
 
 The player normally requests service capacity, not exact second-by-second paths or a permanently assigned physical track.
 
@@ -4321,18 +4324,55 @@ The resulting nominal route is used for:
 
 A rail Service Pattern is **not assigned permanently to one exact track through every section**.
 
-For each concrete Trip, the dispatcher/infrastructure system selects the actual usable railway path from the compatible tracks within the authorized corridor according to:
+Track-direction rules are defined **per railway section**, using the same meaningful section boundaries used for rail capacity between stations/junctions/operational nodes.
+
+Each physical track inside a section can have one of these operating modes:
+
+- **Preferred A → B** — normal traffic uses this direction;
+- **Preferred B → A** — normal traffic uses the opposite direction;
+- **Bidirectional** — both directions are normal and equally permitted;
+- **One-way only** — opposite-direction running is technically/operationally prohibited.
+
+A preferred direction is not the same as a hard one-way restriction.
+
+On a track marked with a preferred direction, the dispatcher uses that direction under normal operation. Running against the preferred direction is allowed only when:
+
+- the section is technically/signalling-capable of movement in both directions;
+- no better normally directed path is reasonably available;
+- the movement is needed for disruption recovery, engineering works, overtaking/routing or another material operational reason;
+- required access/capacity and conflict protection remain valid.
+
+Opposite-direction running therefore consumes real capacity and can block or delay trains moving in the preferred direction.
+
+A typical double-track section can therefore be configured as:
+
+> Track 1: preferred A → B  
+> Track 2: preferred B → A
+
+while still allowing temporary single-line working over one track during a closure if that track supports bidirectional signalling/operation.
+
+A single-track railway section is normally configured as **bidirectional**, with dispatching resolving opposing movements through available blocks, stations and passing loops.
+
+Direction configuration is local to each section. The next section can have a different arrangement because of:
+
+- track count changes;
+- junction geometry;
+- signalling technology;
+- historical infrastructure layout;
+- temporary engineering configuration.
+
+For each concrete Trip, the dispatcher/infrastructure system selects the actual usable railway path from the compatible tracks section by section according to:
 
 - current occupancy;
 - signalling/block availability;
-- direction;
+- each track's section-level direction mode;
 - closures/work zones;
 - train length/load/gauge;
 - electrification/traction compatibility;
 - contracted capacity/priority;
 - disruption/recovery needs.
 
-If one track of a double-track or multi-track railway is closed, a Trip can use another compatible track where signalling, direction and capacity allow it.
+If one track of a double-track or multi-track railway is closed, a Trip can use another compatible track where signalling, direction mode and capacity allow it.
 
 This is a physical reroute through real infrastructure, not teleportation. It can increase travel time, create conflicts or reduce corridor capacity.
 
