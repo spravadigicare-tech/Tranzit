@@ -467,6 +467,8 @@ Without a branch, the company does **not** receive the normal local commercial p
 
 This limitation is not a hidden percentage penalty. The UI should show whether an opportunity is available because it is public/directly offered and whether establishing a local branch would unlock broader commercial access.
 
+Available opportunities are surfaced through the Opportunity Board in Section 11.0. The board can be filtered by region, customer, contract type and other operational/commercial properties without bypassing branch-discovery rules.
+
 Winning an out-of-region contract does not magically create local administrative capacity. Before signing, the planner must still validate whether the company has enough office/admin capacity, licences, operating access, vehicles, terminals and staff to fulfil it. A contract can also explicitly require the player to establish a branch before operations begin.
 
 Branches can be physically expanded or replaced.
@@ -702,6 +704,75 @@ Regional/market accessibility is cached and updated when relevant transport or e
 Better infrastructure can open previously uneconomic markets.
 
 ## 11. Contracts and cargo
+
+### 11.0 Opportunity Board / commercial opportunities
+
+The player's primary discovery UI for available business is a **filterable Opportunity Board**. It aggregates opportunities the company is actually allowed to see based on branch presence, public tenders, direct customer approaches, partnerships and the access rules in Section 7.2.
+
+The board can contain:
+
+- one-off transport jobs,
+- recurring/framework transport contracts,
+- public/state/municipal tenders,
+- private customer tenders,
+- direct customer offers,
+- subcontracting opportunities from other carriers,
+- strategically advertised opportunities outside the normal branch network.
+
+The board is a discovery and comparison interface, not a source of fake demand. Every listed opportunity must originate from a real simulated customer, public authority, carrier partner or market need.
+
+The list must remain usable as the company grows. The player can filter and sort without opening each opportunity individually.
+
+Core filters should include, where relevant:
+
+- transport mode: road, rail, water, urban/multimodal;
+- passenger vs cargo;
+- cargo type/family;
+- origin region/city/customer;
+- destination region/city/customer;
+- local branch/region;
+- one-off vs recurring/framework vs tender;
+- public vs private vs carrier-subcontract;
+- contract duration;
+- start date / deadline;
+- expected volume or passenger requirement;
+- required capacity;
+- estimated revenue/value;
+- expected margin when enough cost data is known;
+- relationship/customer;
+- reputation/qualification requirement;
+- required licences/permissions;
+- infrastructure or terminal requirements;
+- service-level / delivery-time requirement;
+- seasonal vs year-round;
+- opportunity status, such as new, viewed, bid submitted, expiring soon.
+
+Useful sorting can include:
+
+- newest,
+- deadline soonest,
+- highest value,
+- highest estimated margin,
+- shortest/longest duration,
+- lowest missing-capability gap,
+- best customer relationship,
+- nearest origin/operating area.
+
+Filters must be combinable and easy to clear. The UI should support saved filter presets or favourites later, but the base interaction must remain simple enough for early-game use.
+
+The board should also support a **feasibility summary** for each opportunity without requiring the full contract planner. Example statuses:
+
+- **Ready** — existing fleet/infrastructure/staff can plausibly fulfil it;
+- **Requires investment** — feasible after specific purchases/building/access;
+- **Missing licence/access** — blocked by a concrete legal/infrastructure prerequisite;
+- **Capacity conflict** — current commitments make the requirement infeasible;
+- **Outside local pipeline** — visible only because it is public/directly offered.
+
+These statuses are explanations, not automatic accept/reject decisions. A player may still bid strategically on an opportunity that requires investment.
+
+The game should avoid overwhelming the player with every theoretical opportunity in Europe. Discovery is scoped through branch/commercial presence, relevant public advertising, direct offers and selected search/filter context. The board can summarize or paginate large result sets rather than continuously rendering every opportunity.
+
+When the player opens an opportunity, the next step is the normal contract evaluation/planning flow: inspect terms, estimate fleet/infrastructure/staff needs, secure any required capacity, and bid/accept according to the contract model below.
 
 ### 11.1 Contracts are central
 
