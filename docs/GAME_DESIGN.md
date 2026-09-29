@@ -476,13 +476,40 @@ Bonuses must be visible before signing and tied to measurable contract KPIs. The
 
 Performance above the contractual minimum can also improve customer-specific relationship history and relevant reputation, but the direct financial bonus and the relationship/reputation effect remain separate systems.
 
-### 11.2 Cargo batches
+### 11.5 Reserved capacity commitments
+
+Some medium, large and strategic contracts can require the carrier to keep a defined amount of transport capacity available for the customer, including surge/emergency capacity that may not be used every day.
+
+This must be completely transparent and expressed in both commercial and physical terms before signing.
+
+The contract planner should show, for the proposed route and service pattern:
+
+- guaranteed tonnes/passengers per period,
+- maximum surge requirement,
+- response window,
+- estimated number and type of wagons/vehicles required,
+- locomotives/traction required,
+- terminal/storage requirements,
+- expected infrastructure capacity consumption,
+- estimated staff requirement,
+- how much of the player's currently available fleet would become committed,
+- what spare capacity remains after accepting the contract.
+
+For example, instead of only displaying "reserve 200 t capacity", the UI should translate that into something like "requires approximately 8 compatible wagons and 1 suitable locomotive available within 24 hours on this corridor" based on the player's current rolling stock and route.
+
+Reserved capacity is a real commitment, not a hidden score. Assets do not necessarily need to sit idle permanently: they may perform other work when scheduling still guarantees the contracted response time. Dispatch automation may manage this later, but it must never allocate committed assets in a way that silently makes the SLA impossible.
+
+If current fleet, depot, terminal or infrastructure capacity cannot credibly satisfy the commitment, the game must warn the player before the bid is submitted and explain the bottleneck.
+
+AI competitors are subject to the same capacity accounting and cannot promise reserve capacity they cannot realistically provide.
+
+### 11.6 Cargo batches
 
 Cargo is simulated in batches, not per kilogram/item.
 
 A batch tracks type, quantity, origin, destination, deadline/quality constraints and contract.
 
-### 11.3 Multi-leg logistics
+### 11.7 Multi-leg logistics
 
 One customer contract can contain multiple transport legs and modes.
 
@@ -492,7 +519,7 @@ Example:
 
 farm → wagon → local terminal → warehouse → regional train → hub → long-distance train → local truck → customer.
 
-### 11.4 Perishability and special requirements
+### 11.8 Perishability and special requirements
 
 Cargo can have properties such as:
 
