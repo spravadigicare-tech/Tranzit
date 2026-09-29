@@ -4786,9 +4786,12 @@ Passenger sales are aggregated but capacity-accurate by:
 - Trip;
 - origin-destination leg;
 - passenger class/capacity zone;
-- reservation policy.
+- reservation policy;
+- protected multi-leg itinerary where one is sold.
 
 A passenger place sold Praha→Brno does not block the same place Brno→Vídeň.
+
+When a ticket covers several connecting Trips, the system can reserve compatible capacity on each required leg and mark the journey as a protected itinerary under Section 32.4.
 
 ##### Open boarding
 
@@ -5287,6 +5290,152 @@ The player can set high-level preferences such as:
 The system must show the resulting expected transfer quality and any fleet/capacity consequences.
 
 Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
+
+#### Protected passenger itineraries and automatic rebooking
+
+Passenger connection recovery is based on a **protected itinerary**, not merely on the fact that two Trips happen to connect geographically.
+
+A protected itinerary exists when the passenger is sold one journey containing multiple legs under a through-ticket / connection relationship that the selling operator is willing and able to protect.
+
+Example:
+
+> Plzeň → Praha on Trip A  
+> Praha → Brno on Trip B  
+> sold as one protected itinerary
+
+The itinerary records:
+
+- planned legs/Trips;
+- transfer station;
+- planned transfer time;
+- minimum valid connection time;
+- passenger class/capacity requirement;
+- operator(s) responsible for each leg;
+- through-ticket/rebooking rights;
+- applicable compensation/recovery policy.
+
+The system must not sell a protected itinerary whose planned connection is already below the required minimum transfer time.
+
+Two independently purchased tickets do **not** automatically create a protected connection unless the relevant tariff/partnership policy explicitly says they do.
+
+##### Connection hold decision
+
+When an incoming Trip is delayed, the dispatcher can evaluate whether the connecting Trip should wait.
+
+The decision can consider:
+
+- number of protected connecting passengers;
+- expected arrival delay;
+- maximum hold policy;
+- whether the outgoing Trip remains inside its rail/station slot tolerance;
+- downstream connections;
+- other reserved passengers already onboard/expected;
+- crew/fleet implications;
+- service importance/contract obligations;
+- available later alternatives.
+
+The player sets high-level hold policies at Line/Service Pattern/connection level. Routine decisions are automatic and can later be delegated to an operations manager.
+
+A connection should not be held indefinitely merely because protected passengers exist.
+
+Example:
+
+> 18 protected passengers arriving 6 min late  
+> outgoing Trip can wait 7 min without losing slot protection  
+> → hold connection
+
+versus:
+
+> incoming Trip 28 min late  
+> outgoing Trip would lose its slot and break several downstream connections  
+> → depart and trigger rebooking
+
+##### Automatic rebooking
+
+If a protected connection is missed, affected passengers are **automatically rebooked without player intervention** onto the earliest reasonable itinerary that satisfies their passenger-capacity requirements.
+
+The recovery search can use:
+
+1. a later Trip on the same Line;
+2. another suitable Line/Pattern of the player's company;
+3. a partner operator where a through-ticket/rebooking agreement exists;
+4. another authorized recovery option defined by the passenger policy.
+
+Rebooking is a capacity operation, not teleportation.
+
+The passenger group remains physically at the transfer location until the replacement Trip actually departs.
+
+The system must reserve real compatible capacity on the replacement itinerary.
+
+##### Capacity priority during recovery
+
+Passengers displaced by a carrier-caused missed protected connection become **recovery passengers**.
+
+They receive high priority for currently uncommitted compatible capacity, but they do **not** silently displace passengers who already hold valid confirmed reservations on the replacement Trip.
+
+If the next Trip is full, the recovery system can:
+
+- use the next later compatible Trip;
+- reroute through another connection;
+- use a higher class as a free operational upgrade where capacity exists;
+- offer a lower class only with appropriate refund/compensation and where the service policy permits;
+- add an extra/ad-hoc passenger movement where operationally justified;
+- use a partner operator under an applicable agreement.
+
+A passenger whose ticket guaranteed seated/berth capacity is not automatically converted to standing travel merely to solve the operator's disruption.
+
+##### Responsibility for a missed connection
+
+The system tracks why the connection failed.
+
+Typical responsibility categories are:
+
+- **player/operator-caused** — delay/cancellation on the player's own leg or another responsibility controlled by the player;
+- **partner-caused** — a partner leg failed under a through-ticket agreement;
+- **infrastructure/external disruption** — qualifying infrastructure/weather/regulatory event;
+- **passenger-caused** — passenger arrived too late outside the protected journey process;
+- **unprotected separate tickets** — no guaranteed connection existed.
+
+If the player/operator is responsible, rebooking is provided without charging the passenger another fare and any applicable delay compensation/service cost belongs to the operator.
+
+If a partner is responsible, the passenger-facing recovery can still be seamless where the partnership provides it; commercial settlement/compensation between operators is handled separately.
+
+Infrastructure-caused disruption can still require the operator to re-accommodate passengers even if the operator may later receive infrastructure-side compensation.
+
+Passenger-caused or unprotected missed connections follow the fare/ticket rules and do not automatically create free protected recovery.
+
+##### Compensation
+
+Passenger compensation should remain understandable rather than become a legal-claims simulator.
+
+Tariff, public-service contract or jurisdiction rules can define simple delay bands such as:
+
+- no compensation;
+- partial fare refund/credit;
+- larger refund for severe delay/cancellation;
+- additional recovery support for major disruption where applicable.
+
+The UI should show expected compensation exposure for a major disruption and aggregate routine cases automatically.
+
+Compensation/rebooking cost is distinct from reputation/reliability impact.
+
+##### Historical technology and passenger handling
+
+The **gameplay decision/rebooking process is automatic** so the player does not manually rebook individual passengers.
+
+However, the passenger-facing process reflects available technology.
+
+In earlier eras, re-accommodation may require passengers to use:
+
+- station ticket office;
+- branch sales office;
+- conductor/onboard staff.
+
+This can consume ticketing/service capacity and take time.
+
+Later centralized reservation, telephone and digital systems make rebooking faster and more seamless.
+
+Technology therefore changes the efficiency/customer experience of recovery without requiring the player to click through individual cases.
 
 ### 32.5 Line-level stop service modes
 
