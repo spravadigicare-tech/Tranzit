@@ -761,13 +761,25 @@ The player can build canals and modify waterways, subject to cost, technology an
 
 ## 14. Rail operations and rolling stock
 
-### 14.1 Physical train composition
+### 14.1 Physical train composition and shunting
 
 Every locomotive and wagon is an individual asset.
 
 Trains are physically assembled and disassembled on real track.
 
 A consist cannot be changed through a menu without the required physical movements.
+
+Moving wagons between sidings, platforms, loading tracks, storage tracks and assembled consists requires real **shunting movements**.
+
+Shunting can be performed by:
+
+- a dedicated shunting locomotive/vehicle,
+- a normal line locomotive temporarily taken away from line work,
+- period-appropriate simpler methods in very early/small facilities where plausible.
+
+Dedicated shunters are physical fleet assets with their own location, fuel/energy use, maintenance state and parking requirement.
+
+The player does not need to micromanage every coupling action by default. A yard/dispatcher can generate and execute the necessary shunting plan automatically, but the locomotives, wagons, tracks and movements must still physically exist.
 
 ### 14.2 Direction and turning
 
@@ -974,6 +986,37 @@ When maintenance becomes due, the asset must physically travel to a suitable mai
 Parking and workshop capacity are real. If a facility is full, additional assets cannot be hidden inside it.
 
 Dispatch automation must not double-book assets, exceed physical parking/workshop capacity or silently consume capacity reserved for contracts. If a timetable cannot be covered, the planner must explain the concrete shortage.
+
+### 17.2 Shunting capability
+
+Any rail depot, yard or freight/passenger facility that regularly assembles, disassembles or rearranges consists needs sufficient **shunting capability**.
+
+A larger active operating depot should normally have at least one dedicated shunting locomotive/vehicle available. Larger yards may need several, and shunting capacity can become a real bottleneck.
+
+Very small or early facilities may operate without a dedicated shunter by using a line locomotive or historically appropriate simpler methods. This is allowed, but it consumes line-locomotive time and reduces operational efficiency.
+
+Shunting workload is driven by real activity such as:
+
+- attaching/detaching passenger or freight wagons,
+- moving wagons to loading/unloading tracks,
+- transferring vehicles to storage tracks,
+- moving locomotives to fuel/water/service facilities,
+- re-forming consists for different Trips,
+- moving vehicles in/out of workshops.
+
+The UI should expose a clear yard/depot capacity indicator such as expected shunting workload versus available shunting capacity, rather than forcing the player to schedule each movement manually.
+
+If shunting capacity is insufficient:
+
+- consist preparation takes longer,
+- departures can be delayed,
+- loading tracks/sidings stay occupied longer,
+- line locomotives may be borrowed for shunting if the player allows it,
+- the planner should identify shunting as the actual bottleneck.
+
+Shunting capability evolves historically. Later technologies can reduce labour/time requirements and introduce more efficient dedicated shunters or yard equipment, but physical movement is never replaced by teleportation.
+
+Dedicated shunters are usually assigned to a facility/yard rather than to a passenger or freight Line. They still need parking and maintenance facilities under the same physical rules as other vehicles.
 
 ## 18. Energy and operating supplies
 
