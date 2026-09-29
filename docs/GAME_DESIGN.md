@@ -60,9 +60,13 @@ The world outside the active territory exists only as a lightweight macro layer 
 
 Entering a country requires real expansion rather than a simple unlock button:
 
-- appropriate national licence/concession,
-- a local branch or acquisition,
+- appropriate national/regional market-entry right or concession,
+- a local branch or acquisition where required,
 - a physical connection or credible access route.
+
+The player's **selected starting region is the exception**: basic legal permission for the newly founded company to conduct business in that starting region is granted as part of new-game setup. The player does not spend the opening minutes waiting for a generic "company may exist here" permit.
+
+This starting-region permission is only a basic business/market-entry right. It does **not** include mode-specific operating licences such as rail freight, passenger road transport or hazardous-goods authority.
 
 A national agreement initially grants access to roughly 1–3 regions depending on price, reputation and negotiated conditions. Further regions must be acquired individually.
 
@@ -379,7 +383,7 @@ There are no predefined company classes/archetypes such as Road, Rail, Shipping 
 After choosing year, region and founding-loan tier, the player decides how to spend the available capital. The **first branch/office is one of the required first expenditures**, after which the player can build out the chosen operation. Depending on the selected date, region and legal framework, spending can include:
 
 - construction/setup of the first regional branch/office,
-- required transport/business licences or concessions,
+- chosen activity licences/concessions (the starting-region basic business right itself is already included),
 - first vehicles/rolling stock,
 - leased or owned infrastructure access,
 - depot/parking/maintenance capacity,
@@ -524,6 +528,145 @@ Manual overrides at a lower level take precedence over higher-level automation.
 Managers have skills and salaries and may provide bonuses in areas such as pricing, reliability, staffing, contract handling or automation.
 
 Management is optional gameplay: HR and routine hiring can increasingly be automated.
+
+### 7.5 Licences, concessions and operating permissions
+
+Licensing is layered so regulation creates meaningful business constraints without turning company startup into an administration simulator.
+
+The game distinguishes three concepts:
+
+1. **Basic company / market-entry right** — permission for the company to exist and conduct business in a jurisdiction/region.
+2. **Activity licence** — permission to perform a specific regulated transport activity.
+3. **Specific operational permit/approval** — narrower approval tied to a cargo, vehicle, route, facility or special operation.
+
+#### Starting-region rule
+
+At new-game creation, the selected starting region includes the player's basic company/market-entry right.
+
+This right is automatic and has no waiting period. The player can therefore:
+
+- take the founding loan;
+- buy/lease land;
+- build the first branch;
+- inspect opportunities;
+- buy vehicles and arrange facilities.
+
+The company still cannot legally operate a regulated transport activity until the relevant **activity licence** has been obtained.
+
+The start remains transport-mode neutral because no road/rail/water/passenger/cargo specialism is granted automatically.
+
+#### Activity licences
+
+Activity licences are acquired only when the player chooses to enter that line of business.
+
+Possible categories, depending on era/jurisdiction, include:
+
+- road freight operator;
+- road passenger operator;
+- rail freight operator;
+- rail passenger operator;
+- inland water/shipping operator;
+- urban passenger operator where a general operator licence is required;
+- infrastructure operation where relevant;
+- hazardous/special cargo authority;
+- other historically relevant regulated activities.
+
+These are functional categories, not a promise that every country/year uses exactly the same modern legal labels.
+
+The jurisdiction and historical era can change:
+
+- which licences exist;
+- which authority issues them;
+- fee level;
+- processing time;
+- required capital/insurance;
+- responsible-manager or professional-competence requirement;
+- technical/facility requirements;
+- whether access is open, capped or concession-based.
+
+Avoid redundant paperwork. A routine licence whose requirements are already met should be a simple application with clear cost/time, not a mini-game.
+
+#### Requirements and application
+
+A licence can require some combination of:
+
+- application/issue fee;
+- minimum capital or financial standing;
+- insurance;
+- responsible qualified manager/specialist;
+- appropriate branch/local presence;
+- proof of technical/maintenance capability;
+- safety/operating plan;
+- customer/public tender award or concession where historically appropriate.
+
+The player does not manually fill bureaucratic forms.
+
+The licence UI shows:
+
+- what the licence enables;
+- jurisdiction/regions covered;
+- cost;
+- expected processing time;
+- current requirements and which are already satisfied;
+- expiry/renewal rules if any;
+- consequences of losing/suspending it.
+
+If a requirement changes materially while the application is pending, the reason must be shown.
+
+#### Expansion to another region/country
+
+Entering another country/region uses the market-entry framework in Section 2.4 in addition to activity licensing.
+
+A company that already holds a Rail Freight activity licence at home may still need:
+
+- recognition/local equivalent in the new jurisdiction;
+- a national concession/market-entry agreement;
+- local branch/presence where required;
+- route/infrastructure access.
+
+Expansion rights and activity licences must not be collapsed into one opaque unlock.
+
+The UI should distinguish clearly:
+
+- **You may operate this activity, but not in this region yet**;
+- **You may do business in this region, but lack the required activity licence**;
+- **You have both, but still lack physical infrastructure access**.
+
+Licences never create vehicles, depots, station access, slots or service endpoints.
+
+#### Contract Planner integration
+
+The Contract Planner is the main place where a missing licence becomes visible in context.
+
+Example:
+
+> **Missing: Rail Freight Operator licence**  
+> Cost: 18,000  
+> Expected processing: 6 game days  
+> Requirement: qualified rail operations manager  
+> Status: manager missing  
+> **Apply / View requirements**
+
+The planner must include licence processing time in the readiness/critical-path calculation.
+
+If bidding rules allow future readiness, the player may submit a bid before the licence is issued only when obtaining it by the contract start is credible. Winning the contract does not automatically grant the licence.
+
+AI operators follow the same legal requirements and processing/capacity rules.
+
+#### Special permits
+
+Specific permits/approvals handle narrow cases that should not become permanent new company-wide licences.
+
+Examples can include:
+
+- oversized/special road movement;
+- dangerous-goods movement;
+- exceptional route approval;
+- vehicle approval for a jurisdiction;
+- construction/demolition permit;
+- temporary event operation.
+
+Where another provider is responsible for the operation, such as an external heavy-haul company, the provider can handle the relevant permit under its service agreement. The player should not duplicate the same paperwork.
 
 ## 8. Workforce
 
