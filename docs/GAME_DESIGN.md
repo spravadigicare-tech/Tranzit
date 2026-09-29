@@ -6587,7 +6587,7 @@ It chooses feasible Trip sequences using:
 - physical repositioning time;
 - fueling/charging requirements;
 - maintenance state and planned maintenance;
-- cleaning/catering/service tasks;
+- configured turnaround service-profile tasks;
 - depot/parking availability;
 - preparation horizon;
 - fleet-reserve policy;
@@ -6632,8 +6632,8 @@ Relevant turnaround tasks can include:
 - cargo unloading/loading where applicable;
 - crew change;
 - basic inspection/readiness checks;
-- cleaning;
-- catering/water/service replenishment;
+- mandatory/basic cleaning where required;
+- optional turnaround service-profile tasks such as cleaning, catering or water servicing;
 - fueling/charging;
 - vehicle direction change;
 - repositioning within the station/terminal/depot;
@@ -6693,6 +6693,64 @@ Examples include:
 - change locomotive at a station with suitable facilities;
 - reposition to a depot/yard;
 - choose a different terminal.
+
+##### Turnaround service profile
+
+Turnaround can include **optional passenger-service tasks** in addition to the hard operational minimum.
+
+These tasks consume real time, staff/facility capacity and operating cost, but improve the quality of the next Trip.
+
+To avoid micromanagement, the player normally selects a **turnaround service profile** on the Line/Service Pattern, for example:
+
+- **Minimal** — only mandatory operational tasks; fastest turnaround, lowest service quality.
+- **Standard** — routine cleaning/service appropriate to the vehicle and journey.
+- **Premium** — more thorough cleaning and passenger-service preparation; longer and more expensive turnaround.
+- **Custom** — player selects the supported optional tasks individually.
+
+Typical optional tasks can include:
+
+- quick interior cleaning;
+- full interior cleaning;
+- toilet/water servicing;
+- catering replenishment;
+- sleeper/bedding preparation where relevant;
+- other period-appropriate passenger-service preparation.
+
+The exact available tasks depend on vehicle type, era and facility capability.
+
+A bus stop with no service facilities cannot perform a full interior/catering turnaround merely because the Pattern requests it.
+
+Likewise, a station can support these tasks only if the required service infrastructure and staff capacity are available.
+
+The planner shows the impact before the timetable is confirmed.
+
+Example:
+
+> **Brno turnaround**  
+> Hard operational minimum: 11 min  
+> Standard cleaning: +5 min  
+> Water/toilet service: +3 min, partly parallel  
+> Planned service turnaround minimum: 16 min  
+> Passenger comfort/service effect: improved
+
+Optional tasks can overlap when physically realistic.
+
+The service profile affects **actual passenger experience**, not a generic arbitrary bonus.
+
+For example, skipping cleaning repeatedly can reduce perceived cleanliness/comfort and eventually attractiveness/reputation for the affected service, while regular or premium servicing helps maintain the expected quality level.
+
+A premium product can therefore justify longer terminal time and higher operating cost.
+
+The player can also configure which optional tasks may be skipped automatically during disruption.
+
+Example:
+
+> Standard cleaning — may be skipped if incoming delay > 8 min  
+> Catering replenishment — do not skip on Premium Pattern
+
+Mandatory safety checks, legally required servicing and any contractually required passenger-service feature cannot be skipped through this setting.
+
+If the dispatcher skips an optional service task to recover delay, the next Trip departs sooner but receives the corresponding service-quality consequence.
 
 ##### Planned turnaround buffer
 
