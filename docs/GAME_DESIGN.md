@@ -539,13 +539,45 @@ Contracts may also contain pre-agreed adjustment clauses, such as fuel-price ind
 
 Commercial managers may later handle routine renegotiations within player-defined limits, while material strategic changes can require player approval.
 
-### 11.7 Cargo batches
+### 11.7 Customer-driven contract expansion
+
+A customer's real economic growth can increase transport demand during an existing relationship.
+
+When a factory, mine, city or other customer expands production/consumption beyond the original contracted volume, it may first offer the incumbent carrier an extension or amendment to the existing contract rather than automatically creating an unrelated tender.
+
+The offer must show:
+
+- current contracted volume,
+- new requested volume,
+- whether the increase is permanent, seasonal or temporary,
+- additional reserved capacity required,
+- estimated additional wagons/vehicles/traction,
+- terminal/storage and infrastructure impact,
+- revised price/revenue,
+- any change in SLA, penalties or exclusivity.
+
+A strong relationship can give the incumbent carrier first negotiation rights or a limited response window, but never guarantees that the extra business is awarded automatically.
+
+The player can:
+
+- accept the expansion,
+- accept only part of it,
+- negotiate revised commercial terms,
+- decline it.
+
+If the incumbent declines or cannot credibly provide the additional capacity, the customer can tender the incremental volume to competitors while keeping the original contract in place where practical.
+
+This creates natural growth paths: a small early contract can expand into a strategically important account as the customer's business grows.
+
+Capacity feasibility uses the same transparent physical accounting as reserved-capacity commitments; the game must warn about concrete fleet, depot, terminal or infrastructure bottlenecks before acceptance.
+
+### 11.8 Cargo batches
 
 Cargo is simulated in batches, not per kilogram/item.
 
 A batch tracks type, quantity, origin, destination, deadline/quality constraints and contract.
 
-### 11.8 Multi-leg logistics
+### 11.9 Multi-leg logistics
 
 One customer contract can contain multiple transport legs and modes.
 
@@ -555,7 +587,7 @@ Example:
 
 farm → wagon → local terminal → warehouse → regional train → hub → long-distance train → local truck → customer.
 
-### 11.9 Perishability and special requirements
+### 11.10 Perishability and special requirements
 
 Cargo can have properties such as:
 
