@@ -1260,7 +1260,30 @@ The player can also use demand-driven departure policies, e.g.:
 
 Over time, demand growth supports more frequent and higher-capacity scheduled services.
 
-### 32.1 Service calendars
+### 32.1 Service hierarchy: Line → Service Pattern → Trip
+
+All scheduled transport uses a three-level hierarchy:
+
+1. **Line** — the commercial/operational corridor or service family the player manages as one unit.
+2. **Service Pattern** — a specific operating variant of that line: route, stop pattern, calendar, vehicle requirements and service rules.
+3. **Trip** — one concrete physical movement on a specific date/time using real assigned vehicles/consists.
+
+Example:
+
+- Line: R1 Praha–Brno
+  - Pattern: Local — serves all selected intermediate stops
+  - Pattern: Express — serves only major stops
+  - Pattern: Short-turn — terminates at an intermediate point
+  - Pattern: Night/seasonal — different calendar and consist rules
+- Trips: the actual 06:00, 08:00, 10:00 departures generated from those patterns.
+
+Lines aggregate business and operating performance across their patterns. Patterns remain individually inspectable for profitability, occupancy, reliability, fleet demand and timetable quality.
+
+The same hierarchy applies to passenger and freight services. Freight patterns can differ by cargo focus, stop logic or demand-driven departure rules.
+
+A Service Pattern should still meaningfully belong to its parent Line. If a proposed variant shares too little route, purpose or operating identity with the parent, the UI should recommend creating a separate Line instead of allowing one line to become an arbitrary container for an entire network.
+
+### 32.2 Service calendars
 
 A line can contain multiple repeating service patterns instead of one permanent timetable.
 
@@ -1282,9 +1305,9 @@ Service calendars must respect actual physical fleet availability. Before activa
 
 Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
 
-### 32.2 Feeder and connection relationships
+### 32.3 Feeder and connection relationships
 
-Connections should normally be planned at **line/service-pattern level**, not by manually linking every individual trip.
+Connections should normally be planned at **Line or Service Pattern level**, not by manually linking every individual Trip.
 
 The player can declare that one line or service pattern:
 
@@ -1314,9 +1337,9 @@ The system must show the resulting expected transfer quality and any fleet/capac
 
 Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
 
-### 32.3 Line-level stop service modes
+### 32.4 Line-level stop service modes
 
-Stop behaviour is configured **on the line or service pattern**, not on the station itself.
+Stop behaviour is configured on the **Service Pattern** (with optional defaults inherited from its Line), not on the station itself.
 
 A station/terminal only exposes its physical capabilities and access rules. Each line that uses it independently defines how that line should serve the location.
 
@@ -1327,7 +1350,7 @@ This allows the same station to be:
 - skipped by an express service,
 - pass-through only for a freight service.
 
-For each stop entry in a line/service pattern, supported modes include:
+For each stop entry in a Service Pattern, supported modes include:
 
 - **Mandatory:** this line always calls there when the trip runs.
 - **Conditional:** this line calls only when a defined condition is met.
