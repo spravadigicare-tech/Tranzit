@@ -792,7 +792,7 @@ Possible capacity products:
 - standard,
 - flexible.
 
-The same high-level capacity philosophy can be used for access to constrained passenger stations: operators reserve/contract station-call capacity while the station dynamically assigns the actual compatible platform.
+The same high-level capacity philosophy is used for constrained passenger stations: operators buy/reserve station-call slots against finite station capacity, then the station dynamically assigns the actual compatible platform for each Trip. Station-slot capacity and line-section capacity remain separate constraints and both must be available.
 
 Real train movement still uses local section/block reservations. A train reserves only near-future sections, not its entire route.
 
@@ -1449,7 +1449,7 @@ Transfer quality depends on actual walking distance, access routes, waiting envi
 
 A transfer is therefore better when modes are physically integrated than when passengers must cross a large area or street network.
 
-### 20.3 Station capacity and ownership
+### 20.3 Station capacity, ownership and access charges
 
 Station capacity is distinct from line/track-section capacity.
 
@@ -1465,19 +1465,49 @@ A station may be constrained by:
 
 The UI should identify the actual station bottleneck rather than expose one generic capacity percentage.
 
-Station owners can charge other operators for relevant use, such as:
+Station owners can charge other operators for relevant use.
 
-- platform access,
-- station calls,
+Station access normally has **two commercial components**:
+
+1. **Capacity reservation / station-slot fee** — payment for the right to schedule a defined number of station calls in specified time windows.
+2. **Actual usage fee** — charged when the Trip really uses the station and may depend on service type, train length, dwell time and used station services.
+
+Additional charges can apply for:
+
 - terminal services,
 - storage/handling,
-- interchange facilities.
+- interchange facilities,
+- shunting/turnaround services,
+- exceptional long dwell or overnight occupation where relevant.
 
-### 20.4 Dynamic platform allocation
+A station-call slot is a right to station capacity, **not ownership of a numbered platform**.
+
+### 20.4 Station slots and dynamic platform allocation
 
 Passenger platforms are normally allocated **dynamically to Trips according to station capacity and compatibility**, rather than permanently belonging to one operator.
 
 A station can therefore serve several operators at the same time as long as its real infrastructure can accommodate their services.
+
+Before a regular Service Pattern is activated at a constrained station, the operator normally needs enough **station-call slots** for the planned calls.
+
+Slots are sold/reserved against the station's calculated usable capacity by time window, for example:
+
+- peak-hour calls,
+- off-peak calls,
+- daily/weekly bundles,
+- seasonal service windows.
+
+The station owner cannot sell unlimited slots. The capacity planner maintains:
+
+- safe/usable station-call capacity,
+- already committed guaranteed capacity,
+- standard/flexible commitments,
+- operational reserve for disruption where configured,
+- remaining sellable capacity.
+
+Peak capacity can therefore become scarce and more expensive.
+
+A Service Pattern with four guaranteed morning calls consumes four relevant capacity rights from that time window even though the actual numbered platform is assigned dynamically later.
 
 The station allocator considers factors such as:
 
@@ -1492,15 +1522,31 @@ The station allocator considers factors such as:
 - throat/junction conflicts,
 - contractual access priority.
 
-Operators primarily contract for **station-call/platform capacity**, not necessarily for one permanently numbered platform.
+Operators primarily contract for **station-call capacity**, not necessarily for one permanently numbered platform.
 
-Access agreements can provide different service levels, for example:
+Access agreements can provide different slot products, for example:
 
-- **guaranteed station capacity** — the owner must provide a compatible platform within the agreed operating window;
-- **standard access** — platform assignment is dynamic and subject to normal station utilization;
-- **flexible access** — lower-cost calls that can be retimed or refused when the station is heavily constrained.
+- **guaranteed slot** — the owner must provide a compatible platform within the agreed operating window; highest reservation price;
+- **standard slot** — normal scheduled access with less contractual protection during major disruption;
+- **flexible/ad-hoc slot** — cheapest; used only when spare capacity exists and can be retimed or rejected when the station is constrained.
+
+Unused guaranteed/standard slots still have a reservation cost because the owner has withheld that capacity from other operators.
+
+An operator without a pre-purchased slot may request an ad-hoc call. It is accepted only if real spare station capacity exists, usually at a higher per-call price or with lower priority.
 
 A dedicated platform can still exist as an exceptional contractual or infrastructure rule where operationally justified, but it is not the default model.
+
+The access-planning UI should show, by relevant time window:
+
+- total usable station capacity,
+- already reserved calls,
+- remaining sellable slots,
+- player's currently owned/reserved slots,
+- expected per-call usage charges,
+- expected peak congestion,
+- the concrete constraint that limits further sales if capacity is exhausted.
+
+This prevents hidden oversubscription: if the station is effectively full in the 07:00–08:00 window, neither the player nor an AI operator can buy another guaranteed peak slot unless capacity is expanded or another commitment is released.
 
 The allocator should assign a concrete compatible platform when planning/dispatching each Trip. If disruption makes the planned platform unavailable, it can automatically reassign the train to another valid platform.
 
