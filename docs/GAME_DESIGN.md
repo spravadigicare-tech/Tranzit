@@ -4627,6 +4627,7 @@ A station may be constrained by:
 - passenger-flow capacity,
 - baggage/cargo handling where relevant,
 - shunting/turnaround requirements,
+- turnaround-service capacity such as fueling, cleaning and crew-change support where installed,
 - interchange capacity.
 
 The UI should identify the actual station bottleneck rather than expose one generic capacity percentage.
@@ -6616,6 +6617,148 @@ The planner must include:
 - any required access/slots for repositioning movements.
 
 For rail, a consist cannot be magically reformed between Trips. If the next Trip needs a different consist, the required shunting and vehicle movements must fit into the duty.
+
+##### Minimum turnaround time
+
+Every transition from one Trip to the next has a calculated **minimum turnaround time**.
+
+The minimum is the shortest physically and operationally feasible interval before the same vehicle/consist can begin the next Trip.
+
+It is derived from the actual required tasks rather than one fixed value per mode.
+
+Relevant turnaround tasks can include:
+
+- passenger alighting/boarding;
+- cargo unloading/loading where applicable;
+- crew change;
+- basic inspection/readiness checks;
+- cleaning;
+- catering/water/service replenishment;
+- fueling/charging;
+- vehicle direction change;
+- repositioning within the station/terminal/depot;
+- locomotive run-around;
+- locomotive exchange;
+- coupling/uncoupling vehicles;
+- adding/removing coaches or wagons;
+- other required shunting;
+- terminal/platform clearance and approach/departure movements.
+
+Only tasks actually required for that transition are included.
+
+Example road turnaround:
+
+> arrival 10:42  
+> passenger exchange: 4 min  
+> driver change: 2 min, parallel with boarding  
+> basic turnaround buffer: 2 min  
+> minimum next departure: **10:48**
+
+Example rail turnaround:
+
+> arrival 14:10  
+> passenger unloading/loading: 8 min  
+> locomotive run-around: 14 min  
+> brake/readiness check: 5 min after coupling  
+> minimum next departure: **14:29**
+
+Tasks can overlap where physically realistic. The system should not simply add every duration serially when cleaning, passenger boarding and crew change can occur in parallel.
+
+Conversely, dependent operations remain sequential where necessary. A brake check cannot complete before a replacement locomotive has coupled.
+
+##### Infrastructure affects turnaround
+
+The same vehicle can have different minimum turnaround times at different terminals.
+
+The calculation considers available physical infrastructure such as:
+
+- platform/berth/stand capacity;
+- run-around track;
+- crossovers/turning facilities;
+- shunting tracks;
+- fueling/charging points;
+- cleaning/service facilities;
+- passenger-flow/boarding capacity;
+- terminal road geometry;
+- staff/service capacity.
+
+A terminal without a run-around facility cannot pretend to perform a locomotive run-around.
+
+If the required operation is impossible at that location, the planner must propose another operating method, vehicle configuration or terminal rather than assigning an arbitrary time penalty.
+
+Examples include:
+
+- use a bidirectional trainset;
+- use locomotives at both ends;
+- change locomotive at a station with suitable facilities;
+- reposition to a depot/yard;
+- choose a different terminal.
+
+##### Planned turnaround buffer
+
+The player may schedule **more** than the physical minimum to improve resilience.
+
+The timetable therefore distinguishes:
+
+- **minimum turnaround** — hard physical/operational requirement;
+- **planned turnaround** — actual interval allowed by the timetable;
+- **turnaround buffer** — planned minus minimum.
+
+Example:
+
+> Minimum turnaround: 11 min  
+> Planned turnaround: 18 min  
+> Recovery buffer: 7 min
+
+A player cannot intentionally publish a normal duty with planned turnaround below the known minimum.
+
+Longer buffers consume fleet and terminal capacity but can absorb incoming delay and reduce knock-on disruption.
+
+##### Delay and turnaround recovery
+
+If an incoming Trip is late, part or all of the planned turnaround buffer can be consumed.
+
+Example:
+
+> Planned turnaround: 18 min  
+> Minimum turnaround: 11 min  
+> Incoming delay: 5 min  
+> Next Trip can still depart on time using 5 of 7 min buffer
+
+If incoming delay exceeds the buffer, the next Trip is at risk.
+
+The dispatcher can then use applicable recovery actions such as:
+
+- use a substitute/reserve vehicle;
+- omit non-essential turnaround tasks only where policy, safety and service rules permit;
+- perform compatible tasks in parallel;
+- delay the next Trip;
+- rebuild the remaining vehicle duty;
+- cancel the affected Trip.
+
+Safety/legal checks and mandatory physical operations can never be skipped merely to preserve punctuality.
+
+##### Turnaround in timetable and fleet planning
+
+Turnaround is included when:
+
+- building vehicle duties;
+- calculating fleet requirement;
+- validating timetable feasibility;
+- reserving terminal/station occupancy;
+- planning crew changes;
+- planning fueling/charging;
+- estimating disruption propagation.
+
+The Line Planner should expose the main reason when turnaround is driving fleet requirement or preventing a tighter timetable.
+
+Example:
+
+> Requested 30-minute frequency requires 7 trainsets  
+> Current turnaround at Brno: 24 min  
+> Reducing turnaround to 14 min would require a bidirectional consist or improved terminal operation
+
+This lets infrastructure and rolling-stock design create meaningful operational trade-offs without requiring the player to micromanage every individual turnaround action.
 
 ##### Automatic fleet requirement
 
