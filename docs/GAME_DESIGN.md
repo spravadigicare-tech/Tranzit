@@ -1806,6 +1806,123 @@ Any contractual SLA breach, late-delivery penalty or relationship impact remains
 
 The player can set a **maximum hold policy** at Line/Service Pattern or contract-allocation level, with manager automation allowed inside that limit. The UI should show the likely consequences of waiting versus departing.
 
+##### Freight loading priority and capacity allocation
+
+A freight Trip does not simply load cargo in arbitrary arrival order or by one hidden profitability score.
+
+Loading is determined in two stages:
+
+1. **Physical compatibility / usable capacity**
+2. **Commercial priority within that compatible capacity**
+
+###### Physical compatibility first
+
+Before priority is considered, the system determines which cargo can physically use which part of the consist/capacity.
+
+Relevant constraints can include:
+
+- wagon/vehicle cargo type;
+- weight capacity;
+- volume capacity;
+- pallet/container/vehicle positions where relevant;
+- axle/load limits;
+- refrigeration/temperature capability;
+- dangerous-goods compatibility/separation;
+- loading/unloading equipment;
+- destination/route compatibility;
+- train-length and total-train-weight limits;
+- wagon placement or handling constraints where operationally material.
+
+The game must therefore not present a freight Trip as having "100 t free" if the only available space is in wagons incompatible with the waiting cargo.
+
+The UI should show **compatible free capacity** for the selected cargo/contract, not only total nominal tonnes.
+
+###### Commercial priority tiers
+
+Within physically compatible capacity, the default loading priority is:
+
+1. **Protected / guaranteed contract commitments**
+2. **Firm recurring or framework contract cargo without a hard guarantee**
+3. **Confirmed one-off transport jobs**
+4. **Spot / opportunistic cargo**
+
+Guaranteed capacity remains protected until its contractual readiness cutoff under the rules above.
+
+After a valid **customer-side** no-show/cutoff release, that unused capacity becomes available to lower-priority cargo for that Trip.
+
+If the cargo missed the connection because of **carrier-side responsibility**, its commercial obligation is not downgraded to spot cargo. It remains a recovery obligation under the rules above.
+
+###### Recovery cargo and guaranteed commitments
+
+Carrier-fault recovery cargo from a missed guaranteed connection remains a **protected contractual obligation**.
+
+However, it cannot silently displace another customer's already valid guaranteed commitment on the next Trip.
+
+If two or more protected commitments cannot all fit because the carrier created an overload, the dispatcher must expose the conflict and create a recovery plan, such as:
+
+- add compatible capacity/vehicles to the Trip where feasible;
+- add an overflow/ad-hoc Trip;
+- use another compatible scheduled Trip;
+- hire an external carrier;
+- accept a visible breach/late delivery for the affected contract.
+
+The system must not solve a carrier-created capacity deficit by secretly breaking a different guaranteed contract.
+
+###### Priority inside the same tier
+
+When several compatible CargoBatches share the same commercial priority tier, the dispatcher uses transparent urgency rather than arbitrary first-come randomness.
+
+The primary ordering should consider:
+
+1. **last feasible departure / SLA urgency** — cargo that must use this Trip to meet its deadline goes before cargo that can safely use a later Trip;
+2. **perishability / quality risk** where the contracts otherwise have similar urgency;
+3. **earlier confirmed booking/readiness** as a final deterministic tie-breaker.
+
+The UI should be able to explain why one batch received capacity ahead of another.
+
+Example:
+
+> Batch A deadline: 04:00 tomorrow — next Trip would be too late  
+> Batch B deadline: 18:00 tomorrow — next Trip remains feasible  
+> → Batch A receives the remaining compatible capacity.
+
+A higher-margin spot shipment does not jump ahead of a lower-margin guaranteed contract merely because it is more profitable.
+
+###### Loading plan and consist use
+
+The system generates a physical loading/consist plan from the selected CargoBatches.
+
+For rail this can include:
+
+- which wagons carry which CargoBatches;
+- required wagon type;
+- destination grouping where useful;
+- dangerous-goods separation;
+- unloading order / wagon positioning where relevant;
+- resulting train weight and length.
+
+The player does not need to assign every pallet or tonne manually by default.
+
+Yard/terminal automation can build the plan, but the wagons, loading tracks, handling equipment and shunting movements must physically exist.
+
+Advanced/manual overrides can pin a contract/cargo family to specific capacity where the player wants tighter control.
+
+###### Unused and released capacity
+
+Capacity that remains unused after all protected/confirmed cargo is allocated can be offered to lower-priority cargo.
+
+For a regular freight service this allows spare capacity to earn additional revenue without weakening protected commitments.
+
+The Line/Trip UI should distinguish:
+
+- **guaranteed reserved**;
+- **firm booked**;
+- **one-off booked**;
+- **spot allocated**;
+- **still free compatible capacity**.
+
+This accounting is recalculated when cargo readiness, consist, contracts or recovery obligations change.
+
 If the existing Pattern cannot cover the requirement, the planner can propose:
 
 - larger/more vehicles;
