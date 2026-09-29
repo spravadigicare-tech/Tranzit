@@ -3157,6 +3157,25 @@ If replacement capacity is insufficient, affected passengers require re-accommod
 
 A consist change must therefore revalidate reserved passenger capacity before dispatch rather than silently overbooking the train.
 
+#### Onboard staff circulation
+
+Passenger coaches can differ in whether onboard staff can physically move through the passenger accommodation **while the train is running**.
+
+Keep this as a simple vehicle capability rather than a detailed walking simulation:
+
+- **Through-circulation available** — staff can move through the relevant coach/consist internally while running. Normal onboard ticket sale/control does not add station dwell.
+- **No through-circulation** — typical of older non-corridor compartment stock with direct exterior access to separate compartments. Staff cannot practically service every compartment internally while the train is moving.
+
+For non-through-circulation stock, onboard ticket sale/control can require additional station-stop work when passengers rely on the conductor rather than pre-purchase.
+
+The extra time is calculated in aggregate from the relevant boarding/ticketing demand and coach layout. The game does not simulate the conductor visiting each door individually.
+
+If passengers already hold valid tickets from station/branch/pre-sale channels, no artificial ticketing dwell is added merely because the coach is non-through.
+
+In a mixed consist, only the passenger capacity that onboard staff cannot reach internally is subject to this limitation.
+
+This vehicle capability can therefore make older stock operationally distinct without adding a separate ticket-inspection minigame.
+
 ## 15. Vehicle lifecycle
 
 ### 15.1 Vehicle Marketplace
@@ -5742,11 +5761,15 @@ This is especially useful for:
 
 Conductors/onboard staff are ordinary aggregated workforce under Section 8, not named individuals.
 
-Onboard ticket sale/control is intentionally **abstracted and does not consume additional dwell time**.
+Onboard ticket sale/control is intentionally **abstracted**.
 
-If a passenger boards without a previously purchased ticket and the Trip carries a conductor/onboard ticket-selling crew, the fare is charged immediately through the applicable onboard tariff/policy while the vehicle is already in service.
+Where onboard staff can physically circulate through the relevant passenger accommodation while the vehicle is running, ticket sale/control does **not** consume additional dwell time.
 
-The game does not simulate the conductor walking through individual coaches, scanning each passenger or making the train wait at a station while tickets are sold.
+If a passenger boards without a previously purchased ticket and the Trip carries a conductor/onboard ticket-selling crew, the fare is charged through the applicable onboard tariff/policy while the vehicle is already in service.
+
+Older/non-through passenger stock is the exception: if onboard staff cannot reach the relevant compartments internally while running, conductor-based ticket handling can add aggregated station dwell under the onboard-circulation rules in Section 14.5.
+
+The game does not simulate the conductor walking through individual coaches or checking each passenger separately.
 
 The Line/Service Pattern can define whether onboard sales are:
 
@@ -5838,9 +5861,9 @@ Actual dwell can depend on:
 - vehicle type and operating mode;
 - whether the stop is an ordinary intermediate call or a larger interchange.
 
-Ticket inspection and onboard ticket sales **do not add dwell time**.
+Ticket inspection and onboard ticket sales normally do **not** add dwell time when onboard staff can circulate through the passenger accommodation while the vehicle is running.
 
-If a passenger boards without a ticket and a conductor is present, fare collection is handled while the Trip is already in service rather than extending the station stop.
+With older non-through compartment stock, conductor-based ticket handling can add dwell at stops because the staff cannot service the relevant compartments internally in motion. Pre-purchased tickets avoid that additional ticketing work.
 
 Example:
 
