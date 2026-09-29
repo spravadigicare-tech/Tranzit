@@ -1698,7 +1698,44 @@ Availability is evaluated against the selected start year and region. Do not gat
 
 ## 15. Vehicle lifecycle
 
-### 15.1 Purchase and manufacturing
+### 15.1 Vehicle Marketplace
+
+Vehicle acquisition is handled through a shared **Vehicle Marketplace** rather than disconnected purchase menus.
+
+The marketplace has four primary acquisition sources:
+
+1. **Manufacturer order** — order a newly built vehicle directly from a manufacturer.
+2. **Dealer stock** — buy a brand-new vehicle that a dealer already has physically in stock.
+3. **Used market** — buy a concrete existing vehicle from another owner/seller.
+4. **Lease / rental** — obtain use of a vehicle for a defined period without buying it outright.
+
+The same underlying vehicle definitions and compatibility rules apply regardless of acquisition source.
+
+The marketplace supports filters/sorting appropriate to the selected mode and era, such as:
+
+- road / rail / urban / water vehicle type;
+- passenger / cargo role;
+- cargo compatibility;
+- traction / fuel / power system;
+- capacity;
+- power/tractive effort where relevant;
+- maximum speed;
+- dimensions / axle load / route compatibility;
+- comfort/service class;
+- purchase price;
+- lease price;
+- estimated operating cost;
+- delivery/readiness date;
+- manufacturer/model;
+- new/used/dealer/lease source;
+- physical location;
+- used-vehicle age, mileage/hours and condition.
+
+When opened from a Contract Planner, Line planner or another requirement screen, the marketplace can inherit filters such as "show compatible vehicles for this route/contract". The player can clear or modify those filters.
+
+A vehicle listing/order must make the acquisition timeline visible. **Available** never means the asset can teleport into service.
+
+### 15.2 Manufacturer orders
 
 Vehicle manufacturers are real economic firms in the world, but simulated at a calmer level than transport operators.
 
@@ -1713,31 +1750,231 @@ They have:
 
 Vehicles use fictional manufacturers/models inspired by real historical technology, not real trademarks.
 
-New vehicles are ordered and physically produced over time. Production lead times depend on factory capacity and input supply.
+A direct manufacturer order is normally the cheapest way to obtain a **new** vehicle of a current model, but it has a production lead time.
 
-Completed vehicles must physically reach the player's network.
+New vehicles are ordered and physically produced over time. Production lead times depend on:
 
-### 15.2 Used vehicle market
+- factory capacity,
+- current backlog,
+- model complexity,
+- input/material availability,
+- ordered quantity,
+- historically appropriate production technology.
+
+An order for several vehicles consumes real manufacturer capacity. Large orders can be completed/delivered in batches rather than all units appearing simultaneously.
+
+Where the model supports configurable factory options, manufacturer orders can offer more configuration flexibility than dealer-stock vehicles.
+
+The order UI should show:
+
+- unit price,
+- quantity,
+- configuration,
+- current production estimate,
+- expected first/last unit completion,
+- known backlog/material risks,
+- delivery/import method and estimated readiness at the player's receiving point.
+
+A production estimate can move when the manufacturer's real supply/capacity situation changes, but material delays should be explained rather than silently changing a date.
+
+### 15.3 Dealers and immediately available new stock
+
+Vehicle dealers/distributors are commercial entities that can purchase new vehicles from manufacturers and hold a limited number as **physical dealer stock**.
+
+Dealer stock provides a deliberate trade-off:
+
+- vehicle is already manufactured;
+- quantity is limited to the dealer's actual inventory;
+- price is higher than a normal factory order because of dealer margin/scarcity;
+- purchase can be completed immediately without waiting for manufacturing;
+- physical delivery/collection still takes real time.
+
+Example: a company that urgently needs two trucks for a new contract can buy two dealer-stock units at a premium instead of waiting for a cheaper factory order.
+
+Dealer inventory is finite. If a dealer has three compatible vehicles, the player cannot buy ten from stock.
+
+Dealer stock can include:
+
+- common/high-demand configurations of current models;
+- demonstrator/pre-registered vehicles where appropriate;
+- stock from multiple manufacturers represented by that dealer.
+
+Highly customized or unusual specifications normally require a manufacturer order rather than being guaranteed in dealer inventory.
+
+Dealer pricing can depend on:
+
+- manufacturer/list price,
+- local demand,
+- stock scarcity,
+- age of stock,
+- delivery/import cost,
+- dealer markup.
+
+Dealer stock does not spawn on demand for the player. Dealers replenish by ordering from manufacturers, so factory shortages/backlogs can later reduce dealer availability.
+
+Dealer-stock vehicles have a physical dealer location or defined import/delivery point. Purchase transfers ownership immediately, but the vehicle becomes operational only after it physically reaches a compatible receiving/operating location.
+
+Delivery can use, where appropriate:
+
+- player collection,
+- dealer-arranged delivery,
+- contracted transport,
+- player's own transport,
+- rail movement/towing for compatible rolling stock.
+
+### 15.4 Dealer maintenance and service contracts
+
+Some dealers can also operate or contract **authorized service/workshop capacity** for the vehicle types/brands they represent.
+
+The player can therefore buy a vehicle from a dealer and separately order maintenance/services from the same dealer where offered.
+
+Dealer service can include:
+
+- pre-delivery inspection/preparation;
+- warranty work;
+- scheduled routine maintenance;
+- repairs;
+- diagnostics;
+- manufacturer/dealer-approved retrofits;
+- recalls/service campaigns where relevant;
+- pickup/delivery or transport coordination where offered.
+
+Dealer maintenance is not an abstract instant repair.
+
+The dealer/service partner has real workshop capacity and workload. A vehicle must physically reach the service location, occupy workshop capacity and then physically return/reposition after service.
+
+The player can choose:
+
+- one-off dealer service;
+- recurring maintenance agreement for a vehicle/fleet group;
+- own workshop maintenance;
+- another compatible third-party workshop.
+
+Recurring dealer-maintenance agreements use the shared contract/Auto-renew rules in Section 11.12. They can specify:
+
+- covered vehicle classes/models;
+- included service level;
+- labour/routine-service pricing;
+- priority/booking terms;
+- parts responsibility;
+- pickup/delivery responsibility;
+- warranty coverage where applicable.
+
+A dealer contract does **not** guarantee infinite workshop slots. The maintenance planner must account for the dealer's actual capacity, travel downtime and existing reservations/commitments.
+
+Warranty can reduce or remove eligible repair cost, but it does not teleport the vehicle or eliminate downtime.
+
+Dealer service availability can be especially useful for a small/new company that cannot yet justify building its own workshop.
+
+### 15.5 Used vehicle market
 
 Used vehicles come from actual sellers.
+
+Each used listing refers to a concrete physical asset with relevant state such as:
+
+- age/manufacture date;
+- mileage/hours;
+- condition;
+- maintenance history/last major service where known;
+- configuration/retrofits;
+- current location;
+- seller.
 
 Listings occupy real storage/depot space for the seller.
 
 Unsold vehicles can be discounted and eventually scrapped.
 
+A used vehicle is usually available for ownership transfer without factory production time, but may need:
+
+- physical delivery/repositioning;
+- inspection;
+- repair/maintenance;
+- retrofit;
+- regulatory approval/compatibility work.
+
 Imports from inactive foreign regions enter through defined import points and are physically delivered into the active world.
 
-At new-game initialization, period-appropriate used vehicles can already exist with manufacture dates before the chosen start. Their age and condition are initialized rather than manufactured by replaying the earlier decades. Subsequent purchases and movements still obey physical continuity.
+At new-game initialization, period-appropriate used vehicles can already exist with manufacture dates before the chosen start. Their age and condition are initialized rather than manufactured by replaying earlier decades.
 
-### 15.3 Retrofit
+### 15.6 Leasing and rental
+
+Some vehicles can be obtained through leasing/rental where historically and commercially appropriate.
+
+Lease/rental provides lower upfront cash requirement in exchange for:
+
+- recurring lease payments;
+- defined term;
+- usage/condition rules;
+- return requirements;
+- possible mileage/hour limits or excess-use charges where appropriate;
+- ownership remaining with the lessor unless a purchase option is explicitly part of the agreement.
+
+A leasing provider must have a real vehicle available or a credible manufacturer-backed delivery plan. Leasing cannot create nonexistent inventory.
+
+The contract must clearly state who is responsible for:
+
+- routine maintenance;
+- heavy maintenance;
+- insurance/required cover;
+- damage outside normal wear;
+- physical delivery and return;
+- permitted modifications/retrofits.
+
+Leased vehicles are normal physical fleet assets while under the player's control: they consume parking, depot, staff, fuel/energy and infrastructure capacity and can break down.
+
+At lease end, the asset must physically reach the agreed return point unless the agreement is renewed or converted to purchase where allowed.
+
+Early lease termination can carry a transparent, proportionate contractual fee under the same general philosophy as other recurring agreements; it should not be a hidden ruinous penalty.
+
+### 15.7 Marketplace integration with Contract Planner
+
+The Contract Planner can open the Vehicle Marketplace pre-filtered to vehicles that satisfy a missing fleet requirement.
+
+For example:
+
+> Required: 5 refrigerated wagons  
+> Spare compatible fleet: 3  
+> Missing: 2  
+> **Find compatible vehicles**
+
+The result can compare:
+
+- factory order lead time/cost;
+- dealer-stock premium and immediate availability;
+- suitable used assets;
+- lease/rental alternatives.
+
+The Contract Planner must include the chosen acquisition method in startup cost and readiness calculations.
+
+A higher-priced dealer vehicle can therefore be the rational choice when factory production would miss the contract start date.
+
+### 15.8 Physical delivery and ownership transition
+
+All acquisition sources obey physical continuity.
+
+A vehicle becomes available for normal dispatch only when it has physically reached a valid operating/receiving location.
+
+Delivery/import movement:
+
+- consumes time;
+- can consume infrastructure capacity;
+- can require traction/transport;
+- can be delayed by access/logistics problems.
+
+Remote rendering may be aggregated, but the logical movement/location must remain continuous.
+
+### 15.9 Retrofit
 
 Vehicles and wagons can receive period-appropriate retrofits.
 
 Retrofit can improve condition, comfort or systems and extend life, but only within structural limits.
 
-### 15.4 Scrapping
+Dealer/manufacturer-authorized retrofit can be one source of retrofit work, but any provider still needs appropriate physical workshop capability and time.
+
+### 15.10 Scrapping
 
 Assets can be physically sent to appropriate scrapping/disposal facilities. Material value can be partially recovered.
+
 
 ## 16. Maintenance
 
@@ -1768,6 +2005,8 @@ Risk also depends on the quality of the surrounding maintenance system:
 Vehicles must physically travel to an appropriate **maintenance facility** for service.
 
 Maintenance facilities are distinct from ordinary parking/storage facilities. A location may provide both functions, but this is not required.
+
+A suitable external dealer/authorized-service workshop under Section 15.4 is a valid maintenance facility when its supported vehicle type, service level and real workshop capacity cover the required work. Outsourcing service does not bypass physical travel, workshop occupancy or downtime.
 
 A vehicle or vehicle group can have an assigned/preferred maintenance facility, with allowed fallbacks where configured. The assigned facility must actually support the required vehicle type and maintenance level.
 
