@@ -895,7 +895,8 @@ The Service Pattern planner can automatically suggest valid exchange points only
 If no valid local traction base exists, the system should normally recommend one of:
 
 - use a locomotive capable of the entire route,
-- build/establish a traction base at a suitable point,
+- build/establish a **small standalone traction base** at a suitable point,
+- upgrade an existing parking/operating facility with traction-base modules,
 - change the route,
 - shorten the service,
 - use another compatible traction solution.
@@ -1133,7 +1134,29 @@ Tranzit distinguishes three facility roles:
 2. **Parking/storage facility** — where an idle vehicle or wagon can physically stand when it is not needed in active service.
 3. **Maintenance facility** — where the vehicle is physically sent for inspections, servicing or repair.
 
-For rail operations, an operating/dispatch depot can also act as a **local traction base** for locomotive exchange. This means it keeps suitable locomotives physically available to work onward segments from that location. A traction base does not have to be a full maintenance workshop.
+For rail operations, an operating/dispatch depot can also act as a **local traction base** for locomotive exchange. This means it keeps suitable locomotives physically available to work onward segments from that location.
+
+A traction base can also be built as a smaller standalone facility. It is cheaper and simpler than a full depot and is intended for local locomotive staging rather than heavy maintenance.
+
+A basic traction base can include:
+
+- a small number of locomotive parking/staging tracks,
+- access/turnaround track geometry,
+- period-appropriate fuel, coal or water supply where required,
+- basic crew/operational facilities,
+- light inspection or minor servicing only where the selected module supports it.
+
+It does **not** automatically provide:
+
+- heavy maintenance,
+- large workshop capacity,
+- wagon repair,
+- major overhauls,
+- extensive storage yards.
+
+A typical early or mid-game traction base may hold only 2–4 locomotives. Its purpose is to support locomotive exchanges, helper/banking operations, rescue coverage or a remote cluster of Lines without forcing the player to build a full maintenance depot.
+
+Locomotives based there still need a separate compatible maintenance facility for heavier scheduled work and must physically travel there when service is due.
 
 One site can provide more than one role, but it does not have to. A cheap parking yard therefore does not need a full workshop, and a regional fleet can share a more distant maintenance base.
 
