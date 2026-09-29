@@ -6,7 +6,8 @@ The player starts as a small regional carrier around 1820 and can grow into a mu
 
 ## Project documents
 
-- [Living Game Design](docs/GAME_DESIGN.md) — current gameplay source of truth.
-- [Agent instructions](AGENTS.md) — mandatory rules for AI/OpenCode development agents.
+- [Living Game Design](docs/GAME_DESIGN.md) — core gameplay source of truth.
+- [Contract cancellation](docs/CONTRACT_CANCELLATION.md) — current detailed rules for capped early-exit fees, returned slots and non-renewal.
+- [Agent instructions](AGENTS.md) — mandatory rules for AI/OpenCode development agents, including which design documents to review.
 
-The design is intentionally maintained as a living specification: obsolete decisions should be rewritten or removed rather than preserved as conflicting alternatives.
+The design is intentionally maintained as a living specification: obsolete decisions should be rewritten or removed rather than preserved as conflicting alternatives. Focused specifications elaborate the linked core design and must be reviewed together with the affected systems.
