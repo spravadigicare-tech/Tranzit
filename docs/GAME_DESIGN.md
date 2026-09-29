@@ -872,6 +872,27 @@ The player therefore makes a direct trade-off between:
 
 Reassigning an already employed manager inside the player's own company is an internal organizational action and does not send them back through the labour market.
 
+#### Dismissal
+
+Manager dismissal is intentionally simple.
+
+The player can dismiss a named manager immediately. There is no separate notice-period, disciplinary, negotiation or HR mini-game.
+
+Immediate dismissal costs a fixed **severance payment equal to two monthly salaries** of that manager.
+
+The confirmation UI must show the severance amount before dismissal.
+
+After dismissal:
+
+- the manager immediately leaves the player's organizational structure;
+- any role/department depending on them becomes vacant;
+- the manager becomes eligible to return to the shared labour market;
+- their skills, traits and career history are preserved.
+
+If the dismissed person was a mandatory branch director, the branch enters the existing management-vacancy state until a replacement is assigned.
+
+AI companies use the same dismissal cost and labour-market return rules.
+
 #### Manager skills
 
 Managers use a **small shared skill model**, not a large RPG character sheet.
