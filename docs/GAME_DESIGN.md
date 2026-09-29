@@ -448,6 +448,27 @@ A small company does not have to replay the historical invention of the telegrap
 
 The very local pre-telegraph office progression is primarily Early Ages content. Telegraph, telephone and later electronic systems expand practical commercial reach. Modern digital ordering can make geographic communication much less restrictive, but it does not erase regional licences, legal-presence requirements or situations where a customer/public authority explicitly requires local representation.
 
+A company **can encounter and pursue some opportunities outside its active branch network**, but this is deliberately limited.
+
+Without a local branch/presence in the relevant region, the company may still be able to:
+
+- see and bid on openly published public/state/municipal tenders,
+- respond to a customer that directly approaches the company,
+- pursue a strategically advertised contract whose rules do not require local presence,
+- participate through an existing partner/subcontractor where the agreement permits it.
+
+Without a branch, the company does **not** receive the normal local commercial pipeline. It has reduced or no access to:
+
+- routine locally generated customer leads,
+- ordinary relationship-building opportunities,
+- local sales prospecting,
+- some private tenders or negotiated contracts,
+- contracts whose customer, regulator or licence terms require a real local office.
+
+This limitation is not a hidden percentage penalty. The UI should show whether an opportunity is available because it is public/directly offered and whether establishing a local branch would unlock broader commercial access.
+
+Winning an out-of-region contract does not magically create local administrative capacity. Before signing, the planner must still validate whether the company has enough office/admin capacity, licences, operating access, vehicles, terminals and staff to fulfil it. A contract can also explicitly require the player to establish a branch before operations begin.
+
 Branches can be physically expanded or replaced.
 
 Possible growth paths include:
@@ -618,6 +639,8 @@ When evaluating or awarding a contract, the UI should show the major reasons for
 - insufficient experience with this customer.
 
 A player who currently has a weak relationship must have a credible path to improve it. Customers should offer smaller/less critical jobs or trial contracts that allow a new carrier to prove itself before becoming competitive for major long-term contracts.
+
+Normal local discovery of these opportunities depends on branch/commercial presence under Section 7.2. Publicly advertised tenders and direct customer approaches can still expose opportunities outside the branch network, but they do not grant the full local sales pipeline.
 
 Existing relationships are an advantage, not an unbeatable lock-in. A new carrier can win business through better price, service quality, capacity or successful smaller contracts.
 
