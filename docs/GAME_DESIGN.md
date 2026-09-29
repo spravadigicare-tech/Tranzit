@@ -359,6 +359,26 @@ The setup UI must show for each tier:
 
 Choosing a founding-loan tier does not change AI difficulty, demand, reputation or contract quality by itself. It changes only the player's initial financing and resulting balance-sheet obligation.
 
+The company start is **transport-mode neutral**.
+
+There are no predefined company classes/archetypes such as Road, Rail, Shipping or Mixed, and selecting a start year or founding-loan tier does not silently assign bonuses, penalties or permanent specialization.
+
+After choosing year, region and founding-loan tier, the player decides how to spend the available capital. Depending on the selected date, region and legal framework, this can include:
+
+- required transport/business licences or concessions,
+- first vehicles/rolling stock,
+- leased or owned infrastructure access,
+- depot/parking/maintenance capacity,
+- station/terminal access and slots,
+- staff and operating supplies,
+- optional owned infrastructure where financially realistic.
+
+The setup may provide recommendations or starter templates for inexperienced players, but these are convenience presets only. They must translate into the same purchases and rules as a manually configured start and may be freely modified before confirmation.
+
+The player can therefore start as road-only, rail-focused, mixed-mode or pursue another viable combination without the game assigning a permanent identity. Later divisions and subsidiaries emerge from actual company growth and player decisions rather than from a character-class choice made at new-game creation.
+
+A mode that requires infrastructure, permits, staff or capital beyond the selected starting resources is not made artificially available merely because the start is neutral. Neutrality means freedom to choose within real constraints, not bypassing them.
+
 ### 7.2 Branch reach
 
 Branches have a commercial catchment.
