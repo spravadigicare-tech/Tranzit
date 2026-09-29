@@ -1677,6 +1677,130 @@ A proposal defines enough operational detail to estimate feasibility:
 
 The player is never forced to accept the suggested solution. Alternative valid solutions can be compared.
 
+#### Contract Transport Plan and transport legs
+
+A signed or proposed customer contract is **not directly bound to one Line**.
+
+Instead, each contract uses a **Transport Plan** describing how the complete customer obligation is physically fulfilled from contractual origin to contractual destination.
+
+The Transport Plan is composed of one or more ordered **transport legs**.
+
+Example:
+
+> Customer factory  
+> → own truck collection leg  
+> → Praha freight terminal  
+> → existing Praha–Brno freight Line / Service Pattern  
+> → Brno freight terminal  
+> → external last-mile carrier  
+> → final customer
+
+Each leg can use one of several execution types:
+
+1. **Existing Line / Service Pattern** — allocate contract cargo/passenger demand onto an existing regular service with sufficient compatible spare capacity.
+2. **New Line / Service Pattern** — create a new regular service because recurring volume justifies one.
+3. **Own ad-hoc / demand-driven movement** — use the player's own fleet for a non-regular pickup, delivery or one-off movement without creating a permanent Line.
+4. **External carrier** — purchase that leg through the shared External Transport Order system in Section 30.1.
+5. **Customer-provided leg/service** — the customer or another contract party is explicitly responsible for that leg.
+
+A contract can therefore combine several modes and several operating mechanisms without pretending that the whole obligation is one train, truck or Line.
+
+The Transport Plan records for each leg:
+
+- origin and destination endpoint;
+- cargo/passenger responsibility;
+- execution type;
+- assigned Line/Service Pattern where applicable;
+- frequency or dispatch condition;
+- required capacity;
+- transfer/storage point;
+- timing/deadline contribution;
+- responsible carrier/operator;
+- infrastructure/access dependencies.
+
+Transfers between legs are physical.
+
+CargoBatch state moves through the real chain:
+
+- pickup/loading;
+- movement;
+- unload/transfer;
+- physical storage/waiting where necessary;
+- loading onto the next Trip;
+- final delivery.
+
+No leg handoff teleports cargo between vehicles, terminals or operators.
+
+##### Existing regular lines as shared capacity
+
+A regular freight Line/Service Pattern can carry demand from **multiple contracts and non-contract cargo at the same time**.
+
+Example:
+
+> Praha–Brno Night Freight  
+> Total usable capacity: 600 t  
+> Contract A allocation: 80 t  
+> Contract B allocation: 120 t  
+> One-off jobs: 40 t  
+> Remaining sellable/usable capacity: 360 t
+
+The Contract Planner should first check whether suitable existing services have compatible spare capacity before proposing a dedicated new Line.
+
+If an existing service is usable, the planner shows:
+
+- total compatible capacity;
+- already committed contract capacity;
+- expected non-contract load;
+- new contract requirement;
+- remaining reserve after allocation.
+
+A contract allocation is a real capacity commitment and cannot be double-booked.
+
+If the existing Pattern cannot cover the requirement, the planner can propose:
+
+- larger/more vehicles;
+- higher frequency;
+- another Service Pattern on the same Line;
+- a new Line;
+- an ad-hoc overflow movement;
+- external carrier capacity.
+
+##### Local collection and last-mile legs
+
+A local pickup/delivery leg does not automatically need its own Line.
+
+For example, a factory-to-terminal road collection can be a demand-driven contract leg:
+
+> when an eligible shipment batch is ready  
+> → assign compatible truck capacity  
+> → collect from customer endpoint  
+> → deliver to terminal before the booked trunk departure.
+
+If repeated volume grows enough, the player can later convert such work into a regular freight Line/Pattern and use it for several contracts.
+
+##### Contract versus Line lifecycle
+
+A **Contract** defines the commercial obligation.
+
+A **Line** defines a reusable regular operating service.
+
+A **Service Pattern** defines one repeating operating variant of that Line.
+
+A **Trip** is one concrete physical movement.
+
+A **Transport Plan** connects the commercial obligation to those operating objects.
+
+This means:
+
+- a Line can exist without any contract;
+- one Line can serve many contracts;
+- one contract can use many Lines;
+- one contract can mix Lines, ad-hoc movements and external carriers;
+- ending one contract does not automatically delete a shared Line;
+- changing a Line must revalidate every contract allocation that depends on it.
+
+The planner should preserve this separation throughout the UI so the player never has to rebuild the same route/timetable manually for each customer.
+
 #### Requirement checklist
 
 Every material requirement is classified into a transparent checklist.
@@ -4073,7 +4197,22 @@ Lower-level manual settings override delegated policies.
 
 ## 32. Service lines and timetables
 
-Regular passenger lines are available from the start, and freight services can use either scheduled or demand-driven operating patterns.
+A Line is a reusable operating service, not a synonym for a customer contract.
+
+The player can create ordinary **commercial intercity passenger or freight Lines independently of a contract** when all required conditions are satisfied, including:
+
+- commercial coverage/local presence;
+- relevant operating licence;
+- valid service endpoints/stops;
+- infrastructure/station/terminal access;
+- required capacity/slots;
+- fleet;
+- staff;
+- operating/depot/maintenance coverage.
+
+A commercial Line then earns revenue from simulated passenger/cargo demand and can later carry contract allocations as described by the Transport Plan in Section 11.0.1.
+
+Regular passenger lines are available from the start where the above requirements are met, and freight services can use either scheduled or demand-driven operating patterns.
 
 On a low-demand local market, low frequencies and small vehicles may be the only profitable choice. Actual demand depends on the selected year, region and service quality; a newly started company in 1975 does not imply universally low demand in its world.
 
@@ -4273,21 +4412,57 @@ For tram, trolleybus and metro operations, a basic depot/garage always contains 
 
 Urban networks feed intercity stations and can materially influence passenger demand.
 
-### 33.1 Municipal operators
+### 33.1 Municipal operators, contracts and city permission
 
 Cities can own normal transport companies that behave as local competitors/operators.
 
 A hybrid model is used:
 
-- cities maintain a minimum service,
-- municipal operators can run services directly,
-- cities can tender routes, areas or entire networks to private operators.
+- cities maintain a minimum service;
+- municipal operators can run services directly;
+- cities can tender routes, areas or entire networks to private operators;
+- private operators can sometimes run commercially at their own revenue risk, but only with explicit city permission/concession.
+
+A player **cannot simply create an urban public-transport Line inside a city because vehicles and road/track capacity are available**.
+
+Before a bus, tram, trolleybus or metro Line is activated as urban public transport, the player must have one of:
+
+1. **Municipal operating contract / tender award** — the city orders the service and defines some or all of its required route, frequency, fares/SLA or coverage, with the agreed compensation/revenue model.
+2. **City operating permission / concession** — the city allows the player to operate the service commercially without necessarily guaranteeing a subsidy or minimum revenue.
+
+A city permission is therefore distinct from a customer contract.
+
+It can specify constraints such as:
+
+- permitted route/area;
+- allowed stops;
+- minimum/maximum frequency;
+- operating hours;
+- fare rules or caps where applicable;
+- service-quality requirements;
+- street/stop/infrastructure access;
+- validity period;
+- renewal/termination terms.
+
+The city can refuse a proposed private Line where it conflicts with regulation, street capacity, an exclusive concession or the municipality's transport policy.
+
+Where permission is granted without a service contract, the player bears normal commercial demand risk and earns passenger revenue from the simulated market.
+
+Where a municipal contract exists, the resulting service still uses the normal:
+
+**Line → Service Pattern → Trip**
+
+operating hierarchy. The contract is attached through the Contract Transport Plan and does not replace the Line object.
+
+A single urban Line can also satisfy more than one compatible public/commercial obligation where contract and city rules permit it; capacity/rights must not be double-counted.
 
 Municipal operator scope is local: city plus agglomeration, with only limited short intercity reach where plausible.
 
 The player can operate urban transport through a group-wide division or dedicated city subsidiaries.
 
 Optional renewal of a municipal operating contract follows Section 11.12. An agreed extension can renew automatically; a service that requires a new competition must be awarded through that competition rather than retained through a checkbox.
+
+City operating permission/concession renewal follows its own agreed validity/renewal terms and cannot be assumed permanent.
 
 ## 34. Roads inside cities
 
