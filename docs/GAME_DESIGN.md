@@ -899,7 +899,32 @@ If a workshop is full, vehicles wait physically in yards/parking or at another v
 
 Remote fleets without nearby maintenance suffer real downtime because vehicles must travel farther for inspections and repairs.
 
-After service, the vehicle returns to whatever operational/parking location dispatching requires; it does not teleport back to a line or pool.
+Self-propelled vehicles travel to maintenance under their own power when their condition and route permit it.
+
+Non-powered rail vehicles such as passenger/freight wagons must be **physically hauled to maintenance** if the workshop is not located in the same yard.
+
+The preferred transfer hierarchy is:
+
+1. use an available compatible line/transfer locomotive from the relevant depot or regional pool;
+2. consolidate multiple wagons requiring the same transfer where practical;
+3. if no suitable line locomotive is available, a compatible shunting locomotive may perform the transfer as a fallback.
+
+Using a shunting locomotive outside normal yard work is deliberately inefficient. Compared with a line locomotive it can have:
+
+- much lower maximum speed,
+- lower practical towing capacity,
+- fewer wagons per transfer,
+- greater journey time,
+- higher disruption per transported wagon,
+- restrictions on which main-line routes it may legally/technically use.
+
+A slow maintenance transfer occupies real track sections/slots and can therefore reduce corridor capacity or delay other trains. The planner must show this consequence before dispatch where material.
+
+A shunter fallback is allowed only when the specific locomotive and route are technically and legally compatible; the game must not use it as a universal escape hatch.
+
+If no valid locomotive can haul a wagon to the assigned maintenance facility, the wagon remains out of service until suitable traction or another valid maintenance solution is available.
+
+After service, the vehicle/wagon must also physically return to an operational or parking location; it does not teleport back to a line or pool.
 
 ### 16.3 Infrastructure maintenance
 
@@ -1017,6 +1042,10 @@ If shunting capacity is insufficient:
 Shunting capability evolves historically. Later technologies can reduce labour/time requirements and introduce more efficient dedicated shunters or yard equipment, but physical movement is never replaced by teleportation.
 
 Dedicated shunters are usually assigned to a facility/yard rather than to a passenger or freight Line. They still need parking and maintenance facilities under the same physical rules as other vehicles.
+
+Shunters can also be used as a **fallback wagon-transfer locomotive** for maintenance or other necessary local repositioning when no suitable line/transfer locomotive is available. This removes the shunter from normal yard work for the duration of the trip and therefore reduces shunting capacity at its home facility.
+
+Because shunters are optimized for yard work rather than main-line hauling, such transfers are slow and limited in train length. They consume real main-line capacity and can become an intentionally visible operational penalty for under-investing in suitable transfer traction or maintenance coverage.
 
 ## 18. Energy and operating supplies
 
