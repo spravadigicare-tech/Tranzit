@@ -1390,7 +1390,28 @@ Later eras can unlock:
 - integrated urban-transport interchanges,
 - larger commercial/concourse facilities.
 
-Upgrading a station does not automatically replace its historic fabric. Existing buildings/platforms can remain, be extended, repurposed or protected depending on the site and era.
+A station can evolve in two main ways:
+
+1. **Extension / modular growth** — keep the existing station building and add new halls, wings, platforms, circulation links or interchange modules around it.
+2. **Full replacement** — demolish the existing main station building or selected major station modules and construct a larger/newer replacement.
+
+Full replacement is a real construction project, not an instant upgrade. It can require:
+
+- demolition time/cost,
+- construction materials and contractor capacity,
+- temporary passenger access or temporary station facilities,
+- reduced station throughput during construction,
+- temporary closure of affected entrances/platforms where necessary,
+- municipal/state approval where the site is regulated,
+- heritage approval or prohibition if the original structure is protected.
+
+The project planner should show how much of the station can remain operational during each construction stage.
+
+A replacement project does not automatically demolish the whole railway site. Tracks, platforms, buildings and interchange modules can be retained or rebuilt independently where the design permits.
+
+Upgrading a station therefore does not automatically erase its historic fabric. Existing buildings/platforms can remain, be extended, repurposed, replaced or protected depending on the site and era.
+
+Where an old station building is preserved, it may remain as an entrance, secondary hall, commercial space or heritage element inside a much larger modern station complex.
 
 ### 20.2 Multimodal interchange
 
@@ -1570,6 +1591,8 @@ Projects show:
 - reputation impact.
 
 Public-interest expropriation may be possible through the state under suitable conditions, at significant cost/reputation impact.
+
+Demolition rules also apply to the player's own infrastructure. Replacing an existing station building, depot structure or terminal module requires an explicit demolition/redevelopment project rather than an abstract upgrade. If the structure is protected, demolition may be prohibited or require exceptional approval even when the player owns it.
 
 Brownfields/abandoned buildings are easier to redevelop.
 
