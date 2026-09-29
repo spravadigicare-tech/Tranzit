@@ -1309,7 +1309,7 @@ Do not split the workforce into dozens of nearly identical wage categories merel
 
 Manager salaries remain individual because named managers use the separate labour-market system in Section 7.4.
 
-### 8.4 Company-wide mobile operating staff
+### 8.4 Company-wide mobile operating staff and crew reserve
 
 Drivers, train crews and similar mobile operating staff are pooled **across the whole company** by qualification rather than permanently tied to a specific region or depot.
 
@@ -1319,11 +1319,49 @@ The game tracks aggregated availability such as:
 - road-driver capacity;
 - conductors/on-board crews where required;
 - licence/vehicle-type qualification capacity;
-- usable shift/work-hour capacity.
+- usable shift/work-hour capacity;
+- capacity already committed to planned Trips;
+- deliberately uncommitted crew reserve.
 
-A Trip consumes the required crew capacity for its duration. If the company does not have enough filled qualified staff capacity, the Trip cannot be staffed or must be cancelled/rescheduled.
+A Trip consumes the required crew capacity for its duration. If the company does not have enough compatible filled capacity, the Trip cannot be staffed normally and enters the crew-recovery process in Section 32.7.
 
 Crew capacity also respects aggregated **shift and rest requirements**. The game does not track an individual driver's sleep schedule, but longer, overnight or continuous operations consume more effective staffing capacity because legal/safe rest and crew rotation must be covered.
+
+#### Company crew reserve
+
+The player sets a **company-wide crew reserve target** for relevant operating-staff categories/qualifications.
+
+Examples:
+
+- train drivers;
+- road drivers;
+- conductors/on-board staff;
+- specialist qualifications where legally or technically distinct.
+
+The reserve represents paid qualified capacity intentionally kept above the normal planned timetable requirement so the company can absorb short-notice staffing failures.
+
+The reserve target can be expressed as either:
+
+- an absolute effective crew/FTE-equivalent capacity;
+- or a percentage above planned peak requirement.
+
+Example:
+
+> Train drivers  
+> Planned peak requirement: 42.0 crew-equivalents  
+> Reserve target: 10%  
+> Target reserve: 4.2  
+> Currently available reserve: 3.6
+
+A larger reserve increases payroll but reduces the probability that ordinary crew disruption becomes a Trip delay or cancellation.
+
+A smaller reserve lowers normal cost but leaves less recovery capacity.
+
+The effect must be exposed as actual available staffing capacity rather than a hidden reliability bonus.
+
+Reserve capacity is still qualification-specific. Spare conductors cannot substitute for train drivers, and staff lacking a required licence/qualification cannot cover that role.
+
+Local legal/language/qualification requirements can still restrict whether company-wide capacity is compatible with a particular Trip, but the player does not manage a separate mandatory reserve slider for every region.
 
 Long-distance or long-duration Trips can require crew changes. The service planner should show when a service needs:
 
@@ -1341,13 +1379,14 @@ The UI must translate staffing needs into understandable requirements such as:
 - conductor/onboard-staff hours where ticket checking/sales/service requires them;
 - number of effective full-time crews required;
 - peak crew requirement;
+- target and currently available reserve;
 - additional staffing required for night/weekend patterns.
 
 Where onboard ticket sales are enabled, passenger volume and expected onboard-sales workload contribute to conductor/onboard staffing requirements and station dwell assumptions.
 
 The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains.
 
-Expansion into another region therefore does not require maintaining a separate arbitrary pool of ordinary drivers there, although local licence/language/regulatory rules can require an appropriately qualified staff category.
+Expansion into another region therefore does not require maintaining a separate arbitrary reserve pool there, although local licence/language/regulatory rules can require an appropriately qualified staff category.
 
 ### 8.5 Facility-bound staff
 
@@ -6255,24 +6294,95 @@ Cargo that no longer fits follows the existing loading-priority and freight-reco
 - guaranteed cargo that cannot be carried is rebooked/recovered rather than silently deleted;
 - SLA/penalty consequences remain attached to the responsible contract.
 
-### 32.7 Crew requirement planning
+### 32.7 Crew requirement planning and recovery policy
 
-Service planning must validate both vehicle availability and aggregated crew capacity.
+Service planning must validate both vehicle availability and aggregated qualified crew capacity.
 
 For each Service Pattern, the planner estimates:
 
-- total operating hours,
-- peak simultaneous crew demand,
-- day/night/weekend staffing burden,
-- whether crew changes are required,
-- suitable locations for those changes where applicable,
-- spare crew margin after the timetable is activated.
+- total operating hours;
+- peak simultaneous crew demand;
+- day/night/weekend staffing burden;
+- whether crew changes are required;
+- suitable locations for those changes where applicable;
+- company reserve remaining after the timetable is activated.
 
-The planner should warn when a timetable is technically possible with vehicles but cannot be covered by available qualified staff.
+The planner should warn when a timetable is technically possible with vehicles but would consume too much of the player's intended crew reserve or cannot be covered by available qualified staff at all.
 
-Later managers can automatically adjust staffing targets or propose timetable changes, but they cannot create crew capacity that the company does not actually employ.
+Crew planning remains aggregated across the company and does not introduce individual employee pathfinding, named ordinary-driver assignment or mandatory region-by-region reserve management.
 
-Crew planning remains aggregated across the company and does not introduce individual employee pathfinding or home-depot assignment.
+#### Company crew-recovery policy
+
+The player defines a **company-wide crew-recovery policy** for short-notice staffing failures.
+
+The policy can differ by genuinely distinct crew category where necessary, because a missing driver/strojvedoucí is operationally different from missing optional onboard service staff.
+
+The dispatcher can use actions such as:
+
+1. **Draw from crew reserve** — assign compatible uncommitted qualified capacity.
+2. **Wait for crew capacity** — delay departure for up to a player-defined maximum while compatible capacity becomes available.
+3. **Depart with reduced non-mandatory onboard staffing** — only where law, safety, service contract and the Pattern's service rules permit it.
+4. **Cancel the Trip** — when mandatory crew cannot be supplied within the allowed waiting policy.
+
+Example company policy:
+
+> Train driver unavailable  
+> 1. use reserve if available  
+> 2. wait up to 12 min for compatible crew capacity  
+> 3. otherwise cancel Trip
+
+Example for onboard staff:
+
+> Conductor/onboard staff shortage  
+> 1. use reserve  
+> 2. wait up to 5 min  
+> 3. if legal minimum is still met, depart with reduced onboard service  
+> 4. otherwise cancel
+
+A Trip can never depart without legally/technically mandatory crew.
+
+For example, the absence of the only required driver or train driver cannot be converted into a reduced-service departure.
+
+If optional onboard staffing is reduced, the actual consequences are applied. These can include:
+
+- onboard ticket sales disabled/reduced;
+- lower onboard service capacity;
+- longer checking/service times;
+- contractual/service-quality impact where applicable.
+
+#### Crew shortage consequences
+
+If waiting for crew delays the Trip, that delay flows through the normal operating systems:
+
+- rail/station slot tolerance;
+- protected passenger connections;
+- freight/customer SLA;
+- subsequent vehicle/crew duties;
+- rebooking;
+- refunds;
+- compensation where applicable.
+
+If the Trip is cancelled, passenger/cargo obligations are resolved through the existing recovery rules rather than disappearing.
+
+The UI should compare the practical consequence of the allowed options where useful, for example:
+
+> **Wait for train driver — up to 10 min**  
+> reserve currently unavailable  
+> next compatible crew capacity expected in ~7 min  
+> slot remains protected up to +9 min  
+> 2 passenger connections at risk
+
+versus:
+
+> **Cancel Trip now**  
+> 146 passengers affected  
+> 118 can be rebooked  
+> 28 require later service/refund  
+> estimated refund/compensation exposure: X
+
+The dispatcher executes routine cases automatically inside the company policy.
+
+Later operations/HR managers can recommend reserve-size or recovery-policy changes, but they cannot override explicit player limits or create staff capacity that the company does not employ.
 
 ## 33. Urban transport
 
