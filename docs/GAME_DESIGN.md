@@ -774,6 +774,299 @@ The game should avoid overwhelming the player with every theoretical opportunity
 
 When the player opens an opportunity, the next step is the normal contract evaluation/planning flow: inspect terms, estimate fleet/infrastructure/staff needs, secure any required capacity, and bid/accept according to the contract model below.
 
+### 11.0.1 Opportunity detail and Contract Planner
+
+Opening an Opportunity Board item launches a **Contract Planner**. Its purpose is to answer five questions before the player commits:
+
+1. **What exactly is the customer asking for?**
+2. **Can the company physically and legally perform it?**
+3. **What must be bought, built, hired or contracted first?**
+4. **Can everything be ready before the required start date?**
+5. **What is the expected financial result and risk?**
+
+The planner should be useful for a tiny first job and for a later strategic multimodal contract. Detail is progressively disclosed rather than forcing every player through a large expert form.
+
+#### Contract summary
+
+The first view should show the commercially important terms in a compact summary:
+
+- customer / contracting authority;
+- origin and destination;
+- passenger or cargo type;
+- expected/minimum/maximum volume as applicable;
+- one-off, recurring, framework, seasonal or tender structure;
+- contract start/end dates;
+- operating/service windows;
+- delivery-time or service-level requirement;
+- guaranteed/reserved capacity requirement;
+- offered price or current bid price;
+- performance bonuses;
+- penalties and material breach conditions;
+- exclusivity where relevant;
+- award deadline and expected award date;
+- relationship/reputation/qualification requirements;
+- required licences, insurance or local presence.
+
+The planner must distinguish **guaranteed contractual quantities** from forecasts. A customer estimate such as "typically 300–500 t/month" must not be presented as guaranteed revenue unless the contract actually guarantees that volume/payment.
+
+#### Proposed operating solution
+
+The player can select or let the planner suggest one or more feasible operating concepts.
+
+Examples:
+
+- direct road haul;
+- rail with local truck collection/delivery;
+- direct train;
+- multimodal rail/water/road;
+- own transport plus partner/subcontracted leg.
+
+A proposal defines enough operational detail to estimate feasibility:
+
+- route and mode(s);
+- required Service Pattern(s) or demand-driven movements;
+- approximate frequency;
+- train/vehicle/consist requirement;
+- terminals/stations used;
+- transfer points and storage;
+- operating/dispatch depots;
+- maintenance coverage;
+- required third-party infrastructure access.
+
+The player is never forced to accept the suggested solution. Alternative valid solutions can be compared.
+
+#### Requirement checklist
+
+Every material requirement is classified into a transparent checklist.
+
+Typical categories:
+
+- **Fleet / rolling stock** — compatible vehicles, locomotives, wagons and reserve requirement;
+- **Infrastructure access** — road/legal access, rail sections, station slots, ports, terminals;
+- **Owned facilities** — depot, parking, storage, warehouse, cold store, loading equipment, branch;
+- **Staff** — operating crews and facility-bound staff;
+- **Maintenance** — suitable workshop coverage and expected maintenance load;
+- **Shunting/yard** — where train formation/transfer requires it;
+- **Licences / concessions / permits**;
+- **Customer-specific requirements** such as temperature control, dangerous-goods capability or comfort class;
+- **Partner/subcontract capacity**;
+- **Administrative capacity** at the responsible branch/office;
+- **Operating supplies / energy** where materially constraining.
+
+Each item shows one of a small number of states:
+
+- **Available** — already covered;
+- **Available with spare capacity** — covered and shows remaining margin;
+- **Committed / tight** — technically available but conflicts with or materially reduces existing reserve;
+- **Must acquire** — available on the market but not currently owned/contracted;
+- **Must build** — physical infrastructure/facility required;
+- **Must negotiate** — third-party access, partner capacity or permission is not yet secured;
+- **Unavailable / incompatible** — the proposed solution cannot currently satisfy the requirement.
+
+The checklist must name the real bottleneck. It should say, for example, "needs 6 refrigerated wagons, you own 4" rather than "fleet insufficient".
+
+#### Current assets versus incremental requirement
+
+The planner must reuse existing capacity before assuming everything is a new purchase.
+
+For each relevant asset/resource, show:
+
+- total compatible capacity;
+- capacity already committed elsewhere;
+- spare capacity;
+- additional capacity needed for this contract;
+- reserve/surge margin required by the proposed terms.
+
+Example:
+
+> Refrigerated wagons: 12 owned / 9 already committed / 3 spare / **5 required** → **2 additional needed**
+
+The same principle applies to staff, terminals, storage, workshop time and infrastructure slots.
+
+The system must not double-book an asset simply because two independent contract screens each found it "available" at different times. Feasibility is recalculated when commitments change.
+
+#### Startup / investment plan
+
+Requirements that are not already covered become a project-style **startup plan**.
+
+Possible line items:
+
+- vehicle purchase or lease;
+- used-vehicle acquisition;
+- depot or terminal construction;
+- facility expansion;
+- branch construction/upgrade;
+- infrastructure access agreement;
+- Capacity Order;
+- licence/permit application;
+- recruitment;
+- supply agreement;
+- subcontractor/partner agreement.
+
+For each item, show:
+
+- expected one-time cost;
+- recurring cost where applicable;
+- earliest realistic availability date;
+- dependency on another item;
+- whether the price/capacity is confirmed or only estimated.
+
+The planner can provide actions such as **Buy vehicles**, **Request capacity**, **Build facility**, **Apply for licence** or **Find partner**, opening the relevant existing system.
+
+It must **not automatically spend money or sign third-party agreements** merely because the player opened a contract planner or clicked an automatic feasibility calculation.
+
+#### Readiness timeline
+
+A contract can be economically attractive but impossible to start on time.
+
+The planner therefore calculates a high-level critical-path readiness estimate from real lead times such as:
+
+- vehicle manufacturing/delivery;
+- used-vehicle physical delivery;
+- construction;
+- licence/permit processing;
+- infrastructure-capacity negotiation;
+- recruitment;
+- vehicle repositioning;
+- partner agreement.
+
+The UI should show:
+
+- contract start date;
+- expected ready date;
+- schedule buffer;
+- the item currently defining the critical path.
+
+Example:
+
+> Required start: 4 May  
+> Earliest credible readiness: 11 May  
+> **7 days late — main constraint: terminal construction**
+
+Where possible, it can propose concrete alternatives such as using an existing third-party terminal, leasing vehicles or negotiating a later contract start.
+
+#### Economics
+
+Financial analysis separates **startup investment**, **recurring operating cost** and **contract revenue**.
+
+Typical cost categories include:
+
+- vehicle acquisition/lease;
+- construction/upgrades;
+- access/slot reservation fees;
+- actual infrastructure usage fees;
+- fuel/energy;
+- crew and facility staff;
+- maintenance/wear;
+- loading/handling/storage;
+- partner/subcontract payments;
+- branch/admin overhead attributable to the contract where material;
+- financing cost where the proposed investment requires borrowing;
+- expected empty/deadhead/repositioning movements.
+
+Revenue can include:
+
+- guaranteed fixed payment;
+- per-unit/per-passenger payment;
+- minimum-volume payment;
+- forecast variable volume;
+- expected performance bonuses, shown separately from guaranteed revenue.
+
+The planner should show at least:
+
+- upfront investment required;
+- expected revenue per relevant game period;
+- expected recurring cost;
+- expected operating contribution/margin;
+- expected cash impact;
+- approximate investment payback where meaningful;
+- exposure to contractual penalties / reserved-capacity commitments.
+
+Do **not** create fake precision.
+
+Confirmed contractual prices and known fees can be exact. Variable quantities such as fuel price, uncertain demand, maintenance, congestion or partner rates should be shown as estimates/ranges or with clearly stated assumptions.
+
+A useful default can be:
+
+- **Guaranteed / floor case** — only contractually guaranteed revenue and reasonably committed costs;
+- **Expected case** — current expected volume/cost assumptions;
+- **Risk flags** — major variables that could materially change the result.
+
+A speculative "best case" should not be used to make a weak contract appear attractive.
+
+#### Opportunity economics versus company economics
+
+The planner must distinguish:
+
+- **contract profitability** — revenue and incremental costs caused by the contract;
+- **cash feasibility** — whether the company can actually finance the required startup investment and survive the ramp-up period.
+
+A profitable five-year contract can still be impossible for a small company if it requires an unaffordable terminal before the first payment.
+
+The UI should therefore show projected minimum cash requirement / funding gap before activation where material.
+
+#### Bid changes update the plan
+
+For bid/tender contracts, changing commercial parameters should update the feasibility and economics immediately.
+
+Examples:
+
+- lower bid price reduces margin;
+- stronger SLA may require extra reserve fleet;
+- higher guaranteed volume can require another train/vehicle cycle;
+- shorter response window may require locally staged reserve assets;
+- longer term can improve investment payback while increasing commitment risk.
+
+This connects the existing parameter-based negotiation system to real operational consequences.
+
+#### Bidding before all resources are owned
+
+The company does not always need to own every required asset before submitting a bid.
+
+If the tender/contract rules permit it, the player may bid based on a credible acquisition/construction plan.
+
+The planner distinguishes:
+
+- **ready now**;
+- **credible by required start date**;
+- **at risk**;
+- **cannot credibly be ready**.
+
+If awarded, the contract becomes a real future commitment. The game does not magically deliver the planned assets. The player must complete the required purchases, construction, access negotiations and staffing before operations begin.
+
+AI competitors use the same principle: a bid may rely on credible planned investment but cannot assume impossible lead times or nonexistent capacity.
+
+#### Dependency handling
+
+A customer contract and its supporting agreements remain separate.
+
+For example, winning a rail freight contract does not automatically:
+
+- buy rail/station slots;
+- purchase wagons;
+- sign a fuel contract;
+- build a warehouse;
+- hire a subcontractor.
+
+The planner can group these requirements into one implementation checklist and coordinate their workflows, but each purchase/agreement remains explicit and subject to its own capacity, price and contract rules.
+
+If a supporting dependency later fails, the player receives a concrete warning and the contract feasibility status updates.
+
+#### Performance
+
+Contract feasibility uses cached network, fleet, facility, staffing and access data and is recalculated on relevant changes rather than continuously every frame.
+
+Full route/cost recalculation can run when:
+
+- an opportunity is opened;
+- the proposed operating solution changes;
+- bid terms change materially;
+- company capacity/commitments change;
+- a required access/facility price changes;
+- the player explicitly refreshes/rechecks the plan.
+
+The board may use cheaper cached feasibility summaries; the full planner performs the deeper calculation.
+
 ### 11.1 Contracts are central
 
 Cargo gameplay is primarily contract-driven.
@@ -870,6 +1163,8 @@ For example, instead of only displaying "reserve 200 t capacity", the UI should 
 Reserved capacity is a real commitment, not a hidden score. Assets do not necessarily need to sit idle permanently: they may perform other work when scheduling still guarantees the contracted response time. Dispatch automation may manage this later, but it must never allocate committed assets in a way that silently makes the SLA impossible.
 
 If current fleet, depot, terminal or infrastructure capacity cannot credibly satisfy the commitment, the game must warn the player before the bid is submitted and explain the bottleneck.
+
+The Contract Planner in Section 11.0.1 is the primary pre-signing UI for this physical-capacity accounting. It must reuse the same fleet, staff, terminal, storage and infrastructure commitment data rather than maintaining a separate approximate capacity model.
 
 AI competitors are subject to the same capacity accounting and cannot promise reserve capacity they cannot realistically provide.
 
@@ -1195,6 +1490,8 @@ Renewal preserves the agreed seasonal/date pattern, access class and tolerance u
 ### 13.2.1 Capacity order editor
 
 The player should normally obtain rail and station capacity through a simple **Capacity Order** workflow launched directly from a Line or Service Pattern.
+
+The same workflow can be launched from the Contract Planner when a proposed contract solution requires new rail/station capacity. The Contract Planner supplies the proposed route, service dates and operating requirement; the Capacity Order remains a separate agreement and still requires explicit player approval.
 
 The player should not manually buy dozens of disconnected section and station slots one by one.
 
