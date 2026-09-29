@@ -926,7 +926,57 @@ If no valid locomotive can haul a wagon to the assigned maintenance facility, th
 
 After service, the vehicle/wagon must also physically return to an operational or parking location; it does not teleport back to a line or pool.
 
-### 16.3 Infrastructure maintenance
+### 16.3 Operational failures and rail recovery
+
+Most vehicle faults should **degrade operation rather than immediately immobilize the vehicle**.
+
+Typical non-critical locomotive/vehicle faults can cause:
+
+- reduced maximum speed,
+- reduced traction/power,
+- higher fuel/energy consumption,
+- reduced reliability for the remainder of the Trip,
+- loss of some comfort/service equipment,
+- a requirement to visit maintenance after completing the current reasonable operating task.
+
+If the train can still move safely, the preferred behaviour is to finish the current delivery/service where practical, unload/drop off passengers or cargo as planned, and then travel physically to a suitable maintenance facility.
+
+The UI and dispatcher must make the degraded state visible and may recommend withdrawing the vehicle earlier when continuing would create excessive risk or disruption.
+
+A fully immobilizing failure on the main line is intentionally rare.
+
+When a locomotive/train becomes unable to move:
+
+1. the affected track section becomes physically blocked;
+2. dispatching checks whether other trains can route around the obstruction;
+3. if there is no usable bypass or passing route, trains already committed toward the blockage may have to stop and **reverse/back out to the nearest suitable station, siding, crossover or junction** to clear the corridor;
+4. a compatible rescue/recovery locomotive must physically travel to the failed train;
+5. the failed locomotive or entire consist is then physically hauled to the nearest suitable safe location or maintenance facility.
+
+Recovery traction can come from:
+
+- an available line/transfer locomotive,
+- another compatible locomotive reassigned from nearby service,
+- a shunting locomotive only as a constrained last-resort option where route, speed and towing limits permit.
+
+The dispatcher should choose a recovery plan that minimizes total network disruption, but it cannot teleport trains, ignore directionality or pass through occupied track.
+
+Backing/reversing movements must respect train direction, signalling/infrastructure and available crossovers. If the current consist cannot reverse normally, the recovery plan may need another locomotive attached at the opposite end or another physically valid movement.
+
+A blocked single-track section can therefore create real knock-on disruption until the failed train is removed. Double-track or bypass infrastructure can greatly reduce the impact.
+
+Because severe immobilizations are rare, the player should not routinely micromanage rescue operations. Dispatch automation can generate the recovery plan, while the player is shown:
+
+- where the blockage is,
+- which services are affected,
+- selected rescue locomotive,
+- estimated clearance time,
+- any trains that must reverse/reroute,
+- expected capacity and delay impact.
+
+Poor maintenance, severe faults or extreme conditions can increase the chance of an immobilizing failure, but normal well-maintained operation should make such events exceptional.
+
+### 16.4 Infrastructure maintenance
 
 Track/road infrastructure has aggregated condition by meaningful section.
 
