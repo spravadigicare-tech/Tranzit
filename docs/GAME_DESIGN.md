@@ -877,11 +877,17 @@ Risk also depends on the quality of the surrounding maintenance system:
 
 ### 16.2 Physical service
 
-Vehicles must physically travel to appropriate depots/workshops.
+Vehicles must physically travel to an appropriate **maintenance facility** for service.
 
-If a workshop is full, vehicles wait physically in yards/parking.
+Maintenance facilities are distinct from ordinary parking/storage facilities. A location may provide both functions, but this is not required.
 
-Remote fleets without nearby maintenance suffer real downtime because vehicles must travel farther.
+A vehicle or vehicle group can have an assigned/preferred maintenance facility, with allowed fallbacks where configured. The assigned facility must actually support the required vehicle type and maintenance level.
+
+If a workshop is full, vehicles wait physically in yards/parking or at another valid holding location.
+
+Remote fleets without nearby maintenance suffer real downtime because vehicles must travel farther for inspections and repairs.
+
+After service, the vehicle returns to whatever operational/parking location dispatching requires; it does not teleport back to a line or pool.
 
 ### 16.3 Infrastructure maintenance
 
@@ -917,7 +923,7 @@ Poor depot geometry can create real operational inefficiency.
 
 Road vehicles need garages/parking/service facilities.
 
-### 17.1 Regional fleet pools and depot assignment
+### 17.1 Regional fleet pools and facility roles
 
 Operational vehicles are not normally hard-bound to one Line. By default, compatible vehicles belong to a **regional fleet pool** and dispatching assigns actual assets to Trips as needed.
 
@@ -931,22 +937,43 @@ The dispatcher must choose from real physical assets and consider:
 - fuel/energy requirements,
 - reserved-capacity commitments,
 - deadhead/repositioning distance and time,
-- depot/yard/parking capacity,
+- parking/yard capacity,
+- maintenance-facility capacity,
 - other already-assigned Trips.
 
-A Line or Service Pattern can optionally specify depot rules, including:
+Tranzit distinguishes three facility roles:
 
-- preferred/primary depot,
-- one or more allowed fallback depots,
-- required depot where operationally necessary.
+1. **Operating/dispatch depot** — configured primarily on a Line or Service Pattern; this is where the service is normally staged, dispatched, turned around or recovered.
+2. **Parking/storage facility** — where an idle vehicle or wagon can physically stand when it is not needed in active service.
+3. **Maintenance facility** — where the vehicle is physically sent for inspections, servicing or repair.
 
-This allows a player to say that a group of services should normally be worked from a specific depot without manually assigning every individual vehicle.
+One site can provide more than one role, but it does not have to. A cheap parking yard therefore does not need a full workshop, and a regional fleet can share a more distant maintenance base.
 
-Depot assignment affects real operations. A vehicle allocated from another location must physically deadhead/reposition to the service start, consuming time, infrastructure capacity, fuel/energy and potentially crew resources.
+A Line or Service Pattern can define:
 
-A regional pool does not override maintenance or physical parking requirements. Vehicles still need somewhere real to stand and must physically travel to workshops/depots for service.
+- preferred/primary operating depot,
+- one or more allowed fallback operating depots,
+- required operating depot where operationally necessary.
 
-Dispatch automation must not double-book assets or silently consume capacity reserved for contracts. If the requested timetable cannot be covered from the regional pool and assigned depots, the planner must explain the concrete shortage.
+Vehicles/rolling stock can separately define:
+
+- preferred parking facility,
+- preferred maintenance facility,
+- allowed fallback facilities.
+
+To avoid micromanagement, parking and maintenance assignments can be inherited from a regional pool, vehicle class or fleet group, with optional overrides for individual assets.
+
+These assignments are planning preferences, not teleport destinations. The actual physical location of every asset remains authoritative.
+
+A vehicle allocated from another location must physically deadhead/reposition to the service start, consuming time, infrastructure capacity, fuel/energy and potentially crew resources.
+
+When a Trip finishes, the dispatcher may keep the asset near the next useful work rather than forcing an unnecessary return to a parking facility. If it becomes idle, it must eventually occupy a real valid parking/storage location.
+
+When maintenance becomes due, the asset must physically travel to a suitable maintenance facility. It does not matter whether that facility is the same site used by the Line for operations or parking.
+
+Parking and workshop capacity are real. If a facility is full, additional assets cannot be hidden inside it.
+
+Dispatch automation must not double-book assets, exceed physical parking/workshop capacity or silently consume capacity reserved for contracts. If a timetable cannot be covered, the planner must explain the concrete shortage.
 
 ## 18. Energy and operating supplies
 
@@ -1419,11 +1446,13 @@ A Line or Service Pattern can still define:
 
 - required vehicle capabilities,
 - preferred consist family/type,
-- preferred or required depot,
-- fallback depots,
+- preferred or required **operating/dispatch depot**,
+- fallback operating depots,
 - minimum reserve policy.
 
-The timetable planner must include real depot-to-service positioning and return movements when calculating required fleet size and feasibility.
+Parking and maintenance are separate from the Line's operating depot. Individual assets or their fleet group can have separate parking and maintenance facility preferences.
+
+The timetable planner must include real depot-to-service positioning, parking needs, maintenance windows and necessary repositioning movements when calculating required fleet size and feasibility.
 
 A specific vehicle may be manually pinned to a Line/Pattern as an override where the player wants that level of control, but this is not the default operating model.
 
