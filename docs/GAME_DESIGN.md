@@ -513,11 +513,13 @@ Instead the branch has an aggregate staffing level/headcount and wage cost. The 
 
 - run lean with lower payroll and less spare administrative capacity;
 - staff around expected workload;
-- deliberately overstaff to create spare capacity and faster response during growth/peaks.
+- deliberately target spare capacity for growth/peaks.
+
+Ordinary branch employees are filled through the aggregate workforce system in Section 8. The branch does not recruit office staff individually. Its filled capacity depends on the company-wide salary policy for the relevant ordinary office/admin category and the available labour market.
 
 Staffing affects concrete capacity and processing performance. It does not create unrelated global bonuses.
 
-If staffing is below the branch's minimum operating requirement, the branch cannot provide normal commercial service until the shortage is resolved.
+If filled staffing is below the branch's minimum operating requirement, the branch cannot provide normal commercial service until the shortage is resolved.
 
 If staffing is above the minimum but below current workload, the branch remains open but becomes progressively overloaded.
 
@@ -1204,69 +1206,232 @@ Where another provider is responsible for the operation, such as an external hea
 
 ## 8. Workforce
 
-Ordinary employees are aggregated rather than simulated as persistent individual people.
+Ordinary employees are **fully aggregated** rather than simulated as persistent individual people.
 
-The workforce is split by operational role so the game stays simple without breaking facility capacity.
+Only named managers and important specialists use the individual-person system in Section 7.4.
 
-### 8.1 Company-wide mobile operating staff
+The ordinary-workforce system is built around **job categories, required capacity, offered salary and achievable staffing**, not individual applicants.
 
-Drivers, train crews and similar mobile operating staff are pooled **across the whole company** by qualification rather than being permanently tied to a specific region or depot.
+### 8.1 Aggregate staffing model
+
+Each ordinary job category has a company employment policy.
+
+Examples include:
+
+- train drivers;
+- road-vehicle drivers;
+- conductors/on-board staff;
+- mechanics;
+- station/terminal staff;
+- warehouse/loading staff;
+- shunting/yard staff;
+- office/admin staff;
+- cleaning/security/service staff where relevant.
+
+For each category the player primarily sets a **salary level** for all ordinary employees in that position.
+
+The UI then shows:
+
+- salary offered;
+- market/reference salary where useful;
+- required staffing capacity;
+- currently filled capacity;
+- realistically available capacity at the offered salary;
+- resulting shortage or reserve.
+
+Example:
+
+> **Road drivers**  
+> Salary: 2,400 / month  
+> Required: 34 FTE-equivalent  
+> Filled: 29  
+> Available at current salary: ~31  
+> **Shortage: 5**
+
+The player does not:
+
+- browse ordinary-worker candidates;
+- hire employees one by one;
+- negotiate individual wages;
+- assign personalities/skills to ordinary workers;
+- manage individual resignations or careers.
+
+Hiring and attrition happen automatically in aggregate toward the capacity that the current salary and labour market can support.
+
+### 8.2 Salary and labour-market availability
+
+Offering a higher salary generally makes a position easier to fill and retain.
+
+Offering too little can create a persistent staffing shortage even when the company has budgeted enough nominal positions.
+
+The relationship is influenced by the real labour market, including where relevant:
+
+- city/region population;
+- local unemployment/labour supply;
+- competing employers;
+- profession scarcity;
+- qualification requirements;
+- historical period;
+- working conditions implied by the role;
+- company reputation as an employer where the system supports it.
+
+The game should avoid fake precision. Labour availability can be shown as a practical estimate/range when exact future hiring cannot be guaranteed.
+
+Salary does not instantly spawn workers.
+
+Aggregate staffing moves toward the achievable level over appropriate game-time recruitment/attrition intervals. A large shortage therefore takes time to fill even after a salary increase.
+
+Likewise, lowering salary does not cause an entire workforce to vanish at once. Retention pressure appears progressively.
+
+The system is event-/period-driven and must not simulate individual job applications continuously.
+
+### 8.3 One policy per ordinary position
+
+By default, ordinary employees in the same company job category use the same salary policy.
+
+Examples:
+
+- all ordinary road drivers use the Road Driver salary;
+- all ordinary train drivers use the Train Driver salary;
+- all ordinary mechanics use the Mechanic salary.
+
+This keeps labour management understandable and prevents branch-by-branch wage micromanagement.
+
+Different genuinely distinct qualifications can remain separate job categories where they create real operational constraints, for example:
+
+- road driver versus train driver;
+- standard driver versus a legally required specialist qualification;
+- mechanic versus specialized technical staff.
+
+Do not split the workforce into dozens of nearly identical wage categories merely for flavour.
+
+Manager salaries remain individual because named managers use the separate labour-market system in Section 7.4.
+
+### 8.4 Company-wide mobile operating staff
+
+Drivers, train crews and similar mobile operating staff are pooled **across the whole company** by qualification rather than permanently tied to a specific region or depot.
 
 The game tracks aggregated availability such as:
 
-- number of qualified train drivers,
-- road-vehicle drivers,
-- conductors/on-board crews where required,
-- licence/vehicle-type qualifications,
+- qualified train-driver capacity;
+- road-driver capacity;
+- conductors/on-board crews where required;
+- licence/vehicle-type qualification capacity;
 - usable shift/work-hour capacity.
 
-A Trip consumes the required crew capacity for its duration. If the company does not have enough qualified staff, the Trip cannot be staffed or must be cancelled/rescheduled.
+A Trip consumes the required crew capacity for its duration. If the company does not have enough filled qualified staff capacity, the Trip cannot be staffed or must be cancelled/rescheduled.
 
 Crew capacity also respects aggregated **shift and rest requirements**. The game does not track an individual driver's sleep schedule, but longer, overnight or continuous operations consume more effective staffing capacity because legal/safe rest and crew rotation must be covered.
 
 Long-distance or long-duration Trips can require crew changes. The service planner should show when a service needs:
 
-- one crew for the full Trip,
-- a planned crew change,
-- multiple crews for continuous/night operation,
+- one crew for the full Trip;
+- a planned crew change;
+- multiple crews for continuous/night operation;
 - additional onboard staff because of service class or regulations.
 
 Crew-change requirements are handled as operational planning constraints rather than persistent individual-person simulation. The game may use defined eligible change locations such as major stations, depots or terminals, but it does not require the player to assign named ordinary employees.
 
 The UI must translate staffing needs into understandable requirements such as:
 
-- train-driver hours/day,
-- road-driver hours/day,
-- number of effective full-time crews required,
-- peak crew requirement,
+- train-driver hours/day;
+- road-driver hours/day;
+- number of effective full-time crews required;
+- peak crew requirement;
 - additional staffing required for night/weekend patterns.
 
-The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains. This is intentionally abstracted to avoid low-value micromanagement.
+The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains.
 
-Expansion into another region therefore does not require maintaining a separate arbitrary pool of drivers there, although local licences/language/regulatory requirements may still require the company to have the appropriate qualified staff category where historically/gameplay relevant.
+Expansion into another region therefore does not require maintaining a separate arbitrary pool of ordinary drivers there, although local licence/language/regulatory rules can require an appropriately qualified staff category.
 
-### 8.2 Facility-bound staff
+### 8.5 Facility-bound staff
 
-Employees whose work directly determines the capacity of a physical facility remain allocated to that facility or local operation, for example:
+Employees whose work directly determines the capacity of a physical facility remain **allocated in aggregate** to that facility or local operation.
 
-- mechanics/workshop staff,
-- station and terminal staff,
-- warehouse/loading staff,
-- local office/admin staff,
-- local dispatch/yard staff where the facility requires them,
+Examples:
+
+- mechanics/workshop staff;
+- station and terminal staff;
+- warehouse/loading staff;
+- local office/admin staff;
+- local dispatch/yard staff where required;
 - safety/security/cleaning where relevant.
 
-This preserves existing physical systems: a workshop with too few mechanics really repairs vehicles more slowly, and an understaffed terminal really handles less cargo.
+The player still does not hire these people individually.
 
-Company HR can still recruit and rebalance these employees at a higher level, and later managers can automate staffing targets.
+Instead the facility has:
 
-### 8.3 Business/administrative staff
+- required staff capacity;
+- target staff capacity;
+- filled staff capacity supplied from the relevant job category;
+- resulting operational capacity.
 
-Sales, contract, HR and general administrative capacity can be aggregated at company/division/office level depending on the system they support.
+This preserves the physical simulation:
 
-Insufficient staffing creates concrete operational consequences such as slower maintenance, reduced opening hours, delayed handling, inability to cover all Trips or weaker contract-processing capacity.
+- a workshop with too few mechanics repairs vehicles more slowly;
+- an understaffed terminal handles less cargo;
+- an understaffed branch processes administration more slowly;
+- an understaffed station can have reduced service/handling capacity.
 
-Staffing hours, rest periods and wage periods use the shared game clock and explicit rate units in Section 3.4. Changing the speed selector does not change the crew required for the same service.
+Facility staffing can use automatic targets. Managers can later adjust those targets within delegated policy.
+
+### 8.6 Business and administrative staff
+
+Sales, contract, HR and general administrative staff are aggregated at company/division/office/department level depending on the system they support.
+
+Their salary policy and labour availability follow the same ordinary-workforce rules.
+
+Named directors/managers are separate from this capacity.
+
+For example, a branch can have:
+
+> 1 named Branch Director  
+> + 6.4 FTE-equivalent ordinary office staff
+
+rather than seven individually simulated office workers.
+
+### 8.7 Staffing demand and planning
+
+Every planner that creates workload should expose its staffing consequence before commitment.
+
+Examples include:
+
+- a new Service Pattern increasing driver-hours required;
+- a larger workshop increasing mechanic demand;
+- a new terminal increasing handling-staff demand;
+- a contract increasing branch/admin workload.
+
+The Contract Planner should show staffing requirements as:
+
+- current filled capacity;
+- already committed capacity;
+- additional requirement;
+- current labour-market fillability at the player's salary policy;
+- expected time/risk to close a shortage.
+
+A contract is not credibly ready merely because the player can afford wages. If the labour market cannot supply enough qualified capacity by the start date, staffing remains a real readiness risk.
+
+### 8.8 Automation and management
+
+Routine recruitment is automatic.
+
+The player manages ordinary workforce mainly by:
+
+- setting salary by job category;
+- setting/accepting staffing targets where relevant;
+- approving exceptional qualification/training investment where needed.
+
+An HR manager/department can later automate salary recommendations and staffing targets within player-defined budget/coverage rules.
+
+Automation must not create workers beyond the simulated labour market.
+
+### 8.9 Time and accounting
+
+Staffing hours, rest periods and wage periods use the shared game clock and explicit rate units in Section 3.4.
+
+Salary is presented/accounted consistently against the game's 14-day-month calendar.
+
+Changing the simulation speed selector does not alter wage cost or the crew capacity required for the same service.
 
 ## 9. Reputation and customer relationships
 
