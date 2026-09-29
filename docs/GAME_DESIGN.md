@@ -2450,7 +2450,9 @@ Each section has practical capacity influenced by:
 - traffic mix,
 - technology.
 
-The player normally requests service capacity, not exact second-by-second paths.
+The player normally requests service capacity, not exact second-by-second paths or a permanently assigned physical track.
+
+A contracted rail slot protects movement capacity through the relevant section/corridor and operating window. Detailed track choice inside that infrastructure is dynamic under Section 32.3.
 
 Possible capacity products:
 
@@ -2582,7 +2584,7 @@ Capacity orders are not tradable assets. If the player reduces/cancels the Servi
 
 The same high-level capacity philosophy is used for constrained passenger stations: operators buy/reserve station-call slots against finite station capacity, then the station dynamically assigns the actual compatible platform for each Trip. Station-slot capacity and line-section capacity remain separate constraints and both must be available.
 
-Real train movement still uses local section/block reservations. A train reserves only near-future sections, not its entire route.
+Real train movement still uses local section/block reservations. A train reserves only near-future sections, not its entire route. The exact track/block sequence can change dynamically under Section 32.3 as occupancy and disruption evolve, while respecting the Trip's access rights and protected capacity.
 
 ### 13.3 Water
 
@@ -3726,9 +3728,11 @@ A station-call slot is a right to station capacity, **not ownership of a numbere
 
 ### 20.4 Station slots and dynamic platform allocation
 
-Passenger platforms are normally allocated **dynamically to Trips according to station capacity and compatibility**, rather than permanently belonging to one operator.
+Passenger platforms are normally allocated **dynamically to Trips according to station capacity and compatibility**, rather than permanently belonging to one operator or Line.
 
 A station can therefore serve several operators at the same time as long as its real infrastructure can accommodate their services.
+
+A Trip has no default right to wait for "its usual platform" while another compatible platform stands free. The station allocator should use any contractually and physically compatible platform that minimizes conflict and delay. Closures, engineering works and disruption can therefore move a Trip between platforms automatically.
 
 Before a regular Service Pattern is activated at a constrained station, the operator normally needs enough **station-call slots** for the planned calls.
 
@@ -4276,7 +4280,139 @@ Before activation, each commercial Service Pattern must also have valid service 
 
 Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
 
-### 32.3 Feeder and connection relationships
+### 32.3 Line Planner routing and dynamic path assignment
+
+The Line Planner defines the **commercial/operating route**, not a permanently hard-coded sequence of individual road lanes, railway tracks, junction routes or platform numbers.
+
+#### Planning the nominal route
+
+The normal workflow is:
+
+1. choose the ordered commercial stops/endpoints;
+2. let the planner find the best compatible route between them over infrastructure the company can legally use;
+3. optionally add routing constraints/overrides.
+
+The player does **not** need to click every road segment or railway track.
+
+Optional route controls can include:
+
+- **via waypoint** — force the Line/Pattern through a selected city, junction, station or corridor;
+- **required section** — keep a strategically chosen infrastructure section in the nominal route;
+- **avoid section/corridor** — prevent normal routing through an unwanted area;
+- **preferred route** — favour one compatible corridor while still allowing operational diversion where permitted.
+
+Example:
+
+> Praha → Pardubice → Brno  
+> via: Česká Třebová
+
+The route planner then resolves the detailed physical path automatically.
+
+The resulting nominal route is used for:
+
+- timetable/travel-time estimates;
+- capacity orders;
+- infrastructure/access checks;
+- operating-cost estimates;
+- traction/vehicle compatibility;
+- contract feasibility.
+
+#### Dynamic railway track assignment
+
+A rail Service Pattern is **not assigned permanently to one exact track through every section**.
+
+For each concrete Trip, the dispatcher/infrastructure system selects the actual usable railway path from the compatible tracks within the authorized corridor according to:
+
+- current occupancy;
+- signalling/block availability;
+- direction;
+- closures/work zones;
+- train length/load/gauge;
+- electrification/traction compatibility;
+- contracted capacity/priority;
+- disruption/recovery needs.
+
+If one track of a double-track or multi-track railway is closed, a Trip can use another compatible track where signalling, direction and capacity allow it.
+
+This is a physical reroute through real infrastructure, not teleportation. It can increase travel time, create conflicts or reduce corridor capacity.
+
+The player normally manages the **corridor and capacity product**, while dispatching manages detailed track usage.
+
+A Trip must never gain access to infrastructure that the operator has no legal/contractual right to use merely because it is a convenient diversion.
+
+If a disruption requires a materially different corridor, one of the following must apply:
+
+- the company already has compatible access/capacity there;
+- the relevant infrastructure owner re-protects the service onto an alternative route under the disruption/access agreement;
+- the player/dispatcher obtains an ad-hoc compatible access solution where available;
+- otherwise the Trip waits, reroutes only as far as permitted, or is cancelled.
+
+Infrastructure-side re-protection under Section 13.2 can therefore include a valid alternate route, but cannot invent physical capacity.
+
+#### Dynamic station track and platform assignment
+
+Passenger/freight station calls reserve **station-call capacity**, not a permanently owned numbered platform.
+
+For each Trip, the station allocator dynamically chooses a compatible arrival/departure track and platform using:
+
+- current and expected occupancy;
+- platform length;
+- approach/departure geometry;
+- electrification/traction compatibility;
+- passenger/freight facility requirements;
+- dwell/turnaround needs;
+- shunting conflicts;
+- contractual priority.
+
+A train does **not** wait for a historically/preferentially used platform if another compatible platform is available and the station can route it there.
+
+Example:
+
+> Platform 2 is closed for works.  
+> Platform 4 is compatible and free.  
+> → the arriving Trip is routed to Platform 4 automatically.
+
+The same applies during ordinary congestion: a compatible free platform can be substituted dynamically.
+
+A Trip waits outside/inside the station only when no compatible path/platform capacity is currently available or when another protected movement has contractual/operational priority.
+
+A dedicated numbered platform can still exist only as an exceptional explicit agreement or physical requirement. It is not the default Line Planner model.
+
+Platform changes should propagate to passenger information/wayfinding systems where the historical technology supports it. In earlier eras, late changes can carry a larger operational/passenger inconvenience cost because communication is weaker.
+
+#### Dynamic road routing
+
+Road Lines use the same high-level principle.
+
+The Service Pattern stores stops and routing preferences/waypoints, while each Trip can select a currently usable physical road path that respects:
+
+- legal access;
+- road restrictions;
+- vehicle dimensions/weight;
+- closures;
+- congestion;
+- one-way rules;
+- toll/access policy.
+
+A temporary detour can therefore occur without editing the Line itself.
+
+#### Stability versus flexibility
+
+Dynamic routing should not make services wander arbitrarily.
+
+The dispatcher prefers the nominal route and only deviates when there is a material operational reason such as:
+
+- closure;
+- congestion/capacity conflict;
+- disruption;
+- unavailable platform/track;
+- a clearly better authorized path under current conditions.
+
+The player can inspect the nominal route and any active diversion.
+
+Service metrics distinguish planned running time from disruption/diversion effects.
+
+### 32.4 Feeder and connection relationships
 
 Connections should normally be planned at **Line or Service Pattern level**, not by manually linking every individual Trip.
 
@@ -4308,7 +4444,7 @@ The system must show the resulting expected transfer quality and any fleet/capac
 
 Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
 
-### 32.4 Line-level stop service modes
+### 32.5 Line-level stop service modes
 
 Stop behaviour is configured on the **Service Pattern** (with optional defaults inherited from its Line), not on the station itself.
 
@@ -4351,7 +4487,7 @@ Feeder/connection planning must use the actual expected stop pattern of the rele
 
 Dispatch automation can later decide individual conditional calls automatically within the rules of that line, but the player must always be able to inspect why a specific trip stopped or skipped a location.
 
-### 32.5 Vehicle assignment from fleet pools
+### 32.6 Vehicle assignment from fleet pools
 
 Trips normally receive concrete vehicles/consists dynamically from the relevant regional fleet pool rather than from permanently fixed vehicle-to-line assignments.
 
@@ -4371,7 +4507,7 @@ If a Service Pattern includes locomotive exchange, the planner must also validat
 
 A specific vehicle may be manually pinned to a Line/Pattern as an override where the player wants that level of control, but this is not the default operating model.
 
-### 32.6 Crew requirement planning
+### 32.7 Crew requirement planning
 
 Service planning must validate both vehicle availability and aggregated crew capacity.
 
