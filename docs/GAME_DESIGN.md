@@ -424,9 +424,11 @@ It can provide:
 
 - local branch/commercial presence;
 - office/admin capacity;
-- customer-facing ticket/sales/service desk functions where historically appropriate;
+- space for an optional customer-facing ticket/sales/service module;
 - space for local managers/admin staff;
 - direct organizational connection to the passenger hub.
+
+A branch does **not** sell passenger tickets merely because it exists. Ticket sales require the relevant sales/ticketing upgrade under the passenger-ticketing rules in Section 32.
 
 It does **not** automatically increase platform, parking, maintenance or vehicle-handling capacity unless separate hub modules provide those functions.
 
@@ -1336,9 +1338,12 @@ The UI must translate staffing needs into understandable requirements such as:
 
 - train-driver hours/day;
 - road-driver hours/day;
+- conductor/onboard-staff hours where ticket checking/sales/service requires them;
 - number of effective full-time crews required;
 - peak crew requirement;
 - additional staffing required for night/weekend patterns.
+
+Where onboard ticket sales are enabled, passenger volume and expected onboard-sales workload contribute to conductor/onboard staffing requirements and station dwell assumptions.
 
 The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains.
 
@@ -3961,7 +3966,7 @@ A passenger rail station can be assembled from functional elements such as:
 - passenger platforms of configurable length,
 - station/entrance building,
 - waiting areas,
-- ticketing/booking facilities where historically relevant,
+- ticket office/booking-sales modules where historically relevant,
 - shelters/canopies,
 - toilets and basic amenities,
 - pedestrian access paths,
@@ -4002,7 +4007,7 @@ A station can therefore become a bottleneck even when the surrounding railway st
 
 Available station modules evolve with history and technology.
 
-Small stations can rely on simple buildings, platforms and manual ticketing where suitable. The available catalogue is initialized for the selected year; founding a new company in a later year does not reset station technology to the beginning of railways.
+Small stations can rely on simple buildings and platforms. Ticket sales are available only when the station has a compatible ticket-office/booking-sales module or another valid sales channel exists. The available catalogue is initialized for the selected year; founding a new company in a later year does not reset station technology to the beginning of railways.
 
 Depending on era, station modules can include:
 
@@ -4429,6 +4434,8 @@ The wider historical progression can include:
 - telegraph,
 - telephone,
 - centralized reservation/sales systems,
+- telephone booking/sales,
+- automated/self-service ticketing,
 - centralized dispatch,
 - electromechanical systems,
 - computer planning and customer databases,
@@ -4849,6 +4856,113 @@ The player can keep a Line on simple fixed pricing or manually tune its tariff i
 More advanced yield-style pricing can be delegated to commercial management later.
 
 Technology matters: sophisticated real-time/digital pricing should not exist before the company has the required information/reservation systems.
+
+##### Passenger ticket-sales channels
+
+A passenger Line can only sell tickets/reservations through **sales channels the company or infrastructure actually provides**.
+
+Ticketing is not automatically available everywhere a vehicle stops.
+
+Supported channels can include:
+
+1. **Branch sales desk** — a company branch with a ticketing/sales upgrade.
+2. **Station/terminal ticket office** — a passenger station/terminal with a compatible booking-sales module and an access/sales agreement where the player does not own the facility.
+3. **Onboard conductor / crew sales** — tickets sold after boarding or immediately before/at departure by eligible onboard staff.
+4. **Telephone/central reservation sales** — unlocked by the appropriate company communications/reservation system.
+5. **Automated/self-service sales** — station machines or other automated channels where historically available and installed.
+6. **Online/digital sales** — unlocked only after the company adopts the required modern digital reservation/sales system.
+
+The available mix evolves by era and company technology. A modern calendar year alone does not grant a channel for free.
+
+###### Branch and station sales
+
+A branch or station must have the appropriate **ticketing/booking upgrade** to sell tickets.
+
+The upgrade represents the required counter/office systems, staff workload and period-appropriate equipment. The player does not buy individual ticket printers, telephones or terminals.
+
+Ticket-sales capacity is finite.
+
+A small ticket office can become a bottleneck during peak periods, creating:
+
+- queues;
+- longer purchase time;
+- missed departures for late-arriving passengers;
+- reduced ability to process reservations/complex tickets.
+
+The facility can be upgraded or supplemented by other channels.
+
+A ticket office in a third-party station does not appear automatically. The player needs permission/commercial space or an agreed station sales arrangement.
+
+###### Conductor / onboard sales
+
+Eligible passenger services can allow **ticket purchase from a conductor/onboard staff**.
+
+This is especially useful for:
+
+- regional/local services;
+- small stops without a ticket office;
+- earlier historical periods;
+- passengers boarding where no other sales channel is available.
+
+Conductors/onboard staff are ordinary aggregated workforce under Section 8, not named individuals.
+
+Onboard selling consumes real staff/service capacity. Heavy onboard-sales workload can:
+
+- increase boarding/checking dwell;
+- require more onboard staff;
+- reduce service efficiency if staffing is insufficient.
+
+The Line/Service Pattern can define whether onboard sales are:
+
+- allowed;
+- prohibited;
+- allowed only when no station sales channel exists;
+- subject to an onboard surcharge.
+
+An onboard surcharge is part of the tariff policy, not an arbitrary penalty. It can be disabled for stations where no pre-purchase option exists.
+
+For **open boarding**, a passenger can board and purchase from the conductor if the policy permits and physical capacity is available.
+
+For **optional reservation**, the conductor can sell remaining uncommitted capacity where the service's reservation system can still verify availability.
+
+For **reservation-required** capacity, onboard sale is allowed only if the company technology/process can confirm and create the reservation before admitting the passenger to that zone. Otherwise the passenger must obtain the reservation through another valid channel.
+
+The system never sells onboard capacity that has already been reserved/committed elsewhere.
+
+###### Telephone and digital progression
+
+Company sales technology can progressively expand reach:
+
+- local in-person sales only;
+- telephone inquiry/booking;
+- centralized reservation office;
+- automated station sales;
+- connected computerized reservation network;
+- online/mobile/self-service digital sales.
+
+These systems connect directly to the commercial-coverage technology progression in Sections 7.2 and 28.
+
+Better sales technology can:
+
+- let passengers buy from farther away;
+- increase advance-sale share;
+- reduce pressure on station counters;
+- make reservations across multiple company Lines easier;
+- enable more sophisticated pricing/yield management.
+
+It does not create passenger demand by itself.
+
+###### Passenger choice and unavailable sales
+
+A passenger must be able to acquire a valid ticket/reservation through at least one suitable channel for the intended itinerary.
+
+If no usable sales channel exists, that journey option becomes less attractive or unavailable even if the physical vehicle has spare seats.
+
+The Line Planner should therefore flag:
+
+> **Ticket sales unavailable at [boarding point]**
+
+when a passenger stop has no viable ticketing path for the configured service/reservation policy.
 
 ##### Passenger capacity commitments
 
