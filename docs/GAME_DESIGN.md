@@ -302,7 +302,7 @@ Ordinary employees are aggregated by site/region/function, including:
 
 Insufficient staffing creates concrete operational consequences such as slower maintenance, reduced opening hours, delayed handling or weaker contract capacity.
 
-## 9. Reputation
+## 9. Reputation and customer relationships
 
 Reputation is not a single cosmetic score.
 
@@ -323,6 +323,39 @@ Reputation can affect:
 - partner-carrier relationships.
 
 Demolition, service quality, reliability, accidents and contract performance can alter reputation.
+
+### 9.1 Customer-specific relationships
+
+Important customers such as factories, mines, municipalities and large commercial firms can also have a direct long-term relationship with each transport operator.
+
+This relationship is separate from general reputation and is built through actual business history, for example:
+
+- completed contracts,
+- reliability and on-time performance,
+- damage/spoilage rates,
+- pricing consistency,
+- responsiveness to urgent jobs,
+- capacity offered,
+- contract breaches,
+- length of cooperation.
+
+The system must be transparent. A customer decision must never feel like a hidden arbitrary modifier.
+
+When evaluating or awarding a contract, the UI should show the major reasons for the customer's preference, for example:
+
+- strong existing relationship,
+- better historical reliability,
+- lower bid,
+- higher guaranteed capacity,
+- better local reputation,
+- prior contract failure,
+- insufficient experience with this customer.
+
+A player who currently has a weak relationship must have a credible path to improve it. Customers should offer smaller/less critical jobs or trial contracts that allow a new carrier to prove itself before becoming competitive for major long-term contracts.
+
+Existing relationships are an advantage, not an unbeatable lock-in. A new carrier can win business through better price, service quality, capacity or successful smaller contracts.
+
+Customer relationship evaluation must use cached historical aggregates and contract outcomes rather than expensive continuous AI.
 
 ## 10. Economy and industries
 
@@ -390,6 +423,10 @@ Contract types include:
 - state/public contract,
 - carrier subcontract,
 - long-term supply contract.
+
+Contract awards should consider transparent factors such as price, capacity, reliability, relevant reputation and customer-specific relationship history. The player must be able to inspect the important decision factors before or after bidding.
+
+Large customers may reserve their most important contracts for carriers with proven history, while still exposing smaller trial jobs that let new entrants build trust.
 
 ### 11.2 Cargo batches
 
