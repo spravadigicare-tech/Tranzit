@@ -807,6 +807,22 @@ Ownership of the track is not itself a tie-breaker after capacity has been contr
 
 If the owner wants higher priority for its own trains, it must reserve that capacity for itself in advance under the same capacity accounting.
 
+Reserved rail capacity has a defined **tolerance window** around the contracted operating time.
+
+If a Trip misses its slot beyond that window because of the operator's own delay, it loses its guaranteed priority for that occurrence and becomes an out-of-slot train. Dispatching then fits it into the nearest compatible spare capacity without displacing trains that are still inside their valid contracted windows.
+
+The access agreement can define:
+
+- slot start/end or target time,
+- early/late tolerance,
+- what priority applies after the tolerance is exceeded,
+- whether an out-of-slot movement pays an additional fee,
+- any cancellation/no-show rule for severely late services.
+
+The cause of delay matters. If the Trip misses the slot primarily because the infrastructure/station owner failed to provide previously contracted capacity or because of another protected infrastructure-side disruption covered by the agreement, the operator should not automatically lose its contractual protection. The agreement can instead preserve priority, rebook the slot or trigger compensation.
+
+The UI must show whether a late Trip is still **inside tolerance**, **out of slot**, or **reprotected due to infrastructure-side disruption**.
+
 The same high-level capacity philosophy is used for constrained passenger stations: operators buy/reserve station-call slots against finite station capacity, then the station dynamically assigns the actual compatible platform for each Trip. Station-slot capacity and line-section capacity remain separate constraints and both must be available.
 
 Real train movement still uses local section/block reservations. A train reserves only near-future sections, not its entire route.
@@ -1582,9 +1598,22 @@ The owner may reserve peak capacity for its own services in advance, but cannot 
 
 During disruption, a guaranteed third-party call can therefore take precedence over the owner's own standard/flexible call if that is what the contracted priorities require.
 
+Each station-call slot also has a **tolerance window**.
+
+If a train arrives outside that window because of its own operating delay, the guaranteed station-call priority for that occurrence expires. The train remains eligible to use the station, but it must be fitted into the next compatible spare platform/call capacity and cannot displace an on-time guaranteed call.
+
+Typical status shown to the player:
+
+- **On time / protected** — inside the slot window;
+- **Late but protected** — still inside tolerance;
+- **Out of slot** — tolerance exceeded; waiting for spare capacity;
+- **Reprotected** — lateness caused by a qualifying infrastructure/station-side failure under the access agreement.
+
+The slot contract can define different tolerance values by service type or access product. Guaranteed products can have wider or more predictable tolerance than cheaper flexible access.
+
 Unused guaranteed/standard slots still have a reservation cost because the owner has withheld that capacity from other operators.
 
-An operator without a pre-purchased slot may request an ad-hoc call. It is accepted only if real spare station capacity exists, usually at a higher per-call price or with lower priority.
+An operator without a pre-purchased slot, or a train that has fallen out of its slot window, may request an ad-hoc call. It is accepted only if real spare station capacity exists, usually at a higher per-call price or with lower priority.
 
 A dedicated platform can still exist as an exceptional contractual or infrastructure rule where operationally justified, but it is not the default model.
 
