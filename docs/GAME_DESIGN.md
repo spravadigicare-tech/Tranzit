@@ -1308,6 +1308,20 @@ It can later tender transport services over the infrastructure.
 
 The player can finance and own infrastructure and charge access fees.
 
+A private infrastructure owner can reserve part of its capacity for its own services before offering the remainder to other operators.
+
+However, depending on country, era, licence terms and infrastructure importance, the state/regulator can impose **open-access obligations** on strategically important private infrastructure.
+
+Open-access rules can require the owner to:
+
+- make a minimum share of usable capacity available to third parties,
+- publish transparent access prices,
+- avoid discriminatory refusal where compatible capacity exists,
+- preserve emergency/public-service access,
+- participate in capacity allocation or dispute-resolution rules.
+
+The exact obligation is a legal/regulatory property of the infrastructure and jurisdiction, not a universal rule for every private siding or local station.
+
 Building private rail should be very expensive so sharing existing infrastructure is often rational.
 
 ### 19.3 Connection agreements
@@ -1500,10 +1514,16 @@ Slots are sold/reserved against the station's calculated usable capacity by time
 The station owner cannot sell unlimited slots. The capacity planner maintains:
 
 - safe/usable station-call capacity,
-- already committed guaranteed capacity,
+- capacity reserved by the owner for its own services,
+- capacity protected for regulatory/open-access obligations where applicable,
+- already committed guaranteed third-party capacity,
 - standard/flexible commitments,
 - operational reserve for disruption where configured,
 - remaining sellable capacity.
+
+A private owner can deliberately reserve part of the station's capacity for its own Lines/Service Patterns. Those self-reserved slots consume real station capacity exactly like third-party slots and therefore reduce what can be sold externally.
+
+At regulated or strategically important stations, the state/regulator may require a minimum amount or share of station-call capacity to remain available for third-party operators. The owner cannot reserve or sell that protected capacity in a way that violates the rule.
 
 Peak capacity can therefore become scarce and more expensive.
 
@@ -1539,12 +1559,16 @@ A dedicated platform can still exist as an exceptional contractual or infrastruc
 The access-planning UI should show, by relevant time window:
 
 - total usable station capacity,
-- already reserved calls,
+- capacity reserved for the owner's own services,
+- regulatory/open-access capacity protected for third parties where applicable,
+- already reserved third-party calls,
 - remaining sellable slots,
 - player's currently owned/reserved slots,
 - expected per-call usage charges,
 - expected peak congestion,
 - the concrete constraint that limits further sales if capacity is exhausted.
+
+If a third-party request is rejected, the UI must state whether the reason is genuine capacity/compatibility, contractual priority, or another explicit rule. A regulated owner cannot hide discriminatory refusal behind an unexplained generic "no capacity" result.
 
 This prevents hidden oversubscription: if the station is effectively full in the 07:00–08:00 window, neither the player nor an AI operator can buy another guaranteed peak slot unless capacity is expanded or another commitment is released.
 
