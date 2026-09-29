@@ -198,6 +198,8 @@ Different segments value time, price, comfort and reliability differently.
 
 Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Early-game leisure/tourism demand is limited compared with later eras and should grow only as income, free time, transport accessibility, urbanization and relevant destinations develop. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism, but the game must not project modern travel behaviour backwards into 1820.
 
+Passenger demand also has historically grounded daily and weekly rhythms. Work shifts, market days, school schedules, religious/rest days, weekends and later modern commuting patterns can shape peaks, but the profile must evolve by era rather than using one modern 24/7 template for the whole campaign.
+
 ### 6.3 Private cars
 
 Private motoring grows with technology, household prosperity, road quality and vehicle availability.
@@ -1243,7 +1245,7 @@ Managers can optimize within player-defined constraints such as target margin, o
 
 Lower-level manual settings override delegated policies.
 
-## 32. Passenger services in the early game
+## 32. Passenger services and timetables
 
 Regular passenger lines are available from the start.
 
@@ -1255,6 +1257,60 @@ The player can also use demand-driven departure policies, e.g.:
 - or after a maximum wait time.
 
 Over time, demand growth supports more frequent and higher-capacity scheduled services.
+
+### 32.1 Service calendars
+
+A line can contain multiple repeating service patterns instead of one permanent timetable.
+
+Each service pattern can define:
+
+- validity period/date range,
+- days of week,
+- exact departure times and/or repeating intervals,
+- time-of-day windows,
+- capacity/vehicle requirements,
+- optional departure conditions for demand-driven freight/passenger services,
+- exceptions such as holidays, temporary closures or special-event service.
+
+Example patterns can include weekday, weekend, summer, winter or harvest-season service.
+
+Early-game services can use sparse exact departures such as Monday/Thursday or one/two departures per day. Later high-frequency rail/urban services can use interval-based patterns.
+
+Service calendars must respect actual physical fleet availability. Before activation, the planner calculates the number and type of vehicles/consists required from real cycle times, turnaround, depot movements and maintenance assumptions. If the fleet cannot cover the timetable, the game must explain the shortage rather than creating abstract vehicles.
+
+Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
+
+### 32.2 Feeder and connection relationships
+
+Connections should normally be planned at **line/service-pattern level**, not by manually linking every individual trip.
+
+The player can declare that one line or service pattern:
+
+- feeds another line,
+- should receive passengers from another line,
+- should coordinate bidirectionally around a hub.
+
+The timetable planner then calculates suitable departures using:
+
+- actual travel time,
+- transfer walking/handling time,
+- desired transfer buffer,
+- historical reliability/delay distribution,
+- service frequency,
+- physical vehicle availability.
+
+Example: the player marks a regional bus as a feeder for a specific rail service. The system schedules the bus to arrive early enough for a reliable transfer rather than requiring the player to set every bus arrival manually.
+
+The player can set high-level preferences such as:
+
+- target transfer buffer,
+- maximum acceptable wait,
+- whether the feeder may wait for a delayed connection,
+- which connection has priority.
+
+The system must show the resulting expected transfer quality and any fleet/capacity consequences.
+
+Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
 
 ## 33. Urban transport
 
