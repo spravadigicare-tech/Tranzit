@@ -2945,11 +2945,25 @@ Possible solutions include:
 
 ### 14.3 Train feasibility
 
-Before dispatch, the game calculates whether a consist can physically operate the planned route based on weight, traction, gradients and infrastructure.
+Before dispatch, the game calculates whether a consist can physically operate the planned route based on:
 
-The player should not discover a predictable traction problem only after the train stalls.
+- total weight;
+- total length;
+- axle/load limits;
+- locomotive power and tractive effort;
+- acceleration/braking performance where relevant;
+- gradients;
+- curvature/geometry restrictions;
+- electrification/traction system;
+- permitted speed;
+- station/platform length;
+- other infrastructure compatibility.
 
-Heavy trains may need helpers/bank engines on specific sections.
+The player should not discover a predictable traction, length or load problem only after the train has departed.
+
+For criteria-based consists under Section 32.6, these calculations also define the Pattern's **operating envelope**. The dispatcher may select any real consist inside that envelope but cannot substitute one that invalidates the planned running time, platform fit or reserved slot assumptions.
+
+Heavy trains may need helpers/bank engines on specific sections. A helper requirement is part of feasibility and must be represented by real available traction, not an abstract performance bonus.
 
 ### 14.4 Locomotive exchange and local traction bases
 
@@ -4788,7 +4802,7 @@ Material changes include, for example:
 - departure frequency;
 - timetable/slot pattern;
 - operating days;
-- vehicle/consist requirement;
+- vehicle/consist requirement, pinned assets or assignment criteria;
 - passenger-capacity configuration;
 - reservation policy;
 - operating depot where it changes real movements;
@@ -5775,25 +5789,225 @@ Feeder/connection planning must use the actual expected stop pattern of the rele
 
 Dispatch automation can later decide individual conditional calls automatically within the rules of that line, but the player must always be able to inspect why a specific trip stopped or skipped a location.
 
-### 32.6 Vehicle assignment from fleet pools
+### 32.6 Vehicle and consist assignment
 
-Trips normally receive concrete vehicles/consists dynamically from the relevant regional fleet pool rather than from permanently fixed vehicle-to-line assignments.
+A Line/Service Pattern can define its vehicle assignment in **three ways**:
 
-A Line or Service Pattern can still define:
+1. **Specific vehicles / fixed consist** — the player selects the exact physical vehicles/rolling-stock assets to use.
+2. **Criteria-based assignment** — the player defines technical/capacity rules and the dispatcher selects suitable real assets from the fleet pool.
+3. **Hybrid assignment** — some vehicles are pinned while the remaining positions/capacity are filled dynamically by criteria.
 
-- required vehicle capabilities,
-- preferred consist family/type,
-- preferred or required **operating/dispatch depot**,
-- fallback operating depots,
-- minimum reserve policy.
+The player can therefore choose between tight operational control and scalable fleet automation.
 
-Parking and maintenance are separate from the Line's operating depot. Individual assets or their fleet group can have separate parking and maintenance facility preferences.
+#### Specific vehicles / fixed consist
 
-The timetable planner must include real depot-to-service positioning, parking needs, maintenance windows and necessary repositioning movements when calculating required fleet size and feasibility.
+The player can explicitly assign:
 
-If a Service Pattern includes locomotive exchange, the planner must also validate that each exchange point has suitable local traction capacity. It must not assume a replacement locomotive can appear from nowhere or make two locomotives perform pointless long-distance deadheads from the same depot.
+- a specific locomotive;
+- specific passenger/freight coaches or wagons;
+- a specific bus/tram/trainset;
+- a complete ordered rail consist.
 
-A specific vehicle may be manually pinned to a Line/Pattern as an override where the player wants that level of control, but this is not the default operating model.
+Example:
+
+> Locomotive #104  
+> First Class Coach #18  
+> Second Class Coach #44  
+> Second Class Coach #51  
+> Dining Coach #7
+
+These are real physical assets.
+
+The planner must validate:
+
+- whether each asset is physically available;
+- whether it can reach the operating depot/service start;
+- maintenance conflicts;
+- overlapping Trip assignments;
+- route/infrastructure compatibility;
+- resulting capacity/performance.
+
+By default, a strictly pinned vehicle is **not silently substituted** if unavailable.
+
+The player can optionally allow a fallback policy such as:
+
+- exact asset required;
+- same model/class substitute allowed;
+- any vehicle meeting Pattern criteria allowed.
+
+This makes it possible to preserve a special/premium consist without forcing the same rigidity on every service.
+
+#### Criteria-based assignment
+
+Instead of naming specific assets, the player can define a **vehicle/consist rule set**.
+
+Relevant rail criteria can include, where applicable:
+
+- traction type / power system;
+- minimum locomotive power;
+- minimum tractive effort or required route-performance capability;
+- minimum permitted top speed;
+- maximum total train weight;
+- maximum total train length;
+- maximum axle load;
+- minimum passenger/cargo capacity;
+- required passenger classes/capacity zones;
+- minimum/maximum number of coaches/wagons;
+- required wagon/coach types;
+- required comfort/service features;
+- reservation-capable capacity;
+- accessibility;
+- baggage/catering/sleeper requirement;
+- cargo compatibility;
+- brake/safety/technical compatibility;
+- allowed/excluded vehicle models/families.
+
+Relevant road/urban criteria can include:
+
+- vehicle category;
+- minimum passenger/cargo capacity;
+- maximum dimensions/weight where route constrained;
+- minimum permitted top speed;
+- power/grade capability;
+- fuel/traction type;
+- comfort/accessibility;
+- baggage/door/standing capacity;
+- required service equipment.
+
+The UI should distinguish **minimum requirements** from **hard maximum limits**.
+
+Example:
+
+> Passenger rail Pattern  
+> Min top speed: 120 km/h  
+> Min traction capability: route requirement met  
+> Max consist length: 210 m  
+> Max consist weight: 430 t  
+> First Class seats: ≥ 32  
+> Total seated capacity: ≥ 280  
+> Restaurant/dining coach: required
+
+The dispatcher then selects actual available vehicles that satisfy the complete rule set.
+
+#### Hybrid consists
+
+A Pattern can pin selected components while leaving others dynamic.
+
+Example:
+
+> Dining Coach #7 — fixed  
+> 1 First Class coach — criteria-based  
+> 3–5 Second Class coaches — criteria-based  
+> locomotive — criteria-based, min required route performance
+
+This is useful for:
+
+- branded/premium vehicles;
+- special service coaches;
+- scarce sleeper/dining cars;
+- historic equipment;
+- a specific customer-contract vehicle;
+- keeping the rest of the fleet flexible.
+
+Pinned and dynamic components still form one real physical consist and must be assembled through normal shunting rules.
+
+#### Performance envelope
+
+Criteria-based assignment is constrained by a **prevalidated operating envelope**.
+
+The Pattern must define enough limits that any dispatcher-selected consist remains compatible with:
+
+- route geometry;
+- gradients;
+- traction/electrification;
+- line speed;
+- station/platform length;
+- axle/load limits;
+- turnaround/shunting facilities;
+- planned running times;
+- contracted rail/station slot windows.
+
+The dispatcher must not choose a technically valid but too-slow/heavy/long consist that would invalidate the timetable.
+
+Typical envelope rules therefore include:
+
+- minimum route-capable performance;
+- minimum top speed;
+- maximum train length;
+- maximum train weight;
+- maximum axle load;
+- minimum acceleration/tractive performance where materially needed.
+
+If the actual available fleet cannot form a consist inside the envelope, the Trip is not considered covered.
+
+The planner reports the concrete reason, for example:
+
+> 4 compatible coaches available, but required 280-seat consist needs 5.  
+> Available locomotive meets power requirement but resulting consist is 224 m; platform limit is 210 m.
+
+#### Dynamic capacity within a Pattern
+
+A criteria-based Pattern can permit a **range** of consist sizes.
+
+Example:
+
+> 3–6 Second Class coaches  
+> minimum 240 seats  
+> maximum 230 m total length
+
+The dispatcher can choose a shorter or longer consist based on:
+
+- booked/reserved passenger demand;
+- freight allocations;
+- demand forecast;
+- vehicle availability;
+- maintenance state;
+- operating cost;
+- required reserve policy.
+
+However, all permitted variants must remain inside the Pattern's validated operating envelope and infrastructure/slot assumptions.
+
+If adding/removing vehicles would materially change running time, dwell, slot-window requirement or another protected operating assumption, the planner must revalidate that consist variant before it can be used.
+
+This prevents "automatic capacity scaling" from silently breaking the timetable.
+
+#### Fleet pool and physical assignment
+
+Criteria-based Trips receive concrete vehicles/consists dynamically from the relevant fleet pool.
+
+Selection considers:
+
+- current physical location;
+- compatibility with the complete Pattern rule set;
+- existing commitments;
+- maintenance state;
+- fuel/energy state;
+- repositioning/deadhead cost and time;
+- parking/depot capacity;
+- reserve commitments;
+- expected next work.
+
+The dispatcher can optimize among eligible assets but cannot create abstract vehicles.
+
+Parking and maintenance are separate from the Line's operating depot. Individual assets or fleet groups can retain separate parking/maintenance preferences.
+
+The timetable planner includes real depot-to-service positioning, maintenance windows, consist assembly and necessary repositioning when calculating required fleet size and feasibility.
+
+If a Service Pattern includes locomotive exchange, each segment can have its own fixed/criteria-based traction rule. The planner still validates local traction-base availability and physical exchange operations.
+
+#### Assignment transparency
+
+Before activation, the planner shows:
+
+- required/pinned assets;
+- number of currently eligible dynamic assets;
+- expected number of consists/vehicles simultaneously required;
+- reserve margin;
+- any time periods where the fleet pool cannot satisfy the rules.
+
+For a concrete Trip, the player can inspect which real assets were selected and why.
+
+The player can override the automatic selection when desired, but the override must still satisfy all hard physical, contractual and timetable constraints.
 
 ### 32.7 Crew requirement planning
 
