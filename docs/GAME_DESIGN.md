@@ -4280,7 +4280,124 @@ Examples:
 
 Road operating bases may therefore need real fuel deliveries, or later sufficient electrical charging/grid capacity, depending on the vehicles assigned there.
 
-Depots/stations maintain real inventories.
+Depots, stations and terminals can maintain real inventories and energy-service infrastructure where installed.
+
+### 18.1 Vehicle fuel / energy state
+
+Vehicles that carry their own fuel/energy have a real operating state such as:
+
+- fuel quantity;
+- battery/energy state;
+- historically appropriate consumable traction supply such as coal/water where relevant.
+
+Consumption is based on actual operation and remains tied to the common simulation clock/rules in Section 3.
+
+The player does **not** normally click a manual Refuel action for every vehicle.
+
+Instead, fueling/charging is integrated into fleet and Trip scheduling.
+
+### 18.2 Where fueling and charging can happen
+
+Normal scheduled fueling/charging takes place **between Trips** at a physical compatible facility.
+
+Valid locations include:
+
+1. **Depot / operating base** with the required fuel/charging module;
+2. **Passenger or freight station/terminal** with the required fueling/charging infrastructure.
+
+Simply being at a depot or station is not enough. The site must have infrastructure compatible with the vehicle/energy type.
+
+Examples include:
+
+- diesel/petrol pumps and storage;
+- coal/water servicing where historically appropriate;
+- electric charging equipment;
+- other mode-specific energy-service modules.
+
+A third-party station/terminal can provide fueling/charging only when the operator has the relevant service/access right and the facility owner offers that service.
+
+Fuel/energy does not appear inside a vehicle automatically merely because the Trip ended at a station.
+
+### 18.3 Automatic fueling between Trips
+
+The dispatcher automatically inserts fueling/charging into the vehicle's turnaround plan when needed and when a compatible facility is available.
+
+A typical vehicle duty can therefore be:
+
+> Trip A  
+> → arrive at terminal  
+> → refuel/charge during turnaround  
+> → Trip B
+
+or:
+
+> Trip A  
+> → deadhead to operating depot  
+> → refuel  
+> → prepare for next Trip
+
+The player can inspect the planned task, but routine fueling is automated.
+
+The planner considers:
+
+- current fuel/energy state;
+- expected consumption of the next Trip/duty;
+- desired operating reserve;
+- time available before the next Trip;
+- fueling/charging rate;
+- number/capacity of pumps, chargers or service points;
+- site inventory;
+- electrical grid capacity where relevant;
+- repositioning time if the vehicle must visit another facility.
+
+Fueling therefore consumes real turnaround time and facility capacity.
+
+### 18.4 Trip energy feasibility
+
+Before a Trip is committed, the planner checks that the assigned vehicle can complete the planned duty with a valid energy plan.
+
+A Trip cannot depend on fuel/energy that does not physically exist or on a refueling point the company cannot use.
+
+If the vehicle does not have enough energy for the next Trip, the planner must find a valid between-Trip fueling/charging opportunity before departure.
+
+If none exists, the Trip is not ready and the UI explains the reason, for example:
+
+> Bus #37: insufficient fuel for next duty  
+> Required before departure: 82 L  
+> Current: 41 L  
+> No compatible fueling point available at this terminal
+
+The planner can resolve this by:
+
+- using another compatible vehicle with sufficient range;
+- scheduling fueling at the current depot/station;
+- repositioning to a compatible fueling facility if time permits;
+- changing the duty/turnaround plan;
+- delaying/cancelling according to the applicable disruption policy if the problem reaches day-of-operation.
+
+The dispatcher should not intentionally send a vehicle onto a Trip that is predictably unable to finish because of insufficient fuel/energy.
+
+### 18.5 Facility capacity and shortages
+
+Fueling/charging infrastructure has finite practical capacity.
+
+Examples:
+
+- one pump cannot service unlimited buses simultaneously;
+- a charging site has a finite number of charging positions and available electrical power;
+- a rail fueling/service point can handle only the vehicles/trains that physically fit and can be processed in time.
+
+The timetable/fleet planner should detect recurring fueling bottlenecks when they are predictable.
+
+The facility also needs the actual energy/supply available.
+
+For stocked fuels/supplies, inventory can run low or empty.
+
+For electricity, usable charging is constrained by the site's grid connection/capacity.
+
+A facility with no remaining fuel, no available charging power or no free service capacity cannot complete the planned task merely because the module exists.
+
+### 18.6 Supply procurement
 
 The player can:
 
@@ -6477,7 +6594,7 @@ This can include:
 2. initiating required repositioning/deadhead movements;
 3. reserving depot/yard/shunting capacity;
 4. assembling the physical consist;
-5. fueling/charging/service preparation;
+5. fueling/charging at a compatible depot/station/terminal service point where required;
 6. cleaning/catering/other required servicing;
 7. performing applicable technical/readiness checks;
 8. positioning the completed vehicle/consist for boarding/loading/departure.
@@ -6513,7 +6630,7 @@ It verifies, as applicable:
 - consist is correctly assembled;
 - route/traction/infrastructure compatibility remains valid;
 - required maintenance/safety status is valid;
-- fuel/energy is sufficient;
+- fuel/energy is sufficient for the planned Trip/duty until the next valid fueling/charging opportunity;
 - crew capacity is available;
 - required onboard staff are available;
 - passenger/cargo capacity matches the final consist;
