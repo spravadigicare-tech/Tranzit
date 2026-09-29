@@ -428,6 +428,39 @@ Contract awards should consider transparent factors such as price, capacity, rel
 
 Large customers may reserve their most important contracts for carriers with proven history, while still exposing smaller trial jobs that let new entrants build trust.
 
+### 11.2 Contract award models
+
+Contract complexity scales with importance so routine work does not become paperwork:
+
+1. **Small / routine jobs:** fixed offer; accept or decline.
+2. **Medium contracts:** the player mainly bids price and capacity.
+3. **Large contracts:** structured tender with price, guaranteed capacity, delivery/service level and contract duration.
+4. **Strategic long-term contracts:** structured tender plus limited negotiation over terms such as price, guaranteed volume, duration, service level and penalties.
+
+Negotiation is parameter-based rather than a dialogue mini-game. The UI should immediately show the commercial effect of changing a term.
+
+Routine bidding can later be delegated to commercial managers using player-defined rules such as minimum margin, maximum commitment, customer priority and approval thresholds.
+
+AI competitors must bid from their real available capacity, costs, network access, relationship and strategy. They must not generate fake impossible bids simply to beat the player.
+
+### 11.3 Exclusivity
+
+Large or strategic contracts can include exclusivity.
+
+An exclusive contract can guarantee the carrier all or most of a customer's defined transport volume for the covered flow, period or commodity.
+
+In return, the carrier accepts stronger obligations such as:
+
+- guaranteed minimum capacity,
+- stricter reliability/service-level targets,
+- stronger penalties for failure,
+- potentially reserved fleet/infrastructure capacity,
+- limited ability to reject individual shipments within the agreed range.
+
+Exclusivity is optional and must be priced as a risk/reward trade-off. It can create stable revenue and deepen customer relationships, but can become costly if the carrier overcommits.
+
+The customer must still have emergency fallback rights where the contract explicitly allows them, for example after repeated SLA breaches or when the carrier cannot accept the guaranteed volume.
+
 ### 11.2 Cargo batches
 
 Cargo is simulated in batches, not per kilogram/item.
