@@ -323,12 +323,41 @@ The player starts with a small company in the selected year:
 - one first regional branch/office placed in a chosen city,
 - a small period-appropriate starting fleet or acquisition budget,
 - limited staff,
-- limited capital,
-- accessible local contracts and passenger demand.
+- accessible local contracts and passenger demand,
+- one selected **founding-loan package** that provides the company's initial cash.
 
 The first branch is the local commercial hub. Its physical location matters. Exact starting capital, vehicle models and fleet quantities remain balancing/content decisions. A later start does not automatically award a large network or established customer history.
 
 The mandatory handful-of-horse-drawn-vehicles start belongs to the planned Early Ages experience around 1820, not to every base-game start. Base-game startup options must fit 1900, 1925, 1950 or 1975 and the chosen region. Surviving older vehicles may remain available where appropriate to their date and condition.
+
+At new-game setup, the player chooses one of **three starting-capital tiers**. All three are loans rather than free money:
+
+1. **Small founding loan** — lowest starting cash and lowest total debt; intended for a cautious, very small start.
+2. **Standard founding loan** — more cash for vehicles, facilities and working capital, with a larger principal but still favourable terms.
+3. **Large founding loan** — the highest starting cash and debt, intended to let the player establish a broader initial operation without turning the start into an established large company.
+
+The exact currency amounts are balancing values and can vary by selected year/economy. The tiers should preserve the same relative role across 1900, 1925, 1950 and 1975 instead of using one nominal amount whose purchasing power changes radically by era.
+
+All three founding loans receive deliberately favourable startup terms compared with ordinary commercial borrowing:
+
+- low interest,
+- long maturity,
+- manageable scheduled repayments,
+- no punitive increase in interest merely because the player chose the larger starting tier.
+
+The larger tier still creates a larger total obligation and should therefore cost more over time, but repayment must remain proportionate and survivable for a reasonably operated new company. A higher starting tier should buy flexibility and faster setup, not function as a disguised hard mode through crushing early instalments.
+
+The setup UI must show for each tier:
+
+- cash received,
+- principal owed,
+- interest rate,
+- repayment frequency,
+- scheduled instalment,
+- maturity/end date,
+- estimated total repayment under the agreed terms.
+
+Choosing a founding-loan tier does not change AI difficulty, demand, reputation or contract quality by itself. It changes only the player's initial financing and resulting balance-sheet obligation.
 
 ### 7.2 Branch reach
 
@@ -2471,6 +2500,27 @@ Core tools:
 - simple bank loans.
 
 No deep bond-market simulator is required.
+
+### 38.1 Founding loan
+
+Every new company begins with one of the three founding-loan tiers defined in Section 7.1. Initial cash is therefore financed rather than granted for free.
+
+The founding loan is a special startup product with intentionally favourable conditions compared with ordinary later borrowing. Its purpose is to let the player establish a viable operation without making the opening hours primarily a debt-service survival test.
+
+Founding-loan rules:
+
+- low fixed or otherwise clearly predictable interest;
+- long repayment horizon;
+- manageable instalments even for the largest starting tier;
+- larger tiers have larger principals and therefore higher total repayments, but not disproportionately punitive rates;
+- terms are disclosed completely before starting the game;
+- repayments use the shared game calendar and financial period rules from Section 3.4.
+
+The player can repay the founding loan early if ordinary loan rules allow it; any early-repayment fee, if used at all, should be small and disclosed rather than punitive.
+
+The founding loan remains real debt on the balance sheet. It affects cash flow and solvency calculations and does not disappear when the company grows.
+
+After the game starts, additional financing uses normal commercial loan products rather than repeatedly granting founding-loan terms.
 
 Infrastructure and land can be sold to states or competitors.
 
