@@ -438,42 +438,91 @@ The UI should expose an understandable administrative-load indicator rather than
 
 Overload should degrade performance progressively rather than suddenly disabling an entire region.
 
-Branch size is **not a simple hard kilometre radius**.
+#### Local-office operating model
 
-Commercial reach depends on a combination of:
+A newly founded company begins with a **local-office operating model**.
 
-- physical/local presence,
-- installed period-appropriate communications,
-- office staffing/capacity,
-- regional/legal access,
-- customer type and contract requirements.
+At this stage, a branch's ordinary commercial reach is the **city/locality in which that branch physically exists**.
 
-A small company does not have to replay the historical invention of the telegraph or telephone simply because it is newly founded. These technologies can be available from the selected start's catalogue, while their installation and operation still cost resources.
+The Opportunity Board therefore shows routine commercial opportunities only for cities where the company has an active branch.
 
-The very local pre-telegraph office progression is primarily Early Ages content. Telegraph, telephone and later electronic systems expand practical commercial reach. Modern digital ordering can make geographic communication much less restrictive, but it does not erase regional licences, legal-presence requirements or situations where a customer/public authority explicitly requires local representation.
+To commercially serve another city under this early operating model, the company normally needs an active branch in that city as well.
 
-A company **can encounter and pursue some opportunities outside its active branch network**, but this is deliberately limited.
+"Serve" means that the city is a commercial origin, destination or scheduled passenger/cargo stop where the company boards, alights, loads, unloads, sells/fulfils local transport or maintains a local customer relationship.
 
-Without a local branch/presence in the relevant region, the company may still be able to:
+A vehicle may **pass through** a city or region without a branch if route/access rules permit it. Merely traversing a road, railway or waterway does not create a branch requirement.
 
-- see and bid on openly published public/state/municipal tenders,
-- respond to a customer that directly approaches the company,
-- pursue a strategically advertised contract whose rules do not require local presence,
-- participate through an existing partner/subcontractor where the agreement permits it.
+Example:
 
-Without a branch, the company does **not** receive the normal local commercial pipeline. It has reduced or no access to:
+> Branch Praha + branch Plzeň  
+> → the company can discover local business in Praha and Plzeň and operate a Praha–Plzeň commercial service.  
+> → a train may pass through Beroun without a branch there if it does not commercially serve Beroun.  
+> → adding Beroun as a commercial stop initially requires establishing a Beroun branch.
 
-- routine locally generated customer leads,
-- ordinary relationship-building opportunities,
-- local sales prospecting,
-- some private tenders or negotiated contracts,
-- contracts whose customer, regulator or licence terms require a real local office.
+This applies consistently to passenger and cargo operations where local commercial handling is required.
 
-This limitation is not a hidden percentage penalty. The UI should show whether an opportunity is available because it is public/directly offered and whether establishing a local branch would unlock broader commercial access.
+The rule creates a deliberate early-company expansion loop:
 
-Available opportunities are surfaced through the Opportunity Board in Section 11.0. The board can be filtered by region, customer, contract type and other operational/commercial properties without bypassing branch-discovery rules.
+**build branch → discover local demand → secure endpoint/access → start service → expand to another city → build another branch**
 
-Winning an out-of-region contract does not magically create local administrative capacity. Before signing, the planner must still validate whether the company has enough office/admin capacity, licences, operating access, vehicles, terminals and staff to fulfil it. A contract can also explicitly require the player to establish a branch before operations begin.
+It is not a kilometre-radius system.
+
+#### Technology-driven reduction of branch dependence
+
+The need for a branch in every commercially served city is **not permanent**.
+
+Company communications, sales, reservation, dispatch and ordering technology can progressively centralize work and increase the geographic area that one office can serve.
+
+The progression can include, depending on era:
+
+- improved postal/administrative systems,
+- telegraph/telephone coordination,
+- centralized reservation and sales systems,
+- computerized dispatch/customer databases,
+- electronic ordering,
+- modern online/self-service booking and digital customer systems.
+
+Historical availability alone is not enough. The player's company must actually adopt/install the relevant business system where required.
+
+Early improvements can reduce administrative friction and allow some centralized processing without immediately eliminating local offices.
+
+Later systems can explicitly unlock broader operating models, for example:
+
+- one branch can commercially cover several nearby cities;
+- a regional headquarters can cover a defined broader territory;
+- some customer types no longer require a local office;
+- modern online systems can remove the branch-at-every-stop requirement for ordinary business almost entirely.
+
+Even in a modern company, a branch can still be required where:
+
+- law/licence terms demand local presence,
+- a public concession requires it,
+- a strategic customer contract requires dedicated local representation,
+- local administrative or operational workload justifies it.
+
+The UI must show the company's current **commercial coverage model** and explain why a city currently requires or does not require a branch.
+
+#### Opportunity Board visibility
+
+Opportunity discovery follows the current branch/technology coverage rules.
+
+At the starting local-office stage:
+
+- routine Opportunity Board results are limited to cities with active branches;
+- filters cannot reveal ordinary hidden opportunities in unserved cities;
+- building a new branch causes that city's normal commercial pipeline to become visible.
+
+Later communication/business-system upgrades can broaden what appears on the Opportunity Board in line with the newly unlocked commercial coverage.
+
+Public/nationally advertised tenders or direct approaches outside normal coverage can exist only when the current communication/business system plausibly allows the company to receive them. Seeing such an opportunity does not automatically waive a local-branch requirement for performing the contract.
+
+If a visible contract requires service in a city that the company cannot yet commercially cover, the Contract Planner must show:
+
+> **Local presence required: establish branch in [city]**
+
+or the appropriate technology/coverage alternative.
+
+#### Physical growth
 
 Branches can be physically expanded or replaced.
 
@@ -850,7 +899,7 @@ Better infrastructure can open previously uneconomic markets.
 
 ### 11.0 Opportunity Board / commercial opportunities
 
-The player's primary discovery UI for available business is a **filterable Opportunity Board**. It aggregates opportunities the company is actually allowed to see based on branch presence, public tenders, direct customer approaches, partnerships and the access rules in Section 7.2.
+The player's primary discovery UI for available business is a **filterable Opportunity Board**. It aggregates only opportunities the company is currently able to discover under the branch/commercial-coverage and communications rules in Section 7.2, plus any public/direct opportunities that the company's current business systems can plausibly receive.
 
 The board can contain:
 
@@ -913,7 +962,7 @@ The board should also support a **feasibility summary** for each opportunity wit
 
 These statuses are explanations, not automatic accept/reject decisions. A player may still bid strategically on an opportunity that requires investment.
 
-The game should avoid overwhelming the player with every theoretical opportunity in Europe. Discovery is scoped through branch/commercial presence, relevant public advertising, direct offers and selected search/filter context. The board can summarize or paginate large result sets rather than continuously rendering every opportunity.
+The game should avoid overwhelming the player with every theoretical opportunity in Europe. At the starting local-office stage, routine discovery is city-scoped: if the company has only a Praha branch, ordinary local opportunities from Brno are not merely filtered out — they are not known to the company yet. Later company communication/IT systems broaden this scope under Section 7.2. The board can summarize or paginate large result sets rather than continuously rendering every opportunity.
 
 When the player opens an opportunity, the next step is the normal contract evaluation/planning flow: inspect terms, estimate fleet/infrastructure/staff needs, secure any required capacity, and bid/accept according to the contract model below.
 
@@ -994,6 +1043,7 @@ Typical categories:
 - **Licences / concessions / permits**;
 - **Customer-specific requirements** such as temperature control, dangerous-goods capability or comfort class;
 - **Partner/subcontract capacity**;
+- **Commercial coverage / local presence** — whether every commercially served city is covered by a required branch or by a later technology-enabled coverage model;
 - **Administrative capacity** at the responsible branch/office;
 - **Operating supplies / energy** where materially constraining.
 
@@ -3210,19 +3260,33 @@ The available technology baseline depends on the selected new-game year (Section
 
 ## 28. Automation and information technology
 
-Technological progress changes how much manual management is required.
+Technological progress changes both how much manual management is required and **how geographically centralized the company can become**.
 
 The wider historical progression can include:
 
 - local paper-based offices,
 - telegraph,
 - telephone,
+- centralized reservation/sales systems,
 - centralized dispatch,
 - electromechanical systems,
-- computer planning,
-- modern electronic ordering/API-like systems.
+- computer planning and customer databases,
+- electronic ordering,
+- modern online/self-service booking and digital customer systems.
 
-This is not a mandatory sequence restarted for every new company. Start-year data determines which tools already exist; the player still needs the relevant staff, buildings and installed systems to use them. The pre-1900 progression belongs to Early Ages, while the same technology definitions can remain relevant to inherited infrastructure in later starts.
+This is not a mandatory invention sequence restarted for every new company. Start-year data determines which technologies exist in the world, but the player's company still needs to adopt/install the relevant systems, staff and organizational processes to gain their benefits.
+
+A newly founded 1950 or 1975 company can therefore have access to contemporary technology, but it does not automatically begin with a mature nationwide centralized commercial system for free.
+
+Business-system upgrades can progressively change the branch rules in Section 7.2:
+
+- reduce local administrative workload,
+- let one office process work for multiple cities,
+- widen Opportunity Board discovery,
+- centralize customer relationships/reservations,
+- eventually remove the ordinary branch-at-every-commercial-stop requirement where law/contracts allow.
+
+The pre-1900 progression belongs mainly to Early Ages, while the same technology definitions can remain relevant to inherited infrastructure in later starts.
 
 Automation makes a large modern company manageable without removing the underlying physical simulation.
 
@@ -3416,7 +3480,7 @@ Low-volume services can use sparse exact departures such as Monday/Thursday or o
 
 Service calendars must respect actual physical fleet availability. Before activation, the planner calculates the number and type of vehicles/consists required from real cycle times, turnaround, depot movements and maintenance assumptions. If the fleet cannot cover the timetable, the game must explain the shortage rather than creating abstract vehicles.
 
-Before activation, each commercial Service Pattern must also have valid service endpoints under Section 12.4 and any required station/terminal/stop access. A vehicle cannot run a commercial Trip to an abstract destination with nowhere to board, load, unload or terminate.
+Before activation, each commercial Service Pattern must also have valid service endpoints under Section 12.4, any required station/terminal/stop access, and commercial coverage/local presence under Section 7.2 for every served city. A vehicle cannot run a commercial Trip to an abstract destination with nowhere to board/load/unload or to a city the company is not yet organizationally allowed to serve. Pass-through locations do not create this requirement.
 
 Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
 
