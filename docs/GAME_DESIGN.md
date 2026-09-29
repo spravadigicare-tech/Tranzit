@@ -465,7 +465,8 @@ A branch becomes operational when:
 
 - its physical premises are ready or the lease has started;
 - the basic office setup has been purchased/installed;
-- at least the minimum ordinary office staffing required for that branch size is funded and available.
+- at least the minimum ordinary office staffing required for that branch size is funded and available;
+- one named **branch director** is assigned under Section 7.4.
 
 The game does **not** simulate or require the player to buy individual desks, chairs, telephones, filing cabinets, computers or other office items.
 
@@ -533,6 +534,7 @@ The branch UI should summarize the interaction of:
 Example:
 
 > **Brno Branch**  
+> Director: Jana Nováková  
 > Premises: Small office  
 > Equipment: Standard  
 > Office staff: 5 / recommended 6  
@@ -671,26 +673,160 @@ A division may later be spun out into a subsidiary with its own:
 
 Subsidiaries can remain 100% owned, be partly sold, or eventually merged.
 
-### 7.4 Managers and delegation
+### 7.4 Managers, departments and delegation
 
 Managers and important specialists are named individuals. Ordinary staff are aggregated.
+
+Management is hierarchical but intentionally lightweight.
+
+#### Mandatory branch director
+
+Every active branch/local office must have exactly one **branch director** (or period-/region-appropriate equivalent) assigned.
+
+The director is a named individual and represents the accountable local manager for that branch.
+
+A branch without a director cannot provide normal commercial service. If the director leaves, is dismissed or becomes unavailable, the branch enters a temporary **management vacancy** state:
+
+- existing operations do not instantly disappear;
+- basic administration can continue for a short grace period;
+- new bids/contracts, approvals and delegated decisions become restricted or slower;
+- the UI clearly warns that a replacement director is required.
+
+The player is not expected to micromanage the director's daily tasks.
+
+Director attributes can influence concrete outcomes such as:
+
+- administrative throughput;
+- commercial/customer handling;
+- staff efficiency;
+- contract processing;
+- local reputation/relationship handling;
+- quality of delegated decisions.
+
+The effect must be understandable and bounded. A strong director improves a real process; they do not provide an unexplained global "+10% company" modifier.
+
+#### Optional managers
+
+As a branch, region or division grows, the player can appoint additional named managers.
+
+Possible scopes include:
+
+- commercial/sales;
+- operations;
+- finance/administration;
+- staff/HR;
+- fleet/technical;
+- maintenance;
+- station/depot/terminal management;
+- group of Lines;
+- specific Line/service;
+- regional/area management;
+- whole division/company.
+
+Additional managers are **not required simply because a feature exists**. They become useful when workload/scale justifies delegation.
+
+A manager can provide two main benefits:
+
+1. **Automation/delegation** — the manager can make routine decisions within player-defined rules.
+2. **Specialist performance benefit** — their skills improve the process they actually manage.
+
+Examples:
+
+- commercial manager can automatically handle routine bids within minimum-margin rules;
+- operations manager can adjust routine vehicle/crew allocation and service recovery;
+- maintenance manager can schedule routine maintenance within workshop/fleet constraints;
+- HR manager can keep ordinary staffing near player-defined targets;
+- finance/admin manager can handle routine renewals/payments/administrative workflows within limits.
+
+The player always remains able to override delegated decisions.
+
+#### Departments
+
+Larger branches, area headquarters and divisions can create **departments** around selected management functions.
+
+A department is not a building-room simulator. It is an organizational unit consisting of:
+
+- one responsible manager;
+- aggregated ordinary staff;
+- a defined budget/staffing level;
+- any required office/system capacity.
+
+Possible departments can include, depending on company scale and era:
+
+- Commercial / Sales;
+- Operations / Dispatch;
+- Finance / Administration;
+- HR;
+- Technical / Fleet;
+- Maintenance planning;
+- Customer service;
+- Infrastructure/project management.
+
+Departments provide scale benefits primarily by:
+
+- handling a larger workload without overloading one manager/director;
+- unlocking broader automation;
+- improving specialist throughput/quality;
+- enabling a manager to supervise staff and subordinate scopes rather than personally handling every item.
+
+Creating a department should solve an actual scaling problem. It should not be optimal to create every department immediately in a two-vehicle company just to collect passive bonuses.
+
+A small branch can operate with only:
+
+> Branch director + aggregated office staff
+
+A larger branch might evolve into:
+
+> Branch director  
+> → Commercial manager + Commercial department  
+> → Operations manager + Operations department  
+> → Finance/Admin manager + admin staff
+
+The exact hierarchy is flexible; the player is not forced into one corporate org chart.
+
+#### Scope and hierarchy
 
 Possible management scopes include:
 
 - whole company/division,
 - country/region or area headquarters,
 - branch/local office,
+- department,
 - station/depot/terminal,
-- group of lines,
-- specific line/service.
+- group of Lines,
+- specific Line/service.
 
 A larger area headquarters can coordinate several subordinate branches. This is an organizational hierarchy over real offices, not a replacement for the physical branch sites or their local workload/capacity.
 
-Manual overrides at a lower level take precedence over higher-level automation.
+A higher-level manager can set policies/limits for subordinate managers. Lower-scope manual overrides take precedence.
 
-Managers have skills and salaries and may provide bonuses in areas such as pricing, reliability, staffing, contract handling or automation.
+Managers/departments must respect the same physical and commercial constraints as the player. Automation cannot:
 
-Management is optional gameplay: HR and routine hiring can increasingly be automated.
+- invent vehicles or staff;
+- exceed parking/workshop capacity;
+- ignore licences/access;
+- accept contracts outside authorized margin/risk limits;
+- create transport slots;
+- bypass the branch/commercial-coverage rules.
+
+#### Cost and performance
+
+Named managers have salaries and skill profiles.
+
+Departments add recurring payroll/office overhead because their ordinary staff are real aggregate employees.
+
+Benefits should be tied to managed work, for example:
+
+- faster processing;
+- larger manageable workload;
+- better utilization;
+- fewer avoidable administrative errors/delays;
+- better routine pricing or scheduling within the manager's competence;
+- reduced player micromanagement through automation.
+
+Use diminishing returns and clear capacity limits so management investment matters without becoming a stack of mandatory percentage buffs.
+
+Routine HR and management tasks can increasingly be automated as the company grows, but the director/manager hierarchy remains visible so the player understands who is responsible for what.
 
 ### 7.5 Licences, concessions and operating permissions
 
