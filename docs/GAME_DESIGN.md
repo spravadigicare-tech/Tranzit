@@ -5911,17 +5911,18 @@ The player first defines the intended service, for example:
 
 The planner then breaks the service into consecutive operational legs between station calls.
 
-Each leg receives an estimated running time based on:
+Each leg receives an estimated **base running time** based on:
 
 - route distance;
 - line/infrastructure speed;
 - selected vehicle/consist performance;
 - gradients and traction constraints;
 - stopping pattern;
-- normal operating margin;
 - expected infrastructure conditions.
 
 The estimate can be represented as a range where appropriate rather than pretending every Trip will take an identical number of seconds.
+
+The published/planned running time can then include a separate **running-time recovery margin** under the rules below.
 
 The timetable planner then searches for a **continuous sequence of compatible time windows**:
 
@@ -5935,6 +5936,103 @@ The timetable planner then searches for a **continuous sequence of compatible ti
 The system must therefore solve the whole chain coherently. A station time cannot be accepted if the preceding leg cannot physically reach it or if the following capacity window cannot be reached after dwell.
 
 If a downstream slot is later than originally preferred, subsequent planned calls shift with it. The planner can also work backwards from an important required arrival/connection.
+
+##### Running-time recovery margin
+
+The timetable distinguishes between:
+
+- **base/expected running time** — the physically realistic travel time for the planned route, vehicle and normal operating conditions;
+- **planned running time** — the timetable time actually allowed between calls;
+- **running-time recovery margin** — planned running time minus the base/expected running time.
+
+Example:
+
+> Base running time: 54 min  
+> Planned running time: 58 min  
+> Running-time recovery margin: 4 min
+
+The margin exists so small operational delays can be absorbed during the journey without requiring unsafe or unrealistic driving.
+
+A Trip that departs 3 minutes late can therefore still arrive close to schedule when:
+
+- enough recovery margin remains;
+- infrastructure permits normal progress;
+- the vehicle can recover time within its normal permitted performance;
+- doing so does not violate another protected slot/capacity constraint.
+
+The system must **never** recover time by exceeding vehicle, infrastructure or safety limits.
+
+Recovery therefore means using previously planned slack, not giving vehicles a temporary speed bonus.
+
+###### Running-time profile
+
+To avoid segment-by-segment micromanagement, a Service Pattern can use a simple **running-time profile**:
+
+- **Tight** — little recovery margin; higher fleet/infrastructure efficiency but delays propagate more easily.
+- **Standard** — normal practical recovery margin.
+- **Robust** — more recovery margin; greater resilience at the cost of slower published schedules and potentially higher fleet requirement.
+- **Custom** — player sets the desired margin manually where more control is useful.
+
+Exact margin is calculated from the route/service characteristics rather than one universal number for every mode.
+
+Relevant inputs can include:
+
+- service type;
+- route length;
+- number of intermediate stops;
+- infrastructure variability/congestion;
+- vehicle performance;
+- historical operating/dispatch technology;
+- desired reliability level.
+
+The profile is configured at Service Pattern level, with stop/segment override only where operationally justified.
+
+###### Margin consumption and recovery
+
+Running-time recovery margin is consumed dynamically.
+
+Example:
+
+> Depart Praha: +3 min  
+> Running-time margin Praha–Pardubice: 4 min  
+> Actual conditions allow 2 min to be recovered  
+> Arrive Pardubice: +1 min
+
+Unused margin does not force the vehicle to arrive early merely because it could.
+
+Where timetable/slot rules require a planned arrival window, the dispatcher normally regulates progress so the Trip remains operationally sensible rather than arriving excessively early and occupying station capacity unnecessarily.
+
+If delay exceeds the available running-time margin, the remaining delay carries into:
+
+- the next station dwell;
+- downstream slot status;
+- passenger connections;
+- the vehicle duty;
+- crew duty timing;
+- eventual turnaround.
+
+Running-time margin is separate from:
+
+- **dwell margin** at an intermediate stop;
+- **turnaround buffer** between two Trips;
+- **rail/station slot tolerance** granted by infrastructure.
+
+The UI should show these separately so the player can understand where timetable resilience actually comes from.
+
+###### Planning trade-off
+
+More recovery margin improves punctuality resilience but is not free.
+
+A more robust schedule can:
+
+- increase end-to-end journey time;
+- reduce passenger attractiveness where competitors are faster;
+- require more vehicles/crew to maintain the same frequency;
+- consume different infrastructure timing windows.
+
+A tighter schedule can improve nominal travel time and asset utilization but makes small disruptions propagate more easily.
+
+The Line Planner should show the practical impact of changing the profile before activation.
 
 ##### Slot-window width and planned midpoint
 
@@ -6659,7 +6757,7 @@ The dispatcher normally builds duties automatically.
 
 It chooses feasible Trip sequences using:
 
-- Trip departure/arrival times;
+- Trip departure/arrival times, including planned running-time recovery margin;
 - actual origin/destination location;
 - required turnaround time;
 - vehicle/consist compatibility;
