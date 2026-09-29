@@ -4564,20 +4564,128 @@ A through journey can use multiple operators under one itinerary/ticket.
 
 Missed connections and reliability influence passenger attractiveness.
 
-## 31. Pricing
+## 31. Pricing and passenger tariffs
 
-Early game pricing is manually controlled.
+Passenger pricing is based on reusable **tariffs**, not a manual fare table for every origin-destination pair.
 
-Later, pricing can be delegated to managers by scope:
+### 31.1 Tariff hierarchy
 
-- division,
-- region,
-- group of lines,
-- specific service.
+A company/division can define one or more default passenger tariffs for a mode/service family.
 
-Managers can optimize within player-defined constraints such as target margin, occupancy or competitive position.
+A Line normally inherits its applicable default tariff.
 
-Lower-level manual settings override delegated policies.
+The player can then enable a **Line-specific tariff override** and modify that Line independently without changing the rest of the network.
+
+Hierarchy:
+
+1. company/division/mode default tariff;
+2. Line override where enabled;
+3. Service Pattern or passenger-capacity-zone/class modifier only where a real product difference requires it.
+
+Lower-level manual settings override inherited higher-level settings.
+
+The player should always be able to see whether a value is:
+
+- inherited;
+- manually overridden;
+- contract/regulator constrained;
+- manager-controlled.
+
+### 31.2 What a tariff defines
+
+A tariff contains a small number of understandable pricing rules rather than hundreds of pairwise fares.
+
+Depending on mode/era, it can define:
+
+- base/minimum fare;
+- distance-based rate or zone-based rule;
+- class/comfort multipliers;
+- reservation/premium-service surcharge where used;
+- advance-purchase discount policy;
+- last-minute/load-factor adjustment where technology permits;
+- child/student/other regulated fare categories where relevant;
+- refund/flexibility premium where supported;
+- maximum/minimum constraints imposed by a public contract/concession.
+
+The fare for an actual journey is calculated from the applicable tariff and the passenger's real origin/destination legs.
+
+Example:
+
+> Company intercity tariff: base + distance rate  
+> Praha–Brno Line override: +8% line premium  
+> First Class zone: ×1.55  
+> Advance purchase 10+ days: −15%
+
+The player does not need to enter Praha–Pardubice, Pardubice–Brno and Praha–Brno separately.
+
+### 31.3 Line-specific manual control
+
+A Line can keep the inherited tariff unchanged or override selected tariff parameters.
+
+Examples:
+
+- make one premium intercity Line more expensive;
+- discount a weak new Line to build demand;
+- use a different First Class multiplier;
+- disable dynamic pricing on one Line;
+- apply a promotional advance-purchase discount;
+- keep a regulated/public-service Line at a fixed permitted tariff.
+
+An override affects only that Line unless the player later chooses to copy/save it as a reusable tariff.
+
+A Service Pattern should not normally require its own complete tariff. Pattern-level overrides are reserved for materially different products such as:
+
+- sleeper/night service;
+- premium/express product;
+- a contract/regulatory fare requirement;
+- a genuinely separate service class.
+
+### 31.4 Fixed, advance and dynamic policies
+
+A tariff can use increasingly sophisticated pricing modes where historically/technologically appropriate:
+
+- **Fixed** — stable calculated fare independent of booking time/load;
+- **Advance** — simple predefined discounts/surcharges based on booking horizon;
+- **Dynamic / yield** — price can also respond to sold load factor, demand forecast and remaining time.
+
+The player can always keep pricing simple.
+
+Advanced real-time yield pricing requires suitable reservation/information technology and is not available merely because the calendar year is modern.
+
+Later, pricing can be delegated to commercial managers by scope:
+
+- division;
+- region;
+- group of Lines;
+- specific Line/service.
+
+Managers optimize only within player-defined tariff bounds such as:
+
+- minimum/maximum fare;
+- maximum last-minute premium;
+- target occupancy;
+- minimum margin;
+- permitted discount range.
+
+A manager cannot override a regulated fare, public-contract cap or explicit player lock.
+
+### 31.5 Public/urban fares
+
+Urban/public transport can use the same tariff framework, but city/concession rules may impose:
+
+- flat fares;
+- zones;
+- transfer validity;
+- fare caps;
+- mandatory concession categories.
+
+Where the city controls the fare, the player's Line inherits the allowed tariff and cannot use unrestricted yield pricing.
+
+### 31.6 Contract passenger pricing
+
+Commercial passenger/group contracts under Section 11.1.1 use their negotiated contract price and do not automatically pay the public individual-passenger tariff.
+
+When a contract reserves capacity on a normal Line, the capacity ledger is shared, but the commercial payment remains the contract's agreed price.
 
 ## 32. Service lines and timetables
 
@@ -4710,16 +4818,25 @@ A reservation-required zone accepts only passengers with confirmed available cap
 
 This can be configured for only part of a consist, such as First Class, sleeper cars or another premium section, while other coaches remain optional/open.
 
-##### Passenger pricing policy
+##### Passenger tariff application
 
-The player sets a **pricing policy** at Line/Service Pattern/class level rather than manually pricing every passenger on every Trip.
+Ordinary passenger tickets use the tariff system in Section 31.
 
-A policy can use inputs such as:
+The default is:
 
-- base fare/distance;
+- inherit the company/division/mode tariff;
+- optionally enable a **Line-specific override**;
+- apply the relevant passenger class/capacity-zone modifier;
+- calculate the fare automatically for the actual origin-destination legs.
+
+The player therefore edits a tariff, not a matrix of every station pair.
+
+The applicable tariff can still use inputs such as:
+
+- distance/zone;
 - passenger class;
 - time until departure;
-- already sold load factor;
+- sold load factor;
 - expected demand;
 - day/time/season;
 - flexibility/refund conditions where supported;
@@ -4727,7 +4844,9 @@ A policy can use inputs such as:
 
 This allows advance-purchase discounts or higher last-minute pricing where historically/technologically appropriate.
 
-The player can keep pricing simple/fixed if desired. More advanced yield-style pricing can be delegated to commercial management later.
+The player can keep a Line on simple fixed pricing or manually tune its tariff independently of other Lines.
+
+More advanced yield-style pricing can be delegated to commercial management later.
 
 Technology matters: sophisticated real-time/digital pricing should not exist before the company has the required information/reservation systems.
 
