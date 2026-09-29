@@ -3189,7 +3189,8 @@ The marketplace supports filters/sorting appropriate to the selected mode and er
 - manufacturer/model;
 - new/used/dealer/lease source;
 - physical location;
-- used-vehicle age, mileage/hours and condition.
+- used-vehicle age, mileage/hours and condition;
+- current maintenance/inspection margin and known next required service.
 
 When opened from a Contract Planner, Line planner or another requirement screen, the marketplace can inherit filters such as "show compatible vehicles for this route/contract". The player can clear or modify those filters.
 
@@ -3282,7 +3283,181 @@ Delivery can use, where appropriate:
 - player's own transport,
 - rail movement/towing for compatible rolling stock.
 
-### 15.4 Dealer maintenance and service contracts
+### 15.4 Vehicle maintenance policy, workshops and service contracts
+
+Vehicle maintenance has two distinct layers:
+
+1. **Hard maintenance / inspection requirements** — legal, safety, manufacturer or technical limits that cannot be exceeded.
+2. **Preventive maintenance policy** — the player's chosen margin for how early the company normally services vehicles before those hard limits.
+
+#### Maintenance policy hierarchy
+
+The company defines a default **maintenance policy** for its fleet.
+
+The player can override that default for:
+
+- a fleet group;
+- a vehicle type/model;
+- a specific exceptional vehicle where needed.
+
+Inheritance works from company default downward. The UI must always show whether a policy is inherited or manually overridden.
+
+The policy is expressed through understandable operating choices rather than hidden reliability modifiers.
+
+Relevant settings can include:
+
+- target service point as a percentage of the allowed interval;
+- minimum remaining mileage/hours/calendar time before assigning a long Trip;
+- preferred workshop/service provider;
+- whether planned maintenance may be advanced to fill an available workshop window;
+- how far routine preventive maintenance may be deferred when operationally necessary;
+- minimum post-service reserve expected before returning the vehicle to intensive work.
+
+Example:
+
+> Company default: service at ~80% of allowed interval  
+> Heavy road fleet override: ~75%  
+> Heritage rail fleet override: ~65%
+
+A more conservative policy:
+
+- sends vehicles to maintenance earlier;
+- consumes more workshop capacity and fleet downtime;
+- requires more spare fleet;
+- reduces the probability that wear-related defects become operational failures.
+
+A more aggressive policy:
+
+- keeps vehicles in revenue service longer;
+- reduces planned downtime in the short term;
+- operates closer to hard limits;
+- increases the chance that defects or unscheduled repairs disrupt service.
+
+The effect must come from vehicle condition, wear and maintenance state rather than an arbitrary company-wide reliability bonus.
+
+#### Hard maintenance and inspection limits
+
+Some maintenance actions are mandatory.
+
+A vehicle can have hard limits based on, where relevant:
+
+- calendar time;
+- mileage/distance;
+- operating hours;
+- engine/traction hours;
+- inspection cycles;
+- component-specific limits;
+- legal/regulatory inspection dates;
+- manufacturer/service requirements.
+
+The simulation can use a combination of these without forcing the player to manage every component individually.
+
+Once a hard safety/legal limit is reached, the vehicle becomes **not dispatchable** for normal commercial service until the required maintenance/inspection is completed.
+
+The player cannot override this through a disruption policy.
+
+The planner should warn well before a hard limit would collide with committed Trips.
+
+#### Maintenance scheduling
+
+Planned maintenance is integrated into normal fleet scheduling.
+
+The maintenance planner looks for suitable windows between Trips and considers:
+
+- remaining interval before the target service point;
+- hard deadline;
+- physical vehicle location;
+- travel/repositioning time to the workshop;
+- workshop compatibility;
+- available workshop slots/capacity;
+- estimated service duration;
+- parts/material availability where relevant;
+- future Trip commitments;
+- fleet reserve;
+- return/repositioning time after service.
+
+A vehicle is therefore not merely marked unavailable for an abstract number of hours. It must physically reach a compatible workshop, occupy real capacity, complete the work and return or reposition for its next assignment.
+
+The planner can advance routine maintenance when an otherwise idle period creates a useful service window.
+
+It can also defer preventive maintenance toward the hard limit when the player's policy permits, but it cannot schedule work beyond a mandatory limit.
+
+Example:
+
+> Locomotive #104  
+> Preventive target: 12,000 km  
+> Current: 11,240 km  
+> Hard limit: 14,000 km  
+> Free workshop window tomorrow 02:00–07:00  
+> Next heavy assignment would add 1,900 km  
+> → planner recommends servicing tomorrow before that assignment
+
+#### Interaction with Service Patterns and fleet assignment
+
+Fleet availability shown in the Line Planner must account for planned maintenance.
+
+A vehicle that is technically owned but committed to a workshop is not spare fleet.
+
+Criteria-based assignment should prefer vehicles whose remaining maintenance margin is compatible with the planned duty.
+
+The dispatcher must not assign a vehicle to a duty that would predictably cross a hard inspection/maintenance limit before a valid service opportunity exists.
+
+For pinned vehicles, the planner must warn if their maintenance schedule conflicts with the Pattern and can invoke the configured substitution/disruption rules where allowed.
+
+Maintenance therefore participates in the same readiness calculations as:
+
+- vehicle location;
+- preparation horizon;
+- fleet reserve;
+- depot/parking requirements;
+- Trip commitments.
+
+#### Unscheduled defects and breakdown risk
+
+Maintenance policy influences the probability of wear-related unscheduled defects, but failures must remain probabilistic rather than guaranteed at a simple percentage threshold.
+
+Risk can depend on:
+
+- vehicle age;
+- accumulated use;
+- current condition;
+- maintenance history;
+- quality/timeliness of servicing;
+- operating severity;
+- historical technology/reliability;
+- known model characteristics where appropriate.
+
+A recently maintained vehicle can still fail, and a vehicle close to its service target does not automatically break.
+
+When a defect affects an upcoming Trip, the day-of-operation disruption policy in Section 32.6 determines whether the operator substitutes equipment, waits, runs reduced, rebuilds the consist or cancels.
+
+#### Maintenance capacity and reserve fleet
+
+The planner should expose the operational trade-off between workshop policy and spare fleet.
+
+Example:
+
+> Fleet: 20 buses  
+> Peak requirement: 17  
+> Normal maintenance demand: 1.4 vehicles  
+> Effective operational reserve: ~1.6 buses
+
+If the player runs a very conservative maintenance policy with too little fleet reserve or workshop capacity, the company can create its own recurring availability shortage.
+
+Likewise, aggressive maintenance deferral can temporarily increase available fleet but create more unscheduled failures and hard-deadline conflicts later.
+
+Managers can recommend changes, but explicit player policy remains authoritative.
+
+#### Own and external maintenance
+
+Maintenance can be performed by:
+
+- the player's own compatible workshop;
+- a dealer/authorized service provider;
+- another compatible third-party workshop;
+- another party responsible under a lease/service agreement.
+
+The same maintenance policy applies regardless of provider. Outsourcing changes cost, travel time, booking priority and available capacity; it does not remove the physical maintenance requirement.
 
 Some dealers can also operate or contract **authorized service/workshop capacity** for the vehicle types/brands they represent.
 
@@ -6019,7 +6194,7 @@ Selection considers:
 - current physical location;
 - compatibility with the complete Pattern rule set;
 - existing commitments;
-- maintenance state;
+- maintenance state and remaining service/inspection margin;
 - fuel/energy state;
 - repositioning/deadhead cost and time;
 - parking/depot capacity;
