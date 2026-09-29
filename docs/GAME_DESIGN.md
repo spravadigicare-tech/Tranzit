@@ -1407,6 +1407,30 @@ Full replacement is a real construction project, not an instant upgrade. It can 
 
 The project planner should show how much of the station can remain operational during each construction stage.
 
+The player can optionally purchase **construction mitigation measures** to reduce the negative impact of the rebuild. These are project-level choices rather than separately micromanaged temporary networks.
+
+Possible mitigation measures include:
+
+- temporary passenger platforms,
+- temporary entrance/ticketing building,
+- temporary pedestrian routing,
+- temporary bus replacement/shuttle service,
+- staged platform closures,
+- temporary interchange relocation,
+- additional contractor shifts/work windows where available.
+
+Each measure has a clear cost and effect, such as:
+
+- higher temporary passenger throughput,
+- smaller transfer-time penalty,
+- lower reputation impact,
+- fewer cancelled Trips,
+- shorter effective disruption window.
+
+The UI should compare the expected station impact **with and without** each mitigation option before the player approves the construction plan.
+
+Temporary facilities are physically represented where practical, but their detailed internal management is automated. After the project is complete they are normally removed automatically unless the player explicitly chooses to retain a useful element.
+
 A replacement project does not automatically demolish the whole railway site. Tracks, platforms, buildings and interchange modules can be retained or rebuilt independently where the design permits.
 
 Upgrading a station therefore does not automatically erase its historic fabric. Existing buildings/platforms can remain, be extended, repurposed, replaced or protected depending on the site and era.
@@ -1514,6 +1538,10 @@ Contractors can automatically establish simplified temporary site infrastructure
 These are mainly operational/visual and should not require heavy micromanagement.
 
 After completion, relevant temporary roads can be removed, retained or converted.
+
+Large reconstruction projects can also offer optional **operational mitigation packages**. These are higher-level project options that reduce disruption through temporary facilities, staged closures or substitute transport rather than forcing the player to manually build every temporary element.
+
+Mitigation consumes extra money, contractor capacity and sometimes temporary land, so the player chooses between a cheaper disruptive rebuild and a more expensive construction plan that preserves more operating capacity.
 
 ### 21.6 Technological construction progress
 
