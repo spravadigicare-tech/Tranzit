@@ -503,13 +503,49 @@ If current fleet, depot, terminal or infrastructure capacity cannot credibly sat
 
 AI competitors are subject to the same capacity accounting and cannot promise reserve capacity they cannot realistically provide.
 
-### 11.6 Cargo batches
+### 11.6 Contract renegotiation
+
+Long-running contracts can be reopened when material operating conditions change.
+
+Valid triggers can include:
+
+- major fuel or energy price shocks,
+- border closures or regulatory changes,
+- loss of access to a previously valid route,
+- major infrastructure disruption,
+- exceptional input-cost inflation,
+- customer-requested volume or SLA changes,
+- mutually agreed strategic restructuring.
+
+Renegotiation is not a free escape from a bad deal. The requesting side must state what changed and propose concrete revised terms.
+
+Possible changes include:
+
+- price,
+- guaranteed volume,
+- reserved capacity,
+- delivery/service-level target,
+- contract duration,
+- penalties,
+- exclusivity.
+
+The counterparty can accept, reject or make a counteroffer.
+
+The UI must show why the other party reacts the way it does, using transparent factors such as the size of the cost shock, existing relationship, alternative carriers, contract performance and remaining contract duration.
+
+A weak justification or repeated attempts to reopen favourable terms can damage customer relationship and reputation. A genuine external shock should carry much smaller or no reputational penalty.
+
+Contracts may also contain pre-agreed adjustment clauses, such as fuel-price indexing or automatic rate review at defined intervals, reducing the need for manual renegotiation.
+
+Commercial managers may later handle routine renegotiations within player-defined limits, while material strategic changes can require player approval.
+
+### 11.7 Cargo batches
 
 Cargo is simulated in batches, not per kilogram/item.
 
 A batch tracks type, quantity, origin, destination, deadline/quality constraints and contract.
 
-### 11.7 Multi-leg logistics
+### 11.8 Multi-leg logistics
 
 One customer contract can contain multiple transport legs and modes.
 
@@ -519,7 +555,7 @@ Example:
 
 farm → wagon → local terminal → warehouse → regional train → hub → long-distance train → local truck → customer.
 
-### 11.8 Perishability and special requirements
+### 11.9 Perishability and special requirements
 
 Cargo can have properties such as:
 
