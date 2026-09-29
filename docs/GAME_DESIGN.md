@@ -921,7 +921,9 @@ A contract can be economically attractive but impossible to start on time.
 
 The planner therefore calculates a high-level critical-path readiness estimate from real lead times such as:
 
-- vehicle manufacturing/delivery;
+- vehicle manufacturing/readiness;
+- normal vehicle repositioning/delivery;
+- specialist heavy-haul provider availability, permit preparation and transport where required;
 - used-vehicle physical delivery;
 - construction;
 - licence/permit processing;
@@ -1954,14 +1956,121 @@ All acquisition sources obey physical continuity.
 
 A vehicle becomes available for normal dispatch only when it has physically reached a valid operating/receiving location.
 
-Delivery/import movement:
+Buying a vehicle therefore creates or requires a **Vehicle Delivery Order** unless the player is taking possession at a location from which the asset can immediately enter normal operation.
 
-- consumes time;
-- can consume infrastructure capacity;
-- can require traction/transport;
-- can be delayed by access/logistics problems.
+The delivery planner first chooses the simplest physically valid delivery method.
 
-Remote rendering may be aggregated, but the logical movement/location must remain continuous.
+#### Rail vehicles with a continuous rail route
+
+For locomotives, wagons and other rolling stock, the preferred method is direct rail delivery whenever a continuous technically compatible rail path exists between the seller/manufacturer/dealer location and the player's receiving network.
+
+A rail delivery still has to respect:
+
+- track gauge;
+- loading gauge / vehicle dimensions;
+- axle/load restrictions;
+- electrification and traction compatibility where the vehicle moves under its own power;
+- legal/technical route approval;
+- infrastructure access and capacity;
+- direction/turning constraints where relevant.
+
+A compatible self-propelled rail vehicle may travel under its own power as a delivery/repositioning movement.
+
+Non-powered rolling stock must be hauled by a compatible locomotive. Multiple compatible newly purchased wagons can be consolidated into a delivery train where practical.
+
+A locomotive that cannot operate under its own power over the complete route may still be hauled/dead-towed if its physical rail compatibility permits it.
+
+The delivery movement is a real movement on the railway and consumes real capacity. It can be delayed by congestion, unavailable slots, border/access restrictions or another operational problem.
+
+#### Rail vehicles without a usable continuous rail route
+
+If no technically/legal continuous rail route exists from the asset's current location to the player's receiving network, the default fallback is **specialized heavy road transport**.
+
+Rail vehicles are transported **one physical vehicle per suitable heavy-haul movement by default**, unless a later explicitly supported transport system can safely carry more.
+
+The transport should be visually represented as a recognizable oversized/special movement, typically including:
+
+- heavy tractor unit;
+- specialized low-loader / modular trailer;
+- the actual locomotive/wagon physically loaded on the trailer;
+- one or more escort vehicles where required;
+- warning lights/beacons and other period-appropriate oversized-load markings.
+
+This is intended to be visible gameplay/world activity, not an invisible delivery timer.
+
+A specialist road movement can require high-level route feasibility based on:
+
+- road width/geometry;
+- bridge/load limits;
+- clearance/height;
+- tight urban turns;
+- road restrictions;
+- border/permit requirements.
+
+The player does not manually steer the transport or file every individual road permit. The provider plans a feasible route and the UI exposes any major blocker, detour, delay or exceptional permit requirement.
+
+#### Specialist heavy-haul providers
+
+Oversized rail-vehicle transport is a specialist commercial service with **finite market capacity**.
+
+The player normally orders it from an external heavy-haul provider unless the company later owns appropriate specialist equipment and is legally/technically able to perform the movement itself.
+
+A provider can have a limited number of suitable:
+
+- heavy tractors;
+- modular/low-loader trailers;
+- trained crews;
+- escort resources;
+- available work slots.
+
+Therefore purchasing a locomotive from dealer stock does **not** guarantee immediate road delivery.
+
+The Vehicle Delivery Order shows available providers and, where known:
+
+- transport price;
+- earliest pickup date;
+- estimated delivery duration;
+- required route/permit preparation;
+- suitable equipment availability;
+- whether an escort vehicle is included;
+- current queue / capacity status.
+
+If only a few companies in the region own suitable equipment, the player may need to wait for the next available specialist transport slot.
+
+A large purchase can therefore create a delivery sequence. Example: five locomotives bought without a rail connection may require five separate heavy-haul movements over several days/weeks rather than all appearing at once.
+
+Specialist providers use real finite capacity under the same general economic principle as construction companies, manufacturers and workshops. They cannot accept unlimited simultaneous oversized movements.
+
+The player can compare delivery providers, but a quoted **earliest pickup** is part of the readiness calculation and cannot be ignored by the Contract Planner.
+
+#### Ordering and integration
+
+The Vehicle Marketplace should offer a **Arrange delivery** action immediately after purchase/lease where delivery is required.
+
+The player can also leave an owned vehicle at the seller/dealer temporarily and arrange transport later, but it remains physically located there and may incur storage/holding charges where applicable.
+
+The delivery order is a separate service agreement from the vehicle purchase. A dealer may offer dealer-arranged transport, but this still consumes a real third-party or dealer-owned transport resource.
+
+The Contract Planner includes:
+
+- production/readiness date;
+- delivery-order waiting time;
+- physical transit time;
+- receiving-location readiness;
+
+when deciding whether a planned vehicle can support a future contract by its required start date.
+
+For an urgent contract, a dealer-stock locomotive may therefore still be too slow if no specialist heavy-haul provider is available soon enough.
+
+#### Other vehicle types
+
+Self-propelled road vehicles normally reach the player by driving over a valid road route, through dealer/manufacturer delivery or player collection.
+
+Vehicles that cannot legally/technically travel normally on public roads can use an appropriate transport service under the same physical-delivery principle.
+
+Water vehicles similarly require a navigable physical route or an explicitly supported specialist transport solution.
+
+Remote rendering may be aggregated, but the logical movement/location must remain continuous at all simulation LODs.
 
 ### 15.9 Retrofit
 
