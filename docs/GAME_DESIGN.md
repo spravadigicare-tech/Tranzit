@@ -1383,7 +1383,7 @@ The UI must translate staffing needs into understandable requirements such as:
 - target and currently available reserve;
 - additional staffing required for night/weekend patterns.
 
-Where onboard ticket sales are enabled, passenger volume and expected onboard-sales workload contribute to conductor/onboard staffing requirements and station dwell assumptions.
+Where a Service Pattern requires conductors/onboard staff, that requirement contributes to crew capacity. The volume of onboard ticket sales itself does not add station dwell time or create extra per-passenger staffing simulation.
 
 The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains.
 
@@ -5742,11 +5742,11 @@ This is especially useful for:
 
 Conductors/onboard staff are ordinary aggregated workforce under Section 8, not named individuals.
 
-Onboard selling consumes real staff/service capacity. Heavy onboard-sales workload can:
+Onboard ticket sale/control is intentionally **abstracted and does not consume additional dwell time**.
 
-- increase boarding/checking dwell;
-- require more onboard staff;
-- reduce service efficiency if staffing is insufficient.
+If a passenger boards without a previously purchased ticket and the Trip carries a conductor/onboard ticket-selling crew, the fare is charged immediately through the applicable onboard tariff/policy while the vehicle is already in service.
+
+The game does not simulate the conductor walking through individual coaches, scanning each passenger or making the train wait at a station while tickets are sold.
 
 The Line/Service Pattern can define whether onboard sales are:
 
@@ -5757,13 +5757,17 @@ The Line/Service Pattern can define whether onboard sales are:
 
 An onboard surcharge is part of the tariff policy, not an arbitrary penalty. It can be disabled for stations where no pre-purchase option exists.
 
-For **open boarding**, a passenger can board and purchase from the conductor if the policy permits and physical capacity is available.
+For **open boarding**, a passenger can board without a pre-purchased ticket. If a conductor is present, the fare is collected onboard automatically.
 
-For **optional reservation**, the conductor can sell remaining uncommitted capacity where the service's reservation system can still verify availability.
+For **optional reservation**, a passenger without an advance reservation can use remaining uncommitted capacity. If a conductor is present, the corresponding fare is collected onboard automatically.
 
-For **reservation-required** capacity, onboard sale is allowed only if the company technology/process can confirm and create the reservation before admitting the passenger to that zone. Otherwise the passenger must obtain the reservation through another valid channel.
+For **reservation-required** capacity, the passenger still needs confirmed capacity for that Trip/leg. Onboard sale can create that reservation only when the company system can verify real remaining capacity.
 
-The system never sells onboard capacity that has already been reserved/committed elsewhere.
+If a passenger boards a service where no conductor/onboard ticket-selling crew is present and no ticket has been purchased beforehand, the operator does **not** collect a fare from that passenger for that journey.
+
+The base design does not add a separate fare-evasion inspection minigame to compensate for this. Services intentionally operated without conductors are expected to be uncommon outside operating models where another pre-boarding/self-service sales system covers most demand.
+
+The system never sells or assigns onboard capacity that has already been reserved/committed elsewhere.
 
 ###### Telephone and digital progression
 
@@ -5816,6 +5820,58 @@ Confirmed individual reservations cannot be silently displaced to sell the seat 
 
 The system must not oversell one physical seat/berth/standing place across overlapping origin-destination legs.
 
+#### Dynamic station dwell
+
+Passenger-stop dwell is **not always one fixed duration**.
+
+The Service Pattern defines a planned **minimum/target dwell** for ordinary timetable construction, while the actual Trip can require more time when real boarding/alighting conditions demand it.
+
+Actual dwell can depend on:
+
+- number of passengers boarding;
+- number of passengers alighting;
+- vehicle capacity and crowding;
+- number/width/layout of usable doors;
+- platform/stop passenger-flow capacity;
+- accessibility assistance where required;
+- baggage/passenger-service handling that physically affects boarding;
+- vehicle type and operating mode;
+- whether the stop is an ordinary intermediate call or a larger interchange.
+
+Ticket inspection and onboard ticket sales **do not add dwell time**.
+
+If a passenger boards without a ticket and a conductor is present, fare collection is handled while the Trip is already in service rather than extending the station stop.
+
+Example:
+
+> Planned dwell: 2 min  
+> Normal passenger exchange: ~1 min 35 s  
+> Heavy exchange this Trip: 2 min 40 s  
+> Result: +40 s departure delay
+
+The timetable planner uses the configured target dwell plus reasonable expected passenger-exchange assumptions when constructing the schedule.
+
+The real Trip then uses the actual required dwell, subject to the physical minimum.
+
+A low-demand stop can therefore clear faster than a major interchange, while a crowded urban/suburban stop can exceed its target and create small real delays.
+
+The player does not manage dwell passenger-by-passenger.
+
+Line/Pattern defaults can be overridden for important stops where a deliberately longer planned dwell is useful, for example:
+
+- major interchange;
+- crew change;
+- scheduled connection protection;
+- baggage/service work;
+- terminal preparation.
+
+Dwell is distinct from **turnaround**.
+
+- **Dwell** is the time needed for an intermediate commercial/operational stop before the same Trip continues.
+- **Turnaround** under the vehicle-duty rules is the transition between one completed Trip and the next Trip, potentially including cleaning, fueling, consist changes and other service preparation.
+
+Passenger exchange throughput is aggregated and event-driven; the game does not need per-passenger doorway simulation to calculate dwell.
+
 #### Slot-driven timetable construction
 
 For constrained rail services, the timetable is built primarily from **compatible infrastructure/station slot windows plus estimated travel time between them**, rather than by independently typing an exact clock time at every station.
@@ -5826,7 +5882,7 @@ The player first defines the intended service, for example:
 - desired frequency / interval;
 - broad first and last service window;
 - required stops;
-- target/minimum dwell;
+- target/minimum dwell, with actual passenger-exchange dwell allowed to vary;
 - important connections;
 - optional preferred time at a key origin/destination.
 
