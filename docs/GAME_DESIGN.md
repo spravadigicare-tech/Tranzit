@@ -819,6 +819,10 @@ The access agreement can define:
 - whether an out-of-slot movement pays an additional fee,
 - any cancellation/no-show rule for severely late services.
 
+Rail-capacity slots are **non-transferable between operators**. The holder cannot resell, lease or privately assign the slot to another carrier.
+
+If the holder no longer needs the capacity, it can release it back to the infrastructure owner according to the access agreement. The owner may then allocate or sell that capacity again through the normal process.
+
 The cause of delay matters. If the Trip misses the slot primarily because the infrastructure/station owner failed to provide previously contracted capacity or because of another protected infrastructure-side disruption covered by the agreement, the operator should not automatically lose its contractual protection. The agreement can instead preserve priority, rebook the slot or trigger compensation.
 
 The UI must show whether a late Trip is still **inside tolerance**, **out of slot**, or **reprotected due to infrastructure-side disruption**.
@@ -1610,6 +1614,10 @@ Typical status shown to the player:
 - **Reprotected** — lateness caused by a qualifying infrastructure/station-side failure under the access agreement.
 
 The slot contract can define different tolerance values by service type or access product. Guaranteed products can have wider or more predictable tolerance than cheaper flexible access.
+
+Station-call slots are **non-transferable between operators**. The holder cannot resell, lease or privately assign them to another carrier.
+
+If the holder no longer needs the reserved station capacity, it can release it back to the station owner according to the access agreement. The owner can then allocate or sell the returned capacity again.
 
 Unused guaranteed/standard slots still have a reservation cost because the owner has withheld that capacity from other operators.
 
