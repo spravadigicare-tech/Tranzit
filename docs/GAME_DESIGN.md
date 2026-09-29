@@ -2873,7 +2873,7 @@ The Capacity Order returns compatible **time windows** for the required route an
 The normal player workflow is:
 
 1. **Choose validity** — use the Service Pattern calendar or override with a temporary/seasonal date range.
-2. **Choose service level** — guaranteed, standard or flexible/ad-hoc where offered.
+2. **Choose service level** — guaranteed, standard or flexible/ad-hoc where offered. The UI can recommend a stronger product for a High operational-priority Pattern, but the player must explicitly buy it.
 3. **Review tolerance** — normally use recommended tolerance; advanced adjustment is optional if the owner offers alternatives.
 4. **Choose renewal** — simple **Auto-renew** checkbox for recurring/long-running capacity agreements.
 5. **Review capacity result and price** — then submit/accept the capacity order.
@@ -6034,6 +6034,92 @@ A tighter schedule can improve nominal travel time and asset utilization but mak
 
 The Line Planner should show the practical impact of changing the profile before activation.
 
+##### Operational service priority
+
+A Service Pattern can also define a simple **operational priority** that expresses how strongly the company wants to protect that service's punctuality during conflicts and disruption.
+
+Keep the setting simple:
+
+- **Low** — service can absorb more waiting/recovery delay where useful;
+- **Normal** — balanced default;
+- **High** — protect departure/on-time running strongly and avoid holding it for lower-priority connections unless explicitly configured.
+
+This is a **company operating policy**, not a replacement for contractual infrastructure priority.
+
+It can influence:
+
+- how long the Trip is willing to wait for connecting passengers;
+- which of the company's own services should absorb delay when two recoveries conflict;
+- whether a reserve vehicle/crew should preferentially protect one service;
+- which duty is reworked first during disruption;
+- how aggressively available running-time/turnaround margin is used to restore punctuality.
+
+A typical network can therefore use:
+
+> **Express / intercity** — High operational priority  
+> short connection-hold limit  
+> protect planned departure and downstream slots
+
+> **Regional feeder** — Low/Normal operational priority  
+> longer connection-hold limit for protected passengers arriving from the Express  
+> allowed to absorb more delay when doing so preserves the connection
+
+This creates intentionally asymmetric connections.
+
+Example:
+
+> Express arrives 6 min late into hub  
+> Regional feeder is configured to wait up to 10 min for that protected connection  
+> → Regional waits and departs +6 min
+
+On the reverse connection:
+
+> Regional arrives 6 min late toward the Express  
+> Express hold limit is 2 min  
+> → Express departs on time/near schedule and affected protected passengers are rebooked if the connection is missed
+
+The exact outcome still depends on:
+
+- available slot tolerance;
+- platform/track capacity;
+- vehicle/crew duty consequences;
+- downstream connections;
+- legal/public-service requirements;
+- configured connection-hold limits.
+
+A high-priority service is therefore **not guaranteed to be on time**. The setting tells the dispatcher which service should normally be protected when several valid recovery choices exist.
+
+###### Relationship to infrastructure access priority
+
+Operational service priority must never override another train's stronger contracted infrastructure rights.
+
+Rail/station dispatching still follows Section 13.2:
+
+- safety first;
+- valid slot/access class;
+- contracted time window/tolerance;
+- applicable recovery rights.
+
+If a High-priority Express has only a flexible/out-of-slot movement while another operator has a valid guaranteed slot, the Express cannot simply be sent first because the player marked it High.
+
+Within the player's own network, or where competing movements have equivalent contractual rights and a tie/recovery choice genuinely exists, operational priority can be used as a dispatcher preference.
+
+The Capacity Order UI can recommend a stronger access product for a High-priority service, but changing operational priority does not automatically purchase or upgrade infrastructure rights.
+
+###### Connection-priority interaction
+
+Operational priority works together with the existing per-connection **maximum hold policy** rather than replacing it.
+
+The priority provides a useful default/recommendation:
+
+- lower-priority feeder → longer suggested hold for higher-priority incoming service;
+- higher-priority trunk/express → shorter suggested hold;
+- equal-priority services → balanced hold based on passenger count and downstream impact.
+
+The player can override the suggested hold for an individual connection.
+
+This keeps the model understandable: **priority says which service the company prefers to protect; hold time says exactly how long a specific connection may wait.**
+
 ##### Slot-window width and planned midpoint
 
 Every confirmed arrival/departure slot is a **time window**, not just one timestamp.
@@ -6297,6 +6383,10 @@ The player can set high-level preferences such as:
 - whether the feeder may wait for a delayed connection,
 - which connection has priority.
 
+These settings can be asymmetric and can inherit recommendations from each Pattern's operational service priority.
+
+A lower-priority regional feeder can therefore be configured to wait longer for a delayed higher-priority Express, while the Express waits only briefly for the regional feeder in the opposite direction.
+
 The system must show the resulting expected transfer quality and any fleet/capacity consequences.
 
 Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
@@ -6341,6 +6431,7 @@ The decision can consider:
 - downstream connections;
 - other reserved passengers already onboard/expected;
 - crew/fleet implications;
+- operational service priority of the involved Patterns;
 - service importance/contract obligations;
 - available later alternatives.
 
