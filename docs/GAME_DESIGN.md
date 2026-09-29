@@ -6009,6 +6009,116 @@ For a concrete Trip, the player can inspect which real assets were selected and 
 
 The player can override the automatic selection when desired, but the override must still satisfy all hard physical, contractual and timetable constraints.
 
+#### Day-of-operation vehicle failure and disruption policy
+
+A vehicle/consist becoming unavailable shortly before a Trip does not have one universal automatic outcome.
+
+The Line/Service Pattern can define a **vehicle-disruption policy** that tells the dispatcher which recovery actions are allowed and in what preferred order.
+
+Typical actions include:
+
+1. **Substitute compatible vehicle(s)** — use another available asset that satisfies the Pattern's hard operating envelope.
+2. **Run short / omit failed vehicle(s)** — operate with a reduced consist if the remaining train is physically valid and the player's policy permits it.
+3. **Delay departure for replacement/repair** — hold the Trip for a configurable maximum time while a replacement is positioned, a repair is completed or shunting is performed.
+4. **Use an alternate valid consist** — rebuild the train from available vehicles under the Pattern's criteria/hybrid rules.
+5. **Cancel the Trip** — if no acceptable recovery remains.
+
+The player can define the preferred order and limits, for example:
+
+> 1. substitute same coach type  
+> 2. wait up to 12 min for any compatible replacement  
+> 3. depart without the coach if minimum protected capacity remains  
+> 4. otherwise cancel
+
+Different Patterns can use different policies.
+
+A premium long-distance service can prefer delaying for a replacement rather than losing a required First Class or sleeper vehicle, while a frequent regional service can prefer departing short-formed rather than causing a large delay.
+
+The dispatcher can execute routine decisions automatically inside the configured policy. The player may intervene manually before departure where time permits.
+
+##### Hard constraints still apply
+
+A disruption policy cannot authorize an impossible or unsafe consist.
+
+Any replacement/reduced consist must still satisfy applicable hard constraints, including:
+
+- route/traction compatibility;
+- braking/safety requirements;
+- maximum length/weight/axle load;
+- minimum locomotive/tractive performance;
+- required control/coupling compatibility;
+- infrastructure limits;
+- legally or contractually mandatory equipment;
+- any minimum capacity that a public-service/customer contract makes a hard requirement.
+
+If removing a vehicle changes performance enough to invalidate the booked timetable/slot assumptions, the dispatcher must re-evaluate expected timing and slot status before departure.
+
+##### Passenger consequences are resolved after the operational decision
+
+The **operational recovery decision** and the **passenger-commercial recovery** are separate steps.
+
+Example:
+
+> One Second Class coach fails before departure.  
+> Pattern policy permits the train to depart without it.  
+> The Trip therefore runs short-formed.  
+> The passenger system then evaluates the capacity that was actually lost.
+
+After the final operating consist and departure decision are known, the system compares real available passenger capacity with:
+
+- protected passenger-contract allocations;
+- confirmed individual reservations;
+- protected multi-leg itineraries;
+- open/walk-up demand.
+
+If all confirmed commitments still fit, the Trip can run with lower spare capacity and no confirmed passenger must be displaced.
+
+If confirmed commitments no longer fit, affected passengers are handled through the existing passenger-recovery rules.
+
+The system attempts, as applicable:
+
+1. re-accommodation within the same Trip, including a valid free upgrade where appropriate;
+2. rebooking onto another Trip/itinerary;
+3. partner/replacement transport where available;
+4. refund when an acceptable replacement cannot be provided.
+
+If the operator's equipment failure, short-formation, delay or cancellation causes a qualifying service failure, any additional compensation is calculated separately according to the applicable tariff, public-service contract, customer contract or jurisdiction rules.
+
+The player therefore sees the complete consequence of the dispatch choice, for example:
+
+> **Depart without Coach #51**  
+> Departure delay: +0 min  
+> Capacity lost: 68 Second Class seats  
+> 42 unused seats absorbed by remaining consist  
+> 18 passengers re-accommodated on this train  
+> 6 passengers rebooked to 08:11  
+> 2 passengers refunded  
+> Estimated refund/compensation cost: X  
+> Reliability impact: Y
+
+versus:
+
+> **Wait for replacement coach**  
+> Expected departure delay: +14 min  
+> All reservations preserved  
+> 1 protected connection at risk  
+> Estimated delay-compensation exposure: X
+
+The dispatcher can use these consequences when choosing among equally permitted recovery options, but it must obey the player's configured priority/maximum-delay policy and cannot silently optimize only for profit.
+
+##### Freight consequences
+
+The same operational policy principle applies to freight rolling stock.
+
+If a freight Trip departs with reduced compatible capacity, protected/guaranteed cargo commitments are revalidated against the actual consist.
+
+Cargo that no longer fits follows the existing loading-priority and freight-recovery rules:
+
+- protected commitments remain priority obligations;
+- discretionary/spot cargo can be displaced first;
+- guaranteed cargo that cannot be carried is rebooked/recovered rather than silently deleted;
+- SLA/penalty consequences remain attached to the responsible contract.
+
 ### 32.7 Crew requirement planning
 
 Service planning must validate both vehicle availability and aggregated crew capacity.
