@@ -6,16 +6,17 @@ This repository contains **Tranzit**, a Unity transport/business simulation.
 
 Before implementing or proposing gameplay/system changes, read:
 
-- `docs/GAME_DESIGN.md`
+- `docs/GAME_DESIGN.md` — the core game design.
+- `docs/CONTRACT_CANCELLATION.md` — the current focused rules for proportionate cancellation fees, early slot release and the distinction from non-renewal. Required for contract, capacity, renewal, finance and manager-permission changes.
 
-It is a **living source of truth**, not a historical log.
+Together these form the **living source of truth**, not a historical log. Focused specifications elaborate the relevant core sections; do not treat them as optional notes or maintain contradictory versions of a rule.
 
 When a design decision changes:
 
 1. Read the complete relevant sections first.
 2. Identify every existing rule/system affected by the change.
 3. Resolve contradictions instead of appending a second conflicting rule.
-4. Rewrite/remove obsolete text in `docs/GAME_DESIGN.md`.
+4. Rewrite/remove obsolete text in `docs/GAME_DESIGN.md` and any affected focused specification.
 5. Only then implement the change.
 6. Keep code and documentation aligned in the same change whenever possible.
 
