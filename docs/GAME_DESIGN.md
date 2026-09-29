@@ -3435,18 +3435,165 @@ When a defect affects an upcoming Trip, the day-of-operation disruption policy i
 
 The planner should expose the operational trade-off between workshop policy and spare fleet.
 
+**Maintenance demand and fleet reserve are separate concepts.**
+
+Vehicles already expected to be unavailable because of planned maintenance, inspection, repair, delivery/repositioning or another committed duty do not count as operational reserve during that period.
+
 Example:
 
 > Fleet: 20 buses  
-> Peak requirement: 17  
-> Normal maintenance demand: 1.4 vehicles  
-> Effective operational reserve: ~1.6 buses
+> Peak scheduled requirement: 17  
+> Normal maintenance demand: 1  
+> Other committed/unavailable: 0  
+> Effective operational reserve: 2 buses
 
 If the player runs a very conservative maintenance policy with too little fleet reserve or workshop capacity, the company can create its own recurring availability shortage.
 
 Likewise, aggressive maintenance deferral can temporarily increase available fleet but create more unscheduled failures and hard-deadline conflicts later.
 
 Managers can recommend changes, but explicit player policy remains authoritative.
+
+#### Fleet reserve policy
+
+The player can define a target **fleet reserve** so normal scheduling deliberately preserves enough compatible vehicles/rolling stock for breakdowns, short-notice substitution, maintenance overruns and other disruption.
+
+The policy hierarchy is:
+
+1. **Company default**;
+2. **vehicle category / fleet group override**;
+3. **Service Pattern override** where a particular service needs a different protection level.
+
+The UI must show whether the effective reserve target is inherited or overridden.
+
+Reserve can be expressed as:
+
+- a percentage above the relevant planned peak requirement;
+- an absolute number of compatible vehicles/assets;
+- for rail rolling stock, a suitable combination by functional category where needed.
+
+Examples:
+
+> Road coach fleet  
+> Planned peak requirement: 20  
+> Reserve target: 10%  
+> Target reserve: 2 compatible coaches
+
+> Mainline locomotives  
+> Planned peak requirement: 8  
+> Reserve target: 1 locomotive
+
+> Sleeper cars  
+> Planned peak requirement: 5  
+> Reserve target: 1 compatible sleeper
+
+A reserve target is based on **compatible operational capacity**, not only raw vehicle count.
+
+A spare locomotive that cannot operate the relevant traction system or a spare coach that lacks a required passenger product does not satisfy that reserve requirement.
+
+##### Reserve is protected headroom, not permanently idle stock
+
+Fleet reserve is not a list of vehicles that must sit unused forever.
+
+A nominal reserve asset may perform:
+
+- another short Trip;
+- repositioning;
+- light secondary work;
+- maintenance preparation;
+- another compatible duty;
+
+as long as the planner still expects the configured reserve to be available when required and does not jeopardize known future commitments.
+
+The dispatcher therefore protects **availability headroom**, not fixed serial numbers, unless the player explicitly pins a particular spare asset.
+
+Routine timetable planning should not consume the reserve below its target without warning.
+
+The player can still deliberately operate below target. The game should show this as an operational risk rather than prevent it with an arbitrary hard block unless a contract/regulation specifically requires reserved capacity.
+
+##### Effective reserve calculation
+
+For a compatibility pool and planning window, the system calculates approximately:
+
+> compatible fleet  
+> − scheduled operating requirement  
+> − planned maintenance/inspection/repair unavailability  
+> − delivery/repositioning and other committed duties  
+> = effective operational reserve
+
+The resulting reserve is compared with the configured target.
+
+Because rail fleets contain different functional assets, reserve is checked separately where necessary, for example:
+
+- locomotives/traction;
+- passenger coach classes/types;
+- sleeper/dining/special-service coaches;
+- freight wagon families;
+- trainsets.
+
+The system should not claim that excess ordinary Second Class coaches compensate for having no spare locomotive.
+
+##### Interaction with disruption recovery
+
+When a vehicle fails shortly before a Trip, the day-of-operation disruption policy in Section 32.6 normally checks compatible reserve capacity first when substitution is permitted.
+
+Using reserve for a failure can temporarily push the company below its target.
+
+That is allowed, but the planner then exposes the reduced protection for subsequent Trips until:
+
+- the failed asset returns;
+- another compatible asset becomes free;
+- maintenance completes;
+- the company acquires/leases additional capacity;
+- or the timetable requirement falls.
+
+A reserve is therefore a resilience policy, not guaranteed immunity from multiple simultaneous failures.
+
+##### Pattern-specific reserve protection
+
+A Service Pattern can override the inherited company/fleet reserve target when justified.
+
+Examples:
+
+- a premium intercity service keeps a stronger locomotive/coach reserve;
+- a remote bus operation keeps one compatible backup vehicle;
+- a low-priority seasonal freight service accepts almost no dedicated reserve.
+
+The override affects planning protection for that service but does not create new vehicles.
+
+If several Patterns depend on the same compatibility pool, the fleet planner reconciles their reserve requirements and must not double-count the same spare asset as independently guaranteed to multiple simultaneous failures.
+
+##### UI and planning feedback
+
+Fleet and Line planners should show, for the relevant planning window:
+
+- total compatible fleet;
+- scheduled requirement;
+- known maintenance/repair unavailability;
+- other committed duties;
+- configured reserve target;
+- effective reserve;
+- reserve shortfall/surplus.
+
+Example:
+
+> Compatible buses: 24  
+> Peak scheduled: 20  
+> Planned maintenance: 2  
+> Other unavailable: 0  
+> Target reserve: 2  
+> Effective reserve: 2  
+> **Reserve status: met**
+
+or:
+
+> Compatible locomotives: 10  
+> Peak scheduled: 8  
+> Planned maintenance: 1  
+> Target reserve: 2  
+> Effective reserve: 1  
+> **Reserve shortfall: 1 locomotive**
+
+Managers can recommend a higher/lower reserve target, acquisition/lease or timetable adjustment, but explicit player policy remains authoritative.
 
 #### Own and external maintenance
 
@@ -6216,8 +6363,10 @@ Before activation, the planner shows:
 - required/pinned assets;
 - number of currently eligible dynamic assets;
 - expected number of consists/vehicles simultaneously required;
-- reserve margin;
-- any time periods where the fleet pool cannot satisfy the rules.
+- inherited/effective fleet-reserve target;
+- effective reserve after known maintenance and other commitments;
+- any reserve shortfall;
+- any time periods where the fleet pool cannot satisfy the hard operating requirement at all.
 
 For a concrete Trip, the player can inspect which real assets were selected and why.
 
@@ -6367,7 +6516,7 @@ The Line/Service Pattern can define a **vehicle-disruption policy** that tells t
 
 Typical actions include:
 
-1. **Substitute compatible vehicle(s)** — use another available asset that satisfies the Pattern's hard operating envelope.
+1. **Substitute compatible vehicle(s)** — normally draw first from compatible available fleet reserve, then from other safely reassignable assets, while satisfying the Pattern's hard operating envelope.
 2. **Run short / omit failed vehicle(s)** — operate with a reduced consist if the remaining train is physically valid and the player's policy permits it.
 3. **Delay departure for replacement/repair** — hold the Trip for a configurable maximum time while a replacement is positioned, a repair is completed or shunting is performed.
 4. **Use an alternate valid consist** — rebuild the train from available vehicles under the Pattern's criteria/hybrid rules.
