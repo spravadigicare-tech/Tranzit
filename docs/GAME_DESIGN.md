@@ -792,6 +792,8 @@ Possible capacity products:
 - standard,
 - flexible.
 
+The same high-level capacity philosophy can be used for access to constrained passenger stations: operators reserve/contract station-call capacity while the station dynamically assigns the actual compatible platform.
+
 Real train movement still uses local section/block reservations. A train reserves only near-future sections, not its entire route.
 
 ### 13.3 Water
@@ -1470,6 +1472,50 @@ Station owners can charge other operators for relevant use, such as:
 - terminal services,
 - storage/handling,
 - interchange facilities.
+
+### 20.4 Dynamic platform allocation
+
+Passenger platforms are normally allocated **dynamically to Trips according to station capacity and compatibility**, rather than permanently belonging to one operator.
+
+A station can therefore serve several operators at the same time as long as its real infrastructure can accommodate their services.
+
+The station allocator considers factors such as:
+
+- platform length,
+- current and planned platform occupancy,
+- arrival/departure direction and accessible track geometry,
+- through platform versus terminating/bay platform suitability,
+- electrification/traction compatibility where relevant,
+- required passenger facilities,
+- expected dwell time,
+- turnaround/shunting needs,
+- throat/junction conflicts,
+- contractual access priority.
+
+Operators primarily contract for **station-call/platform capacity**, not necessarily for one permanently numbered platform.
+
+Access agreements can provide different service levels, for example:
+
+- **guaranteed station capacity** — the owner must provide a compatible platform within the agreed operating window;
+- **standard access** — platform assignment is dynamic and subject to normal station utilization;
+- **flexible access** — lower-cost calls that can be retimed or refused when the station is heavily constrained.
+
+A dedicated platform can still exist as an exceptional contractual or infrastructure rule where operationally justified, but it is not the default model.
+
+The allocator should assign a concrete compatible platform when planning/dispatching each Trip. If disruption makes the planned platform unavailable, it can automatically reassign the train to another valid platform.
+
+Dynamic reassignment must still respect physical track access. The game cannot assign a train to a free platform that the train cannot physically reach without conflicting movements or invalid direction changes.
+
+If no compatible platform is available, the train must:
+
+- wait outside/at an approach signal,
+- use another permitted station/stop if the Service Pattern allows it,
+- be retimed/rerouted by dispatching,
+- or have the Trip disrupted/cancelled as a last resort.
+
+The UI should show station utilization and explain why a Trip is waiting, for example: "no compatible 300 m platform available" or "station throat conflict".
+
+To preserve performance, platform allocation is event/schedule driven: it is recalculated when Trips are planned, approach the station or when a relevant disruption/infrastructure change occurs, not continuously every frame.
 
 Rail infrastructure capacity remains strategic rather than requiring a full expert timetable simulator by default.
 
