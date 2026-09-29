@@ -1756,6 +1756,56 @@ If an existing service is usable, the planner shows:
 
 A contract allocation is a real capacity commitment and cannot be double-booked.
 
+##### Freight reservation cutoff and missed connection handling
+
+Reserved freight capacity on a regular Trip can have a **cargo readiness cutoff** before departure.
+
+Before that cutoff, the reserved capacity remains protected for the contract cargo.
+
+If the contract cargo is not physically ready by the cutoff, the system must determine **why** before deciding whether that capacity can be released.
+
+The key distinction is responsibility:
+
+1. **Customer-side / customer-provided delay** — the customer or a customer-responsible leg failed to present the cargo on time.
+2. **Carrier-side delay** — the player's own collection leg, terminal handling, fleet, staff, planning or another responsibility controlled by the player caused the cargo to miss the cutoff.
+3. **Player-contracted subcontractor delay** — treated toward the customer as carrier-side responsibility unless the customer contract explicitly says otherwise; the player may separately seek compensation from the subcontractor.
+4. **Qualifying external/infrastructure disruption** — handled according to the contract/access force-majeure, re-protection and compensation rules rather than automatically assigning blame to either side.
+
+If the cargo is late because of **customer-side responsibility**, the unused reserved capacity may be released after the contractual cutoff, subject to any minimum-payment/no-show terms.
+
+If the cargo is late because of **carrier-side responsibility**, the system must **not** treat the missing cargo as a customer no-show and silently release the commercial obligation.
+
+The dispatcher then chooses a recovery action:
+
+- **Hold the trunk Trip** for the delayed cargo when the expected wait is acceptable and the Trip can still operate within its slot/tolerance and downstream commitments;
+- **Hold and accept operational consequences** where the player/authorized manager deliberately chooses to wait beyond the normal margin, understanding that the Trip can lose slot protection, delay other cargo/passengers and create additional access/penalty costs;
+- **Depart without the cargo**, record a carrier-side missed connection, and automatically rebook the affected CargoBatch onto the next compatible Trip with sufficient capacity;
+- create an **ad-hoc recovery movement** or hire an external carrier when waiting for the next normal Trip would breach the customer SLA.
+
+The recovery choice must consider the whole Transport Plan, not only the current train.
+
+Example:
+
+> Contract cargo is due on the 18:00 freight Trip.  
+> Player-operated collection truck arrives 22 minutes late.  
+> Holding the train 8 minutes still fits the rail slot; holding 22 minutes does not.  
+> → dispatcher can wait 8 minutes if that makes the transfer, otherwise depart and rebook/arrange recovery.
+
+If the Trip departs without carrier-delayed contract cargo, the player's obligation **continues**.
+
+The missed quantity is carried forward as an unfulfilled priority requirement and must be assigned to:
+
+- the next compatible scheduled Trip;
+- an added/overflow Trip;
+- an ad-hoc own movement;
+- or an external carrier.
+
+If the delayed quantity causes the next Trip to exceed compatible capacity, lower-priority discretionary/spot cargo can be displaced according to the loading-priority rules, but another guaranteed customer commitment cannot be silently broken.
+
+Any contractual SLA breach, late-delivery penalty or relationship impact remains attached to the responsible customer contract. Rebooking does not erase the failure.
+
+The player can set a **maximum hold policy** at Line/Service Pattern or contract-allocation level, with manager automation allowed inside that limit. The UI should show the likely consequences of waiting versus departing.
+
 If the existing Pattern cannot cover the requirement, the planner can propose:
 
 - larger/more vehicles;
@@ -2256,6 +2306,17 @@ The same rules apply to AI companies and customers; they cannot cancel contracts
 Cargo is simulated in batches, not per kilogram/item.
 
 A batch tracks type, quantity, origin, destination, deadline/quality constraints and contract.
+
+For multi-leg transport, a CargoBatch also tracks enough execution state to explain transfer readiness and responsibility, including:
+
+- current physical location;
+- current/next Transport Plan leg;
+- intended connecting Trip where reserved;
+- readiness/cutoff status;
+- cause/responsibility when a planned transfer is missed;
+- current recovery/rebooking assignment.
+
+This state is event-driven and does not require per-frame cargo AI.
 
 ### 11.10 Multi-leg logistics
 
