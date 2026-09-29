@@ -6533,6 +6533,166 @@ For a concrete Trip, the player can inspect which real assets were selected and 
 
 The player can override the automatic selection when desired, but the override must still satisfy all hard physical, contractual and timetable constraints.
 
+#### Vehicle duties / daily circulation
+
+Concrete Trips are linked into **vehicle duties** (oběhy): physically feasible sequences of work performed by one vehicle, trainset, locomotive or consist over time.
+
+A duty can contain:
+
+- commercial Trips;
+- deadhead/repositioning movements;
+- turnaround time;
+- fueling/charging;
+- cleaning/service preparation;
+- maintenance/inspection windows;
+- shunting/consist changes where relevant;
+- parking/stabling;
+- return to or departure from a depot/operating base.
+
+Example road duty:
+
+> Praha depot  
+> → 06:00 Praha–Plzeň  
+> → 08:15 Plzeň–Praha  
+> → refuel at Praha terminal  
+> → 11:00 Praha–Plzeň  
+> → 13:15 Plzeň–Praha  
+> → park at depot
+
+A vehicle duty is not restricted to one Line.
+
+If vehicle compatibility, timing and commercial rules permit, the dispatcher can chain Trips from different Lines/Service Patterns into one efficient duty.
+
+Example:
+
+> regional Line A morning Trip  
+> → short repositioning  
+> → intercity Line B midday Trip  
+> → evening return on Line A
+
+This allows the same fleet to be used efficiently without requiring the player to manually assign every vehicle to one permanent Line.
+
+##### Automatic duty construction
+
+The dispatcher normally builds duties automatically.
+
+It chooses feasible Trip sequences using:
+
+- Trip departure/arrival times;
+- actual origin/destination location;
+- required turnaround time;
+- vehicle/consist compatibility;
+- physical repositioning time;
+- fueling/charging requirements;
+- maintenance state and planned maintenance;
+- cleaning/catering/service tasks;
+- depot/parking availability;
+- preparation horizon;
+- fleet-reserve policy;
+- known future commitments.
+
+The system should prefer useful continuous work over unnecessary empty movement, while still preserving required reserve and maintenance coverage.
+
+It cannot chain two Trips merely because their timetable times look compatible if the vehicle cannot physically move between them in time.
+
+##### Duty feasibility
+
+Every transition between two duty tasks is validated physically.
+
+For example:
+
+> Trip A arrives 08:15 at Plzeň  
+> Trip B departs 08:25 from Praha
+
+is not a valid same-vehicle duty, even if the same vehicle type can operate both services.
+
+The planner must include:
+
+- travel/repositioning time;
+- minimum turnaround;
+- fueling/charging/service time;
+- shunting/consist preparation;
+- any required access/slots for repositioning movements.
+
+For rail, a consist cannot be magically reformed between Trips. If the next Trip needs a different consist, the required shunting and vehicle movements must fit into the duty.
+
+##### Automatic fleet requirement
+
+Fleet requirement is calculated from the actual set of feasible duties rather than from a simple abstract formula such as “frequency × route time”.
+
+The planner therefore exposes:
+
+- number of simultaneous duties;
+- number of concrete vehicles/consists required;
+- deadhead/repositioning workload;
+- maintenance coverage;
+- fleet reserve after duties are built.
+
+A timetable change can therefore alter fleet requirement even when total number of Trips remains similar.
+
+##### Manual override
+
+The player can inspect and edit generated duties when desired.
+
+Supported overrides can include:
+
+- pin a specific physical vehicle/consist to a duty;
+- force two compatible Trips into the same duty;
+- prevent two Trips from sharing a duty;
+- require a return to a selected depot/base;
+- insert a preferred fueling/maintenance stop;
+- lock part or all of a generated duty.
+
+Manual edits are revalidated against all physical/time constraints.
+
+If a requested manual duty is impossible, the game explains the blocking reason rather than accepting it and failing silently later.
+
+##### Dynamic assignment and duty templates
+
+For criteria-based fleets, a duty does not necessarily need a specific serial-number vehicle months in advance.
+
+The planner can first create a **duty requirement** such as:
+
+> Intercity coach duty  
+> 05:30–17:10  
+> min 50 seats  
+> compatible with Lines A and B  
+> fueling opportunity at 10:20
+
+The concrete compatible vehicle is assigned according to the preparation/commitment rules below.
+
+For fixed/pinned fleets, the duty can already refer to a specific physical vehicle.
+
+##### Delay propagation through duties
+
+A vehicle remains physical across its complete duty.
+
+If Trip A arrives late and the same vehicle is planned for Trip B, that delay can propagate into Trip B unless the dispatcher recovers by:
+
+- shortening turnaround where safely possible;
+- assigning a reserve/substitute vehicle;
+- reworking the remaining duty;
+- delaying Trip B;
+- cancelling a later Trip under the disruption policy.
+
+The system must show downstream duty conflicts so the player can see that one disruption may affect later services.
+
+This is distinct from passenger connection recovery: one is a **vehicle-resource dependency**, the other a passenger itinerary dependency.
+
+##### Duty regeneration
+
+Duties are recalculated when relevant inputs change, including:
+
+- timetable/Pattern version;
+- vehicle assignment criteria;
+- fleet availability;
+- maintenance plan;
+- fueling/charging infrastructure;
+- depot/base assignment;
+- disruption that materially changes later work.
+
+Routine recalculation is event-driven and should preserve stable existing duties where possible rather than arbitrarily reshuffling the entire fleet every minute.
+
 #### Trip preparation horizon and concrete asset reservation
 
 A planned Trip does not need all of its concrete physical assets locked far in advance.
