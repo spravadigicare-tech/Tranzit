@@ -837,6 +837,21 @@ Capacity reservations can be **permanent/long-running or time-limited**. A carri
 
 The reservation validity can mirror the Service Pattern calendar, including date range, selected weekdays and time windows. When the validity expires, the capacity returns automatically to the infrastructure owner unless a renewal has been agreed.
 
+A capacity agreement can have an **Auto-renew** checkbox.
+
+When enabled, the game automatically attempts to renew the same capacity agreement before expiry for the next equivalent period.
+
+Auto-renew may proceed automatically when:
+
+- the infrastructure owner still offers the required capacity,
+- the slot pattern remains compatible with the current Service Pattern,
+- pricing changes only through terms already allowed by the agreement, such as an agreed indexation clause,
+- no material contractual condition has changed.
+
+If the owner refuses renewal, the capacity is no longer available, or the proposed renewal materially changes price/access conditions beyond the existing agreement, auto-renew pauses and requires player or delegated-manager approval.
+
+The UI must warn sufficiently before expiry if an auto-renewal cannot be completed, so the player has time to modify the Service Pattern or find alternative capacity.
+
 ### 13.2.1 Capacity order editor
 
 The player should normally obtain rail and station capacity through a simple **Capacity Order** workflow launched directly from a Line or Service Pattern.
@@ -860,7 +875,8 @@ The normal player workflow is:
 1. **Choose validity** — use the Service Pattern calendar or override with a temporary/seasonal date range.
 2. **Choose service level** — guaranteed, standard or flexible/ad-hoc where offered.
 3. **Review tolerance** — normally use recommended tolerance; advanced adjustment is optional if the owner offers alternatives.
-4. **Review capacity result and price** — then submit/accept the capacity order.
+4. **Choose renewal** — simple **Auto-renew** checkbox for recurring/long-running capacity agreements.
+5. **Review capacity result and price** — then submit/accept the capacity order.
 
 The system automatically expands one request into all required infrastructure rights along the route, including both:
 
@@ -873,6 +889,7 @@ The order screen should show:
 
 - requested Service Pattern,
 - validity period and days,
+- Auto-renew on/off,
 - requested calls/movements per time window,
 - capacity availability for every required section/station,
 - total reservation fee,
