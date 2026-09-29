@@ -735,6 +735,8 @@ Specialized facilities are more efficient than universal ones.
 
 Passenger platforms are not generic freight handling points. Freight trains may pass through compatible tracks but cannot normally perform cargo handling there.
 
+Passenger platform function is defined by the passenger-station modules in Section 20: platform length, access, circulation and amenities affect what services the station can handle and how efficiently passengers transfer.
+
 ### 12.3 Handling time
 
 Loading/unloading takes time based on:
@@ -1326,9 +1328,107 @@ Stations and terminals can also be publicly or privately owned.
 
 Other operators may pay for platform, track, storage and terminal use.
 
-Rail infrastructure capacity is strategic, not a detailed timetable simulator by default.
+Passenger stations are **modular physical facilities**, not single abstract buildings.
 
-The UI should communicate capacity simply, e.g. utilization per section and peak bottlenecks.
+A passenger rail station can be assembled from functional elements such as:
+
+- platform tracks,
+- passenger platforms of configurable length,
+- station/entrance building,
+- waiting areas,
+- ticketing/booking facilities where historically relevant,
+- shelters/canopies,
+- toilets and basic amenities,
+- pedestrian access paths,
+- stairs/ramps,
+- footbridges or underpasses,
+- concourse/transfer halls,
+- baggage/service facilities,
+- later retail/commercial modules,
+- parking and P+R,
+- taxi/drop-off space,
+- adjacent bus/tram/trolleybus/metro interchange modules.
+
+Not every station needs every module. A rural halt can be extremely simple, while a major hub can grow into a large multi-modal complex.
+
+Station capability and passenger experience emerge from its real modules and layout.
+
+Relevant station effects can include:
+
+- maximum train length served,
+- number of simultaneous trains,
+- passenger throughput,
+- transfer walking time,
+- boarding/alighting speed,
+- shelter/comfort,
+- ticketing/processing capacity,
+- accessibility,
+- interchange quality,
+- operating/staff requirements.
+
+Platform length is physical. A train that is longer than the usable platform cannot be treated as fully accommodated without an explicit operational rule/penalty.
+
+Passenger circulation matters at an aggregated level. The game does not need to simulate every person through every doorway, but station design should calculate practical flow constraints from entrances, platforms and connections. Representative visible pedestrians should follow the actual layout.
+
+A station can therefore become a bottleneck even when the surrounding railway still has track capacity.
+
+### 20.1 Passenger station progression
+
+Available station modules evolve with history and technology.
+
+Early stations can rely on small buildings, simple platforms and manual ticketing.
+
+Later eras can unlock:
+
+- larger covered platforms,
+- improved passenger circulation,
+- underpasses/footbridges,
+- electric lighting,
+- modern information systems,
+- escalators/lifts where appropriate,
+- automated ticketing,
+- integrated urban-transport interchanges,
+- larger commercial/concourse facilities.
+
+Upgrading a station does not automatically replace its historic fabric. Existing buildings/platforms can remain, be extended, repurposed or protected depending on the site and era.
+
+### 20.2 Multimodal interchange
+
+Urban and intercity transport should connect through real station geometry.
+
+A bus terminal, tram stop, trolleybus stop, metro entrance, taxi area or P+R facility can be attached to or placed near a rail station.
+
+Transfer quality depends on actual walking distance, access routes, waiting environment and timetable coordination.
+
+A transfer is therefore better when modes are physically integrated than when passengers must cross a large area or street network.
+
+### 20.3 Station capacity and ownership
+
+Station capacity is distinct from line/track-section capacity.
+
+A station may be constrained by:
+
+- platform occupancy,
+- platform length,
+- throat/junction conflicts,
+- passenger-flow capacity,
+- baggage/cargo handling where relevant,
+- shunting/turnaround requirements,
+- interchange capacity.
+
+The UI should identify the actual station bottleneck rather than expose one generic capacity percentage.
+
+Station owners can charge other operators for relevant use, such as:
+
+- platform access,
+- station calls,
+- terminal services,
+- storage/handling,
+- interchange facilities.
+
+Rail infrastructure capacity remains strategic rather than requiring a full expert timetable simulator by default.
+
+The UI should communicate section and station utilization clearly, including peak bottlenecks.
 
 Advanced timetable tools may exist later, but are not mandatory for normal play.
 
