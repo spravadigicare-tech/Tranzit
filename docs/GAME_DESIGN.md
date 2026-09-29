@@ -2997,7 +2997,7 @@ If no valid local traction base exists, the system should normally recommend one
 
 Later technologies such as multi-system, dual-mode or otherwise more versatile vehicles can remove exchange points and thereby reduce dwell time, fleet complexity and station capacity usage.
 
-### 14.5 Passenger classes and comfort
+### 14.5 Passenger classes, comfort and reservation policy
 
 Rail can offer different classes from early periods.
 
@@ -3017,6 +3017,86 @@ Comfort expectations rise over time.
 A retrofit can extend usefulness, but cannot make a fundamentally obsolete vehicle equal to a modern one.
 
 Availability is evaluated against the selected start year and region. Do not gate an already established historical feature behind replaying its earlier invention solely because a new company was founded in 1925, 1950 or 1975; compatible vehicles and installed equipment are still required.
+
+#### Passenger-capacity zones
+
+Passenger capacity is tracked in **capacity zones** rather than as individually simulated seat numbers.
+
+A capacity zone can correspond to:
+
+- a whole passenger coach;
+- one class/section inside a coach;
+- a sleeping-car/accommodation category;
+- a bus/coach seating class;
+- another physically distinct passenger-capacity area.
+
+A zone stores the relevant usable capacity, for example:
+
+- seated places;
+- standing places where permitted;
+- sleeper/berth places;
+- class/comfort level;
+- accessibility/special-service capacity.
+
+Capacity is accounted for **per travel leg between commercial stops**. A passenger Praha→Pardubice releases that capacity for later legs after Pardubice.
+
+The game does not need to assign or render seat numbers such as "Coach 3, Seat 42" unless a future feature explicitly requires them.
+
+#### Reservation policy per zone
+
+Each passenger-capacity zone can use one of three reservation policies:
+
+1. **Open boarding** — no reservation is required; passengers board from available physical capacity.
+2. **Optional reservation** — capacity can be sold/reserved in advance, while remaining capacity can still be sold to walk-up passengers.
+3. **Reservation required** — the passenger must hold confirmed capacity for that zone/Trip/leg before boarding.
+
+The policy can be configured at Line/Service Pattern level and inherited by the consist, with an override for individual vehicle/coach/capacity zones.
+
+Example:
+
+> Coach 1 — First Class — **Reservation required**  
+> Coaches 2–4 — Second Class — **Optional reservation**  
+> Coach 5 — Regional/open section — **Open boarding**
+
+This allows the player to create differentiated products without defining a separate Line for every passenger class.
+
+A reservation-required zone does **not** necessarily mean the ticket must be purchased days in advance. If sales systems, station facilities and cutoff rules permit, a walk-up passenger can still purchase the remaining capacity shortly before departure; the system simply creates a confirmed reservation before boarding.
+
+#### Seated versus standing capacity
+
+Advance/reserved intercity capacity is normally tied to **seated or berth capacity**, not standing capacity.
+
+Standing capacity is mainly appropriate for:
+
+- urban transport;
+- suburban/regional services;
+- vehicle types and eras where standing travel is permitted.
+
+A passenger with a confirmed reserved seat/berth is guaranteed the corresponding capacity class unless a disruption forces re-accommodation.
+
+Open-boarding passengers can use standing capacity where that Service Pattern/vehicle permits it.
+
+The UI must distinguish:
+
+- reserved seated/berth capacity;
+- unreserved seated capacity;
+- standing capacity;
+- total physical occupancy.
+
+#### Disruption and consist changes
+
+Reservations attach to a **capacity category/zone requirement**, not to one immutable physical seat.
+
+If a coach is substituted, removed or replaced, the dispatcher/passenger system tries to preserve:
+
+- class;
+- seated/berth guarantee;
+- accessibility requirement;
+- relevant comfort/service requirement.
+
+If replacement capacity is insufficient, affected passengers require re-accommodation, rebooking, upgrade/downgrade compensation or another service according to the passenger policy.
+
+A consist change must therefore revalidate reserved passenger capacity before dispatch rather than silently overbooking the train.
 
 ## 15. Vehicle lifecycle
 
@@ -4579,6 +4659,93 @@ Service calendars must respect actual physical fleet availability. Before activa
 Before activation, each commercial Service Pattern must also have valid service endpoints under Section 12.4, any required station/terminal/stop access, and commercial coverage/local presence under Section 7.2 for every served city. A vehicle cannot run a commercial Trip to an abstract destination with nowhere to board/load/unload or to a city the company is not yet organizationally allowed to serve. Pass-through locations do not create this requirement.
 
 Timetable templates may later be reused across multiple lines, with local overrides. Managers/dispatch systems can suggest frequency changes based on observed demand, but player overrides remain possible.
+
+#### Passenger ticket sales and reservations
+
+Ordinary individual passenger demand is monetized through **ticket sales**, not customer contracts.
+
+For each candidate journey, the passenger-demand system chooses among available itineraries/operators based on the existing factors in Section 6.2, then attempts to purchase/use the required capacity.
+
+Passenger sales are aggregated but capacity-accurate by:
+
+- Trip;
+- origin-destination leg;
+- passenger class/capacity zone;
+- reservation policy.
+
+A passenger place sold Praha→Brno does not block the same place Brno→Vídeň.
+
+##### Open boarding
+
+For open-boarding services, passengers arrive according to simulated demand and board until the relevant capacity is full.
+
+If capacity is exhausted:
+
+- remaining passengers wait for a later suitable service where feasible;
+- choose another operator/mode/route;
+- or abandon the trip.
+
+Repeated denied boarding reduces attractiveness/reliability perception and exposes unmet demand to the player.
+
+This is the default model for much urban/local transport.
+
+##### Optional advance sale
+
+For optional-reservation capacity, passengers can buy confirmed capacity before departure.
+
+The remaining unreserved capacity stays available to later purchasers/walk-up demand until the applicable sales cutoff.
+
+The Line/Trip UI can therefore show, by leg and class:
+
+> Capacity: 220 seated  
+> Reserved/sold in advance: 147  
+> Forecast additional demand: 51  
+> Currently uncommitted: 73
+
+The player does not manage individual reservations.
+
+##### Reservation-required capacity
+
+A reservation-required zone accepts only passengers with confirmed available capacity for the relevant Trip/leg.
+
+This can be configured for only part of a consist, such as First Class, sleeper cars or another premium section, while other coaches remain optional/open.
+
+##### Passenger pricing policy
+
+The player sets a **pricing policy** at Line/Service Pattern/class level rather than manually pricing every passenger on every Trip.
+
+A policy can use inputs such as:
+
+- base fare/distance;
+- passenger class;
+- time until departure;
+- already sold load factor;
+- expected demand;
+- day/time/season;
+- flexibility/refund conditions where supported;
+- competitive alternatives.
+
+This allows advance-purchase discounts or higher last-minute pricing where historically/technologically appropriate.
+
+The player can keep pricing simple/fixed if desired. More advanced yield-style pricing can be delegated to commercial management later.
+
+Technology matters: sophisticated real-time/digital pricing should not exist before the company has the required information/reservation systems.
+
+##### Passenger capacity commitments
+
+Passenger-group contracts under Section 11.1.1 and ordinary individual reservations consume the **same physical capacity ledger**.
+
+Capacity priority is:
+
+1. protected passenger-contract allocations;
+2. confirmed individual reservations;
+3. open/walk-up passenger demand.
+
+Unused contracted capacity can be released according to its contract cutoff rules.
+
+Confirmed individual reservations cannot be silently displaced to sell the seat again at a higher price.
+
+The system must not oversell one physical seat/berth/standing place across overlapping origin-destination legs.
 
 #### Slot-driven timetable construction
 
