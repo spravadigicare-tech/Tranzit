@@ -792,6 +792,21 @@ Possible capacity products:
 - standard,
 - flexible.
 
+Once infrastructure capacity has been sold/reserved, operational priority follows the **contracted slot/access class**, not asset ownership.
+
+A private owner may reserve capacity for its own trains before selling the remainder, but after third-party capacity is contracted the owner cannot arbitrarily push its own lower-priority trains ahead of a competitor that holds a higher-priority or guaranteed slot.
+
+During normal disruption/recovery, dispatching prioritizes according to:
+
+- guaranteed/standard/flexible access class,
+- the specific time window and contractual rights,
+- operational safety,
+- recovery rules defined in the access agreement.
+
+Ownership of the track is not itself a tie-breaker after capacity has been contractually allocated.
+
+If the owner wants higher priority for its own trains, it must reserve that capacity for itself in advance under the same capacity accounting.
+
 The same high-level capacity philosophy is used for constrained passenger stations: operators buy/reserve station-call slots against finite station capacity, then the station dynamically assigns the actual compatible platform for each Trip. Station-slot capacity and line-section capacity remain separate constraints and both must be available.
 
 Real train movement still uses local section/block reservations. A train reserves only near-future sections, not its entire route.
@@ -1561,6 +1576,12 @@ Access agreements can provide different slot products, for example:
 - **standard slot** — normal scheduled access with less contractual protection during major disruption;
 - **flexible/ad-hoc slot** — cheapest; used only when spare capacity exists and can be retimed or rejected when the station is constrained.
 
+Once a slot is sold/reserved, dispatch priority follows the slot product and contract terms regardless of who owns the station.
+
+The owner may reserve peak capacity for its own services in advance, but cannot later displace a competitor's guaranteed slot simply because the owner's own train is late or more commercially valuable.
+
+During disruption, a guaranteed third-party call can therefore take precedence over the owner's own standard/flexible call if that is what the contracted priorities require.
+
 Unused guaranteed/standard slots still have a reservation cost because the owner has withheld that capacity from other operators.
 
 An operator without a pre-purchased slot may request an ad-hoc call. It is accepted only if real spare station capacity exists, usually at a higher per-call price or with lower priority.
@@ -1593,6 +1614,8 @@ If no compatible platform is available, the train must:
 - use another permitted station/stop if the Service Pattern allows it,
 - be retimed/rerouted by dispatching,
 - or have the Trip disrupted/cancelled as a last resort.
+
+When choosing which delayed/disrupted Trip receives scarce platform capacity first, dispatching uses contractual slot priority rather than favouring the station owner's trains.
 
 The UI should show station utilization and explain why a Trip is waiting, for example: "no compatible 300 m platform available" or "station throat conflict".
 
