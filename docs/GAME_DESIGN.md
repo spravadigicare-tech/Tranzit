@@ -311,6 +311,25 @@ The game tracks aggregated availability such as:
 
 A Trip consumes the required crew capacity for its duration. If the company does not have enough qualified staff, the Trip cannot be staffed or must be cancelled/rescheduled.
 
+Crew capacity also respects aggregated **shift and rest requirements**. The game does not track an individual driver's sleep schedule, but longer, overnight or continuous operations consume more effective staffing capacity because legal/safe rest and crew rotation must be covered.
+
+Long-distance or long-duration Trips can require crew changes. The service planner should show when a service needs:
+
+- one crew for the full Trip,
+- a planned crew change,
+- multiple crews for continuous/night operation,
+- additional onboard staff because of service class or regulations.
+
+Crew-change requirements are handled as operational planning constraints rather than persistent individual-person simulation. The game may use defined eligible change locations such as major stations, depots or terminals, but it does not require the player to assign named ordinary employees.
+
+The UI must translate staffing needs into understandable requirements such as:
+
+- train-driver hours/day,
+- road-driver hours/day,
+- number of effective full-time crews required,
+- peak crew requirement,
+- additional staffing required for night/weekend patterns.
+
 The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains. This is intentionally abstracted to avoid low-value micromanagement.
 
 Expansion into another region therefore does not require maintaining a separate arbitrary pool of drivers there, although local licences/language/regulatory requirements may still require the company to have the appropriate qualified staff category where historically/gameplay relevant.
@@ -1607,6 +1626,25 @@ Parking and maintenance are separate from the Line's operating depot. Individual
 The timetable planner must include real depot-to-service positioning, parking needs, maintenance windows and necessary repositioning movements when calculating required fleet size and feasibility.
 
 A specific vehicle may be manually pinned to a Line/Pattern as an override where the player wants that level of control, but this is not the default operating model.
+
+### 32.6 Crew requirement planning
+
+Service planning must validate both vehicle availability and aggregated crew capacity.
+
+For each Service Pattern, the planner estimates:
+
+- total operating hours,
+- peak simultaneous crew demand,
+- day/night/weekend staffing burden,
+- whether crew changes are required,
+- suitable locations for those changes where applicable,
+- spare crew margin after the timetable is activated.
+
+The planner should warn when a timetable is technically possible with vehicles but cannot be covered by available qualified staff.
+
+Later managers can automatically adjust staffing targets or propose timetable changes, but they cannot create crew capacity that the company does not actually employ.
+
+Crew planning remains aggregated across the company and does not introduce individual employee pathfinding or home-depot assignment.
 
 ## 33. Urban transport
 
