@@ -809,6 +809,36 @@ Managers/departments must respect the same physical and commercial constraints a
 - create transport slots;
 - bypass the branch/commercial-coverage rules.
 
+#### Shared management labour market
+
+Named managers and important specialists are recruited from a **shared labour market used by all transport companies**, including AI competitors.
+
+Candidates are real market participants rather than private player-only rolls.
+
+This means:
+
+- the player and AI firms can see/recruit from the same underlying candidate pool;
+- a candidate can accept employment with only one company at a time;
+- if an AI company hires a candidate first, that person disappears from the available market;
+- market quality/quantity can vary by region, city size, era and wider economic conditions.
+
+The player cannot directly poach or recruit a manager who is currently employed by another company.
+
+There is no active headhunting mechanic where the player offers a higher salary/signing bonus to break another company's employment relationship.
+
+An employed manager returns to the available labour market only after becoming free again, for example because:
+
+- their employer dismisses them;
+- their employment ends;
+- they resign/leave under the game's normal employment rules;
+- their employer fails/collapses and releases staff.
+
+A manager leaving the player's company follows the same rule: they can later appear in the shared market and may be hired by a competitor.
+
+The game should preserve enough continuity that experienced former managers can become recognizable recurring market participants rather than being deleted and replaced by anonymous random rolls.
+
+AI companies use the same recruitment constraints and cannot hire unavailable managers.
+
 #### Cost and performance
 
 Named managers have salaries and skill profiles.
