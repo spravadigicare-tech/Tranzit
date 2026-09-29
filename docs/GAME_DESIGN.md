@@ -1377,6 +1377,7 @@ The UI must translate staffing needs into understandable requirements such as:
 - train-driver hours/day;
 - road-driver hours/day;
 - conductor/onboard-staff hours where ticket checking/sales/service requires them;
+- number of crew-duty/shift blocks required;
 - number of effective full-time crews required;
 - peak crew requirement;
 - target and currently available reserve;
@@ -6955,6 +6956,65 @@ For each Service Pattern, the planner estimates:
 The planner should warn when a timetable is technically possible with vehicles but would consume too much of the player's intended crew reserve or cannot be covered by available qualified staff at all.
 
 Crew planning remains aggregated across the company and does not introduce individual employee pathfinding, named ordinary-driver assignment or mandatory region-by-region reserve management.
+
+#### Crew duties / shift blocks
+
+Operating staff are scheduled into aggregated **crew duties** (shift blocks) covering one or more consecutive Trips.
+
+A crew duty represents qualified staffing capacity, not a named employee.
+
+A typical duty can contain:
+
+- one or more Trip segments;
+- planned turnaround/waiting time;
+- a crew change at an eligible location;
+- legally/safely required break/rest boundaries;
+- required crew category/qualification.
+
+Example:
+
+> Train-driver duty A  
+> Praha 06:00 → Brno 09:10  
+> duty ends / crew change
+
+> Train-driver duty B  
+> Brno 09:35 → Wien 11:20
+
+The train/vehicle can therefore continue on its own vehicle duty while the operating crew changes.
+
+The dispatcher builds crew duties automatically from the timetable and checks:
+
+- required qualification;
+- Trip timing;
+- maximum effective duty/shift duration;
+- required rest/break rules;
+- planned crew-change locations;
+- available company crew capacity;
+- company crew reserve.
+
+Crew changes are allowed only at operationally suitable locations such as appropriate stations, terminals, depots or other designated change points.
+
+The game does not simulate the named person travelling home, commuting across the map or individually taking a lunch break. Those realities are represented through aggregate duty/rest capacity.
+
+A Line Planner should expose the practical result, for example:
+
+> 8 train-driver duty blocks/day  
+> 3 conductor duty blocks/day  
+> 1 planned crew change at Brno  
+> Peak train-driver requirement: 5.4 crew-equivalents  
+> Reserve remaining: 0.8
+
+A timetable that would require an impossible crew duty, such as exceeding allowed duration without a valid change point, is not considered fully feasible.
+
+Manual control remains high-level. The player can:
+
+- mark/prefer a crew-change point;
+- prevent an unsuitable change point;
+- require a crew change before/after a selected segment.
+
+The player does not manually assign ordinary employees to individual shifts.
+
+If delay causes a planned crew duty to overrun or miss a crew-change window, the dispatcher re-evaluates the remaining duty and uses the company crew-recovery policy below.
 
 #### Company crew-recovery policy
 
