@@ -6,7 +6,7 @@ This repository contains **Tranzit**, a Unity transport/business simulation.
 
 Before implementing or proposing gameplay/system changes, read:
 
-- `docs/GAME_DESIGN.md` — the core game design.
+- `docs/GAME_DESIGN.md` — the core game design. Section 3 is authoritative for start dates, the shared calendar, speed controls and Early Ages scope.
 - `docs/CONTRACT_CANCELLATION.md` — the current focused rules for proportionate cancellation fees, early slot release and the distinction from non-renewal. Required for contract, capacity, renewal, finance and manager-permission changes.
 
 Together these form the **living source of truth**, not a historical log. Focused specifications elaborate the relevant core sections; do not treat them as optional notes or maintain contradictory versions of a rule.
@@ -25,7 +25,9 @@ When a design decision changes:
 For every new feature, explicitly check interactions with:
 
 - physical continuity of vehicles/assets,
-- time/technology progression,
+- the shared time/calendar model and selected start year,
+- base-game versus Early Ages DLC scope,
+- technology progression,
 - economy and contracts,
 - ownership/licensing/state rules,
 - infrastructure capacity and geometry,
@@ -77,9 +79,31 @@ Infrastructure is free-form/spline based. Buildings can rotate freely. Snapping 
 
 Early game can be hands-on. Later game must remain manageable through managers, dispatchers and technology without deleting the underlying physical rules.
 
-### Historical plausibility
+### Historical plausibility and content scope
 
-The game starts around 1820 and progresses over roughly two centuries. New systems must have sensible historical availability and evolution.
+The base-game default/earliest start is **1900**, with selectable new-game years **1900, 1925, 1950 and 1975**.
+
+The pre-1900 playable period, intended to start around **1820**, is reserved for the first planned DLC, **Early Ages**. Do not implement that earlier startup progression as a mandatory base-game requirement. Preserve shared systems and historically surviving older assets where relevant to the selected date.
+
+Initialize the world's technology, economy, population, borders, infrastructure, competitors and vehicle catalogue for the selected start year. A small new player company does not reset the entire world to an earlier era. Do not force later starts to re-research already established historical inventions; actual equipment, facilities and staffing still need to be acquired.
+
+### Unified calendar and time controls
+
+Use the single simulation clock defined in `docs/GAME_DESIGN.md`, Section 3:
+
+- 7 days per week;
+- **14 days per month**, exactly two weeks;
+- **12 months and 168 days per year**;
+- 24 hours per day, 60 minutes per hour, 60 seconds per minute;
+- **1 real second = 1 game minute at 1×**;
+- speed controls **0.5×, 1×, 2×, 4×, 8×, 16×**;
+- slowest running speed **0.5×**, maximum **16×**.
+
+Do not reintroduce an independently accelerated historical calendar, the retired 100–150-hour campaign target or speeds above 16×. Year 2020 is a duration reference, not a mandatory game ending.
+
+Timetables, slot windows, transfers, cargo ageing, crews, maintenance, production, construction, finances, research, contracts, cancellation and renewals must use the same game-time units. Never assume Gregorian month lengths or a 365-day financial year. Content dates outside days 1–14 require a documented conversion; do not invent that still-open mapping silently.
+
+Validate calendar rollover, seasonal/cross-year patterns, billing and resource accounting, and mid-operation speed changes. Equivalent simulated elapsed time must not yield different economic accounting because a different speed was selected. Optimize rendering and update scheduling rather than skip movements, reservations or essential events to claim 16× performance. Benchmark the maximum setting on developed networks before claiming it is sustained.
 
 ### Scope discipline
 
@@ -93,6 +117,7 @@ When introducing a new subsystem:
 
 - keep simulation state separable from rendering,
 - keep data definitions extensible across eras/regions,
+- use the shared calendar/time model instead of local conflicting clocks,
 - make systems work with simulation LOD,
 - avoid hardcoding specific cities, regions or vehicle models into core logic,
 - prefer deterministic/state-driven simulation where practical,
