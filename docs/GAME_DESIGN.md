@@ -854,7 +854,14 @@ The core skill set is:
 
 Use a clear bounded scale, such as **0–100**, but do not present a single synthesized "overall rating" as the primary measure of manager quality.
 
-Different roles weight different skills.
+Every management position defines **1–3 key skills** from the shared skill set. No normal position should require all six skills.
+
+A position can distinguish:
+
+- **Primary skill** — the most important competency for the role;
+- **Secondary skills** — zero to two additional competencies that materially affect performance.
+
+The role's actual performance is calculated from only those 1–3 relevant skills plus applicable traits, workload and organizational context. Unrelated skills remain visible in the person's profile but do not artificially influence role performance.
 
 Examples:
 
@@ -863,11 +870,15 @@ Examples:
 - Operations Manager: Operations + Leadership;
 - Fleet/Technical Manager: Technical + Operations;
 - HR Manager: People + Leadership;
-- Maintenance Manager: Technical + Operations.
+- Maintenance Manager: Technical + Operations;
+- Line Manager: Operations + Commercial;
+- Finance Manager: Finance/Admin + Leadership.
 
 A candidate can therefore be excellent for one role and mediocre for another.
 
-The hiring UI should show **role fit through the relevant skills and concrete expected effects**, rather than hiding the decision behind a generic star rating.
+The hiring UI should visually emphasize the **1–3 required skills for the vacancy** and show how the candidate compares with the role's needs, rather than hiding the decision behind a generic star rating.
+
+Do not create a single universal "manager quality" value that makes one person automatically best for every position.
 
 Example:
 
@@ -900,9 +911,28 @@ Examples can include:
 
 Traits must always have an understandable domain and effect.
 
+Traits can be:
+
+- mostly positive;
+- mostly negative;
+- or **trade-off traits** that provide a meaningful advantage together with a corresponding downside.
+
+Trade-off traits are encouraged when they create distinct management styles rather than obvious best-in-slot bonuses.
+
+Examples:
+
+- **Cost Conscious** — reduces routine operating/admin overspend but tends to choose leaner reserves and defer nonessential investment when delegated;
+- **Conservative Planner** — keeps larger operational buffers and lowers disruption risk but can reduce asset utilization and growth speed;
+- **Growth Oriented** — pursues expansion opportunities more aggressively within authorized limits but can consume cash/reserve capacity faster;
+- **Customer First** — improves relationship/customer-service decisions but may authorize more expensive recovery/compensation choices within its allowed budget;
+- **Perfectionist** — improves quality/accuracy of relevant work but can increase processing time under high workload;
+- **Decisive** — responds faster to routine disruptions but is somewhat more likely to choose a costly solution when several options are close.
+
+Negative effects must remain bounded and transparent. Traits should change incentives/decision style, not randomly sabotage the player.
+
 Do not generate traits that provide unrelated magic bonuses such as "+5% revenue everywhere".
 
-Where a trait changes automated decision behaviour, the player must be able to understand that tendency before assigning broad delegation authority.
+Where a trait changes automated decision behaviour, the player must be able to understand both the upside and downside before assigning broad delegation authority.
 
 #### Experience and development
 
