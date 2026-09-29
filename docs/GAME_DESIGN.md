@@ -1314,18 +1314,27 @@ The system must show the resulting expected transfer quality and any fleet/capac
 
 Later dispatching and information technology can automate connection coordination more effectively, but physical travel and actual delays remain real. A connecting vehicle cannot teleport or ignore infrastructure constraints simply because services are linked.
 
-### 32.3 Stop service modes
+### 32.3 Line-level stop service modes
 
-Each stop/terminal call inside a line or service pattern can define how strongly the vehicle is required to serve it.
+Stop behaviour is configured **on the line or service pattern**, not on the station itself.
 
-Supported modes include:
+A station/terminal only exposes its physical capabilities and access rules. Each line that uses it independently defines how that line should serve the location.
 
-- **Mandatory:** the service always calls there when the trip runs.
-- **Conditional:** the service calls only when a defined condition is met.
-- **On request / booked:** the stop is skipped unless there is a real passenger booking, cargo order, pickup/drop-off requirement or another configured trigger.
-- **Pass-through only:** the service may traverse the station/terminal infrastructure but performs no commercial stop there.
+This allows the same station to be:
 
-Typical conditional triggers can include:
+- mandatory for one regional line,
+- conditional/on-request for another line,
+- skipped by an express service,
+- pass-through only for a freight service.
+
+For each stop entry in a line/service pattern, supported modes include:
+
+- **Mandatory:** this line always calls there when the trip runs.
+- **Conditional:** this line calls only when a defined condition is met.
+- **On request / booked:** this line skips the stop unless there is real passenger booking, cargo work, pickup/drop-off demand or another configured trigger.
+- **Pass-through only:** this line may traverse the station/terminal infrastructure but performs no commercial stop there.
+
+Typical line-level conditional triggers can include:
 
 - passengers booked to board/alight,
 - cargo batch assigned for pickup or delivery,
@@ -1333,20 +1342,20 @@ Typical conditional triggers can include:
 - contract-required call,
 - operational need such as crew/service activity where applicable.
 
-Freight trains should normally skip intermediate freight terminals when they have no assigned work there. This avoids unnecessary dwell time and keeps line capacity usage realistic.
+Freight services should normally skip intermediate freight terminals when that specific service has no assigned work there. This avoids unnecessary dwell time and keeps line capacity usage realistic.
 
-Passenger request stops can be appropriate for low-demand local services, especially in early eras or rural areas. The system should only create the stop when there is real underlying demand rather than cosmetic randomness.
+Passenger request stops can be appropriate for low-demand local services, especially in early eras or rural areas. The system should only activate the stop when real underlying demand exists rather than through cosmetic randomness.
 
 Timetable planning must account for both cases:
 
-- a base running time when the stop is skipped,
-- additional dwell/handling time when the stop is activated.
+- base running time when the line skips the stop,
+- additional dwell/handling time when that line serves it.
 
-For regular planning, the UI should show expected/typical trip time and a reasonable worst-case or high-load trip time so the player understands how conditional stops affect connections and fleet requirements.
+For regular planning, the UI should show expected/typical trip time and a reasonable worst-case or high-load trip time so the player understands how the line's conditional stops affect connections and fleet requirements.
 
-Feeder/connection planning must use the actual expected stop pattern and enough buffer to avoid creating impossible transfers when several conditional stops activate.
+Feeder/connection planning must use the actual expected stop pattern of the relevant lines/service patterns and enough buffer to avoid creating impossible transfers when several conditional stops activate.
 
-Dispatch automation can later decide individual conditional calls automatically, but the player must always be able to inspect why a specific trip stopped or skipped a location.
+Dispatch automation can later decide individual conditional calls automatically within the rules of that line, but the player must always be able to inspect why a specific trip stopped or skipped a location.
 
 ## 33. Urban transport
 
