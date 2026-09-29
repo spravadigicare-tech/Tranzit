@@ -293,18 +293,48 @@ Management is optional gameplay: HR and routine hiring can increasingly be autom
 
 ## 8. Workforce
 
-Ordinary employees are aggregated by site/region/function, including:
+Ordinary employees are aggregated rather than simulated as persistent individual people.
 
-- drivers and train crews,
-- mechanics,
-- dispatchers,
+The workforce is split by operational role so the game stays simple without breaking facility capacity.
+
+### 8.1 Company-wide mobile operating staff
+
+Drivers, train crews and similar mobile operating staff are pooled **across the whole company** by qualification rather than being permanently tied to a specific region or depot.
+
+The game tracks aggregated availability such as:
+
+- number of qualified train drivers,
+- road-vehicle drivers,
+- conductors/on-board crews where required,
+- licence/vehicle-type qualifications,
+- usable shift/work-hour capacity.
+
+A Trip consumes the required crew capacity for its duration. If the company does not have enough qualified staff, the Trip cannot be staffed or must be cancelled/rescheduled.
+
+The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains. This is intentionally abstracted to avoid low-value micromanagement.
+
+Expansion into another region therefore does not require maintaining a separate arbitrary pool of drivers there, although local licences/language/regulatory requirements may still require the company to have the appropriate qualified staff category where historically/gameplay relevant.
+
+### 8.2 Facility-bound staff
+
+Employees whose work directly determines the capacity of a physical facility remain allocated to that facility or local operation, for example:
+
+- mechanics/workshop staff,
 - station and terminal staff,
-- office/admin staff,
-- sales/contract staff,
-- warehouse staff,
+- warehouse/loading staff,
+- local office/admin staff,
+- local dispatch/yard staff where the facility requires them,
 - safety/security/cleaning where relevant.
 
-Insufficient staffing creates concrete operational consequences such as slower maintenance, reduced opening hours, delayed handling or weaker contract capacity.
+This preserves existing physical systems: a workshop with too few mechanics really repairs vehicles more slowly, and an understaffed terminal really handles less cargo.
+
+Company HR can still recruit and rebalance these employees at a higher level, and later managers can automate staffing targets.
+
+### 8.3 Business/administrative staff
+
+Sales, contract, HR and general administrative capacity can be aggregated at company/division/office level depending on the system they support.
+
+Insufficient staffing creates concrete operational consequences such as slower maintenance, reduced opening hours, delayed handling, inability to cover all Trips or weaker contract-processing capacity.
 
 ## 9. Reputation and customer relationships
 
