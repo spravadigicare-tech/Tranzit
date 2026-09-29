@@ -1158,6 +1158,29 @@ A typical early or mid-game traction base may hold only 2–4 locomotives. Its p
 
 Locomotives based there still need a separate compatible maintenance facility for heavier scheduled work and must physically travel there when service is due.
 
+The same modular principle applies to **road-vehicle operating bases**.
+
+A small road base can provide only what a local bus/truck fleet actually needs, for example:
+
+- physical parking spaces,
+- basic dispatch/crew facilities,
+- period-appropriate fuel storage/pumps or later charging infrastructure,
+- washing/basic inspection where installed.
+
+It does **not** require a full mechanical workshop.
+
+Heavier scheduled maintenance and repairs can be centralized in a larger regional road maintenance facility. Buses/trucks must physically drive there when service is due, creating real downtime and travel cost.
+
+This makes it viable to operate several cheap local parking/dispatch bases around a region while maintaining one larger workshop, instead of forcing the player to duplicate expensive maintenance infrastructure everywhere.
+
+A small road base can later be upgraded modularly with:
+
+- more parking,
+- fuel/charging capacity,
+- light-service bays,
+- full workshop modules,
+- spare-parts storage.
+
 One site can provide more than one role, but it does not have to. A cheap parking yard therefore does not need a full workshop, and a regional fleet can share a more distant maintenance base.
 
 A Line or Service Pattern can define:
@@ -1233,6 +1256,8 @@ Examples:
 - lubricants,
 - parts,
 - catering supplies.
+
+Road operating bases may therefore need real fuel deliveries, or later sufficient electrical charging/grid capacity, depending on the vehicles assigned there.
 
 Depots/stations maintain real inventories.
 
