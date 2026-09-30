@@ -224,7 +224,7 @@ Required player screens/workflows:
 
 | Workflow | Minimum usable presentation |
 |---|---|
-| Start/pause/settings/save | New Game, Continue, load/slots, graphics/audio/input/language/UI scale, clear save feedback |
+| Start/pause/settings/save | UI-D35 New Game/real company-founding flow, Continue, load/slots, graphics/audio/input/language/UI scale, clear save feedback; Full/Basics/Off tutorial is opening-only |
 | World interaction | Rotate/pan/zoom, selection, follow vehicle, hover details, navigation to an event, legend and network/ownership overlays |
 | Construction | Catalogue, ghost preview, rotate/snap, valid/invalid geometry, itemized quote, confirm/cancel, progress and affected operation |
 | Company | Branches and workload, salary/crew reserve, managers/delegation, finances/loans, legal access and region expansion |
@@ -236,7 +236,7 @@ Required player screens/workflows:
 
 Aggregate data must be drillable. A disabled action explains its specific blocker and links to a corrective workflow. Distinguish simulation facts, estimates and commercial promises. No decorative financial chart with invented data.
 
-Provide a dismissible onboarding checklist and context help. It must not grant free assets, waive licences or alter the shared clock. Buying/cancelling costly obligations requires a visible consequence preview; preview cancellation itself is free.
+Provide the UI-D35 opening onboarding only while a new company is being founded. Tutorial mode is Full / Basics only / Off. The startup checklist derives from real branch/staff/licence/asset/operation state, grants nothing for free, and ends after the first functioning transport operation; it must not become a permanent campaign task list. Optional first-use context help may remain dismissible according to tutorial mode. Normal blockers, Needs decision incidents, invalid-action explanations and consequence previews are not tutorial content and remain enabled. Buying/cancelling costly obligations requires a visible consequence preview; preview cancellation itself is free.
 
 ## 9. Graphics and audio production rules
 
