@@ -80,9 +80,9 @@ Pass: no model disappears by date, no unexplained annual fuel/wear penalty, supp
 
 ### G-08 — Rival carrier and business expansion
 
-Observe an AI rival discovering, bidding, purchasing/staffing, operating and maintaining a service. Compete for limited stock/slots/customer demand. Open a new region through real rights/presence/access. Perform a basic company/infrastructure acquisition and inspect inherited assets, liabilities and contracts.
+Observe an AI rival discovering, bidding, purchasing/staffing, operating and maintaining a service. Compete for limited stock/slots/customer demand. Open a new region through real rights/presence/access. Buy a minority stake without receiving operational control, then obtain control of a company, leave it as a subsidiary, exercise Autonomous/Managed/Direct-control modes and finally test optional integration. Separately acquire infrastructure carrying existing access/capacity commitments.
 
-Pass: the rival cannot cheat to fulfil its bid; region activation/acquisition duplicates nothing; ownership does not overwrite sold priority rights.
+Pass: the rival cannot cheat to fulfil its bid; region activation/acquisition duplicates nothing; minority ownership grants no invented control; direct subsidiary control uses its separate real cash/assets/contracts; integration and infrastructure ownership changes preserve physical state, liabilities, licences/contracts and sold priority rights according to their actual transfer rules.
 
 ### G-09 — Delegation, growth and financial distress
 
@@ -245,6 +245,11 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | W-17 | Research technology that unlocks workshop, track standard and branch/station upgrade | Canonical construction/facility/upgrade options become available; no building, retrofit, vehicle stock, staff or capacity is created by research completion |
 | W-18 | Established-era technology for a newly founded later-start company | No pointless rediscovery of already-established world technology; company still pays/builds/adopts required equipment/systems |
 | W-19 | Company-wide business system adoption | One simple adoption project where appropriate; capability activates only after completion, while genuine local physical requirements remain separate and no per-site busywork is invented |
+| W-20 | Minority stake versus controlled subsidiary | Minority investment cannot issue operational commands; after real control is obtained, Autonomous/Managed/Direct-control use the same subsidiary identity and separate ledgers |
+| W-21 | Switch direct-control company context | Normal Line/Fleet/Finance/etc. commands use only the selected company's authority/resources; switching context neither reloads world state nor merges/duplicates cash/assets |
+| W-22 | Intra-group capital/loan/dividend/asset transfer | Explicit postings/ownership changes exactly once; vehicle/infrastructure remains physical and existing commitments are not silently erased |
+| W-23 | Acquire/integrate company with active contracts/licences/Trips | Transfer only eligible rights/obligations; change-of-control/non-transferable items remain explicit; no reset/teleport/duplicate asset or running operation |
+| W-24 | Buy/sell infrastructure with active third-party rights | Applicable leases/access/capacity/condition/projects survive ownership change; partial sale exposes dependent post-sale access instead of granting it freely |
 | W-15 | No active branch, but setup preview and marketplace are available | Public setup information does not reveal/accept hidden routine jobs; eligible public/direct opportunities obey communication rules |
 | W-16 | Compare first-release selection UI with wider-design catalogues | Only 1900, rail and road in V1; wider presets/modes are not removed from design or silently enabled; exact approved geographic coverage retained |
 
