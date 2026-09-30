@@ -110,7 +110,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | T-04 | 60 km constant 60 km/h analytical movement without dwell/acceleration | One game hour; 120/60/3.75 real seconds at 0.5/1/16x in an adequately supplied time-budget test |
 | T-05 | Several essential events fall within one rendered frame at 16x | Chronological event/occupancy processing, no tunnelling or skipped cutoffs |
 | T-06 | Arrival/handling completion/cutoff/departure share a timestamp | Documented stable causal ordering; readiness not inferred from merely approaching a terminal |
-| T-07 | Manual pause, pause-menu pause, critical-event pause, save/load, close and reopen | Independent pause reasons: closing the menu removes only its own reason; successful load finishes safely paused; no unauthorized game-time advancement or offline catch-up. Application-focus loss/return remains governed by its separately unresolved UI policy |
+| T-07 | Manual pause, pause-menu pause, critical-event pause, focus-loss pause, save/load, close and reopen | Independent pause reasons: closing the menu/focus return removes only its own reason; successful load finishes safely paused; no unauthorized game-time advancement or offline catch-up; focus-loss behaviour follows its On/Off setting |
 | T-08 | Import real dates from 28/29/30/31-day months and already-authored game dates | Validate source dates; apply DATA_PIPELINE proportional conversion exactly once; game-authored dates remain unchanged; stable prerequisite/source-date/ID order for collisions |
 
 ### 4.2 Shipment inventory and allocation
@@ -257,6 +257,8 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | W-29 | Save/load before and after world-news discovery | Canonical event and read/history state persist without duplicate firing, identity retargeting, hidden-data leak or new pause |
 | W-30 | Final HUD/navigation at normal and enlarged UI scale | Company/finance stays upper-left, Search/Layers upper-right, bottom Build + grouped management + Events/time remain usable without duplicated controls or clipped material state |
 | W-31 | Global search over known and hidden objects | Known cities/Lines/vehicles/companies/contracts/functions resolve to exact identities; hidden/private/undiscovered objects stay absent and search never issues gameplay commands or activates a region |
+| W-32 | Focus loss/return with setting On and Off | With On, focus loss adds only its own pause reason and return removes only that reason; otherwise-running game resumes at remembered speed, while manual/critical/menu/load pauses remain. With Off, focus change does not alter simulation time |
+| W-33 | Critical auto-pause and informational-toast settings | Global critical auto-pause On/Off and informational-toasts On/Off affect only presentation/pause policy; no per-event matrix exists, and incidents/history/safety consequences remain intact |
 | W-15 | No active branch, but setup preview and marketplace are available | Public setup information does not reveal/accept hidden routine jobs; eligible public/direct opportunities obey communication rules |
 | W-16 | Compare first-release selection UI with wider-design catalogues | Only 1900, rail and road in V1; wider presets/modes are not removed from design or silently enabled; exact approved geographic coverage retained |
 
