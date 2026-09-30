@@ -5631,16 +5631,35 @@ The prime contractor remains responsible to the customer and can seek SLA compen
 
 Passenger cooperation is based on fixed services and seats.
 
-For V1, keep two simple agreement families rather than one large generic partnership system:
+#### Bilateral cooperation agreement builder
 
-1. **Connection agreement** — coordinates transfers at a defined station/terminal. The agreement can state which origin/destination relationship the node is intended to connect, so the system can match suitable services without requiring the player to pair every dated Trip manually.
-2. **Partner-capacity sales agreement** — permits one operator to sell eligible capacity operated by the other operator as part of one through ticket.
+Company-to-company passenger cooperation uses one **bilateral agreement builder** rather than a separate hard-coded form for every possible partnership.
 
-A through journey can use multiple operators under one itinerary/ticket when the required partner-capacity sales rights exist.
+The agreement has two explicit party columns:
+
+> **Our company** | **Partner company**
+
+The player composes the proposal by enabling the supported cooperation clauses and setting the values that belong to each side. Clauses may be asymmetric: one party can grant a right or accept an obligation that the other does not.
+
+This is a structured clause builder, not free-form legal text. Every clause maps to an existing canonical simulation mechanic and must have defined validation/consequences.
+
+A submitted proposal can be accepted, rejected or countered by the other company. A counterproposal changes explicit clause values; it does not invent hidden terms.
+
+For V1 passenger cooperation, the useful clause families are intentionally small:
+
+1. **Connection coordination** — coordinates transfers at a defined station/terminal. The agreement can state which other place/destination each side is intended to connect through that node, so the system can match suitable services without requiring the player to pair every dated Trip manually.
+2. **Partner-capacity sales** — allows either or both parties to sell eligible capacity operated by the other party as part of one through ticket.
+
+A through journey can use multiple operators under one itinerary/ticket when the required partner-capacity sales right exists.
 
 #### Partner capacity settlement
 
-The partner-capacity sales agreement defines a simple **partner rate in money/km** for the covered partner segment, using the same player-facing unit style as ordinary passenger tariffs.
+The partner-capacity-sales clause carries **two directional partner rates in money/km**, one for each possible resale direction:
+
+- **Partner sells our capacity** → rate owed to us per km;
+- **We sell partner capacity** → rate owed to the partner per km.
+
+Each direction can be enabled or disabled independently. If enabled, its rate is explicit in the agreement. The two rates do not have to match.
 
 Keep retail price and settlement price separate:
 
