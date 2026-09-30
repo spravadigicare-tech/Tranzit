@@ -413,6 +413,8 @@ The UI does not need to expose raw internal utility math by default, but the rel
 
 For crowding, itinerary evaluation should consider the actual **length/duration of the affected crowded segment** rather than treating one brief standing leg as equivalent to standing for the entire journey.
 
+Passenger choice can use only disruption information that passengers can plausibly know under Section 28.1. A current delay that has not yet reached the passenger-facing information system must not be treated as if every passenger knows it instantly.
+
 Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Leisure/tourism demand depends on the chosen year, income, free time, transport accessibility, urbanization and relevant destinations, not simply how recently the player founded the company. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism. The Early Ages DLC must not project modern travel behaviour backwards into its earlier period, and a 1975 base-game start must not inherit an 1820 demand profile.
 
 Passenger demand also has historically grounded daily and weekly rhythms. Work shifts, market days, school schedules, religious/rest days, weekends and later modern commuting patterns can shape peaks, but the profile must evolve by era rather than using one modern 24/7 template for the whole campaign.
@@ -4833,6 +4835,7 @@ Relevant station effects can include:
 - boarding/alighting speed,
 - shelter/comfort,
 - ticketing/processing capacity,
+- passenger-information capability,
 - accessibility,
 - interchange quality,
 - operating/staff requirements.
@@ -4855,7 +4858,8 @@ Depending on era, station modules can include:
 - improved passenger circulation,
 - underpasses/footbridges,
 - electric lighting,
-- modern information systems,
+- passenger-information/announcement modules appropriate to the era,
+- later realtime electronic information systems,
 - escalators/lifts where appropriate,
 - automated ticketing,
 - integrated urban-transport interchanges,
@@ -5294,6 +5298,36 @@ Business-system upgrades can progressively change the branch rules in Section 7.
 - widen Opportunity Board discovery,
 - centralize customer relationships/reservations,
 - eventually remove the ordinary branch-at-every-commercial-stop requirement where law/contracts allow.
+
+### 28.1 Passenger information progression
+
+Passenger information uses three practical capability levels:
+
+1. **Timetable only** — passengers know the published schedule and normal stop/platform information, but current disruption is generally not known until they reach the relevant station/stop or receive local staff information.
+2. **Operational updates** — current delays, cancellations and platform/stop changes can be communicated at equipped stations/terminals through period-appropriate staff, announcements or boards.
+3. **Realtime information** — live operational information can reach passengers before and during the journey, allowing current ETA/platform information and earlier disruption rerouting/rebooking.
+
+These are gameplay capabilities, not hidden quality multipliers. Do not add separate information-accuracy, awareness or coverage percentages unless a later design specifically requires them.
+
+The capability controls **when passenger decisions may react to known disruption**:
+
+- with Timetable only, passengers primarily choose from the published timetable;
+- with Operational updates, passengers can react once current information reaches the station/terminal;
+- with Realtime information, passengers can react before reaching the station or during the journey, and protected itineraries can be rebooked earlier.
+
+Information technology never changes the real vehicle position, delay or capacity. It only changes what passengers can know and when recovery can begin.
+
+The company's central information technology and the local facility capability both matter where applicable. A modern company can therefore have realtime information at a major equipped station while a small rural halt still provides only basic timetable information.
+
+Do not model individual loudspeakers, displays or information clerks. The relevant station/terminal module represents the capability at the appropriate level of abstraction.
+
+The UI should show concrete consequences such as:
+
+- current disruption information unavailable;
+- delay/cancellation communicated at station;
+- platform change communicated;
+- alternative selected before departure;
+- protected connection rebooked earlier.
 
 The pre-1900 progression belongs mainly to Early Ages, while the same technology definitions can remain relevant to inherited infrastructure in later starts.
 
@@ -6751,6 +6785,8 @@ Rebooking is a capacity operation, not teleportation.
 The passenger group remains physically at the transfer location until the replacement Trip actually departs.
 
 The system must reserve real compatible capacity on the replacement itinerary.
+
+How early that recovery can be communicated/applied to the passenger depends on the passenger-information capability in Section 28.1. The operations system can know that a connection is at risk before the passenger-facing system is historically able to communicate it.
 
 ##### Capacity priority during recovery
 
