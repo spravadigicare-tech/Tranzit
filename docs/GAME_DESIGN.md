@@ -5521,88 +5521,282 @@ A through journey can use multiple operators under one itinerary/ticket.
 
 Missed connections and reliability influence passenger attractiveness.
 
-## 31. Pricing and passenger tariffs
+## 31. Pricing, integrated tariff systems and passenger tickets
 
-Passenger pricing is based on reusable **tariffs**, not a manual fare table for every origin-destination pair.
+Passenger retail pricing is based on reusable **tariffs and ticket products**, not a manual fare table for every origin-destination pair.
 
-### 31.1 Tariff hierarchy
+Keep three concepts separate:
+
+1. **Tariff** — reusable fare-calculation rules such as base/minimum fare, distance or zones, class modifiers and permitted supplements/discounts.
+2. **Integrated tariff system** — a named commercial network containing selected Lines/Service Patterns that share a tariff and accept defined ticket products.
+3. **Ticket product** — what the passenger actually purchases, such as a single journey, weekly network ticket or monthly network ticket.
+
+An integrated tariff system is not a Line, Service Pattern, Trip, infrastructure owner, region or capacity pool. Membership does not create vehicles, slots, stations, passenger demand or protected connections.
+
+### 31.1 Tariff hierarchy and inheritance
 
 A company/division can define one or more default passenger tariffs for a mode/service family.
 
-A Line normally inherits its applicable default tariff.
+A Line normally inherits its applicable company/division/mode tariff.
 
-The player can then enable a **Line-specific tariff override** and modify that Line independently without changing the rest of the network.
-
-Hierarchy:
+Where a Line participates in an integrated tariff system, the system's shared tariff applies to products covered by that system. The normal hierarchy is therefore:
 
 1. company/division/mode default tariff;
-2. Line override where enabled;
-3. Service Pattern or passenger-capacity-zone/class modifier only where a real product difference requires it.
+2. integrated-system tariff where the Line/product belongs to that system;
+3. Line-specific override for standalone/non-integrated pricing where explicitly enabled;
+4. Service Pattern or passenger-capacity-zone/class modifier only where a real product difference requires it.
 
-Lower-level manual settings override inherited higher-level settings.
+The UI must always show whether a price/rule is:
 
-The player should always be able to see whether a value is:
+- inherited from a company/division default;
+- defined by an integrated system;
+- manually overridden on the Line;
+- constrained by a public contract/concession/regulation;
+- manager-controlled within player-defined bounds.
 
-- inherited;
-- manually overridden;
-- contract/regulator constrained;
-- manager-controlled.
+Inherited values remain references, not copied numbers. Changing a company-level inherited rate updates all inheriting systems/Lines from the effective date; explicit overrides remain unchanged. Before applying a broad change, show the affected systems/Lines and sold-product consequences.
+
+A Line can participate in more than one accepted ticket-product scope where explicitly configured, for example a local integrated system and a broader company-wide network pass. Products are accepted explicitly; discounts are not stacked automatically.
+
+Regulated prices, public-service caps, passenger-group/customer contract prices and already sold retail entitlements cannot be overridden retroactively by this hierarchy.
 
 ### 31.2 What a tariff defines
 
-A tariff contains a small number of understandable pricing rules rather than hundreds of pairwise fares.
+A tariff contains a small number of understandable rules rather than hundreds of pairwise fares.
 
 Depending on mode/era, it can define:
 
 - base/minimum fare;
-- distance-based rate or zone-based rule;
+- distance-based rate;
+- zone-based rule;
 - class/comfort multipliers;
-- reservation/premium-service surcharge where used;
+- premium/reservation supplements;
 - advance-purchase discount policy;
 - last-minute/load-factor adjustment where technology permits;
-- child/student/other regulated fare categories where relevant;
-- refund/flexibility premium where supported;
-- maximum/minimum constraints imposed by a public contract/concession.
+- regulated concession categories where applicable;
+- refund/flexibility conditions where supported;
+- public-contract/concession minimum/maximum constraints.
 
-The fare for an actual journey is calculated from the applicable tariff and the passenger's real origin/destination legs.
+The fare for an actual single journey is calculated from the applicable tariff and the passenger's real covered itinerary.
+
+The player does not manually enter every origin-destination pair.
+
+For distance-based pricing, tariff distance is derived from the actual valid commercial itinerary/route definition used for the priced journey. Do not use straight-line geographic distance or retroactively charge passengers for disruption detours. If a permanent route change materially changes tariff distance, it applies only to new eligible sales from the configured effective time.
+
+### 31.3 Integrated tariff systems
+
+The player can create named **integrated tariff systems** and add selected passenger Lines/Service Patterns to them.
+
+A system can include multiple company modes, such as regional rail and connecting buses, when the services and sales/reservation capabilities support the product.
+
+A system defines:
+
+- participating Lines/Patterns;
+- effective date/version;
+- covered modes/classes/zones;
+- shared tariff rules;
+- accepted ticket products;
+- transfer validity/rules;
+- explicit supplements/exclusions;
+- applicable sales/checking/reservation capabilities.
+
+A shared kilometre or zone rate is one authoritative system value. It is not copied independently into every member Line.
+
+A system can inherit some parameters from the company default and override others.
+
+For an integrated single journey, the fare is calculated across the covered itinerary under one system rather than charging a new full base fare at every covered transfer. Any base charge applies once to that integrated journey unless the published product explicitly defines another rule. Premium supplements remain possible when clearly disclosed.
 
 Example:
 
-> Company intercity tariff: base + distance rate  
-> Praha–Brno Line override: +8% line premium  
-> First Class zone: ×1.55  
-> Advance purchase 10+ days: −15%
+> Regional Network  
+> 2 rail Lines + 4 bus Lines  
+> shared rate: 0.5 money/km  
+> covered itinerary: 12 km rail + 8 km bus  
+> distance component: 10 money
 
-The player does not need to enter Praha–Pardubice, Pardubice–Brno and Praha–Brno separately.
+This example is illustrative balancing only.
 
-### 31.3 Line-specific manual control
+An integrated fare does **not** automatically create a protected connection. Protected itinerary/rebooking rights remain governed by Section 32.4 and require the relevant through-ticket/connection policy.
 
-A Line can keep the inherited tariff unchanged or override selected tariff parameters.
+### 31.4 Ticket products
 
-Examples:
+Each tariff/system can offer one or more passenger ticket products.
 
-- make one premium intercity Line more expensive;
-- discount a weak new Line to build demand;
-- use a different First Class multiplier;
-- disable dynamic pricing on one Line;
-- apply a promotional advance-purchase discount;
-- keep a regulated/public-service Line at a fixed permitted tariff.
+Required baseline products include:
 
-An override affects only that Line unless the player later chooses to copy/save it as a reusable tariff.
+- **Single journey** — one covered journey under the applicable fare rules;
+- **Weekly ticket** — repeated eligible travel in its defined scope for **7 game days**;
+- **Monthly ticket** — repeated eligible travel in its defined scope for **14 game days**.
 
-A Service Pattern should not normally require its own complete tariff. Pattern-level overrides are reserved for materially different products such as:
+The player can set weekly/monthly products cheaper than repeated equivalent single fares. Their price is independently configurable; the game must not force a fixed discount percentage.
 
-- sleeper/night service;
-- premium/express product;
-- a contract/regulatory fare requirement;
-- a genuinely separate service class.
+The same framework can also support, where the player chooses and the era/rules allow:
 
-### 31.4 Fixed, advance and dynamic policies
+- daily/time-limited products;
+- route-limited passes;
+- zone-limited passes;
+- class-specific products;
+- company-wide network products;
+- integrated-system products.
+
+A company-wide default tariff is not automatically a company-wide unlimited ticket. A broad network pass is a separate ticket product with its own price and acceptance scope.
+
+Each product defines:
+
+- name;
+- selling tariff/system;
+- network/Line/zone scope;
+- eligible passenger class/capacity categories;
+- price;
+- validity rule;
+- supplements/exclusions;
+- transfer conditions;
+- reservation requirements/supplements;
+- refund/change conditions.
+
+A period ticket permits repeated covered journeys during its validity. It is not merely a discount card that charges the base fare again on every boarding.
+
+### 31.5 Period-ticket validity
+
+Use the shared game calendar from Section 3.
+
+Baseline validity is elapsed game time from the ticket's selected start:
+
+- weekly = exactly 7 game days;
+- monthly = exactly 14 game days.
+
+Do not use 30/31-day civil months or wall-clock time.
+
+The ticket stores:
+
+- product/version purchased;
+- actual purchase price;
+- validity start;
+- validity end;
+- covered scope/classes;
+- relevant terms at sale.
+
+A period ticket must be valid **when the passenger boards each covered Trip**.
+
+If it expires while the passenger is already physically travelling on that Trip, that Trip remains covered through the passenger's booked/alighting stop. A later transfer boarded after expiry requires another valid entitlement unless the passenger holds a separate still-valid single integrated journey whose transfer rules cover it.
+
+This prevents a ticket from becoming invalid halfway between two stations while still preserving a precise expiry boundary for later boardings.
+
+Alternative first-use or fixed-calendar-period products can be added only as explicitly separate products; do not silently reinterpret weekly/monthly tickets.
+
+### 31.6 Overlapping valid products and fare charging
+
+A passenger can hold more than one valid product.
+
+When boarding/pricing a leg:
+
+1. identify already held products that validly cover the leg/class;
+2. if one covers the base fare, do **not** sell another base fare for the same leg;
+3. charge only an explicitly required uncovered supplement/reservation/service component;
+4. if no held product covers the journey, evaluate available eligible products/single fare according to the passenger-choice model.
+
+Do not stack multiple percentage discounts or charge two full fares because two systems overlap.
+
+If several held products cover the same leg equally, no extra payment is created merely to choose between them; record the entitlement source deterministically for audit/reporting, preferring the product specifically associated with the booked itinerary when one exists, otherwise a stable product-priority rule.
+
+At purchase time, the passenger-demand system can compare eligible ticket products using expected travel needs, price and alternatives. It must not know future random events or buy a period pass using perfect future information.
+
+### 31.7 Travel entitlement is not capacity
+
+Owning a valid ticket/pass does not create physical passenger capacity.
+
+A period ticket:
+
+- pays for covered travel;
+- does not reserve a seat/berth/standing place on every future Trip;
+- does not guarantee that a full open-boarding vehicle will admit another passenger;
+- does not override protected passenger-contract or confirmed-reservation capacity.
+
+Where a capacity zone is **reservation required**, a pass holder still needs confirmed compatible capacity for the selected Trip/leg. The base fare can already be covered by the pass; only any separately published reservation/supplement component remains payable.
+
+For **optional reservation**, the pass can be combined with a specific reservation where capacity exists.
+
+For **open boarding**, the pass holder boards only if eligible physical capacity remains.
+
+Reservation and ticket entitlement use the same passenger-capacity ledger as other passengers; no duplicate capacity is created.
+
+### 31.8 Sales, validation and historical technology
+
+A product can be sold only through sales channels the company/infrastructure actually provides under Section 32.
+
+A simple own-company common tariff or paper season ticket can exist in early eras where period-appropriate administration, sales and checking are available. It does **not** require online technology.
+
+However, technology affects:
+
+- geographic sales reach;
+- advance purchase;
+- ability to verify reservations across the network;
+- speed of product validation;
+- centralized account/entitlement handling;
+- multi-operator integration;
+- dynamic/yield pricing.
+
+A station without a sales channel does not magically sell a pass. A passenger already holding a legitimately purchased valid pass can still use it where period-appropriate inspection/validation is supported; that does not create a modern real-time reservation system.
+
+### 31.9 Changes, versions and sold-ticket protection
+
+Tariff systems and ticket products are versioned with explicit effective dates.
+
+Changing:
+
+- a system rate;
+- participating Lines;
+- included class;
+- ticket price;
+- validity;
+- supplement;
+- transfer rule;
+- sales/acceptance scope
+
+creates a future product/system version when existing sold entitlements could be affected.
+
+Already sold tickets retain the price, validity and rights promised by the purchased version.
+
+Removing a Line/class or shortening future product validity must not silently revoke already sold valid rights. Before publication, show:
+
+- number/aggregate of outstanding affected entitlements where known;
+- existing reservations;
+- effective date;
+- whether old products will continue to be honoured until expiry;
+- any required replacement/refund plan;
+- affected Lines/systems/public contracts.
+
+The default is to **honour sold period-ticket rights until their individual expiry** on services that remain physically/legal operable. If the operator removes or cancels the covered service such that the promised entitlement cannot reasonably be honoured, apply the existing passenger rebooking/refund rules; additional compensation remains separate.
+
+Do not apply infrastructure-capacity cancellation formulas from CONTRACT_CANCELLATION.md to retail passengers.
+
+### 31.10 Revenue and reporting
+
+A ticket/product sale creates **one actual payment**.
+
+A pass-covered boarding does not create another full fare payment.
+
+Financial and Line/system reports distinguish:
+
+- direct single-journey ticket revenue;
+- weekly/monthly/other pass sales;
+- reservation/premium supplements;
+- refunds;
+- compensation;
+- analytical allocation of pass revenue to used Lines/services where the reporting model provides it.
+
+Analytical allocation is not another cash receipt.
+
+Where usage information is limited by historical technology, do not fabricate exact pass-by-Line utilization. Use only observations the company can credibly obtain. Finance must preserve one cash posting even if management reports allocate that sale analytically across several Lines.
+
+The UI can compare a period product against equivalent single journeys for an example route/travel pattern, but must not claim a universal savings percentage or guaranteed demand effect.
+
+### 31.11 Fixed, advance and dynamic pricing
 
 A tariff can use increasingly sophisticated pricing modes where historically/technologically appropriate:
 
 - **Fixed** — stable calculated fare independent of booking time/load;
-- **Advance** — simple predefined discounts/surcharges based on booking horizon;
+- **Advance** — predefined discounts/surcharges based on booking horizon;
 - **Dynamic / yield** — price can also respond to sold load factor, demand forecast and remaining time.
 
 The player can always keep pricing simple.
@@ -5613,6 +5807,7 @@ Later, pricing can be delegated to commercial managers by scope:
 
 - division;
 - region;
+- integrated tariff system;
 - group of Lines;
 - specific Line/service.
 
@@ -5624,25 +5819,50 @@ Managers optimize only within player-defined tariff bounds such as:
 - minimum margin;
 - permitted discount range.
 
-A manager cannot override a regulated fare, public-contract cap or explicit player lock.
+A manager cannot override a regulated fare, public-contract cap, sold ticket right or explicit player lock.
 
-### 31.5 Public/urban fares
+### 31.12 Public/urban fares and integrated systems
 
-Urban/public transport can use the same tariff framework, but city/concession rules may impose:
+Urban/public transport can use the same tariff/product framework, but city/concession rules may impose:
 
 - flat fares;
 - zones;
 - transfer validity;
 - fare caps;
-- mandatory concession categories.
+- mandatory concession categories;
+- required acceptance of specified public ticket products.
 
-Where the city controls the fare, the player's Line inherits the allowed tariff and cannot use unrestricted yield pricing.
+Where the city controls the fare, the player's participating Lines inherit/accept the allowed tariff/product rules and cannot use unrestricted yield pricing.
 
-### 31.6 Contract passenger pricing
+A municipal integrated system can therefore include several player Lines or, where an actual cooperation/authority agreement exists, services from several operators. The authority agreement owns the permitted products and settlement/acceptance terms; the player cannot unilaterally declare competitors' Lines part of its system.
+
+### 31.13 Contract passenger pricing
 
 Commercial passenger/group contracts under Section 11.1.1 use their negotiated contract price and do not automatically pay the public individual-passenger tariff.
 
 When a contract reserves capacity on a normal Line, the capacity ledger is shared, but the commercial payment remains the contract's agreed price.
+
+If contract passengers also hold public/retail products, do not create duplicate fare revenue; the contract terms determine the applicable commercial settlement.
+
+### 31.14 Multi-operator tariff integration
+
+Multi-operator integrated fares are allowed only through an actual cooperation/authority agreement under Sections 30.3/33.
+
+Such an agreement can define:
+
+- participating operators/Lines;
+- accepted products;
+- sales responsibility;
+- reservation compatibility;
+- revenue settlement/allocation;
+- refund/rebooking responsibility;
+- data/information capability;
+- validity/renewal/termination.
+
+The player cannot add another operator's service to its own pass merely because the services connect.
+
+The exact settlement formula is agreement/content data, not a hidden universal percentage. Each operator receives only the settlement defined by the agreement, and passenger retail payment must not be double-counted as full revenue by every participant.
+
 
 ## 32. Service lines and timetables
 
