@@ -2,9 +2,9 @@
 
 > **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
 >
-> **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, information density, detailed terminology and the remaining workflows below. Approval of critical-event pause does not approve unrelated pause triggers or every earlier proposal. A written design is not an implemented or tested UI.
+> **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, information density outside the confirmed vehicle overview, detailed terminology and the remaining workflows below. Approval of specific decisions does not approve unrelated pause triggers or every earlier proposal. A written design is not an implemented or tested UI.
 >
 > Existing requirements referenced in Section 1 remain binding. Keep this owning UI document and affected summaries/acceptance criteria consistent when a decision changes; retain explicit status for unresolved choices. Do not use presentation decisions to override gameplay or silently add release scope.
 
@@ -27,11 +27,11 @@ This document owns the confirmed UI directions explicitly identified in Section 
 
 **The world is the primary workspace. The interface helps the player understand a situation and act on it without repeatedly losing the map.**
 
-Proposed organizing principles, while preserving the existing simulation requirements:
+Proposed organizing principles, while preserving the existing simulation requirements and the specific confirmed rules below:
 
-- Start with a concise summary; expose operational detail through deliberate expansion.
+- Start with a concise summary; expose operational detail through deliberate expansion. The operations-first vehicle overview is confirmed in Section 5.2; the general density of other screens remains proposed.
 - Reuse consistent inspector components and one coherent selection model across the map, lists, alerts and planners. Shared components do not mean only one fixed window may exist.
-- Connect each important problem to its cause, affected objects and available corrective action.
+- Connect each important problem to its cause, affected objects and available corrective action. Direct contextual object links are confirmed in Section 4.1.
 - Keep commercial commitments, planned operations and physical execution visibly distinct.
 - Make routine operations delegable under the existing rules; do not add manual wagon, refuelling or ordinary-driver tasks merely to fill a screen.
 - Treat planning and committing as different states. Closing a preview does not purchase, cancel, build or move anything.
@@ -62,7 +62,7 @@ The accepted composition is a map workspace with floating windows and a fixed bo
 | Movable floating windows | Object inspectors, company/asset/business views and planning workspaces | CONFIRMED under UI-D02 and UI-D07 |
 | Fixed bottom bar | Main navigation, construction entry, important status and time controls | CONFIRMED under UI-D06 |
 | Contextual tools | Construction catalogue/options or the current planner's actions, separate from the persistent bar | Separation confirmed; floating tool window versus temporary area above the bar remains unresolved |
-| Event access | Compact incident/decision indicator in the bar, opening the event view | Bar access and critical-event pause confirmed; detailed event-window layout remains proposed |
+| Event access | Compact incident/decision indicator in the bar, opening the event view | Bar access, contextual object links and critical-event pause confirmed; detailed event-window layout remains proposed |
 
 Use the bottom bar instead of a mandatory permanent left navigation rail or separate full-width top status strip. Contextual windows may contain their own navigation/status without duplicating the entire global control system. Keep the bottom bar reachable while ordinary windows are open.
 
@@ -86,6 +86,8 @@ The player accepted the proposed window controls and the reusable-inspector/cont
 
 Normal selection example: select vehicle A, then vehicle B; the same unpinned detail window now shows B. Pin B, then select station C; B remains visible and live, while C uses another unpinned detail window. Further ordinary selections reuse that unpinned window. A pinned detail is not replaced merely because the map selection changes. Retain meaningful dirty edits or ask before discarding them; selection reuse is not permission to lose a draft.
 
+Contextual object links use the same window/selection system under Section 4.1, not a second set of unrelated pop-ups. Preserve pinned identities and meaningful source context when following a link.
+
 A maximize/expand-and-restore control for large tables/planners remains an optional refinement. Its exact behaviour and the minimized-window switcher's placement are not locked by this decision. Avoid introducing an obligatory desktop-style task button for every open window.
 
 Opening, moving, resizing, pinning, minimizing or closing ordinary windows does not automatically pause, resume or change simulation speed. Apply the confirmed normal-UI/manual-pause rules in Section 9.1. Critical incidents independently trigger the pause in Section 7.2, including while a planner is open; application-focus and precise pause-menu behaviour remain open under the remaining part of UI-D08.
@@ -108,7 +110,7 @@ Global search should locate known objects by name and type, such as a city, Line
 
 ## 4. Navigation and proposed detailed information architecture
 
-The five top-level navigation groups below are accepted for the bottom bar, alongside Build. Their detailed contents and object terminology remain proposals, not an approved final taxonomy for every screen.
+The five top-level navigation groups below are accepted for the bottom bar, alongside Build. Their detailed contents and object terminology remain proposals, not an approved final taxonomy for every screen. Contextual links between those screens are confirmed separately in Section 4.1.
 
 | Main group | Proposed contents |
 |---|---|
@@ -122,7 +124,34 @@ Construction is a contextual world tool as well as an entry from Assets, not a s
 
 The same object can be reached from several contexts without being duplicated in the simulation. A station selected from the map, a capacity warning or the asset list resolves to the same station identity and shared inspector components, even when presented in a separate window. Navigation grouping must not hide a required workflow from the implementation brief.
 
-### Proposed player-facing vocabulary
+### 4.1 Confirmed contextual object links and connected windows — UI-D09
+
+**Windows and their contents must be interconnected. When a message or another UI view mentions a specific game object, the player can click that object's word/name directly to open its detail.** The player explicitly requested this on 2026-09-30. A mention of a particular vehicle opens that vehicle, not the general fleet list or its catalogue model.
+
+Apply this consistently to notifications, incident explanations, detail windows, relationship fields, tables, planners and history entries wherever they reference identifiable inspectable objects. Relevant targets include vehicles, Lines, Service Patterns, Trips, stations/depots, companies, contracts, shipments and construction projects. This is navigation between existing systems, not a new simulation entity or permission to add otherwise excluded features.
+
+Illustrative message; the bold object names represent inline links in the implemented UI:
+
+> **Vehicle 014** is waiting for repairs at **Brno depot**. Its next **Trip at 08:20** is at risk.
+
+Each linked phrase opens its exact referenced object. From the vehicle's detail, its Line, current/next Trip and assigned depot can likewise be opened directly when those relationships exist. The player should not need to close the message, navigate to Assets and search for the vehicle by name.
+
+Interaction and identity rules:
+
+- Make links recognizable with a consistent affordance, hover feedback and visible keyboard focus; do not rely on colour alone. The text link itself is actionable, not only a separate generic Details button. Support mouse click and keyboard activation in Czech and English, including inflected names and wrapped text.
+- Carry a typed stable object reference with the UI text/relationship, optionally identifying a relevant detail section. Resolve by identity, not by searching rendered/localized words, vehicle model, row number or current map selection. Two identically named vehicles must remain distinguishable; renaming an object must not retarget an older message to another one.
+- Use the shared window manager from Section 3.2. Focus/restore an already open matching detail first; otherwise use an available unpinned inspector or open one when needed. Never replace a pinned object's identity. Explicit Open in new window remains available under the same rules; ordinary navigation must not produce duplicate editable copies unnecessarily.
+- Preserve the source message/list/planner and meaningful edits. When reusing the source detail window to show a related object, provide a way back to the prior context; when opening/focusing another window, retain the source window. Do not silently discard drafts, filters or scroll position during a chain of links.
+- Opening a detail is distinct from the explicit Locate/Follow action. A normal text link should not unexpectedly move the world camera, teleport an asset, issue an order, acknowledge/resolve an incident or change speed/pause. It works during manual and critical-event pause without resuming time.
+- Live detail shows the object's current authoritative state; a historical message retains its event-time meaning. For example, an old delay message may open a vehicle that has since arrived. Make that distinction readable rather than rewriting the old incident or presenting its snapshot as live state.
+- If the original object is no longer available, open its retained history/read-only record where available, or show an explicit unavailable-state explanation. Do not crash, invent a replacement or redirect silently to a different vehicle of the same model/name. Sold assets retain only the inspection/control rights the player actually has; a link grants no new ownership or access.
+- Link meaningful specific references, not every generic word. A general concept such as capacity may have contextual help, but must not pretend to target a unique asset. Multiple possible objects require a clearly labelled related-object list rather than guessing. Keep actual business/operational actions separate from navigation links.
+
+Implementation guidance: represent links as structured rich-text spans/reference tokens and reusable object-reference controls using the existing stable IDs and presentation models. Treat message text and player-entered names as text, not executable markup or arbitrary commands. Revalidate the target when activated and restored from a save; do not depend on the target's rendered GameObject being loaded. Navigating to a remote object does not activate an inactive region or bypass information availability.
+
+These direct object links are part of V1 interaction. They do **not** make the future deep nested-glossary/tooltip pattern in GAME_DESIGN Section 1.1 mandatory now. Entity navigation and optional concept explanations are different interactions.
+
+### 4.2 Proposed player-facing vocabulary
 
 | Domain identity | Czech label candidate | English label candidate |
 |---|---|---|
@@ -136,18 +165,32 @@ The same object can be reached from several contexts without being duplicated in
 
 Labels are candidates, not a final localization glossary. Stable English data IDs do not change. A shipment is not a contract and a reserved cargo portion is not necessarily loaded cargo. Do not expose raw IDs as the normal player-facing explanation, but retain identity for support/debugging.
 
-## 5. Proposed shared inspector contents
+## 5. Inspector contents
 
-The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere:
+### 5.1 Proposed shared structure
+
+The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This general template remains proposed; contextual links in Section 4.1 and the vehicle-specific view in Section 5.2 are confirmed.
 
 1. **Header:** name, type, owner and current status; window movement and controls; locate/follow and content pinning where meaningful under the confirmed selection policy.
 2. **Summary:** a few relevant facts, the next event and the most important unresolved problem.
 3. **Details:** relevant tabs/sections for operation, connections, costs, resources and history.
 4. **Actions:** one clear primary action and contextual alternatives; destructive/commercial actions open an impact preview.
 
-Example vehicle summary, using illustrative values only:
+Lists should preserve selection, scroll position and active edits during refresh. Sorting/filtering should be visible; automatic refresh should not move a row away from a pointer just before confirmation. Empty states should explain the next legitimate step rather than merely say "No data".
 
-> Train 014 · Preparing · Brno freight terminal
+### 5.2 Confirmed vehicle overview and compact model preview — UI-D10
+
+**The default vehicle detail is an operational overview, with a small preview of the vehicle model. A static model image is sufficient; a large illustration or live camera feed is not required.** The player confirmed the smaller, operations-first view on 2026-09-30 and explicitly allowed a static model preview.
+
+Prioritize the vehicle's name/model, current activity and any material problem, then its actual location, current load/passenger occupancy as applicable, destination/current service and next planned task/departure. Keep this useful summary visible without first opening a long technical-parameter or accounting list. Display absent assignments and unavailable estimates honestly; a vehicle in storage has no invented next Trip.
+
+The model thumbnail supports recognition rather than dominating the window. A cached/prerendered still of the correct model is an acceptable implementation. Do not require an animated, rotatable 3D viewer, dedicated live world camera or a separately running miniature vehicle simulation. The static image does not freeze the actual vehicle's status, location or load information. Identify it as a model preview rather than evidence of the vehicle's current physical location, condition or assembled consist.
+
+Illustrative summary only; actual values must come from simulation data, and named objects/related tasks link under Section 4.1:
+
+> Vehicle 014 · Preparing · Brno freight terminal
+>
+> Small static model preview
 >
 > Next departure 08:20 · Planned capacity 60 t · Loaded 40 t
 >
@@ -155,15 +198,17 @@ Example vehicle summary, using illustrative values only:
 >
 > Open Trip · Show loading operation · Inspect allowed recovery
 
-The final wording/status comes from simulation data. Do not invent a completion estimate or offer an impossible recovery. Fueling remains part of the existing between-Trip scheduling, not a new compulsory Refuel button on every vehicle.
+The selected detail still refers to one concrete physical asset, not all assets sharing its model. In a train context, distinguish the selected locomotive/wagon from its current consist and Trip; a locomotive thumbnail must not imply a fixed train composition or define cargo capacity. Follow related consist/service details through their existing identities.
 
-Lists should preserve selection, scroll position and active edits during refresh. Sorting/filtering should be visible; automatic refresh should not move a row away from a pointer just before confirmation. Empty states should explain the next legitimate step rather than merely say "No data".
+Keep technical parameters, detailed costs and history available through secondary tabs/sections. The suggested labels remain Overview / Přehled, Operation / Provoz, Technical condition / Technický stav, Costs / Náklady and History / Historie; their exact wording and grouping are not locked by approval of the summary/thumbnail. Exact preview dimensions and placement remain visual-design work, subject to readable 1080p and enlarged CZ/EN UI. A missing preview must not block inspection or show another model as though it were correct.
+
+Do not invent completion estimates or offer impossible recovery. Fueling remains part of existing between-Trip scheduling, not a new compulsory Refuel button on every vehicle. The static preview changes presentation cost only; it never replaces the physical vehicles or their required visible world operations.
 
 ## 6. Proposed planning workflow
 
 ### 6.1 Create or change a Line
 
-Use one guided workspace in a movable planning window, with a persistent summary and access to advanced parameters. A separate maximize/expand control remains proposed; returning from an expanded view should restore the window/map context. The confirmed running/paused interaction rules in Section 9.1 apply independently of this proposed stage layout. Proposed stages:
+Use one guided workspace in a movable planning window, with a persistent summary and access to advanced parameters. A separate maximize/expand control remains proposed; returning from an expanded view should restore the window/map context. The confirmed running/paused interaction rules in Section 9.1 and contextual navigation in Section 4.1 apply independently of this proposed stage layout. Proposed stages:
 
 | Stage | Player task | Feedback |
 |---|---|---|
@@ -209,6 +254,8 @@ An uncommitted ghost is not infrastructure and clearing it is not paid demolitio
 Use the same problem model in planners, inspectors, lists and the event area:
 
 **What happened → why → operational/commercial impact → available action.**
+
+Specific objects mentioned in these explanations must be directly clickable under confirmed Section 4.1, regardless of the final notification layout. A generic Details button does not replace inline links to distinct referenced vehicles, facilities or Trips.
 
 Example, illustrative rather than a fixed balancing rule:
 
@@ -279,7 +326,7 @@ Application-focus loss/return and precise pause-menu transitions remain unresolv
 
 Every costly or irreversible command must be revalidated against current simulation state. If a live preview becomes stale, explain changed prices, availability or affected obligations before accepting a revised commitment. Repeated clicks, including submissions from different windows, cannot duplicate an order/payment. Closing a panel cannot undo a committed transaction. Multiple views use the same authoritative state/command validation, not independent ledgers.
 
-Preserve useful navigation context when opening a corrective workflow and returning to a planner. UI preferences such as scale and window geometry are distinct from save-game authority. Restoring an inspector, filter or uncommitted draft cannot execute a purchase, advance construction or regenerate physical cargo. If an inspected object is no longer available, show its valid history or an explicit unavailable state instead of broken controls. Content pinning never makes a stale object reference authoritative.
+Preserve useful navigation context when opening a corrective workflow and returning to a planner. UI preferences such as scale and window geometry are distinct from save-game authority. Restoring an inspector, filter or uncommitted draft cannot execute a purchase, advance construction or regenerate physical cargo. If an inspected object is no longer available, show its valid history or an explicit unavailable state instead of broken controls. Content pinning never makes a stale object reference authoritative. Contextual links use the target-validation and history rules in Section 4.1; following a link is navigation, not a business command.
 
 Support complete Czech/English text, number formatting, readable contrast, keyboard focus, non-colour status cues and text expansion. Test the established 1080p baseline and enlarged UI on higher-resolution screens; exact panel dimensions and scale steps remain design work. Never truncate a material price, warning, unit or action consequence without a way to read it. Minimum sizes, screen-bound constraints and layout reset must be evaluated together rather than trapping controls off-screen when the viewport becomes smaller.
 
@@ -301,6 +348,9 @@ These checks describe required evidence for the confirmed directions, not comple
 | UI-A08 | UI-D04, useful planning during manual pause | Pause mid-operation, then inspect the map, edit Line and construction proposals and prepare order previews without submitting binding commands. Verify editable UI with unchanged simulation time, vehicle position, physical-job progress, inventories and time-driven accounting. Resume explicitly; work continues from that state, paused wall time is not caught up and drafts are not automatically committed |
 | UI-A09 | UI-D08, critical-event automatic pause | With default settings at 0.5x, 1x and 16x, trigger a genuinely critical incident, including with an open planner and an off-screen affected location. Verify a consistent event-boundary pause, localized cause/impact/response access, usable planning and stopped time-driven simulation. Routine delay, authorized routine recovery and an invalid uncommitted plan do not trigger it |
 | UI-A10 | UI-D08, pause lifecycle and persistence | Present repeated alerts and multiple affected vehicles from one incident, close/acknowledge its notice, explicitly resume with it unresolved, then save/load. Verify no automatic resume, unchanged running-speed choice, no catch-up, no lost drafts and no repeated pause for the same unchanged incident. A new critical incident/material escalation can pause again. An already active manual/loading pause is never released by incident handling |
+| UI-A11 | UI-D09, direct links across windows | In a notification naming a specific vehicle, depot and Trip, activate each inline phrase by mouse and keyboard in CZ/EN and verify the exact target detail. Follow vehicle-to-Line/Trip/depot links, restore an existing minimized target, preserve pinned identities and return to the source/draft context. No generic fleet-search detour, duplicate object/editing copy, hidden order, camera jump or pause/speed change |
+| UI-A12 | UI-D09, identity and historical-link safety | Test equal names/models, renamed and sold/scrapped targets, a remote target without a rendered proxy, and an old incident after save/load. Links retain the original stable identity, respect current permissions and distinguish historical text from live detail; missing targets yield retained history or an explicit unavailable state, never a guessed substitute. Generic concepts and arbitrary player text cannot become unintended entity links/commands |
+| UI-A13 | UI-D10, operations-first vehicle detail | Open representative road and rail vehicle details with a small static correct-model preview. Identify current activity/problem, actual location, applicable load/destination and next task without a large image or long parameter list; live values update independently of the still image. Verify an idle vehicle, unavailable estimate, missing preview, and locomotive-versus-consist distinction, at 1080p/enlarged UI in CZ/EN. No required live camera, animated model viewer or extra simulation |
 
 ### Remaining proposed interaction scenarios
 
@@ -309,13 +359,12 @@ These are scenarios for evaluating the remaining proposal, not passing tests or 
 | Scenario | What the proposed UI should demonstrate |
 |---|---|
 | Found a company | Find the existing 1900/region/loan, office, staff and licence steps without a hidden setup screen or free assets; remain mode-neutral |
-| Inspect a vehicle | From map or list, identify location, current task, next departure and actual cause of a delay |
 | Plan a service | Choose endpoints and operation, inspect dependencies and capacity quotes, then understand what activation commits |
 | Track split cargo | Explain where all portions are, what is ready/loaded/reserved and which connection is at risk |
 | Change a running service | Understand version/effective date and affected commitments without rewriting departed Trips |
 | Release capacity | Distinguish non-renewal from early cancellation and see total/per-owner settlement plus dependent services |
 | Build infrastructure | Distinguish ghost preview, accepted project and completed usable asset; clicking a floating tool window does not place infrastructure behind it |
-| Manage disruption | Navigate from one grouped incident to its cause and a valid authorized response; critical-event pause follows the confirmed checks above |
+| Manage disruption | Navigate from one grouped incident to its cause and a valid authorized response; critical-event pause and contextual object links follow the confirmed checks above |
 | Use CZ/EN and enlarged UI | Complete the same workflow without clipped material information or hover-only actions |
 | Save/load and live refresh | Preserve game authority; restored UI state, repeated clicks or parallel views cannot create duplicate commitments |
 
@@ -327,11 +376,13 @@ No Unity UI has been implemented or visually tested as part of this document. St
 |---|---|---|---|
 | UI-D01 | Overall visual character | Restrained contemporary dark interface over the model world, with limited historical flavour; exact styling tokens remain open | CONFIRMED on 2026-09-30 |
 | UI-D02 | Workspace/window model | Individual management/detail panels are movable floating windows; not a mandatory fixed right inspector | CONFIRMED on 2026-09-30 |
-| UI-D03 | Information density | Concise summary first, richer tables/timelines and details on demand | PROPOSED |
+| UI-D03 | Information density | Operations-first vehicle overview confirmed under UI-D10; summary/detail density for other object types and screens remains proposed | PARTIALLY CONFIRMED on 2026-09-30; vehicle overview only |
 | UI-D04 | Normal UI and manual-pause planning | Ordinary windows, Line planning and construction previews never auto-pause/resume or change speed; manual pause retains all planning tools while time-driven simulation remains stopped, under Section 9.1 | CONFIRMED on 2026-09-30 |
 | UI-D05 | Navigation and Czech terminology | Top-level Provoz, Obchod, Majetek, Firma and Svět alongside Stavět are accepted; detailed contents and object glossary in Section 4 remain proposed | PARTIALLY CONFIRMED on 2026-09-30 |
 | UI-D06 | Fixed bottom bar | Stable bottom navigation/status/time control area with the functional grouping in Section 3.3, instead of mandatory left/top strips; exact visual dimensions and secondary controls remain open | CONFIRMED on 2026-09-30 |
 | UI-D07 | Detailed window interaction | Resizing, multiple views, reusable unpinned detail, content pinning, explicit new-window action, minimize/restore and remembered/recoverable layout under Section 3.2; snapping is optional and never compulsory docking | CONFIRMED on 2026-09-30 |
 | UI-D08 | Critical incidents and remaining exceptional pause triggers | Critical incidents automatically pause by default under Section 7.2; routine delays/authorized routine recovery do not. Application-focus loss/return, precise pause-menu transitions and detailed override settings remain unresolved | PARTIALLY CONFIRMED on 2026-09-30; critical-event default CONFIRMED |
+| UI-D09 | Contextual object links | Specific object mentions in messages and other views open that exact object's detail; connected windows share identity, selection/pinning, context preservation and safe historical navigation under Section 4.1 | CONFIRMED on 2026-09-30 |
+| UI-D10 | Vehicle detail and model preview | Operations-first default overview with a small correct-model preview; a static image is sufficient and live operational data remains separate, under Section 5.2 | CONFIRMED on 2026-09-30 |
 
-The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, and critical-event automatic pause is resolved under UI-D08. Do not reopen those choices. Only the remaining focus/menu details of UI-D08 are undecided; a concrete end-to-end UI flow can be refined independently. Approval of these decisions does not silently approve the remaining rows or every detail in this document.
+The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09 and the compact vehicle overview under UI-D10. Do not reopen those choices. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided; concrete UI flows can be refined independently. Approval of these decisions does not silently approve every detail in this document.
