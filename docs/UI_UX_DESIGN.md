@@ -142,7 +142,7 @@ Contextual object links use the same window/selection system under Section 4.1, 
 
 A maximize/expand-and-restore control for large tables/planners remains an optional refinement. Its exact behaviour and the minimized-window switcher's placement are not locked by this decision. Avoid introducing an obligatory desktop-style task button for every open window.
 
-Opening, moving, resizing, pinning, minimizing or closing ordinary windows does not automatically pause, resume or change simulation speed. Apply the confirmed normal-UI/manual-pause rules in Section 9.1. Critical incidents independently trigger the pause in Section 7.2, including while a planner is open; application-focus and precise pause-menu behaviour remain open under the remaining part of UI-D08.
+Opening, moving, resizing, pinning, minimizing or closing ordinary windows does not automatically pause, resume or change simulation speed. Apply the confirmed normal-UI/manual-pause rules in Section 9.1. Critical incidents independently trigger the pause in Section 7.2, including while a planner is open. Pause-menu behaviour is confirmed by UI-D36; application-focus loss/return remains open under UI-D08.
 
 ### 3.3 Confirmed fixed bottom bar — UI-D06
 
@@ -503,7 +503,7 @@ Implementation safeguards for this decision:
 - Deduplicate by stable incident identity and escalation state. Group downstream alerts from one cause rather than pausing for every affected vehicle. An unchanged incident must not immediately pause again after deliberate resume. A genuinely new critical incident or material escalation can trigger another pause. Events presented while already paused must not create a chain of redundant pauses on resume.
 - Preserve the incident's handling/acknowledgement and auto-pause-trigger state across save/load. Reopening a window, refreshing data or loading a presented incident is not a new occurrence. Existing safe-paused loading rules remain unchanged; acknowledgement never resolves an operational incident or deletes its obligations.
 
-Per-event-type overrides were proposed during discussion; their exact settings UI remains proposed. The confirmed critical-event default must work without requiring the player to configure it. Application-focus loss/return and precise pause-menu transitions are still separate unresolved parts of UI-D08.
+Per-event-type overrides were proposed during discussion; their exact settings UI remains proposed. The confirmed critical-event default must work without requiring the player to configure it. UI-D36 resolves pause-menu transitions with independent pause reasons; application-focus loss/return remains the separate unresolved focus behaviour under UI-D08.
 
 ## 8. Confirmed map layers and opportunity discovery — UI-D21
 
@@ -526,7 +526,7 @@ Overlay values distinguish observed facts, forecasts, reservations and contractu
 
 ## 9. Input, scale, time and state safety
 
-Carry forward the implementation brief's existing input/save defaults rather than choosing conflicting bindings here. Any new shortcuts should be remappable and respect text-field focus. Proposed Escape behaviour: leave the current transient action first; warn before discarding a meaningful unsaved plan; only then close/navigate out of the focused window or open the pause menu. Escape does not terminate a contract or indiscriminately close every window.
+Carry forward the implementation brief's existing input/save defaults rather than choosing conflicting bindings here. Any new shortcuts should be remappable and respect text-field focus. UI-D36 confirms Escape priority: cancel/leave the current transient placement/action first; protect meaningful dirty editing/drafts; otherwise open/close the pause menu. Escape does not terminate a contract or indiscriminately close every window.
 
 ### 9.1 Confirmed normal-UI and manual-pause behaviour — UI-D04
 
@@ -541,7 +541,7 @@ Carry forward the implementation brief's existing input/save defaults rather tha
 
 Show the actual pause/running state and selected speed clearly. Continue to use the existing game clock/calendar, including its supported speed choices and 14-day months; do not use a Gregorian date picker for game dates. The existing rule that no simulation advances during incomplete loading remains unchanged.
 
-Application-focus loss/return and precise pause-menu transitions remain unresolved under the remaining part of UI-D08. Critical-event auto-pause is now confirmed in Section 7.2; do not treat it as still undecided or use it to enable unrelated pause/resume triggers.
+Application-focus loss/return remains unresolved under UI-D08. Precise pause-menu transitions are confirmed by UI-D36. Critical-event auto-pause is confirmed in Section 7.2; do not use either rule to invent unrelated pause/resume triggers.
 
 ### 9.2 Shared command and workspace safety
 
