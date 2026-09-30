@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-09-30 after fully confirming UI-D08 and auditing the remaining explicit design gaps. No major screen/workflow design remains open. Three product-level clarifications remain before the final V1 consistency audit: binding commands during pause, the V1 boundary for multi-operator passenger ticket cooperation, and final player-facing CZ/EN terminology.
+Last reviewed: 2026-09-30 after confirming binding commands during pause and final CZ/EN terminology. The only remaining explicit V1 product clarification is the boundary for multi-operator passenger ticket cooperation; after that, run the final repository-wide consistency audit.
 
 ## How to use this backlog
 
@@ -42,9 +42,7 @@ Rules:
 
 ## Open decisions
 
-- [ ] **[DESIGN] Binding commands during pause** — planning/editing during pause is confirmed, but the specs still intentionally do not define whether binding actions such as purchases, submitted orders/contracts, licence applications or Start project may be committed while paused and take effect at the current game timestamp. Choose one consistent V1 rule and apply it across workflows.
 - [ ] **[DESIGN] Multi-operator passenger ticket cooperation boundary for V1** — own-company integrated tariffs/ticket products are confirmed. Decide whether V1 must also support multi-operator ticket recognition/settlement/governance; if not, explicitly defer that layer while retaining the existing passenger-cooperation architecture.
-- [ ] **[DESIGN] Player-facing vocabulary/navigation glossary** — normalize final Czech/English labels for core domain objects (Line, Service Pattern, Trip, Shipment, Cargo portion, Transport Plan, Capacity Order, etc.) now that UI-D41 fixes the navigation taxonomy.
 
 ## Next
 
@@ -88,7 +86,7 @@ These are intentional non-blockers for the current V1/UI direction:
 
 These are completed design/documentation tasks, not implemented game features. Remaining parts of partially confirmed decisions stay open above and in the owning register.
 
-- [x] Accepted foundations within UI-D01–UI-D15 — global visual/window/navigation/pause/link/Line/station/minimalism directions. UI-D08 is fully resolved; final localized object terminology remains a small documentation/localization task.
+- [x] Accepted foundations within UI-D01–UI-D15 — global visual/window/navigation/pause/link/Line/station/minimalism directions; UI-D05 terminology and UI-D08 exceptional pause behaviour are fully resolved.
 - [x] UI-D16–UI-D24 — depots, commercial, construction, finance, company, map, fleet, shipments, events.
 - [x] UI-D25–UI-D33 — Trip, capacity/access, external-company agreements, cities/regions, tariffs, maintenance, duties, procurement, licences/market entry.
 - [x] UI-D34 — neutral compact money icon for the single money accounting unit.
