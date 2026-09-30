@@ -6,7 +6,7 @@ This file is an execution prompt. The detailed source of truth is in the linked 
 
 Implement the first genuinely playable Tranzit V1 in this repository. Deliver an offline Windows game, not only documentation, a scaffold, a simulation library, a menu or a train-movement demo.
 
-Read `AGENTS.md`, `docs/DATA_PIPELINE.md`, `docs/V1_SCOPE.md`, the complete `docs/GAME_DESIGN.md`, `docs/CONTRACT_CANCELLATION.md`, `docs/V1_IMPLEMENTATION_BRIEF.md`, `docs/V1_CONTENT_MANIFEST.md` and `docs/V1_ACCEPTANCE_TESTS.md`. Inspect the current files, branch and toolchain before making changes. Do not assume the repo still has no code just because that was true at handoff preparation.
+Read `AGENTS.md`, `docs/TODO.md`, `docs/IMPLEMENTATION_STATUS.md`, `docs/DATA_PIPELINE.md`, `docs/V1_SCOPE.md`, the complete `docs/GAME_DESIGN.md`, `docs/CONTRACT_CANCELLATION.md`, `docs/V1_IMPLEMENTATION_BRIEF.md`, `docs/V1_CONTENT_MANIFEST.md` and `docs/V1_ACCEPTANCE_TESTS.md`. Inspect the current files, branch and toolchain before making changes. Use TODO for remaining work and IMPLEMENTATION_STATUS only for observed code/test evidence. Do not assume the repo still has no code just because that was true at handoff preparation.
 
 The scope is already decided:
 
@@ -28,7 +28,7 @@ Make routine technical and initial balancing decisions yourself, document them a
 
 Use shared validation/ledgers for player, AI and planners. Keep simulation authority separate from rendering. Add tests, localization and persistence with every subsystem; do not defer all of them until the end. Develop recognizable graphics in parallel with gameplay.
 
-Maintain `docs/IMPLEMENTATION_STATUS.md` as a requirement → implementation → test → evidence ledger. Run compilation/tests/builds actually available to you and record exact commands and results. Use bounded process timeouts, logs and explicit completion conditions; never wait indefinitely on a running Editor/watch/game process.
+Maintain `docs/TODO.md` as the living remaining-work backlog and `docs/IMPLEMENTATION_STATUS.md` as the requirement → implementation → test → evidence ledger. Run compilation/tests/builds actually available to you and record exact commands and results. Use bounded process timeouts, logs and explicit completion conditions; never wait indefinitely on a running Editor/watch/game process.
 
 A missing Unity installation, licence, credential or data source is an explicit blocker, not a fabricated success or permission to change the game. Work on nonblocked tasks and report the exact remaining requirement. On interruption, persist completed work, real failing/passing tests and the next executable task so the next session resumes rather than replans.
 
