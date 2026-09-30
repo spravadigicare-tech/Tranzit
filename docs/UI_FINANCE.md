@@ -10,7 +10,7 @@ Open the same **Finance / Finance** window through **Company / Firma** or by cli
 
 The overview answers three questions: **How much cash is available now? What is generating or consuming money? What will the company have to pay?** Keep a compact visible summary, explanations on hover/keyboard focus and complete breakdowns on click. Do not expose every transaction or calculation on the default screen.
 
-Always identify the company, selected reporting period and forecast horizon where applicable. Cash is a point-in-time balance; operating results describe a period; upcoming payments describe future due dates. Do not present the three as values for one indistinguishable time basis. All money uses the literal token `money`, localized number formatting and authoritative exact integer/fixed-point amounts.
+Always identify the company, selected reporting period and forecast horizon where applicable. Cash is a point-in-time balance; operating results describe a period; upcoming payments describe future due dates. Do not present the three as values for one indistinguishable time basis. Amounts use authoritative exact integer/fixed-point `money` values and localized number formatting. Under UI-D34, compact player-facing amounts use the dedicated neutral money icon rather than repeating the word `money`; tooltips/focus/accessibility and text-only or ambiguous contexts still identify the unit as `money`. No real-world currency symbol is used.
 
 ## 2. Visible summary and warnings
 
