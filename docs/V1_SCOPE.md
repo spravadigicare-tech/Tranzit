@@ -19,7 +19,7 @@ Read with [GAME_DESIGN.md](GAME_DESIGN.md) and [CONTRACT_CANCELLATION.md](CONTRA
 | Names | Real cities/landmarks; fictional transport companies, commercial firms, manufacturers and vehicle brands; familiar Czech city names in Czech UI |
 | Existing world | Working third-party/public roads, railways, stations, firms and competitors already exist at game start |
 | Player start | Small, mode-neutral company financed by one of three favourable founding loans; no free branch, fleet or depot |
-| Currency | One accounting unit, literally `money`; no currency symbols, historical currency switching or foreign-exchange subsystem |
+| Currency | One accounting unit named `money`; compact UI amounts may use one dedicated neutral coin/token icon as shorthand, but no real-world currency symbols, historical currency switching or foreign-exchange subsystem |
 | Language | Complete Czech and English UI; stable English code/data IDs; localization from the start |
 | Presentation | Cohesive 3D stylized realism/model-world appearance; recognizable vehicles, architecture, terrain, infrastructure and physical operations |
 | AI | Real competing carriers with money, vehicles, staff, infrastructure, contracts and constrained operations; no fabricated bids or unlimited resources |
