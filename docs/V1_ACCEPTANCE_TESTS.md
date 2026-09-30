@@ -60,11 +60,11 @@ Transport one 100 t shipment using road collection, rail trunk and road delivery
 
 Pass: exactly 100 t is accounted for unless a separately recorded loss is injected; parts recover independently; no duplicated reservation or virtual transfer; final payment/completion follows actual accepted delivery.
 
-### G-05 — Passenger revenue and a protected transfer
+### G-05 — Passenger revenue, integrated tickets and a protected transfer
 
-Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Use open/optional/required reservations where supported and at least two capacity zones/products. Observe actual queues and crowding. Miss a protected connection and reduce the next train's capacity.
+Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Define a company/default tariff and an integrated rail/bus tariff system with one single-journey product plus weekly and monthly passes. Use open/optional/required reservations where supported and at least two capacity zones/products. Sell a period pass, use it across a covered transfer, observe actual queues/crowding and verify that pass ownership does not create capacity. Miss a protected connection and reduce the next train's capacity.
 
-Pass: re-accommodation/rebooking/refund follows rules, sold obligations survive, money and capacity reconcile, and the player can inspect why passengers chose or rejected the service.
+Pass: one integrated covered journey does not charge duplicate base fares at each transfer; weekly/monthly validity uses 7/14 game days; a pass sale posts revenue once while covered boardings do not duplicate cash; mandatory reservations still use real segment capacity; sold product terms survive later tariff changes; re-accommodation/rebooking/refund follows rules, money/capacity reconcile, and the player can inspect why passengers chose or rejected the service.
 
 ### G-06 — Contract lifecycle and capacity release
 
@@ -210,6 +210,11 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | F-19 | A pre-boundary scheduled Trip departs late after a Pattern-version boundary | Retains old version; future generated occurrences migrate once with preparation/cargo preserved; no duplicate Trip |
 | F-20 | Suspend with future Trips already generated or a departure delayed past the boundary | No new commercial departure during suspension; running Trips continue unless explicitly recovered; bookings/preparation handled |
 | F-21 | Retry prepaid partial cancellation before/after save | Liability, credited prepayment, refund and new cash payment reconcile exactly once with each owner |
+| F-22 | Weekly/monthly pass crosses game-month/year boundary | Exact 7/14-day validity on the shared clock; no Gregorian 30-day leakage and no expiry from wall-clock time/pause |
+| F-23 | Pass holder boards reservation-required and full services | Fare entitlement does not create capacity; required reservation must exist and full services admit no phantom passenger |
+| F-24 | Tariff/system changes after passes were sold | Existing sold product keeps purchased version/price/scope until expiry or explicit refund/recovery; no retrospective surcharge or silent revocation |
+| F-25 | One pass used on several Lines/Trips | Cash posted once at sale; per-Line analytical allocation never creates duplicate revenue and uses only information technology can support |
+| F-26 | Overlapping local-system and company-network products | Existing valid entitlement covers the leg once; discounts do not stack and no duplicate base fare is charged |
 
 ### 4.6 World, construction, economy and AI
 
