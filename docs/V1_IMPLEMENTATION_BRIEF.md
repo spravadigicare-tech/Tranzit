@@ -146,7 +146,7 @@ The following rows define minimum operational behaviour, not just class names. E
 | SYS-09 | 6, 14.5, 31–34 | Aggregate passenger OD choice and waiting queues, actual ticket channels/tariffs/reservations, capacity by leg/zone, crowding/service factors, transfers, missed-connection recovery and permitted local bus service |
 | SYS-10 | 11, 32 | Line → versioned Service Pattern → dated Trip, calendars, slot-driven timetables, fixed/criteria/hybrid consists, vehicle/crew duties, preparation, disruption policies, suspension and resumption |
 | SYS-11 | 15–18, 27–28, 40 | Technology introduction/adoption, non-vehicle research, enduring historic models and economically changing external support; own workshop alternatives |
-| SYS-12 | 29–30 | Autonomous carriers and constrained suppliers, real bids/services and physical assets, insolvency, basic shares/acquisition/subsidiary control and partnerships |
+| SYS-12 | 29–30, 39 | Autonomous carriers and constrained suppliers, real bids/services and physical assets, insolvency, shares/acquisitions, separate controlled subsidiaries with Autonomous/Managed/Direct-control modes, explicit intra-group transactions, optional integration, infrastructure ownership continuity and partnerships |
 | SYS-13 | 9, 11, 19, 38–39 | One money ledger, quotes/payment schedules, favourable startup debt, later borrowing, operating cash flow, selling assets, distress/restructuring and eventual failure |
 | SYS-14 | 16, 25, 35–37 | Wear, speed restrictions, breakdowns, closures, weather impacts and rare serious incidents, with causality, recovery and proportional consequences |
 | SYS-15 | 1.1, 4 + V1_SCOPE | Complete localized UI, camera/selection/construction interaction, coherent graphics, basic audio, readable explanations and onboarding |
@@ -227,12 +227,12 @@ Required player screens/workflows:
 | Start/pause/settings/save | UI-D35 New Game/real company-founding flow plus UI-D36 main menu, campaign-organized manual/quick/autosaves, atomic save feedback, independent pause reasons, Esc priority and Graphics/Audio/Game/Controls/Interface/Language settings |
 | World interaction | Rotate/pan/zoom, selection, follow vehicle, hover details, navigation to an event, legend and network/ownership overlays |
 | Construction | Catalogue, ghost preview, rotate/snap, valid/invalid geometry, itemized quote, confirm/cancel, progress and affected operation |
-| Company | Branches and workload, salary/crew reserve, managers/delegation, finances/loans, legal access and region expansion |
+| Company | Branches and workload, salary/crew reserve, managers/delegation, finances/loans, legal access/region expansion, UI-D39 group holdings/subsidiary strategy and active-company context |
 | Commercial | Filterable opportunity board, contract planner/readiness/economics, bid/accept/amend/cancel/renew, shipment progress |
 | Operations | Lines/Pattern versions/calendars, capacity orders/timeline, duties/fleet assignment, departures, actual delays and action reasons |
 | Assets | Marketplace, order/delivery tracking, physical fleet details, workshops/service policies, fuel/storage/support |
 | Passenger/cargo detail | Per-leg commitments, actual quantity/capacity, queues/transfers, protected reservations, recovery and cost consequences |
-| World/business context | Cities/firms/production, competitors, partnerships/acquisitions, UI-D38 Technology/research/adoption, news and major disruptions |
+| World/business context | Cities/firms/production, competitors, partnerships, UI-D39 company/infrastructure acquisitions, UI-D38 Technology/research/adoption, news and major disruptions |
 
 Aggregate data must be drillable. A disabled action explains its specific blocker and links to a corrective workflow. Distinguish simulation facts, estimates and commercial promises. No decorative financial chart with invented data.
 
