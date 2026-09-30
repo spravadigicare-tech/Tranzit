@@ -17,7 +17,7 @@ Use independently openable compact cards, not a mandatory setup sequence:
 | Branches / Pobočky | Physical offices, commercial coverage, director, administrative workload and missing dependencies; direct branch detail |
 | Workforce / Personál | Requirements, filled capacity, shortages/reserve and salary by ordinary profession; sources of workload and supported staffing controls |
 | Management and authority / Vedení a pravomoci | Named people, occupied/vacant roles, responsibility, effective delegated policies and decisions awaiting approval |
-| Licences and permissions / Licence a oprávnění | What the company may operate and where, applications, requirements, validity and renewal/expiry risks |
+| Licences and permissions / Licence a oprávnění | What the company may operate and where, applications, requirements, validity and renewal/expiry risks; open the confirmed UI-D33 Licences and expansion workspace for the full market/licence/permit/application view |
 | Company systems / Firemní systémy | Actually adopted communication/business systems, current capabilities, available improvements and their concrete requirements/effects |
 
 Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. Division/subsidiary links remain available where the existing organization model provides them; these cards neither add new group-management mechanics nor remove that wider functionality.
@@ -62,7 +62,7 @@ Delegation never creates vehicles, staff, slots or permissions, exceeds valid ca
 
 ## 5. Licences, permissions and company systems
 
-Licences show the enabled activity, issuing jurisdiction, territorial scope, requirements, current application/validity state, costs, supported processing estimate and renewal rules. Keep company/market entry, activity licensing and specific operational approvals distinct. A missing-licence alert opens that licence's requirements, not a generic settings screen.
+The Company card is a compact summary. The confirmed detailed workflow lives in [UI_LICENCES_MARKETS.md](UI_LICENCES_MARKETS.md) under UI-D33. Licences show the enabled activity, issuing jurisdiction, territorial scope, requirements, current application/validity state, costs, supported processing estimate and renewal rules. Keep company/market entry, activity licensing and specific operational approvals distinct. A missing-licence alert opens that exact licence/market-entry/permit requirement, not a generic settings screen.
 
 Show separately: activity allowed but region not entered; region accessible but activity licence missing; both held but physical access/capacity still absent. Municipal operating permission is not automatically a transport contract. An application or forecast completion is not an issued right, and a licence does not supply a vehicle or station slot.
 
