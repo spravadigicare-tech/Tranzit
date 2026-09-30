@@ -241,7 +241,7 @@ These scenarios describe evidence to collect when implemented, not a claim of pa
 | UI-D27 | Every external-company detail provides a directly accessible, complete view of all agreements between that company and the player's company, with active/future/pending/history separation and links to each canonical owning workflow | CONFIRMED on 2026-09-30 |
 | UI-D37 | One adaptive external-company/competitor detail with Overview, Operation and network, Products and services, Our agreements, Relationship and history, and Ownership; public/observed/contractual/commercial/estimated information stays distinct and private operations remain protected | CONFIRMED on 2026-09-30 |
 
-UI-D37 completes the surrounding external-company layout without reopening UI-D27. City/Region presentation is already owned by UI-D28. The detailed acquisition/ownership transaction workflow and general world-news presentation remain separate pending work, tracked in [TODO.md](TODO.md); their mention here does not approve new transaction mechanics.
+UI-D37 completes the surrounding external-company layout without reopening UI-D27. City/Region presentation is owned by UI-D28, and the acquisition/ownership transaction workflow is now confirmed by UI-D39 in [UI_OWNERSHIP.md](UI_OWNERSHIP.md). General world-news presentation remains separate pending work in [TODO.md](TODO.md).
 
 ## 15. One adaptive company window — UI-D37
 
@@ -349,7 +349,7 @@ A minority shareholding is not operational control or automatic access to privat
 
 Recorded dividends link to Finance and use UI-D34's neutral amount presentation. Expected distributions are not cash already received. Do not sum subsidiary assets/turnover into group totals without a supported scope and reconciliation.
 
-The Ownership card can link into the ownership/acquisition workflow when it is specified and implemented. UI-D37 confirms this information surface only; buying shares, taking control, integrating subsidiaries and transferring obligations remain the separate UI-D39 work item and core-design responsibility. Do not imply that screen completion implements those transactions.
+The Ownership card links into the confirmed UI-D39 [UI_OWNERSHIP.md](UI_OWNERSHIP.md) workflow. UI-D37 still owns what ownership information is visible; UI-D39 owns buying stakes, control, subsidiary management modes, direct-control context, integration and infrastructure/company transactions. Do not infer direct operational control from a minority holding.
 
 ## 21. Renaming, acquisition, dissolution and retained identity
 
