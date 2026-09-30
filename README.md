@@ -26,6 +26,7 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 |---|---|
 | [V1 Scope](docs/V1_SCOPE.md) | Approved release subset, time/distance rules, enduring vehicles and shipment splitting |
 | [Implementation Brief](docs/V1_IMPLEMENTATION_BRIEF.md) | Architecture, subsystem coverage, M0–M8 work order, UI/art and delivery requirements |
+| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed dark/movable-window direction and explicitly separate pending interface proposals; read decision status before implementing details |
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Current implementation/test evidence and next executable task |
@@ -34,11 +35,11 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 
 The handoff is documentation. It does **not** mean a Unity project, playable build, asset library or passing benchmark already exists. Check Implementation Status and the actual files for current progress.
 
-## UI/UX design discussion
+## UI/UX design
 
-[UI/UX Design Proposal](docs/UI_UX_DESIGN.md) records the working interface proposal: map-first layout, navigation, object inspectors, planning/construction workflows, notifications and open design decisions.
+[UI/UX Design](docs/UI_UX_DESIGN.md) owns the confirmed interface directions and records the remaining proposals: window behaviour, navigation, inspector contents, planning/construction workflows, notifications and open decisions.
 
-**Discussion draft, not approved for implementation.** Its referenced existing requirements remain binding, but its new visual, layout, terminology and interaction choices are not yet player-approved and do not override the specifications above. Resolve the listed decisions with the player before promoting them into implementation requirements.
+**Partially confirmed:** the player approved a restrained contemporary dark interface and movable floating management/detail windows, replacing the proposed mandatory fixed right inspector. A fixed bottom bar was suggested tentatively and remains proposed, as do its contents, detailed resizing/pinning/minimization behaviour, terminology and other unresolved choices. Follow the decision statuses in that document; approval of these two directions does not approve every proposal or change the gameplay specifications above. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
 
 ## Wider base game and planned DLC
 
