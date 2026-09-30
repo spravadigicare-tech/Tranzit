@@ -40,8 +40,8 @@ Use independently openable cards:
 | Companies and industry / Firmy a průmysl | Significant known firms/facilities, production/consumption roles, known transport needs and direct company details |
 | Transport network / Doprava | Stations/terminals, relevant infrastructure and visible services/operators serving the city |
 | Opportunities / Příležitosti | Discoverable jobs/tenders, known passenger/freight gaps and evidence-backed potential from UI-D21 |
-| Our presence / Naše působení | Branches, Lines/Patterns, facilities, commercial coverage, licences/permissions and dependencies in the city |
-| City and authority / Město a autorita | Municipal relationship, permissions/concessions, public-service contracts, public infrastructure/access and all agreements between the city/authority and the player's company |
+| Our presence / Naše působení | Branches, Lines/Patterns, facilities, commercial coverage, licences/permissions and dependencies in the city; legal gaps open the canonical UI-D33 Licences and expansion workflow |
+| City and authority / Město a autorita | Municipal relationship, permissions/concessions, public-service contracts, public infrastructure/access and all agreements between the city/authority and the player's company; permit/application detail reuses UI-D33 |
 
 Hide cards/subsections that truly have no relevance, but do not hide a material missing licence, municipal requirement or active agreement.
 
