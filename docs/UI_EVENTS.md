@@ -265,4 +265,4 @@ Use event-driven updates. Do not scan every Trip, vehicle and contract every fra
 |---|---|---|
 | UI-D24 | One event centre organized by Needs decision / In progress / Information / History, root-cause incident grouping, restrained grouped toasts, historical snapshots and optional Follow notifications for chosen objects; UI-D08 remains authoritative for critical auto-pause | CONFIRMED on 2026-09-30 |
 
-UI-D24 resolves the notification-layout proposal in UI_UX_DESIGN Section 7.1 while preserving its problem-explanation model. It does not settle application-focus behaviour, precise pause-menu transitions or the detailed per-event auto-pause override settings that remain open under UI-D08.
+UI-D24 resolves the notification-layout proposal in UI_UX_DESIGN Section 7.1 while preserving its problem-explanation model. UI-D36 now settles precise pause-menu transitions. Application-focus behaviour and detailed per-event auto-pause override settings remain open under UI-D08.
