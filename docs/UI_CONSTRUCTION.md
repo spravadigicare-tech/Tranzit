@@ -36,7 +36,7 @@ Use the same card groups before and after launch. Each collapsed card has a shor
 |---|---|
 | Route and objects / Trasa a objekty | Proposed geometry, sections, structures, modules, physical connections, earthworks and compatibility |
 | Land and permissions / Pozemky a povolení | Required corridors/sites, ownership or reserved rights, connection agreements, regulated/protected structures and approval state |
-| Materials / Materiál | Required quantities with units, logistics responsibility, actual stock, ordered/on-route deliveries, future needs and temporary site storage |
+| Materials / Materiál | Required quantities with units, logistics responsibility, actual stock, ordered/on-route deliveries, future needs and temporary site storage; accepted purchases/suppliers can be inspected through UI-D32 without duplicating the project material ledger |
 | Contractors / Dodavatelé | Capable contractors or an available owned construction division, offers, real work capacity, specialization, work windows and accepted commitments |
 | Operating impact / Dopad na provoz | Affected routes/facilities, closures, reduced capacity, dependent Lines/Trips/contracts, diversion options and applicable mitigation packages |
 | Cost and schedule / Cena a harmonogram | Estimated total and remaining cost, amounts already spent/committed, further payments, proposed stages, target dates and supported completion estimates |
