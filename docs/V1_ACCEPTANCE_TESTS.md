@@ -38,9 +38,9 @@ These must pass on the standalone build, not only a headless fixture. Automated 
 
 ### G-01 — From a new company to paid road freight
 
-Start 1900 with the small loan in a documented viable area. Inspect the debt schedule. Choose and fund real office premises/setup, appoint the director, fill minimum office/operating staff, obtain required activity rights, discover a real cargo opportunity, arrange endpoints, acquire and physically receive a suitable road vehicle, arrange parking/service/fuel, accept the job and execute it. Save and reload while the vehicle is moving. Complete delivery and inspect revenue, every cost and remaining debt. Repeat with a deliberate capacity or licence omission; the UI must explain the blocker.
+Start 1900 with the small loan in a documented viable area. Before establishing a branch, inspect only allowed public world/licence/premises information. Confirm that New Game created cash/debt/basic market-entry right but no branch, fleet, depot, activity licence or customer. Choose and fund real office premises/setup, appoint the director, fill minimum office/operating staff, obtain required activity rights, discover a real cargo opportunity, arrange endpoints, acquire and physically receive a suitable road vehicle, arrange parking/service/fuel, accept the job and execute it. Verify the opening tutorial/checklist ends after the first functioning operation. Save and reload while the vehicle is moving. Complete delivery and inspect revenue, every cost and remaining debt. Repeat with tutorial Off and with a deliberate capacity or licence omission; the UI must still explain the real blocker.
 
-Pass: no free branch/fleet, no hidden bypass, real delivery and correct balances, a useful path back from each missing prerequisite.
+Pass: no free branch/fleet/licence/customer, no hidden bypass or forced transport archetype, real delivery and correct balances, opening-only tutorial is optional and does not suppress normal blockers, and every missing prerequisite links to its real workflow.
 
 ### G-02 — Railway startup using existing infrastructure
 
@@ -215,6 +215,9 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | F-24 | Tariff/system changes after passes were sold | Existing sold product keeps purchased version/price/scope until expiry or explicit refund/recovery; no retrospective surcharge or silent revocation |
 | F-25 | One pass used on several Lines/Trips | Cash posted once at sale; per-Line analytical allocation never creates duplicate revenue and uses only information technology can support |
 | F-26 | Overlapping local-system and company-network products | Existing valid entitlement covers the leg once; discounts do not stack and no duplicate base fare is charged |
+| F-27 | New Game confirmation retried/double-clicked | Exactly one founding loan, starting cash posting and starting-region market-entry grant; no duplicate company/founding benefits |
+| F-28 | Save/load before and after founding tutorial completion | Checklist derives from actual state, does not replay purchases/loan/licences and does not restart after first functioning operation |
+| F-29 | Tutorial Full/Basics/Off | Only onboarding/context guidance changes; normal blockers, Needs decision, safety/legal constraints and confirmations remain identical |
 
 ### 4.6 World, construction, economy and AI
 
