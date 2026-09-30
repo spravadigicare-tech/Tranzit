@@ -1,6 +1,6 @@
 # Tranzit — Main menu, save/load, pause and settings UI
 
-> **Status: CONFIRMED UI DIRECTION — UI-D36, 2026-09-30.** The player accepted the main-menu, campaign-organized save/load, pause-menu and settings proposal. Escape/pause-menu behaviour is confirmed here and resolves the previously open pause-menu portion of UI-D08. Application-focus loss/return remains separately unresolved. Exact visual dimensions, default autosave interval/count, graphics-option inventory and key defaults remain implementation/content work. This specification is not an implemented or tested UI.
+> **Status: CONFIRMED UI DIRECTION — UI-D36, 2026-09-30.** The player accepted the main-menu, campaign-organized save/load, pause-menu and settings proposal. Escape/pause-menu behaviour is confirmed here. UI-D08 now also confirms configurable focus-loss pause and intentionally simple notification settings. Exact visual dimensions, default autosave interval/count, graphics-option inventory and key defaults remain implementation/content work. This specification is not an implemented or tested UI.
 
 Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), especially UI-D04, UI-D06–UI-D08, UI-D15, UI-D24, UI-D35 and UI-D34. [V1_SCOPE.md](V1_SCOPE.md) owns full persistence/offline/save safety. [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md) owns implementation guidance and release integration.
 
@@ -476,4 +476,4 @@ The user must be able to recover from:
 |---|---|---|
 | UI-D36 | Compact main menu, campaign-organized manual/quick/autosaves, atomic save safety, safe paused load, independent pause-menu reason, Esc priority, unsaved-exit protection and Graphics/Audio/Game/Controls/Interface/Language settings | CONFIRMED on 2026-09-30 |
 
-UI-D36 complements UI-D01–UI-D35. It resolves the pause-menu part of UI-D08; application-focus loss/return remains open.
+UI-D36 complements UI-D01–UI-D35. It owns the pause-menu lifecycle; UI-D08 is now fully resolved, including focus-loss pause behaviour and the decision not to provide a per-event override matrix in V1.
