@@ -2,9 +2,9 @@
 
 > **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
 >
-> **Still open or proposed:** pause behaviour, exact visual tokens and dimensions, secondary-control placement, information density, detailed terminology and the remaining workflows below. The player's acceptance of the bottom-bar/window proposal does not approve all earlier proposals. A written design is not an implemented or tested UI.
+> **Still open or proposed:** application-focus and exceptional-event pause behaviour under UI-D08, exact visual tokens and dimensions, secondary-control placement, information density, detailed terminology and the remaining workflows below. Approval of the specified window/planning behaviour does not approve all earlier proposals or unrelated pause triggers. A written design is not an implemented or tested UI.
 >
 > Existing requirements referenced in Section 1 remain binding. Keep this owning UI document and affected summaries/acceptance criteria consistent when a decision changes; retain explicit status for unresolved choices. Do not use presentation decisions to override gameplay or silently add release scope.
 
@@ -88,7 +88,7 @@ Normal selection example: select vehicle A, then vehicle B; the same unpinned de
 
 A maximize/expand-and-restore control for large tables/planners remains an optional refinement. Its exact behaviour and the minimized-window switcher's placement are not locked by this decision. Avoid introducing an obligatory desktop-style task button for every open window.
 
-Opening, moving, resizing or pinning windows does not itself authorize a new pause policy. Explicit pause and loading retain their existing rules; ordinary-panel, planning, focus and urgent-event auto-pause remain UI-D04.
+Opening, moving, resizing, pinning, minimizing or closing ordinary windows does not automatically pause, resume or change simulation speed. Apply the confirmed normal-UI/manual-pause rules in Section 9.1. Application-focus changes and exceptional pause triggers remain separately open under UI-D08.
 
 ### 3.3 Confirmed fixed bottom bar — UI-D06
 
@@ -163,7 +163,7 @@ Lists should preserve selection, scroll position and active edits during refresh
 
 ### 6.1 Create or change a Line
 
-Use one guided workspace in a movable planning window, with a persistent summary and access to advanced parameters. A separate maximize/expand control remains proposed; returning from an expanded view should restore the window/map context. Proposed stages:
+Use one guided workspace in a movable planning window, with a persistent summary and access to advanced parameters. A separate maximize/expand control remains proposed; returning from an expanded view should restore the window/map context. The confirmed running/paused interaction rules in Section 9.1 apply independently of this proposed stage layout. Proposed stages:
 
 | Stage | Player task | Feedback |
 |---|---|---|
@@ -200,7 +200,7 @@ Proposed flow: select tool → place/edit free-form preview → inspect geometry
 
 The review distinguishes one-time and recurring costs, land/access permissions, materials, contractors, expected duration and affected operation. Invalid geometry is highlighted with a cause and an available remedy. Keep snapping limited to valid physical connections, not an invented world grid.
 
-An uncommitted ghost is not infrastructure and clearing it is not paid demolition. Committing creates a real construction project under the existing rules; completion is not instantaneous. Editing/removing existing infrastructure uses its own permission, closure and cost checks.
+An uncommitted ghost is not infrastructure and clearing it is not paid demolition. Committing creates a real construction project under the existing rules; completion is not instantaneous. Editing/removing existing infrastructure uses its own permission, closure and cost checks. Construction planning remains available during manual pause under Section 9.1; physical construction progress still requires advancing simulation time.
 
 ## 7. Proposed problem explanation and notifications
 
@@ -218,7 +218,7 @@ Separate **hard blockers**, **risks/warnings**, **information** and **completed 
 
 Group repeated messages about the same incident, show its affected services and allow drill-down. Avoid one pop-up per delayed train when one closure is the cause. Keep information and routine successful automatic actions in history; surface decisions needing player authority. A manager action should show its cause and the policy/budget that authorized it.
 
-Colours supplement icons and text, never carry status alone. Distinguish unacknowledged, being handled, awaiting a decision and resolved where these states exist. Whether selected urgent events automatically pause the game remains an explicit open choice, not an assumed mechanic.
+Colours supplement icons and text, never carry status alone. Distinguish unacknowledged, being handled, awaiting a decision and resolved where these states exist. Whether selected urgent events automatically pause the game remains an explicit open choice under UI-D08, not an assumed mechanic. The confirmed no-auto-pause rule for opening ordinary windows does not decide incident-triggered auto-pause.
 
 V1 explanations must be accessible through focus/click as well as hover. A simple details view or pinned explanation can work without making deep nested tooltips a new V1 requirement.
 
@@ -241,7 +241,22 @@ Each overlay needs a legend, relevant filters and a visible scope. Overlay value
 
 Carry forward the implementation brief's existing input/save defaults rather than choosing conflicting bindings here. Any new shortcuts should be remappable and respect text-field focus. Proposed Escape behaviour: leave the current transient action first; warn before discarding a meaningful unsaved plan; only then close/navigate out of the focused window or open the pause menu. Escape does not terminate a contract or indiscriminately close every window.
 
-The exact pause policy for ordinary panels, construction, planning, application focus and urgent incidents is unresolved. No simulation progresses during explicit pause or incomplete loading under the existing rules. Display actual pause/speed clearly; never silently change the selected speed because a management panel opened. Continue to use the existing game clock/calendar, including its supported speed choices and 14-day months; do not use a Gregorian date picker for game dates.
+### 9.1 Confirmed normal-UI and manual-pause behaviour — UI-D04
+
+**Ordinary windows, Line planning and construction planning do not automatically stop the game. The player pauses manually when they need time to think; all planning remains available in that pause.** This decision was confirmed by the player on 2026-09-30.
+
+- Opening, closing, minimizing, restoring, moving or resizing an ordinary management/detail/planning window does not change whether the game is running or paused, and does not change the selected speed. Entering or leaving a construction preview or Line planner follows the same rule. Closing a planner must not release a manual pause.
+- While the game is running, the player can inspect ongoing operations and prepare plans at the selected simulation speed. The existing pause/time controls remain accessible while these windows are open.
+- During manual pause, the camera, selection, windows and planning tools remain usable. The player can inspect information, draft track/building layouts, configure Line/Pattern proposals, prepare orders and review feasibility/cost previews. Pausing must not turn those editors into read-only screens or require running time merely to edit a plan.
+- The shared simulation clock does not advance during pause. Vehicle movement, physical construction, loading/unloading, maintenance/repairs and all other time-driven work remain stopped. Production, cargo ageing, staff rest, research, periodic finance, contract deadlines and AI operation cannot continue on a separate background clock. Presentation/UI response may still use real time without creating simulated progress.
+- Physical work continues only after simulation time resumes, from the paused state. Real time spent planning in pause is not accumulated as a simulation catch-up budget. Opening or closing a window cannot cause a catch-up jump.
+- Planning is not commitment. A draft or ghost remains side-effect free in either time state; neither unpausing nor closing the planner silently accepts it, books capacity or places a purchase/construction order. Existing explicit acceptance, validation, versioning and transaction rules still apply. This approval of paused planning is not a new rule for whether binding commands execute immediately or are queued during pause; it cannot be used to invent free work, bypass validation or complete physical stages instantly.
+
+Show the actual pause/running state and selected speed clearly. Continue to use the existing game clock/calendar, including its supported speed choices and 14-day months; do not use a Gregorian date picker for game dates. The existing rule that no simulation advances during incomplete loading remains unchanged.
+
+Application-focus loss/return, incident-triggered auto-pause and the precise pause-menu transitions are separate from ordinary planner windows. Their unresolved details remain UI-D08; the confirmation above neither silently enables nor prohibits those separate triggers.
+
+### 9.2 Shared command and workspace safety
 
 Every costly or irreversible command must be revalidated against current simulation state. If a live preview becomes stale, explain changed prices, availability or affected obligations before accepting a revised commitment. Repeated clicks, including submissions from different windows, cannot duplicate an order/payment. Closing a panel cannot undo a committed transaction. Multiple views use the same authoritative state/command validation, not independent ledgers.
 
@@ -263,6 +278,8 @@ These checks describe required evidence for the confirmed directions, not comple
 | UI-A04 | UI-D07, selection reuse and content pinning | Select A then B and verify reuse of the unpinned detail; pin B and select C, verifying B stays live and unchanged in identity while C uses another reusable inspector; open a separate detail explicitly without duplicate simulation objects or silently discarded dirty edits |
 | UI-A05 | UI-D07, workspace controls and recovery | Move/resize multiple related views, minimize and restore a draft, change resolution/UI scale and reset the layout; titles, essential controls and the bar remain reachable; restoring geometry changes no game state; do not require optional snap/maximize controls as release gates |
 | UI-A06 | UI-D07 and existing command safety, multiple-view input | Clicking, scrolling or dragging inside a window does not select/place/pan the world beneath it; repeated submissions through different windows cannot double-book or double-charge; stale/deleted object references cannot issue valid new commitments |
+| UI-A07 | UI-D04, no automatic pause/resume from ordinary UI | With no unrelated incident/focus trigger, open, move, minimize, restore and close representative detail, Line-planning and construction windows at 0.5x, 1x and 16x; the selected running state/speed stays unchanged. Repeat while manually paused; opening/closing the planner never resumes time. Pause controls remain accessible |
+| UI-A08 | UI-D04, useful planning during manual pause | Pause mid-operation, then inspect the map, edit Line and construction proposals and prepare order previews without submitting binding commands. Verify editable UI with unchanged simulation time, vehicle position, physical-job progress, inventories and time-driven accounting. Resume explicitly; work continues from that state, paused wall time is not caught up and drafts are not automatically committed |
 
 ### Remaining proposed interaction scenarios
 
@@ -290,9 +307,10 @@ No Unity UI has been implemented or visually tested as part of this document. St
 | UI-D01 | Overall visual character | Restrained contemporary dark interface over the model world, with limited historical flavour; exact styling tokens remain open | CONFIRMED on 2026-09-30 |
 | UI-D02 | Workspace/window model | Individual management/detail panels are movable floating windows; not a mandatory fixed right inspector | CONFIRMED on 2026-09-30 |
 | UI-D03 | Information density | Concise summary first, richer tables/timelines and details on demand | PROPOSED |
-| UI-D04 | Pause behaviour | Decide ordinary-panel/planner/construction/focus/urgent-event behaviour explicitly; preserve existing explicit pause/load rules | OPEN |
+| UI-D04 | Normal UI and manual-pause planning | Ordinary windows, Line planning and construction previews never auto-pause/resume or change speed; manual pause retains all planning tools while time-driven simulation remains stopped, under Section 9.1 | CONFIRMED on 2026-09-30 |
 | UI-D05 | Navigation and Czech terminology | Top-level Provoz, Obchod, Majetek, Firma and Svět alongside Stavět are accepted; detailed contents and object glossary in Section 4 remain proposed | PARTIALLY CONFIRMED on 2026-09-30 |
 | UI-D06 | Fixed bottom bar | Stable bottom navigation/status/time control area with the functional grouping in Section 3.3, instead of mandatory left/top strips; exact visual dimensions and secondary controls remain open | CONFIRMED on 2026-09-30 |
 | UI-D07 | Detailed window interaction | Resizing, multiple views, reusable unpinned detail, content pinning, explicit new-window action, minimize/restore and remembered/recoverable layout under Section 3.2; snapping is optional and never compulsory docking | CONFIRMED on 2026-09-30 |
+| UI-D08 | Application focus and exceptional pause triggers | Application-focus loss/return, selected urgent-event auto-pause and precise pause-menu transitions remain separate decisions; retain existing explicit-pause/loading rules | OPEN |
 
-The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Do not reopen that resolved choice. Next resolve UI-D04, then refine one concrete end-to-end flow before styling all panels. Approval of these decisions does not silently approve the remaining rows or every detail in this document.
+The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is also resolved under UI-D04. Do not reopen those choices. Exceptional pause triggers remain UI-D08; refine them or one concrete end-to-end flow next. Approval of these decisions does not silently approve the remaining rows or every detail in this document.
