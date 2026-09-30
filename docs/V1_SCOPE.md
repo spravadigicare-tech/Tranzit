@@ -76,9 +76,13 @@ V1 must support one 100 t shipment using 40 + 40 + 20 t inbound and 70 + 30 t on
 
 Persist all gameplay authority, including moving assets, wagon orientation/coupling, incomplete handling/shunting, fuel, maintenance, crews and rest capacity, cargo/reservations, Trip/Pattern versions, contracts and renewal state, money postings, AI commitments, queues, construction stages, land edits, technology, active/macro regions, calendar and random-stream state.
 
-Loading a save must not rebuild a newly random world and merely restore the player's balance. Do not serialise the camera/rendered GameObjects as the sole game state. The selected speed may be restored, but quickload should finish loading safely paused by default.
+Loading a save must not rebuild a newly random world and merely restore the player's balance. Do not serialise the camera/rendered GameObjects as the sole game state. Manual load and quickload finish safely paused by default. The save can retain the previously selected running-speed preference, but loading does not immediately resume simulation.
 
-Czech and English must include failure explanations, confirmations, tutorials, financial breakdowns and empty states, not only navigation labels. The currency token remains `money` in both languages. Use localised number formatting independently from that token.
+Save writes must be failure-safe/atomic: an interrupted or failed replacement must preserve the previous valid save rather than corrupting both states. Manual saves, a distinct quicksave slot/rotation and rotating autosaves are required. Autosave cadence uses real elapsed application play time rather than game time, so 16× does not autosave sixteen times more often than 1×. Save/load cannot finalize an uncommitted draft or replay a transaction.
+
+Saves are presented primarily by campaign/company identity with clear manual/quicksave/autosave type, game date/time, real save timestamp and compatibility state. Incompatible/corrupt saves explain the detected reason. Loading, returning to the main menu or quitting warns only when actual unsaved campaign progress or relevant dirty drafts would be lost; Save and exit proceeds only after a successful save.
+
+Czech and English must include failure explanations, confirmations, tutorials, financial breakdowns and empty states, not only navigation labels. The accounting unit remains `money` in both languages; compact UI amounts may use the confirmed neutral UI icon. Use localised number formatting independently from that unit.
 
 Player-facing graphics cannot be debug primitives with labels. Simple original modular assets are acceptable if they form a coherent world and support physical recognition and readable interaction. Vehicle movement, construction stages, junctions, coupling and cargo operations must have visible counterparts. Graphics are developed alongside milestones, not left until after simulation completion.
 
