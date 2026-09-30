@@ -6,36 +6,60 @@ This repository contains **Tranzit**, a Unity transport/business simulation.
 
 Before implementing or proposing gameplay/system changes, read:
 
-- `docs/GAME_DESIGN.md` — the core game design. Section 3 is authoritative for start dates, the shared calendar, speed controls and Early Ages scope.
-- `docs/CONTRACT_CANCELLATION.md` — the current focused rules for proportionate cancellation fees, early slot release and the distinction from non-renewal. Required for contract, capacity, renewal, finance and manager-permission changes.
+- `docs/GAME_DESIGN.md` — the core game design. Section 3 is authoritative for the shared calendar, historical progression, the wider start-year model and Early Ages scope.
+- `docs/CONTRACT_CANCELLATION.md` — the focused rules for proportionate cancellation fees, early slot release and the distinction from non-renewal. Required for contract, capacity, renewal, finance and manager-permission changes.
+- `docs/V1_SCOPE.md` — the approved first-playable release subset and cross-system clarifications, including split shipments and enduring historical vehicle availability.
 
-Together these form the **living source of truth**, not a historical log. Focused specifications elaborate the relevant core sections; do not treat them as optional notes or maintain contradictory versions of a rule.
+For implementation work also read:
+
+- `docs/V1_IMPLEMENTATION_BRIEF.md` — architecture guidance, subsystem coverage and milestone order;
+- `docs/V1_CONTENT_MANIFEST.md` — configurable initial content/balancing targets;
+- `docs/V1_ACCEPTANCE_TESTS.md` — required test scenarios and release evidence;
+- `docs/IMPLEMENTATION_STATUS.md` — actual progress, results and next task;
+- `docs/OPENCODE_START.md` — concise execution prompt.
+
+Together these form the **living source of truth**, not a historical log. The core design describes the wider game; V1_SCOPE explicitly narrows the first release's modes and start presets without deleting the broader design. Focused specifications elaborate core rules and are not optional notes.
 
 When a design decision changes:
 
 1. Read the complete relevant sections first.
 2. Identify every existing rule/system affected by the change.
 3. Resolve contradictions instead of appending a second conflicting rule.
-4. Rewrite/remove obsolete text in `docs/GAME_DESIGN.md` and any affected focused specification.
+4. Rewrite/remove obsolete text in the core and affected focused specifications.
 5. Only then implement the change.
 6. Keep code and documentation aligned in the same change whenever possible.
+
+Do not silently reinterpret a discussion example as overriding an existing contractual guarantee. The cargo allocation rules in V1_SCOPE and GAME_DESIGN use compatibility and contractual priority tiers, not one unrestricted hidden score.
+
+## First-playable delivery contract
+
+Implement an actual offline Windows game with coherent 3D graphics, Czech/English UI and full persistence. Do not stop at a scaffold, blank UI, isolated simulation or one moving train and call it V1.
+
+The first release uses the **1900 start only**, with continuing historical/technology progression, **rail and road** for freight/passengers, local/intercity buses, the approved Czech-and-adjoining-region world, one unit named **money**, real competitors and the applicable connected business/operational systems. Later start presets and water/tram/trolleybus/metro operation remain future base-game scope. Aircraft remain excluded.
+
+Simple coherent original modular assets are acceptable. Debug primitives with labels are not finished player-facing graphics. Develop presentation, localization, persistence and tests alongside the simulation.
+
+V1_CONTENT_MANIFEST numerical targets are engineering defaults, not user-approved immutable balancing. Improve them transparently without reducing approved scope. Do not reopen product questions already answered in V1_SCOPE.
+
+Milestones M0–M8 are internal delivery stages of the same target. Preserve progress and real evidence in IMPLEMENTATION_STATUS. A documented requirement is not an implemented feature; implemented code is not a passing test; an unrun build must never be reported as tested.
 
 ## Mandatory consistency review
 
 For every new feature, explicitly check interactions with:
 
-- physical continuity of vehicles/assets,
-- the shared time/calendar model and selected start year,
-- base-game versus Early Ages DLC scope,
-- technology progression,
-- economy and contracts,
-- ownership/licensing/state rules,
-- infrastructure capacity and geometry,
-- maintenance and workforce,
-- management/delegation,
-- regional unlocking and inactive-world simulation,
-- AI competitors,
-- performance/simulation LOD,
+- physical continuity of vehicles/assets and cargo custody;
+- the shared time/calendar model and selected start year;
+- base-game, first-playable and Early Ages scope;
+- technology progression and lasting support for older equipment;
+- economy, inventory and contracts;
+- ownership/licensing/state rules;
+- infrastructure capacity and geometry;
+- maintenance and workforce;
+- management/delegation;
+- regional unlocking and inactive-world simulation;
+- AI competitors;
+- performance/simulation LOD;
+- save/load and idempotent state transitions;
 - UI/player comprehensibility and explainability/no-hidden-mechanics requirements.
 
 Do not implement a feature in isolation if it breaks an existing system.
@@ -46,30 +70,17 @@ Do not implement a feature in isolation if it breaks an existing system.
 
 Vehicles and rolling stock never teleport, magically reverse or disappear into abstract depots.
 
-A remote asset may be simulated without rendering, but its logical position/state must remain continuous.
-
-Train composition changes require actual physical operations.
+A remote asset may be simulated without rendering, but its logical position/state must remain continuous. Train composition changes require actual physical operations. Cargo quantities have one authoritative physical location and are not moved merely by changing a reservation.
 
 ### Scale/performance
 
 Design for a very large world from the beginning.
 
-Prefer:
+Prefer event-driven logic, cached calculations, coarse economic ticks, simulation LOD, batched cargo, aggregated population and aggregate inactive regions.
 
-- event-driven logic,
-- cached calculations,
-- coarse economic ticks,
-- simulation LOD,
-- batched cargo,
-- aggregated population,
-- aggregate inactive regions.
+Avoid per-frame economic simulation, persistent per-person simulation for entire cities, repeated full-network pathfinding and deep per-component vehicle simulation unless specifically approved.
 
-Avoid:
-
-- per-frame economic simulation,
-- persistent per-person simulation for entire cities,
-- repeated full-network pathfinding,
-- deep per-component vehicle simulation unless specifically approved.
+Rendering distance and origin rebasing cannot change logical positions, route lengths, reservations, costs or outcomes. Preserve full-train occupancy and essential events at every supported speed.
 
 ### No grid world
 
@@ -77,7 +88,7 @@ Infrastructure is free-form/spline based. Buildings can rotate freely. Snapping 
 
 ### Progressive automation
 
-Early game can be hands-on. Later game must remain manageable through managers, dispatchers and technology without deleting the underlying physical rules.
+Early game can be hands-on. Later game must remain manageable through managers, dispatchers and technology without deleting the underlying physical rules. Managers obey explicit approval/budget policies.
 
 ### Explainable simulation / no hidden mechanics
 
@@ -95,60 +106,72 @@ Aggregate scores are allowed for readability only when the player can drill down
 
 Prefer structured **reason codes / contributing factors / source values** over returning only a final unexplained number or boolean.
 
-UI may later surface this through hover/focus tooltips, pinned explanations and nested highlighted terms. Do not hardwire simulation logic to one specific tooltip implementation, but keep explanation data available so the UI can expose it.
+UI may surface this through hover/focus tooltips, pinned explanations and nested highlighted terms. Do not hardwire simulation logic to one specific tooltip implementation, but keep explanation data available.
 
 ### Historical plausibility and content scope
 
-The base-game default/earliest start is **1900**, with selectable new-game years **1900, 1925, 1950 and 1975**.
+The wider base-game default/earliest start is **1900**, with later selectable starts **1925, 1950 and 1975**. Only the 1900 preset is required in first-playable V1; the simulation continues beyond that year.
 
 The pre-1900 playable period, intended to start around **1820**, is reserved for the first planned DLC, **Early Ages**. Do not implement that earlier startup progression as a mandatory base-game requirement. Preserve shared systems and historically surviving older assets where relevant to the selected date.
 
-Initialize the world's technology, economy, population, borders, infrastructure, competitors and vehicle catalogue for the selected start year. A small new player company does not reset the entire world to an earlier era. Do not force later starts to re-research already established historical inventions; actual equipment, facilities and staffing still need to be acquired.
+Initialize technology, economy, population, jurisdictions, infrastructure, competitors and vehicle catalogue for the selected year. A small player company does not reset the entire world to an earlier era. Later presets must not force re-research of already established inventions; actual equipment, facilities and staffing still need to be acquired.
+
+An introduced historical model has no hard end-year that removes it from the catalogue or disables serviceable assets. Finite sellers/manufacturers and changing external workshop/parts capability determine actual offers and support. Own equipped/staffed support is a real alternative, not free repair. Do not manufacture unexplained obsolescence penalties or compulsory scrapping.
 
 ### Unified calendar and time controls
 
-Use the single simulation clock defined in `docs/GAME_DESIGN.md`, Section 3:
+Use the single simulation clock defined in GAME_DESIGN Section 3:
 
 - 7 days per week;
 - **14 days per month**, exactly two weeks;
 - **12 months and 168 days per year**;
 - 24 hours per day, 60 minutes per hour, 60 seconds per minute;
-- **1 real second = 1 game minute at 1×**;
-- speed controls **0.5×, 1×, 2×, 4×, 8×, 16×**;
-- slowest running speed **0.5×**, maximum **16×**.
+- **1 real second = 1 game minute at 1x**;
+- running speeds **0.5x, 1x, 2x, 4x, 8x, 16x**, plus pause;
+- slowest running speed **0.5x**, maximum **16x**.
 
-Do not reintroduce an independently accelerated historical calendar, the retired 100–150-hour campaign target or speeds above 16×. Year 2020 is a duration reference, not a mandatory game ending.
+Do not reintroduce an independently accelerated historical calendar, the retired 100–150-hour campaign target or speeds above 16x. Year 2020 is a duration reference, not a mandatory game ending.
 
-Timetables, slot windows, transfers, cargo ageing, crews, maintenance, production, construction, finances, research, contracts, cancellation and renewals must use the same game-time units. Never assume Gregorian month lengths or a 365-day financial year. Content dates outside days 1–14 require a documented conversion; do not invent that still-open mapping silently.
+Timetables, slot windows, transfers, cargo ageing, crews, maintenance, production, construction, finances, research, contracts, cancellation and renewals use the same game-time units. Never assume Gregorian month lengths or a 365-day financial year. Historical source dates outside days 1–14 require an explicitly documented conversion in the core/data-pipeline specification before use. The handoff has not silently chosen a conversion formula.
 
-Validate calendar rollover, seasonal/cross-year patterns, billing and resource accounting, and mid-operation speed changes. Equivalent simulated elapsed time must not yield different economic accounting because a different speed was selected. Optimize rendering and update scheduling rather than skip movements, reservations or essential events to claim 16× performance. Benchmark the maximum setting on developed networks before claiming it is sustained.
+Route length and performance determine game-time travel. Rendering follows the same simulation, not an independently slowed travel clock.
+
+Validate calendar rollover, seasonal/cross-year patterns, billing/resource accounting and mid-operation speed changes. Equivalent simulated elapsed time must not yield different economic accounting because another speed was selected. Optimize rendering/update scheduling rather than skip movement, reservations or essential events to claim 16x performance. Benchmark developed networks before claiming that speed is sustained.
 
 ### Scope discipline
 
-Do not add major unapproved systems just because they are realistic. Tranzit aims for depth where it creates transport/business decisions, not simulation for its own sake.
+Do not add major unapproved systems merely because they are realistic. Tranzit aims for depth where it creates transport/business decisions, not simulation for its own sake.
 
 ## Architecture
 
-Do not invent or lock in a technical architecture before checking the current Unity project and the design requirements.
+Inspect the current Unity project and design before locking architecture. The handoff baseline had no Unity project; inspect again rather than assuming that is still true.
 
-When introducing a new subsystem:
+When introducing a subsystem:
 
-- keep simulation state separable from rendering,
-- keep data definitions extensible across eras/regions,
-- use the shared calendar/time model instead of local conflicting clocks,
-- make systems work with simulation LOD,
-- avoid hardcoding specific cities, regions or vehicle models into core logic,
-- prefer deterministic/state-driven simulation where practical,
-- keep save/load compatibility in mind from the beginning.
+- keep simulation state separable from rendering;
+- share feasibility rules/ledgers among player, AI and planners;
+- keep data definitions extensible across eras/regions;
+- use the shared calendar instead of local conflicting clocks;
+- make systems work with simulation LOD;
+- avoid hardcoding cities, regions or vehicle models into core logic;
+- prefer deterministic/state-driven simulation where practical;
+- implement save/load compatibility and transaction idempotency from the beginning.
+
+Use current compatible stable packages and pin versions. Technical choices and initial balances may be resolved with short documented decisions; do not turn them into another round of already-settled product questions.
 
 ## Development behavior
 
 Before substantial work:
 
-1. inspect the existing repository;
-2. inspect the current design source of truth;
+1. inspect the actual repository/working tree and preserve unrelated changes;
+2. inspect the current source of truth and implementation status;
 3. identify affected systems;
-4. explain any required design compromise in the change/commit;
-5. update documentation if the design changes.
+4. document any genuine design compromise;
+5. update documentation when design changes;
+6. implement, test and record actual evidence.
 
-Never silently change agreed gameplay behavior just to make implementation easier.
+Use bounded process timeouts and logs. Do not await indefinitely a running Editor, game, server or watch process. Keep long-running processes separate with explicit readiness checks.
+
+On interruption, persist completed work, actual test results, blockers and the next executable task. A missing toolchain, credential or dataset must be reported precisely; do not invent a passing build or silently replace the approved world/gameplay.
+
+Never silently change agreed behaviour merely to make implementation easier. Do not force-push or destructively clean user work. Keep all status and completion claims tied to observable evidence.

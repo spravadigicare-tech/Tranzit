@@ -1,0 +1,301 @@
+# Tranzit — V1 acceptance tests and release gates
+
+Prepared: 2026-09-30. Initial status of every test in this document: NOT RUN. No Unity implementation, build, benchmark or test pass is supplied by this handoff.
+
+Read with [V1_SCOPE.md](V1_SCOPE.md), [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md), [V1_CONTENT_MANIFEST.md](V1_CONTENT_MANIFEST.md), [GAME_DESIGN.md](GAME_DESIGN.md) and [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md).
+
+## 1. Completion means evidence
+
+A class, an empty panel or a plan is not evidence that a mechanic works. A compiled library is not evidence that the Windows game is playable. An attractive generated image is not an in-engine screenshot. Test code that has not executed remains NOT RUN.
+
+Use these statuses: NOT IMPLEMENTED, IMPLEMENTED/NOT RUN, PASS, FAIL and BLOCKED. Every PASS records build/commit, content version, seed, setup, steps, expected/observed result, command or manual procedure, date and evidence path. A BLOCKED item names the actual missing tool/data/permission, not a speculative excuse.
+
+Release-blocking severity:
+
+- P0: state corruption, duplicated/lost money/cargo/assets, unsafe simultaneous occupancy, teleportation, crash or inability to load a valid save.
+- P1: an approved main mechanic, essential player workflow, offline world/content, AI parity, localization or graphical presentation is missing or nonfunctional; ordinary operation deadlocks without a valid explanation/recovery.
+- P2: nonblocking polish/balance defects that do not remove or misrepresent a promised mechanic.
+
+No known P0/P1 may be hidden in a release labelled complete V1. Unexecuted essential gates cannot count as passing. Document any P2 separately. The list below is a minimum regression contract, not a promise that all conceivable defects have been eliminated.
+
+## 2. Release gates
+
+| Gate | Required result |
+|---|---|
+| RG-01 Reproducibility | Clean checkout opens, resolves pinned dependencies, compiles and builds; documented commands, exit codes and logs are usable |
+| RG-02 Standalone/offline | Windows x64 player runs through the normal menu and gameplay without the Editor, an account or network data calls |
+| RG-03 End-to-end gameplay | All golden journeys below pass through actual player UI with connected simulation, costs and consequences |
+| RG-04 Integrity | Cargo, assets, money, reservations, full-train occupancy and facility/staff capacity invariants survive stress and fault injection |
+| RG-05 Persistence | Mid-operation save/load and continued operation match the equivalent uninterrupted run within documented numeric tolerances |
+| RG-06 Content/presentation | Approved geographic coverage, period initialization, meaningful catalogue/progression, coherent graphics/audio and complete Czech/English interfaces |
+| RG-07 Competition/economy | Autonomous real carriers, actual production/demand/supply, credible business openings, loss-making decisions and recoverable disruption |
+| RG-08 Performance/stability | Documented normal/developed-network benchmarks at all speeds and long-run soak; no advancing clock ahead of unprocessed essential operations |
+| RG-09 Transparency | Every main feature mapped to implementation/tests/evidence; no hidden placeholders, invented passes or unreported blockers |
+
+## 3. Golden player journeys
+
+These must pass on the standalone build, not only a headless fixture. Automated UI coverage may complement manual playthroughs. The normal start uses ordinary resources and commands; developer money, instantaneous construction or spawned player fleets do not count.
+
+### G-01 — From a new company to paid road freight
+
+Start 1900 with the small loan in a documented viable area. Inspect the debt schedule. Choose and fund real office premises/setup, appoint the director, fill minimum office/operating staff, obtain required activity rights, discover a real cargo opportunity, arrange endpoints, acquire and physically receive a suitable road vehicle, arrange parking/service/fuel, accept the job and execute it. Save and reload while the vehicle is moving. Complete delivery and inspect revenue, every cost and remaining debt. Repeat with a deliberate capacity or licence omission; the UI must explain the blocker.
+
+Pass: no free branch/fleet, no hidden bypass, real delivery and correct balances, a useful path back from each missing prerequisite.
+
+### G-02 — Railway startup using existing infrastructure
+
+Start a rail-capable opening, arrange branch coverage and permissions, lease or own appropriate yard/depot space, buy/lease physical traction and wagons, arrange delivery, purchase route/station access and define a Line/Pattern. Watch preparation, shunting, loading, the actual Trip and a physically valid return/next duty. Inspect segment/station usage fees and profit.
+
+Pass: a rail service is usable without first building an entire national network, but still consumes real assets, crew, access and infrastructure capacity.
+
+### G-03 — Build and improve the network
+
+Build an industrial siding or passing loop using the free-form tools, contractor, land, materials and real construction stages. Include a bridge or tunnel where appropriate. Operate a service over it. Later extend/upgrade while other traffic continues where physically possible. Compare disruption with/without offered mitigation.
+
+Pass: construction changes the real network and cost ledger; preview/unfinished track is not usable; closures and temporary capacity reductions affect operation.
+
+### G-04 — One shipment over several Trips and modes
+
+Transport one 100 t shipment using road collection, rail trunk and road delivery. Split the inbound rail leg 40/40/20 and the next leg 70/30 after real handling. Display one shipment with independently traceable parts. Delay one feeder, cancel one future allocation and fill one transfer store.
+
+Pass: exactly 100 t is accounted for unless a separately recorded loss is injected; parts recover independently; no duplicated reservation or virtual transfer; final payment/completion follows actual accepted delivery.
+
+### G-05 — Passenger revenue and a protected transfer
+
+Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Use open/optional/required reservations where supported and at least two capacity zones/products. Observe actual queues and crowding. Miss a protected connection and reduce the next train's capacity.
+
+Pass: re-accommodation/rebooking/refund follows rules, sold obligations survive, money and capacity reconcile, and the player can inspect why passengers chose or rejected the service.
+
+### G-06 — Contract lifecycle and capacity release
+
+Win a recurring contract, reserve its resources, operate it, accept a real volume amendment, review renewal and then release only part of the associated capacity early. Test a price change outside an accepted clause and a required new tender.
+
+Pass: extra work revalidates requirements; auto-renew never silently accepts a changed obligation; cancellation affects only released future capacity, reconciles prepayments and does not charge fictional future use. Non-renewal before its deadline is not early cancellation.
+
+### G-07 — Breakdown, maintenance and enduring technology
+
+Run a steam/legacy road vehicle, schedule external and internal service, force a valid breakdown fixture and recover it physically. In a later-date test state, remove some external provider capabilities through actual market changes and compare support quotes. Retain an equipped/staffed own workshop and operate the old vehicle again.
+
+Pass: no model disappears by date, no unexplained annual fuel/wear penalty, support scarcity has visible reasons, and owned support consumes real resources rather than being a free repair button.
+
+### G-08 — Rival carrier and business expansion
+
+Observe an AI rival discovering, bidding, purchasing/staffing, operating and maintaining a service. Compete for limited stock/slots/customer demand. Open a new region through real rights/presence/access. Perform a basic company/infrastructure acquisition and inspect inherited assets, liabilities and contracts.
+
+Pass: the rival cannot cheat to fulfil its bid; region activation/acquisition duplicates nothing; ownership does not overwrite sold priority rights.
+
+### G-09 — Delegation, growth and financial distress
+
+Create several Lines and branch workload, appoint a manager, set budget/approval policies and observe a routine delegated action. Deliberately overcommit and encounter negative cash flow. Reduce service, sell or lease-return an asset, borrow/restructure where feasible and continue. Separately test deep insolvency with no recovery path.
+
+Pass: managers respect limits; ordinary staff remain aggregate; distress is a process with understandable causes; bankruptcy does not erase obligations mid-operation without the defined process.
+
+### G-10 — Complete presentation and persistence tour
+
+Visit every major screen in both languages, build/place/select/follow assets, inspect an early and later technology scene, rotate/zoom around a busy station, cross chunk/origin boundaries, save while several systems are active, close and resume offline.
+
+Pass: no debug-only main workflow, missing translation/prefab/material, misleading chart or camera-dependent simulation result; saved state resumes coherently.
+
+## 4. Focused regression cases
+
+Unless marked manual, implement deterministic integration/unit tests as appropriate. Add PlayMode coverage where a scene/UI behaviour is involved.
+
+### 4.1 Clock, units and event ordering
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| T-01 | Cross day 14/month boundary and December/year boundary | 14-day months, 168-day years and continuous weekdays; no day 15 or leap-day runtime |
+| T-02 | Run identical seed and commands to the same game timestamp at 0.5/1/2/4/8/16x | Same authoritative decisions/accounting; only documented numeric tolerance, not speed-dependent income or consumption |
+| T-03 | Change speed repeatedly during loading, motion, maintenance and billing | No duplicated/skipped event, payment or movement |
+| T-04 | 60 km constant 60 km/h analytical movement without dwell/acceleration | One game hour; 120/60/3.75 real seconds at 0.5/1/16x in an adequately supplied time-budget test |
+| T-05 | Several essential events fall within one rendered frame at 16x | Chronological event/occupancy processing, no tunnelling or skipped cutoffs |
+| T-06 | Arrival/handling completion/cutoff/departure share a timestamp | Documented stable causal ordering; readiness not inferred from merely approaching a terminal |
+| T-07 | Pause, focus loss, save, close and reopen | No unauthorized game-time advancement or offline catch-up |
+| T-08 | Import real dates from 28/29/30/31-day months | Valid source-date checking, documented conversion to 1–14 and stable order for colliding events |
+
+### 4.2 Shipment inventory and allocation
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| C-01 | Allocate 100 t across 40/40/20 Trips | One shipment; sum of physical parts equals 100 t; each part has one location |
+| C-02 | Repartition arrived compatible parts into 70/30 onward allocations | No resetting age/quality/deadline and no requirement to retain the inbound partition |
+| C-03 | 63 t free, 5 t split increment | At most 60 t allocated; exact remaining quantity |
+| C-04 | Indivisible machine or handling unit exceeds compatible capacity | No fractional unit and an explicit capacity/compatibility blocker |
+| C-05 | Two planners or duplicate commands reserve the same lot/Trip | One atomic valid result, no negative free capacity or double invoice |
+| C-06 | Reserve the next leg before predecessor arrival | Forecast reservation allowed only with valid dependencies; loading blocked until actual readiness |
+| C-07 | Cancel an uncommitted future Trip | Only affected allocations released/replanned; unaffected parts keep progress and obligations |
+| C-08 | Cancel after partial loading or after departure | Physical unload/recovery required; cargo does not instantly return to a terminal pool |
+| C-09 | Customer no-show versus carrier/subcontractor missed cutoff | Correct release/protected recovery and responsibility; no automatic downgrade of carrier-fault cargo |
+| C-10 | Recovery cargo conflicts with another protected booking | Visible protected-capacity conflict; extra valid capacity/recovery or explicit breach, not secret displacement |
+| C-11 | Warehouse full during arrival or before onward loading | Cargo stays at a valid physical location; no disappearance, teleport or capacity overflow |
+| C-12 | Part delivered, part spoiled, part waiting | Delivery, loss and waiting reconcile; only accepted quantity earns the applicable payment |
+| C-13 | Co-locate different ages/qualities/contracts | No laundering of age/quality/obligations through merging; correct lineage preserved |
+| C-14 | A→B and B→C bookings versus A→C booking | Capacity reusable only on disjoint intervals; actual unload releases it |
+| C-15 | `do_not_split` versus `deliver_together` | Distinct validated commercial/physical meanings; no false full completion after first arrival |
+| C-16 | Load incompatible volume/positions/hazard cargo despite spare tonnes | Reject with the real limiting dimension; nominal tonnes do not imply compatibility |
+| C-17 | End a contract or change Pattern version with in-flight lots | Obligations/history remain; only affected future routing changes; no resetting the shipment |
+| C-18 | Long wait under permanent high-tier saturation | Explain shortage and propose added capacity; no false guaranteed starvation prevention or priority breach |
+
+### 4.3 Rail/road topology and resource protection
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| N-01 | Opposing trains enter a single-track section | Safe reservation/holding; no shared conflicting occupancy |
+| N-02 | Train head clears but tail remains on junction/block | Resource stays occupied until full train clears |
+| N-03 | A normal platform is closed but another compatible one is reachable | Reassign physically valid alternative rather than wait for an imaginary owned platform |
+| N-04 | Free platform is too short or unreachable from train direction | Not selected; explicit length/path explanation |
+| N-05 | Guaranteed competitor call conflicts with owner's lower-class call | Contracted rights, safety and valid windows govern priority, not ownership |
+| N-06 | Own late train leaves tolerance; separately owner-caused disruption | Out-of-slot versus qualifying reprotection distinguished and charged correctly |
+| N-07 | Wide slot window but short dwell, and narrow window with long occupancy | Commercial window and physical occupation remain distinct constraints |
+| N-08 | Section preferred/bidirectional/strict-one-way rules; one track under work | Only technically and contractually valid dynamic track use; no global-direction shortcut |
+| N-09 | Excess length/weight, insufficient traction, incompatible power/gauge | Pre-activation and final readiness block with actual constraints |
+| N-10 | Run-around, turntable and coupling operation, then save mid-operation | Correct orientations, paths and sequential operations; no asset flip or remote assembly |
+| N-11 | Deadlock/cycle of resource requests | Prevent unsafe entry or produce an explicit safe recovery plan; never delete/nudge trains through each other |
+| N-12 | Road vehicle lacks legal turn/access to a destination entrance | No delivery by proximity; valid alternate route or actionable blocker |
+| N-13 | Road congestion, intersection queue and blocked loading entrance | Real delay propagates; no overlap, virtual unloading or arbitrary direction reversal |
+| N-14 | Multi-owner Capacity Order partly fails or quote becomes stale | No false fully protected status, double purchase or hidden accepted fees; accepted rights remain traceable |
+
+### 4.4 Vehicles, service and staff
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| V-01 | Buy 4 dealer vehicles when only 3 physical units exist | Finite inventory and atomic ownership; fourth requires another offer/order |
+| V-02 | Buy a wagon at a remote seller and assign immediate departure | Delivery/hauling required; ownership alone does not imply presence |
+| V-03 | No valid rail delivery path and no era-compatible specialist provider | Explicit delivery blocker; no modern heavy-haul vehicle in 1900 or teleport fallback |
+| V-04 | Manufacturer backlog/material shortage changes after order | Real queued production/delivery changes with visible cause, not on-demand spawning |
+| V-05 | Routine service due versus hard safety limit | Player policy can adjust preventive timing but never dispatch beyond hard invalidity |
+| V-06 | Two vehicles compete for one workshop bay or fuelling point | Scheduled finite capacity, actual location and return movement; no parallel instant service |
+| V-07 | Long duty exceeds remaining fuel or inspection interval | Feasible intermediate service plan or blocked dispatch before predictable failure |
+| V-08 | Vehicle immobilized on occupied track/road | Real rescue/tow/worksite path and capacity; consequences propagate |
+| V-09 | Lease expires, sale closes or scrap order issued during use | No disappearing asset; contractual obligation and physical handover/disposal remain distinct |
+| V-10 | Old model after newer technology appears | Catalogue and valid existing operation persist; no hard end-year lock |
+| V-11 | External support declines but own workshop retains capability | Quotes expose provider/parts/capacity costs; internal staff/equipment/supplies still consumed |
+| V-12 | Mandatory driver unavailable versus optional service crew shortage | No driverless dispatch; optional shortage follows legal/product limits and actual service effects |
+| V-13 | Vehicle ready but crew shift/rest capacity exhausted | Real crew feasibility/recovery, no use of the same qualified capacity twice |
+| V-14 | Substitute or shorten a consist | Revalidate operating envelope and protected capacity; correct rebooking/refunds for displaced users |
+
+### 4.5 Contracts, passengers and money
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| F-01 | Small/standard/large startup loans and first repayment | Explicit principal/cash/interest/payment schedule; changing tier does not alter demand/AI/reputation |
+| F-02 | Repeat preview/accept, retry after timeout, reload during invoice event | Preview side-effect free; exactly one accepted posting/obligation |
+| F-03 | Cancel 2 of 10 slot calls early with prepaid fees | Fee only on affected remaining commitment, disclosed cap/credit, no double recovery or unused per-use fee |
+| F-04 | Turn off renewal before deadline; separately after future term committed | First is normal non-renewal; second preserves bound future obligations and visible cancellation terms |
+| F-05 | Renew customer contract while slot/crew/supply dependency expires | Missing coverage blocks unattended commitment; no unauthorized supporting purchase |
+| F-06 | Seasonal renewal crosses year boundary | Correct season and 14-day-month dates; not an invented full-year volume |
+| F-07 | Price/scope change outside indexation or public contract requires tender | Approval/new award needed; auto-renew cannot silently accept or guarantee a win |
+| F-08 | New Pattern takes effect while an old Trip is moving | Running Trip retains old version; future bookings/cargo/slots handled by explicit transition |
+| F-09 | Suspend until further notice, retain/release slots, then resume | Ongoing costs visible; tickets/contracts preserved; full readiness check on restart |
+| F-10 | Sold passenger A→B and another B→C reservation | Correct per-zone per-segment capacity; no needless whole-route seat lock or oversell |
+| F-11 | Walk-up passenger denied boarding | Remains in aggregate physical queue or follows explicit abandonment/rebooking; no disappearance/reappearance elsewhere |
+| F-12 | Protected missed connection due to own/partner/external cause | Actual acceptable rebooking/partner option or refund; responsibility and compensation distinct |
+| F-13 | Old timetable-only versus later realtime information | Passenger choice reacts only to plausibly available information; actual vehicle state unchanged |
+| F-14 | Group passenger contract and ordinary tariff bookings share a Trip | Shared real capacity, separate prices/obligations, no duplicate revenue |
+| F-15 | Negative cash, salvageable assets and later deep insolvency | Distress process before game over; costs/loans/sales reconcile without free rescues |
+| F-16 | Same work at different speeds and game-period rate boundaries | Equal per-work costs and explicit calendar accrual; no 365-day or conventional-month leakage |
+
+### 4.6 World, construction, economy and AI
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| W-01 | Start without own transport/infrastructure | Viable genuine providers allow first office/delivery/service; no circular mandatory prerequisite |
+| W-02 | Missing branch in served city versus simple pass-through | Correct local commercial coverage rule; traversal alone does not require a branch |
+| W-03 | Modern office technology adopted, not merely present in world | Broader commercial capability only after real installation/staff/cost prerequisites |
+| W-04 | Firm runs out of recipe input; transport restores it | Real production/demand response and inventory conversion, not arbitrary contract generation |
+| W-05 | Material or contractor capacity shortage during building | Correct stage pause/cost/delivery dependency; no finished asset by timer alone |
+| W-06 | Cancel preview versus demolish completed protected station | Free preview cancellation; actual project cost/permission/physical impact for demolition |
+| W-07 | Expand corridor while occupied or under partial closure | Safe staged topology update and rerouting; trains/loads not deleted or moved to nearest node |
+| W-08 | Unload terrain chunk and rebase origin with active construction/vehicle | Same logical positions/distances/edits after reload; no seam/precision-induced route break |
+| W-09 | Activate a macro region twice or after save/reload | Single coherent state transfer; no duplicated firms/assets/inventories or replayed past history |
+| W-10 | AI bids for unavailable equipment/slots and faces delivery lead time | Same feasibility limits; credible future investment only, no impossible guaranteed capacity |
+| W-11 | Rival sells an asset, acquires company or becomes insolvent | Same ownership and liability rules; no duplicate asset/debt and no cost immunity off camera |
+| W-12 | Manager attempts a purchase above budget or forbidden cancellation | Requires approval/rejects; delegated authority never exceeds explicit player policy |
+| W-13 | Weather/incident closes a route and later reopens it | Real capacity/speed/supply effects and recovery, clear reason, no flat hidden income modifier |
+| W-14 | Later technology/historical event and source-date conversion | Correct prerequisites/date order; no unauthorized new start preset or forced end of campaign |
+
+### 4.7 Saves, UI and runtime integrity
+
+| ID | Fixture/action | Expected invariant/result |
+|---|---|---|
+| S-01 | Save during loading, coupling, maintenance, building and movement | Consistent transaction boundary, all authority restored, no restarted free task |
+| S-02 | Save immediately before/after renewal, payment or delivery event | Event executes exactly once across reload |
+| S-03 | Compare uninterrupted run with saved/reloaded equivalent | Matching IDs, RNG state, obligations, queues, inventories, reservations and money within declared tolerances |
+| S-04 | Disk full, interrupted write or invalid new save | Previous good save retained; clear error, no false success notification |
+| S-05 | Unknown/newer schema, missing content or corrupt checksum | Safe rejection/recovery; no silently removed assets/contracts or partial loaded state |
+| S-06 | Supported migration and repeated quickload | Migration preserves invariants; UI subscribes once; no duplicate events or leaked worlds |
+| S-07 | Manual save slots, autosave rotation and Continue | Correct newest valid compatible save selection and protected rotation; labels understandable |
+| U-01 | Every main screen populated/empty/blocked in Czech and English | No missing keys, untranslated hardcoded messages or broken Czech glyphs |
+| U-02 | Switch language, number format and UI scale during play | Stable IDs/money token; no re-created simulation or changed amounts |
+| U-03 | Select/drag over UI, rotate construction preview, cancel tool | No click-through purchase, accidental demolition or hidden simulation action |
+| U-04 | Inspect rejection, quote, overcrowding, delay and negative margin | Concrete inputs and reason codes shown; corrective action discoverable |
+| U-05 | Camera follow/zoom/rotate across busy stations and distant terrain | Coherent visible operation, readable signals/assets, no camera-dependent simulation |
+| U-06 | Fresh standalone offline session with game files only | No Editor-only asset paths, network map dependency, missing shaders/models or manual scene setup |
+| U-07 | Review presentation screenshots and sound manually | Real in-engine evidence; coherent art rather than labelled debug primitives; audio/settings functional |
+| U-08 | Onboarding followed from New Game without debug tools | Reach legitimate first service; guide dismissible; no rule bypasses |
+| D-01 | Run build/test script with invalid Unity path or hung process | Nonzero exit/actionable log and timeout; no endless wait or false completion |
+| D-02 | Clean rebuild from pinned content/package versions | Reproducible definitions/IDs and useful change report; no dependence on another developer's Library folder |
+
+## 5. Combination and invariant testing
+
+Test interactions, not only individual systems. Required high-risk combinations include:
+
+- split shipment + delayed feeder + saturated next Trip + protected booking;
+- short-formed train + already sold class capacity + protected passenger transfer;
+- infrastructure owner fault + missed slot + downstream customer SLA;
+- construction closure + busy yard + emergency rescue;
+- renewal + changing Pattern version + prepaid partial cancellation;
+- AI purchase + player purchase + the same final dealer vehicle;
+- obsolete technology + workshop queue + fuel/parts shortage;
+- active/macro transition + in-flight import + save/load;
+- origin rebase + long train tail spanning several blocks;
+- save boundary + event retry + money/quantity commitment.
+
+Run representative short fixtures across all six running speeds, detailed/standard/remote presentation states, and before/during/after-save boundaries. Use pairwise selection for routine combinations and full combinations for conservation/occupancy/save-critical cases. Do not substitute one speed or one camera view for the whole test matrix.
+
+Add randomized/property tests with reproducible seeds for sequences of reserve, split, load, unload, replan, cancel, deliver, lose/spoil and restore operations. Assert nonnegative inventory, exact transport conservation, unique asset ownership/location, segment-capacity bounds and idempotent money postings after every committed transition. Keep failing seeds as permanent regressions.
+
+Shipment conservation counts each quantity in one mutually exclusive current or terminal state. Production/consumption are explicit transformations, not transport events. A cancelled reservation is not destroyed cargo. A refunded ticket is not an additional passenger. State these accounting domains precisely in test code.
+
+Full simulation bit-for-bit equality across arbitrary CPUs is not promised. Within the same supported build/runtime, require deterministic logical outcomes with explicit geometric/numeric tolerances. Monetary and integer cargo accounting must remain exact.
+
+## 6. Performance, long-run and graphical verification
+
+Use the workload definitions in V1_CONTENT_MANIFEST. Record actual graph nodes/edges, trains, wagons, road vehicles, Patterns, active groups, regions and AI companies so an empty scene cannot masquerade as a large-world test.
+
+Run each workload after warm-up at 0.5/1/2/4/8/16x, with normal camera and busy-station views, and record requested/achieved time ratio, frame p50/p95/p99, simulation step cost, memory/GC, event backlog, path-cache behaviour and save/load duration. A displayed 16x button is not a 16x benchmark.
+
+Perform a multi-hour wall-clock soak with active services and recurring saves, plus headless multi-year tests for event/calendar/contract stability. Developer fast-forward fixtures are permitted for tests but must not become a player setting beyond 16x. Include year boundaries, multiple seasonal renewals, technology introduction and an evolving supplier/competitor economy.
+
+Check for unbounded history/event/booking growth, repeated whole-network searches, resource starvation, stuck vehicles and delayed operations hidden by an advancing calendar. Historical archives may be compacted, but outstanding obligations and audit necessities cannot be discarded.
+
+Visual evidence must include the 1900 world overview, a town/station at useful detail, road freight/passenger operation, a steam consist, a junction/yard operation, a bridge/tunnel, a construction stage, a multi-leg cargo detail, a busy passenger transfer, later progression and localized management panels. No missing materials, stretched default objects or debug labels standing in for assets.
+
+## 7. Evidence template
+
+Use one entry per actual run or a machine-readable equivalent:
+
+```
+Test ID:
+Status: NOT RUN | PASS | FAIL | BLOCKED
+Commit/build:
+Editor/player version:
+Content manifest/hash:
+OS/CPU/GPU/RAM/settings:
+Seed and simulation timestamp:
+Setup:
+Commands or manual steps:
+Expected:
+Observed:
+Evidence path:
+Defect/blocker and severity:
+Retest result:
+```
+
+For the requirement matrix, maintain:
+
+```
+Requirement ID | Scope/core section | Implementation paths | Test IDs | Latest actual result | Evidence | Remaining work
+```
+
+Final release handover includes the playable Windows build, exact build instructions, change summary, completed matrix, real test/performance results and known issues. The current handoff only specifies this work; all game tests start unexecuted.
