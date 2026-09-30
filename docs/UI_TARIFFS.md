@@ -144,7 +144,7 @@ For V1, multi-operator passenger cooperation uses the two simple agreement famil
 - connection agreement at a defined transfer node;
 - partner-capacity sales agreement for one through ticket across operators.
 
-The partner-capacity agreement uses one **partner rate in money/km**. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the agreed partner rate. The difference is the seller's margin and may be positive or negative.
+The bilateral agreement carries **two directional partner rates in money/km** when capacity resale is enabled both ways: one rate for what the partner owes when selling our capacity, and one rate for what we owe when selling theirs. Either direction can be disabled and the rates may differ. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the applicable directional partner rate. The difference is the seller's margin and may be positive or negative.
 
 The UI must show, before accepting or changing the agreement:
 
