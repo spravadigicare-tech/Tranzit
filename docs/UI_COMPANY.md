@@ -20,7 +20,7 @@ Use independently openable compact cards, not a mandatory setup sequence:
 | Licences and permissions / Licence a oprávnění | What the company may operate and where, applications, requirements, validity and renewal/expiry risks; open the confirmed UI-D33 Licences and expansion workspace for the full market/licence/permit/application view |
 | Company systems / Firemní systémy | Actually adopted communication/business systems, current capabilities, available improvements and their concrete requirements/effects; open UI-D38 Technology for research/unlock/adoption state |
 
-Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. Division/subsidiary links remain available where the existing organization model provides them; these cards neither add new group-management mechanics nor remove that wider functionality.
+Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. UI-D39 now owns group/subsidiary control. Company adds a compact **Our group / Naše skupina** view when relevant, showing ownership, control state, subsidiary management mode, important decisions/issues and direct links to the subsidiary or its direct-control context. Do not duplicate each subsidiary's full Line/Fleet/Finance UI inside the parent overview.
 
 ## 2. Branch list and detail
 
@@ -70,7 +70,32 @@ Applications and renewal/withdrawal actions use existing rules and explicit vali
 
 Company systems show what has actually been adopted, what capability it provides and what installation, staffing, funds or technology is still required. Distinguish historically available, researched/unlocked, being adopted and usable where supported. UI-D38 [UI_TECHNOLOGY.md](UI_TECHNOLOGY.md) owns the detailed Technology workspace. In particular, a calendar date or improved office furnishings do not automatically grant centralized coverage, online sales or remote information. A completed technology can unlock branch/station/facility/construction upgrades without applying them; only genuine company-wide systems use the simple adoption project defined by UI-D38.
 
-## 6. Shared interaction and state safety
+## 6. Group and subsidiary overview — UI-D39
+
+When the player controls or owns stakes in other companies, Company exposes a compact group/holdings view.
+
+Show:
+
+- parent/current company;
+- controlled subsidiaries;
+- minority investments;
+- ownership percentage/economic interest;
+- actual control state;
+- Autonomous / Managed / Direct-control mode for controlled subsidiaries;
+- material approval/financial issue;
+- direct link to UI-D37 company detail and UI-D39 ownership workflow.
+
+A controlled subsidiary keeps its own cash, debt, staff, licences, contracts, assets and operating state until a real transaction/integration changes them.
+
+**Direct control** switches the active company context and reuses the normal game UI against that company's authority. It does not clone management screens into the parent company overview.
+
+The current-company selector in the shared bottom bar is available when the player controls multiple companies. The selected context must remain obvious so the player cannot accidentally buy an asset or alter a Line for the wrong company.
+
+Group strategy, budgets and approval limits reuse the existing management/delegation model. Do not invent a second manager-permission system.
+
+Intra-group capital, loans, dividends/distributions, leases, asset transfers and shared facility/access arrangements link to the canonical UI-D39/Finance/agreement workflows and remain real transactions.
+
+## 7. Shared interaction and state safety
 
 Apply the same dark, minimalist components across company, branches and personnel. Keep current scope, important shortage/vacancy, units, periods, unsaved state and action consequences visible. Tooltips explain workload, staffing estimates, skills and effective policy; opened details contain long lists, editable rules and history. Use keyboard/focus access as well as hover, with complete Czech/English presentation at 1080p and enlarged UI scales.
 
@@ -80,7 +105,7 @@ Refresh from actual state changes; do not recalculate the whole company every re
 
 Normal window/card/tooltip use never changes speed or pause. Planning remains available in manual or critical-event pause, while recruitment, application processing, training and other time-driven work stay stopped. Binding commands retain existing validation/timing rules; this UI decision does not settle the separately unresolved general timing of binding commands during pause.
 
-## 7. Acceptance evidence to collect
+## 8. Acceptance evidence to collect
 
 These checks describe evidence required when implemented, not passing game tests. Read with [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md).
 
@@ -95,7 +120,7 @@ These checks describe evidence required when implemented, not passing game tests
 | COUI-A07 | Save/load with a vacancy, pending application, staffing shortage and delegated decision. Preserve authority/history without duplicate hiring or payments; opening/closing/hovering never changes pause/speed and no time-driven work progresses while paused. |
 | COUI-A08 | Test CZ/EN, keyboard/focus tooltips, narrowed/resized windows and enlarged UI. Important scope, periods, shortages and consequences stay readable; source links preserve drafts, selection and pinned identities. |
 
-## 8. Decision record
+## 9. Decision record
 
 | ID | Decision | Status |
 |---|---|---|
