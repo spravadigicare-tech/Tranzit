@@ -26,7 +26,7 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 |---|---|
 | [V1 Scope](docs/V1_SCOPE.md) | Approved release subset, time/distance rules, enduring vehicles and shipment splitting |
 | [Implementation Brief](docs/V1_IMPLEMENTATION_BRIEF.md) | Architecture, subsystem coverage, M0–M8 work order, UI/art and delivery requirements |
-| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed dark interface, floating-window controls, fixed bottom bar and manual-pause planning; remaining interface proposals and decision status |
+| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed dark interface, floating-window controls, fixed bottom bar, paused planning and critical-event auto-pause; remaining proposals and decision status |
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Current implementation/test evidence and next executable task |
@@ -43,7 +43,9 @@ The handoff is documentation. It does **not** mean a Unity project, playable bui
 
 **Normal UI and pause:** ordinary windows, Line planning and construction previews do not automatically pause/resume the game or change its selected speed. During manual pause, camera/inspection and all planning tools remain available, while the shared simulation clock and time-driven operations stay stopped. Closing a planner never releases the manual pause; resuming never silently submits a draft or catches up the real time spent paused. See UI-D04 and Section 9.1 of the UI document for the confirmed rule and its command-safety boundaries.
 
-**Still open or proposed:** application-focus and exceptional-event pause behaviour under UI-D08, exact styling/dimensions and secondary-control placement, information density, detailed navigation contents/object terminology and other unresolved workflows. Follow the decision statuses in the UI document; acceptance of the specified bar/window/planning rules does not approve every proposal or change gameplay. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
+**Critical incidents:** automatic pause is enabled by default for critical events requiring prompt player attention, including while a planner is open. Ordinary delays and routine problems handled within authorized policies do not interrupt play. Show the cause, impact and available response; preserve planning and require an explicit player action to resume. Closing or acknowledging a notice does not restart time. Deduplicate unchanged incidents across repeated alerts and save/load; a new critical incident or material escalation may pause again. Section 7.2 and the critical-event part of UI-D08 own this rule and its event-boundary/persistence safeguards.
+
+**Still open or proposed:** application-focus and precise pause-menu behaviour in the remaining part of UI-D08, detailed event-override settings, exact styling/dimensions and secondary-control placement, information density, detailed navigation contents/object terminology and other unresolved workflows. Follow the decision statuses in the UI document; acceptance of the specified bar/window/planning/critical-pause rules does not approve every proposal or change unrelated gameplay. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
 
 ## Wider base game and planned DLC
 
