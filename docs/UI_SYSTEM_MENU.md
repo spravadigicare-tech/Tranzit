@@ -304,7 +304,8 @@ Include settings such as:
 - Autosave;
 - Tutorial: Full / Basics only / Off;
 - critical incidents automatically pause: On by default;
-- supported notification preferences/overrides.
+- pause when game loses focus: On by default;
+- informational toasts: On/Off.
 
 Do not introduce unapproved difficulty/cheat sliders here.
 
@@ -312,7 +313,9 @@ Changing tutorial mode after founding follows UI-D35 and changes guidance only.
 
 Turning critical auto-pause off changes only the allowed UI notification/pause policy; it must not remove the incident, safety consequence or required decision.
 
-Detailed per-event override options remain design work unless explicitly defined.
+V1 intentionally has no per-event-type auto-pause/notification matrix. **Informational toasts** controls lightweight toast presentation only; event-centre records and important states remain available.
+
+With **Pause when game loses focus** On, focus loss adds an independent focus-loss pause reason without changing the remembered running speed. Returning to the game removes only that reason. If no other pause reason remains, the game resumes at the remembered speed; manual, critical, pause-menu and load-safe pause reasons remain intact. With the setting Off, focus loss/return does not alter the simulation clock.
 
 ## 15. Controls
 
