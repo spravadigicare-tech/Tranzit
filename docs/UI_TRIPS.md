@@ -175,7 +175,7 @@ Below the progression, use compact independently openable groups:
 
 Use the same global components and object links. Hide irrelevant sections rather than showing empty freight fields on a passenger bus or passenger fields on a freight-only Trip.
 
-The Trip detail can expose a link to its vehicle duty. It does not require the player to manually build every duty or named crew assignment.
+The Trip detail exposes **Open duty / Otevřít oběh** into the confirmed UI-D31 workspace in [UI_DUTIES.md](UI_DUTIES.md), scoped to the relevant vehicle/consist and time. It does not require the player to manually build every duty or named crew assignment.
 
 ## 8. Vehicle/consist and duty continuity
 
