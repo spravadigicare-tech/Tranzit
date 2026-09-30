@@ -5426,11 +5426,81 @@ They can grow, shrink, sell assets or fail.
 
 The player's initial competitive exposure is mostly local because the company starts small. The selected historical year determines how developed existing competitors and networks are; a later start must not reset every rival to a tiny early-industrial business. Competition increases naturally as the player's network and active regions connect.
 
-### 29.1 Ownership and acquisitions
+### 29.1 Ownership, control and acquisitions
 
-The player can buy shares in competitors, receive dividends, acquire controlling stakes or buy them outright.
+The player can buy shares in competitors, receive dividends/distributions, acquire controlling stakes or buy companies outright.
 
-Acquired companies can remain independent subsidiaries or be integrated.
+Keep **economic ownership** separate from **control/operating authority**.
+
+A minority holding can create investment and governance rights, but it does not automatically let the player spend the target company's cash, move its vehicles, edit its Lines, sell its infrastructure or cancel its contracts.
+
+Control follows the actual ownership/governance rules applicable to that company rather than one universal hard-coded percentage. The UI must show separately:
+
+- ownership percentage/economic interest;
+- whether the player currently has control;
+- which governance/approval rights follow from that position.
+
+A controlled company can remain a separate **subsidiary** or be integrated into the parent.
+
+#### Controlled subsidiaries
+
+A controlled subsidiary remains its own company identity unless a real integration occurs. It keeps separate:
+
+- cash and debt;
+- revenues/costs;
+- contracts and agreements;
+- licences/permissions;
+- staff and managers;
+- vehicles and rolling stock;
+- infrastructure/land;
+- inventories, projects and orders;
+- operating history and identity.
+
+The player can manage a controlled subsidiary at three practical levels:
+
+1. **Autonomous** — the subsidiary's AI management runs normal business within player-defined group strategy, budgets, reserve/debt policy, market/mode boundaries, acquisition permissions and major-asset approval rules.
+2. **Managed / strategically directed** — routine work remains delegated, while the player can approve/reject or directly initiate major Lines, regional expansion, fleet/infrastructure investments, technology/adoption, top-management changes, major borrowing, acquisitions and asset sales.
+3. **Direct control** — the player can switch the active company context and use the normal Line, Fleet, Finance, Branch, Staff, Construction, Procurement, Maintenance, Contract, Technology and other applicable workflows directly in that subsidiary's name.
+
+Switching direct-control context does **not** reload the world or merge companies. It changes which company's authority/resources the player is currently exercising.
+
+The parent cannot spend subsidiary cash, and the subsidiary cannot spend parent cash, without a real transaction.
+
+Group-company interaction can include:
+
+- capital contribution;
+- intra-group loan;
+- dividend/distribution;
+- sale/lease/other valid transfer of vehicles or infrastructure;
+- real access/service agreements between group companies where separate ownership remains.
+
+These actions use real ledgers/agreements and never teleport assets or erase physical capacity constraints.
+
+A controlled subsidiary's top management uses the existing management/delegation model. The player can set approval thresholds and strategic limits rather than manually repeating every routine action.
+
+#### Whole-company integration
+
+Integration is optional. It is not required merely to obtain meaningful control over a subsidiary.
+
+Before integration, the player must see the consequences for:
+
+- assets and infrastructure;
+- staff;
+- cash/debt;
+- contracts/leases;
+- licences/permissions;
+- Lines/services;
+- projects/orders;
+- inventories;
+- non-transferable or change-of-control obligations.
+
+Integration transfers only what the applicable rules permit.
+
+Physical vehicles/assets remain in their actual locations; running Trips, cargo, construction and maintenance do not reset or teleport.
+
+Contracts and licences that require consent, recognition or reapplication remain explicit dependencies rather than being silently rewritten.
+
+The acquired company's historical identity remains inspectable after integration.
 
 Companies can also own industrial firms or other business assets, but direct factory-building is not a primary early-game focus.
 
@@ -8397,17 +8467,36 @@ Financial rates, reporting and billing periods use explicit game-time units unde
 
 ## 39. Infrastructure market
 
-Infrastructure can be bought and sold.
+Infrastructure can be bought and sold as real physical assets.
 
 A buyer may:
 
-- continue operating it,
-- offer access to other carriers,
-- tender services,
-- repurpose/rebuild it,
+- continue operating it;
+- offer access to other carriers;
+- tender services;
+- repurpose/rebuild it;
 - demolish it and allow urban redevelopment.
 
+A purchase transfers ownership; it does **not** reset the asset.
+
+Where applicable, the buyer inherits the asset's real state and binding obligations, including:
+
+- physical condition and maintenance state;
+- existing leases/tenancies;
+- valid infrastructure/station/access agreements;
+- guaranteed capacity commitments;
+- active construction/repair work;
+- applicable land/connection rights and restrictions.
+
+Buying a station or corridor does not automatically cancel a competitor's already valid protected access merely because ownership changed.
+
 Partial asset sales are allowed, e.g. sell the track but keep a depot or station.
+
+A partial-sale review must expose dependencies created by the split. If the retained depot needs access over the sold track, the sale does not silently create a free post-sale access right. The player must retain/negotiate real access, change the sale scope or accept the consequence.
+
+Selling or transferring an infrastructure asset never teleports vehicles/cargo or creates new capacity.
+
+Company acquisitions and intra-group infrastructure transfers follow Section 29.1. UI-D39 in UI_OWNERSHIP.md defines the confirmed player-facing workflow.
 
 ## 40. Research, historical vehicles and manufacturers
 
