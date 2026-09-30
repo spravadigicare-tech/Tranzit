@@ -40,7 +40,7 @@ Keep the default overview compact. Use consistent card groups with a brief statu
 |---|---|
 | Operation and preparation / Provoz a příprava | Current vehicle/consist preparation, physical shunting where applicable, fueling/cleaning and other authorized tasks; what is queued, its blocking reason and effect on the next service |
 | Maintenance and repairs / Údržba a opravy | Current work, service queue, scheduled visits, supported service levels and available workshop capacity; vehicle links, expected completion and unmet prerequisites |
-| Supplies / Zásoby | Actual stocks with units, shortages, accepted deliveries and expected arrival where known; access to existing procurement and reorder policies |
+| Supplies / Zásoby | Actual stocks with units, shortages, accepted deliveries and expected arrival where known; open the shared UI-D32 Procurement workspace for orders, suppliers and reorder policies |
 | Capacity and equipment / Kapacita a vybavení | Parking, workshop positions, shunting and installed service capability separately, with current occupancy, relevant future commitments and actual bottlenecks |
 | Staff / Personál | Required aggregate professions/qualifications and available qualified capacity, with shortages and links to the existing staffing workflow |
 | Costs and agreements / Náklady a smlouvy | Period-labelled operating costs, rented capacity, external service and supply agreements, charges and renewal/expiry dependencies |
