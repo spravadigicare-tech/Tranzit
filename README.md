@@ -34,6 +34,12 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 
 The handoff is documentation. It does **not** mean a Unity project, playable build, asset library or passing benchmark already exists. Check Implementation Status and the actual files for current progress.
 
+## UI/UX design discussion
+
+[UI/UX Design Proposal](docs/UI_UX_DESIGN.md) records the working interface proposal: map-first layout, navigation, object inspectors, planning/construction workflows, notifications and open design decisions.
+
+**Discussion draft, not approved for implementation.** Its referenced existing requirements remain binding, but its new visual, layout, terminology and interaction choices are not yet player-approved and do not override the specifications above. Resolve the listed decisions with the player before promoting them into implementation requirements.
+
 ## Wider base game and planned DLC
 
 The wider base-game design has selectable new-game starts in **1900, 1925, 1950 and 1975**. Only the 1900 preset is required for the first playable target; it is not yet implemented in the inspected documentation-only baseline. Later presets initialize an appropriate existing world while the player still starts with a small company.
