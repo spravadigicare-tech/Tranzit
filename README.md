@@ -26,7 +26,7 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 |---|---|
 | [V1 Scope](docs/V1_SCOPE.md) | Approved release subset, time/distance rules, enduring vehicles and shipment splitting |
 | [Implementation Brief](docs/V1_IMPLEMENTATION_BRIEF.md) | Architecture, subsystem coverage, M0–M8 work order, UI/art and delivery requirements |
-| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed dark interface, floating-window controls and fixed bottom bar; remaining interface proposals and decision status |
+| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed dark interface, floating-window controls, fixed bottom bar and manual-pause planning; remaining interface proposals and decision status |
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Current implementation/test evidence and next executable task |
@@ -41,7 +41,9 @@ The handoff is documentation. It does **not** mean a Unity project, playable bui
 
 **Confirmed:** a restrained contemporary dark interface, movable/resizable floating management/detail windows, multiple views, reusable ordinary selection details with content pinning, explicit opening in another window, minimize/restore, remembered/recoverable layout and a fixed bottom navigation/status/time bar. The top-level navigation is Build, Operations, Business, Assets, Company and World. The bottom bar replaces mandatory permanent left/top strips; contextual construction tools do not remove it. Ordinary object clicks reuse an unpinned detail rather than opening a new window every time. Pinning retains the object's identity while its data stays live.
 
-**Still open or proposed:** pause behaviour, exact styling/dimensions and secondary-control placement, information density, detailed navigation contents/object terminology and other unresolved workflows. Follow the decision statuses in the UI document; acceptance of the bar/window proposal does not approve every proposal or change gameplay. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
+**Normal UI and pause:** ordinary windows, Line planning and construction previews do not automatically pause/resume the game or change its selected speed. During manual pause, camera/inspection and all planning tools remain available, while the shared simulation clock and time-driven operations stay stopped. Closing a planner never releases the manual pause; resuming never silently submits a draft or catches up the real time spent paused. See UI-D04 and Section 9.1 of the UI document for the confirmed rule and its command-safety boundaries.
+
+**Still open or proposed:** application-focus and exceptional-event pause behaviour under UI-D08, exact styling/dimensions and secondary-control placement, information density, detailed navigation contents/object terminology and other unresolved workflows. Follow the decision statuses in the UI document; acceptance of the specified bar/window/planning rules does not approve every proposal or change gameplay. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
 
 ## Wider base game and planned DLC
 
