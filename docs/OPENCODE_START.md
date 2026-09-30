@@ -6,7 +6,7 @@ This file is an execution prompt. The detailed source of truth is in the linked 
 
 Implement the first genuinely playable Tranzit V1 in this repository. Deliver an offline Windows game, not only documentation, a scaffold, a simulation library, a menu or a train-movement demo.
 
-Read `AGENTS.md`, `docs/V1_SCOPE.md`, the complete `docs/GAME_DESIGN.md`, `docs/CONTRACT_CANCELLATION.md`, `docs/V1_IMPLEMENTATION_BRIEF.md`, `docs/V1_CONTENT_MANIFEST.md` and `docs/V1_ACCEPTANCE_TESTS.md`. Inspect the current files, branch and toolchain before making changes. Do not assume the repo still has no code just because that was true at handoff preparation.
+Read `AGENTS.md`, `docs/DATA_PIPELINE.md`, `docs/V1_SCOPE.md`, the complete `docs/GAME_DESIGN.md`, `docs/CONTRACT_CANCELLATION.md`, `docs/V1_IMPLEMENTATION_BRIEF.md`, `docs/V1_CONTENT_MANIFEST.md` and `docs/V1_ACCEPTANCE_TESTS.md`. Inspect the current files, branch and toolchain before making changes. Do not assume the repo still has no code just because that was true at handoff preparation.
 
 The scope is already decided:
 

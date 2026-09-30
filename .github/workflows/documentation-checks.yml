@@ -1,0 +1,23 @@
+name: Documentation checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  documentation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out exact revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Validate documentation
+        run: python3 Tools/check_docs.py
+      - name: Test documentation validator
+        run: python3 -m unittest discover -s Tools/tests -v
+      - name: Check changed whitespace
+        run: git diff --check HEAD^ HEAD
