@@ -42,7 +42,7 @@ Filters should cover the existing relevant Opportunity Board dimensions without 
 
 A row can say, for example, **Ready**, **Requires investment**, **Missing licence/access**, **Capacity conflict** or **Not yet evaluated**, using the underlying structured reasons. This is an aid, not an automatic bid decision.
 
-Hover/focus explains the main concrete reasons. Clicking the status opens the relevant evaluation/detail. Never calculate a fake percentage of readiness or hide uncertainty. Customer forecast volume remains labelled as forecast unless contract terms guarantee it.
+Hover/focus explains the main concrete reasons. Clicking a missing legal requirement opens the exact market-entry/licence/permit dependency in the confirmed UI-D33 [UI_LICENCES_MARKETS.md](UI_LICENCES_MARKETS.md); physical infrastructure-access gaps continue to use their owning capacity/access workflow. Clicking other statuses opens their relevant evaluation/detail. Never calculate a fake percentage of readiness or hide uncertainty. Customer forecast volume remains labelled as forecast unless contract terms guarantee it.
 
 ## 3. Opportunity detail and offer drafting
 
