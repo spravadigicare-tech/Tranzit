@@ -15,7 +15,8 @@ For implementation work also read:
 - `docs/V1_IMPLEMENTATION_BRIEF.md` — architecture guidance, subsystem coverage and milestone order;
 - `docs/V1_CONTENT_MANIFEST.md` — configurable initial content/balancing targets;
 - `docs/V1_ACCEPTANCE_TESTS.md` — required test scenarios and release evidence;
-- `docs/IMPLEMENTATION_STATUS.md` — actual progress, results and next task;
+- `docs/TODO.md` — the living backlog of remaining/open/deferred work; read it before substantial work and keep it current when discovering, completing or deferring real tasks;
+- `docs/IMPLEMENTATION_STATUS.md` — actual implementation progress, test/build results and evidence; never use TODO completion as implementation evidence;
 - `docs/OPENCODE_START.md` — concise execution prompt.
 
 Document responsibility is explicit:
@@ -42,6 +43,25 @@ When a design decision changes:
 6. Keep code and documentation aligned in the same change whenever possible.
 
 Do not silently reinterpret a discussion example as overriding an existing contractual guarantee. The canonical cargo rules in GAME_DESIGN Sections 11.0.1 and 11.9 use compatibility and contractual priority tiers, not one unrestricted hidden score.
+
+## Living TODO/backlog discipline
+
+`docs/TODO.md` is the repository's single living backlog for **what remains to be done**.
+
+Use it as follows:
+
+1. **Read TODO before substantial work.** Reconcile the requested task with its current Now / Open decisions / Next / Blocked / Deferred state and the authoritative design documents.
+2. **Add newly discovered real work immediately.** If implementation/design work uncovers a missing decision, follow-up, blocker, required reconciliation or test task, add it to TODO instead of relying on chat/session memory.
+3. **Keep Now small and actionable.** Move lower-priority work to Next. Use Blocked only for a concrete dependency that prevents progress; use Deferred for intentionally postponed work that is not a blocker.
+4. **TODO never overrides the design.** A backlog item is a pointer to work, not a gameplay rule. When a product/design decision changes, update the owning specification first, reconcile affected summaries/tests, then update the TODO entry.
+5. **Design done is not implementation done.** When a specification is approved, close the design TODO item after its docs are reconciled. Do not infer that code exists.
+6. **Implementation done requires evidence.** When code work completes, update `docs/IMPLEMENTATION_STATUS.md` with actual paths, test/build commands and observed results before closing the corresponding implementation/test TODO item.
+7. **Do not duplicate the full project plan.** M0–M8 and SYS-01–SYS-16 stay in the implementation brief/status ledger; release test definitions stay in V1_ACCEPTANCE_TESTS. TODO links to those owners instead of copying them.
+8. **Keep Done recently short.** It is only a convenience recap. Git history and canonical design/status documents are the permanent record.
+9. **Update TODO in the same change where practical.** A completed, newly blocked or newly discovered task should not leave the backlog knowingly stale.
+10. **Before ending substantial work, inspect TODO again.** Record any remaining follow-up, exact blocker and next action so the next session can continue without reconstructing context.
+
+If TODO and IMPLEMENTATION_STATUS disagree, resolve the stale document rather than choosing whichever is more convenient. IMPLEMENTATION_STATUS is authoritative for observed implementation/test evidence; owning design documents are authoritative for accepted behaviour.
 
 ## First-playable delivery contract
 
