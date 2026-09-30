@@ -2,7 +2,7 @@
 
 > **Status: CONFIRMED UI DIRECTION — UI-D24, 2026-09-30.** The player accepted one event centre split by player-action need, grouped root-cause incidents, lightweight informational toasts, persistent history and optional per-object Follow notifications. Critical-event auto-pause continues to follow UI-D08. Exact layout dimensions, iconography, event thresholds and per-event override settings remain design work. This specification is not an implemented or tested UI.
 
-Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), especially UI-D07 (floating windows), UI-D08 (critical auto-pause), UI-D09 (exact-object links), UI-D15 (minimalism/tooltips) and Section 7. This focused document owns the event-centre and notification presentation. Gameplay systems retain ownership of the incidents, decisions, deadlines, recovery policies and consequences they generate.
+Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), especially UI-D07 (floating windows), UI-D08 (critical auto-pause), UI-D09 (exact-object links), UI-D15 (minimalism/tooltips) and Section 7, plus [UI_NEWS.md](UI_NEWS.md) under UI-D40. This focused document owns the player-company event-centre and notification presentation. Gameplay systems retain ownership of incidents, decisions, deadlines, recovery policies and consequences. UI-D40 separately owns public/world news and campaign-history presentation.
 
 ## 1. One event centre
 
@@ -14,6 +14,8 @@ The fixed bottom-bar event/decision indicator opens one movable/resizable **Even
 4. **History / Historie**
 
 The grouping is based primarily on **what the player needs to do**, not on which internal subsystem emitted the message. A vehicle failure, contract exception and construction delay can therefore share the same interaction model while keeping their domain-specific details.
+
+World News is separate. A historical/economic/company/infrastructure event can appear in UI-D40 as public/world context while the same underlying cause creates an item here only when it produces a concrete player-company information/decision state. Do not duplicate one simulation event into unrelated authoritative records.
 
 Keep counts concise in the bottom bar. Do not turn every informational event into a flashing badge. The event centre is an inbox/history surface over authoritative simulation state, not a second incident engine.
 
@@ -265,4 +267,4 @@ Use event-driven updates. Do not scan every Trip, vehicle and contract every fra
 |---|---|---|
 | UI-D24 | One event centre organized by Needs decision / In progress / Information / History, root-cause incident grouping, restrained grouped toasts, historical snapshots and optional Follow notifications for chosen objects; UI-D08 remains authoritative for critical auto-pause | CONFIRMED on 2026-09-30 |
 
-UI-D24 resolves the notification-layout proposal in UI_UX_DESIGN Section 7.1 while preserving its problem-explanation model. UI-D36 now settles precise pause-menu transitions. Application-focus behaviour and detailed per-event auto-pause override settings remain open under UI-D08.
+UI-D24 resolves the notification-layout proposal in UI_UX_DESIGN Section 7.1 while preserving its problem-explanation model. UI-D40 owns World News/history and ordinary news never auto-pauses merely because it is news. UI-D36 settles precise pause-menu transitions. Application-focus behaviour and detailed per-event auto-pause override settings remain open under UI-D08.
