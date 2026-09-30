@@ -5456,27 +5456,36 @@ A controlled subsidiary remains its own company identity unless a real integrati
 - inventories, projects and orders;
 - operating history and identity.
 
-The player can manage a controlled subsidiary at three practical levels:
+The subsidiary remains **AI-managed**. Control does not turn it into a second fully player-operated company.
 
-1. **Autonomous** — the subsidiary's AI management runs normal business within player-defined group strategy, budgets, reserve/debt policy, market/mode boundaries, acquisition permissions and major-asset approval rules.
-2. **Managed / strategically directed** — routine work remains delegated, while the player can approve/reject or directly initiate major Lines, regional expansion, fleet/infrastructure investments, technology/adoption, top-management changes, major borrowing, acquisitions and asset sales.
-3. **Direct control** — the player can switch the active company context and use the normal Line, Fleet, Finance, Branch, Staff, Construction, Procurement, Maintenance, Contract, Technology and other applicable workflows directly in that subsidiary's name.
+The player instead has a small set of owner powers:
 
-Switching direct-control context does **not** reload the world or merge companies. It changes which company's authority/resources the player is currently exercising.
+1. **Broad direction** — simple high-level intent such as grow/maintain/reduce, business/mode focus, preferred expansion region and a broad investment limit where needed.
+2. **Owner directives** — concrete strategic/operational outcomes such as create/change/close a Line, change service capacity, expand into a region, build/upgrade a major facility or initiate a major asset action.
+3. **Capital and asset transactions** — capital contribution, dividend/distribution, intra-group loan where useful, and explicit sale/lease/transfer of vehicles or infrastructure.
+4. **Major company decisions** — material borrowing, acquisitions, major infrastructure sales, top-management changes and optional whole-company integration.
+
+Do not turn these powers into dozens of detailed policy sliders.
+
+An owner directive states the desired result; the subsidiary's management must then satisfy its real prerequisites through the normal systems.
+
+Example:
+
+> Owner directive: change R12 to 30-minute interval.
+
+The subsidiary may need more vehicles, staff, depot capacity and infrastructure slots. It must acquire/replan those resources legitimately before the change can operate.
+
+If a directive cannot currently be fulfilled, keep it blocked/pending with explainable causes rather than cheating or silently ignoring it.
+
+The player may use familiar Line/asset editors to define a directive, but submitting the result does not directly execute every dependent operation on the subsidiary's behalf.
+
+An owner can make a harmful decision where legally/physically valid. Taking a vehicle away from a subsidiary may create a real shortage. The subsidiary then uses the normal dispatcher/market/recovery rules to reorganize, replace capacity, reduce service or surface an unresolved problem.
 
 The parent cannot spend subsidiary cash, and the subsidiary cannot spend parent cash, without a real transaction.
 
-Group-company interaction can include:
+Group-company interaction uses real ledgers, ownership transfers, agreements and capacity. It never teleports assets or erases physical constraints.
 
-- capital contribution;
-- intra-group loan;
-- dividend/distribution;
-- sale/lease/other valid transfer of vehicles or infrastructure;
-- real access/service agreements between group companies where separate ownership remains.
-
-These actions use real ledgers/agreements and never teleport assets or erase physical capacity constraints.
-
-A controlled subsidiary's top management uses the existing management/delegation model. The player can set approval thresholds and strategic limits rather than manually repeating every routine action.
+A controlled subsidiary's top management uses the existing management/delegation model internally; the player does not separately configure every routine manager rule merely because the company is controlled.
 
 #### Whole-company integration
 
