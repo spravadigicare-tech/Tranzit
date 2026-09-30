@@ -21,6 +21,61 @@ Core pillars:
 5. **Dynamic economy** — transport demand should emerge from companies, cities, supply chains, passengers, state contracts and technology rather than from arbitrary cargo generators.
 6. **Infrastructure matters** — depots, terminals, stations, sidings, turning facilities, maintenance bases, storage, access rights and track capacity are gameplay, not decoration.
 7. **The world responds to the player** — good transport can change city growth, industrial geography and regional prosperity.
+8. **Explainable simulation** — important outcomes must be traceable to visible rules, inputs and state. Avoid hidden modifiers and opaque scores when the player can instead be shown why something happened.
+
+### 1.1 Explainability and no hidden mechanics
+
+Tranzit should avoid **hidden gameplay mechanics**.
+
+Whenever a system materially affects the player's operation, finances, demand, reputation, reliability, contract outcome or feasibility, the UI should expose the important reasons behind that result.
+
+The player does not need to see every internal calculation by default, but must be able to inspect the causal chain.
+
+Examples:
+
+> Line attractiveness decreased  
+> - average delay increased from 3.1 to 7.4 min  
+> - 6.2% of protected connections were missed  
+> - passenger comfort fell because Standard cleaning was skipped on 18% of recent Trips
+
+> Contract bid ranked poorly  
+> - price: competitive  
+> - historical reliability: below customer target  
+> - insufficient guaranteed reserve capacity  
+> - strong competitor relationship with customer
+
+> Trip cannot depart  
+> - compatible locomotive unavailable  
+> - reserve locomotive is in maintenance until 06:42  
+> - next compatible locomotive can reach the station at 07:05
+
+Do not hide material outcomes behind unexplained values such as:
+
+- generic "+10% efficiency";
+- unexplained reliability penalties;
+- invisible relationship modifiers;
+- arbitrary AI preference;
+- opaque feasibility failures.
+
+Where an aggregate score is useful for readability, it must remain drillable into the real contributing factors.
+
+#### UI explanation pattern
+
+The long-term UI should support contextual explanations through **hover/focus tooltips** and linked highlighted terms.
+
+A tooltip can contain highlighted concepts that themselves expose a second contextual explanation after a short intentional hover/focus delay, similar to nested glossary/tooltips used in complex strategy games.
+
+This is a future UI interaction pattern rather than a requirement to implement immediately, but the simulation/data model should preserve enough source information to support it.
+
+Tooltip nesting must remain controlled:
+
+- use it for meaningful game concepts and causal explanations;
+- avoid infinite/deep chains;
+- keep the first layer concise;
+- allow the player to lock/pin an explanation when inspecting a deeper term;
+- keyboard/focus interaction must provide an equivalent to mouse hover.
+
+The key design requirement is not the visual tooltip itself. It is that systems retain **reason codes / contributing factors / source values** instead of returning only a final unexplained number.
 
 ## 2. World, map and regions
 
@@ -1534,6 +1589,70 @@ Normal local discovery of these opportunities depends on branch/commercial prese
 Existing relationships are an advantage, not an unbeatable lock-in. A new carrier can win business through better price, service quality, capacity or successful smaller contracts.
 
 Customer relationship evaluation must use cached historical aggregates and contract outcomes rather than expensive continuous AI.
+
+### 9.2 Service reliability and on-time performance
+
+Reliability is derived from **real Trip history**, not from an abstract hidden reliability stat.
+
+Line and Service Pattern analytics can expose measures such as:
+
+- average arrival/departure delay;
+- on-time performance;
+- cancellation rate;
+- short-formation/reduced-capacity rate;
+- protected connections missed;
+- passengers rebooked because of operator disruption;
+- contractual/SLA service failures where relevant.
+
+The exact metrics shown can differ by service type, but they must originate from actual operating events.
+
+#### On-time definition
+
+"On time" does not mean exactly zero seconds of delay.
+
+The game uses an explicit visible tolerance appropriate to the metric/service being reported.
+
+For example, a dashboard can define:
+
+> On-time arrival: arrival no more than 5 min after published time
+
+or another period/service-appropriate threshold.
+
+The UI must display the threshold used; do not show an unexplained percentage.
+
+Different contracts or authorities can use their own explicit SLA thresholds. Those contractual measurements remain distinct from the company's general passenger-facing reliability metric.
+
+For longer-distance services, the UI can emphasize:
+
+- final-destination punctuality;
+- major interchange punctuality;
+- protected-connection success;
+
+rather than treating every minor intermediate variation as equally important.
+
+#### Reliability feeds other systems transparently
+
+Historical reliability can influence:
+
+- passenger service choice;
+- operator/service reputation;
+- customer relationships;
+- tenders/contracts;
+- management recommendations.
+
+When it does, the contributing operating history must be inspectable.
+
+Example:
+
+> Passenger reliability perception: Below average  
+> - last 30 relevant Trips: 84% within +5 min  
+> - 3 cancellations  
+> - 7 protected missed connections  
+> - improving over the last 10 Trips
+
+Do not apply an invisible random reliability modifier on top of the observed operating record unless a separate real causal factor exists and is shown.
+
+Analytics are calculated from event/history aggregates and rolling windows rather than rescanning every historic Trip every frame.
 
 ## 10. Economy and industries
 
