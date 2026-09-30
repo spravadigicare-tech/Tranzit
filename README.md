@@ -50,6 +50,7 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 | [Fleet, Vehicle Market and Delivery UI](docs/UI_FLEET.md) | Confirmed UI-D22: one Fleet / Vehicle Market / Orders workspace, model-to-offer comparison, contextual acquisition and physical delivery/readiness tracking |
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
+| [TODO](docs/TODO.md) | Living backlog of remaining/open/deferred design, documentation, implementation and test work; not implementation evidence |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Current implementation/test evidence and next executable task |
 | [Data Pipeline](docs/DATA_PIPELINE.md) | Defined date-import convention and still-required data-production work |
 | [Consistency Audit](docs/CONSISTENCY_AUDIT.md) | Review coverage, resolved contradictions and limits of documentation verification |
