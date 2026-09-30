@@ -351,7 +351,7 @@ Ordered parts are not inventory.
 
 A job blocked by parts remains visibly blocked even if a workshop position is free.
 
-The maintenance workspace links into existing procurement/supply agreements rather than creating a separate parts marketplace.
+The maintenance workspace links into the confirmed UI-D32 Procurement workspace in [UI_PROCUREMENT.md](UI_PROCUREMENT.md) for purchase orders, suppliers and reorder rules rather than creating a separate parts marketplace. Maintenance remains authoritative for which part/material the job actually requires and whether it is compatible/reserved.
 
 ## 14. Historical/legacy vehicle support
 
