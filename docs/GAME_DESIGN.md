@@ -8350,7 +8350,7 @@ Major accidents can have real consequences:
 
 ## 38. Finance and failure
 
-Finance is intentionally simpler than the operational/economic simulation. The single accounting unit is literally `money` in both Czech and English, with localized number formatting but no historical currency switching, currency symbols or foreign-exchange subsystem. Use exact fixed-point/integer money postings; Sections 7.1 and 38.1 govern startup debt.
+Finance is intentionally simpler than the operational/economic simulation. The single accounting unit is literally `money` in both Czech and English, with localized number formatting but no historical currency switching, real-world currency symbols or foreign-exchange subsystem. Player-facing UI may use one dedicated neutral coin/token icon as compact shorthand for `money`; this icon is not a second currency, historical symbol or exchange-rate mechanic. Full text, tooltips/accessibility labels and ambiguous contexts retain the `money` unit name. Use exact fixed-point/integer money postings; Sections 7.1 and 38.1 govern startup debt.
 
 Core tools:
 
