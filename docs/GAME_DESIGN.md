@@ -336,9 +336,9 @@ Passenger-service quality is represented through **separate visible factors**, n
 
 Core factors include:
 
-- **Comfort** — seating/berth quality, temperature/heating/air conditioning where relevant, ride/service amenities and the physical vehicle product.
+- **Comfort** — seating/berth quality, temperature/heating/air conditioning where relevant, ride/service amenities and the physical vehicle product; standing/crowding can reduce the experienced comfort on affected travel legs.
 - **Cleanliness** — driven by actual cleaning/service history and turnaround servicing rather than an abstract vehicle bonus.
-- **Crowding** — based on actual occupancy relative to seated/standing capacity and the passenger product being used.
+- **Crowding** — based on actual per-vehicle/per-zone occupancy relative to seated and standing capacity, evaluated over the affected journey segments.
 - **Reliability** — derived from real operating history under Section 9.2.
 - **Travel time** — based on the actual published itinerary, including running time, dwell and expected transfer time.
 - **Frequency / availability** — how often a usable service is offered for the passenger's intended journey/time window.
@@ -410,6 +410,8 @@ Example:
 > - slightly more crowded at peak
 
 The UI does not need to expose raw internal utility math by default, but the relevant inputs, direction of effect and material weighting must be inspectable. Do not allow a passenger choice to be materially decided by an invisible unexplained modifier.
+
+For crowding, itinerary evaluation should consider the actual **length/duration of the affected crowded segment** rather than treating one brief standing leg as equivalent to standing for the entire journey.
 
 Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Leisure/tourism demand depends on the chosen year, income, free time, transport accessibility, urbanization and relevant destinations, not simply how recently the player founded the company. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism. The Early Ages DLC must not project modern travel behaviour backwards into its earlier period, and a 1975 base-game start must not inherit an 1820 demand profile.
 
@@ -3325,6 +3327,22 @@ A reservation-required zone does **not** necessarily mean the ticket must be pur
 
 #### Seated versus standing capacity
 
+Passenger standing capacity is defined **on the individual vehicle / passenger-capacity zone**, not as one Line-wide abstract percentage.
+
+Each applicable coach, bus, tram car, trainset section or other passenger zone can define:
+
+- seated/berth capacity;
+- standing capacity where legally/physically permitted;
+- total usable physical occupancy.
+
+Standing capacity can therefore differ between vehicles in the same consist.
+
+Examples:
+
+> Coach 1 — 54 seats / 0 standing  
+> Coach 2 — 72 seats / 18 standing  
+> Coach 3 — 72 seats / 18 standing
+
 Advance/reserved intercity capacity is normally tied to **seated or berth capacity**, not standing capacity.
 
 Standing capacity is mainly appropriate for:
@@ -3335,13 +3353,51 @@ Standing capacity is mainly appropriate for:
 
 A passenger with a confirmed reserved seat/berth is guaranteed the corresponding capacity class unless a disruption forces re-accommodation.
 
-Open-boarding passengers can use standing capacity where that Service Pattern/vehicle permits it.
+Open-boarding passengers can use standing capacity where the actual vehicle/zone permits it.
+
+Standing is not a separate hidden penalty system.
+
+Once occupancy exceeds available seated capacity in a zone and passengers begin standing, the affected zone's passenger experience worsens through the existing transparent factors:
+
+- **Crowding** increases;
+- **Comfort** decreases for passengers exposed to that standing/crowding condition.
+
+The effect is calculated only for the affected vehicle/zone and travel leg rather than automatically penalizing the whole consist.
+
+Crowding is evaluated **per commercial leg between stops**.
+
+Example:
+
+> Praha → Kolín  
+> Coach 2: 72 seats / 18 standing  
+> Occupancy: 84  
+> → 12 standing passengers; elevated Crowding and reduced Comfort in Coach 2
+
+> Kolín → Pardubice  
+> Occupancy drops to 66  
+> → all passengers can be seated; standing penalty ends for that leg
+
+The duration/distance of the crowded portion matters to passenger choice and experience.
+
+A short standing segment can be acceptable for many urban/suburban passengers, while prolonged standing has a larger negative effect.
+
+Different passenger segments and service types can therefore tolerate standing differently, but the underlying reason remains visible:
+
+- whether standing occurred;
+- how many passengers were affected;
+- on which vehicle/zone;
+- for how much of the journey.
+
+No separate opaque "overcrowding score" should be applied on top of these factors.
+
+If total seated + permitted standing capacity is full, additional open-boarding passengers cannot board that zone/vehicle and follow the normal denied-boarding/alternative-service logic.
 
 The UI must distinguish:
 
 - reserved seated/berth capacity;
 - unreserved seated capacity;
 - standing capacity;
+- passengers currently standing;
 - total physical occupancy.
 
 #### Disruption and consist changes
