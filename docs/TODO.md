@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-09-30 after UI-D36 and the repository-wide UI gap audit.
+Last reviewed: 2026-09-30 after confirming UI-D37 and reconciling its company specification, main UI register and README. UI-D38 is the next design topic; it is not yet approved.
 
 ## How to use this backlog
 
@@ -39,33 +39,30 @@ Rules:
 
 ### Finish the remaining major UI/UX gaps
 
-- [ ] **[DESIGN] External Company & Competitor Detail** — complete the full external-company object beyond UI-D27 bilateral agreements: adaptive roles, public/known operation/network, products/services, relationship/history, ownership and competitor information boundaries. Proposed next decision: **UI-D37**.
-- [ ] **[DESIGN] Technology & Research UI** — research capacity, historically available technology, company adoption/install requirements, active/completed research and concrete capability effects. Proposed **UI-D38**.
-- [ ] **[DESIGN] Ownership, Acquisitions & Infrastructure Market UI** — shares/control, acquisitions, subsidiaries/integration, asset/infrastructure purchases and sales, inherited contracts/liabilities. Proposed **UI-D39**.
-- [ ] **[DESIGN] News & Historical Events UI** — world news, historical/macroeconomic developments, source/impact explanation and navigation into affected regions/industries/company decisions. Proposed **UI-D40**.
+- [ ] **[DESIGN] Technology & Research UI** — next design topic: research capacity, historically available technology, company adoption/install requirements, active/completed research and concrete capability effects. Proposed **UI-D38**, not yet approved. Preserve the core distinction between technology availability, company adoption and finite vehicle offers.
+- [ ] **[DESIGN] Ownership, Acquisitions & Infrastructure Market UI** — shares/control, acquisitions, subsidiaries/integration, asset/infrastructure purchases and sales, inherited contracts/liabilities. Proposed **UI-D39**. UI-D37 already confirms the company-detail information surface, not this transaction workflow or new shareholder/control rights.
+- [ ] **[DESIGN] News & Historical Events UI** — world news, historical/macroeconomic developments, source/impact explanation and navigation into affected regions/industries/company decisions. Proposed **UI-D40**. Reuse UI-D37's known company-event history and canonical events rather than duplicating them.
 - [ ] **[DESIGN] Final navigation taxonomy + global search** — finalize detailed contents under Build / Operations / Business / Assets / Company / World only after the remaining workflows above are specified; include searchable known objects without bypassing information boundaries.
 
 ## Open decisions
 
 - [ ] **[DESIGN] Application-focus loss/return** — decide what happens to simulation/pause state on Alt-Tab, focus loss and focus return. This is the remaining focus-related part of UI-D08.
 - [ ] **[DESIGN] Detailed event auto-pause/notification overrides** — decide how much per-event customization Settings should expose beyond the confirmed default that critical incidents auto-pause.
-- [ ] **[DESIGN] External-company full layout** — UI-D27 confirms all bilateral agreements, but the complete external-company/competitor detail is still open until UI-D37 is accepted.
 - [ ] **[DESIGN] Player-facing vocabulary/navigation glossary** — final Czech/English labels for domain objects remain candidates in UI_UX_DESIGN Section 4.2; resolve with final navigation instead of independently.
 
 ## Next
 
 ### After the remaining UI decisions
 
-- [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording superseded by UI-D01–UI-D40, verify cross-links, decision table and acceptance scenarios.
+- [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording only where a decision has actually been confirmed, verify cross-links, decision table and acceptance scenarios. UI-D38–UI-D40 remain proposals until accepted.
 - [ ] **[DOC] Reconcile final navigation with README, UI_UX_DESIGN and V1_IMPLEMENTATION_BRIEF**.
-- [ ] **[DOC] Review UI-D27 wording after UI-D37** so it no longer says the broader external-company layout is open once that detail is confirmed.
 - [ ] **[DOC] Review UI_EVENTS/UI_SYSTEM_MENU after the focus/override decisions** and close the remaining UI-D08 status if fully resolved.
 
 ### Implementation handoff
 
 - [ ] **[IMPL] Reinspect the current repository/toolchain and begin M0** according to [OPENCODE_START.md](OPENCODE_START.md) and [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md).
 - [ ] **[IMPL] Maintain [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)** as code/tests/evidence appear; do not infer implementation from the completed design backlog.
-- [ ] **[TEST] Execute acceptance/build evidence progressively** rather than waiting until the end; formal release gates remain in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md).
+- [ ] **[TEST] Execute acceptance/build evidence progressively** rather than waiting until the end; formal release gates remain in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md). UI-D37's EXTCO-A01–EXTCO-A14 are evidence requirements, not executed gameplay tests.
 
 ## Blocked
 
@@ -94,12 +91,13 @@ These are intentional non-blockers for the current V1/UI direction:
 
 ## Done recently
 
-The following design directions are already accepted and should **not** be reopened merely because they no longer appear under Now:
+These are completed design/documentation tasks, not implemented game features. Remaining parts of partially confirmed decisions stay open above and in the owning register.
 
-- [x] UI-D01–UI-D15 — global visual/window/navigation/pause/link/Line/station/minimalism foundations.
+- [x] Accepted foundations within UI-D01–UI-D15 — global visual/window/navigation/pause/link/Line/station/minimalism directions. UI-D05 detailed taxonomy/glossary and UI-D08 focus/event-override details are not fully closed.
 - [x] UI-D16–UI-D24 — depots, commercial, construction, finance, company, map, fleet, shipments, events.
 - [x] UI-D25–UI-D33 — Trip, capacity/access, external-company agreements, cities/regions, tariffs, maintenance, duties, procurement, licences/market entry.
 - [x] UI-D34 — neutral compact money icon for the single money accounting unit.
 - [x] UI-D35 — New Game and opening-only company-founding tutorial.
 - [x] UI-D36 — main menu, campaign saves, atomic save safety, pause-menu lifecycle, Esc priority and settings.
-- [x] Documentation checks currently cover structural validation and validator tests; they are **not** gameplay implementation evidence.
+- [x] **[DESIGN/DOC] UI-D37 — External Company & Competitor Detail** — expanded [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md) around preserved UI-D27 agreements, registered the decision/acceptance scenarios in [UI_UX_DESIGN.md](UI_UX_DESIGN.md), and reconciled README and obsolete company-layout-open wording. Six adaptive cards, source/time/permission limits, canonical offer routing and retained company history are confirmed.
+- [x] Documentation checks cover structural validation and validator tests; they are **not** gameplay implementation evidence.
