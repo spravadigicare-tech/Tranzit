@@ -259,6 +259,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | W-31 | Global search over known and hidden objects | Known cities/Lines/vehicles/companies/contracts/functions resolve to exact identities; hidden/private/undiscovered objects stay absent and search never issues gameplay commands or activates a region |
 | W-32 | Focus loss/return with setting On and Off | With On, focus loss adds only its own pause reason and return removes only that reason; otherwise-running game resumes at remembered speed, while manual/critical/menu/load pauses remain. With Off, focus change does not alter simulation time |
 | W-33 | Critical auto-pause and informational-toast settings | Global critical auto-pause On/Off and informational-toasts On/Off affect only presentation/pause policy; no per-event matrix exists, and incidents/history/safety consequences remain intact |
+| W-34 | Commit binding actions while simulation is paused | Valid purchase/order/agreement/application/project commands commit exactly once at the current game timestamp; immediate ledger/reservation/ownership effects apply where canonical, while all elapsed processing/physical work remains at zero progress until resume |
 | W-15 | No active branch, but setup preview and marketplace are available | Public setup information does not reveal/accept hidden routine jobs; eligible public/direct opportunities obey communication rules |
 | W-16 | Compare first-release selection UI with wider-design catalogues | Only 1900, rail and road in V1; wider presets/modes are not removed from design or silently enabled; exact approved geographic coverage retained |
 
@@ -281,6 +282,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | U-06 | Fresh standalone offline session with game files only | No Editor-only asset paths, network map dependency, missing shaders/models or manual scene setup |
 | U-07 | Review presentation screenshots and sound manually | Real in-engine evidence; coherent art rather than labelled debug primitives; audio/settings functional |
 | U-08 | Onboarding followed from New Game without debug tools | Reach legitimate first service; guide dismissible; no rule bypasses |
+| U-09 | Review core objects/navigation across Czech and English | Canonical UI_GLOSSARY labels are used consistently; Line/Service Pattern/Trip, Shipment/Cargo portion/Transport plan and order/agreement identities are not conflated |
 | D-01 | Run build/test script with invalid Unity path or hung process | Nonzero exit/actionable log and timeout; no endless wait or false completion |
 | D-02 | Clean rebuild from pinned content/package versions | Reproducible definitions/IDs and useful change report; no dependence on another developer's Library folder |
 
