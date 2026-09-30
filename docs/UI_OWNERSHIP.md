@@ -1,8 +1,8 @@
 # Tranzit — Ownership, acquisitions and infrastructure market UI
 
-> **Status: CONFIRMED UI DIRECTION — UI-D39, 2026-09-30.** The player accepted a lightweight ownership/acquisition model with materially deeper control over controlled subsidiaries. Minority ownership remains investment/governance rather than direct operational authority. A controlled company may remain autonomous, be strategically directed, or be opened in direct-control context using the same normal game systems in that company's name. Companies retain separate cash, obligations, licences, staff and assets until a real transfer/integration occurs. Whole-company integration is optional, not required to exercise control. Infrastructure remains a physical asset with inherited agreements, condition and operational dependencies. Exact legal/control thresholds, valuation formulas and transaction-pricing balance remain core/content work. This specification is not an implemented or tested UI.
+> **Status: CONFIRMED UI DIRECTION — UI-D39, refined 2026-09-30.** Ownership is deliberately lightweight. A controlled subsidiary remains an AI-managed company; the player does not switch into it and micromanage its ordinary operation. Control instead gives a small set of meaningful owner actions: set broad direction, issue a concrete directive such as changing a Line, transfer capital/assets, and approve or initiate major company decisions. The subsidiary then solves the operational consequences through the same real simulation rules as any other company. Minority ownership remains investment/governance only. Infrastructure remains physical and retains applicable obligations/state through ownership changes. This specification is not an implemented or tested UI.
 
-Read with [GAME_DESIGN.md](GAME_DESIGN.md), especially Sections 29, 38–39; [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md) for UI-D37; [UI_COMPANY.md](UI_COMPANY.md); [UI_FINANCE.md](UI_FINANCE.md); [UI_CAPACITY_ACCESS.md](UI_CAPACITY_ACCESS.md); [UI_CONSTRUCTION.md](UI_CONSTRUCTION.md); and [UI_UX_DESIGN.md](UI_UX_DESIGN.md). Acquisition never bypasses physical continuity, existing contracts, licences, debt, access rights or save/load identity.
+Read with [GAME_DESIGN.md](GAME_DESIGN.md), especially Sections 29 and 38–39; [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md) for UI-D37; [UI_COMPANY.md](UI_COMPANY.md); [UI_FINANCE.md](UI_FINANCE.md); [UI_CAPACITY_ACCESS.md](UI_CAPACITY_ACCESS.md); [UI_CONSTRUCTION.md](UI_CONSTRUCTION.md); and [UI_UX_DESIGN.md](UI_UX_DESIGN.md).
 
 ## 1. Workspace
 
@@ -16,35 +16,26 @@ Use three practical views:
 - **Companies / Firmy**
 - **Infrastructure / Infrastruktura**
 
-Contextual actions from UI-D37 company detail or an infrastructure asset open this same workflow already scoped to the selected target.
+Contextual actions from a company or asset open the same workflow already scoped to that target.
 
-Do not build a deep stock-exchange simulator.
+Do not build a stock-exchange or corporate-management minigame.
 
 ## 2. Ownership is not the same as control
 
 Always distinguish:
 
-- economic ownership percentage/share;
-- governance/control rights;
-- direct operational authority.
+- ownership/economic interest;
+- actual control rights.
 
-A minority stake can provide:
+A minority stake may provide:
 
-- dividends/distributions where applicable;
+- dividends/distributions;
 - ownership information the player is entitled to receive;
-- governance/voting rights where defined;
-- exposure to value/performance.
+- applicable governance rights.
 
-It does **not** automatically permit:
+It does not permit operational owner directives unless the player actually controls the company.
 
-- editing the company's Lines;
-- moving its vehicles;
-- spending its cash;
-- selling its infrastructure;
-- changing staff;
-- cancelling its contracts.
-
-The UI shows the actual state, for example:
+Show, for example:
 
 > Our holding: 20%  
 > Control: none
@@ -54,500 +45,372 @@ or:
 > Our holding: 65%  
 > Control: yes
 
-Do not hard-code one universal percentage threshold into presentation. Control follows the actual ownership/governance rules of the company/jurisdiction.
+Do not hard-code one universal control percentage into presentation. Control follows the actual ownership/governance rules.
 
-## 3. Buying shares or a stake
+## 3. Buying a stake or company
 
-Shares/stakes are purchasable only when a real seller/transaction opportunity exists or the relevant owners are willing to negotiate.
+Shares/stakes are purchasable only when a real seller/opportunity exists or owners are willing to negotiate.
 
-Possible flows include:
+Keep the interaction simple:
 
-- buy an offered block;
-- make an offer for a specified stake;
-- respond to a counteroffer;
-- acquire a controlling block;
+- buy an offered stake;
+- make an offer;
+- acquire a controlling stake;
 - acquire the whole company.
 
-Example:
+No order book, short selling, derivatives or trading minigame.
 
-> 15% stake offered  
-> Seller: founders of Morava Rail  
-> Price: [money icon] 84,000  
-> Our holding after purchase: 25%
->
-> **Buy stake**
-
-Or:
-
-> Requested stake: 40%  
-> Offer: [money icon] 220,000
->
-> **Submit offer**
-
-The counterparty can accept, reject or counter according to the actual company/ownership simulation.
-
-No order book, short selling, derivatives, intraday chart or speculative trading minigame is required.
-
-## 4. Acquisition review
-
-Before buying a controlling stake or whole company, show what the player is actually acquiring.
-
-A review can include, where known and applicable:
+Before a major acquisition, show the known material scope:
 
 - purchase price;
-- ownership percentage/control obtained;
-- cash/debt position;
-- vehicles/rolling stock;
-- branches and facilities;
-- owned infrastructure/land;
-- active Lines/services;
-- staff/management;
-- leases;
-- active contracts and agreements;
-- current projects/orders;
+- ownership/control obtained;
+- cash/debt;
+- major assets/infrastructure;
+- active Lines;
+- relevant contracts/leases;
 - licences/permissions;
-- material disputes/obligations.
+- material obligations or change-of-control issues.
 
-Also show known change-of-control or non-transferable items.
+The acquisition view respects UI-D37 knowledge boundaries.
 
-Example:
+## 4. Controlled subsidiary: always AI-managed
 
-> **Acquire Morava Rail**
->
-> Purchase price: [money icon] 740,000
->
-> Includes:
-> 38 vehicles/rolling-stock assets  
-> 3 depots  
-> 2 owned stations  
-> 61 km owned infrastructure
->
-> Also inherits:
-> debt [money icon] 112,000  
-> 14 active contracts  
-> 3 leases
->
-> Needs attention:
-> 1 licence may require replacement/recognition  
-> 2 customer contracts contain change-of-control conditions
+A controlled subsidiary remains its own company and **continues to be operated by its AI management**.
 
-The transaction review respects UI-D37 information boundaries. Opening an acquisition flow does not reveal previously unknown private information unless the transaction/due-diligence rules legitimately provide it.
+The player does not switch into the subsidiary's normal full management UI and does not manually manage its daily:
 
-## 5. Controlled subsidiary modes
+- duties;
+- staff scheduling;
+- maintenance;
+- routine procurement;
+- ordinary vehicle assignments;
+- disruption recovery;
+- everyday commercial work.
 
-A controlled company remains one separate company identity unless integrated.
+The subsidiary keeps separate:
 
-The player may operate it using three management modes.
-
-### 5.1 Autonomous
-
-The subsidiary continues to operate through its AI management within player-defined group constraints.
-
-The player can set high-level policy such as:
-
-- growth posture;
-- investment budget;
-- minimum cash reserve;
-- debt limits;
-- permitted regions/markets;
-- permitted transport modes/business areas;
-- whether acquisitions are allowed;
-- whether major infrastructure sales require approval;
-- dividend/distribution policy.
-
-Routine operations remain delegated.
-
-### 5.2 Managed / strategically directed
-
-The subsidiary keeps routine management, but major plans and decisions can be proposed to or directly instructed by the player.
-
-The player can, subject to the company's real authority/resources:
-
-- approve/reject major new Lines;
-- order expansion into a specific region;
-- request a depot/station/infrastructure project;
-- approve major fleet purchases;
-- set fleet/service/tariff policies;
-- start technology/research/adoption work;
-- appoint/remove top management;
-- set budgets and approval thresholds;
-- require approval for large borrowing, acquisitions, infrastructure sales or other material actions.
-
-The subsidiary may generate proposals such as:
-
-> Expand Brno–Zlín  
-> Investment: [money icon] 83,000  
-> 2 additional trainsets  
-> depot expansion  
-> regional licence
->
-> **Approve · Edit plan · Reject**
-
-Approving uses the same real gameplay systems and constraints; it does not grant the required assets or rights for free.
-
-### 5.3 Direct control
-
-A controlled company can be opened in **direct-control context**.
-
-The current-company selector makes the active command authority explicit, for example:
-
-> Digicare Transport ▼  
-> Morava Rail  
-> Central Coaches
-
-When Morava Rail is active, the normal interfaces operate on Morava Rail's authoritative state:
-
-- Lines;
-- Fleet;
-- Duties;
-- Finance;
-- Branches;
-- Staff/management;
-- Construction;
-- Procurement;
-- Maintenance;
-- Contracts;
-- Technology;
-- licences/market access.
-
-The world is not reloaded. Only the company whose authority/resources the player is currently exercising changes.
-
-Direct control does not merge the subsidiary into the parent.
-
-## 6. Separate company economies
-
-Every company retains its own:
-
-- cash;
-- debt;
-- revenues/costs;
+- cash/debt;
+- staff/management;
 - contracts;
 - licences;
-- staff;
 - vehicles;
 - infrastructure;
 - inventories;
-- orders;
-- reputation/history where applicable.
+- projects/orders;
+- operating history.
 
-When directly controlling a subsidiary, the bottom-bar cash and company-scoped summaries show that company's money, not group-consolidated cash.
+Control gives owner authority, not a second company to micromanage.
 
-The parent cannot spend subsidiary cash, and the subsidiary cannot spend parent cash, unless a real intra-group transaction provides funds.
+## 5. Four owner interactions
 
-## 7. Intra-group finance
+Keep owner interaction deliberately small.
 
-Controlled companies may use real intra-group financial transactions such as:
+### 5.1 Direction
 
-### Capital contribution
+Set only broad company direction, for example:
 
-> Parent → subsidiary  
-> [money icon] 50,000
+- grow / maintain / reduce;
+- preferred transport/business focus;
+- permitted or preferred expansion region;
+- broad investment limit where needed.
 
-Parent cash decreases and subsidiary cash increases according to the actual transaction/accounting rule.
+Do not create dozens of policy sliders.
 
-### Intra-group loan
+### 5.2 Directives
 
-Show:
+The player can issue an owner directive for a meaningful concrete outcome.
 
-- lender/borrower;
-- principal;
-- rate/terms where applicable;
-- repayment schedule;
-- outstanding balance.
+Typical directives:
 
-It remains a real receivable/liability, not free cash.
+- create a Line;
+- change a Line;
+- close a Line;
+- increase/decrease service capacity;
+- expand into a region;
+- build/upgrade a major facility;
+- acquire/sell a major asset where governance allows.
 
-### Dividend/distribution
-
-A controlled or minority-owned company may distribute funds where the financial/company rules permit.
-
-Example:
-
-> Distribution: [money icon] 20,000  
-> Our ownership: 75%  
-> Player company receives: [money icon] 15,000
-
-Do not create dividend cash if the company cannot legally/economically make the distribution under the simplified finance rules.
-
-## 8. Intra-group asset transfers
-
-Assets can move between group companies only through an explicit valid transfer.
-
-Supported forms can include, where applicable:
-
-- sale;
-- lease;
-- capital contribution/transfer;
-- other canonical ownership transfer.
-
-For a vehicle transfer, show:
-
-- current owner → new owner;
-- price/terms;
-- current physical location;
-- current duty/commitment;
-- effective transfer timing;
-- agreements or rights that do/do not transfer.
-
-Ownership transfer never teleports the asset.
-
-A running vehicle remains physically where it is and its ongoing obligations must be resolved consistently before/through the effective transfer.
-
-Use the same principle for depots, stations, track, land and other transferable assets.
-
-## 9. Shared use without ownership transfer
-
-Group membership does not automatically make every asset free/shared.
-
-A subsidiary-owned workshop, station, depot, transport service or capacity can be used by another group company through a real agreement/access rule where appropriate.
-
-Examples:
-
-- maintenance agreement;
-- depot/yard access;
-- station/infrastructure capacity;
-- vehicle lease;
-- supply/service agreement;
-- external transport;
-- ticketing/partner arrangement.
-
-These reuse the canonical agreement systems. Group ownership can affect commercial terms/policy, but it does not erase capacity or physical constraints.
-
-## 10. Subsidiary management and authority
-
-For controlled companies, the player can appoint/remove top management where governance rights allow it.
-
-Use the existing management/delegation model for:
-
-- budgets;
-- purchase limits;
-- contract limits;
-- borrowing approval;
-- acquisition approval;
-- infrastructure sale approval;
-- region/market expansion authority;
-- operational policy.
+Use existing editors where useful, but submitting the change creates an **owner directive**, not direct player operation of the subsidiary.
 
 Example:
 
-> CEO: Karel Beneš
+> Owner changed R12 to a 30-minute interval.
 >
-> May:
-> buy vehicles up to [money icon] 20,000  
-> sign routine contracts  
-> adjust Lines
+> Morava Rail now needs:
+> +3 suitable trainsets  
+> additional crew capacity  
+> more depot capacity  
+> revised infrastructure slots
+
+The subsidiary then solves those requirements itself through its normal planners/markets/contracts.
+
+If it cannot currently execute the directive:
+
+> **Directive blocked**
 >
-> Requires parent approval:
-> enter a new country  
-> borrow above [money icon] 50,000  
-> buy/sell infrastructure  
-> acquire another company
+> No suitable vehicles available  
+> Required route capacity unavailable
+>
+> **Show blockers**
 
-Do not create a second unrelated manager-policy system for subsidiaries.
+The directive remains explainable rather than silently failing or cheating.
 
-## 11. Group overview
+### 5.3 Capital and asset transfer
 
-Once the player owns stakes in multiple companies, Company UI provides a compact group view.
+Allow straightforward owner transactions:
+
+- capital contribution;
+- dividend/distribution where permitted;
+- intra-group loan where useful;
+- transfer/sale/lease of a vehicle or infrastructure asset.
+
+Every transfer is real.
+
+A transferred vehicle:
+
+- keeps its physical location;
+- retains current operational state until the effective transfer;
+- may create a fleet shortage in the subsidiary;
+- does not teleport or duplicate.
+
+Before confirming, show the main known consequence.
 
 Example:
+
+> Transfer Locomotive 021 to parent company
+>
+> Current use: R8  
+> No replacement currently available  
+> Morava Rail will need to reorganize service or acquire replacement capacity.
+>
+> **Transfer anyway**
+
+After the transfer, the subsidiary's AI resolves the shortage through normal rules.
+
+### 5.4 Major company decisions
+
+The owner can initiate or approve major matters such as:
+
+- major borrowing;
+- acquisition/sale of another company;
+- major infrastructure sale;
+- appointment/removal of top management;
+- whole-company integration.
+
+Keep this to genuinely material decisions. Routine purchases/contracts stay with subsidiary management.
+
+## 6. Editing a subsidiary Line
+
+A controlled subsidiary's Line can open the same familiar Line information/editor components where useful.
+
+The difference is authority.
+
+For the player's own company:
+
+> Prepare change / Activate
+
+For a subsidiary:
+
+> **Issue directive**
+
+The directive records the desired outcome/configuration.
+
+The subsidiary then:
+
+1. validates it;
+2. obtains vehicles/staff/capacity/permissions/facilities as required;
+3. prepares the operational change;
+4. applies it only when real prerequisites allow.
+
+The owner can inspect progress/blockers without manually executing every dependency.
+
+## 7. Owner directives can create problems
+
+Do not protect the player from bad owner decisions by refusing every harmful action.
+
+If the player removes a needed vehicle or orders an aggressive Line change, show the consequence and allow it where legally/physically possible.
+
+The subsidiary must then react using normal simulation:
+
+- reserve/substitute assets;
+- reorganize duties;
+- acquire/lease replacements;
+- delay the directive;
+- reduce service;
+- surface an unresolved blocker.
+
+The AI cannot invent resources merely because the owner issued a directive.
+
+## 8. Group overview
+
+Company UI shows a compact group/holdings list:
 
 > **Our group**
 >
-> Digicare Transport  
-> ├ Morava Rail — 100%, controlled  
-> └ Central Coaches — 65%, controlled
+> Morava Rail — 100%, controlled  
+> Central Coaches — 65%, controlled
 >
-> Minority investments  
+> **Minority investments**
+>
 > Bohemia Logistics — 18%
 
-Show:
+For each controlled subsidiary show only the useful owner-level information:
 
-- ownership;
-- control status;
-- management mode;
-- major issue/decision;
-- current financial/operating summary where entitled;
-- direct link to company detail or direct-control context.
+- ownership/control;
+- broad direction;
+- active owner directives;
+- major blocker/decision;
+- compact financial/operating summary where appropriate.
 
-Avoid a mandatory complex organizational-chart editor.
+Open the normal UI-D37 company detail for broader company information.
 
-## 12. Company integration
+Avoid a complex organizational-chart editor.
 
-A controlled subsidiary can optionally be **integrated into the parent** where allowed.
+## 9. Intra-group use without transfer
 
-Integration is a real organizational/legal transition, not merely changing the selected-company dropdown.
+Group ownership does not automatically make every asset free/shared.
 
-Before confirming, show effects on:
+If another group company uses a subsidiary's:
 
-- vehicles/assets;
-- infrastructure/land;
+- workshop;
+- depot;
+- infrastructure;
+- transport capacity;
+- leased vehicle;
+- supply/service;
+
+use the canonical access/agreement/capacity rules where needed.
+
+Group relationship can simplify commercial intent, but not physical capacity.
+
+## 10. Company integration
+
+A controlled subsidiary can optionally be integrated into the parent.
+
+Integration is separate from ordinary owner control.
+
+Before confirmation show material effects on:
+
+- assets/infrastructure;
 - staff;
-- debt;
-- contracts;
-- leases;
-- licences/permissions;
+- cash/debt;
+- contracts/leases;
+- licences;
 - Lines/services;
-- active projects/orders;
-- cash/inventories;
-- names/identity/history;
-- non-transferable/change-of-control items.
+- projects/orders;
+- non-transferable/change-of-control obligations.
 
-Physical assets remain in place.
+Physical vehicles/assets stay where they are.
 
-Running Trips, cargo, construction and maintenance do not teleport/reset.
+Running Trips, cargo, construction and maintenance do not reset or teleport.
 
-Contracts/licences transfer only where their real rules permit it. Items requiring consent/reapplication remain explicit dependencies/problems.
+Only rights/obligations that may legally/business-wise transfer do so.
 
-Historical identity remains inspectable after integration.
+Historical company identity remains inspectable.
 
-## 13. Infrastructure market
+## 11. Infrastructure market
 
 Infrastructure can be bought/sold as real physical assets.
 
-Examples include:
-
-- station/terminal;
-- depot/workshop;
-- track/corridor;
-- yard;
-- land/site;
-- infrastructure complex;
-- supported partial asset package.
-
-An offer shows:
+An offer should expose the material known scope:
 
 - seller;
-- exact included asset scope;
+- included assets;
 - price;
-- ownership;
 - physical condition;
-- relevant maintenance state;
-- active leases/access agreements;
+- existing leases/access rights;
 - capacity commitments;
-- projects/work orders;
-- legal/access constraints;
-- dependencies affecting the buyer.
+- active works/projects;
+- important dependencies.
 
-Buying infrastructure does not create new capacity or reset its current state.
+Buying infrastructure does not reset it or create capacity.
 
-## 14. Existing third-party rights survive sale where applicable
+## 12. Existing rights survive ownership change where applicable
 
-Buying an infrastructure owner/asset does not automatically cancel:
+Buying a station, line or other infrastructure does not automatically cancel valid:
 
 - guaranteed slots;
 - leases;
 - tenant rights;
 - access agreements;
-- construction commitments;
 - service agreements;
-- easements/connection rights;
-- other binding obligations.
+- capacity commitments.
 
-Example:
+Ownership cannot be used to erase already contracted rights.
 
-The player buys a station with competitor guaranteed calls.
+## 13. Partial asset sale
 
-Those valid calls remain protected according to their agreements.
-
-Ownership is not a button to evict competitors from already contracted capacity.
-
-## 15. Partial asset sale
-
-Support partial sales such as:
+Allow partial sales, for example:
 
 > sell track  
 > keep depot
 
-The review must expose dependencies created by the proposed split.
+The review must expose newly created dependencies.
 
 Example:
 
-> After sale, retained Brno depot requires access over the sold railway section.  
-> No post-sale access agreement is currently secured.
+> Retained depot requires access over the railway being sold.  
+> No post-sale access is secured.
 
-The player can then:
+The player can arrange access, change the sale or accept the consequence.
 
-- arrange retained access;
-- change sale scope;
-- cancel the proposed transaction.
+Do not create a free access right.
 
-Do not allow the UI to silently create access just to make the sale feasible.
+## 14. Distress opportunities
 
-## 16. Selling player-owned assets
+A distressed company can create concrete opportunities such as:
 
-From a player-owned infrastructure detail, **Sell** opens the same canonical asset-sale workflow.
+- stake for sale;
+- company sale;
+- depot/track/station sale.
 
-Show:
+Keep these tied to real companies/assets and obligations.
 
-- proposed buyer;
-- offered price;
-- exact ownership scope;
-- active contracts/leases/access;
-- player Lines/facilities depending on the asset;
-- post-sale rights, if any;
-- debts/security/other applicable encumbrances.
+Do not create an abstract unlimited bankruptcy shop.
 
-A sale remains a proposal until explicitly accepted.
-
-## 17. Distress and acquisition opportunities
-
-A distressed external company may create real opportunities such as:
-
-- offered assets;
-- offered ownership stake;
-- owner seeking a controlling buyer;
-- restructuring transaction.
-
-Do not create an abstract unlimited “bankruptcy shop”.
-
-The opportunity remains tied to concrete company/asset identities and their real obligations/state.
-
-## 18. Save/load and identity safety
+## 15. Save/load safety
 
 Persist:
 
-- ownership percentages/rights;
-- control state;
-- subsidiary management mode;
-- group policies/approval limits;
-- intra-group loans/transfers;
-- acquisition proposals;
-- accepted acquisitions;
-- integration state;
-- infrastructure-sale proposals/transactions.
+- ownership/control;
+- subsidiary direction;
+- active owner directives and progress;
+- capital/asset transactions;
+- acquisition/integration state;
+- infrastructure transactions.
 
-Save/load must never:
+Save/load must not duplicate:
 
-- duplicate shares;
-- duplicate acquisition payment;
-- transfer an asset twice;
-- merge cash ledgers accidentally;
-- reset subsidiary AI policy;
-- restart completed integration;
-- lose inherited contracts/rights;
-- teleport transferred physical assets.
+- shares;
+- acquisition payments;
+- owner directives;
+- asset transfers;
+- dividends/loans;
+- infrastructure ownership changes.
 
-## 19. Acceptance evidence to collect
+It must not teleport assets or reset subsidiary AI response.
+
+## 16. Acceptance evidence to collect
 
 | ID | Required scenario |
 |---|---|
-| OWNUI-A01 | Buy a minority stake and verify dividends/governance information without direct operational control or access to private subsidiary commands. |
-| OWNUI-A02 | Obtain actual control and switch the company between Autonomous, Managed and Direct control without changing ownership or merging ledgers. |
-| OWNUI-A03 | Direct-control a subsidiary and use normal Line/Fleet/Finance/Construction/etc. UI against that company's separate cash/assets/contracts. Switching back leaves both companies' authority/state intact. |
-| OWNUI-A04 | Set subsidiary strategy, budget and approval thresholds; AI management operates within them and surfaces material proposals without inventing resources. |
-| OWNUI-A05 | Make capital contribution, intra-group loan and dividend/distribution. Cash/debt/receivables post exactly once to the correct company ledgers. |
-| OWNUI-A06 | Transfer/lease a vehicle between group companies while it has a physical location/current duty. Ownership changes only through the real transaction and the asset never teleports/duplicates. |
-| OWNUI-A07 | Use a subsidiary workshop/infrastructure from another group company via a real agreement. Group ownership does not bypass physical capacity/access. |
-| OWNUI-A08 | Integrate a controlled subsidiary with active vehicles, Trips, staff, debt, contracts and a non-transferable licence. Assets remain physical; eligible obligations transfer once; the incompatible licence remains an explicit issue. |
-| OWNUI-A09 | Buy infrastructure carrying third-party guaranteed access and active maintenance/construction state. All applicable obligations/state survive the ownership change. |
-| OWNUI-A10 | Sell part of an infrastructure complex while retaining a dependent depot. UI identifies loss of access and does not create a free post-sale right. |
-| OWNUI-A11 | Save/load during stake acquisition, group transfer, infrastructure sale and integration. No duplicate share, money posting, ownership transfer or asset occurs. |
-| OWNUI-A12 | Verify CZ/EN, enlarged UI, exact-object links and UI-D34 money display across holdings, acquisitions, transfers and group overview. |
+| OWNUI-A01 | Buy a minority stake and verify financial/governance information without owner directives or operational control. |
+| OWNUI-A02 | Obtain control. Subsidiary remains AI-managed and separate; no full direct-control/company-context mode appears. |
+| OWNUI-A03 | Change a subsidiary Line through an owner directive. The subsidiary acquires/replans real dependencies itself and reports blockers without cheating. |
+| OWNUI-A04 | Transfer a currently used vehicle to the parent. Show the shortage consequence, preserve physical location/state, and let subsidiary AI resolve the resulting fleet problem. |
+| OWNUI-A05 | Give a simple growth/region/business-focus direction. AI decisions remain within that direction without dozens of separate policy controls. |
+| OWNUI-A06 | Make capital contribution, dividend/distribution or intra-group loan. Money posts once to the correct separate ledgers. |
+| OWNUI-A07 | Use group-owned workshop/infrastructure through real access/capacity rules; common ownership does not create physical capacity. |
+| OWNUI-A08 | Integrate a controlled subsidiary with active Trips, debt, contracts and a non-transferable licence. No physical reset/teleport; incompatible rights remain explicit. |
+| OWNUI-A09 | Buy infrastructure carrying third-party access/capacity rights. Applicable commitments survive ownership change. |
+| OWNUI-A10 | Sell part of an infrastructure complex while retaining a dependent depot. Missing post-sale access is explicit and not invented. |
+| OWNUI-A11 | Save/load with active owner directives, acquisition, asset transfer and infrastructure sale. No duplicate command/payment/ownership transition occurs. |
+| OWNUI-A12 | Verify CZ/EN, enlarged UI, exact-object links and compact owner-level group overview. |
 
-## 20. Decision record
+## 17. Decision record
 
 | ID | Decision | Status |
 |---|---|---|
-| UI-D39 | Lightweight ownership/acquisition/infrastructure-market UI with separate ownership versus control; controlled subsidiaries can be autonomous, strategically managed or directly controlled through the normal company UI; company economies remain separate; explicit intra-group finance/assets/access and optional real integration preserve physical/contracts/licence continuity | CONFIRMED on 2026-09-30 |
+| UI-D39 | Lightweight ownership/acquisition/infrastructure-market UI. Controlled subsidiaries always remain AI-managed; control provides a small set of owner interactions: broad direction, concrete owner directives, capital/asset transfer and major-company decisions. Subsidiary AI implements consequences through normal simulation. No full direct-control mode | CONFIRMED; refined on 2026-09-30 |
 
-UI-D39 complements UI-D01–UI-D38. GAME_DESIGN Sections 29.1 and 39 own the canonical ownership/acquisition/infrastructure-market mechanics.
+UI-D39 complements UI-D01–UI-D40. GAME_DESIGN Sections 29.1 and 39 own the canonical ownership/acquisition/infrastructure-market mechanics.
