@@ -18,7 +18,7 @@ Use independently openable compact cards, not a mandatory setup sequence:
 | Workforce / Personál | Requirements, filled capacity, shortages/reserve and salary by ordinary profession; sources of workload and supported staffing controls |
 | Management and authority / Vedení a pravomoci | Named people, occupied/vacant roles, responsibility, effective delegated policies and decisions awaiting approval |
 | Licences and permissions / Licence a oprávnění | What the company may operate and where, applications, requirements, validity and renewal/expiry risks; open the confirmed UI-D33 Licences and expansion workspace for the full market/licence/permit/application view |
-| Company systems / Firemní systémy | Actually adopted communication/business systems, current capabilities, available improvements and their concrete requirements/effects |
+| Company systems / Firemní systémy | Actually adopted communication/business systems, current capabilities, available improvements and their concrete requirements/effects; open UI-D38 Technology for research/unlock/adoption state |
 
 Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. Division/subsidiary links remain available where the existing organization model provides them; these cards neither add new group-management mechanics nor remove that wider functionality.
 
@@ -68,7 +68,7 @@ Show separately: activity allowed but region not entered; region accessible but 
 
 Applications and renewal/withdrawal actions use existing rules and explicit validation; do not add paperwork forms or a new regulatory minigame. Pending requirements can change, with a visible reason. Losing a right surfaces affected operation and existing recovery/consequence rules rather than silently deleting it.
 
-Company systems show what has actually been adopted, what capability it provides and what installation, staffing, funds or technology is still required. Distinguish historically available, planned, being implemented and usable where supported. In particular, a calendar date or improved office furnishings do not automatically grant centralized coverage, online sales or remote information. Link to existing research/adoption and project views instead of creating a competing technology tree.
+Company systems show what has actually been adopted, what capability it provides and what installation, staffing, funds or technology is still required. Distinguish historically available, researched/unlocked, being adopted and usable where supported. UI-D38 [UI_TECHNOLOGY.md](UI_TECHNOLOGY.md) owns the detailed Technology workspace. In particular, a calendar date or improved office furnishings do not automatically grant centralized coverage, online sales or remote information. A completed technology can unlock branch/station/facility/construction upgrades without applying them; only genuine company-wide systems use the simple adoption project defined by UI-D38.
 
 ## 6. Shared interaction and state safety
 
