@@ -26,7 +26,7 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 |---|---|
 | [V1 Scope](docs/V1_SCOPE.md) | Approved release subset, time/distance rules, enduring vehicles and shipment splitting |
 | [Implementation Brief](docs/V1_IMPLEMENTATION_BRIEF.md) | Architecture, subsystem coverage, M0–M8 work order, UI/art and delivery requirements |
-| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed dark/floating-window interface, bottom bar, pause rules, contextual object links and compact vehicle overview; remaining proposals and decision status |
+| [UI/UX Design](docs/UI_UX_DESIGN.md) | Confirmed window/bar/pause/link rules, compact vehicle overview and persistent card-based Line plans; remaining proposals and decision status |
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Current implementation/test evidence and next executable task |
@@ -37,7 +37,7 @@ The handoff is documentation. It does **not** mean a Unity project, playable bui
 
 ## UI/UX design
 
-[UI/UX Design](docs/UI_UX_DESIGN.md) owns the confirmed interface directions, contextual navigation and vehicle overview, and records remaining proposals for other inspector contents, planning/construction workflows, notification layout and other open decisions.
+[UI/UX Design](docs/UI_UX_DESIGN.md) owns the confirmed interface directions, contextual navigation, vehicle overview and card-based Line planning, and records remaining proposals for other inspector contents, shipment/construction workflows, notification layout and other open decisions.
 
 **Confirmed:** a restrained contemporary dark interface, movable/resizable floating management/detail windows, multiple views, reusable ordinary selection details with content pinning, explicit opening in another window, minimize/restore, remembered/recoverable layout and a fixed bottom navigation/status/time bar. The top-level navigation is Build, Operations, Business, Assets, Company and World. The bottom bar replaces mandatory permanent left/top strips; contextual construction tools do not remove it. Ordinary object clicks reuse an unpinned detail rather than opening a new window every time. Pinning retains the object's identity while its data stays live.
 
@@ -45,11 +45,13 @@ The handoff is documentation. It does **not** mean a Unity project, playable bui
 
 **Vehicle detail:** the confirmed default is a compact operational overview with current activity/problem, location, applicable load/destination and next task, plus a small preview of the correct vehicle model. A static model image is sufficient; no live camera feed or animated 3D viewer is required. Actual vehicle information remains live and separate from the thumbnail. Detailed technical parameters, costs and history stay in secondary views; exact tab labels/dimensions remain design work. See Section 5.2 / UI-D10.
 
+**Line planning:** use independently openable cards, not a guided wizard. The player can edit in any order, save an incomplete Line/Pattern design, close it and continue in a later session. Unlaunched plans remain visible separately from operating services. The overview shows actual dependencies and readiness, distinguishing filled inputs, forecasts, pending work and secured rights/resources. Saving a draft does not operate a service, reserve resources or create sales/Trips; separately accepted purchases and agreements still have real costs. Launch is an explicit, freshly validated commitment, never a consequence of filling every card or reaching an intended start date. Active Pattern edits still use future versions and existing impact checks. Section 6.1 / UI-D11 owns the full rule, including save/load, stale readiness and activation safeguards.
+
 **Normal UI and pause:** ordinary windows, Line planning and construction previews do not automatically pause/resume the game or change its selected speed. During manual pause, camera/inspection and all planning tools remain available, while the shared simulation clock and time-driven operations stay stopped. Closing a planner never releases the manual pause; resuming never silently submits a draft or catches up the real time spent paused. See UI-D04 and Section 9.1 of the UI document for the confirmed rule and its command-safety boundaries.
 
 **Critical incidents:** automatic pause is enabled by default for critical events requiring prompt player attention, including while a planner is open. Ordinary delays and routine problems handled within authorized policies do not interrupt play. Show the cause, impact and available response; preserve planning and require an explicit player action to resume. Closing or acknowledging a notice does not restart time. Deduplicate unchanged incidents across repeated alerts and save/load; a new critical incident or material escalation may pause again. Section 7.2 and the critical-event part of UI-D08 own this rule and its event-boundary/persistence safeguards.
 
-**Still open or proposed:** application-focus and precise pause-menu behaviour in the remaining part of UI-D08, detailed event-override settings, exact styling/dimensions and secondary-control placement, information density outside the confirmed vehicle overview, detailed navigation contents/object terminology and other unresolved workflows. Follow the decision statuses in the UI document; acceptance of specific rules does not approve every proposal or change unrelated gameplay. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
+**Still open or proposed:** application-focus and precise pause-menu behaviour in the remaining part of UI-D08, detailed event-override settings, exact styling/dimensions and secondary-control placement, information density outside the confirmed vehicle and Line-planning overviews, detailed navigation contents/object terminology and other unresolved workflows. Follow the decision statuses in the UI document; acceptance of specific rules does not approve every proposal or change unrelated gameplay. Its confirmed-direction checks describe evidence still to collect, not an implemented or tested UI.
 
 ## Wider base game and planned DLC
 
