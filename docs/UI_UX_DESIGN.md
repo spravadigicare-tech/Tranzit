@@ -169,7 +169,7 @@ Labels are candidates, not a final localization glossary. Stable English data ID
 
 ### 5.1 Proposed shared structure
 
-The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This general template remains proposed; contextual links in Section 4.1 and the vehicle-specific view in Section 5.2 are confirmed.
+The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This general template remains proposed; contextual links in Section 4.1, the vehicle-specific view in Section 5.2 and the Line-specific views in Sections 6.1 and 6.4 are confirmed.
 
 1. **Header:** name, type, owner and current status; window movement and controls; locate/follow and content pinning where meaningful under the confirmed selection policy.
 2. **Summary:** a few relevant facts, the next event and the most important unresolved problem.
@@ -198,13 +198,15 @@ Illustrative summary only; actual values must come from simulation data, and nam
 >
 > Open Trip · Show loading operation · Inspect allowed recovery
 
-The selected detail still refers to one concrete physical asset, not all assets sharing its model. In a train context, distinguish the selected locomotive/wagon from its current consist and Trip; a locomotive thumbnail must not imply a fixed train composition or define cargo capacity. Follow related consist/service details through their existing identities.
+The selected detail still refers to one concrete physical asset, not all assets sharing its model. In a train context, distinguish the selected locomotive/wagon from its current consist and Trip; a locomotive thumbnail must not imply a fixed train composition or define cargo capacity.
+
+Follow related consist/service details through their existing identities.
 
 Keep technical parameters, detailed costs and history available through secondary tabs/sections. The suggested labels remain Overview / Přehled, Operation / Provoz, Technical condition / Technický stav, Costs / Náklady and History / Historie; their exact wording and grouping are not locked by approval of the summary/thumbnail. Exact preview dimensions and placement remain visual-design work, subject to readable 1080p and enlarged CZ/EN UI. A missing preview must not block inspection or show another model as though it were correct.
 
 Do not invent completion estimates or offer impossible recovery. Fueling remains part of existing between-Trip scheduling, not a new compulsory Refuel button on every vehicle. The static preview changes presentation cost only; it never replaces the physical vehicles or their required visible world operations.
 
-## 6. Planning workflows
+## 6. Planning and Line-management workflows
 
 ### 6.1 Confirmed card-based Line planning, saved drafts and readiness — UI-D11
 
@@ -212,9 +214,9 @@ Do not invent completion estimates or offer impossible recovery. Fueling remains
 
 #### Card overview and editing
 
-New Line opens a movable planning window with a compact overview of cards. Each card shows its subject, a brief configuration summary, readiness status and the main missing dependency or problem. Clicking it opens that area's editable detail; returning to the overview preserves other work. Use the same freely navigable card model for later edits, not a second mandatory wizard.
+New Line opens a movable planning window with a compact overview of cards. Each card shows its subject, a brief configuration summary, readiness status and the main missing dependency or problem. Clicking it opens that area's editable detail; returning to the overview preserves other work. Use the same freely navigable card model for later edits, not a second mandatory wizard. Section 6.4 defines the confirmed active-service overview added to this same window after launch.
 
-Suggested grouping, with exact labels and card boundaries left to layout validation:
+Use these functional card groups consistently across planning and active-service views; exact localized labels and visual dimensions remain subject to layout validation:
 
 | Card | Editable content and visible dependencies |
 |---|---|
