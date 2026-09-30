@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-09-30 after fully confirming UI-D08 focus-loss and notification/auto-pause behaviour. No major UI workflow decision remains open; final terminology review and a repository-wide V1 design consistency audit remain.
+Last reviewed: 2026-09-30 after fully confirming UI-D08 and auditing the remaining explicit design gaps. No major screen/workflow design remains open. Three product-level clarifications remain before the final V1 consistency audit: binding commands during pause, the V1 boundary for multi-operator passenger ticket cooperation, and final player-facing CZ/EN terminology.
 
 ## How to use this backlog
 
@@ -42,7 +42,9 @@ Rules:
 
 ## Open decisions
 
-- [ ] **[DESIGN] Player-facing vocabulary/navigation glossary** — final Czech/English labels for domain objects remain candidates in UI_UX_DESIGN Section 4.2; resolve with final navigation instead of independently.
+- [ ] **[DESIGN] Binding commands during pause** — planning/editing during pause is confirmed, but the specs still intentionally do not define whether binding actions such as purchases, submitted orders/contracts, licence applications or Start project may be committed while paused and take effect at the current game timestamp. Choose one consistent V1 rule and apply it across workflows.
+- [ ] **[DESIGN] Multi-operator passenger ticket cooperation boundary for V1** — own-company integrated tariffs/ticket products are confirmed. Decide whether V1 must also support multi-operator ticket recognition/settlement/governance; if not, explicitly defer that layer while retaining the existing passenger-cooperation architecture.
+- [ ] **[DESIGN] Player-facing vocabulary/navigation glossary** — normalize final Czech/English labels for core domain objects (Line, Service Pattern, Trip, Shipment, Cargo portion, Transport Plan, Capacity Order, etc.) now that UI-D41 fixes the navigation taxonomy.
 
 ## Next
 
