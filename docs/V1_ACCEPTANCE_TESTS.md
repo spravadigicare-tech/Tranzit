@@ -110,7 +110,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | T-04 | 60 km constant 60 km/h analytical movement without dwell/acceleration | One game hour; 120/60/3.75 real seconds at 0.5/1/16x in an adequately supplied time-budget test |
 | T-05 | Several essential events fall within one rendered frame at 16x | Chronological event/occupancy processing, no tunnelling or skipped cutoffs |
 | T-06 | Arrival/handling completion/cutoff/departure share a timestamp | Documented stable causal ordering; readiness not inferred from merely approaching a terminal |
-| T-07 | Pause, focus loss, save, close and reopen | No unauthorized game-time advancement or offline catch-up |
+| T-07 | Manual pause, pause-menu pause, critical-event pause, save/load, close and reopen | Independent pause reasons: closing the menu removes only its own reason; successful load finishes safely paused; no unauthorized game-time advancement or offline catch-up. Application-focus loss/return remains governed by its separately unresolved UI policy |
 | T-08 | Import real dates from 28/29/30/31-day months and already-authored game dates | Validate source dates; apply DATA_PIPELINE proportional conversion exactly once; game-authored dates remain unchanged; stable prerequisite/source-date/ID order for collisions |
 
 ### 4.2 Shipment inventory and allocation
@@ -218,6 +218,10 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | F-27 | New Game confirmation retried/double-clicked | Exactly one founding loan, starting cash posting and starting-region market-entry grant; no duplicate company/founding benefits |
 | F-28 | Save/load before and after founding tutorial completion | Checklist derives from actual state, does not replay purchases/loan/licences and does not restart after first functioning operation |
 | F-29 | Tutorial Full/Basics/Off | Only onboarding/context guidance changes; normal blockers, Needs decision, safety/legal constraints and confirmations remain identical |
+| F-30 | Interrupted/failed overwrite save | Previous valid save remains loadable; failed write cannot corrupt both old/new state or commit a gameplay action |
+| F-31 | Autosave at 0.5× versus 16× for same real play duration | Same configured real-time autosave cadence/rotation; game-speed change does not multiply save frequency |
+| F-32 | Pause menu opened from running/manual/critical pause | Closing pause menu removes only menu pause; remembered running speed/manual/critical state remains correct |
+| F-33 | Load/quit with and without dirty authoritative state | Warning reflects actual unsaved progress/drafts; Save and exit exits only on successful save; successful load is paused |
 
 ### 4.6 World, construction, economy and AI
 
