@@ -60,6 +60,38 @@ A vehicle purchase, infrastructure sale or other completed one-off transaction m
 
 Quotes, discovered opportunities, draft bids and unaccepted proposals are not active agreements.
 
+## 3.1 Bilateral cooperation agreement builder
+
+Recurring cooperation between two companies can be proposed/amended through one structured bilateral agreement builder.
+
+The editor is visually split into the two parties:
+
+> **Our company** | **Selected company**
+
+Supported clauses appear as explicit options under the side that grants the right, pays the rate or accepts the obligation. A clause can therefore be:
+
+- bilateral with different values on each side;
+- enabled in only one direction;
+- symmetric only when both sides actually agree to identical terms.
+
+Do not force mirrored terms.
+
+For passenger cooperation, the initial clause set includes:
+
+- **Connection coordination at a station/terminal**, with the relevant place/destination each side is intended to connect;
+- **Sell partner capacity on through tickets**, independently enabled in each direction.
+
+When capacity resale is enabled, show the two separate settlement rates clearly:
+
+> They may sell our capacity: **0.47 money/km**  
+> We may sell their capacity: **0.42 money/km**
+
+These are settlement terms between the companies, not the public passenger tariff.
+
+The builder remains intentionally small. Do not expose arbitrary legal text, dozens of generic modifiers or clauses without a real simulation owner.
+
+Submitting creates a pending bilateral proposal. The partner can accept, reject or return a counterproposal with changed explicit terms. Only accepted clauses become binding rights/obligations.
+
 ## 4. Active, pending and historical views
 
 Provide clear filters/views:
