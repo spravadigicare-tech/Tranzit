@@ -137,7 +137,28 @@ Store the purchased product/version and its actual price and validity. New rates
 
 ### Other operators
 
-An own-company system is possible without another carrier. Multi-operator participation is a potential extension of existing passenger cooperation, not permission to add competitors unilaterally. It would require accepted ticket-recognition, sale/settlement and responsibility terms, visible under Our agreements. Exact multi-operator settlement and governance are not approved by this request.
+An own-company tariff/integrated system is possible without another carrier.
+
+For V1, multi-operator passenger cooperation uses the two simple agreement families in GAME_DESIGN Section 30.3:
+
+- connection agreement at a defined transfer node;
+- partner-capacity sales agreement for one through ticket across operators.
+
+The partner-capacity agreement uses one **partner rate in money/km**. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the agreed partner rate. The difference is the seller's margin and may be positive or negative.
+
+The UI must show, before accepting or changing the agreement:
+
+- public retail rate used for the partner segment;
+- negotiated partner rate;
+- example journey/distance where useful;
+- expected margin per passenger or per example journey;
+- whether that margin is negative.
+
+Do not block a negative-margin agreement merely because it is commercially unattractive.
+
+A negative rate margin can still be rational because of network attractiveness, feeder traffic or strategic expansion. AI partner offers can reflect relationship/reputation, competitive tension, expected volume and strategic interest without exposing a deep negotiation simulator.
+
+This does **not** yet create a shared multi-company weekly/monthly network pass or a multi-operator tariff-governance system. Those broader products remain the separate V1-boundary decision tracked in TODO.
 
 ## 8. Consistency rules
 
@@ -165,7 +186,8 @@ These scenarios define evidence to collect when implemented; they are not claims
 | TARUI-A05 | Use a pass in open, optional-reservation and mandatory-reservation zones. Paid entitlement is not a seat guarantee; confirmed bookings are preserved and full services do not admit extra passengers. |
 | TARUI-A06 | Record one pass sale and several covered boardings. Cash is posted once; analytical Line attribution and any refund do not duplicate revenue or omit operating costs. |
 | TARUI-A07 | Change a system rate or remove a participating Line after passes were sold. Historical terms and reservations remain traceable; no silent revocation or retrospective surcharge occurs. |
-| TARUI-A08 | Test overlapping eligible products, invalid class, missing sales/checking capability, delayed travel near expiry, pending partner agreement and incomplete drafts. Each unresolved rule must be specified before acceptance tests can be finalised. |
+| TARUI-A08 | Test overlapping eligible products, invalid class, missing sales/checking capability, delayed travel near expiry, pending partner agreement and incomplete drafts. Each state follows the canonical eligibility/agreement rules without duplicate fare charging. |
+| TARUI-A09 | Sell a partner-operated segment under partner rates below, equal to and above the carrier's public retail rate. Passenger price follows the public tariff; partner payable follows the negotiated money/km rate; positive/zero/negative seller margin is shown and posted exactly once. |
 
 ## 10. Decision record
 
