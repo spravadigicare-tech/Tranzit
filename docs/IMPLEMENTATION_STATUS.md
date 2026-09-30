@@ -14,7 +14,7 @@ Audited baseline: main commit `a2b45f570bd91730f8c76d2f6a74058e28853c60`. All te
 - Historical geodata and game assets: not supplied by this handoff.
 - The user's local Unity/toolchain installation has not been inspected by this handoff. Do not infer that it is installed or missing.
 
-Reinspect the current working tree before using these statements as current status. Replace them with actual implementation evidence as work proceeds.
+Reinspect the current working tree before using these statements as current status. Replace them with actual implementation evidence as work proceeds. Remaining/open/deferred work is tracked separately in [TODO.md](TODO.md); this file must not be used as a speculative backlog, and TODO completion must not be treated as implementation/test evidence.
 
 ## Milestones
 
