@@ -2,7 +2,7 @@
 
 > **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static; UI-D11, freely editable Line-planning cards, persistent unlaunched plans and an explicit readiness/activation decision; UI-D12, the same Line window/cards after launch, with a live operational overview, scoped variants/Trips and clearly separated future changes. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static; UI-D11, freely editable Line-planning cards, persistent unlaunched plans and an explicit readiness/activation decision; UI-D12, the same Line window/cards after launch, with a live operational overview, scoped variants/Trips and clearly separated future changes; UI-D13, a directly accessible list of planned and actively deployed vehicles from Line capacity planning onwards. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
 >
 > **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, information density outside the confirmed vehicle and Line overviews, detailed terminology and the remaining workflows below. Approval of specific decisions does not approve unrelated pause triggers or every earlier proposal. A written design is not an implemented or tested UI.
 >
@@ -169,7 +169,7 @@ Labels are candidates, not a final localization glossary. Stable English data ID
 
 ### 5.1 Proposed shared structure
 
-The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This general template remains proposed; contextual links in Section 4.1, the vehicle-specific view in Section 5.2 and the Line-specific views in Sections 6.1 and 6.4 are confirmed.
+The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This general template remains proposed; contextual links in Section 4.1 and the vehicle-specific view in Section 5.2 are confirmed.
 
 1. **Header:** name, type, owner and current status; window movement and controls; locate/follow and content pinning where meaningful under the confirmed selection policy.
 2. **Summary:** a few relevant facts, the next event and the most important unresolved problem.
@@ -198,15 +198,13 @@ Illustrative summary only; actual values must come from simulation data, and nam
 >
 > Open Trip · Show loading operation · Inspect allowed recovery
 
-The selected detail still refers to one concrete physical asset, not all assets sharing its model. In a train context, distinguish the selected locomotive/wagon from its current consist and Trip; a locomotive thumbnail must not imply a fixed train composition or define cargo capacity.
-
-Follow related consist/service details through their existing identities.
+The selected detail still refers to one concrete physical asset, not all assets sharing its model. In a train context, distinguish the selected locomotive/wagon from its current consist and Trip; a locomotive thumbnail must not imply a fixed train composition or define cargo capacity. Follow related consist/service details through their existing identities.
 
 Keep technical parameters, detailed costs and history available through secondary tabs/sections. The suggested labels remain Overview / Přehled, Operation / Provoz, Technical condition / Technický stav, Costs / Náklady and History / Historie; their exact wording and grouping are not locked by approval of the summary/thumbnail. Exact preview dimensions and placement remain visual-design work, subject to readable 1080p and enlarged CZ/EN UI. A missing preview must not block inspection or show another model as though it were correct.
 
 Do not invent completion estimates or offer impossible recovery. Fueling remains part of existing between-Trip scheduling, not a new compulsory Refuel button on every vehicle. The static preview changes presentation cost only; it never replaces the physical vehicles or their required visible world operations.
 
-## 6. Planning and Line-management workflows
+## 6. Planning workflows
 
 ### 6.1 Confirmed card-based Line planning, saved drafts and readiness — UI-D11
 
@@ -214,15 +212,15 @@ Do not invent completion estimates or offer impossible recovery. Fueling remains
 
 #### Card overview and editing
 
-New Line opens a movable planning window with a compact overview of cards. Each card shows its subject, a brief configuration summary, readiness status and the main missing dependency or problem. Clicking it opens that area's editable detail; returning to the overview preserves other work. Use the same freely navigable card model for later edits, not a second mandatory wizard. Section 6.4 defines the confirmed active-service overview added to this same window after launch.
+New Line opens a movable planning window with a compact overview of cards. Each card shows its subject, a brief configuration summary, readiness status and the main missing dependency or problem. Clicking it opens that area's editable detail; returning to the overview preserves other work. Use the same freely navigable card model for later edits, not a second mandatory wizard.
 
-Use these functional card groups consistently across planning and active-service views; exact localized labels and visual dimensions remain subject to layout validation:
+Suggested grouping, with exact labels and card boundaries left to layout validation:
 
 | Card | Editable content and visible dependencies |
 |---|---|
 | Route and stops / Trasa a zastávky | Ordered endpoints/stops, optional via/avoid constraints, compatible route and access; distinguish intended/planned stops from usable physical endpoints |
 | Operating plan / Provozní režim | Pattern, service days, exact/interval/demand-driven departures, dwell/turnaround and intended start; use the shared game calendar |
-| Vehicles / Vozidla | Vehicle/consist requirements, assignment criteria or pinned assets, expected fleet demand, real availability/delivery and conflicting commitments |
+| Vehicles / Vozidla | Vehicle/consist requirements, assignment criteria or pinned assets, expected fleet demand, real availability/delivery and conflicting commitments; expose the planned/active roster under UI-D13 in Section 6.4 as soon as capacity is planned, including before launch |
 | Staff and facilities / Personál a zázemí | Qualified aggregate crews, operating base, parking, maintenance, energy/service and handling coverage as applicable |
 | Rights and capacity / Oprávnění a kapacita | Licences, local presence, relevant municipal permission, access and shared Capacity Orders; distinguish a request/quote from an accepted agreement |
 | Economics and obligations / Ekonomika a závazky | Applicable tariffs, estimated revenue/costs with units and assumptions, real commitments, outstanding dependencies and activation consequences |
@@ -324,7 +322,7 @@ Reuse the six functional groups in Section 6.1 and their editing/navigation mode
 |---|---|
 | Route and stops | Route identity, stop count and relevant closure/restriction; drill into stops, routing constraints and the map |
 | Operating plan | Service days/frequency or departure condition, next departure and affected Trips; drill into calendars and actual journeys |
-| Vehicles | Coverage of upcoming Trips and actual shortages/assignments; do not imply every asset is permanently attached to this Line |
+| Vehicles | Planned and currently deployed vehicles in the directly accessible roster below, plus upcoming coverage/shortages; a count or requirements editor alone is insufficient, and inclusion never implies permanent attachment to this Line |
 | Staff and facilities | Qualified staffing and operating-base/service coverage, with actual maintenance, handling, energy or supply bottlenecks |
 | Rights and capacity | Valid access/slots, missing or at-risk commitments and relevant agreement expiry/renewal; drill into the existing agreements |
 | Economics and obligations | Result and utilization for a visibly selected period, plus material contractual risks; drill into actual revenues, costs and commitments |
@@ -332,6 +330,28 @@ Reuse the six functional groups in Section 6.1 and their editing/navigation mode
 Cards have a heading, a few useful facts and an issue indicator when needed. They reflow from columns in wider windows to a readable vertical arrangement in narrower windows; do not replace them with oversized decorative tiles or hide essential controls at larger UI scales.
 
 Metrics use the existing simulation/reporting data and the selected Line/Pattern scope. Label game-time periods and distinguish actual results from forecasts. Explain the basis of utilization and financial totals on inspection; do not mix onboard load, reserved capacity and a period average, or double-count shared assets, Trips or costs across cards/variants. Missing observations show insufficient data, not invented zeroes or a new hidden scoring system. No new accounting model or fixed profitability threshold is approved here.
+
+#### Confirmed planned and active vehicle roster — UI-D13
+
+**The Line must show a list of its planned and actively deployed vehicles as soon as its capacity is planned.** Explicitly requested on 2026-09-30. Expose a compact Vehicles on this Line list directly in the Line overview, expandable to the full roster and also reachable through the Vehicles card. Do not substitute only a vehicle count, a list of Trips or a requirements editor. The roster is available in an unlaunched plan as well as during operation; it does not wait for the first departure or final confirmation of every infrastructure slot.
+
+Use the existing fleet-capacity plan, duty requirements and actual assignments as the source. Before enough information exists to calculate them, show the missing inputs rather than hiding the feature or inventing vehicles. Once requirements or specific assignments exist, show them immediately even if other cards remain incomplete.
+
+| Entry | What it represents |
+|---|---|
+| Planned vehicle | A known physical vehicle proposed, pinned or assigned to future work on this Line; distinguish a draft proposal, a candidate and an actual reservation rather than calling all three secured |
+| Actively deployed vehicle | A concrete vehicle currently executing work for this Line; state whether it is preparing/repositioning, boarding/loading, running or turning around, with the relevant assignment |
+| Requirement without a concrete vehicle | A separately labelled duty/type/capacity requirement awaiting serial-number assignment, or a real coverage shortage. It is not an invented asset and is not counted among concrete vehicles |
+
+Rows expose the vehicle's name/identifier and model, its planned/current relationship to the Line, relevant variant, dated Trip or duty/time interval, current task/location when known, and any assignment or readiness problem. Show applicable capacity with units and context. Vehicle names and available Trip/duty/facility references open their exact details under Section 4.1. If no concrete Trip or vehicle yet exists, link to the real Pattern/requirement instead of fabricating a target. Exact column widths and compact/expanded presentation remain layout work.
+
+Provide All, Planned and Active views, with unassigned requirements/coverage gaps visible alongside the roster. For a pure draft, no vehicle is labelled actively deployed on that draft merely because it is currently working elsewhere. A real vehicle may have a current and a future assignment here; present one identifiable asset row with inspectable assignments rather than inflate the unique-vehicle count. Keep Line/variant, date or planning horizon, and current-versus-future-version scope explicit. Past-only assignments belong in accessible history rather than appearing as current deployment.
+
+GAME_DESIGN Section 32.6 retains ownership of fleet assignment, duties and preparation timing. Criteria-based planning may reserve compatible time/capability for confirmed work before selecting serial-number vehicles. Show that coverage separately from "not yet assigned" and from a genuine shortage; delayed serial selection alone is not a new blocker. Display known pinned/assigned IDs immediately and show identifiable candidates only as candidates. Neither a capacity estimate nor a purchased track/station slot supplies a physical vehicle. Listing a candidate must not pin, reserve, purchase, move or permanently attach it. An unlaunched draft remains nonbinding under Section 6.1, while separately accepted commitments remain binding.
+
+For trains, distinguish a planned consist requirement from the actual assembled consist, with access to its known locomotives and wagons. Label whether a count refers to consists, physical assets or duties; never add locomotive capacity to coach/wagon capacity or double-count a train and its components. A vehicle shared across Lines/variants remains one physical asset with time-specific duties in the same ledger, not another free vehicle in each roster.
+
+Update the roster from actual assignment changes: preparation, departure, completion, substitution, breakdown, maintenance, delivery delay, reassignment and relevant plan edits. Explain uncovered work and keep the replacement and original assignment history traceable. Preserve selection and scroll position during refresh. Restored drafts/assignments must rebuild the same view after save/load, revalidating stale availability without creating reservations or Trips. Opening or filtering this list does not change simulation time, and the view remains usable during manual or critical-event pause.
 
 #### Running Trips and upcoming departures
 
@@ -343,7 +363,7 @@ Demand-driven services show their real condition, such as Waiting for cargo: 32 
 
 #### Variants and scope
 
-Use All variants / a specific variant inside the same Line window. All variants summarizes actual operation across the Line; selecting a Pattern scopes the overview, cards, Trip list and results to it. Always show the current scope and distinguish common settings from mixed values. Opening one variant cannot silently edit or apply a setting to every other variant.
+Use All variants / a specific variant inside the same Line window. All variants summarizes actual operation across the Line; selecting a Pattern scopes the overview, cards, vehicle roster, Trip list and results to it. Always show the current scope and distinguish common settings from mixed values. Opening one variant cannot silently edit or apply a setting to every other variant.
 
 Operating, suspended and unlaunched variants remain distinguishable. A future express proposal may sit beside running basic/weekend variants, but its incomplete cards are planning work, not an operational fault of the running Line. Keep any separately accepted real costs/obligations visible under Section 6.1. Aggregate operation must not include hypothetical Trips, ticket sales or projected revenues as if they had occurred. Filtering the UI never changes activation or commercial obligations.
 
@@ -476,6 +496,8 @@ These checks describe required evidence for the confirmed directions, not comple
 | UI-A18 | UI-D12, one Line workspace and operational health | Open the same Line before/after launch and verify stable card groups/arrangement with the added live summary. Test no current Trip, a vehicle failure, an automatically handled incident and an unresolved player decision; lifecycle, incident handling and draft readiness remain distinct. Verify compact reflow, clear metric periods/bases and unchanged pause state in CZ/EN at 1080p/enlarged UI |
 | UI-A19 | UI-D12, actual Trips and variant scope | Inspect current/upcoming and all dated Trips, including delayed, cancelled, cross-midnight and demand-driven cases. Follow exact Trip/vehicle/station links, preserve live-list selection and show unknown times honestly. Switch All variants/specific Pattern with operating, suspended and unlaunched variants; scope stays explicit, hypothetical work is excluded from actual results and no filter edits/activates other Patterns |
 | UI-A20 | UI-D12, clearly separated future changes | Prepare and save a future change through the active Line window while old operation continues; visibly distinguish current, uncommitted and committed-future configuration. Verify readiness/effective-time/impact review, unchanged running Trips, no automatic application on save/load and no duplicated commitments. Suspension/closure are separate scoped consequence previews; closing the window does not stop the Line |
+| UI-A21 | UI-D13, roster from capacity planning onwards | Plan capacity in an unlaunched Line with other cards incomplete and verify a directly accessible vehicle list, not just counts or Trips. Known planned/pinned IDs appear immediately; criteria-based duty requirements and missing coverage are separately labelled without fabricated IDs or early mandatory assignment. Test available candidates versus reservations, purchased infrastructure slots without fleet, plan save/load and paused editing; viewing the list does not reserve, dispatch or activate anything |
+| UI-A22 | UI-D13, active roster and assignment continuity | Test planned-to-preparing/running transitions, multiple dated assignments for one asset, substitution, failure, maintenance and reassignment. Verify exact vehicle/Trip/duty links, actual task/location, clear date/variant/current-versus-future scope, and unchanged selection on refresh. Shared vehicles and train/consist components are not double-counted; unassigned-but-covered duties differ from shortages; draft candidates never appear actively deployed on the draft. Save/load preserves assignments and reconstructs the view without new commitments; verify CZ/EN and enlarged UI |
 
 ### Remaining proposed interaction scenarios
 
@@ -509,5 +531,6 @@ No Unity UI has been implemented or visually tested as part of this document. St
 | UI-D10 | Vehicle detail and model preview | Operations-first default overview with a small correct-model preview; a static image is sufficient and live operational data remains separate, under Section 5.2 | CONFIRMED on 2026-09-30 |
 | UI-D11 | Card-based Line planning and unlaunched plans | Independently editable cards instead of a wizard; persistent incomplete/future Line drafts, visible dependency-based readiness and separate explicit activation under Section 6.1 | CONFIRMED on 2026-09-30 |
 | UI-D12 | Active Line detail | Same window/cards before and after launch, live operation/issues and actual Trips, explicit variant scope, period-based results and separate future changes/lifecycle actions under Section 6.4 | CONFIRMED on 2026-09-30 |
+| UI-D13 | Planned and active Line vehicle list | Directly accessible roster from capacity planning onwards, including unlaunched plans; show known planned/current vehicle identities and assignments, with unassigned requirements/coverage clearly separate; follow Section 6.4 and existing fleet commitment rules | CONFIRMED on 2026-09-30 |
 
-The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09, the compact vehicle overview under UI-D10, nonlinear persistent Line planning under UI-D11 and the active Line workspace under UI-D12. Do not reopen those choices or reintroduce the superseded Line-creation wizard. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided. Approval of these decisions does not silently approve every detail in this document.
+The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09, the compact vehicle overview under UI-D10, nonlinear persistent Line planning under UI-D11, the active Line workspace under UI-D12 and the planned/active vehicle roster under UI-D13. Do not reopen those choices or reintroduce the superseded Line-creation wizard. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided. Approval of these decisions does not silently approve every detail in this document.
