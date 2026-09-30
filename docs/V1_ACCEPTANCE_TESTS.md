@@ -229,7 +229,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 |---|---|---|
 | W-01 | Start without own transport/infrastructure | Viable genuine providers allow first office/delivery/service; no circular mandatory prerequisite |
 | W-02 | Missing branch in served city versus simple pass-through | Correct local commercial coverage rule; traversal alone does not require a branch |
-| W-03 | Modern office technology adopted, not merely present in world | Broader commercial capability only after real installation/staff/cost prerequisites |
+| W-03 | Technology exists/research completes versus actual company/object adoption | World availability or research completion only unlocks the applicable capability/options; branch/station/workshop/track/company-system effects require their real owning upgrade/adoption prerequisites and costs, with no automatic retrofit |
 | W-04 | Firm runs out of recipe input; transport restores it | Real production/demand response and inventory conversion, not arbitrary contract generation |
 | W-05 | Material or contractor capacity shortage during building | Correct stage pause/cost/delivery dependency; no finished asset by timer alone |
 | W-06 | Cancel preview versus demolish completed protected station | Free preview cancellation; actual project cost/permission/physical impact for demolition |
@@ -241,6 +241,10 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | W-12 | Manager attempts a purchase above budget or forbidden cancellation | Requires approval/rejects; delegated authority never exceeds explicit player policy |
 | W-13 | Weather/incident closes a route and later reopens it | Real capacity/speed/supply effects and recovery, clear reason, no flat hidden income modifier |
 | W-14 | Later technology/historical event and source-date conversion | Correct prerequisites/date order; no unauthorized new start preset or forced end of campaign |
+
+| W-15 | Research technology that unlocks workshop, track standard and branch/station upgrade | Canonical construction/facility/upgrade options become available; no building, retrofit, vehicle stock, staff or capacity is created by research completion |
+| W-16 | Established-era technology for a newly founded later-start company | No pointless rediscovery of already-established world technology; company still pays/builds/adopts required equipment/systems |
+| W-17 | Company-wide business system adoption | One simple adoption project where appropriate; capability activates only after completion, while genuine local physical requirements remain separate and no per-site busywork is invented |
 | W-15 | No active branch, but setup preview and marketplace are available | Public setup information does not reveal/accept hidden routine jobs; eligible public/direct opportunities obey communication rules |
 | W-16 | Compare first-release selection UI with wider-design catalogues | Only 1900, rail and road in V1; wider presets/modes are not removed from design or silently enabled; exact approved geographic coverage retained |
 
