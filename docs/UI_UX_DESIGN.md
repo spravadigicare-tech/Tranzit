@@ -1,10 +1,12 @@
-# Tranzit — UI/UX design proposal
+# Tranzit — UI/UX design
 
-> **Status: DISCUSSION DRAFT — NOT APPROVED FOR IMPLEMENTATION.** Prepared on 2026-09-30 at the player's request to develop the interface together and record it in the repository.
+> **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> Existing requirements referenced in Section 1 remain binding. All new layout, visual, interaction and terminology choices below are proposals, not previously approved player decisions. Do not turn this draft into a new release gate, implement an unresolved choice as final, or use it to override gameplay. A written proposal is not an implemented or tested UI.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, individual management/detail panels in movable floating windows rather than a mandatory fixed right inspector. These directions guide UI implementation within the existing release scope.
 >
-> When decisions are confirmed, update the owning specifications and their affected summaries/tests together. Keep unresolved alternatives explicitly separate from the approved design.
+> **Still proposed:** a fixed bottom bar, suggested tentatively by the player, and its contents; detailed window behaviour, information density, terminology and the remaining workflows below. Do not treat confirmation of the visual/window direction as approval of every detail. A written design is not an implemented or tested UI.
+>
+> Existing requirements referenced in Section 1 remain binding. Keep this owning UI document and affected summaries/acceptance criteria consistent when a decision changes; retain explicit status for unresolved choices. Do not use presentation decisions to override gameplay or silently add release scope.
 
 ## 1. Existing requirements and document responsibility
 
@@ -19,47 +21,92 @@ Read these owners rather than treating the summaries below as replacement rules:
 | [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md) | Cancellation/release consequences, per-owner and total costs, prepaid settlement and distinction from non-renewal |
 | [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md), Sections 4 and 8–9 | Shared selection, validated commands, side-effect-free previews, required player workflows, onboarding, readable 1080p UI and adjustable scale |
 
-This document proposes the presentation of those mechanics. It does not replace the architecture brief, choose new packages, change simulation rules, add transport modes, or reduce V1 to the screens described here.
+This document owns the confirmed UI directions explicitly identified in Section 11 and develops the remaining presentation proposals. It does not replace the architecture brief, choose new packages, change simulation rules, add transport modes, or reduce V1 to the screens described here. The proposed sections are not automatically additional release gates.
 
-## 2. Proposed interface direction
+## 2. Interface direction
 
 **The world is the primary workspace. The interface helps the player understand a situation and act on it without repeatedly losing the map.**
 
-Proposed principles:
+Proposed organizing principles, while preserving the existing simulation requirements:
 
 - Start with a concise summary; expose operational detail through deliberate expansion.
-- Reuse one object inspector and one selection model across the map, lists, alerts and planners.
+- Reuse consistent inspector components and one coherent selection model across the map, lists, alerts and planners. Shared components do not mean only one fixed window may exist.
 - Connect each important problem to its cause, affected objects and available corrective action.
 - Keep commercial commitments, planned operations and physical execution visibly distinct.
 - Make routine operations delegable under the existing rules; do not add manual wagon, refuelling or ordinary-driver tasks merely to fill a screen.
 - Treat planning and committing as different states. Closing a preview does not purchase, cancel, build or move anything.
 
-### Proposed visual recommendation
+### Confirmed visual direction — UI-D01
 
-Use a restrained, contemporary transport-management interface over the model-world graphics: charcoal/slate panels, warm light text, clear typography, modest corner rounding and sparse accents. Keep the map visually dominant. Avoid parchment textures, heavy ornamental frames, neon glow and oversized website-like cards.
+Use a restrained, contemporary **dark interface over the model-world graphics**. The player confirmed this direction. A light or heavily period-styled main interface is no longer an equally pending default choice.
+
+Suggested treatment within that direction: charcoal/slate panels, warm light text, clear typography, modest corner rounding and sparse accents. Keep the map visually dominant. Avoid parchment textures, heavy ornamental frames, neon glow and oversized website-like cards. These details are visual recommendations, not locked colour/font/spacing tokens or a requirement for an additional theme.
 
 Historical character can come from the world, vehicle illustrations, documents and news without rebuilding the entire navigation as the decades advance. A modern-looking UI must not grant modern communication, forecasting or management capabilities before their actual availability. Show only data the game permits, with its timestamp, precision and source where relevant.
 
-This is a recommendation, not an approved theme. A light neutral variant and a more period-inspired direction remain possible until the player chooses. Do not inherit Digicare or another product's branding without approval. Exact colours, fonts and spacing are intentionally not locked.
+Do not inherit Digicare or another product's branding without approval. Exact colours, fonts, opacity and spacing remain to be designed.
 
-## 3. Proposed main screen
+## 3. Main screen and floating windows
 
-| Region | Proposed purpose | Behaviour |
+### 3.1 Confirmed window model — UI-D02
+
+Individual management and object-detail panels use **movable floating windows**. The player can place them where needed over the map, rather than having to work in a permanently docked right-hand inspector. This supersedes the previous fixed-right-inspector recommendation.
+
+Use a consistent window shell and content components. A window's screen position changes presentation only, never an asset's logical position or an operation's state. Do not introduce mandatory side docking as a substitute for free placement.
+
+The overall composition below is a proposal around that confirmed window model, not a pixel-perfect wireframe:
+
+| Element | Purpose | Status |
 |---|---|---|
-| Top status strip | Company cash, selected reporting-period result, game date/time and speed/pause | Compact and always identifiable; every rate/result names its period; drill into finance or calendar |
-| Left navigation rail | Operations, business, assets, company and world views | Icon plus discoverable text label; active section remains visible |
-| Central world | Normal 3D map interaction and contextual overlays | Most of the screen remains usable when inspecting one object |
-| Right inspector | Selected vehicle, Trip, station, Line, firm, construction project or contract | Same panel shell and navigation history; no unrelated modal stack |
-| Bottom contextual toolbar | Construction catalogue/tools or the current planner's next action | Appears for the active mode; not a permanent wall of every available tool |
-| Compact event area | Important incidents, decisions and notifications | Opens a grouped incident list; selecting an event highlights the relevant place/object |
+| Central world | Normal 3D map interaction and contextual overlays, with windows placed by the player | Map-first organizing proposal |
+| Movable floating windows | Object inspectors, company/asset/business views and planning workspaces | Movable-window direction CONFIRMED; detailed controls proposed below |
+| Fixed bottom bar | Main navigation, construction entry, important status and time controls | PROPOSED from the player's tentative suggestion |
+| Contextual tools | Construction catalogue/options or the current planner's actions, in a floating tool window or temporary area above the bottom bar | PROPOSED; exact placement unresolved |
+| Event access | Compact incident/decision indicator with a window for the grouped event list | PROPOSED; exact position unresolved |
 
-This is a layout proposal, not a pixel-perfect wireframe. Validate it at 1080p and larger UI scales before locking dimensions. The inspector should collapse or expand deliberately rather than obscure the entire world at smaller sizes.
+The recommended composition no longer requires a permanent left navigation rail or a separate full-width top status strip. Their functions can be consolidated into the proposed bottom bar. This consolidation is not yet a confirmed requirement.
 
-Proposed default: one main inspector with an optional pinned comparison. Large tables and a timetable can expand into a dedicated workspace, with an explicit return to the same map selection. Whether windows are fixed/docked or freely movable is still open.
+### 3.2 Proposed window behaviour — UI-D07
+
+Free movement is confirmed; the following refinements still need approval or later interface validation:
+
+| Behaviour | Recommendation |
+|---|---|
+| Moving | Drag the title bar; do not start a map pan or construction action through the window |
+| Size | Resize useful management/detail windows within content-aware minimum sizes; allow large tables and planners to expand and restore their previous size/position |
+| Multiple windows | Allow related views together, such as station capacity, a Line and a vehicle; do not restrict the system to the old one-inspector-plus-one-comparison proposal |
+| Ordinary selection | Reuse an unpinned selection inspector for ordinary map clicks, reducing accidental window proliferation |
+| Pinning | Pin the inspector's **object identity**, so selecting another object does not replace its contents. Pinning does not freeze live data, lock window position or imply always-on-top |
+| Open separately | Provide an explicit open-in-new-window action. Normally focus an existing matching object/view window rather than creating duplicate editable copies |
+| Minimize/close | Minimize without discarding a draft; expose minimized windows through an accessible window switcher, potentially from the bottom bar. Closing a meaningful dirty draft asks before discarding; closing never terminates a committed contract |
+| Focus and input | Clicking a window brings it forward. Only the focused context receives keyboard input; scrolling, dragging or clicking inside UI cannot affect the world behind it |
+| Optional snapping | Gentle edge/window snapping can help arrangement, but free movement remains possible and docking is never compulsory |
+| Layout persistence | Remember useful window geometry as UI preferences, separately from simulation authority. Revalidate restored object references; restoring a layout never issues gameplay commands |
+| Recoverability | Keep title bars and essential controls reachable after resolution/UI-scale changes; offer Reset window layout. With the proposed bar, keep normal floating windows within the usable area above it |
+
+Ordinary-selection reuse and content pinning are recommendations, not a settled selection policy. Do not silently interpret the player's request for floating windows as approval of these specific behaviours.
+
+Opening, moving, resizing or pinning windows does not itself authorize a new pause policy. Explicit pause and loading retain their existing rules; ordinary-panel, planning, focus and urgent-event auto-pause remain UI-D04.
+
+### 3.3 Proposed fixed bottom bar — UI-D06
+
+Use one stable bottom control area, not a second row of every possible game command. Suggested grouping:
+
+| Area | Proposed contents |
+|---|---|
+| Left | Menu/company identity, cash and an optional compact financial-period result with its period stated |
+| Centre | Build, Operations, Business, Assets, Company and World; access to search/map overlays without a permanent left rail |
+| Right | Game date/time, pause and the existing speed controls; a compact incident/decision indicator |
+
+Exact grouping and density remain open. The bar should open floating windows, catalogues or menus instead of becoming a large permanent dashboard. Clicking Build opens the construction catalogue; contextual placement options appear separately without replacing the primary navigation/time controls.
+
+A minimized-window switcher is proposed, not a requirement to add a desktop-style button for every open window. Use grouping/overflow where necessary and validate with Czech/English text and larger UI scales. Keep essential time/pause controls and a way back to all main functions accessible. Do not lock exact heights, button counts or pixel widths before 1080p/scale validation.
 
 Global search should locate known objects by name and type, such as a city, Line, vehicle or contract, without requiring the player to remember which module owns it. It must respect available information and active/macro-region boundaries; searching does not unlock a region.
 
 ## 4. Proposed navigation and information architecture
+
+The five navigation groups below are candidates for the bottom bar, not a fixed left sidebar or an approved final menu structure.
 
 | Main group | Contents |
 |---|---|
@@ -71,7 +118,7 @@ Global search should locate known objects by name and type, such as a city, Line
 
 Construction is a contextual world tool as well as an entry from Assets, not a second independent asset database.
 
-The same object can be reached from several contexts without being duplicated. A station selected from the map, a capacity warning or the asset list opens the same station identity and inspector. Navigation grouping must not hide a required workflow from the implementation brief.
+The same object can be reached from several contexts without being duplicated in the simulation. A station selected from the map, a capacity warning or the asset list resolves to the same station identity and shared inspector components, even when presented in a separate window. Navigation grouping must not hide a required workflow from the implementation brief.
 
 ### Proposed player-facing vocabulary
 
@@ -87,11 +134,11 @@ The same object can be reached from several contexts without being duplicated. A
 
 Labels are candidates, not a final localization glossary. Stable English data IDs do not change. A shipment is not a contract and a reserved cargo portion is not necessarily loaded cargo. Do not expose raw IDs as the normal player-facing explanation, but retain identity for support/debugging.
 
-## 5. Proposed shared object inspector
+## 5. Proposed shared inspector contents
 
-Use a consistent structure with object-specific content rather than identical empty tabs everywhere:
+The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere:
 
-1. **Header:** name, type, owner and current status; locate/follow and pin where meaningful.
+1. **Header:** name, type, owner and current status; window movement and controls; locate/follow and content pinning where meaningful under the proposed selection policy.
 2. **Summary:** a few relevant facts, the next event and the most important unresolved problem.
 3. **Details:** relevant tabs/sections for operation, connections, costs, resources and history.
 4. **Actions:** one clear primary action and contextual alternatives; destructive/commercial actions open an impact preview.
@@ -114,7 +161,7 @@ Lists should preserve selection, scroll position and active edits during refresh
 
 ### 6.1 Create or change a Line
 
-Use one guided workspace with a persistent summary and access to advanced parameters. Proposed stages:
+Use one guided workspace in a movable planning window, with a persistent summary and access to advanced parameters. Expansion for large tables is proposed; returning from an expanded view should restore the window/map context. Proposed stages:
 
 | Stage | Player task | Feedback |
 |---|---|---|
@@ -190,43 +237,59 @@ Each overlay needs a legend, relevant filters and a visible scope. Overlay value
 
 ## 9. Input, scale, time and state safety
 
-Carry forward the implementation brief's existing input/save defaults rather than choosing conflicting bindings here. Any new shortcuts should be remappable and respect text-field focus. Proposed Escape behaviour: leave the current transient action first; warn before discarding a meaningful unsaved plan; only then navigate out or open the pause menu. Escape does not terminate a contract.
+Carry forward the implementation brief's existing input/save defaults rather than choosing conflicting bindings here. Any new shortcuts should be remappable and respect text-field focus. Proposed Escape behaviour: leave the current transient action first; warn before discarding a meaningful unsaved plan; only then close/navigate out of the focused window or open the pause menu. Escape does not terminate a contract or indiscriminately close every window.
 
 The exact pause policy for ordinary panels, construction, planning, application focus and urgent incidents is unresolved. No simulation progresses during explicit pause or incomplete loading under the existing rules. Display actual pause/speed clearly; never silently change the selected speed because a management panel opened. Continue to use the existing game clock/calendar, including its supported speed choices and 14-day months; do not use a Gregorian date picker for game dates.
 
-Every costly or irreversible command must be revalidated against current simulation state. If a live preview becomes stale, explain changed prices, availability or affected obligations before accepting a revised commitment. Repeated clicks cannot duplicate an order/payment. Closing a panel cannot undo a committed transaction.
+Every costly or irreversible command must be revalidated against current simulation state. If a live preview becomes stale, explain changed prices, availability or affected obligations before accepting a revised commitment. Repeated clicks, including submissions from different windows, cannot duplicate an order/payment. Closing a panel cannot undo a committed transaction. Multiple views use the same authoritative state/command validation, not independent ledgers.
 
-Preserve useful navigation context when opening a corrective workflow and returning to a planner. UI preferences such as scale are distinct from save-game authority. Restoring an inspector, filter or uncommitted draft cannot execute a purchase, advance construction or regenerate physical cargo. If an inspected object is no longer available, show its valid history or an explicit unavailable state instead of broken controls.
+Preserve useful navigation context when opening a corrective workflow and returning to a planner. UI preferences such as scale and proposed window geometry are distinct from save-game authority. Restoring an inspector, filter or uncommitted draft cannot execute a purchase, advance construction or regenerate physical cargo. If an inspected object is no longer available, show its valid history or an explicit unavailable state instead of broken controls. Content pinning never makes a stale object reference authoritative.
 
-Support complete Czech/English text, number formatting, readable contrast, keyboard focus, non-colour status cues and text expansion. Test the established 1080p baseline and enlarged UI on higher-resolution screens; exact panel dimensions and scale steps remain design work. Never truncate a material price, warning, unit or action consequence without a way to read it.
+Support complete Czech/English text, number formatting, readable contrast, keyboard focus, non-colour status cues and text expansion. Test the established 1080p baseline and enlarged UI on higher-resolution screens; exact panel dimensions and scale steps remain design work. Never truncate a material price, warning, unit or action consequence without a way to read it. Proposed minimum sizes, screen-bound constraints and layout reset must be evaluated together rather than trapping controls off-screen when the viewport becomes smaller.
 
-## 10. Proposed design-validation scenarios
+## 10. Design-validation scenarios
 
-These are scenarios for evaluating this proposal, not passing tests or additional approved release gates. Formal gameplay acceptance remains in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md).
+### Confirmed-direction checks
+
+These checks describe evidence for the two confirmed directions, not completed tests. They do not approve the proposed refinements or replace [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md).
+
+| ID | Confirmed direction | Evidence to collect when implemented |
+|---|---|---|
+| UI-A01 | UI-D01, contemporary dark interface | Actual in-game management/detail windows use the agreed dark direction over the model world; no substituted light/parchment primary theme or claim that a generated mockup is in-engine evidence |
+| UI-A02 | UI-D02, movable floating windows | Open representative management and object-detail panels and move them to another usable part of the screen; no mandatory fixed-right inspector; moving a window changes no gameplay position/state |
+
+### Remaining proposed interaction scenarios
+
+These are scenarios for evaluating the remaining proposal, not passing tests or additional approved release gates. Formal gameplay acceptance remains in V1_ACCEPTANCE_TESTS.md.
 
 | Scenario | What the proposed UI should demonstrate |
 |---|---|
 | Found a company | Find the existing 1900/region/loan, office, staff and licence steps without a hidden setup screen or free assets; remain mode-neutral |
 | Inspect a vehicle | From map or list, identify location, current task, next departure and actual cause of a delay |
+| Arrange related windows | Compare related views, move/resize them and use proposed content pinning without an unrelated selection replacing the pinned identity |
+| Recover the workspace | Minimize/restore, change resolution/UI scale and reset the layout without losing access to title bars, controls or dirty drafts |
+| Use the proposed bottom bar | Reach navigation/construction and time controls without a mandatory permanent left rail or a window covering the bar |
 | Plan a service | Choose endpoints and operation, inspect dependencies and capacity quotes, then understand what activation commits |
 | Track split cargo | Explain where all portions are, what is ready/loaded/reserved and which connection is at risk |
 | Change a running service | Understand version/effective date and affected commitments without rewriting departed Trips |
 | Release capacity | Distinguish non-renewal from early cancellation and see total/per-owner settlement plus dependent services |
-| Build infrastructure | Distinguish ghost preview, accepted project and completed usable asset |
+| Build infrastructure | Distinguish ghost preview, accepted project and completed usable asset; clicking a floating tool window does not place infrastructure behind it |
 | Manage disruption | Navigate from one grouped incident to its cause and a valid authorized response |
 | Use CZ/EN and enlarged UI | Complete the same workflow without clipped material information or hover-only actions |
-| Save/load and live refresh | Preserve game authority; do not turn restored UI state or repeated clicks into duplicate commitments |
+| Save/load and live refresh | Preserve game authority; restored UI state, repeated clicks or parallel views cannot create duplicate commitments |
 
 No Unity UI has been implemented or visually tested as part of this document. Structural documentation checks, when run, do not validate these interaction scenarios.
 
-## 11. Decisions to resolve with the player
+## 11. Decision status
 
-| ID | Decision | Current recommendation | Status |
+| ID | Decision | Current direction/recommendation | Status |
 |---|---|---|---|
-| UI-D01 | Overall visual character | Restrained contemporary dark panels over the model world, with limited historical flavour | PROPOSED |
-| UI-D02 | Workspace/window model | Map-first; docked right inspector plus optional pinned comparison; expandable large workspace | PROPOSED |
+| UI-D01 | Overall visual character | Restrained contemporary dark interface over the model world, with limited historical flavour; exact styling tokens remain open | CONFIRMED on 2026-09-30 |
+| UI-D02 | Workspace/window model | Individual management/detail panels are movable floating windows; not a mandatory fixed right inspector | CONFIRMED on 2026-09-30 |
 | UI-D03 | Information density | Concise summary first, richer tables/timelines and details on demand | PROPOSED |
 | UI-D04 | Pause behaviour | Decide ordinary-panel/planner/construction/focus/urgent-event behaviour explicitly; preserve existing explicit pause/load rules | OPEN |
 | UI-D05 | Navigation and Czech terminology | Five proposed navigation groups and plain-language labels from Section 4 | PROPOSED |
+| UI-D06 | Fixed bottom bar | Stable bottom navigation/control area instead of mandatory left/top strips; exact contents and grouping unresolved | PROPOSED from the player's tentative suggestion on 2026-09-30 |
+| UI-D07 | Detailed window interaction | Resizing, multiple views, selection reuse/content pinning, minimize/restore, optional snapping and layout recovery as described in Section 3.2 | PROPOSED |
 
-Suggested discussion order: agree visual character and the normal map screen first, then refine one concrete end-to-end flow before styling all panels. The player's approval of one decision does not silently approve the other rows or every detail in this draft.
+Continue by resolving the bottom bar and window-selection behaviour, then refine one concrete end-to-end flow before styling all panels. Approval of one decision does not silently approve the other rows or every detail in this document.
