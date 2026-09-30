@@ -18,6 +18,18 @@ For implementation work also read:
 - `docs/IMPLEMENTATION_STATUS.md` — actual progress, results and next task;
 - `docs/OPENCODE_START.md` — concise execution prompt.
 
+Document responsibility is explicit:
+
+- `GAME_DESIGN.md` owns shared game mechanics, including the calendar (3), cargo identities/invariants (11.9) and enduring vehicle availability (15.11).
+- `V1_SCOPE.md` owns the first-release inclusion/exclusion boundary. Its summaries link to the shared mechanics rather than redefine them.
+- `CONTRACT_CANCELLATION.md` owns the focused ordinary-cancellation calculation and settlement rules.
+- The brief and content manifest own engineering guidance and adjustable defaults, not silent product overrides. `DATA_PIPELINE.md` owns documented import conventions.
+- Acceptance scenarios define required evidence; `IMPLEMENTATION_STATUS.md` records only observed progress/results. Neither creates a gameplay exception.
+
+There is no universal "last paragraph wins" rule. A genuine mechanics conflict still requires correcting the owning section and its dependent summaries/tests; do not treat a release-scope document or example as blanket permission to override it.
+
+Run `python3 Tools/check_docs.py` and `python3 -m unittest discover -s Tools/tests -v` after documentation edits. These check documentation structure and selected explicit regressions, not the correctness or completion of the unimplemented game.
+
 Together these form the **living source of truth**, not a historical log. The core design describes the wider game; V1_SCOPE explicitly narrows the first release's modes and start presets without deleting the broader design. Focused specifications elaborate core rules and are not optional notes.
 
 When a design decision changes:
@@ -29,7 +41,7 @@ When a design decision changes:
 5. Only then implement the change.
 6. Keep code and documentation aligned in the same change whenever possible.
 
-Do not silently reinterpret a discussion example as overriding an existing contractual guarantee. The cargo allocation rules in V1_SCOPE and GAME_DESIGN use compatibility and contractual priority tiers, not one unrestricted hidden score.
+Do not silently reinterpret a discussion example as overriding an existing contractual guarantee. The canonical cargo rules in GAME_DESIGN Sections 11.0.1 and 11.9 use compatibility and contractual priority tiers, not one unrestricted hidden score.
 
 ## First-playable delivery contract
 
@@ -132,7 +144,7 @@ Use the single simulation clock defined in GAME_DESIGN Section 3:
 
 Do not reintroduce an independently accelerated historical calendar, the retired 100–150-hour campaign target or speeds above 16x. Year 2020 is a duration reference, not a mandatory game ending.
 
-Timetables, slot windows, transfers, cargo ageing, crews, maintenance, production, construction, finances, research, contracts, cancellation and renewals use the same game-time units. Never assume Gregorian month lengths or a 365-day financial year. Historical source dates outside days 1–14 require an explicitly documented conversion in the core/data-pipeline specification before use. The handoff has not silently chosen a conversion formula.
+Timetables, slot windows, transfers, cargo ageing, crews, maintenance, production, construction, finances, research, contracts, cancellation and renewals use the same game-time units. Never assume Gregorian month lengths or a 365-day financial year. Historical source dates use the explicit versioned import conversion in GAME_DESIGN Section 3.4 and docs/DATA_PIPELINE.md. Apply it once to source dates, not to already-authored game dates; runtime systems never use Gregorian period arithmetic.
 
 Route length and performance determine game-time travel. Rendering follows the same simulation, not an independently slowed travel clock.
 

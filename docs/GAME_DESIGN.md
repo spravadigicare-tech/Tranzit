@@ -4,7 +4,7 @@
 >
 > **Maintenance rule:** Before adding or changing any feature, review all affected sections and resolve contradictions. Remove or rewrite obsolete decisions instead of appending conflicting alternatives.
 >
-> **Related specification:** [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md) defines the current proportionate cancellation and early-capacity-release rules.
+> **Related specifications:** [V1_SCOPE.md](V1_SCOPE.md) defines the approved first-release boundary; this document also covers the wider base game. [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md) owns proportionate cancellation and early-capacity-release rules. Detailed cargo and vehicle-availability rules are centralized here in Sections 11.9 and 15.11. Document responsibilities are defined in [AGENTS.md](../AGENTS.md).
 
 ## 1. Vision
 
@@ -81,7 +81,7 @@ The key design requirement is not the visual tooltip itself. It is that systems 
 
 ### 2.1 Geography
 
-The first playable world is based on real European geography, initially focused on Central Europe. The first production scope should prioritize areas corresponding to modern Czechia plus nearby Central European regions; Germany, Austria, Hungary and Poland are natural early expansion targets.
+The first playable world covers the entire territory corresponding to present-day Czechia plus adjoining parts of Germany, Poland, Austria and Slovakia, as defined in V1_SCOPE. These modern geographic labels describe coverage, not the jurisdictions of 1900. The exact clipping polygon is an authoring deliverable; Hungary and further European territory are later expansion possibilities, not substitutes for the approved adjoining coverage.
 
 The map must be physically large enough that major cities have meaningful space between them. Travel should feel like travel, not like moving between adjacent miniature towns. Journey duration follows the common time ratio in Section 3, not a separate visual travel clock.
 
@@ -141,7 +141,7 @@ These reports can foreshadow technologies, economic changes and future expansion
 
 ### 3.1 Base game and Early Ages scope
 
-The base game's default/earliest selectable start is **1900**. New games can also start in **1925, 1950 or 1975**. The player chooses a start region, then must **physically establish and construct the first regional office/branch in a chosen city**. Choosing a later year does not automatically grant a large established company or a free prebuilt branch.
+The wider base game's default/earliest selectable start is **1900**, with later presets **1925, 1950 and 1975**. First-playable V1 requires only the 1900 preset, with continued historical progression; the later presets remain future base-game scope. The player chooses a start region, then must **physically establish and construct the first regional office/branch in a chosen city**. Choosing a later year does not automatically grant a large established company or a free prebuilt branch.
 
 The pre-1900 playable period, with an intended beginning around **1820**, is reserved for the first planned DLC, **Early Ages**. Its detailed content and release schedule are not specified here. Early Ages extends the historical content backwards using the same core systems, rather than requiring a second simulation engine or a different calendar.
 
@@ -203,7 +203,7 @@ Every calendar consumer must use the same 14-day-month model. Do not mix ordinar
 - Financial and production data must state their units explicitly: per game hour/day/week/month/year or per trip/tonne/km. Normalize imported assumptions deliberately; do not combine conventional-month expenses with only 14 days of revenue by accident. Calendar rates and physical per-use costs must not be charged twice.
 - Fuel, distance-based wear and material consumption remain tied to actual simulated operation. Speed selection changes wall-clock duration, not the quantity consumed by the same completed work.
 - Population and production growth, vehicle/calendar ageing and technology availability advance with the common clock. Historical regional snapshots are initialized at the selected start year rather than replayed from the DLC era.
-- Day-of-month dates that do not exist in the game calendar, including historical holidays/events after the 14th, need an explicit documented conversion when content is authored. The exact real-date-to-game-date mapping is still to be specified; do not silently create invalid dates or assume a 31-day month.
+- Imported historical dates use the versioned authoring conversion in DATA_PIPELINE.md: validate the Gregorian source date, retain its original value, preserve year/month and map **every** source day with `game_day = 1 + floor((source_day - 1) * 14 / source_month_length)`. Game-authored dates already use days 1–14 and are never converted again. Gregorian rules exist only in this import step, not runtime billing, schedules or ageing. Colliding mapped events follow prerequisites and stable source-date/ID order.
 - UI must distinguish game time from estimated real playtime. Calendar, contracts and timetables show game-time units consistently.
 
 Test month/year rollover, two complete weeks per month, cross-year winter seasons, seasonal renewals and speed changes during trips, maintenance and construction. For equivalent simulated elapsed time, different selected speeds must not change resource accounting or bypass physical movements, reservation conflicts, deadlines or other events.
@@ -1241,7 +1241,7 @@ This right is automatic and has no waiting period. The player can therefore:
 - take the founding loan;
 - buy/lease land;
 - build the first branch;
-- inspect opportunities;
+- inspect public setup costs and eligible public/direct opportunities; routine local jobs remain undiscovered until commercial coverage exists under Section 7.2;
 - buy vehicles and arrange facilities.
 
 The company still cannot legally operate a regulated transport activity until the relevant **activity licence** has been obtained.
@@ -1538,7 +1538,7 @@ The UI must translate staffing needs into understandable requirements such as:
 - target and currently available reserve;
 - additional staffing required for night/weekend patterns.
 
-Where a Service Pattern requires conductors/onboard staff, that requirement contributes to crew capacity. The volume of onboard ticket sales itself does not add station dwell time or create extra per-passenger staffing simulation.
+Where a Service Pattern requires conductors/onboard staff, that requirement contributes to crew capacity. Ordinary onboard ticket sales do not add station dwell when staff can circulate while running. Non-through compartment stock is the explicit aggregate station-dwell exception in Section 14.5. Neither case creates per-passenger staffing simulation.
 
 The game does **not** simulate individual crew members commuting between Praha and Ostrava or require staff-repositioning trains.
 
@@ -1945,7 +1945,7 @@ The player is never forced to accept the suggested solution. Alternative valid s
 
 A signed or proposed customer contract is **not directly bound to one Line**.
 
-Instead, each contract uses a **Transport Plan** describing how the complete customer obligation is physically fulfilled from contractual origin to contractual destination.
+Instead, a contract defines a reusable **Transport Plan** template describing fulfilment from contractual origin to destination. Each shipment or passenger-group execution uses a versioned instance of that plan. Replanning one shipment must not mutate the template or the execution state of other shipments. The cargo identities and accounting are defined in Section 11.9.
 
 The Transport Plan is composed of one or more ordered **transport legs**.
 
@@ -1984,7 +1984,7 @@ The Transport Plan records for each leg:
 
 Transfers between legs are physical.
 
-CargoBatch state moves through the real chain:
+CargoLot state moves through the real chain:
 
 - pickup/loading;
 - movement;
@@ -2043,7 +2043,7 @@ The dispatcher then chooses a recovery action:
 
 - **Hold the trunk Trip** for the delayed cargo when the expected wait is acceptable and the Trip can still operate within its slot/tolerance and downstream commitments;
 - **Hold and accept operational consequences** where the player/authorized manager deliberately chooses to wait beyond the normal margin, understanding that the Trip can lose slot protection, delay other cargo/passengers and create additional access/penalty costs;
-- **Depart without the cargo**, record a carrier-side missed connection, and automatically rebook the affected CargoBatch onto the next compatible Trip with sufficient capacity;
+- **Depart without the cargo**, record a carrier-side missed connection, and automatically rebook the affected CargoLot onto the next compatible Trip with sufficient capacity;
 - create an **ad-hoc recovery movement** or hire an external carrier when waiting for the next normal Trip would breach the customer SLA.
 
 The recovery choice must consider the whole Transport Plan, not only the current train.
@@ -2134,7 +2134,7 @@ The system must not solve a carrier-created capacity deficit by secretly breakin
 
 ###### Priority inside the same tier
 
-When several compatible CargoBatches share the same commercial priority tier, the dispatcher uses transparent urgency rather than arbitrary first-come randomness.
+When several compatible CargoLots share the same commercial priority tier, the dispatcher uses transparent urgency rather than arbitrary first-come randomness.
 
 The primary ordering should consider:
 
@@ -2154,11 +2154,11 @@ A higher-margin spot shipment does not jump ahead of a lower-margin guaranteed c
 
 ###### Loading plan and consist use
 
-The system generates a physical loading/consist plan from the selected CargoBatches.
+The system generates a physical loading/consist plan from the selected CargoLots.
 
 For rail this can include:
 
-- which wagons carry which CargoBatches;
+- which wagons carry which CargoLots;
 - required wagon type;
 - destination grouping where useful;
 - dangerous-goods separation;
@@ -2764,22 +2764,58 @@ Serious one-off failures can skip parts of this escalation where the contract cl
 
 The same rules apply to AI companies and customers; they cannot cancel contracts without a valid contractual or simulated reason.
 
-### 11.9 Cargo batches
+### 11.9 Shipments and physical cargo lots
 
-Cargo is simulated in batches, not per kilogram/item.
+Use one canonical naming model. `Shipment` is a commercial consignment belonging to an optional customer contract. `CargoLot` is an independently located physical portion of that shipment. It is the sole executable cargo-batch entity; do not create a second cargo subsystem.
 
-A batch tracks type, quantity, origin, destination, deadline/quality constraints and contract.
+`TransportPlan` describes the route/responsibility chain. A contract may provide a reusable plan template; a shipment uses a versioned instance/execution plan. `PlanLeg` describes one required physical transfer. `TripAllocation` reserves a quantity of a cargo lot on a specific Trip between boarding/loading and alighting/unloading endpoints.
 
-For multi-leg transport, a CargoBatch also tracks enough execution state to explain transfer readiness and responsibility, including:
+Suggested identities and responsibilities:
 
-- current physical location;
-- current/next Transport Plan leg;
-- intended connecting Trip where reserved;
-- readiness/cutoff status;
-- cause/responsibility when a planned transfer is missed;
-- current recovery/rebooking assignment.
+| Object | Responsibility |
+|---|---|
+| Shipment | Ordered quantity, origin/destination, commodity, contract, deadline, service obligations, split/delivery policy and summary |
+| CargoLot | Exact quantity, physical location/carrier, current leg, quality/age, handling-unit membership and lineage |
+| TransportPlan / PlanLeg | Ordered feasible endpoints, modes/operators, transfer dependencies, valid alternatives and plan version |
+| TripAllocation | Lot/quantity, Trip and occupied route segments, physical capacity pool, state, reservation protection and reason codes |
+| HandlingOperation | Actual loading, unloading, transshipment and quantity moved between authoritative locations |
+| Capacity ledger | Segment-specific reservations for actual resources; no double-booked wagons, seats, mass, volume or handling slots |
 
-This state is event-driven and does not require per-frame cargo AI.
+A shipment does not permanently belong to one Trip, Line or partition. Example: 100 t uses 40 + 40 + 20 t inbound Trips, then 70 + 30 t outbound Trips after physically arriving and becoming ready at the transfer point. Keep one shipment in UI. A remaining quantity can wait without a Trip allocation.
+
+#### Units and indivisibility
+
+Represent cargo quantities in integer base units/fixed precision, not uncontrolled floating-point subtraction. Definitions declare the unit, mass/volume conversion, allowed split increment and any indivisible handling units. Do not universally assume 1 t is the minimum.
+
+A pallet, vehicle, container or oversized machine can be indivisible. Commodity divisibility does not imply its current packaging can be split without a real repacking operation. Entire-shipment `do_not_split` and `deliver_together` are different contractual conditions; do not silently infer one from the other.
+
+Loading 63 t of remaining mass capacity with a 5 t split increment admits at most 60 t, subject to volume, positions, route load and other constraints. No rounding creates or destroys cargo.
+
+#### Physical and commercial invariants
+
+- Every positive physical quantity has exactly one authoritative location: a facility/vehicle or an explicit handling state with precisely accounted source/destination quantities.
+- A reservation changes a plan/capacity ledger, not the cargo's physical location.
+- For each shipment: created quantity equals its remaining physical quantity plus accepted delivered quantity plus explicitly completed terminal dispositions, with no duplicated terminal state. Spoiled cargo awaiting disposal and cargo awaiting return are still physical inventory and consume capacity. A completed return/reclassification links the receiving inventory or return shipment and closes the original quantity exactly once; recording a write-off is not permission to erase a physical load. Production, consumption and disposal are explicit inventory transformations, not reservation edits.
+- Partial delivery contributes only the accepted quantity. Full completion follows the contract's delivery policy, not the first arriving lot.
+- Rebooking one part cannot cancel or reset the other parts' progress.
+- A future-leg reservation may exist before arrival if backed by the predecessor plan and compatible capacity. Loading cannot occur before actual arrival, required handling and readiness.
+- Do not interpret `required minus all allocations ever created` as waiting cargo. Completed/cancelled historical allocations and reservations on several legs would double-count it. Derive unreserved quantity for the selected lot/leg from live reservations against that lot's currently eligible quantity. Keep an event/audit history separately.
+- Segment capacity is released after actual unloading. Cargo from A to B and cargo from B to C can reuse capacity; cargo from A to C blocks both segments.
+- Different qualities, deadlines, contracts, indivisible units or custody states must not be merged in a way that loses obligations. Lots may share a visual pile or vehicle while remaining distinct records.
+- Combining compatible lots never resets cargo age, spoilage exposure, cost basis or responsibility. Preserve constituent state or do not merge.
+- Destination storage and transfer handling capacity are real; arriving cargo cannot disappear into a full warehouse.
+
+Reservations must be transactional. Failed validation, duplicate clicks, save/load or two planners selecting the same capacity cannot reserve the same quantity twice. Save IDs, reservation versions and idempotency keys.
+
+#### Allocation and execution lifecycle
+
+The single allocation policy is defined in Section 11.0.1: physical compatibility, protected/guaranteed obligations, firm recurring/framework cargo, confirmed one-off jobs, then spot cargo. Deadline/quality urgency and stable booking order apply within a tier. No weighted profitability score or ageing rule may override protected commitments. A permanently saturated tier cannot promise starvation prevention; expose the shortfall and propose capacity or recovery.
+
+Commercial allocation state (such as Planned, Reserved, Committed, Cancelled or Completed) is separate from physical handling/custody state (such as Waiting, Loading, Loaded, InTransit or Unloading). Replanning supersedes a versioned allocation and preserves its history; it never rewrites the lot location. Releasing an unloaded reservation requires the applicable contractual approval/recovery, but no fictional unloading operation. Cancelling a partially loaded or running allocation preserves the actual onboard quantity until physical unloading/recovery is possible. A cancelled Trip is not evidence that its load is back in storage.
+
+Cutoff responsibility and recovery use Section 11.0.1. The lot retains its readiness state, cause/responsibility for a missed transfer and current recovery assignment; rebooking does not reset that history or release another protected commitment.
+
+On terminal/route/Trip disruption, replan only affected lots and dependencies. Use event-driven bounded-horizon planning, cached routes, a deterministic tie-break and a material-improvement threshold to prevent allocation ping-pong.
 
 ### 11.10 Multi-leg logistics
 
@@ -2845,7 +2881,7 @@ The checkbox remains simple. Optional managerial approval/budget limits use the 
 
 ### 12.1 Storage
 
-Stations have small implicit handling/storage capacity for minor shipments.
+A freight-capable station can include a small integrated handling/storage allowance for minor shipments in its definition. That allowance has declared cargo compatibility, physical footprint, finite quantity/throughput and the required staff/equipment. It is not invisible unlimited storage. A passenger-only halt/platform gains no freight-handling capability or free warehouse merely by being a station.
 
 Large volumes require physical storage infrastructure.
 
@@ -2940,7 +2976,7 @@ A customer-provided endpoint remains owned/controlled by that customer unless th
 
 ## 13. Transport modes
 
-Primary modes in the base game, subject to the selected year and technological availability:
+Primary modes in the wider base game, subject to the selected year and technological availability:
 
 - road transport,
 - railway,
@@ -2949,7 +2985,7 @@ Primary modes in the base game, subject to the selected year and technological a
 
 The early horse-drawn/dostavnik startup progression and the emergence of the first railways are principally Early Ages DLC content. Horse-drawn or older technology can still appear in the base world where appropriate; starting in a later year does not unlock unavailable future modes or force all existing modes to be used by the player.
 
-Aircraft are explicitly out of current scope.
+First-playable V1 implements rail and road freight/passengers, including intercity and local buses. Water, tram, trolleybus and metro operation remain later base-game scope. Aircraft are explicitly out of current scope.
 
 ### 13.1 Roads
 
@@ -3192,15 +3228,11 @@ The player does not need to micromanage every coupling action by default. A yard
 
 Vehicles respect directionality.
 
-Steam locomotives and other one-directional equipment cannot magically reverse at a terminus.
+Keep **physical facing**, **permitted travel direction** and **position in the consist** separate. A steam locomotive may run backwards only when that model and operation permit it, with the defined speed/visibility/route limits. It never flips its model or orientation by changing a timetable direction.
 
-Possible solutions include:
+A run-around moves a locomotive to the other end of the consist but does **not** turn the locomotive's physical facing. A turntable or reversing triangle turns it through real movement. These are not interchangeable capabilities.
 
-- run-around tracks,
-- turntables,
-- reversing triangles,
-- second locomotive,
-- later bidirectional trainsets.
+A terminal solution can use a valid run-around plus permitted reverse running, actual turning facilities, a second suitably positioned locomotive, or later bidirectional equipment. Feasibility checks the complete combination, including track access, coupling/control and resulting performance. Section 16.3 applies the same distinctions to rescue/backing movements.
 
 ### 14.3 Train feasibility
 
@@ -4129,11 +4161,11 @@ The delivery movement is a real movement on the railway and consumes real capaci
 
 #### Rail vehicles without a usable continuous rail route
 
-If no technically/legal continuous rail route exists from the asset's current location to the player's receiving network, the default fallback is **specialized heavy road transport**.
+If no technically/legal continuous rail route exists, **specialized heavy road transport** is a possible fallback only when the current era has suitable real equipment, handling/loading capability, a valid route and an available provider. It is not a guaranteed 1900 delivery method. If none exists, show a delivery blocker and offer another seller/receiving point, a real connection project or another explicitly supported period-compatible solution; do not fabricate modern equipment.
 
 Rail vehicles are transported **one physical vehicle per suitable heavy-haul movement by default**, unless a later explicitly supported transport system can safely carry more.
 
-The transport should be visually represented as a recognizable oversized/special movement, typically including:
+Where supported by the period and provider, the transport is visually represented as a recognizable oversized/special movement. A later-era example includes:
 
 - heavy tractor unit;
 - specialized low-loader / modular trailer;
@@ -4182,7 +4214,7 @@ The pre-filled External Transport Order shows compatible heavy-haul providers an
 
 If only a few companies in the region own suitable equipment, the player may need to wait for the next available specialist transport slot.
 
-A large purchase can therefore create a delivery sequence. Example: five locomotives bought without a rail connection may require five separate heavy-haul movements over several days/weeks rather than all appearing at once.
+A large purchase can therefore create a delivery sequence. Later-era example, when compatible road transport exists: five locomotives bought without a rail connection may require five separate heavy-haul movements over several days/weeks rather than all appearing at once.
 
 Specialist providers use real finite capacity under the same general economic principle as construction companies, manufacturers and workshops. They cannot accept unlimited simultaneous oversized movements.
 
@@ -4229,6 +4261,31 @@ Dealer/manufacturer-authorized retrofit can be one source of retrofit work, but 
 
 Assets can be physically sent to appropriate scrapping/disposal facilities. Material value can be partially recovered.
 
+
+### 15.11 Enduring historical vehicle availability
+
+Historical vehicle availability has no artificial end date. A model has an introduction date, but not a hard retirement date that removes it from the catalogue or disables existing assets.
+
+Keep separate:
+
+1. technology/model existence;
+2. physical assets already in the world;
+3. finite dealer/used inventory;
+4. actual manufacturing or special-order offers;
+5. maintenance capability and parts/support availability;
+6. technical, safety and route compatibility.
+
+Once introduced, a model stays searchable. Existing assets can be owned, resold, repaired and operated indefinitely while technically serviceable and compatible. Do not make a calendar rollover delete a model, expire its technology or force scrapping. If there is no available seller or manufacturer, show `no current offer`, not `unavailable after year X`.
+
+Ordinary new production of an old model can decline or end through manufacturer economics and capability; that is not a global purchase ban. Used stock comes from real assets. Where a manufacturer retains the relevant capability, new/special-order production can be offered with finite capacity, cost and lead time. Do not guarantee unlimited stock or fabricate a used asset to satisfy a search.
+
+As technology becomes uncommon, fewer independent workshops may retain suitable equipment, skills and supplies. External repair quotes can then reflect a longer journey, scarcity of compatible workshop slots, specialist labour or difficult parts procurement. Providers must expose those reasons, not apply an unexplained annual obsolescence multiplier.
+
+A player-owned compatible workshop, trained workforce and retained know-how can preserve support. This is not free maintenance: staff, equipment, materials, capacity and downtime still cost money. In-house work can be economical at sufficient utilisation; it is not universally cheaper than outsourcing.
+
+Keep physical age/condition separate from technological obsolescence. Repair needs can grow with actual wear, and an old design can remain less efficient than a new design. Do not increase an unchanged engine's fuel consumption merely because a new year/model arrived. Existing safety and compatibility rules still apply, but do not invent a technology-wide retirement prohibition to defeat this decision.
+
+Horse-drawn freight vehicles and omnibuses are valid surviving 1900 equipment beside early motor or steam-powered road vehicles where plausible. They need compatible stable/service facilities, staff and operating supplies at an aggregate level. Do not add a horse-breeding or per-animal life simulator. Their survival does not enable the pre-1900 Early Ages start.
 
 ## 16. Maintenance
 
@@ -4619,7 +4676,7 @@ Instead, fueling/charging is integrated into fleet and Trip scheduling.
 
 ### 18.2 Where fueling and charging can happen
 
-Normal scheduled fueling/charging takes place **between Trips** at a physical compatible facility.
+Normal scheduled fueling/charging, including traction coal/water and aggregate animal-traction supplies, takes place **between Trips** at a physical compatible facility. An ordinary intermediate stop in the same Trip does not silently enable refueling. Passenger toilet/water servicing is not traction refueling.
 
 Valid locations include:
 
@@ -4681,7 +4738,7 @@ A Trip cannot depend on fuel/energy that does not physically exist or on a refue
 
 If the vehicle does not have enough energy for the next Trip, the planner must find a valid between-Trip fueling/charging opportunity before departure.
 
-If none exists, the Trip is not ready and the UI explains the reason, for example:
+If none exists, the Trip is not ready. A longer service can be planned as successive Trips with a real fueling turnaround, or use a physically valid traction exchange whose locomotives have sufficient energy for their assigned segments. Such planning retains passenger/cargo custody, capacity and commercial obligations; it never resets fuel by renaming a Trip. The UI explains a remaining blocker, for example:
 
 > Bus #37: insufficient fuel for next duty  
 > Required before departure: 82 L  
@@ -5805,11 +5862,11 @@ If a contract becomes infeasible, activation is blocked or explicitly flagged as
 
 ##### Transition of Trips
 
-Trips before the effective boundary are generated/operated under the old version.
+Use the Trip's **scheduled origin departure timestamp** to select the Pattern version, not its generation time or delayed actual departure. Trips scheduled before the boundary retain the old version even if they depart late. Trips scheduled at or after the boundary use the new version.
 
-Trips on or after the boundary use the new version.
+Already generated future Trips, tickets, allocations and preparation tasks on the replaced version must be explicitly migrated/revalidated or cancelled/recovered. Old and new generation must not create duplicate occurrences. Preparatory movements and loaded cargo cannot be undone by deleting an object.
 
-A Trip already in progress when the boundary passes keeps the version under which it departed; it is not rewritten mid-journey.
+A Trip already running keeps its original version and obligations; it is never rewritten mid-journey. Suspension/emergency actions remain separate from version selection.
 
 The UI keeps prior Pattern versions available for audit/history but only the current/future relevant versions participate in planning.
 
@@ -5829,7 +5886,7 @@ Suspension can be either:
 - **scheduled** — start/end date is known in advance;
 - **until further notice** — no planned restart date.
 
-A Line/Pattern in **Suspended until further notice** remains a real company object with its history, configuration and dependencies, but generates no new commercial Trips after the suspension boundary.
+A Line/Pattern in **Suspended until further notice** remains a real company object with its history, configuration and dependencies, but cannot start a new commercial Trip while suspension is effective. Stop future generation/sales and explicitly cancel or replan already generated but not departed affected Trips, including delayed departures. Resolve preparation, loaded quantities, reservations and obligations through the impact check; do not only disable the generator and allow its old queue to dispatch.
 
 A Trip that has already departed before suspension takes effect completes under its existing plan unless a separate emergency/cancellation action explicitly terminates it.
 
@@ -6170,15 +6227,11 @@ It does not create passenger demand by itself.
 
 ###### Passenger choice and unavailable sales
 
-A passenger must be able to acquire a valid ticket/reservation through at least one suitable channel for the intended itinerary.
+A paid journey requires a usable sales channel; a reservation-required zone additionally requires confirmed capacity before boarding. Without a way to confirm that reservation, the reservation-required option is unavailable even if physical space exists.
 
-If no usable sales channel exists, that journey option becomes less attractive or unavailable even if the physical vehicle has spare seats.
+Do not confuse ticket sales with physical boarding. Open/optional unreserved boarding follows the explicit onboard-sales rule above: an otherwise eligible passenger may board free uncommitted capacity without a pre-purchased ticket, but if no eligible selling crew or other actual payment channel collects the fare, that journey earns no fare. Do not fabricate revenue, a reservation or a fare-evasion minigame. Existing prepaid tickets remain valid and are never charged twice.
 
-The Line Planner should therefore flag:
-
-> **Ticket sales unavailable at [boarding point]**
-
-when a passenger stop has no viable ticketing path for the configured service/reservation policy.
+The Line Planner must distinguish **Ticket sales unavailable / fare revenue at risk** from **Reservation unavailable / boarding blocked**. Forecast revenue uses actual reachable sales channels and the applicable boarding policy, not the existence of seats alone.
 
 ##### Passenger capacity commitments
 
@@ -6189,6 +6242,8 @@ Capacity priority is:
 1. protected passenger-contract allocations;
 2. confirmed individual reservations;
 3. open/walk-up passenger demand.
+
+These tiers allocate uncommitted capacity; they are not permission to take an already confirmed seat away. A newly accepted group contract must fit around existing confirmed individual reservations, or obtain an explicit re-accommodation/amendment before acceptance. Carrier-caused capacity loss uses the recovery rules rather than silently selling the same seat twice.
 
 Unused contracted capacity can be released according to its contract cutoff rules.
 
@@ -6286,7 +6341,7 @@ The timetable planner then searches for a **continuous sequence of compatible ti
 > → dwell  
 > → next departure slot
 
-The system must therefore solve the whole chain coherently. A station time cannot be accepted if the preceding leg cannot physically reach it or if the following capacity window cannot be reached after dwell.
+The system must solve the whole chain coherently using the **midpoints of the candidate windows**, not merely show that the windows overlap some possible trajectory. For every leg, planned arrival minus planned departure must cover the feasible running profile and its selected recovery margin; planned departure after a call must cover required dwell/preparation. If individually valid windows have infeasible midpoints, request a different complete slot chain or reject the proposal. Do not silently move the published time away from its accepted midpoint to make the calculation pass.
 
 If a downstream slot is later than originally preferred, subsequent planned calls shift with it. The planner can also work backwards from an important required arrival/connection.
 
@@ -6455,7 +6510,7 @@ Rail/station dispatching still follows Section 13.2:
 
 If a High-priority Express has only a flexible/out-of-slot movement while another operator has a valid guaranteed slot, the Express cannot simply be sent first because the player marked it High.
 
-Within the player's own network, or where competing movements have equivalent contractual rights and a tie/recovery choice genuinely exists, operational priority can be used as a dispatcher preference.
+Operational priority may resolve a choice between the same company's services with equivalent contractual rights. It is not a player-controlled tie-break against another operator. Equal-rights inter-operator conflicts use the infrastructure owner's published neutral dispatch rule with stable ordering, subject to safety and contractual recovery; ownership and a private High setting confer no extra rights.
 
 The Capacity Order UI can recommend a stronger access product for a High-priority service, but changing operational priority does not automatically purchase or upgrade infrastructure rights.
 
@@ -6518,7 +6573,7 @@ Operational status then compares the real Trip against that slot window:
 - inside late tolerance;
 - out of slot once the protected window/tolerance is exceeded.
 
-The midpoint rule applies to timetable construction. Real trains can of course arrive/depart elsewhere inside the valid window as operations unfold.
+The midpoint rule applies to timetable construction. Actual arrivals and permitted movements can occur elsewhere inside the valid window, but a passenger Trip must not leave a published boarding stop **before its advertised departure time** merely because the slot allows earlier use. Skipping a request stop must not cause early departure from a later published boarding stop. Wait/regulate at a valid location with real occupancy. Freight and non-boarding operational movements follow their explicit cutoff/access terms. Late operation and its consequences remain possible.
 
 ##### Frequency planning
 
@@ -7274,8 +7329,9 @@ Example road turnaround:
 > arrival 10:42  
 > passenger exchange: 4 min  
 > driver change: 2 min, parallel with boarding  
-> basic turnaround buffer: 2 min  
-> minimum next departure: **10:48**
+> physical minimum next departure: **10:46**<br>
+> additional planned recovery buffer: 2 min<br>
+> planned next departure: **10:48**
 
 Example rail turnaround:
 
@@ -7563,6 +7619,8 @@ If physical repositioning or preparation requires more time, the dispatcher star
 The player can therefore choose a more conservative operating style without manually setting every Trip's preparation timestamp.
 
 ##### Planning versus commitment
+
+Deferring concrete asset IDs does not defer capacity accounting. Future confirmed work reserves compatible time/capability capacity in the shared ledger, including preparation, maintenance and reserve obligations. Every planner uses those same reservations. Selecting serial-number assets later binds existing commitments rather than creating a second reservation or discovering that the same fleet was promised twice.
 
 Before the preparation horizon, the planner primarily maintains **feasibility coverage**:
 
@@ -7915,7 +7973,7 @@ Later operations/HR managers can recommend reserve-size or recovery-policy chang
 
 ## 33. Urban transport
 
-Supported urban modes:
+Wider base-game urban modes (only buses are required in first-playable V1):
 
 - buses,
 - trams,
@@ -8072,7 +8130,7 @@ Major accidents can have real consequences:
 
 ## 38. Finance and failure
 
-Finance is intentionally simpler than the operational/economic simulation.
+Finance is intentionally simpler than the operational/economic simulation. The single accounting unit is literally `money` in both Czech and English, with localized number formatting but no historical currency switching, currency symbols or foreign-exchange subsystem. Use exact fixed-point/integer money postings; Sections 7.1 and 38.1 govern startup debt.
 
 Core tools:
 
@@ -8160,6 +8218,8 @@ Key expectations:
 Validate supported speeds from 0.5× to 16× on representative operating loads, including a developed network. The maximum is 16×, not a promise that current unimplemented code already sustains that rate. Higher speed may reduce visual detail but must not skip reservations, physical movement, transfers, service events, contracts or resource accounting. All subsystems advance on the same clock.
 
 ## 42. Current out-of-scope / deferred
+
+V1-specific deferrals are water, tram, trolleybus and metro operation and the 1925/1950/1975 new-game presets. These remain wider base-game goals, distinct from the broader deferred list below.
 
 - **Early Ages**, the first planned DLC: playable pre-1900 history with an intended start around 1820. Preserve extensibility and earlier-era design context, but do not make this content mandatory for the base game.
 - Aircraft.

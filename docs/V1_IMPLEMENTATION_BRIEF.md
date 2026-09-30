@@ -162,13 +162,13 @@ A new company cannot need a player-built railway to buy its first road vehicle o
 
 The small founding loan must support at least one legitimate small-road opening with office(s), necessary director/staff, permissions, vehicle, endpoints, support and working capital. The standard/large tiers should offer wider viable choices, including a modest rail opening using leased/third-party infrastructure where the balance permits. Do not promise every opening in every region with every tier.
 
-Discovery remains branch/locality based until company technology broadens it. The UI can preview setup opportunities and costs without granting the commercial benefits of an unbuilt branch. Starter recommendations are real purchasable plans, not free fleet/branch templates.
+Discovery remains branch/locality based until company technology broadens it. Before a branch is operational, the UI may preview premises/seller/setup costs and public aggregate market indicators, not reveal the hidden routine local Opportunity Board or allow acceptance of undiscovered jobs. Eligible public/direct opportunities still follow Section 7.2. Setup previews do not grant branch benefits. Starter recommendations are real purchasable plans, not free fleet/branch templates.
 
 ### 6.2 Network operation and dispatch
 
 Build geometry validation before activating a network: joins, curvature, gradients, gauge/clearance, axle load, platform fit, power systems and turnability. Signal/block objects represent operational resource protection. A global capacity estimate is not collision protection.
 
-Distinguish commercial rail/station slot windows from actual track/platform occupancy. Timetable construction uses compatible offered windows and planned midpoint times under the core design. Dynamic routing cannot change published commercial stops or violate access/traction requirements. An operational deadlock requires a safe, explainable recovery plan; no train deletion or arbitrary nudging.
+Distinguish commercial rail/station slot windows from actual track/platform occupancy. Timetable construction validates the complete chain of offered-window midpoints, running margins and dwell under the core design. Early slot tolerance never authorizes leaving a published passenger boarding stop early. Dynamic routing cannot change published commercial stops or violate access/traction requirements. An operational deadlock requires a safe, explainable recovery plan; no train deletion or arbitrary nudging.
 
 Steam equipment may perform only explicitly supported reverse/run-around/turning movements. A permitted reverse movement is a real kinematic operation with any applicable limits, not teleportation or an instantaneous 180-degree model flip. Coupling and decoupling use actual asset orientation, track geometry, crew/equipment and capacity.
 
@@ -182,7 +182,7 @@ Contracts can be signed against a credible future investment plan, but construct
 
 External Transport Orders cover subcontracted cargo legs, vehicle delivery, materials/fuel and specialist movements. Providers consume genuine equipment/crew/route capacity. Do not create a different fake delivery system inside every marketplace.
 
-Cargo uses V1_SCOPE Section 5. Implement capacity per usable wagon/vehicle pool and traversed stop interval; tonnes alone are insufficient. Passenger bookings use the same principle of segment occupancy, but keep their own zone/product and reservation rules.
+Cargo uses the canonical GAME_DESIGN Section 11.9, referenced by V1_SCOPE Section 5. Implement capacity per usable wagon/vehicle pool and traversed stop interval; tonnes alone are insufficient. Passenger bookings use the same principle of segment occupancy, but keep their own zone/product and reservation rules.
 
 Prepare physical vehicles and crews early enough to cover repositioning, maintenance, shunting, fuel, cleaning and boarding. Partial failures use configured substitution/wait/reduced-capacity/cancel policies. Resolve passenger/cargo consequences after the final feasible consist is selected. No required driver is replaced by a generic service-quality penalty.
 

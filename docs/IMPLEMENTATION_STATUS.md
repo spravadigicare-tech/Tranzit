@@ -1,12 +1,13 @@
 # Tranzit — Implementation status
 
-Last initialized: 2026-09-30, during preparation of the OpenCode handoff.
+Last reviewed: 2026-09-30, during the repository-wide documentation consistency audit.
 
 ## Current evidence
 
-Inspected baseline: main commit `0ff59b98d8b9bdcbe3fec32299086bdcdb306c44`. It contained only AGENTS.md, README.md, GAME_DESIGN.md and CONTRACT_CANCELLATION.md. The handoff adds specifications and this ledger, not a Unity game.
+Audited baseline: main commit `a2b45f570bd91730f8c76d2f6a74058e28853c60`. All ten tracked files were documentation. This audit corrects specifications and adds documentation validation tooling, not a Unity game. Review scope and limitations are in [CONSISTENCY_AUDIT.md](CONSISTENCY_AUDIT.md).
 
-- Design/implementation handoff: prepared.
+- Design/implementation handoff: prepared; cross-system documentation audit completed.
+- Documentation lint and validator unit tests: see the audit report and actual CI/local run evidence. These do not pass any game acceptance gate.
 - Unity project and game implementation: not present in the inspected baseline; not created by this handoff.
 - Windows build: not produced.
 - Game compilation, automated tests, player walkthroughs and benchmarks: NOT RUN.

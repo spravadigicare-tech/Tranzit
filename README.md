@@ -29,12 +29,14 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
 | [Implementation Status](docs/IMPLEMENTATION_STATUS.md) | Current implementation/test evidence and next executable task |
+| [Data Pipeline](docs/DATA_PIPELINE.md) | Defined date-import convention and still-required data-production work |
+| [Consistency Audit](docs/CONSISTENCY_AUDIT.md) | Review coverage, resolved contradictions and limits of documentation verification |
 
 The handoff is documentation. It does **not** mean a Unity project, playable build, asset library or passing benchmark already exists. Check Implementation Status and the actual files for current progress.
 
 ## Wider base game and planned DLC
 
-The wider base-game design has selectable new-game starts in **1900, 1925, 1950 and 1975**. Only 1900 is implemented for the first playable target. Later presets initialize an appropriate existing world while the player still starts with a small company.
+The wider base-game design has selectable new-game starts in **1900, 1925, 1950 and 1975**. Only the 1900 preset is required for the first playable target; it is not yet implemented in the inspected documentation-only baseline. Later presets initialize an appropriate existing world while the player still starts with a small company.
 
 The earlier playable period, intended to begin around **1820**, is reserved for the first planned DLC, **Early Ages**. Historic buildings, steam operations, horse-drawn transport and suitable older vehicles can still be part of the base game where appropriate. The DLC release schedule is not specified.
 

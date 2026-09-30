@@ -79,8 +79,8 @@ For every vehicle model define:
 - dimensions, empty mass, load/volume/positions or passenger capacity zones;
 - traction/power, speed, acceleration/braking envelope and operating consumption;
 - gauge/coupling/control, route/load/clearance and energy compatibility;
-- direction/turning rules and permitted reverse operations;
-- required staff/qualification and service/facility families;
+- physical facing, permitted reverse operations and consist-end position; run-around and actual turning are distinct capabilities;
+- required staff/qualification and service/facility families; passenger through-circulation capability and any resulting aggregate ticketing dwell;
 - purchase/manufacturing basis, order lead-time inputs, depreciation and operating costs;
 - maintenance intervals, workshop requirements, parts/support family and retrofits;
 - usable prefab/mesh, coupling and access anchors, visual LODs, materials, animation and sound references;
@@ -181,7 +181,7 @@ Use five-real-minute measured intervals after warm-up for each speed/workload an
 
 ## 10. Source and completion records
 
-Each imported dataset/asset needs source URL or provenance, licence/usage conditions, acquisition/version date, file hash, transformation description and required notice. Keep 1900 historical overlays separate from modern geometry sources. Include source credits in the shipped game and accompanying notices as required by the selected licence.
+Each imported dataset/asset needs source URL or provenance, licence/usage conditions, acquisition/version date, file hash, transformation description and required notice. Keep 1900 historical overlays separate from modern geometry sources. Apply the versioned source-date convention in DATA_PIPELINE.md once; retain the original dates and provenance. Include source credits in the shipped game and accompanying notices as required by the selected licence.
 
 The completed manifest must report: required entries, complete entries, missing entries, validated date coverage, missing translation keys, missing prefabs, incompatible definitions, unsupported dependencies and historical/source review status. Store individual asset/content completion and test evidence in IMPLEMENTATION_STATUS.
 

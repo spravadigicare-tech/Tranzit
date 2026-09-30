@@ -111,7 +111,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | T-05 | Several essential events fall within one rendered frame at 16x | Chronological event/occupancy processing, no tunnelling or skipped cutoffs |
 | T-06 | Arrival/handling completion/cutoff/departure share a timestamp | Documented stable causal ordering; readiness not inferred from merely approaching a terminal |
 | T-07 | Pause, focus loss, save, close and reopen | No unauthorized game-time advancement or offline catch-up |
-| T-08 | Import real dates from 28/29/30/31-day months | Valid source-date checking, documented conversion to 1–14 and stable order for colliding events |
+| T-08 | Import real dates from 28/29/30/31-day months and already-authored game dates | Validate source dates; apply DATA_PIPELINE proportional conversion exactly once; game-authored dates remain unchanged; stable prerequisite/source-date/ID order for collisions |
 
 ### 4.2 Shipment inventory and allocation
 
@@ -135,6 +135,10 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | C-16 | Load incompatible volume/positions/hazard cargo despite spare tonnes | Reject with the real limiting dimension; nominal tonnes do not imply compatibility |
 | C-17 | End a contract or change Pattern version with in-flight lots | Obligations/history remain; only affected future routing changes; no resetting the shipment |
 | C-18 | Long wait under permanent high-tier saturation | Explain shortage and propose added capacity; no false guaranteed starvation prevention or priority breach |
+| C-19 | Spoilage or return recorded while cargo still occupies a vehicle/store | Physical inventory/capacity remains until actual disposition; linked return inventory and original terminal accounting balance exactly once |
+| C-20 | Replan one shipment using a shared contract Transport Plan template | Only its execution version changes; other shipments, accepted quantities and template remain intact |
+| C-21 | Minor freight at an equipped station versus a passenger-only halt | Only declared compatible finite integrated storage/handling is usable; no implicit warehouse or passenger-platform loading |
+| C-22 | Release an unloaded reservation; end a Trip with cargo remaining onboard during turnaround | No fictional unloading for a reservation; physically retained cargo still occupies capacity across Trip boundaries and is not billed/delivered twice |
 
 ### 4.3 Rail/road topology and resource protection
 
@@ -154,6 +158,10 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | N-12 | Road vehicle lacks legal turn/access to a destination entrance | No delivery by proximity; valid alternate route or actionable blocker |
 | N-13 | Road congestion, intersection queue and blocked loading entrance | Real delay propagates; no overlap, virtual unloading or arbitrary direction reversal |
 | N-14 | Multi-owner Capacity Order partly fails or quote becomes stale | No false fully protected status, double purchase or hidden accepted fees; accepted rights remain traceable |
+| N-15 | Individually valid slot windows have infeasible midpoints | Whole-chain midpoint/running-margin/dwell check rejects or requests different windows; no hidden non-midpoint timetable |
+| N-16 | Passenger train is ready in early slot tolerance or skips a request stop | No departure before the published time at a boarding stop; waiting consumes valid physical capacity |
+| N-17 | Run-around with a locomotive whose reverse-running speed is limited | Consist-end position changes, facing does not; reverse limits enter feasibility. A turntable/triangle is a separate physical operation |
+| N-18 | Different operators request equal-rights conflicting movements | Published neutral stable dispatch rule; neither ownership nor private High operational priority creates an advantage |
 
 ### 4.4 Vehicles, service and staff
 
@@ -165,7 +173,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | V-04 | Manufacturer backlog/material shortage changes after order | Real queued production/delivery changes with visible cause, not on-demand spawning |
 | V-05 | Routine service due versus hard safety limit | Player policy can adjust preventive timing but never dispatch beyond hard invalidity |
 | V-06 | Two vehicles compete for one workshop bay or fuelling point | Scheduled finite capacity, actual location and return movement; no parallel instant service |
-| V-07 | Long duty exceeds remaining fuel or inspection interval | Feasible intermediate service plan or blocked dispatch before predictable failure |
+| V-07 | Long duty exceeds remaining fuel or inspection interval | Feasible between-Trip service/turnaround or valid traction exchange; otherwise block before predictable failure. No implicit mid-Trip refueling |
 | V-08 | Vehicle immobilized on occupied track/road | Real rescue/tow/worksite path and capacity; consequences propagate |
 | V-09 | Lease expires, sale closes or scrap order issued during use | No disappearing asset; contractual obligation and physical handover/disposal remain distinct |
 | V-10 | Old model after newer technology appears | Catalogue and valid existing operation persist; no hard end-year lock |
@@ -173,6 +181,9 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | V-12 | Mandatory driver unavailable versus optional service crew shortage | No driverless dispatch; optional shortage follows legal/product limits and actual service effects |
 | V-13 | Vehicle ready but crew shift/rest capacity exhausted | Real crew feasibility/recovery, no use of the same qualified capacity twice |
 | V-14 | Substitute or shorten a consist | Revalidate operating envelope and protected capacity; correct rebooking/refunds for displaced users |
+| V-15 | Corridor and non-through coaches use onboard sales; repeat with prepaid tickets | Ordinary circulation adds no ticketing dwell; only actually required non-through handling adds aggregate dwell; no per-person staffing |
+| V-16 | Two future Patterns claim the same compatible fleet before concrete asset selection | Shared interval/capability reservations prevent overcommitment; later asset binding does not reserve the resource twice |
+| V-17 | Road turnaround: 4-minute exchange, parallel 2-minute crew change, 2-minute buffer | Physical minimum is 4 minutes, planned turnaround 6 minutes; optional buffer is not charged as mandatory work |
 
 ### 4.5 Contracts, passengers and money
 
@@ -194,6 +205,11 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | F-14 | Group passenger contract and ordinary tariff bookings share a Trip | Shared real capacity, separate prices/obligations, no duplicate revenue |
 | F-15 | Negative cash, salvageable assets and later deep insolvency | Distress process before game over; costs/loans/sales reconcile without free rescues |
 | F-16 | Same work at different speeds and game-period rate boundaries | Equal per-work costs and explicit calendar accrual; no 365-day or conventional-month leakage |
+| F-17 | Open/optional unreserved passenger boards without a ticket or selling crew | No invented fare; prepaid tickets remain valid; planner shows lost-revenue risk. Reservation-required boarding still needs confirmation |
+| F-18 | A new group contract requests seats already sold to individuals | Reject/reduce or explicitly resolve commitments before acceptance; group priority cannot silently displace a confirmed reservation |
+| F-19 | A pre-boundary scheduled Trip departs late after a Pattern-version boundary | Retains old version; future generated occurrences migrate once with preparation/cargo preserved; no duplicate Trip |
+| F-20 | Suspend with future Trips already generated or a departure delayed past the boundary | No new commercial departure during suspension; running Trips continue unless explicitly recovered; bookings/preparation handled |
+| F-21 | Retry prepaid partial cancellation before/after save | Liability, credited prepayment, refund and new cash payment reconcile exactly once with each owner |
 
 ### 4.6 World, construction, economy and AI
 
@@ -213,6 +229,8 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | W-12 | Manager attempts a purchase above budget or forbidden cancellation | Requires approval/rejects; delegated authority never exceeds explicit player policy |
 | W-13 | Weather/incident closes a route and later reopens it | Real capacity/speed/supply effects and recovery, clear reason, no flat hidden income modifier |
 | W-14 | Later technology/historical event and source-date conversion | Correct prerequisites/date order; no unauthorized new start preset or forced end of campaign |
+| W-15 | No active branch, but setup preview and marketplace are available | Public setup information does not reveal/accept hidden routine jobs; eligible public/direct opportunities obey communication rules |
+| W-16 | Compare first-release selection UI with wider-design catalogues | Only 1900, rail and road in V1; wider presets/modes are not removed from design or silently enabled; exact approved geographic coverage retained |
 
 ### 4.7 Saves, UI and runtime integrity
 

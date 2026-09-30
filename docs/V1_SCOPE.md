@@ -58,94 +58,19 @@ Pause and application focus are separate from time speed. The default is no simu
 
 ### Historical date input
 
-The core design correctly leaves the exact real-date conversion to content authoring. Before importing a historical event outside days 1–14, choose and explicitly document the conversion in GAME_DESIGN Section 3.4 and the data-pipeline specification. This is a routine implementation convention, not another product question for the user. Preserve original source dates, validate them first and store valid game dates separately. Events mapped onto the same game day need deterministic order and explicit prerequisites. No consumer may silently fall back to Gregorian runtime billing or create invalid game days. This handoff does not claim that a particular conversion formula has already been approved.
+Use the explicit conversion in GAME_DESIGN Section 3.4 and [DATA_PIPELINE.md](DATA_PIPELINE.md). Source dates are validated and retained; imported days are proportionally mapped to 1–14, while game-authored dates are not remapped. This is a documented engineering convention, not an additional historical fact or gameplay clock. The pipeline still requires actual sourced geographic/historical content.
 
 ## 4. Historical vehicles remain usable and discoverable
 
-The user explicitly requested no artificial end of vehicle availability. A model has an introduction date, but not a hard retirement date that removes it from the catalogue or disables existing assets.
+The no-end-year rule applies to the whole game, not only V1. Its complete definition is now in [GAME_DESIGN Section 15.11](GAME_DESIGN.md#1511-enduring-historical-vehicle-availability): permanent model discoverability, finite actual offers, serviceable physical assets, economic external-support scarcity and a real in-house support alternative. Horse-drawn equipment can survive into 1900 without enabling an Early Ages start.
 
-Keep separate:
+This section is a release reminder, not a second vehicle-availability specification.
 
-1. technology/model existence;
-2. physical assets already in the world;
-3. finite dealer/used inventory;
-4. actual manufacturing or special-order offers;
-5. maintenance capability and parts/support availability;
-6. technical, safety and route compatibility.
+## 5. One shipment, multiple physical lots and Trips
 
-Once introduced, a model stays searchable. Existing assets can be owned, resold, repaired and operated indefinitely while technically serviceable and compatible. Do not make a calendar rollover delete a model, expire its technology or force scrapping. If there is no available seller or manufacturer, show `no current offer`, not `unavailable after year X`.
+The canonical model and complete invariants are in [GAME_DESIGN Section 11.9](GAME_DESIGN.md#119-shipments-and-physical-cargo-lots). `Shipment` is the commercial consignment, `CargoLot` its independently located physical portion, `TransportPlan` the versioned execution chain and `TripAllocation` the quantity reserved on a specific Trip/stop interval. There is no competing batch subsystem.
 
-Ordinary new production of an old model can decline or end through manufacturer economics and capability; that is not a global purchase ban. Used stock comes from real assets. Where a manufacturer retains the relevant capability, new/special-order production can be offered with finite capacity, cost and lead time. Do not guarantee unlimited stock or fabricate a used asset to satisfy a search.
-
-As technology becomes uncommon, fewer independent workshops may retain suitable equipment, skills and supplies. External repair quotes can then reflect a longer journey, scarcity of compatible workshop slots, specialist labour or difficult parts procurement. Providers must expose those reasons, not apply an unexplained annual obsolescence multiplier.
-
-A player-owned compatible workshop, trained workforce and retained know-how can preserve support. This is not free maintenance: staff, equipment, materials, capacity and downtime still cost money. In-house work can be economical at sufficient utilisation; it is not universally cheaper than outsourcing.
-
-Keep physical age/condition separate from technological obsolescence. Repair needs can grow with actual wear, and an old design can remain less efficient than a new design. Do not increase an unchanged engine's fuel consumption merely because a new year/model arrived. Existing safety and compatibility rules still apply, but do not invent a technology-wide retirement prohibition to defeat this decision.
-
-Horse-drawn freight vehicles and omnibuses are valid surviving 1900 equipment beside early motor or steam-powered road vehicles where plausible. They need compatible stable/service facilities, staff and operating supplies at an aggregate level. Do not add a horse-breeding or per-animal life simulator. Their survival does not enable the pre-1900 Early Ages start.
-
-## 5. Shipment splitting: one order, many physical portions
-
-Use one canonical naming model. `Shipment` is a commercial consignment belonging to an optional customer contract. `CargoLot` is an independently located physical portion of that shipment. It is the executable batch concept called CargoBatch in the core design, not a second competing cargo subsystem.
-
-`TransportPlan` describes the route/responsibility chain. A contract may provide a reusable plan template; a shipment uses a versioned instance/execution plan. `PlanLeg` describes one required physical transfer. `TripAllocation` reserves a quantity of a cargo lot on a specific Trip between boarding/loading and alighting/unloading endpoints.
-
-Suggested identities and responsibilities:
-
-| Object | Responsibility |
-|---|---|
-| Shipment | Ordered quantity, origin/destination, commodity, contract, deadline, service obligations, split/delivery policy and summary |
-| CargoLot | Exact quantity, physical location/carrier, current leg, quality/age, handling-unit membership and lineage |
-| TransportPlan / PlanLeg | Ordered feasible endpoints, modes/operators, transfer dependencies, valid alternatives and plan version |
-| TripAllocation | Lot/quantity, Trip and occupied route segments, physical capacity pool, state, reservation protection and reason codes |
-| HandlingOperation | Actual loading, unloading, transshipment and quantity moved between authoritative locations |
-| Capacity ledger | Segment-specific reservations for actual resources; no double-booked wagons, seats, mass, volume or handling slots |
-
-A shipment does not permanently belong to one Trip, Line or partition. Example: 100 t uses 40 + 40 + 20 t inbound Trips, then 70 + 30 t outbound Trips after physically arriving and becoming ready at the transfer point. Keep one shipment in UI. A remaining quantity can wait without a Trip allocation.
-
-### Units and indivisibility
-
-Represent cargo quantities in integer base units/fixed precision, not uncontrolled floating-point subtraction. Definitions declare the unit, mass/volume conversion, allowed split increment and any indivisible handling units. Do not universally assume 1 t is the minimum.
-
-A pallet, vehicle, container or oversized machine can be indivisible. Commodity divisibility does not imply its current packaging can be split without a real repacking operation. Entire-shipment `do_not_split` and `deliver_together` are different contractual conditions; do not silently infer one from the other.
-
-Loading 63 t of remaining mass capacity with a 5 t split increment admits at most 60 t, subject to volume, positions, route load and other constraints. No rounding creates or destroys cargo.
-
-### Physical and commercial invariants
-
-- Every positive physical quantity has exactly one authoritative location: a facility/vehicle or an explicit handling state with precisely accounted source/destination quantities.
-- A reservation changes a plan/capacity ledger, not the cargo's physical location.
-- For each shipment: created quantity equals undelivered physical quantity plus accepted delivered quantity plus explicitly recorded loss/spoilage/return disposition, with no duplicated terminal state.
-- Partial delivery contributes only the accepted quantity. Full completion follows the contract's delivery policy, not the first arriving lot.
-- Rebooking one part cannot cancel or reset the other parts' progress.
-- A future-leg reservation may exist before arrival if backed by the predecessor plan and compatible capacity. Loading cannot occur before actual arrival, required handling and readiness.
-- Do not interpret `required minus all allocations ever created` as waiting cargo. Completed/cancelled historical allocations and reservations on several legs would double-count it. Derive unreserved quantity for the selected lot/leg from live reservations against that lot's currently eligible quantity. Keep an event/audit history separately.
-- Segment capacity is released after actual unloading. Cargo from A to B and cargo from B to C can reuse capacity; cargo from A to C blocks both segments.
-- Different qualities, deadlines, contracts, indivisible units or custody states must not be merged in a way that loses obligations. Lots may share a visual pile or vehicle while remaining distinct records.
-- Combining compatible lots never resets cargo age, spoilage exposure, cost basis or responsibility. Preserve constituent state or do not merge.
-- Destination storage and transfer handling capacity are real; arriving cargo cannot disappear into a full warehouse.
-
-Reservations must be transactional. Failed validation, duplicate clicks, save/load or two planners selecting the same capacity cannot reserve the same quantity twice. Save IDs, reservation versions and idempotency keys.
-
-### Allocation policy consistent with the core design
-
-Use physical feasibility first, then the commercial tiers already specified in GAME_DESIGN Section 11:
-
-1. protected/guaranteed contractual obligations;
-2. firm recurring/framework obligations;
-3. confirmed one-off jobs;
-4. spot/discretionary cargo.
-
-Within a tier use last feasible departure/deadline risk, quality risk and stable booking/readiness order, with visible policy adjustments. Service class, player preference and margin do not silently break existing protected commitments. Earlier discussion of a single weighted score must not supersede these contractual tiers.
-
-Ageing can improve precedence within an eligible tier and trigger an alert or extra capacity proposal. It cannot guarantee economy cargo will always move when capacity is permanently insufficient or override a guaranteed allocation. Do not promise starvation prevention that the available capacity cannot deliver.
-
-Reservations can pass through Planned, Reserved, Committed, Loading/Loaded, InTransit, Unloaded/Completed, Cancelled and Replanned states. Operational loading states and commercial allocation states may be separate state machines. Define transitions explicitly. A committed or loaded part is not casually moved to another Trip; cancellation requires a feasible physical recovery/unloading operation.
-
-Cutoff release is responsibility-aware. Customer no-show can release the protected space under its terms. Carrier/subcontractor delay preserves the recovery obligation. Recovery cargo cannot silently displace another protected booking. Compare holding within policy, later Trips, extra movements and an External Transport Order. Expose the shortfall if no feasible recovery exists.
-
-On terminal/route/Trip disruption, replan only affected lots and dependencies. Use event-driven bounded-horizon planning, cached routes, a deterministic tie-break and a material-improvement threshold to prevent allocation ping-pong.
+V1 must support one 100 t shipment using 40 + 40 + 20 t inbound and 70 + 30 t onward capacity after actual transfer handling, preserving quantity, age, quality, obligations and lineage. Reservation changes never move physical cargo. The sole freight-priority policy is in GAME_DESIGN Section 11.0.1, including responsibility-aware cutoffs and protected recovery.
 
 ## 6. Save, interaction and presentation requirements
 

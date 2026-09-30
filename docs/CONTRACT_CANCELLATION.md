@@ -18,7 +18,7 @@ The calculation uses the affected reservation commitment, not the company's tota
 
 Notice can reduce the charge under the agreed terms; the applicable notice bands must be visible before signing. A short-notice release may cost more than an early notice, but remains subject to the cap. No exact fee schedule is locked in yet.
 
-Cancellation charges and retained prepaid amounts for the same cancelled future reservation must be reconciled so that the same loss is not charged twice. Already consumed services and existing unpaid invoices remain separately payable. Do not charge future per-use fees for calls that will no longer take place.
+Cancellation charges and retained prepaid amounts for the same cancelled future reservation must be reconciled so that the same loss is not charged twice. Settlement is one idempotent ledger transaction per accepted release: distinguish the total cancellation liability, any prepaid amount credited against it, additional cash payable and excess refundable prepayment. Retrying or partially executing a release cannot apply the cap, charge or credit twice. Already consumed services and existing unpaid invoices remain separately payable. Do not charge future per-use fees for calls that will no longer take place.
 
 The infrastructure owner receives the cancellation payment and regains the released capacity from its effective release date. The carrier cannot sell or lease the slot to another carrier. Reallocation by the owner still follows the existing finite-capacity and access rules.
 
