@@ -309,6 +309,19 @@ Example:
 - the rendered scene may show 50–80 representative people,
 - the underlying transport count remains 300.
 
+Passenger waiting at stops/stations is also represented as **aggregated queue state**, not persistent individual people.
+
+The simulation can track meaningful grouped state such as:
+
+- boarding stop/station;
+- intended destination or compatible itinerary group;
+- passenger segment/purpose where materially relevant;
+- class/product requirement;
+- reservation/open-boarding status;
+- time already spent waiting.
+
+Representative visible passengers can be spawned from that queue when the location is rendered.
+
 ### 6.2 Passenger trip choice
 
 Trips can combine multiple modes and operators:
@@ -418,6 +431,8 @@ Passenger choice can use only disruption information that passengers can plausib
 Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Leisure/tourism demand depends on the chosen year, income, free time, transport accessibility, urbanization and relevant destinations, not simply how recently the player founded the company. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism. The Early Ages DLC must not project modern travel behaviour backwards into its earlier period, and a 1975 base-game start must not inherit an 1820 demand profile.
 
 Passenger demand also has historically grounded daily and weekly rhythms. Work shifts, market days, school schedules, religious/rest days, weekends and later modern commuting patterns can shape peaks, but the profile must evolve by era rather than using one modern 24/7 template for the whole campaign.
+
+These peaks can create visible waiting queues when offered service capacity is temporarily below demand. Adding frequency or compatible capacity should reduce the real accumulated queue rather than only changing a hidden demand modifier.
 
 ### 6.3 Private cars
 
@@ -4932,10 +4947,13 @@ A station may be constrained by:
 - platform length,
 - throat/junction conflicts,
 - passenger-flow capacity,
+- waiting/concourse/platform capacity during major passenger peaks;
 - baggage/cargo handling where relevant,
 - shunting/turnaround requirements,
 - turnaround-service capacity such as fueling, cleaning and crew-change support where installed,
 - interchange capacity.
+
+Passenger waiting capacity remains aggregated. The game does not need to place every waiting passenger physically, but a severe sustained queue at a small facility can become a real station-flow bottleneck.
 
 The UI should identify the actual station bottleneck rather than expose one generic capacity percentage.
 
@@ -5965,15 +5983,32 @@ When a ticket covers several connecting Trips, the system can reserve compatible
 
 ##### Open boarding
 
-For open-boarding services, passengers arrive according to simulated demand and board until the relevant capacity is full.
+For open-boarding services, passengers arrive according to simulated demand and join an aggregated **waiting queue** at the relevant stop/station until they board, choose another option or abandon the journey.
+
+When a compatible Trip arrives, waiting demand boards subject to:
+
+- intended destination/itinerary;
+- passenger class/product compatibility;
+- reservation priority where applicable;
+- actual seated/standing capacity of the arriving vehicle/zone.
 
 If capacity is exhausted:
 
-- remaining passengers wait for a later suitable service where feasible;
+- remaining passengers stay in the queue for a later suitable service where feasible;
 - choose another operator/mode/route;
 - or abandon the trip.
 
-Repeated denied boarding reduces attractiveness/reliability perception and exposes unmet demand to the player.
+Queue state remains physical to the stop/station. Passengers denied boarding do not disappear and reappear elsewhere.
+
+Repeated denied boarding and long waits reduce the attractiveness of that service through the already visible passenger factors such as waiting time, frequency, crowding and reliability perception.
+
+The stop/station UI should expose useful aggregate queue information, for example:
+
+> Waiting now: 420 passengers  
+> Next compatible Trip capacity available: 310  
+> Expected left behind after departure: ~110
+
+Where demand is split across several destinations/classes/services, the UI can show the relevant grouped breakdown without listing individual passengers.
 
 This is the default model for much urban/local transport.
 
