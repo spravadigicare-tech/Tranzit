@@ -250,6 +250,11 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | W-22 | Intra-group capital/loan/dividend/asset transfer | Explicit postings/ownership changes exactly once; vehicle/infrastructure remains physical and existing commitments are not silently erased |
 | W-23 | Acquire/integrate company with active contracts/licences/Trips | Transfer only eligible rights/obligations; change-of-control/non-transferable items remain explicit; no reset/teleport/duplicate asset or running operation |
 | W-24 | Buy/sell infrastructure with active third-party rights | Applicable leases/access/capacity/condition/projects survive ownership change; partial sale exposes dependent post-sale access instead of granting it freely |
+| W-25 | Major historical/regulatory world event | One canonical event changes the real underlying rules/state; World News explains it, while player-specific actionable consequences appear through UI-D24 only where needed; no duplicate effect or news-driven auto-pause |
+| W-26 | Significant company acquisition/insolvency/infrastructure opening | World News records the meaningful known event and links to stable company/asset identities; routine purchases and daily operations do not flood the feed |
+| W-27 | Material commodity/economic shift | News shows only supported known causes/exposure and links to affected procurement/operations; no opaque flat income modifier or fabricated company impact |
+| W-28 | Early-era remote event and later communication capability | Discovery/publication timing respects information provenance and communication capability; opening News never grants omniscient remote knowledge |
+| W-29 | Save/load before and after world-news discovery | Canonical event and read/history state persist without duplicate firing, identity retargeting, hidden-data leak or new pause |
 | W-15 | No active branch, but setup preview and marketplace are available | Public setup information does not reveal/accept hidden routine jobs; eligible public/direct opportunities obey communication rules |
 | W-16 | Compare first-release selection UI with wider-design catalogues | Only 1900, rail and road in V1; wider presets/modes are not removed from design or silently enabled; exact approved geographic coverage retained |
 
