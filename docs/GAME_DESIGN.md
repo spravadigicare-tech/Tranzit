@@ -330,6 +330,87 @@ Journey purposes include work, business, school, tourism/leisure, family/social 
 
 Different segments value time, price, comfort and reliability differently.
 
+#### Passenger service factors
+
+Passenger-service quality is represented through **separate visible factors**, not one opaque master score.
+
+Core factors include:
+
+- **Comfort** — seating/berth quality, temperature/heating/air conditioning where relevant, ride/service amenities and the physical vehicle product.
+- **Cleanliness** — driven by actual cleaning/service history and turnaround servicing rather than an abstract vehicle bonus.
+- **Crowding** — based on actual occupancy relative to seated/standing capacity and the passenger product being used.
+- **Reliability** — derived from real operating history under Section 9.2.
+- **Travel time** — based on the actual published itinerary, including running time, dwell and expected transfer time.
+- **Frequency / availability** — how often a usable service is offered for the passenger's intended journey/time window.
+- **Transfer quality** — number of transfers, walking time, connection reliability, protected-connection status and interchange quality.
+- **Price** — the actual fare applicable to the intended itinerary/product.
+- **Operator/service reputation** — where relevant, based on visible historical outcomes rather than a hidden arbitrary preference.
+
+The UI should present these factors separately.
+
+Do not collapse them into a mandatory single value such as:
+
+> Service quality: 78 / 100
+
+A compact overall indicator can exist as a navigation aid only if it is immediately explainable and can be expanded into the underlying factors. Gameplay decisions must use the underlying factors, not a second hidden score disconnected from them.
+
+Example Line detail:
+
+> Comfort: Good  
+> - modern seating  
+> - air conditioning available  
+> - Standard turnaround servicing
+
+> Cleanliness: Fair  
+> - 12% of recent planned cleanings skipped during disruption  
+> - latest full clean: 3 duties ago
+
+> Reliability  
+> - 91% within +5 min over last 30 Trips  
+> - 1 cancellation  
+> - 2 protected connections missed
+
+> Crowding  
+> - average peak load: 94% seated capacity  
+> - 18% of peak passengers used standing capacity on applicable segments
+
+Each displayed state must retain enough source values/reason codes to support the explainability rules in Section 1.1.
+
+#### Passenger-segment weighting
+
+Passengers do not all value the factors equally.
+
+Journey purpose/passenger segment defines visible or inspectable preferences, for example:
+
+- **business** — stronger weight on travel time, frequency, reliability and connection quality;
+- **commuter/work** — strong weight on frequency, reliability, travel time and price;
+- **student/school** — stronger price sensitivity, with frequency still important;
+- **tourism/leisure** — greater tolerance for travel time in exchange for price/comfort depending on market;
+- **premium/first-class customer** — greater weight on comfort, crowding and service quality.
+
+These are broad behavioural tendencies, not rigid personality classes.
+
+Weights should also evolve with:
+
+- historical period;
+- income/prosperity;
+- trip length;
+- purpose;
+- available alternatives.
+
+The game should expose the important reasons for an itinerary choice.
+
+Example:
+
+> **Why passengers prefer Service A over Service B**  
+> + 22 min faster  
+> + 2 departures/hour instead of 1  
+> + better recent reliability  
+> - fare is 14% higher  
+> - slightly more crowded at peak
+
+The UI does not need to expose raw internal utility math by default, but the relevant inputs, direction of effect and material weighting must be inspectable. Do not allow a passenger choice to be materially decided by an invisible unexplained modifier.
+
 Passenger demand can be seasonal, but the strength and composition of seasonality must be historically plausible. Leisure/tourism demand depends on the chosen year, income, free time, transport accessibility, urbanization and relevant destinations, not simply how recently the player founded the company. Seasonal passenger peaks can include holiday/leisure travel, commuting cycles, fairs/events and later mass tourism. The Early Ages DLC must not project modern travel behaviour backwards into its earlier period, and a 1975 base-game start must not inherit an 1820 demand profile.
 
 Passenger demand also has historically grounded daily and weekly rhythms. Work shifts, market days, school schedules, religious/rest days, weekends and later modern commuting patterns can shape peaks, but the profile must evolve by era rather than using one modern 24/7 template for the whole campaign.
@@ -3191,6 +3272,8 @@ Over time the player can add comfort/service features such as:
 - service/baggage functions.
 
 Comfort expectations rise over time.
+
+Vehicle comfort contributes to the separate **Comfort** factor in Section 6.2. Actual cleaning/turnaround history contributes separately to **Cleanliness**, and occupancy contributes separately to **Crowding**. Do not merge all passenger-service effects into one hidden vehicle-quality score.
 
 A retrofit can extend usefulness, but cannot make a fundamentally obsolete vehicle equal to a modern one.
 
