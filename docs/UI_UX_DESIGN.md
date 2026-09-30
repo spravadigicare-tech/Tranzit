@@ -2,9 +2,9 @@
 
 > **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
 >
-> **Still open or proposed:** application-focus and exceptional-event pause behaviour under UI-D08, exact visual tokens and dimensions, secondary-control placement, information density, detailed terminology and the remaining workflows below. Approval of the specified window/planning behaviour does not approve all earlier proposals or unrelated pause triggers. A written design is not an implemented or tested UI.
+> **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, information density, detailed terminology and the remaining workflows below. Approval of critical-event pause does not approve unrelated pause triggers or every earlier proposal. A written design is not an implemented or tested UI.
 >
 > Existing requirements referenced in Section 1 remain binding. Keep this owning UI document and affected summaries/acceptance criteria consistent when a decision changes; retain explicit status for unresolved choices. Do not use presentation decisions to override gameplay or silently add release scope.
 
@@ -62,7 +62,7 @@ The accepted composition is a map workspace with floating windows and a fixed bo
 | Movable floating windows | Object inspectors, company/asset/business views and planning workspaces | CONFIRMED under UI-D02 and UI-D07 |
 | Fixed bottom bar | Main navigation, construction entry, important status and time controls | CONFIRMED under UI-D06 |
 | Contextual tools | Construction catalogue/options or the current planner's actions, separate from the persistent bar | Separation confirmed; floating tool window versus temporary area above the bar remains unresolved |
-| Event access | Compact incident/decision indicator in the bar, opening the event view | Bar access confirmed; detailed event-window behaviour remains proposed |
+| Event access | Compact incident/decision indicator in the bar, opening the event view | Bar access and critical-event pause confirmed; detailed event-window layout remains proposed |
 
 Use the bottom bar instead of a mandatory permanent left navigation rail or separate full-width top status strip. Contextual windows may contain their own navigation/status without duplicating the entire global control system. Keep the bottom bar reachable while ordinary windows are open.
 
@@ -88,7 +88,7 @@ Normal selection example: select vehicle A, then vehicle B; the same unpinned de
 
 A maximize/expand-and-restore control for large tables/planners remains an optional refinement. Its exact behaviour and the minimized-window switcher's placement are not locked by this decision. Avoid introducing an obligatory desktop-style task button for every open window.
 
-Opening, moving, resizing, pinning, minimizing or closing ordinary windows does not automatically pause, resume or change simulation speed. Apply the confirmed normal-UI/manual-pause rules in Section 9.1. Application-focus changes and exceptional pause triggers remain separately open under UI-D08.
+Opening, moving, resizing, pinning, minimizing or closing ordinary windows does not automatically pause, resume or change simulation speed. Apply the confirmed normal-UI/manual-pause rules in Section 9.1. Critical incidents independently trigger the pause in Section 7.2, including while a planner is open; application-focus and precise pause-menu behaviour remain open under the remaining part of UI-D08.
 
 ### 3.3 Confirmed fixed bottom bar — UI-D06
 
@@ -202,7 +202,9 @@ The review distinguishes one-time and recurring costs, land/access permissions, 
 
 An uncommitted ghost is not infrastructure and clearing it is not paid demolition. Committing creates a real construction project under the existing rules; completion is not instantaneous. Editing/removing existing infrastructure uses its own permission, closure and cost checks. Construction planning remains available during manual pause under Section 9.1; physical construction progress still requires advancing simulation time.
 
-## 7. Proposed problem explanation and notifications
+## 7. Problem explanation and notifications
+
+### 7.1 Proposed presentation of problems
 
 Use the same problem model in planners, inspectors, lists and the event area:
 
@@ -218,9 +220,26 @@ Separate **hard blockers**, **risks/warnings**, **information** and **completed 
 
 Group repeated messages about the same incident, show its affected services and allow drill-down. Avoid one pop-up per delayed train when one closure is the cause. Keep information and routine successful automatic actions in history; surface decisions needing player authority. A manager action should show its cause and the policy/budget that authorized it.
 
-Colours supplement icons and text, never carry status alone. Distinguish unacknowledged, being handled, awaiting a decision and resolved where these states exist. Whether selected urgent events automatically pause the game remains an explicit open choice under UI-D08, not an assumed mechanic. The confirmed no-auto-pause rule for opening ordinary windows does not decide incident-triggered auto-pause.
+Colours supplement icons and text, never carry status alone. Distinguish unacknowledged, being handled, awaiting a decision and resolved where these states exist. Critical-event automatic pause is confirmed separately in Section 7.2; the remaining notification layout is still proposed. Opening an ordinary event window is not itself a pause trigger.
 
 V1 explanations must be accessible through focus/click as well as hover. A simple details view or pinned explanation can work without making deep nested tooltips a new V1 requirement.
+
+### 7.2 Confirmed critical-event automatic pause — critical-event part of UI-D08
+
+**Automatic pause is enabled by default for critical incidents. Ordinary delays and routine problems being handled within authorized dispatch/management policies do not automatically interrupt play.** The player confirmed this choice on 2026-09-30.
+
+Critical means a serious actual operational/business threat requiring prompt player attention, not every warning, red label or invalid uncommitted plan. A major route closure with no feasible authorized recovery is an illustrative case. The incident must expose its cause, affected operation/obligations and why player attention is needed. The detailed event catalogue and numerical severity thresholds still require authoring and validation; they must not silently reclassify routine delays as critical. Physical safety and valid automatic recovery remain simulation responsibilities, not a new manual emergency-driving mechanic.
+
+Implementation safeguards for this decision:
+
+- Trigger on a new critical incident or a material escalation, independently of whether its location/window is visible. Apply the pause at a consistent simulation-event boundary after the triggering atomic transition and required same-time causal processing, before advancing to later game time. Do not wait for a distant UI refresh at 16x, rewind the incident or leave a transaction half-applied.
+- Show a prominent, localized explanation that a critical event paused the game, its impact and a route to the relevant detail/available response. Preserve open windows and drafts; keep the map, inspection, planning and time controls usable rather than trapping the player behind a blocking notification.
+- Freeze the same shared clock and time-driven systems as in Section 9.1. Do not accumulate paused wall time or an unused pre-pause time budget for later catch-up. Future simulation events remain queued; none are skipped or replayed merely to handle a notification.
+- Resume only through an explicit player time-control action. Closing, acknowledging or resolving the notice does not automatically resume time, release an existing manual pause or alter the remembered running speed. The player may resume while an incident remains unresolved; the actual consequences and hard safety constraints still apply.
+- Deduplicate by stable incident identity and escalation state. Group downstream alerts from one cause rather than pausing for every affected vehicle. An unchanged incident must not immediately pause again after deliberate resume. A genuinely new critical incident or material escalation can trigger another pause. Events presented while already paused must not create a chain of redundant pauses on resume.
+- Preserve the incident's handling/acknowledgement and auto-pause-trigger state across save/load. Reopening a window, refreshing data or loading a presented incident is not a new occurrence. Existing safe-paused loading rules remain unchanged; acknowledgement never resolves an operational incident or deletes its obligations.
+
+Per-event-type overrides were proposed during discussion; their exact settings UI remains proposed. The confirmed critical-event default must work without requiring the player to configure it. Application-focus loss/return and precise pause-menu transitions are still separate unresolved parts of UI-D08.
 
 ## 8. Proposed map overlays
 
@@ -243,7 +262,7 @@ Carry forward the implementation brief's existing input/save defaults rather tha
 
 ### 9.1 Confirmed normal-UI and manual-pause behaviour — UI-D04
 
-**Ordinary windows, Line planning and construction planning do not automatically stop the game. The player pauses manually when they need time to think; all planning remains available in that pause.** This decision was confirmed by the player on 2026-09-30.
+**Ordinary windows, Line planning and construction planning do not automatically stop the game. The player pauses manually when they need time to think; all planning remains available in that pause.** This decision was confirmed by the player on 2026-09-30. A critical incident can independently pause the game under Section 7.2; it is the incident, not the open planner, that triggers that pause.
 
 - Opening, closing, minimizing, restoring, moving or resizing an ordinary management/detail/planning window does not change whether the game is running or paused, and does not change the selected speed. Entering or leaving a construction preview or Line planner follows the same rule. Closing a planner must not release a manual pause.
 - While the game is running, the player can inspect ongoing operations and prepare plans at the selected simulation speed. The existing pause/time controls remain accessible while these windows are open.
@@ -254,7 +273,7 @@ Carry forward the implementation brief's existing input/save defaults rather tha
 
 Show the actual pause/running state and selected speed clearly. Continue to use the existing game clock/calendar, including its supported speed choices and 14-day months; do not use a Gregorian date picker for game dates. The existing rule that no simulation advances during incomplete loading remains unchanged.
 
-Application-focus loss/return, incident-triggered auto-pause and the precise pause-menu transitions are separate from ordinary planner windows. Their unresolved details remain UI-D08; the confirmation above neither silently enables nor prohibits those separate triggers.
+Application-focus loss/return and precise pause-menu transitions remain unresolved under the remaining part of UI-D08. Critical-event auto-pause is now confirmed in Section 7.2; do not treat it as still undecided or use it to enable unrelated pause/resume triggers.
 
 ### 9.2 Shared command and workspace safety
 
@@ -280,6 +299,8 @@ These checks describe required evidence for the confirmed directions, not comple
 | UI-A06 | UI-D07 and existing command safety, multiple-view input | Clicking, scrolling or dragging inside a window does not select/place/pan the world beneath it; repeated submissions through different windows cannot double-book or double-charge; stale/deleted object references cannot issue valid new commitments |
 | UI-A07 | UI-D04, no automatic pause/resume from ordinary UI | With no unrelated incident/focus trigger, open, move, minimize, restore and close representative detail, Line-planning and construction windows at 0.5x, 1x and 16x; the selected running state/speed stays unchanged. Repeat while manually paused; opening/closing the planner never resumes time. Pause controls remain accessible |
 | UI-A08 | UI-D04, useful planning during manual pause | Pause mid-operation, then inspect the map, edit Line and construction proposals and prepare order previews without submitting binding commands. Verify editable UI with unchanged simulation time, vehicle position, physical-job progress, inventories and time-driven accounting. Resume explicitly; work continues from that state, paused wall time is not caught up and drafts are not automatically committed |
+| UI-A09 | UI-D08, critical-event automatic pause | With default settings at 0.5x, 1x and 16x, trigger a genuinely critical incident, including with an open planner and an off-screen affected location. Verify a consistent event-boundary pause, localized cause/impact/response access, usable planning and stopped time-driven simulation. Routine delay, authorized routine recovery and an invalid uncommitted plan do not trigger it |
+| UI-A10 | UI-D08, pause lifecycle and persistence | Present repeated alerts and multiple affected vehicles from one incident, close/acknowledge its notice, explicitly resume with it unresolved, then save/load. Verify no automatic resume, unchanged running-speed choice, no catch-up, no lost drafts and no repeated pause for the same unchanged incident. A new critical incident/material escalation can pause again. An already active manual/loading pause is never released by incident handling |
 
 ### Remaining proposed interaction scenarios
 
@@ -294,7 +315,7 @@ These are scenarios for evaluating the remaining proposal, not passing tests or 
 | Change a running service | Understand version/effective date and affected commitments without rewriting departed Trips |
 | Release capacity | Distinguish non-renewal from early cancellation and see total/per-owner settlement plus dependent services |
 | Build infrastructure | Distinguish ghost preview, accepted project and completed usable asset; clicking a floating tool window does not place infrastructure behind it |
-| Manage disruption | Navigate from one grouped incident to its cause and a valid authorized response |
+| Manage disruption | Navigate from one grouped incident to its cause and a valid authorized response; critical-event pause follows the confirmed checks above |
 | Use CZ/EN and enlarged UI | Complete the same workflow without clipped material information or hover-only actions |
 | Save/load and live refresh | Preserve game authority; restored UI state, repeated clicks or parallel views cannot create duplicate commitments |
 
@@ -311,6 +332,6 @@ No Unity UI has been implemented or visually tested as part of this document. St
 | UI-D05 | Navigation and Czech terminology | Top-level Provoz, Obchod, Majetek, Firma and Svět alongside Stavět are accepted; detailed contents and object glossary in Section 4 remain proposed | PARTIALLY CONFIRMED on 2026-09-30 |
 | UI-D06 | Fixed bottom bar | Stable bottom navigation/status/time control area with the functional grouping in Section 3.3, instead of mandatory left/top strips; exact visual dimensions and secondary controls remain open | CONFIRMED on 2026-09-30 |
 | UI-D07 | Detailed window interaction | Resizing, multiple views, reusable unpinned detail, content pinning, explicit new-window action, minimize/restore and remembered/recoverable layout under Section 3.2; snapping is optional and never compulsory docking | CONFIRMED on 2026-09-30 |
-| UI-D08 | Application focus and exceptional pause triggers | Application-focus loss/return, selected urgent-event auto-pause and precise pause-menu transitions remain separate decisions; retain existing explicit-pause/loading rules | OPEN |
+| UI-D08 | Critical incidents and remaining exceptional pause triggers | Critical incidents automatically pause by default under Section 7.2; routine delays/authorized routine recovery do not. Application-focus loss/return, precise pause-menu transitions and detailed override settings remain unresolved | PARTIALLY CONFIRMED on 2026-09-30; critical-event default CONFIRMED |
 
-The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is also resolved under UI-D04. Do not reopen those choices. Exceptional pause triggers remain UI-D08; refine them or one concrete end-to-end flow next. Approval of these decisions does not silently approve the remaining rows or every detail in this document.
+The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, and critical-event automatic pause is resolved under UI-D08. Do not reopen those choices. Only the remaining focus/menu details of UI-D08 are undecided; a concrete end-to-end UI flow can be refined independently. Approval of these decisions does not silently approve the remaining rows or every detail in this document.
