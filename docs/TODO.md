@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-09-30 after confirming UI-D41 final HUD/navigation and global search. Remaining UI product decisions are the UI-D08 application-focus behaviour and detailed event notification/auto-pause overrides, followed by the final consistency audit.
+Last reviewed: 2026-09-30 after fully confirming UI-D08 focus-loss and notification/auto-pause behaviour. No major UI workflow decision remains open; final terminology review and a repository-wide V1 design consistency audit remain.
 
 ## How to use this backlog
 
@@ -42,8 +42,6 @@ Rules:
 
 ## Open decisions
 
-- [ ] **[DESIGN] Application-focus loss/return** — decide what happens to simulation/pause state on Alt-Tab, focus loss and focus return. This is the remaining focus-related part of UI-D08.
-- [ ] **[DESIGN] Detailed event auto-pause/notification overrides** — decide how much per-event customization Settings should expose beyond the confirmed default that critical incidents auto-pause.
 - [ ] **[DESIGN] Player-facing vocabulary/navigation glossary** — final Czech/English labels for domain objects remain candidates in UI_UX_DESIGN Section 4.2; resolve with final navigation instead of independently.
 
 ## Next
@@ -52,7 +50,6 @@ Rules:
 
 - [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording only where a decision has actually been confirmed, verify cross-links, decision table and acceptance scenarios. Final navigation/search and remaining focus/notification details remain proposals until accepted.
 - [ ] **[DOC] Reconcile final navigation with README, UI_UX_DESIGN and V1_IMPLEMENTATION_BRIEF**.
-- [ ] **[DOC] Review UI_EVENTS/UI_SYSTEM_MENU after the focus/override decisions** and close the remaining UI-D08 status if fully resolved.
 
 ### Implementation handoff
 
@@ -89,7 +86,7 @@ These are intentional non-blockers for the current V1/UI direction:
 
 These are completed design/documentation tasks, not implemented game features. Remaining parts of partially confirmed decisions stay open above and in the owning register.
 
-- [x] Accepted foundations within UI-D01–UI-D15 — global visual/window/navigation/pause/link/Line/station/minimalism directions. UI-D05 detailed taxonomy/glossary and UI-D08 focus/event-override details are not fully closed.
+- [x] Accepted foundations within UI-D01–UI-D15 — global visual/window/navigation/pause/link/Line/station/minimalism directions. UI-D08 is fully resolved; final localized object terminology remains a small documentation/localization task.
 - [x] UI-D16–UI-D24 — depots, commercial, construction, finance, company, map, fleet, shipments, events.
 - [x] UI-D25–UI-D33 — Trip, capacity/access, external-company agreements, cities/regions, tariffs, maintenance, duties, procurement, licences/market entry.
 - [x] UI-D34 — neutral compact money icon for the single money accounting unit.
