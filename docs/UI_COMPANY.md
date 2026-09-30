@@ -20,7 +20,7 @@ Use independently openable compact cards, not a mandatory setup sequence:
 | Licences and permissions / Licence a oprávnění | What the company may operate and where, applications, requirements, validity and renewal/expiry risks; open the confirmed UI-D33 Licences and expansion workspace for the full market/licence/permit/application view |
 | Company systems / Firemní systémy | Actually adopted communication/business systems, current capabilities, available improvements and their concrete requirements/effects; open UI-D38 Technology for research/unlock/adoption state |
 
-Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. UI-D39 now owns group/subsidiary control. Company adds a compact **Our group / Naše skupina** view when relevant, showing ownership, control state, subsidiary management mode, important decisions/issues and direct links to the subsidiary or its direct-control context. Do not duplicate each subsidiary's full Line/Fleet/Finance UI inside the parent overview.
+Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. UI-D39 owns group/subsidiary control. Company adds a compact **Our group / Naše skupina** view when relevant, showing ownership, control state, broad direction, active owner directives and important decisions/issues. Controlled subsidiaries remain AI-managed; do not duplicate their full Line/Fleet/Finance UI inside the parent overview.
 
 ## 2. Branch list and detail
 
@@ -76,24 +76,24 @@ When the player controls or owns stakes in other companies, Company exposes a co
 
 Show:
 
-- parent/current company;
 - controlled subsidiaries;
 - minority investments;
 - ownership percentage/economic interest;
 - actual control state;
-- Autonomous / Managed / Direct-control mode for controlled subsidiaries;
-- material approval/financial issue;
+- broad company direction;
+- active owner directives;
+- one material blocker/decision where relevant;
 - direct link to UI-D37 company detail and UI-D39 ownership workflow.
 
 A controlled subsidiary keeps its own cash, debt, staff, licences, contracts, assets and operating state until a real transaction/integration changes them.
 
-**Direct control** switches the active company context and reuses the normal game UI against that company's authority. It does not clone management screens into the parent company overview.
+The subsidiary remains AI-managed. The player interacts through the small owner-action set in UI-D39 rather than switching the entire normal UI into that company's command context.
 
-The current-company selector in the shared bottom bar is available when the player controls multiple companies. The selected context must remain obvious so the player cannot accidentally buy an asset or alter a Line for the wrong company.
-
-Group strategy, budgets and approval limits reuse the existing management/delegation model. Do not invent a second manager-permission system.
+A Line or major asset belonging to a controlled subsidiary can still be opened and, where allowed, edited as an **owner directive**. The subsidiary then handles the actual vehicles, staff, capacity, permissions, procurement and operational consequences.
 
 Intra-group capital, loans, dividends/distributions, leases, asset transfers and shared facility/access arrangements link to the canonical UI-D39/Finance/agreement workflows and remain real transactions.
+
+Do not add a second dense layer of subsidiary policies or a mandatory organization-chart editor.
 
 ## 7. Shared interaction and state safety
 
