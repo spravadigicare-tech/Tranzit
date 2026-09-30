@@ -232,7 +232,7 @@ Required player screens/workflows:
 | Operations | Lines/Pattern versions/calendars, capacity orders/timeline, duties/fleet assignment, departures, actual delays and action reasons |
 | Assets | Marketplace, order/delivery tracking, physical fleet details, workshops/service policies, fuel/storage/support |
 | Passenger/cargo detail | Per-leg commitments, actual quantity/capacity, queues/transfers, protected reservations, recovery and cost consequences |
-| World/business context | Cities/firms/production, competitors, partnerships/acquisitions, research/adoption, news and major disruptions |
+| World/business context | Cities/firms/production, competitors, partnerships/acquisitions, UI-D38 Technology/research/adoption, news and major disruptions |
 
 Aggregate data must be drillable. A disabled action explains its specific blocker and links to a corrective workflow. Distinguish simulation facts, estimates and commercial promises. No decorative financial chart with invented data.
 
