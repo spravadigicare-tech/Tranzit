@@ -2,7 +2,7 @@
 
 > **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static; UI-D11, freely editable Line-planning cards, persistent unlaunched plans and an explicit readiness/activation decision; UI-D12, the same Line window/cards after launch, with a live operational overview, scoped variants/Trips and clearly separated future changes; UI-D13, a directly accessible list of planned and actively deployed vehicles from Line capacity planning onwards; UI-D14, station/terminal presentation in the focused UI_STATIONS specification; UI-D15, a minimalist, clear and consistent interface throughout the game, with secondary information in contextual hover/focus tooltips and intuitively grouped functions; UI-D24, one event centre organized by decision need, grouped root-cause incidents, restrained toasts, persistent history and optional Follow notifications. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static; UI-D11, freely editable Line-planning cards, persistent unlaunched plans and an explicit readiness/activation decision; UI-D12, the same Line window/cards after launch, with a live operational overview, scoped variants/Trips and clearly separated future changes; UI-D13, a directly accessible list of planned and actively deployed vehicles from Line capacity planning onwards; UI-D14, station/terminal presentation in the focused UI_STATIONS specification; UI-D15, a minimalist, clear and consistent interface throughout the game, with secondary information in contextual hover/focus tooltips and intuitively grouped functions; focused UI-D16–UI-D23 specifications cover depots, commercial work, construction, finance, company/workforce, map opportunities, fleet acquisition and split Shipments; UI-D24 covers the event centre and notifications; UI-D25 covers one concrete Trip's readiness, live execution, segment capacity and retained history. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
 >
 > **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, detailed layouts of screens not yet specified, detailed terminology and the remaining workflows below. The global minimalist information hierarchy is confirmed; this does not approve every proposed screen or unrelated pause trigger. A written design is not an implemented or tested UI.
 >
@@ -104,7 +104,7 @@ The accepted composition is a map workspace with floating windows and a fixed bo
 | Movable floating windows | Object inspectors, company/asset/business views and planning workspaces | CONFIRMED under UI-D02 and UI-D07 |
 | Fixed bottom bar | Main navigation, construction entry, important status and time controls | CONFIRMED under UI-D06 |
 | Contextual tools | Construction catalogue/options or the current planner's actions, separate from the persistent bar | Separation confirmed; floating tool window versus temporary area above the bar remains unresolved |
-| Event access | Compact incident/decision indicator in the bar, opening the event view | Bar access, contextual object links and critical-event pause confirmed; detailed event-window layout remains proposed |
+| Event access | Compact incident/decision indicator in the bar, opening the event view | CONFIRMED with UI-D24 event-centre layout; critical-event pause remains owned by UI-D08 |
 
 Use the bottom bar instead of a mandatory permanent left navigation rail or separate full-width top status strip. Contextual windows may contain their own navigation/status without duplicating the entire global control system. Keep the bottom bar reachable while ordinary windows are open.
 
@@ -309,28 +309,21 @@ For an already active Pattern, card edits prepare a future version under GAME_DE
 
 Do not force every track/platform to be selected. Preserve automatic compatible routing, the distinction between requested times, accepted slot windows, planned midpoints and physical occupancy, and the existing Capacity Order/Auto-renew workflow. All planning remains available in pause under Section 9.1; card navigation and saving a design are not time-control or physical-work commands. This decision does not settle the separately unresolved timing of binding commands during pause.
 
-### 6.2 Proposed contract and shipment planning
+### 6.2 Confirmed commercial and Shipment presentation — UI-D17 / UI-D23
 
-Start from the opportunity/contract or shipment, not necessarily from building a new Line. Show a readable origin-to-destination chain with its own-service and external legs. Allow reuse of existing feasible services under the canonical allocation rules.
+The detailed commercial workspace is owned by [UI_COMMERCIAL.md](UI_COMMERCIAL.md) under UI-D17. It keeps Opportunities, Offers and Contracts distinct, uses persistent non-linear offer drafts and links accepted commercial obligations to real Transport Plans, Lines, Trips, facilities and Shipments.
 
-A split-shipment view should show, for each physical portion:
+The detailed Shipment view is owned by [UI_SHIPMENTS.md](UI_SHIPMENTS.md) under UI-D23. One Shipment remains one commercial consignment while its CargoLots can have different physical locations, handling states and future allocations. The directly accessible parts list distinguishes physical custody from reservations, and replanning one portion cannot rewrite completed handling or unrelated portions.
 
-- quantity and actual location/custody;
-- handling/readiness state;
-- next reserved Trip and stop interval, distinct from the Trip currently carrying it;
-- timing, connection risk, age/quality and contractual obligation where relevant.
+These focused specifications preserve GAME_DESIGN Sections 11.0.1 and 11.9: no duplicate cargo ledger, no teleporting through reservation edits, no hidden profitability-priority replacement and no second Contract Planner.
 
-Example presentation can illustrate the existing 100 t shipment split across multiple Trips, but every displayed total must reconcile to the actual ledger. A total such as "100 t allocated" must never imply "100 t already loaded". Changing a reservation cannot visually relocate cargo or restart its age.
+### 6.3 Confirmed construction workflow — UI-D18
 
-The default experience should help plan at shipment/contract level. Detailed manual allocations remain governed by the existing rules; do not force individual-lot micromanagement or replace protected priority tiers with a new hidden score.
+[UI_CONSTRUCTION.md](UI_CONSTRUCTION.md) owns the confirmed map-first construction presentation. Build opens compact tools over the world; drawing creates an uncommitted ghost; Prepare project opens independently editable cards; incomplete project plans persist across sessions; and Start project is a separate freshly validated commitment.
 
-### 6.3 Proposed construction workflow
+The same project workspace continues after launch with physical stage/progress, current and next work, supported completion estimates, costs and linked blockers. Explicitly acquired land, accepted contractor/supplier agreements and purchased materials remain real commitments even while the project plan itself is unstarted.
 
-Proposed flow: select tool → place/edit free-form preview → inspect geometry and effects → review project → commit.
-
-The review distinguishes one-time and recurring costs, land/access permissions, materials, contractors, expected duration and affected operation. Invalid geometry is highlighted with a cause and an available remedy. Keep snapping limited to valid physical connections, not an invented world grid.
-
-An uncommitted ghost is not infrastructure and clearing it is not paid demolition. Committing creates a real construction project under the existing rules; completion is not instantaneous. Editing/removing existing infrastructure uses its own permission, closure and cost checks. Construction planning remains available during manual pause under Section 9.1; physical construction progress still requires advancing simulation time.
+This presentation does not change GAME_DESIGN Sections 19–26: construction remains time/material/contractor constrained, free-form rather than grid based, and physically staged. A draft is not usable infrastructure, a saved corridor is not automatically reserved land and completion is never instantaneous.
 
 ### 6.4 Confirmed active Line detail and future-change separation — UI-D12
 
@@ -399,7 +392,7 @@ Update the roster from actual assignment changes: preparation, departure, comple
 
 #### Running Trips and upcoming departures
 
-Provide a compact expandable Running and upcoming Trips list directly from the overview, without requiring the player to edit the timetable. Each row identifies the concrete Trip, direction/destination, current state and useful timing: planned time versus actual/estimated departure or arrival and delay. Name which event a delay refers to. Assigned vehicle/consist and station references are separate contextual links when available; opening the row opens that Trip.
+Provide a compact expandable Running and upcoming Trips list directly from the overview, without requiring the player to edit the timetable. Each row identifies the concrete Trip, direction/destination, current state and useful timing: planned time versus actual/estimated departure or arrival and delay. Name which event a delay refers to. Assigned vehicle/consist and station references are separate contextual links when available; opening the row opens that exact Trip using the confirmed UI-D25 detail in [UI_TRIPS.md](UI_TRIPS.md).
 
 All Trips opens the full dated list with problem/status filters. Keep cancelled Trips inspectable with their cancellation reason and history; do not remove them from the player's account of what happened. Preserve selection and scroll position during live refresh. Display the service date for cross-midnight journeys and enough identity to distinguish different Trips sharing a departure time.
 
@@ -470,20 +463,24 @@ Implementation safeguards for this decision:
 
 Per-event-type overrides were proposed during discussion; their exact settings UI remains proposed. The confirmed critical-event default must work without requiring the player to configure it. Application-focus loss/return and precise pause-menu transitions are still separate unresolved parts of UI-D08.
 
-## 8. Proposed map overlays
+## 8. Confirmed map layers and opportunity discovery — UI-D21
 
-Offer a small set of purpose-based overlays instead of displaying every layer at once:
+[UI_MAP_LAYERS.md](UI_MAP_LAYERS.md) owns the detailed layer presentation. Keep the normal world clean and expose one primary analytical layer at a time, with a legend, relevant filters and explicit Off.
 
-| Overlay | Primary question |
+Confirmed layer groups cover:
+
+| Layer | Primary question |
 |---|---|
-| Network and services | Where do our services go, and how do they connect? |
-| Ownership and rights | Who owns this asset, and what can our company actually use? |
-| Capacity and congestion | Which sections/facilities constrain the selected operation? |
-| Demand and business | What passenger/cargo opportunity is known here? |
-| Facility coverage | Which operating, maintenance, supply or handling facilities can support these assets? |
-| Projects and disruptions | What is being built, restricted or repaired, and what does it affect? |
+| Lines and network | Where do services run and connect? |
+| Capacity and restrictions | Where is current/planned capacity constrained or usefully free? |
+| Ownership and access | Who owns an asset and what rights can the company actually use? |
+| Demand and opportunities | What known jobs, unmet demand, spare-capacity matches or growth potential are worth investigating? |
+| Facilities and commercial coverage | Which relevant operating, maintenance, supply, handling or branch capabilities support the selected task? |
+| Construction and plans | What is proposed, under construction, completed or disrupted? |
 
-Each overlay needs a legend, relevant filters and a visible scope. Overlay values must distinguish observed facts, projections and contractual capacity; lack of data is not zero demand. Vehicle selection should show its actual movement and relevant planned route without changing either. Inactive regions remain the existing macro layer, not secretly fully simulated because an overlay is open.
+Opportunity discovery is first-class: the map distinguishes actual discoverable jobs/tenders from evidence-backed potential such as underserved passenger flows, freight gaps, compatible return-leg capacity or seasonal/growth demand. It never fabricates customers, guarantees profit, exposes unknown/private information or treats lack of knowledge as zero demand.
+
+Overlay values distinguish observed facts, forecasts, reservations and contractual capacity. Selecting/hovering a layer is navigation/analysis only; it does not reserve resources, submit bids, start projects or activate services. Inactive regions retain their existing macro-information boundary rather than becoming fully simulated because the player opens a layer.
 
 ## 9. Input, scale, time and state safety
 
@@ -545,6 +542,7 @@ These checks describe required evidence for the confirmed directions, not comple
 | UI-A23 | UI-D15, progressive information without hidden essentials | Inspect representative vehicle, Line, station, finance and confirmation views. Primary state, scope/units, blockers, important costs and necessary actions remain visible/discoverable; supplementary definitions and breakdowns are in concise tooltips with a route to details. Required rosters and station/Line lists are not reduced to hover-only content. Verify incomplete, critical, estimated, unknown and stale states without having to hunt for warnings |
 | UI-A24 | UI-D15, tooltip access and consistent components | Test hover, keyboard focus/help, disabled-action explanations, linked tooltip content, dismissal, moving/resizing windows and enlarged CZ/EN text. Explanations remain readable/reachable and agree with current structured source data. Hover does not issue commands, acknowledge incidents or change pause/speed. Comparable windows reuse control placement, semantic state styles and terminology; the station board retains its approved character. Do not require deep nested tooltips as a V1 gate |
 | UI-A25 | UI-D24, event-centre presentation | Trigger a root-cause incident with multiple downstream effects, routine handled events, grouped informational completions and a followed-object update. Verify Needs decision / In progress / Information / History routing, exact-object links, no alert storm, preserved historical snapshots, no auto-resume on acknowledge/close, and no gameplay change from Follow. Detailed scenarios remain in UI_EVENTS.md |
+| UI-A26 | UI-D25, concrete Trip detail | Inspect one Trip before departure, while running, after completion and after cancellation. Verify call progression, planned/actual/estimated distinction, causal delay/recovery explanation, dynamic platform state, segment-specific passenger/freight capacity, concrete vehicle/duty links and stable historical identity. Detailed scenarios remain in UI_TRIPS.md |
 
 Station-specific evidence remains in [UI_STATIONS.md](UI_STATIONS.md), STUI-A01–STUI-A07; global UI-D15 applies there as well.
 
@@ -583,6 +581,15 @@ No Unity UI has been implemented or visually tested as part of this document. St
 | UI-D13 | Planned and active Line vehicle list | Directly accessible roster from capacity planning onwards, including unlaunched plans; show known planned/current vehicle identities and assignments, with unassigned requirements/coverage clearly separate; follow Section 6.4 and existing fleet commitment rules | CONFIRMED on 2026-09-30 |
 | UI-D14 | Station and terminal UI | Overview/cards, separate station-style arrivals/departures window and serving-Line information; embedded track/platform/stand schematic deferred, as owned by UI_STATIONS.md | CONFIRMED on 2026-09-30 |
 | UI-D15 | Global minimalist and consistent UI | Clear concise overviews, supporting information in hover/focus tooltips and opened details, intuitive task grouping and shared visual/interaction components throughout the game; preserve visible critical information under Section 2.1 | CONFIRMED on 2026-09-30 |
+| UI-D16 | Depot/garage/workshop UI | Operational facility overview, on-site/expected/linked vehicle lists, task cards and supported Lines; detailed rules in UI_DEPOTS.md | CONFIRMED on 2026-09-30 |
+| UI-D17 | Commercial UI | Opportunities, Offers and Contracts, persistent offer drafts and direct linkage from commitments to real execution; detailed rules in UI_COMMERCIAL.md | CONFIRMED on 2026-09-30 |
+| UI-D18 | Construction UI | Map-first ghost planning, persistent project cards, explicit launch and physical progress; detailed rules in UI_CONSTRUCTION.md | CONFIRMED on 2026-09-30 |
+| UI-D19 | Finance UI | Cash/result/commitment overview, source-linked breakdowns, consistent periods and plans separated from binding/posted money; detailed rules in UI_FINANCE.md | CONFIRMED on 2026-09-30 |
+| UI-D20 | Company/branches/workforce UI | Company overview, branch coverage/capacity, aggregate professions, named-manager authority, licences and company systems; detailed rules in UI_COMPANY.md | CONFIRMED on 2026-09-30 |
+| UI-D21 | Map layers and opportunities | Purpose-based layers diagnose problems and reveal evidence-backed opportunities without fabricating demand or commitments; detailed rules in UI_MAP_LAYERS.md | CONFIRMED on 2026-09-30 |
+| UI-D22 | Fleet/market/delivery UI | Fleet, Vehicle Market and Orders/deliveries workspace, model-to-offer distinction and physical readiness; detailed rules in UI_FLEET.md | CONFIRMED on 2026-09-30 |
+| UI-D23 | Shipment detail | One Shipment with inspectable CargoLots, physical-location versus reservation distinction, compact transport chain and automated routine allocation; detailed rules in UI_SHIPMENTS.md | CONFIRMED on 2026-09-30 |
 | UI-D24 | Events, incidents and notifications | One event centre with Needs decision / In progress / Information / History, stable root-cause grouping, restrained grouped toasts, historical snapshots and optional Follow notifications; UI-D08 remains authoritative for critical auto-pause | CONFIRMED on 2026-09-30 |
+| UI-D25 | Concrete Trip detail | Stop/call progression, planned/actual/estimated timing, explainable delay/recovery, segment capacity, pre-departure readiness and retained completed/cancelled history; detailed rules in UI_TRIPS.md | CONFIRMED on 2026-09-30 |
 
-The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09, the compact vehicle overview under UI-D10, nonlinear persistent Line planning under UI-D11, the active Line workspace under UI-D12, the planned/active vehicle roster under UI-D13 and station presentation under UI-D14. UI-D15 now applies the minimalist information hierarchy and consistent design principles globally, and UI-D24 resolves the event-centre/notification-layout proposal while leaving UI-D08's focus/menu and detailed override questions open. Do not reopen those choices or reintroduce the superseded Line-creation wizard. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided. Approval of these decisions does not silently approve every detail in this document.
+The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09, the compact vehicle overview under UI-D10, nonlinear persistent Line planning under UI-D11, the active Line workspace under UI-D12, the planned/active vehicle roster under UI-D13 and station presentation under UI-D14. UI-D15 now applies the minimalist information hierarchy and consistent design principles globally. UI-D16–UI-D25 are confirmed focused screen/workflow specifications, including the event centre under UI-D24 and concrete Trip detail under UI-D25; UI-D08's focus/menu and detailed override questions remain open. Do not reopen those choices or reintroduce the superseded Line-creation wizard. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided. Approval of these decisions does not silently approve every detail in this document.
