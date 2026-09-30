@@ -3388,6 +3388,32 @@ Different passenger segments and service types can therefore tolerate standing d
 - on which vehicle/zone;
 - for how much of the journey.
 
+#### Simplified distribution across coaches/zones
+
+Passenger allocation inside one compatible consist is deliberately simplified.
+
+The system automatically distributes passengers as evenly as practical across **compatible passenger-capacity zones**, while respecting hard product constraints such as:
+
+- passenger class;
+- reservation-required capacity;
+- accessibility requirements;
+- sleeper/berth or other special accommodation;
+- zones where standing is or is not permitted.
+
+It does **not** simulate detailed passenger preference for the first/last coach, platform entrance location, stair position or individual walking decisions along the platform.
+
+For ordinary unreserved passengers in equivalent coaches, the allocator should prefer balancing occupancy so that one compatible coach is not heavily overcrowded while another equivalent coach remains mostly empty.
+
+Example:
+
+> 3 equivalent Second Class coaches  
+> 210 passengers total  
+> → approximately 70 passengers per coach rather than 110 / 70 / 30
+
+Small differences can arise from reservations, different capacities or special zones, but not from a separate detailed boarding-behaviour simulation.
+
+This simplification keeps per-vehicle crowding and comfort meaningful without introducing unnecessary passenger pathfinding/micromanagement.
+
 No separate opaque "overcrowding score" should be applied on top of these factors.
 
 If total seated + permitted standing capacity is full, additional open-boarding passengers cannot board that zone/vehicle and follow the normal denied-boarding/alternative-service logic.
