@@ -2,9 +2,9 @@
 
 > **Status: PARTIALLY CONFIRMED DESIGN — remaining details are proposals.** Updated on 2026-09-30 during the interface discussion with the player.
 >
-> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static; UI-D11, freely editable Line-planning cards, persistent unlaunched plans and an explicit readiness/activation decision; UI-D12, the same Line window/cards after launch, with a live operational overview, scoped variants/Trips and clearly separated future changes; UI-D13, a directly accessible list of planned and actively deployed vehicles from Line capacity planning onwards. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
+> **Confirmed:** UI-D01, a restrained contemporary dark interface over the model world; UI-D02, movable floating management/detail windows; UI-D04, ordinary windows and planning do not automatically pause/resume the game, and planning remains available during manual pause; UI-D06, a fixed bottom navigation/status/time bar; UI-D07, resizing, multiple windows, reusable selection details with content pinning, minimize/restore and remembered/recoverable layout; the critical-event part of UI-D08, automatic pause enabled by default for critical incidents; UI-D09, contextual links between windows and directly from mentions of specific objects; UI-D10, an operations-first vehicle overview with a small model preview that may be static; UI-D11, freely editable Line-planning cards, persistent unlaunched plans and an explicit readiness/activation decision; UI-D12, the same Line window/cards after launch, with a live operational overview, scoped variants/Trips and clearly separated future changes; UI-D13, a directly accessible list of planned and actively deployed vehicles from Line capacity planning onwards; UI-D14, station/terminal presentation in the focused UI_STATIONS specification; UI-D15, a minimalist, clear and consistent interface throughout the game, with secondary information in contextual hover/focus tooltips and intuitively grouped functions. The top-level navigation groups in UI-D05 are confirmed; detailed taxonomy and the object glossary remain proposals. These directions guide UI implementation within the existing release scope.
 >
-> **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, information density outside the confirmed vehicle and Line overviews, detailed terminology and the remaining workflows below. Approval of specific decisions does not approve unrelated pause triggers or every earlier proposal. A written design is not an implemented or tested UI.
+> **Still open or proposed:** application-focus and precise pause-menu behaviour under the remaining part of UI-D08, exact visual tokens and dimensions, secondary-control placement, detailed layouts of screens not yet specified, detailed terminology and the remaining workflows below. The global minimalist information hierarchy is confirmed; this does not approve every proposed screen or unrelated pause trigger. A written design is not an implemented or tested UI.
 >
 > Existing requirements referenced in Section 1 remain binding. Keep this owning UI document and affected summaries/acceptance criteria consistent when a decision changes; retain explicit status for unresolved choices. Do not use presentation decisions to override gameplay or silently add release scope.
 
@@ -15,11 +15,12 @@ Read these owners rather than treating the summaries below as replacement rules:
 | Owner | Relevant existing requirement |
 |---|---|
 | [V1_SCOPE.md](V1_SCOPE.md), Sections 1 and 6 | Offline Windows, mouse/keyboard, complete Czech/English presentation, one accounting token `money`, full save/load; first-release modes and start preset remain unchanged |
-| [GAME_DESIGN.md](GAME_DESIGN.md), Sections 1.1 and 3 | Explainable outcomes; shared simulation calendar and time controls; nested tooltips are a future interaction pattern, not a newly mandatory V1 feature |
+| [GAME_DESIGN.md](GAME_DESIGN.md), Sections 1.1 and 3 | Explainable outcomes; shared simulation calendar and time controls; deep nested tooltips remain a future pattern, while first-layer contextual tooltips are now required under UI-D15 |
 | [GAME_DESIGN.md](GAME_DESIGN.md), Sections 11.0.1, 11.9 and 32 | Separate contracts, shipments, physical cargo portions, transport plans, Lines, Service Patterns and Trips; preserve their existing capacity and lifecycle rules |
 | [GAME_DESIGN.md](GAME_DESIGN.md), Sections 13.2–13.2.1 and 32.2–32.3 | One Capacity Order workflow linked to Service Patterns; feasible slot windows, calendar and routing; no mandatory expert track-by-track timetable editing |
 | [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md) | Cancellation/release consequences, per-owner and total costs, prepaid settlement and distinction from non-renewal |
 | [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md), Sections 4 and 8–9 | Shared selection, validated commands, side-effect-free previews, required player workflows, onboarding, readable 1080p UI and adjustable scale |
+| [UI_STATIONS.md](UI_STATIONS.md) | Confirmed UI-D14: station/terminal overview, separate station-style arrival/departure board and serving-Line information; embedded station schematic deferred |
 
 This document owns the confirmed UI directions explicitly identified in Section 11 and develops the remaining presentation proposals. It does not replace the architecture brief, choose new packages, change simulation rules, add transport modes, or reduce V1 to the screens described here. The proposed sections are not automatically additional release gates.
 
@@ -27,9 +28,9 @@ This document owns the confirmed UI directions explicitly identified in Section 
 
 **The world is the primary workspace. The interface helps the player understand a situation and act on it without repeatedly losing the map.**
 
-Proposed organizing principles, while preserving the existing simulation requirements and the specific confirmed rules below:
+Apply the confirmed global principles in Section 2.1 across all screens, together with the specific confirmed rules below:
 
-- Start with a concise summary; expose operational detail through deliberate expansion. The operations-first vehicle overview is confirmed in Section 5.2, the Line-planning card overview in Section 6.1 and the active Line overview in Section 6.4; the general density of other screens remains proposed.
+- Start with a concise summary; expose supporting information through contextual tooltips and deliberate detail expansion. The vehicle and Line overviews below are specific applications, not the only screens covered by this principle.
 - Reuse consistent inspector components and one coherent selection model across the map, lists, alerts and planners. Shared components do not mean only one fixed window may exist.
 - Connect each important problem to its cause, affected objects and available corrective action. Direct contextual object links are confirmed in Section 4.1.
 - Keep commercial commitments, planned operations and physical execution visibly distinct.
@@ -45,6 +46,46 @@ Suggested treatment within that direction: charcoal/slate panels, warm light tex
 Historical character can come from the world, vehicle illustrations, documents and news without rebuilding the entire navigation as the decades advance. A modern-looking UI must not grant modern communication, forecasting or management capabilities before their actual availability. Show only data the game permits, with its timestamp, precision and source where relevant.
 
 Do not inherit Digicare or another product's branding without approval. Exact colours, fonts, opacity and spacing remain to be designed.
+
+### 2.1 Confirmed global minimalism, tooltips and consistency — UI-D15
+
+**The entire UI must be minimalist, clear, intuitively grouped and visually consistent. Move supporting information into hover/focus tooltips and expandable details instead of displaying every explanation and parameter permanently.** The player explicitly requested these rules for the whole game on 2026-09-30 and authorized their elaboration. They apply to existing and future screens, not only vehicle or Line details. Exact design tokens and per-screen dimensions remain implementation work.
+
+#### Three information levels
+
+| Level | What belongs here |
+|---|---|
+| Visible overview | Object identity, scope/date/period and units, meaningful current status, a few relevant operating facts, the main blocker or decision, and discoverable primary actions |
+| Contextual tooltip | Definitions, what an icon means, metric calculation basis, contributing factors, supporting parameter values, estimate assumptions, limits and concise reasons behind a status |
+| Opened detail | Complete tables, histories, comparisons, editable settings, complex causal chains and explicit commercial/operational actions |
+
+Minimalism means reducing visual noise, not removing management depth or hiding necessary decisions. Keep cards compact, related values aligned and decoration restrained. Use readable spacing rather than huge website-style tiles, tiny type or a wall of labels. Long technical lists and repetitive explanatory paragraphs should not dominate the default view.
+
+A blocker such as "Missing compatible vehicle" remains visible; its exact compatibility checks and alternatives can be in the tooltip/detail. A status such as "Out of slot" remains visible; hover can explain the applicable time window and contributing delay. These are illustrative presentations of existing rules, not new thresholds. Unknown, estimated and stale values must already be identifiable in the overview; a tooltip must not be the first place that reveals a displayed fact was only a guess.
+
+Never hide the only indication of a critical incident, failed save, invalid command, unsaved change, activation blocker or material financial consequence behind hover. Confirmation screens retain readable totals, affected objects, effective dates and required cost/obligation disclosures. A short tooltip may elaborate them; it cannot replace the established impact review. Required vehicle rosters, serving-Line lists and station boards remain directly accessible under UI-D13/UI-D14, not replaced with tooltip-only lists or a single unexplained count.
+
+#### Tooltip interaction and content
+
+Provide reusable first-layer tooltips for meaningful metrics, statuses, abbreviated/icon controls and explanatory terms. Do not add redundant popups to every self-explanatory word. Use consistent visible affordances, such as an information marker or underlined explanatory term where useful. Distinguish an object link that opens a detail from a term that explains a concept; preserve direct object navigation under UI-D09.
+
+Show tooltips after a short intentional real-time hover delay and through equivalent keyboard focus/help interaction. Exact timing is a shared adjustable implementation value, not a game-time delay. Hover is not the sole route to essential information: offer focusable help or a click-open details path, including for disabled actions whose controls cannot receive focus.
+
+Keep the first layer short: what the value/status means, its main cause or breakdown, and a route to more detail when needed. Do not put whole forms or long scrollable management tables into a transient hover popup. An explanation containing links must remain reachable while the pointer/focus enters it; moving from its trigger must not immediately dismiss it. Let the player dismiss it without closing a window or losing a draft. Reposition/wrap it within the viewport at enlarged UI scales; do not cover the trigger or necessary confirmation controls when avoidable. Use a stable click-open detail for longer reading, not an obligatory chain of nested tooltips.
+
+Tooltips use the same structured reasons, values, units, timestamps and object IDs as the main view. They cannot invent causes, stale prices or forecasts, leak unavailable information, or execute commands on hover. Where live data changes, keep the explanation coherent with the value being explained. Opening/dismissing a tooltip does not pause/resume, alter reservations, acknowledge incidents or generate simulation work. Timed presentation still works during manual and critical-event pause.
+
+First-layer hover/focus explanations are required in V1. The deep nested-glossary pattern described in GAME_DESIGN Section 1.1 remains deferred; this decision neither requires infinite tooltip nesting nor defers ordinary tooltips until after V1.
+
+#### Intuitive grouping and one design system
+
+Group functions by the player's task, not by internal simulation modules. Keep related information and its corrective actions together. Reuse the established cards, contextual links and window behaviours instead of creating a new navigation convention per screen. Within comparable windows, keep summary, details and action placement predictable. Preserve the non-linear Line planner; intuitive grouping is not permission to reinstate a mandatory wizard.
+
+Keep primary actions visible and secondary actions in a consistently labelled menu or detail area. Irrelevant functions need not occupy empty cards, but a relevant unavailable function must explain what is missing. Distinguish Save plan, Activate/Apply, Cancel editing and Terminate service consistently; never use the same ambiguous button to mean discarding a draft in one screen and ending a paid commitment in another.
+
+Implement shared style tokens and components for typography, spacing, surfaces, borders, corner treatment, icons, buttons, fields, cards, tables, links, tooltips and window chrome. The same semantic state uses the same wording, icon and colour role across screens, with text/focus cues rather than colour alone. Line-identification colours are distinct from warning/critical status styling. Avoid bespoke per-screen control designs and duplicated navigation to different copies of the same object.
+
+The station-style board in UI_STATIONS may have its approved specialist row/lettering treatment while retaining common window controls, links, focus, status semantics and readability. Consistency does not erase its character or restore the deferred schematic. Adapt columns and card layout to window size, Czech/English text and UI scale without hiding indispensable information. No new branded palette, exact font or pixel values are approved here.
 
 ## 3. Main screen and floating windows
 
@@ -110,7 +151,7 @@ Global search should locate known objects by name and type, such as a city, Line
 
 ## 4. Navigation and proposed detailed information architecture
 
-The five top-level navigation groups below are accepted for the bottom bar, alongside Build. Their detailed contents and object terminology remain proposals, not an approved final taxonomy for every screen. Contextual links between those screens are confirmed separately in Section 4.1.
+The five top-level navigation groups below are accepted for the bottom bar, alongside Build. Their detailed contents and object terminology remain proposals, not an approved final taxonomy for every screen. Contextual links between those screens are confirmed separately in Section 4.1. Apply the confirmed task grouping and consistency principles in Section 2.1 when resolving the remaining taxonomy.
 
 | Main group | Proposed contents |
 |---|---|
@@ -149,7 +190,7 @@ Interaction and identity rules:
 
 Implementation guidance: represent links as structured rich-text spans/reference tokens and reusable object-reference controls using the existing stable IDs and presentation models. Treat message text and player-entered names as text, not executable markup or arbitrary commands. Revalidate the target when activated and restored from a save; do not depend on the target's rendered GameObject being loaded. Navigating to a remote object does not activate an inactive region or bypass information availability.
 
-These direct object links are part of V1 interaction. They do **not** make the future deep nested-glossary/tooltip pattern in GAME_DESIGN Section 1.1 mandatory now. Entity navigation and optional concept explanations are different interactions.
+These direct object links are part of V1 interaction. They do **not** make the future deep nested-glossary/tooltip pattern in GAME_DESIGN Section 1.1 mandatory now. Entity navigation and contextual explanations are distinct interactions; ordinary hover/focus tooltips follow confirmed Section 2.1.
 
 ### 4.2 Proposed player-facing vocabulary
 
@@ -169,7 +210,7 @@ Labels are candidates, not a final localization glossary. Stable English data ID
 
 ### 5.1 Proposed shared structure
 
-The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This general template remains proposed; contextual links in Section 4.1, the vehicle-specific view in Section 5.2 and the Line-specific views in Sections 6.1 and 6.4 are confirmed.
+The shared inspector is a reusable window/content pattern, not a mandatory singleton at the right edge. Use a consistent structure with object-specific content rather than identical empty tabs everywhere. This detailed template remains proposed within the confirmed global hierarchy in Section 2.1; contextual links in Section 4.1, the vehicle-specific view in Section 5.2 and the Line-specific views in Sections 6.1 and 6.4 are confirmed. UI_STATIONS defines the confirmed station-specific contents.
 
 1. **Header:** name, type, owner and current status; window movement and controls; locate/follow and content pinning where meaningful under the confirmed selection policy.
 2. **Summary:** a few relevant facts, the next event and the most important unresolved problem.
@@ -409,7 +450,7 @@ Group repeated messages about the same incident, show its affected services and 
 
 Colours supplement icons and text, never carry status alone. Distinguish unacknowledged, being handled, awaiting a decision and resolved where these states exist. Critical-event automatic pause is confirmed separately in Section 7.2; the remaining notification layout is still proposed. Opening an ordinary event window is not itself a pause trigger.
 
-V1 explanations must be accessible through focus/click as well as hover. A simple details view or pinned explanation can work without making deep nested tooltips a new V1 requirement.
+V1 explanations use first-layer hover/focus tooltips under Section 2.1, with an accessible click-open detail for longer explanations. Keep the important problem and main cause visible; tooltips elaborate them. Deep nested tooltips are not a new V1 requirement.
 
 ### 7.2 Confirmed critical-event automatic pause — critical-event part of UI-D08
 
@@ -500,6 +541,10 @@ These checks describe required evidence for the confirmed directions, not comple
 | UI-A20 | UI-D12, clearly separated future changes | Prepare and save a future change through the active Line window while old operation continues; visibly distinguish current, uncommitted and committed-future configuration. Verify readiness/effective-time/impact review, unchanged running Trips, no automatic application on save/load and no duplicated commitments. Suspension/closure are separate scoped consequence previews; closing the window does not stop the Line |
 | UI-A21 | UI-D13, roster from capacity planning onwards | Plan capacity in an unlaunched Line with other cards incomplete and verify a directly accessible vehicle list, not just counts or Trips. Known planned/pinned IDs appear immediately; criteria-based duty requirements and missing coverage are separately labelled without fabricated IDs or early mandatory assignment. Test available candidates versus reservations, purchased infrastructure slots without fleet, plan save/load and paused editing; viewing the list does not reserve, dispatch or activate anything |
 | UI-A22 | UI-D13, active roster and assignment continuity | Test planned-to-preparing/running transitions, multiple dated assignments for one asset, substitution, failure, maintenance and reassignment. Verify exact vehicle/Trip/duty links, actual task/location, clear date/variant/current-versus-future scope, and unchanged selection on refresh. Shared vehicles and train/consist components are not double-counted; unassigned-but-covered duties differ from shortages; draft candidates never appear actively deployed on the draft. Save/load preserves assignments and reconstructs the view without new commitments; verify CZ/EN and enlarged UI |
+| UI-A23 | UI-D15, progressive information without hidden essentials | Inspect representative vehicle, Line, station, finance and confirmation views. Primary state, scope/units, blockers, important costs and necessary actions remain visible/discoverable; supplementary definitions and breakdowns are in concise tooltips with a route to details. Required rosters and station/Line lists are not reduced to hover-only content. Verify incomplete, critical, estimated, unknown and stale states without having to hunt for warnings |
+| UI-A24 | UI-D15, tooltip access and consistent components | Test hover, keyboard focus/help, disabled-action explanations, linked tooltip content, dismissal, moving/resizing windows and enlarged CZ/EN text. Explanations remain readable/reachable and agree with current structured source data. Hover does not issue commands, acknowledge incidents or change pause/speed. Comparable windows reuse control placement, semantic state styles and terminology; the station board retains its approved character. Do not require deep nested tooltips as a V1 gate |
+
+Station-specific evidence remains in [UI_STATIONS.md](UI_STATIONS.md), STUI-A01–STUI-A07; global UI-D15 applies there as well.
 
 ### Remaining proposed interaction scenarios
 
@@ -523,9 +568,9 @@ No Unity UI has been implemented or visually tested as part of this document. St
 |---|---|---|---|
 | UI-D01 | Overall visual character | Restrained contemporary dark interface over the model world, with limited historical flavour; exact styling tokens remain open | CONFIRMED on 2026-09-30 |
 | UI-D02 | Workspace/window model | Individual management/detail panels are movable floating windows; not a mandatory fixed right inspector | CONFIRMED on 2026-09-30 |
-| UI-D03 | Information density | Operations-first vehicle overview, compact Line-planning cards and active Line overview confirmed under UI-D10/UI-D11/UI-D12; density for other object types/screens remains proposed | PARTIALLY CONFIRMED on 2026-09-30; vehicle and Line overviews |
+| UI-D03 | Information density | Global concise overview, contextual supporting explanations and opened details are confirmed under UI-D15; specific vehicle and Line layouts remain under UI-D10/UI-D11/UI-D12, and unspecified screen layouts still need design | CONFIRMED global principle on 2026-09-30; exact per-screen layouts are not blanket-approved |
 | UI-D04 | Normal UI and manual-pause planning | Ordinary windows, Line planning and construction previews never auto-pause/resume or change speed; manual pause retains all planning tools while time-driven simulation remains stopped, under Section 9.1 | CONFIRMED on 2026-09-30 |
-| UI-D05 | Navigation and Czech terminology | Top-level Provoz, Obchod, Majetek, Firma and Svět alongside Stavět are accepted; detailed contents and object glossary in Section 4 remain proposed | PARTIALLY CONFIRMED on 2026-09-30 |
+| UI-D05 | Navigation and Czech terminology | Top-level Provoz, Obchod, Majetek, Firma and Svět alongside Stavět are accepted; detailed contents and object glossary in Section 4 remain proposed; UI-D15 requires consistent task grouping | PARTIALLY CONFIRMED on 2026-09-30 |
 | UI-D06 | Fixed bottom bar | Stable bottom navigation/status/time control area with the functional grouping in Section 3.3, instead of mandatory left/top strips; exact visual dimensions and secondary controls remain open | CONFIRMED on 2026-09-30 |
 | UI-D07 | Detailed window interaction | Resizing, multiple views, reusable unpinned detail, content pinning, explicit new-window action, minimize/restore and remembered/recoverable layout under Section 3.2; snapping is optional and never compulsory docking | CONFIRMED on 2026-09-30 |
 | UI-D08 | Critical incidents and remaining exceptional pause triggers | Critical incidents automatically pause by default under Section 7.2; routine delays/authorized routine recovery do not. Application-focus loss/return, precise pause-menu transitions and detailed override settings remain unresolved | PARTIALLY CONFIRMED on 2026-09-30; critical-event default CONFIRMED |
@@ -534,5 +579,7 @@ No Unity UI has been implemented or visually tested as part of this document. St
 | UI-D11 | Card-based Line planning and unlaunched plans | Independently editable cards instead of a wizard; persistent incomplete/future Line drafts, visible dependency-based readiness and separate explicit activation under Section 6.1 | CONFIRMED on 2026-09-30 |
 | UI-D12 | Active Line detail | Same window/cards before and after launch, live operation/issues and actual Trips, explicit variant scope, period-based results and separate future changes/lifecycle actions under Section 6.4 | CONFIRMED on 2026-09-30 |
 | UI-D13 | Planned and active Line vehicle list | Directly accessible roster from capacity planning onwards, including unlaunched plans; show known planned/current vehicle identities and assignments, with unassigned requirements/coverage clearly separate; follow Section 6.4 and existing fleet commitment rules | CONFIRMED on 2026-09-30 |
+| UI-D14 | Station and terminal UI | Overview/cards, separate station-style arrivals/departures window and serving-Line information; embedded track/platform/stand schematic deferred, as owned by UI_STATIONS.md | CONFIRMED on 2026-09-30 |
+| UI-D15 | Global minimalist and consistent UI | Clear concise overviews, supporting information in hover/focus tooltips and opened details, intuitive task grouping and shared visual/interaction components throughout the game; preserve visible critical information under Section 2.1 | CONFIRMED on 2026-09-30 |
 
-The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09, the compact vehicle overview under UI-D10, nonlinear persistent Line planning under UI-D11, the active Line workspace under UI-D12 and the planned/active vehicle roster under UI-D13. Do not reopen those choices or reintroduce the superseded Line-creation wizard. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided. Approval of these decisions does not silently approve every detail in this document.
+The player's acceptance of the bottom-bar/window proposal includes updating one ordinary detail window until it is pinned, rather than opening a new window for every ordinary object click. Normal-window/planning pause behaviour is resolved under UI-D04, critical-event automatic pause under UI-D08, contextual object links under UI-D09, the compact vehicle overview under UI-D10, nonlinear persistent Line planning under UI-D11, the active Line workspace under UI-D12, the planned/active vehicle roster under UI-D13 and station presentation under UI-D14. UI-D15 now applies the minimalist information hierarchy and consistent design principles globally. Do not reopen those choices or reintroduce the superseded Line-creation wizard. Focus/menu details of UI-D08 and the other explicitly proposed details remain undecided. Approval of these decisions does not silently approve every detail in this document.
