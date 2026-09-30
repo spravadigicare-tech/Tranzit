@@ -224,7 +224,7 @@ Required player screens/workflows:
 
 | Workflow | Minimum usable presentation |
 |---|---|
-| Start/pause/settings/save | UI-D35 New Game/real company-founding flow, Continue, load/slots, graphics/audio/input/language/UI scale, clear save feedback; Full/Basics/Off tutorial is opening-only |
+| Start/pause/settings/save | UI-D35 New Game/real company-founding flow plus UI-D36 main menu, campaign-organized manual/quick/autosaves, atomic save feedback, independent pause reasons, Esc priority and Graphics/Audio/Game/Controls/Interface/Language settings |
 | World interaction | Rotate/pan/zoom, selection, follow vehicle, hover details, navigation to an event, legend and network/ownership overlays |
 | Construction | Catalogue, ghost preview, rotate/snap, valid/invalid geometry, itemized quote, confirm/cancel, progress and affected operation |
 | Company | Branches and workload, salary/crew reserve, managers/delegation, finances/loans, legal access and region expansion |
