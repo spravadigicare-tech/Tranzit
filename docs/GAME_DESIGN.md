@@ -208,6 +208,48 @@ Every calendar consumer must use the same 14-day-month model. Do not mix ordinar
 
 Test month/year rollover, two complete weeks per month, cross-year winter seasons, seasonal renewals and speed changes during trips, maintenance and construction. For equivalent simulated elapsed time, different selected speeds must not change resource accounting or bypass physical movements, reservation conflicts, deadlines or other events.
 
+### 3.4.1 Binding commands while paused
+
+Pause stops **simulation time**, not the player's ability to make administrative decisions.
+
+While the simulation is paused, the player may explicitly commit otherwise valid binding actions, including for example:
+
+- purchases and leases;
+- submitted orders and capacity requests;
+- bids/contracts and accepted agreements;
+- licence/permit applications;
+- construction project launch;
+- Line/Service Pattern activation or future-version changes;
+- capital/asset transfers and other validated company transactions.
+
+The command is validated against the authoritative state and committed **once at the current game timestamp**.
+
+Any immediate state change that is inherently part of the transaction still occurs at that timestamp, for example:
+
+- money reservation/payment where the transaction requires it;
+- creation of the accepted order/agreement/application/project record;
+- ownership/commitment change where the canonical transaction is immediate;
+- reservation of finite stock/capacity where acceptance itself legally/operationally creates that reservation.
+
+Pause never grants free elapsed work. Anything whose completion depends on time makes **zero progress** until simulation time resumes, including:
+
+- manufacturing/delivery;
+- construction;
+- licence/application processing;
+- recruitment/training;
+- research/adoption;
+- maintenance/repair;
+- loading/handling;
+- vehicle movement/repositioning;
+- AI/company follow-up work;
+- deadlines and periodic accounting.
+
+A command whose counterparty/system response is not defined as immediate can enter its normal submitted/pending state while paused and wait for simulation time to advance.
+
+Repeated clicks or parallel windows must remain idempotent. Pausing cannot bypass price/availability/permission validation, force an AI counterparty to respond instantly, complete a physical step, or move a deadline.
+
+This rule applies consistently to manual pause, critical-event pause and other simulation-pause reasons whenever the relevant gameplay UI is available. A pause-menu overlay may temporarily block interaction as a UI state, but it does not define different transaction semantics.
+
 ### 3.5 Date-appropriate starts and history
 
 The world is historically anchored but not fully deterministic:
