@@ -5631,14 +5631,58 @@ The prime contractor remains responsible to the customer and can seek SLA compen
 
 Passenger cooperation is based on fixed services and seats.
 
-Possible arrangements:
+For V1, keep two simple agreement families rather than one large generic partnership system:
 
-- through-ticketing,
-- sale of partner seats,
-- reserved seat allocations,
-- integrated transfer/rebooking arrangements.
+1. **Connection agreement** — coordinates transfers at a defined station/terminal. The agreement can state which origin/destination relationship the node is intended to connect, so the system can match suitable services without requiring the player to pair every dated Trip manually.
+2. **Partner-capacity sales agreement** — permits one operator to sell eligible capacity operated by the other operator as part of one through ticket.
 
-A through journey can use multiple operators under one itinerary/ticket.
+A through journey can use multiple operators under one itinerary/ticket when the required partner-capacity sales rights exist.
+
+#### Partner capacity settlement
+
+The partner-capacity sales agreement defines a simple **partner rate in money/km** for the covered partner segment, using the same player-facing unit style as ordinary passenger tariffs.
+
+Keep retail price and settlement price separate:
+
+- the passenger-facing price of the partner segment is derived from the operating carrier's applicable public retail tariff;
+- the selling carrier owes the operating carrier the agreed partner rate multiplied by the covered distance;
+- the difference between retail revenue for that segment and the partner settlement is the seller's margin.
+
+The margin may be positive, zero or negative.
+
+Example:
+
+> Public retail rate: 0.50 money/km  
+> Partner rate: 0.40 money/km  
+> Covered distance: 150 km  
+> Passenger pays for partner segment: 75 money  
+> Seller owes partner: 60 money  
+> Seller margin: +15 money
+
+A deliberately unfavourable deal is valid:
+
+> Public retail rate: 0.50 money/km  
+> Partner rate: 0.55 money/km  
+> Covered distance: 150 km  
+> Passenger pays for partner segment: 75 money  
+> Seller owes partner: 82.5 money  
+> Seller margin: −7.5 money
+
+Do not silently block a negative-margin agreement. The player may accept it for strategic/network reasons after seeing the consequence.
+
+AI negotiation of the partner rate should remain explainable and relatively simple. Inputs can include:
+
+- relationship/reputation;
+- whether the parties compete strongly on the relevant market;
+- expected passenger volume/value brought by the seller;
+- strategic interest in the connection/market;
+- current commercial leverage/capacity pressure.
+
+Do not turn this into a separate revenue-management or negotiation minigame.
+
+Partner settlement creates a real inter-company payable/receivable and must post exactly once. Settlement/accounting timing follows the normal agreement/finance rules; do not create a second hidden passenger ledger.
+
+A connection agreement and a partner-capacity sales agreement are independent. One can exist without the other.
 
 Missed connections and reliability influence passenger attractiveness.
 
