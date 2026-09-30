@@ -1,0 +1,56 @@
+name: Temporary documentation consistency audit
+on:
+  push:
+    branches: [audit/consistency-2026-09-30]
+permissions:
+  contents: write
+concurrency:
+  group: temporary-documentation-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read exact revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin https://github.com/spravadigicare-tech/Tranzit.git
+          git fetch --depth=1 origin "$GITHUB_SHA"
+          git checkout --detach FETCH_HEAD
+      - name: Apply and validate reviewed corrections when present
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -f Tools/apply_consistency_fixes.py ]; then
+            python3 Tools/apply_consistency_fixes.py
+            python3 Tools/check_docs.py
+            python3 -m unittest discover -s Tools/tests -v
+            git diff --check
+            if ! git diff --quiet; then
+              git config user.name 'github-actions[bot]'
+              git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+              git add AGENTS.md README.md docs Tools
+              git commit -m 'Resolve cross-system specification contradictions and add regression checks'
+              AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+              git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $AUTH" push origin HEAD:refs/heads/audit/consistency-2026-09-30
+            fi
+          fi
+          git rev-parse HEAD
+          git ls-files
+          wc -l AGENTS.md README.md docs/*.md
+      - name: Export exact reviewed working files
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: consistency-audit-snapshot
+          path: |
+            AGENTS.md
+            README.md
+            docs/
+            Tools/
+          retention-days: 2
+          if-no-files-found: error
