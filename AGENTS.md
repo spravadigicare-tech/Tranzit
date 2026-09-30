@@ -36,7 +36,7 @@ For every new feature, explicitly check interactions with:
 - regional unlocking and inactive-world simulation,
 - AI competitors,
 - performance/simulation LOD,
-- UI/player comprehensibility.
+- UI/player comprehensibility and explainability/no-hidden-mechanics requirements.
 
 Do not implement a feature in isolation if it breaks an existing system.
 
@@ -78,6 +78,24 @@ Infrastructure is free-form/spline based. Buildings can rotate freely. Snapping 
 ### Progressive automation
 
 Early game can be hands-on. Later game must remain manageable through managers, dispatchers and technology without deleting the underlying physical rules.
+
+### Explainable simulation / no hidden mechanics
+
+Do not implement material gameplay outcomes as opaque hidden modifiers when the underlying causes can be exposed.
+
+For systems affecting feasibility, pricing, demand, reliability, reputation, contracts, staffing, capacity or disruption, preserve enough structured information to explain:
+
+- what happened;
+- which inputs/rules caused it;
+- which constraints blocked an action;
+- which costs/penalties/bonuses were applied;
+- what the player can change to improve the outcome.
+
+Aggregate scores are allowed for readability only when the player can drill down into their contributing factors.
+
+Prefer structured **reason codes / contributing factors / source values** over returning only a final unexplained number or boolean.
+
+UI may later surface this through hover/focus tooltips, pinned explanations and nested highlighted terms. Do not hardwire simulation logic to one specific tooltip implementation, but keep explanation data available so the UI can expose it.
 
 ### Historical plausibility and content scope
 
