@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-09-30 after confirming UI-D37 and reconciling its company specification, main UI register and README. UI-D38 is the next design topic; it is not yet approved.
+Last reviewed: 2026-09-30 after confirming UI-D38 and reconciling Technology with the main UI, Company and README. UI-D39 Ownership / Acquisitions / Infrastructure Market is the next design topic.
 
 ## How to use this backlog
 
@@ -39,7 +39,6 @@ Rules:
 
 ### Finish the remaining major UI/UX gaps
 
-- [ ] **[DESIGN] Technology & Research UI** — next design topic: research capacity, historically available technology, company adoption/install requirements, active/completed research and concrete capability effects. Proposed **UI-D38**, not yet approved. Preserve the core distinction between technology availability, company adoption and finite vehicle offers.
 - [ ] **[DESIGN] Ownership, Acquisitions & Infrastructure Market UI** — shares/control, acquisitions, subsidiaries/integration, asset/infrastructure purchases and sales, inherited contracts/liabilities. Proposed **UI-D39**. UI-D37 already confirms the company-detail information surface, not this transaction workflow or new shareholder/control rights.
 - [ ] **[DESIGN] News & Historical Events UI** — world news, historical/macroeconomic developments, source/impact explanation and navigation into affected regions/industries/company decisions. Proposed **UI-D40**. Reuse UI-D37's known company-event history and canonical events rather than duplicating them.
 - [ ] **[DESIGN] Final navigation taxonomy + global search** — finalize detailed contents under Build / Operations / Business / Assets / Company / World only after the remaining workflows above are specified; include searchable known objects without bypassing information boundaries.
@@ -99,5 +98,7 @@ These are completed design/documentation tasks, not implemented game features. R
 - [x] UI-D34 — neutral compact money icon for the single money accounting unit.
 - [x] UI-D35 — New Game and opening-only company-founding tutorial.
 - [x] UI-D36 — main menu, campaign saves, atomic save safety, pause-menu lifecycle, Esc priority and settings.
+- [x] UI-D37 — adaptive external-company/competitor detail around the existing bilateral-agreement model.
+- [x] UI-D38 — simple technology/research UI with concrete unlocks and company-level adoption only where genuinely needed.
 - [x] **[DESIGN/DOC] UI-D37 — External Company & Competitor Detail** — expanded [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md) around preserved UI-D27 agreements, registered the decision/acceptance scenarios in [UI_UX_DESIGN.md](UI_UX_DESIGN.md), and reconciled README and obsolete company-layout-open wording. Six adaptive cards, source/time/permission limits, canonical offer routing and retained company history are confirmed.
 - [x] Documentation checks cover structural validation and validator tests; they are **not** gameplay implementation evidence.
