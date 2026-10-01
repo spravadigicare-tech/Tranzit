@@ -197,6 +197,14 @@
       "equipment_option_ids": [
         "benc_landauer_1895"
       ]
+    },
+    {
+      "id": "benc_1896_delivery_box",
+      "model_id": "benc_lieferwagen_300_1896",
+      "name": "Delivery box",
+      "equipment_option_ids": [
+        "benc_delivery_box_1896"
+      ]
     }
   ]
 }
