@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "support_families": [
+    {
+      "id": "steam_light_central_eu",
+      "facility_tags": [
+        "steam_light",
+        "boiler_basic",
+        "machine_shop"
+      ],
+      "skill_tags": [
+        "steam_fitter",
+        "boiler_worker"
+      ],
+      "parts_mode_1900": "broad_regional"
+    },
+    {
+      "id": "steam_mainline_central_eu",
+      "facility_tags": [
+        "steam_heavy",
+        "boiler_heavy",
+        "wheel_lathe",
+        "heavy_lift"
+      ],
+      "skill_tags": [
+        "steam_fitter",
+        "boiler_worker",
+        "running_gear_specialist"
+      ],
+      "parts_mode_1900": "broad_regional"
+    },
+    {
+      "id": "wagon_early_2axle",
+      "facility_tags": [
+        "wagon_shop",
+        "wheelset_basic",
+        "carpentry_or_metal_body"
+      ],
+      "skill_tags": [
+        "wagon_fitter"
+      ],
+      "parts_mode_1900": "broad_local_regional"
+    },
+    {
+      "id": "passenger_coach_wood_early",
+      "facility_tags": [
+        "coach_shop",
+        "carpentry",
+        "wheelset_basic"
+      ],
+      "skill_tags": [
+        "coach_fitter",
+        "carpenter"
+      ],
+      "parts_mode_1900": "broad_local_regional"
+    },
+    {
+      "id": "road_horse_traction",
+      "facility_tags": [
+        "stable",
+        "coachbuilder_basic"
+      ],
+      "skill_tags": [
+        "driver_horse",
+        "stable_staff",
+        "wheelwright"
+      ],
+      "parts_mode_1900": "local"
+    },
+    {
+      "id": "road_early_petrol",
+      "facility_tags": [
+        "early_motor_shop",
+        "machine_shop_basic"
+      ],
+      "skill_tags": [
+        "early_motor_mechanic"
+      ],
+      "parts_mode_1900": "scarce_import_or_specialist"
+    },
+    {
+      "id": "road_steam_early",
+      "facility_tags": [
+        "road_steam_shop",
+        "boiler_basic"
+      ],
+      "skill_tags": [
+        "steam_road_mechanic"
+      ],
+      "parts_mode_1900": "rare_specialist_import"
+    }
+  ]
+}
