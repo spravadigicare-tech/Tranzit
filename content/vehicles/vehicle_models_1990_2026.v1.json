@@ -20,6 +20,7 @@
       "support_family_id": "rail_emu_modern",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 79.2,
         "width_m": 2.82,
         "height_m": 4.635,
@@ -89,6 +90,7 @@
       "support_family_id": "rail_diesel_electric_modern_import",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 19.275,
         "service_mass_t": 80,
         "max_speed_kph": 140,
@@ -152,6 +154,7 @@
       "support_family_id": "rail_high_speed_trainset",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 185,
         "max_speed_kph": 230,
         "structural_speed_limit_kph": 230,
@@ -219,6 +222,7 @@
       "support_family_id": "rail_electric_pan_european_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 18.9,
         "service_mass_t": 85,
         "max_speed_kph": 140,
@@ -286,6 +290,7 @@
       "support_family_id": "rail_electric_skoda_dual_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 18,
         "service_mass_t": 88,
         "max_speed_kph": 200,
@@ -353,6 +358,7 @@
       "support_family_id": "rail_electric_pan_european_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 18.98,
         "service_mass_t": 90,
         "max_speed_kph": 200,
@@ -418,6 +424,7 @@
       "support_family_id": "rail_dmu_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 43.73,
         "service_mass_t": 84.4,
         "max_speed_kph": 120,
@@ -482,6 +489,7 @@
       "support_family_id": "rail_emu_modern",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 79.4,
         "service_mass_t": 151.5,
         "max_speed_kph": 160,
@@ -548,6 +556,7 @@
       "support_family_id": "rail_diesel_electric_modern_import",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 80,
         "max_speed_kph": 100,
         "structural_speed_limit_kph": 100,
@@ -611,6 +620,7 @@
       "support_family_id": "rail_dmu_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 44.4,
         "service_mass_t": 83,
         "max_speed_kph": 120,
@@ -675,6 +685,7 @@
       "support_family_id": "rail_coach_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 237,
         "max_speed_kph": 230,
         "structural_speed_limit_kph": 230,
@@ -858,6 +869,7 @@
       "support_family_id": "road_eu_heavy_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 7.5,
         "max_speed_kph": 90,
         "structural_speed_limit_kph": 110,
@@ -918,6 +930,7 @@
       "support_family_id": "road_eu_heavy_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 7.7,
         "max_speed_kph": 90,
         "structural_speed_limit_kph": 110,
@@ -978,6 +991,7 @@
       "support_family_id": "road_tatra_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 18,
         "max_speed_kph": 85,
         "structural_speed_limit_kph": 90,
@@ -1039,6 +1053,7 @@
       "support_family_id": "road_modern_van",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 3.5,
         "max_speed_kph": 120,
         "structural_speed_limit_kph": 130,
@@ -1100,6 +1115,7 @@
       "support_family_id": "road_ev_heavy",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 11.5,
         "max_speed_kph": 90,
         "structural_speed_limit_kph": 100,
@@ -1162,6 +1178,7 @@
       "support_family_id": "road_bus_karosa_legacy",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "max_speed_kph": 100,
         "structural_speed_limit_kph": 100,
         "seats": 45,
@@ -1221,6 +1238,7 @@
       "support_family_id": "road_bus_eu_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12,
         "max_speed_kph": 80,
         "structural_speed_limit_kph": 90,
@@ -1282,6 +1300,7 @@
       "support_family_id": "road_bus_karosa_legacy",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "max_speed_kph": 105,
         "structural_speed_limit_kph": 105,
         "seats": 49,
@@ -1342,6 +1361,7 @@
       "support_family_id": "road_bus_eu_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12.2,
         "max_speed_kph": 80,
         "structural_speed_limit_kph": 90,
@@ -1403,6 +1423,7 @@
       "support_family_id": "road_bus_eu_modern",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12,
         "max_speed_kph": 100,
         "structural_speed_limit_kph": 100,
@@ -1465,6 +1486,7 @@
       "support_family_id": "road_bus_eu_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12,
         "max_speed_kph": 100,
         "structural_speed_limit_kph": 105,
@@ -1528,6 +1550,7 @@
       "support_family_id": "road_ev_bus",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12,
         "max_speed_kph": 80,
         "structural_speed_limit_kph": 80,
@@ -1593,6 +1616,7 @@
       "support_family_id": "road_ev_bus",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12,
         "max_speed_kph": 85,
         "structural_speed_limit_kph": 85,
