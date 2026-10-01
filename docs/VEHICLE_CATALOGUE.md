@@ -784,6 +784,8 @@ This makes a player-defined template economically transparent: changing one equi
 
 The editor must never imply that the player designs a vehicle from first principles. It combines real supported equipment, interior and technical packages within the fixed physical platform of that model family.
 
+The player also cannot pay a manufacturer to create a new bespoke platform/model outside the authored historical catalogue. Large orders may standardize or combine supported options, but they do not create new body geometry, wheelbase, vehicle dimensions, propulsion architecture or an otherwise fictional model family.
+
 ## 10. Core specification schema for every authored vehicle
 
 Machine-readable vehicle data should eventually include at least:
