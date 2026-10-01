@@ -381,6 +381,43 @@ Passenger choice depends on factors such as:
 - operator reputation,
 - purpose of journey.
 
+#### Station/stop access and urban feeders
+
+A passenger station or stop does **not** automatically draw demand from the entire city/locality commodity market.
+
+Passenger access is spatial and itinerary-based:
+
+- a station directly serves population/jobs/services that can reach one of its public entrances by a plausible walking route within the authored walking-time threshold;
+- the economic centre/neighbourhood containing the station usually contributes substantial direct walk demand, but only the physically walk-accessible portion is treated as directly covered;
+- a nearby adjacent economic centre can also contribute direct walk demand when its actual pedestrian access to the station is short enough;
+- a distant centre in the same city does not become station demand merely because it shares the same commodity market.
+
+Economic centres are aggregate passenger origin/destination nodes, but station access uses their physical location/footprint and the pedestrian network. UI may summarize this as the share of an economic centre directly walk-accessible from the station. Exact walking-time thresholds are balancing/content data, not a hardcoded city-wide radius.
+
+Demand outside the direct walk catchment can reach the station only through a **real feasible access itinerary**, for example:
+
+> home/economic centre → walk → bus/tram/trolleybus/metro → walk/interchange → rail station → train
+
+In first-playable V1, bus is the required urban feeder mode; later wider-base modes use the same rule.
+
+A feeder extends effective station reach only through its actual:
+
+- stops and walking access to them;
+- published frequency/timetable;
+- travel time;
+- vehicle capacity and crowding;
+- reliability;
+- transfer walking time and interchange quality;
+- fare/ticket compatibility where relevant.
+
+Building or scheduling a feeder therefore does not grant a hidden catchment bonus. Passengers must have a usable itinerary and can choose another station, mode or no public-transport trip when the combined journey is unattractive.
+
+If two stations' direct/feeder catchments overlap, passengers are not assigned by territory ownership. They choose between feasible itineraries using the normal passenger-choice factors.
+
+A station queue contains passengers who have actually reached that station/stop in the aggregate simulation. City-level demand must not be spawned directly onto a station platform merely because the city has demand.
+
+This makes urban transport strategically useful: a rail station placed near only one centre can serve that local catchment directly, while buses and later tram/trolleybus/metro networks can connect additional residential, employment and commercial centres to it.
+
 Journey purposes include work, business, school, tourism/leisure, family/social visits and other meaningful categories.
 
 Different segments value time, price, comfort and reliability differently.
@@ -8738,7 +8775,7 @@ Urban transport follows the same physical rules:
 
 For tram, trolleybus and metro operations, a basic depot/garage always contains routine workshop capability; parking-only facilities are not the default depot type for these modes.
 
-Urban networks feed intercity stations and can materially influence passenger demand.
+Urban networks feed intercity stations and can materially influence passenger demand. They do so through the station-access rules in Section 6.2: a real feeder Line can bring otherwise non-walkable economic centres into a feasible rail itinerary; the city market itself never grants station-wide passenger catchment.
 
 ### 33.1 Municipal operators, contracts and city permission
 
