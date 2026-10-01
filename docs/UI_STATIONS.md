@@ -16,22 +16,21 @@ Below the summary, use openable cards for Capacity, **Passenger access/catchment
 
 ### Passenger access / catchment
 
-For passenger stations/stops, show the station's **direct walking catchment** separately from its broader **feeder-reachable catchment**.
+For passenger stations/stops, show the station's **direct economic-centre catchment** separately from its broader **feeder-reachable centres**.
 
 Useful information includes:
 
-- economic centre(s) with direct walk access;
-- approximate share of each centre within the walking-time threshold where the simulation supports it;
-- significant nearby centres that are outside walking reach;
-- urban feeder Lines/stops that currently connect those centres to the station;
+- the economic centre containing the station/stop — this whole centre is the direct walking catchment;
+- other city centres that are not directly served;
+- urban feeder Lines/stops that currently connect those centres to the station centre;
 - expected feeder travel/transfer time, frequency and material capacity/reliability constraint;
 - major uncovered passenger origins where known.
 
-Do not shade the whole city market as directly served by a station. A city can have one commodity market while passenger access remains highly local.
+Do not shade the whole city market as directly served by a station. A city can have one commodity market while passenger access remains split across several smaller economic centres.
 
-Map inspection can show walking-access envelopes based on actual pedestrian access routes and, as a separate layer/treatment, centres reachable through current public-transport feeders. A feeder reach is not permanent station territory: if the Line is suspended, full, badly timed or disrupted, the effective itinerary changes.
+Map inspection can highlight the station's own economic centre as direct walk access and, separately, centres reachable through current public-transport feeders. Feeder reach is not permanent territory: if the Line is suspended, full, badly timed or disrupted, the effective itinerary changes.
 
-Where catchments of several stations overlap, show competing feasible access rather than assigning the neighbourhood exclusively to one station.
+If several passenger stations exist inside the same economic centre, they share access to that centre's passenger origins and compete through normal itinerary choice rather than dividing it into artificial walking polygons.
 
 For an owned facility, expose management and development actions only to the extent permitted by actual ownership, agreements and regulations. For a third-party facility, emphasize the player's usable services, booked capacity, access conditions and charges. Do not present foreign station management as player-controlled. Public information may be inspected, but competitors' private costs, contracts, allocations and staff data are not revealed merely by opening this screen. Changes and purchases keep their existing validated confirmation workflows.
 
@@ -113,7 +112,7 @@ These scenarios extend the UI evidence required by [V1_ACCEPTANCE_TESTS.md](V1_A
 | STUI-A02 | Open a station's board beside its overview and a Line window; move/resize, pin, minimize/restore and open another station's board. Titles remain unambiguous, existing windows/drafts survive, and pause/speed never changes merely from navigation. Verify station-board styling and legible CZ/EN at 1080p/enlarged scale. |
 | STUI-A03 | Check arrival/departure views for on-time, delayed, cancelled, changed-platform, unknown-assignment, cross-midnight and repeated-visit calls. Planned/estimated/actual times and call identities remain distinct. No numbered platform is invented or fixed by Line. |
 | STUI-A04 | Inspect multiple operators and passenger/freight filters, demand-driven service, a geometric pass-through and an unlaunched draft. No private data, fabricated Trip/time, phantom boarding stop or draft-generated departure appears. |
-| STUI-A05 | Inspect a rail station in one economic centre, a nearby walkable centre and a distant centre in the same city market. Direct catchment includes only genuinely walk-accessible demand. Add a real bus feeder from the distant centre and verify feeder-reachable demand appears separately; suspending the feeder removes that itinerary without changing the city commodity market. |
+| STUI-A05 | Inspect a rail station in one economic centre and two other centres in the same city market. The station directly serves its entire own centre and neither other centre. Add a real bus feeder from one other centre and verify that centre becomes feeder-reachable; suspending the feeder removes that itinerary without changing the city commodity market. |
 | STUI-A05 | Inspect the serving-Line list with multiple calling/non-calling variants, seasonal and suspended services, a future committed version and a draft. The correct Lines, operators, directions, calendars, next calls and states remain clear and directly linked. |
 | STUI-A06 | Change a Pattern with an explicit future effective time, cancel/reroute a call, then save/load. Board/list state uses the same authoritative identities, preserves running Trips and history, and does not duplicate calls, bookings or notifications. Renamed/unavailable linked objects follow UI-D09. |
 | STUI-A07 | Complete station inspection, board navigation and calling-Line inspection without any embedded track/platform/stand schematic or live-camera dependency. Main-world geometry and ordinary map navigation remain available. |
