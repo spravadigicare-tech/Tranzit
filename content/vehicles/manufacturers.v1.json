@@ -396,6 +396,39 @@
         "macro_gb_thornycroft"
       ],
       "notes": "Rare British steam-road import source in the 1900 opening era."
+    },
+    {
+      "id": "kraus_linz",
+      "display_name": "Kraus Linz",
+      "real_inspiration": "Krauss & Comp. Linz",
+      "home_region": "at",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_at_krauss"
+      ],
+      "notes": "Austrian steam-locomotive builder; off-map source for historically documented kkStB families."
+    },
+    {
+      "id": "floridorf_lokomotivwerke",
+      "display_name": "Floridorf Lokomotivwerke",
+      "real_inspiration": "Lokomotivfabrik Floridsdorf",
+      "home_region": "at",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_at_floridsdorf"
+      ],
+      "notes": "Vienna-area steam-locomotive builder; off-map source for historically documented kkStB families."
+    },
+    {
+      "id": "novomestske_lokomotivky",
+      "display_name": "Novoměstské lokomotivky",
+      "real_inspiration": "Wiener Neustädter Lokomotivfabrik",
+      "home_region": "at",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_at_wiener_neustadt"
+      ],
+      "notes": "Wiener Neustadt steam-locomotive builder represented as an off-map Austrian manufacturer."
     }
   ]
 }
