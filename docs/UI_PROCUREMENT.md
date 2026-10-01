@@ -179,7 +179,7 @@ A recurring physical-supply agreement exposes a small, explicit set of terms:
 - quantity per scheduled delivery;
 - destination or pickup point;
 - delivery schedule;
-- **price per delivery**;
+- price basis (for example per delivery or per physical unit);
 - validity;
 - Auto-renew;
 - transport responsibility;
@@ -226,7 +226,16 @@ Example agreement:
 > Transport: supplier  
 > Auto-renew: On
 
-Price is shown and negotiated **per scheduled delivery** in this baseline model. Do not substitute a hidden per-tonne rate or monthly fee.
+Pricing can be negotiated using a simple explicit basis such as:
+
+- **per delivery** — e.g. 1,600 money / delivery;
+- **per physical unit** — e.g. 20 money / t.
+
+Regardless of basis, always show the calculated **total for one scheduled delivery** beside it. Example:
+
+> 60 t × 20 money/t = **1,200 money / delivery**
+
+If quantity varies under the agreement, show the corresponding delivery total/range from the actual scheduled quantity rather than hiding the calculation.
 
 Each occurrence becomes a real expected delivery/order state and is charged once when the agreement's payment rule says that delivery is due/accepted. Auto-renew extends the agreement; it does not physically deliver or refill anything by itself.
 
