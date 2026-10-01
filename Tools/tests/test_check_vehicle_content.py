@@ -28,6 +28,9 @@ class VehicleContentValidatorTests(unittest.TestCase):
             "regional_market_profiles.v1.json": {
                 "profiles": [{"id": "r"}]
             },
+            "production_input_groups.v1.json": {
+                "recipes": [{"id": "recipe"}]
+            },
             "equipment_options_1900.v1.json": {
                 "groups": [{"id": "g", "options": [{"id": "o"}]}]
             },
@@ -45,7 +48,7 @@ class VehicleContentValidatorTests(unittest.TestCase):
                     "equipment_group_ids": ["g"],
                     "built_in_template_ids": ["t"],
                     "platform": {"max_speed_kph": 10, "structural_speed_limit_kph": 10},
-                    "production": {"factory_ids": ["p"]},
+                    "production": {"factory_ids": ["p"], "material_recipe_id": "recipe"},
                     "provenance": {"source_urls": ["https://example.invalid"]}
                 }]
             },
@@ -55,6 +58,18 @@ class VehicleContentValidatorTests(unittest.TestCase):
                     "excellent": 0.1, "good": 0.45, "worn": 0.35, "overhaul_due": 0.1
                 }
             },
+            "equipment_options_1901_1919.v1.json": {"groups": []},
+            "equipment_options_1920_1959.v1.json": {"groups": []},
+            "equipment_options_1960_1989.v1.json": {"groups": []},
+            "equipment_options_1990_2026.v1.json": {"groups": []},
+            "built_in_templates_1901_1919.v1.json": {"templates": []},
+            "built_in_templates_1920_1959.v1.json": {"templates": []},
+            "built_in_templates_1960_1989.v1.json": {"templates": []},
+            "built_in_templates_1990_2026.v1.json": {"templates": []},
+            "vehicle_models_1901_1919.v1.json": {"models": []},
+            "vehicle_models_1920_1959.v1.json": {"models": []},
+            "vehicle_models_1960_1989.v1.json": {"models": []},
+            "vehicle_models_1990_2026.v1.json": {"models": []},
         }
         for name, data in docs.items():
             (base / name).write_text(json.dumps(data), encoding="utf-8")
@@ -95,6 +110,15 @@ class VehicleContentValidatorTests(unittest.TestCase):
             data["templates"][0]["equipment_option_ids"] = ["wrong"]
             path.write_text(json.dumps(data), encoding="utf-8")
             self.assertTrue(any("does not support" in x for x in check_vehicle_content(root).errors))
+
+    def test_material_recipe_required(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            del data["models"][0]["production"]["material_recipe_id"]
+            path.write_text(json.dumps(data), encoding="utf-8")
+            self.assertTrue(any("material_recipe_id" in x for x in check_vehicle_content(root).errors))
 
     def test_condition_distribution_must_sum_to_one(self):
         directory, root, base = self.fixture()
