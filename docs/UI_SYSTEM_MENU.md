@@ -1,6 +1,6 @@
 # Tranzit — Main menu, save/load, pause and settings UI
 
-> **Status: CONFIRMED UI DIRECTION — UI-D36, 2026-09-30.** The player accepted the main-menu, campaign-organized save/load, pause-menu and settings proposal. Escape/pause-menu behaviour is confirmed here. UI-D08 now also confirms configurable focus-loss pause and intentionally simple notification settings. Exact visual dimensions, default autosave interval/count, graphics-option inventory and key defaults remain implementation/content work. This specification is not an implemented or tested UI.
+> **Status: CONFIRMED UI DIRECTION — UI-D36, 2026-09-30.** The player accepted the main-menu, campaign-organized save/load, pause-menu and settings proposal. Escape/pause-menu behaviour is confirmed here. UI-D08 now also confirms configurable focus-loss pause and intentionally simple notification settings. Exact visual dimensions and graphics-option inventory remain implementation/content work. The current implementation defaults for autosave count/interval and quicksave/quickload bindings are owned by V1_IMPLEMENTATION_BRIEF Section 4.5 and remain configurable/remappable rather than new UI product decisions. This specification is not an implemented or tested UI.
 
 Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), especially UI-D04, UI-D06–UI-D08, UI-D15, UI-D24, UI-D35 and UI-D34. [V1_SCOPE.md](V1_SCOPE.md) owns full persistence/offline/save safety. [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md) owns implementation guidance and release integration.
 
@@ -131,7 +131,7 @@ Settings expose at least:
 - interval;
 - number of retained autosaves.
 
-Exact default values remain implementation/content decisions.
+Use the current implementation defaults from V1_IMPLEMENTATION_BRIEF Section 4.5: autosave enabled with three rotating autosaves at a configurable five-real-minute interval. These are adjustable implementation defaults, not immutable product rules.
 
 Autosave timing itself creates no simulated economic time and does not run while the application is closed.
 
