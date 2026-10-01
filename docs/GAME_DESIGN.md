@@ -1851,6 +1851,60 @@ Regional/market accessibility is cached and updated when relevant transport or e
 
 Better infrastructure can open previously uneconomic markets.
 
+### 10.5 Local commodity markets and prices
+
+Physical commodities have **real local market prices** that can differ between cities/market areas.
+
+Local price formation is driven by the simulated economy rather than a fixed global commodity table. Relevant inputs include:
+
+- local production and available seller inventory;
+- local consumption and buyer demand;
+- contracted/committed supply already spoken for;
+- storage constraints and stock buffers;
+- accessibility of alternative suppliers/markets;
+- available transport capacity and effective transport cost;
+- seasonal and historical changes in production/consumption;
+- disruptions or shortages that materially affect availability.
+
+A local price is an economic signal, not a guaranteed trade. A high price in Brno and a low price in Jihlava can create an incentive for firms to buy/sell across those markets, but actual trade still requires willing firms, compatible quantities, transport, facilities, licences and contractual terms.
+
+Prices must be explainable. The UI should be able to show why a market is expensive/cheap, for example:
+
+> Brno — timber  
+> Local demand: 390 t/month  
+> Local supply: 80 t/month  
+> Net deficit: 310 t/month  
+> Alternative supply access: limited  
+> Current local reference price: 27 money/t
+
+Do not expose perfect information the player's company could not plausibly know. Market visibility follows the same branch/communications/information rules as other commercial intelligence; unknown or stale information should be labelled accordingly.
+
+Local price changes are event/coarse-tick driven and aggregated. Do not continuously solve every firm-to-firm market pair every frame.
+
+### 10.6 Market intelligence for transport opportunities
+
+The player can inspect aggregated market intelligence to identify potential transport corridors before a concrete customer opportunity exists.
+
+Useful views can include:
+
+- commodity;
+- city/market area;
+- local production;
+- local consumption;
+- surplus/deficit;
+- local reference price and recent trend;
+- known major producers/buyers;
+- known existing transport availability/capacity where the player can legitimately observe it.
+
+A price gap between two markets can indicate a potential transport opportunity, but the game must not convert it into an automatic profit score. The player decides whether the corridor is worth pursuing.
+
+This market-intelligence layer is distinct from the Opportunity Board:
+
+- **Market** answers where supply/demand/price imbalances exist;
+- **Opportunity Board** lists concrete discoverable jobs/tenders/offers from real counterparties.
+
+The two systems can link to each other, but one does not fabricate the other.
+
 ## 11. Contracts and cargo
 
 ### 11.0 Opportunity Board / commercial opportunities
