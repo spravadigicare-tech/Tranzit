@@ -2,7 +2,7 @@
 
 > **Status:** researched content specification for the base game from the 1900 start onward.
 >
-> This document extends the vehicle-content target in [V1_CONTENT_MANIFEST.md](V1_CONTENT_MANIFEST.md) and obeys the lifecycle rules in [GAME_DESIGN.md](GAME_DESIGN.md), especially Section 15. Vehicle names and manufacturers are fictionalized; the technical and historical inspiration is real.
+> This document extends the vehicle-content target in [V1_CONTENT_MANIFEST.md](V1_CONTENT_MANIFEST.md) and obeys the lifecycle rules in [GAME_DESIGN.md](GAME_DESIGN.md), especially Section 15. Vehicle names and manufacturers are fictionalized; the technical and historical inspiration is real. Broad-era role coverage is checked in [VEHICLE_COVERAGE_AUDIT.md](VEHICLE_COVERAGE_AUDIT.md).
 >
 > The catalogue is deliberately broader than the minimum V1 opening set. It is a content plan, not implementation evidence: meshes, machine-readable definitions, factories, offers, sounds, balancing, tests and save support still have to be authored.
 
