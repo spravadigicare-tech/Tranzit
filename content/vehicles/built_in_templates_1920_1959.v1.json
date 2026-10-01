@@ -123,7 +123,8 @@
       "model_id": "pragov_rn_1933",
       "name": "Flatbed",
       "equipment_option_ids": [
-        "pragov_rn_flatbed_1933"
+        "pragov_rn_flatbed_1933",
+        "pragov_rn_1933_52hp"
       ]
     },
     {
@@ -131,7 +132,8 @@
       "model_id": "pragov_rn_1933",
       "name": "Box",
       "equipment_option_ids": [
-        "pragov_rn_box_1933"
+        "pragov_rn_box_1933",
+        "pragov_rn_1933_52hp"
       ]
     },
     {
@@ -139,7 +141,8 @@
       "model_id": "pragov_rn_1933",
       "name": "Tipper",
       "equipment_option_ids": [
-        "pragov_rn_tipper_1933"
+        "pragov_rn_tipper_1933",
+        "pragov_rn_1933_52hp"
       ]
     },
     {
@@ -155,7 +158,8 @@
       "model_id": "fatra111_1942",
       "name": "Tipper",
       "equipment_option_ids": [
-        "fatra111_tipper_1946"
+        "fatra111_tipper_1946",
+        "fatra111_early_1942"
       ]
     },
     {
@@ -163,7 +167,8 @@
       "model_id": "fatra111_1942",
       "name": "Heavy tractor",
       "equipment_option_ids": [
-        "fatra111_tractor_1947"
+        "fatra111_tractor_1947",
+        "fatra111_early_1942"
       ]
     },
     {
@@ -284,6 +289,24 @@
       "name": "LUX Coach",
       "equipment_option_ids": [
         "neskoda706rto_lux_1958"
+      ]
+    },
+    {
+      "id": "pragov_rn_flatbed_1937",
+      "model_id": "pragov_rn_1933",
+      "name": "Flatbed 1937",
+      "equipment_option_ids": [
+        "pragov_rn_flatbed_1933",
+        "pragov_rn_1937_72hp"
+      ]
+    },
+    {
+      "id": "fatra111_flatbed_r_1953",
+      "model_id": "fatra111_1942",
+      "name": "111 R Flatbed",
+      "equipment_option_ids": [
+        "fatra111_flatbed_1942",
+        "fatra111_r_1953"
       ]
     }
   ]
