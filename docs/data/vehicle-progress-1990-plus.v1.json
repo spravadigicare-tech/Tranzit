@@ -1,0 +1,2535 @@
+{
+  "schema_version": "1.0.0",
+  "pack_id": "vehicle_progression_1990_plus_v1",
+  "depends_on": [
+    "vehicle_seed_1900_v1",
+    "vehicle_progression_1915_1959_v1",
+    "vehicle_progression_1960_1989_v1"
+  ],
+  "manufacturers": [
+    {
+      "id": "simens_mobility",
+      "name_key": "manufacturer.simens_mobility",
+      "real_inspiration": "Siemens Mobility",
+      "home_market_tags": [
+        "germany",
+        "austria"
+      ],
+      "notes": "Modern European rail manufacturer."
+    },
+    {
+      "id": "bombardir_transportation",
+      "name_key": "manufacturer.bombardir_transportation",
+      "real_inspiration": "Bombardier Transportation / later Alstom lineage",
+      "home_market_tags": [
+        "germany",
+        "europe"
+      ],
+      "notes": "Modern rail manufacturer."
+    },
+    {
+      "id": "alstrom_ferroviaria",
+      "name_key": "manufacturer.alstrom_ferroviaria",
+      "real_inspiration": "Alstom / Fiat Ferroviaria",
+      "home_market_tags": [
+        "italy",
+        "france"
+      ],
+      "notes": "Modern rail manufacturer."
+    },
+    {
+      "id": "peska_bydgoszcz",
+      "name_key": "manufacturer.peska_bydgoszcz",
+      "real_inspiration": "PESA",
+      "home_market_tags": [
+        "poland"
+      ],
+      "notes": "Regional rolling stock manufacturer."
+    },
+    {
+      "id": "cz_loka",
+      "name_key": "manufacturer.cz_loka",
+      "real_inspiration": "CZ LOKO",
+      "home_market_tags": [
+        "czechia"
+      ],
+      "notes": "Modern/rebuild locomotive works."
+    },
+    {
+      "id": "sora_libchavy",
+      "name_key": "manufacturer.sora_libchavy",
+      "real_inspiration": "SOR",
+      "home_market_tags": [
+        "czechia"
+      ],
+      "notes": "Bus manufacturer."
+    },
+    {
+      "id": "ivego_bus",
+      "name_key": "manufacturer.ivego_bus",
+      "real_inspiration": "Iveco Bus / Irisbus lineage",
+      "home_market_tags": [
+        "france",
+        "italy",
+        "europe"
+      ],
+      "notes": "European bus manufacturer."
+    },
+    {
+      "id": "solaris_bus",
+      "name_key": "manufacturer.solaris_bus",
+      "real_inspiration": "Solaris Bus & Coach",
+      "home_market_tags": [
+        "poland"
+      ],
+      "notes": "European urban bus manufacturer."
+    },
+    {
+      "id": "mann",
+      "name_key": "manufacturer.mann",
+      "real_inspiration": "MAN",
+      "home_market_tags": [
+        "germany"
+      ],
+      "notes": "European truck/bus manufacturer."
+    }
+  ],
+  "factories": [
+    {
+      "id": "factory_ringhauer_modern",
+      "manufacturer_id": "ringhauer_smichov",
+      "location_mode": "active_map",
+      "location_key": "praha_smichov",
+      "capabilities": [
+        {
+          "model_family_id": "wagon_s70_intermodal",
+          "from": "1995-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 22,
+          "batch_efficiency": 0.95,
+          "notes": "Modern intermodal wagon."
+        },
+        {
+          "model_family_id": "wagon_f68_megahopper",
+          "from": "2000-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 23,
+          "batch_efficiency": 0.95,
+          "notes": "Modern hopper."
+        }
+      ]
+    },
+    {
+      "id": "factory_mercator_modern",
+      "manufacturer_id": "mercator_benz",
+      "location_mode": "off_map",
+      "location_key": "germany",
+      "capabilities": [
+        {
+          "model_family_id": "road_mercator_actros_i",
+          "from": "1996-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 40,
+          "batch_efficiency": 0.95,
+          "notes": "Long-haul tractor."
+        },
+        {
+          "model_family_id": "road_mercator_eactros600",
+          "from": "2024-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 55,
+          "batch_efficiency": 0.92,
+          "notes": "Battery-electric long-haul tractor."
+        }
+      ]
+    },
+    {
+      "id": "factory_karusa_modern",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "location_mode": "active_map",
+      "location_key": "vysoke_myto",
+      "capabilities": [
+        {
+          "model_family_id": "bus_karusa_c934",
+          "from": "1996-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 44,
+          "batch_efficiency": 0.95,
+          "notes": "Regional bus."
+        },
+        {
+          "model_family_id": "bus_karusa_c954",
+          "from": "2002-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 45,
+          "batch_efficiency": 0.95,
+          "notes": "Intercity bus."
+        }
+      ]
+    },
+    {
+      "id": "factory_studena_modern",
+      "manufacturer_id": "studena_vagonka",
+      "location_mode": "active_map",
+      "location_key": "studenka",
+      "capabilities": [
+        {
+          "model_family_id": "rail_studena_471_mamut",
+          "from": "1997-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 135,
+          "batch_efficiency": 0.9,
+          "notes": "Double-deck EMU."
+        }
+      ]
+    },
+    {
+      "id": "factory_solaris_poland",
+      "manufacturer_id": "solaris_bus",
+      "location_mode": "off_map",
+      "location_key": "poland",
+      "capabilities": [
+        {
+          "model_family_id": "bus_solaris_urbino12",
+          "from": "1999-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 44,
+          "batch_efficiency": 0.96,
+          "notes": "Low-floor city bus."
+        }
+      ]
+    },
+    {
+      "id": "factory_simens_modern",
+      "manufacturer_id": "simens_mobility",
+      "location_mode": "off_map",
+      "location_key": "germany_austria",
+      "capabilities": [
+        {
+          "model_family_id": "rail_simens_er20_eurobezec",
+          "from": "2002-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 150,
+          "batch_efficiency": 0.88,
+          "notes": "Modern diesel-electric."
+        },
+        {
+          "model_family_id": "rail_simens_vektron_ms",
+          "from": "2010-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 180,
+          "batch_efficiency": 0.91,
+          "notes": "Modern multisystem electric."
+        }
+      ]
+    },
+    {
+      "id": "factory_alstrom_modern",
+      "manufacturer_id": "alstrom_ferroviaria",
+      "location_mode": "off_map",
+      "location_key": "italy_france",
+      "capabilities": [
+        {
+          "model_family_id": "rail_alstrom_680_naklanec",
+          "from": "2003-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 420,
+          "batch_efficiency": 0.85,
+          "notes": "Seven-car tilting trainset."
+        }
+      ]
+    },
+    {
+      "id": "factory_sora",
+      "manufacturer_id": "sora_libchavy",
+      "location_mode": "active_map",
+      "location_key": "libchavy",
+      "capabilities": [
+        {
+          "model_family_id": "bus_sora_cn12",
+          "from": "2004-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 42,
+          "batch_efficiency": 0.96,
+          "notes": "Regional low-entry bus."
+        },
+        {
+          "model_family_id": "bus_sora_ns12e",
+          "from": "2017-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 48,
+          "batch_efficiency": 0.94,
+          "notes": "Battery city bus."
+        }
+      ]
+    },
+    {
+      "id": "factory_mann",
+      "manufacturer_id": "mann",
+      "location_mode": "off_map",
+      "location_key": "germany",
+      "capabilities": [
+        {
+          "model_family_id": "bus_mann_lioncity12",
+          "from": "2004-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 46,
+          "batch_efficiency": 0.95,
+          "notes": "Modern city bus."
+        },
+        {
+          "model_family_id": "road_mann_tgx",
+          "from": "2007-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 40,
+          "batch_efficiency": 0.96,
+          "notes": "Long-haul truck."
+        },
+        {
+          "model_family_id": "road_mann_tge_cargo",
+          "from": "2017-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 24,
+          "batch_efficiency": 0.97,
+          "notes": "Large van."
+        }
+      ]
+    },
+    {
+      "id": "factory_bombardir",
+      "manufacturer_id": "bombardir_transportation",
+      "location_mode": "off_map",
+      "location_key": "germany",
+      "capabilities": [
+        {
+          "model_family_id": "rail_bombardir_trax_ms",
+          "from": "2006-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 175,
+          "batch_efficiency": 0.9,
+          "notes": "Multisystem freight electric."
+        }
+      ]
+    },
+    {
+      "id": "factory_ivego",
+      "manufacturer_id": "ivego_bus",
+      "location_mode": "off_map",
+      "location_key": "europe",
+      "capabilities": [
+        {
+          "model_family_id": "bus_ivego_crossway12",
+          "from": "2006-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 44,
+          "batch_efficiency": 0.96,
+          "notes": "Regional/intercity bus."
+        },
+        {
+          "model_family_id": "bus_ivego_crossway_le_elec",
+          "from": "2025-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 50,
+          "batch_efficiency": 0.94,
+          "notes": "Battery low-entry bus."
+        }
+      ]
+    },
+    {
+      "id": "factory_neskoda_modern",
+      "manufacturer_id": "neskoda_plzen",
+      "location_mode": "active_map",
+      "location_key": "plzen",
+      "capabilities": [
+        {
+          "model_family_id": "rail_neskoda_109x_zatopek",
+          "from": "2008-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 185,
+          "batch_efficiency": 0.9,
+          "notes": "Modern multisystem electric."
+        },
+        {
+          "model_family_id": "rail_neskoda_640_panter",
+          "from": "2012-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 145,
+          "batch_efficiency": 0.92,
+          "notes": "Regional EMU."
+        },
+        {
+          "model_family_id": "coach_neskoda_comfort9",
+          "from": "2025-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 260,
+          "batch_efficiency": 0.88,
+          "notes": "Nine-car high-speed coach set contribution."
+        }
+      ]
+    },
+    {
+      "id": "factory_fatra_modern",
+      "manufacturer_id": "fatra_koprivnice",
+      "location_mode": "active_map",
+      "location_key": "koprivnice",
+      "capabilities": [
+        {
+          "model_family_id": "road_fatra_fenix",
+          "from": "2011-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 52,
+          "batch_efficiency": 0.95,
+          "notes": "Modern heavy truck."
+        }
+      ]
+    },
+    {
+      "id": "factory_peska",
+      "manufacturer_id": "peska_bydgoszcz",
+      "location_mode": "off_map",
+      "location_key": "poland",
+      "capabilities": [
+        {
+          "model_family_id": "rail_peska_844_regiorys",
+          "from": "2011-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 120,
+          "batch_efficiency": 0.91,
+          "notes": "Regional DMU."
+        },
+        {
+          "model_family_id": "rail_peska_847_regiolyska",
+          "from": "2023-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 120,
+          "batch_efficiency": 0.92,
+          "notes": "Modern regional DMU."
+        }
+      ]
+    },
+    {
+      "id": "factory_czloka",
+      "manufacturer_id": "cz_loka",
+      "location_mode": "active_map",
+      "location_key": "ceska_trebova_jihlava",
+      "capabilities": [
+        {
+          "model_family_id": "rail_czloka_effishunter1000",
+          "from": "2017-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 120,
+          "batch_efficiency": 0.92,
+          "notes": "Modern shunting/local freight locomotive."
+        }
+      ]
+    }
+  ],
+  "support_families": [
+    {
+      "id": "rail_modern_ac_drive",
+      "mode": "rail",
+      "required_capabilities": [
+        "power_electronics",
+        "modern_diagnostics",
+        "modern_safety_systems",
+        "bogie_service"
+      ],
+      "notes": "Modern electric/diesel-electric traction systems."
+    },
+    {
+      "id": "rail_multiple_unit_modern",
+      "mode": "rail",
+      "required_capabilities": [
+        "integrated_trainset",
+        "modern_diagnostics",
+        "hvac",
+        "modern_doors",
+        "passenger_systems"
+      ],
+      "notes": "Modern EMU/DMU/trainset support."
+    },
+    {
+      "id": "road_modern_diesel_euro",
+      "mode": "road",
+      "required_capabilities": [
+        "modern_diesel",
+        "electronic_diagnostics",
+        "air_brakes",
+        "emissions_systems"
+      ],
+      "notes": "Modern European road vehicles."
+    },
+    {
+      "id": "road_battery_heavy",
+      "mode": "road",
+      "required_capabilities": [
+        "high_voltage_battery",
+        "electric_drive",
+        "charging_diagnostics",
+        "air_brakes"
+      ],
+      "notes": "Battery-electric heavy trucks."
+    },
+    {
+      "id": "bus_modern_diesel",
+      "mode": "road",
+      "required_capabilities": [
+        "modern_diesel",
+        "bus_electrics",
+        "air_brakes",
+        "hvac",
+        "door_systems"
+      ],
+      "notes": "Modern diesel/HVO/hybrid-ready buses."
+    },
+    {
+      "id": "bus_modern_battery",
+      "mode": "road",
+      "required_capabilities": [
+        "high_voltage_battery",
+        "bus_electrics",
+        "charging",
+        "hvac",
+        "door_systems"
+      ],
+      "notes": "Battery-electric buses."
+    },
+    {
+      "id": "rail_wagon_intermodal",
+      "mode": "rail",
+      "required_capabilities": [
+        "bogie_wagon",
+        "air_brakes",
+        "intermodal_fittings",
+        "heavy_wheelset"
+      ],
+      "notes": "Modern intermodal freight wagons."
+    }
+  ],
+  "model_families": [
+    {
+      "id": "wagon_s70_intermodal",
+      "manufacturer_id": "ringhauer_smichov",
+      "display_name_key": "vehicle.wagon.s70.name",
+      "real_prototype_reference": "Sgnss/Sdggmrs-family modern intermodal",
+      "introduction_date": "1995-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "freight_wagon",
+        "intermodal"
+      ],
+      "support_family_id": "rail_wagon_intermodal",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 28,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 120,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "intermodal_bogie"
+      },
+      "performance": {
+        "power_kw": null,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": null,
+        "energy_systems": [],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "wagon_s70_standard",
+          "capacity": {
+            "payload_t": 65,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_mercator_actros_i",
+      "manufacturer_id": "mercator_benz",
+      "display_name_key": "vehicle.road.actros1.name",
+      "real_prototype_reference": "Mercedes-Benz Actros I",
+      "introduction_date": "1996-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "tractor",
+        "longhaul",
+        "diesel"
+      ],
+      "support_family_id": "road_modern_diesel_euro",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "tractor_4x2_modern"
+      },
+      "performance": {
+        "power_kw": 340,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_actros1_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_karusa_c934",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "display_name_key": "vehicle.bus.c934.name",
+      "real_prototype_reference": "Karosa C 934",
+      "introduction_date": "1996-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "intercity",
+        "diesel"
+      ],
+      "support_family_id": "bus_modern_diesel",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_regional_highfloor"
+      },
+      "performance": {
+        "power_kw": 200,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_c934_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 45,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_studena_471_mamut",
+      "manufacturer_id": "studena_vagonka",
+      "display_name_key": "vehicle.rail.471.name",
+      "real_prototype_reference": "ČD class 471 CityElefant",
+      "introduction_date": "1997-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "emu",
+        "suburban",
+        "double_deck",
+        "dc"
+      ],
+      "support_family_id": "rail_multiple_unit_modern",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 155,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 140,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "emu_double_deck_3car"
+      },
+      "performance": {
+        "power_kw": 2000,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_471_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 310,
+            "standing": 330,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_solaris_urbino12",
+      "manufacturer_id": "solaris_bus",
+      "display_name_key": "vehicle.bus.urbino12.name",
+      "real_prototype_reference": "Solaris Urbino 12",
+      "introduction_date": "1999-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "city",
+        "low_floor",
+        "diesel"
+      ],
+      "support_family_id": "bus_modern_diesel",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 80,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_lowfloor_12m"
+      },
+      "performance": {
+        "power_kw": 175,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "poland",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_urbino12_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 34,
+            "standing": 70,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "wagon_f68_megahopper",
+      "manufacturer_id": "ringhauer_smichov",
+      "display_name_key": "vehicle.wagon.f68.name",
+      "real_prototype_reference": "Modern high-capacity bogie hopper",
+      "introduction_date": "2000-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "freight_wagon",
+        "bulk",
+        "high_capacity"
+      ],
+      "support_family_id": "rail_wagon_bogie_modern",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 22,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 120,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "hopper_modern"
+      },
+      "performance": {
+        "power_kw": null,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": null,
+        "energy_systems": [],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "wagon_f68_standard",
+          "capacity": {
+            "payload_t": 68,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_karusa_c954",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "display_name_key": "vehicle.bus.c954.name",
+      "real_prototype_reference": "Karosa C 954",
+      "introduction_date": "2002-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "intercity",
+        "diesel"
+      ],
+      "support_family_id": "bus_modern_diesel",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 105,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_intercity_highfloor"
+      },
+      "performance": {
+        "power_kw": 228,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_c954_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 51,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_simens_er20_eurobezec",
+      "manufacturer_id": "simens_mobility",
+      "display_name_key": "vehicle.rail.er20.name",
+      "real_prototype_reference": "Siemens ER20 Eurorunner",
+      "introduction_date": "2002-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "diesel_electric",
+        "mainline",
+        "mixed",
+        "fast"
+      ],
+      "support_family_id": "rail_modern_ac_drive",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 80,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 140,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "diesel_bobo_modern"
+      },
+      "performance": {
+        "power_kw": 2000,
+        "starting_tractive_effort_kn": 240,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_er20_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_alstrom_680_naklanec",
+      "manufacturer_id": "alstrom_ferroviaria",
+      "display_name_key": "vehicle.rail.680.name",
+      "real_prototype_reference": "ČD class 680 Pendolino",
+      "introduction_date": "2003-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "emu",
+        "tilting",
+        "premium",
+        "multisystem"
+      ],
+      "support_family_id": "rail_multiple_unit_modern",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 385,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 200,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "emu_tilting_7car"
+      },
+      "performance": {
+        "power_kw": 3920,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc",
+          "25kv_ac",
+          "15kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "italy",
+          "from": "2003-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "2003-01-01",
+          "to": null,
+          "relationship": "secondary_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_680_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 331,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_sora_cn12",
+      "manufacturer_id": "sora_libchavy",
+      "display_name_key": "vehicle.bus.cn12.name",
+      "real_prototype_reference": "SOR CN 12",
+      "introduction_date": "2004-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "low_entry",
+        "diesel"
+      ],
+      "support_family_id": "bus_modern_diesel",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_lowentry_12m"
+      },
+      "performance": {
+        "power_kw": 202,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_cn12_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 42,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_mann_lioncity12",
+      "manufacturer_id": "mann",
+      "display_name_key": "vehicle.bus.lioncity12.name",
+      "real_prototype_reference": "MAN Lion's City lineage",
+      "introduction_date": "2004-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "city",
+        "low_floor",
+        "diesel"
+      ],
+      "support_family_id": "bus_modern_diesel",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 80,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_lowfloor_12m"
+      },
+      "performance": {
+        "power_kw": 235,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_lioncity12_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 35,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_bombardir_trax_ms",
+      "manufacturer_id": "bombardir_transportation",
+      "display_name_key": "vehicle.rail.traxms.name",
+      "real_prototype_reference": "Bombardier TRAXX F140 MS2",
+      "introduction_date": "2006-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "multisystem",
+        "freight",
+        "international"
+      ],
+      "support_family_id": "rail_modern_ac_drive",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 85,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 140,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_bobo_modern"
+      },
+      "performance": {
+        "power_kw": 5600,
+        "starting_tractive_effort_kn": 300,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc",
+          "1_5kv_dc",
+          "15kv_ac",
+          "25kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_traxms_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_ivego_crossway12",
+      "manufacturer_id": "ivego_bus",
+      "display_name_key": "vehicle.bus.crossway12.name",
+      "real_prototype_reference": "Irisbus/Iveco Crossway",
+      "introduction_date": "2006-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "intercity",
+        "diesel"
+      ],
+      "support_family_id": "bus_modern_diesel",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_crossway_12m"
+      },
+      "performance": {
+        "power_kw": 245,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "europe",
+          "from": "2006-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "2006-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_crossway12_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 50,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_mann_tgx",
+      "manufacturer_id": "mann",
+      "display_name_key": "vehicle.road.tgx.name",
+      "real_prototype_reference": "MAN TGX",
+      "introduction_date": "2007-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "tractor",
+        "longhaul",
+        "diesel"
+      ],
+      "support_family_id": "road_modern_diesel_euro",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "tractor_4x2_modern"
+      },
+      "performance": {
+        "power_kw": 390,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_tgx_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_neskoda_109x_zatopek",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.rail.109x.name",
+      "real_prototype_reference": "Škoda 109E / class 380",
+      "introduction_date": "2008-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "multisystem",
+        "express",
+        "international"
+      ],
+      "support_family_id": "rail_modern_ac_drive",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 88,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 200,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_bobo_modern"
+      },
+      "performance": {
+        "power_kw": 6400,
+        "starting_tractive_effort_kn": 275,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc",
+          "25kv_ac",
+          "15kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_109x_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_simens_vektron_ms",
+      "manufacturer_id": "simens_mobility",
+      "display_name_key": "vehicle.rail.vektron.name",
+      "real_prototype_reference": "Siemens Vectron MS",
+      "introduction_date": "2010-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "multisystem",
+        "international",
+        "mixed"
+      ],
+      "support_family_id": "rail_modern_ac_drive",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 90,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 200,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_bobo_modern"
+      },
+      "performance": {
+        "power_kw": 6400,
+        "starting_tractive_effort_kn": 300,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc",
+          "1_5kv_dc",
+          "15kv_ac",
+          "25kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_vektron_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_fatra_fenix",
+      "manufacturer_id": "fatra_koprivnice",
+      "display_name_key": "vehicle.road.fenix.name",
+      "real_prototype_reference": "Tatra Phoenix",
+      "introduction_date": "2011-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "heavy",
+        "rough_road",
+        "diesel"
+      ],
+      "support_family_id": "road_modern_diesel_euro",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 85,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "heavy_modular_modern"
+      },
+      "performance": {
+        "power_kw": 355,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_fenix_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_peska_844_regiorys",
+      "manufacturer_id": "peska_bydgoszcz",
+      "display_name_key": "vehicle.rail.844.name",
+      "real_prototype_reference": "PESA Link II / class 844",
+      "introduction_date": "2011-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "dmu",
+        "regional",
+        "low_entry"
+      ],
+      "support_family_id": "rail_multiple_unit_modern",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 84.4,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 120,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "dmu_2car_modern"
+      },
+      "performance": {
+        "power_kw": 780,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "poland",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_844_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 120,
+            "standing": 120,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_neskoda_640_panter",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.rail.640.name",
+      "real_prototype_reference": "RegioPanter",
+      "introduction_date": "2012-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "emu",
+        "regional",
+        "low_floor",
+        "dual_voltage"
+      ],
+      "support_family_id": "rail_multiple_unit_modern",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 152,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 160,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "emu_3car_modern"
+      },
+      "performance": {
+        "power_kw": 2040,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc",
+          "25kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_640_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 234,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_mann_tge_cargo",
+      "manufacturer_id": "mann",
+      "display_name_key": "vehicle.road.tge.name",
+      "real_prototype_reference": "MAN TGE",
+      "introduction_date": "2017-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "light",
+        "van",
+        "diesel"
+      ],
+      "support_family_id": "road_modern_diesel_euro",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 120,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "large_van_modern"
+      },
+      "performance": {
+        "power_kw": 130,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_tge_standard",
+          "capacity": {
+            "payload_t": 2,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_czloka_effishunter1000",
+      "manufacturer_id": "cz_loka",
+      "display_name_key": "vehicle.rail.effishunter1000.name",
+      "real_prototype_reference": "CZ LOKO EffiShunter 1000",
+      "introduction_date": "2017-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "diesel_electric",
+        "shunting",
+        "local_freight",
+        "modern"
+      ],
+      "support_family_id": "rail_modern_ac_drive",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 80,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "diesel_bobo_modern_shunter"
+      },
+      "performance": {
+        "power_kw": 895,
+        "starting_tractive_effort_kn": 262,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_effishunter1000_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_sora_ns12e",
+      "manufacturer_id": "sora_libchavy",
+      "display_name_key": "vehicle.bus.ns12e.name",
+      "real_prototype_reference": "SOR NS 12 electric family",
+      "introduction_date": "2017-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "city",
+        "battery",
+        "low_floor"
+      ],
+      "support_family_id": "bus_modern_battery",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 80,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_lowfloor_12m_electric"
+      },
+      "performance": {
+        "power_kw": 160,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "battery_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "E",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_ns12e_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 32,
+            "standing": 50,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_peska_847_regiolyska",
+      "manufacturer_id": "peska_bydgoszcz",
+      "display_name_key": "vehicle.rail.847.name",
+      "real_prototype_reference": "PESA RegioFox / class 847",
+      "introduction_date": "2023-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "dmu",
+        "regional",
+        "low_entry",
+        "modern"
+      ],
+      "support_family_id": "rail_multiple_unit_modern",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 83,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 120,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "dmu_2car_modern"
+      },
+      "performance": {
+        "power_kw": 750,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel",
+          "hvo_compatible"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "poland",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_847_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 115,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_mercator_eactros600",
+      "manufacturer_id": "mercator_benz",
+      "display_name_key": "vehicle.road.eactros600.name",
+      "real_prototype_reference": "Mercedes-Benz eActros 600",
+      "introduction_date": "2024-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "tractor",
+        "battery",
+        "longhaul"
+      ],
+      "support_family_id": "road_battery_heavy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "tractor_4x2_electric"
+      },
+      "performance": {
+        "power_kw": 600,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "battery_electric_600kwh"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "E",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_eactros600_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "coach_neskoda_comfort9",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.coach.comfort9.name",
+      "real_prototype_reference": "ComfortJet / Siemens Viaggio platform",
+      "introduction_date": "2025-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "coach_set",
+        "premium",
+        "push_pull",
+        "high_speed"
+      ],
+      "support_family_id": "rail_coach_steel_conventional",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 230,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "coach_set_9car_modern"
+      },
+      "performance": {
+        "power_kw": null,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": null,
+        "energy_systems": [],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "slovakia",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "central_europe",
+          "from": "1990-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "D",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "coach_comfort9_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 555,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_ivego_crossway_le_elec",
+      "manufacturer_id": "ivego_bus",
+      "display_name_key": "vehicle.bus.crossway_le_elec.name",
+      "real_prototype_reference": "Iveco Crossway LE electric",
+      "introduction_date": "2025-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "battery",
+        "low_entry"
+      ],
+      "support_family_id": "bus_modern_battery",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 85,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_lowentry_electric"
+      },
+      "performance": {
+        "power_kw": 310,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "battery_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "europe",
+          "from": "2025-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechia",
+          "from": "2025-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "E",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_crossway_le_elec_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 45,
+            "standing": 35,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    }
+  ]
+}
