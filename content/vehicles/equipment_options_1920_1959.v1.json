@@ -377,6 +377,41 @@
           "retrofit_allowed": false
         }
       ]
+    },
+    {
+      "id": "fatra138_body_1959",
+      "name": "Fatra 138 factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fatra138_flatbed_1959",
+          "name": "Heavy flatbed",
+          "introduced_year": 1959,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 12,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra138_tipper_1959",
+          "name": "Tipper",
+          "introduced_year": 1959,
+          "mass_delta_t": -0.7,
+          "cost_index_delta": 10,
+          "payload_t_override": 10.7,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra138_tank_1960",
+          "name": "Tank",
+          "introduced_year": 1960,
+          "mass_delta_t": 0.6,
+          "cost_index_delta": 16,
+          "cargo_volume_m3_override": 10,
+          "payload_t_override": 12,
+          "retrofit_allowed": false
+        }
+      ]
     }
   ]
 }
