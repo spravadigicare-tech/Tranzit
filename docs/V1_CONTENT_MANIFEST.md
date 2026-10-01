@@ -106,6 +106,8 @@ The textile/consumer-goods chain must support **historical recipe evolution**. L
 
 Author recipe versions/upgrades explicitly. Existing facilities keep their current recipe version until a real modernization project completes; technology availability alone must not rewrite every active plant. Content should therefore define the modernization prerequisites/cost/duration and the old/new recipe differences needed by the simulation.
 
+Modernization content also defines the temporary **capacity-reduction factor** during the upgrade. Default authoring should preserve partial production rather than require full shutdown; full closure is exceptional and must be explicitly authored if ever needed.
+
 Keep **crude oil**, **raw natural gas**, **processed/distribution gas**, and **refined fuels** as separate economic products. Crude oil and raw natural gas are primary/extractive inputs tied to suitable deposits/regions. Refined fuels are downstream products of crude-oil processing. Raw natural gas must be treated/processed before it becomes distribution-quality gas for city/industrial consumption.
 
 The gas economy evolves historically. Around the 1900 start, cities can also obtain **town/distribution gas from coal-based gasworks** where regionally appropriate; later, processed natural gas can increasingly replace that production route. This uses **one canonical downstream commodity ID for distribution gas**. Coal-gas works and later natural-gas treatment plants are alternative production routes feeding the same city/industrial gas demand; do not create separate "town gas" and "natural gas for cities" commodities unless a future design explicitly requires materially different consumer handling.
