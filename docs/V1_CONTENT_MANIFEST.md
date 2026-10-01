@@ -44,6 +44,8 @@ The initial economy needs stocked inventories, qualified labour, supply sellers 
 
 ## 3. Initial vehicle catalogue
 
+The researched base-game roster, fictional manufacturer lineages, representative specifications, era coverage and physical manufacture/import plan are maintained in [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md). That catalogue is an authored content specification, not implementation evidence; a vehicle counts as delivered only under the completeness rules in this manifest.
+
 All brands and model names are fictional. Research the plausibility of technology, dates, performance and appearance before finalizing. The IDs below identify roles, not exact approved real-world models.
 
 ### Available 1900 roles
