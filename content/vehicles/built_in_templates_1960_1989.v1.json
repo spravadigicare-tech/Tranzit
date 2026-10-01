@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "scope": "1960-1989 built-in vehicle templates",
+  "templates": [
+    {
+      "id": "neskoda_e670_freight",
+      "model_id": "neskoda_e670_sestikolo_1961",
+      "name": "Heavy freight",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "cmd_d669_heavy",
+      "model_id": "cmd_d669_cmelda_1963",
+      "name": "Heavy shunting / freight",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "cmd_d478_universal",
+      "model_id": "cmd_d478_barda_1964",
+      "name": "Universal",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "neskoda_a489_standard",
+      "model_id": "neskoda_a489_laminat_1966",
+      "name": "25 kV AC",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "cmd_d753_standard",
+      "model_id": "cmd_d753_brylovec_1970",
+      "name": "Mainline",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "cmd_d742_standard",
+      "model_id": "cmd_d742_kocour_1977",
+      "name": "Freight / shunting",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "neskoda_es500_standard",
+      "model_id": "neskoda_es500_eso_1980",
+      "name": "Dual-system",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "neskoda_e162_standard",
+      "model_id": "neskoda_e162_pershing_1984",
+      "name": "Fast DC",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "ringhauer_y64_economy",
+      "model_id": "ringhauer_y64_1964",
+      "name": "Economy",
+      "equipment_option_ids": [
+        "coach_y64_economy_1964"
+      ]
+    },
+    {
+      "id": "ringhauer_y64_business",
+      "model_id": "ringhauer_y64_1964",
+      "name": "Business",
+      "equipment_option_ids": [
+        "coach_y64_business_1964"
+      ]
+    },
+    {
+      "id": "studena_m152_standard",
+      "model_id": "studena_m152_orchestrion_1975",
+      "name": "Standard",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "ringhauer_z80_economy",
+      "model_id": "ringhauer_z80_1980",
+      "name": "Economy",
+      "equipment_option_ids": [
+        "coach_z80_economy_1980"
+      ]
+    },
+    {
+      "id": "ringhauer_z80_business",
+      "model_id": "ringhauer_z80_1980",
+      "name": "Business",
+      "equipment_option_ids": [
+        "coach_z80_business_1980"
+      ]
+    },
+    {
+      "id": "studena_842_standard",
+      "model_id": "studena_842_rakvicka_1988",
+      "name": "Standard",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "f50_hopper_standard",
+      "model_id": "f50_hopper_1960",
+      "name": "Bulk hopper",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "z55_tank_standard",
+      "model_id": "z55_tank_1960",
+      "name": "Tank",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "r55_flat_standard",
+      "model_id": "r55_flat_1965",
+      "name": "Flat",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "s60_container_standard",
+      "model_id": "s60_container_1970",
+      "name": "Container",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900",
+        "container_twistlocks_1970"
+      ]
+    },
+    {
+      "id": "i45_reefer_standard",
+      "model_id": "i45_reefer_1970",
+      "name": "Mechanical reefer",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900",
+        "reefer_mechanical_unit_1970"
+      ]
+    },
+    {
+      "id": "aviat_a30_flatbed",
+      "model_id": "aviat_a30_1970",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "aviat_a30_flatbed_1970"
+      ]
+    },
+    {
+      "id": "aviat_a30_box",
+      "model_id": "aviat_a30_1970",
+      "name": "Box",
+      "equipment_option_ids": [
+        "aviat_a30_box_1970"
+      ]
+    },
+    {
+      "id": "fatra148_flatbed",
+      "model_id": "fatra148_1972",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "fatra148_flatbed_1972"
+      ]
+    },
+    {
+      "id": "fatra148_tipper",
+      "model_id": "fatra148_1972",
+      "name": "Tipper",
+      "equipment_option_ids": [
+        "fatra148_tipper_1972"
+      ]
+    },
+    {
+      "id": "viaz100_rigid",
+      "model_id": "viaz100_1974",
+      "name": "Rigid",
+      "equipment_option_ids": [
+        "viaz100_rigid_1974"
+      ]
+    },
+    {
+      "id": "viaz100_tractor",
+      "model_id": "viaz100_1974",
+      "name": "Tractor",
+      "equipment_option_ids": [
+        "viaz100_tractor_1974"
+      ]
+    },
+    {
+      "id": "fatra815_6x6",
+      "model_id": "fatra815_1983",
+      "name": "6x6 Flatbed",
+      "equipment_option_ids": [
+        "fatra815_6x6_flatbed_1983"
+      ]
+    },
+    {
+      "id": "fatra815_8x8",
+      "model_id": "fatra815_1983",
+      "name": "8x8 Heavy",
+      "equipment_option_ids": [
+        "fatra815_8x8_heavy_1983"
+      ]
+    },
+    {
+      "id": "karusa_sm11_city",
+      "model_id": "karusa_sm11_1965",
+      "name": "City",
+      "equipment_option_ids": [
+        "karusa_sm11_city_1965"
+      ]
+    },
+    {
+      "id": "karusa_sm11_highcap",
+      "model_id": "karusa_sm11_1965",
+      "name": "High-capacity city",
+      "equipment_option_ids": [
+        "karusa_sm11_highcap_1970"
+      ]
+    },
+    {
+      "id": "karusa_sl11_regional",
+      "model_id": "karusa_sl11_1965",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "karusa_sl11_regional_1965"
+      ]
+    },
+    {
+      "id": "karusa_sl11_coach",
+      "model_id": "karusa_sl11_1965",
+      "name": "Coach",
+      "equipment_option_ids": [
+        "karusa_sl11_coach_1969"
+      ]
+    },
+    {
+      "id": "ikarusz280_city",
+      "model_id": "ikarusz280_1973",
+      "name": "City",
+      "equipment_option_ids": [
+        "ikarusz280_city_1973"
+      ]
+    },
+    {
+      "id": "mercator_o303_intercity",
+      "model_id": "mercator_o303_1974",
+      "name": "Intercity",
+      "equipment_option_ids": [
+        "mercator_o303_intercity_1974"
+      ]
+    },
+    {
+      "id": "mercator_o303_coach",
+      "model_id": "mercator_o303_1974",
+      "name": "Coach",
+      "equipment_option_ids": [
+        "mercator_o303_coach_1974"
+      ]
+    },
+    {
+      "id": "karusa_c734_regional",
+      "model_id": "karusa_c734_1982",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "karusa_c734_regional_1982"
+      ]
+    },
+    {
+      "id": "karusa_b731_city",
+      "model_id": "karusa_b731_1982",
+      "name": "City",
+      "equipment_option_ids": [
+        "karusa_b731_city_1982"
+      ]
+    }
+  ]
+}
