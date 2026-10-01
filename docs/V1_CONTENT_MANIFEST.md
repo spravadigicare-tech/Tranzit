@@ -98,7 +98,7 @@ For the baseline 1900 heavy-industry chain, keep **coal** as the single player-f
 
 This does **not** merge extraction sites. Resource industries remain distinct by deposit/resource and facility type: for example coal mine, iron-ore mine, stone/gravel quarry and other later resource-specific extraction sites. A generic universal `Mine` must not replace their different resources, geography, output commodities and operating characteristics.
 
-Keep **iron and steel as separate player-facing commodities** in the 1900 industrial catalogue. Downstream recipes specify their actual material requirement: some firms/processes require steel, some can use iron, and selected recipes may explicitly accept either with authored differences in cost, quality, efficiency or output where useful. Do not silently treat iron and steel as interchangeable everywhere. Water and traction feed/consumables may be additional supplies.
+Keep **iron and steel as separate player-facing commodities** in the 1900 industrial catalogue. Downstream recipes specify their actual material requirements independently: a firm/process may require iron, steel, or **both as separate simultaneous inputs**. Do not treat iron and steel as generic substitutes or silently collapse them into one metal input. Water and traction feed/consumables may be additional supplies.
 
 Do not split consumer goods down to individual retail SKUs. The purpose of the extra food categories is to create distinct production, perishability/handling and transport decisions, not to simulate every product sold by a shop.
 
