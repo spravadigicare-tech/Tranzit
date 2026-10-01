@@ -228,6 +228,8 @@ M1 may use a compact fixture; M7 cannot. M5 does not permit earlier fake AI reso
 
 Keep one selection/context system and reusable parameter/confirmation components. A new player should be able to follow: choose 1900/region/loan → choose office → appoint director and staff → inspect opportunity → compare transport plan → secure dependencies → activate service → inspect revenue and problems. All steps are linked from their context, rather than forcing the player to find a hidden developer panel.
 
+UI-D41/[UI_NAVIGATION.md](UI_NAVIGATION.md) is authoritative for global navigation. The upper-left HUD contains menu + company/finance, the upper-right contains Search + Layers, and the bottom bar contains distinct Build, the grouped **Operations · Business · Assets | Company · World** management cluster, then Events/date/time/speed. Do not reintroduce a permanent left navigation rail, full-width top status strip, Layers under World, a separate Competitors top-level item or company/cash/search controls in the bottom bar. The workflow rows below describe required functionality; they do not create a competing navigation taxonomy.
+
 Required player screens/workflows:
 
 | Workflow | Minimum usable presentation |
