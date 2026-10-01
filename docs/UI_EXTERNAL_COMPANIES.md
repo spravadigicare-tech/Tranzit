@@ -302,7 +302,7 @@ These scenarios describe evidence to collect when implemented, not a claim of pa
 | UI-D27 | Every external-company detail provides a directly accessible, complete view of all agreements between that company and the player's company, with active/future/pending/history separation and links to each canonical owning workflow | CONFIRMED on 2026-09-30 |
 | UI-D37 | One adaptive external-company/competitor detail with Overview, Operation and network, Products and services, Our agreements, Relationship and history, and Ownership; public/observed/contractual/commercial/estimated information stays distinct and private operations remain protected | CONFIRMED on 2026-09-30 |
 
-UI-D37 completes the surrounding external-company layout without reopening UI-D27. City/Region presentation is owned by UI-D28, and the acquisition/ownership transaction workflow is now confirmed by UI-D39 in [UI_OWNERSHIP.md](UI_OWNERSHIP.md). General world-news presentation remains separate pending work in [TODO.md](TODO.md).
+UI-D37 completes the surrounding external-company layout without reopening UI-D27. City/Region presentation is owned by UI-D28, acquisition/ownership transactions by confirmed UI-D39 in [UI_OWNERSHIP.md](UI_OWNERSHIP.md), and World News/history by confirmed UI-D40 in [UI_NEWS.md](UI_NEWS.md). These remain separate canonical workflows rather than extra cards invented inside company detail.
 
 ## 15. One adaptive company window — UI-D37
 
