@@ -1832,7 +1832,7 @@ For heavy industry, **coke is not a separate player-facing transport commodity**
 
 Resource extraction remains **resource-specific**. Coal mines, iron-ore mines, stone/gravel quarries and other extraction industries are separate facility/industry types tied to plausible deposits and producing their own commodities. Do not collapse them into one generic mine merely because some downstream processing detail is abstracted.
 
-**Iron and steel are distinct transport/economic commodities.** Industrial recipes declare which one they actually need. Some downstream firms can operate with iron, others require steel, and a recipe may explicitly support both as alternatives only when that substitution is historically/technically plausible. Any substitution effect must be authored and explainable rather than an invisible global rule.
+**Iron and steel are distinct transport/economic commodities.** Industrial recipes declare each required input independently. A downstream firm may require iron, steel, or **both at the same time** for different parts of its production process. They are not generic substitutes and must not be silently treated as interchangeable.
 
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
