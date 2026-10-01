@@ -341,6 +341,23 @@ Seeded used vehicles receive real previous manufacture dates, owners, mileage/ho
 
 ## 9. Acquisition, manufacture and import implementation
 
+### 9.0 Fleet procurement scale
+
+The same catalogue/template system supports procurement from one unit to large fleet series.
+
+For a large identical or closely related order:
+
+- the manufacturer quotes a volume-aware unit price;
+- configuration commonality can reduce setup and purchasing cost;
+- production is scheduled in real batches;
+- each batch consumes factory inputs and capacity;
+- delivery occurs per completed batch rather than as one abstract completion event;
+- framework orders may reserve future slots without pretending those vehicles already exist.
+
+Very large demand can influence the manufacturer's own investment decisions. A profitable multi-year order can make a factory expand capacity, add shifts, preserve a production line longer or invest in supplier/tooling capability. This remains an AI/economic decision by the manufacturer, not a guaranteed player button.
+
+Conversely, an unrealistic order can exceed capacity or available supply. The manufacturer can offer a longer schedule, smaller batches, higher price, alternate plant/configuration or decline the requested terms.
+
 ### 9.1 Active-map production
 
 A new order from an active-map manufacturer creates a production order with:
