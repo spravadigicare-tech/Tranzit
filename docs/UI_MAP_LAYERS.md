@@ -8,7 +8,7 @@ Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), particularly UI-D07 (windows), UI-
 
 **The map must help the player decide both what to fix and where to grow.** Opportunity discovery is a normal map workflow, not a hidden tooltip, an incident-only filter or a later optional enhancement. A player with a healthy network must still find useful reasons to inspect these layers.
 
-Keep the normal world visually clean. A compact **Layers / Vrstvy** control at the bottom-bar area opens the layer selector without replacing the map, closing windows or moving the camera. Selecting a layer shows its name, legend, relevant filters and a clear Off / Vypnout control. Switching it off restores the normal map while preserving window and camera context.
+Keep the normal world visually clean. The compact **Layers / Vrstvy** control in the **upper-right HUD** under UI-D41 opens the layer selector without replacing the map, closing windows or moving the camera. Selecting a layer shows its name, legend, relevant filters and a clear Off / Vypnout control. Switching it off restores the normal map while preserving window and camera context.
 
 Use one primary analytical layer at a time by default, rather than overlapping several incompatible colour meanings. The selected Line, object or inspected connection can remain highlighted as context. Switching or clearing a layer never changes the selected simulation speed or pause state.
 
