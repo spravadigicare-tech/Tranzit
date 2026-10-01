@@ -62,7 +62,7 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **ČMS 99 “Lokálka”** | 1897 | kkStB 99 / ČSD 320.0 | local mixed traffic | ~300 kW / ~70 kN | 50 km/h | 39 t | light branch-line locomotive; low coal/water endurance | Praha factory; used stock common in 1900 |
 | **ČMS 170 “Horal”** | 1897 | kkStB 170 / ČSD 434.0 | heavy freight, gradients | ~900 kW / ~125 kN | 60 km/h | 69 t loco + tender | ~14 t axle load; tender requires turning/run-around planning | multiple Austro-Hungarian plants; Praha build or regional import |
 | **ČMS 6 “Rychlík”** | 1894 | kkStB 6 / contemporary express 2'B engines | passenger / express | ~700 kW / ~70 kN | 80 km/h | ~55 t + tender | less adhesion than freight engines; needs better track | active-map or Austrian off-map supply |
-| **Neškoda N310 “Mikádo”** | 1926 | ČSD 387.0 | premier express | 1,546 kW / 109 kN | 110 km/h | 92.8 t loco | 150 m curves, high coal/water use, good track required | **Plzeň factory**, active-map manufacture |
+| **Neškoda N387 “Mikádo”** | 1926 | ČSD 387.0 | premier express | 1,546 kW / 109 kN | 110 km/h | 92.8 t loco | 150 m curves, high coal/water use, good track required | **Plzeň factory**, active-map manufacture |
 | **Neškoda N475 “Šlechtična”** | 1947 | ČSD 475.1 | universal passenger / fast mixed | 1,480 kW / ~150 kN | 100 km/h | 102.7 t loco | 150 m curves; stronger track and depot facilities | **Plzeň factory** |
 | **Neškoda N556 “Silák”** | 1951 | ČSD 556.0 | maximum steam freight | 1,620 kW / 218 kN | 80 km/h | 99 t loco, ~185 t with tender | 16.8 t axle load; large turntable/service demand | **Plzeň factory** |
 | **Neškoda N498 “Albatros”** | 1954 | ČSD 498.1 | top steam express | 2,000 kW / ~180 kN | 120 km/h | 113 t loco | premium track; expensive coal/water/service | **Plzeň factory** |
@@ -103,7 +103,7 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **PESKA 844 “RegioRys”** | 2011 | PESA Link II / class 844 | 2-car DMU | 120 seated + ~120 standing | 120 km/h | 2×390 kW / 84.4 t | low-entry regional diesel, 1st-class zone, bikes/WC | off-map Poland → rail import |
 | **Neškoda 640 “Panter”** | 2012 | RegioPanter | 3-car EMU | 234 seated | 160 km/h | 2,040 kW / ~151–152 t | fast acceleration, low-floor regional electric, dual-voltage | Plzeň/Studénka active-map manufacture |
 | **PESKA 847 “RegioLiška”** | 2023 | RegioFox / class 847 | 2-car DMU | 115 seated | 120 km/h | ~750 kW / ~83 t | modern non-electrified regional service, low-entry, HVO-compatible family | off-map Poland import |
-| **Neškoda Comfort 9** | 2024 | ComfortJet / Siemens Viaggio platform | 9-car push-pull coach set | ~550–560 seats target by configuration | 230 km/h design | ~9-car fixed/semi-fixed set | very high comfort/capacity; needs compatible high-speed locomotive and long platforms | mixed domestic/off-map production; delivered as physical coaches |
+| **Neškoda Comfort 9** | 2025 | ComfortJet / Siemens Viaggio platform | 9-car non-traction push-pull set | 555 seats, incl. 99 first class + 18 restaurant seats | 230 km/h design | ~237 m full set | very high comfort/capacity; needs compatible high-speed locomotive and long platforms | Siemens–Škoda production chain; individual coaches are physically delivered |
 
 The player can still build locomotive-hauled trains from individual coaches. Fixed trainsets trade flexibility for quicker turnarounds, high acceleration and integrated amenities.
 
@@ -155,9 +155,9 @@ This already gives four different 1900 freight choices without introducing an an
 
 | ID / fictional model | Intro | Real basis | Format / payload | Power | Max speed | Best use | Production/source |
 |---|---:|---|---|---:|---:|---|---|
-| **Lorin & Klement F** | 1907 | early L&K commercial vehicles | rigid, ~1.5–2 t | ~15–20 kW | ~30 km/h | local deliveries | Mladá Boleslav |
+| **Lorin & Klement E Cargo** | 1908 | L&K Type E commercial / Montenegro utility family | rigid/van, ~1.5 t class or ~4.8 m³ body | period petrol four-cylinder | ~30 km/h authoring target | local deliveries / parcels | Mladá Boleslav |
 | **Pragov N** | 1915 | early Praga N truck family | rigid, ~3 t | ~30 kW | ~35 km/h | general freight | Praha |
-| **Fatra 13** | 1924 | Tatra 13 | light rigid, ~1.5–2 t | ~18 kW | ~45 km/h | city/regional | Kopřivnice |
+| **Fatra 13** | 1924 | Tatra 13 | light rigid, 1.0 t payload | 8.8 kW | 45 km/h | city/local light freight | Kopřivnice |
 | **Pragov RN** | 1933 | Praga RN | medium rigid, ~2–3 t | ~38–50 kW | ~60 km/h | versatile medium freight | Praha |
 | **Fatra 111** | 1942 | Tatra 111 | 6×6, ~8–10 t | ~154 kW | 65 km/h | heavy/rough-road freight | Kopřivnice |
 | **Pragov V3S** | 1953 | Praga V3S | 6×6, 5.5 t road / 3.5 t off-road | 70 kW | 60 km/h | construction, rough roads, recovery | Praha |
@@ -168,8 +168,7 @@ This already gives four different 1900 freight choices without introducing an an
 | **MANN TGX** | 2007 | MAN TGX | tractor/rigid, 40–44 t GCW class | 279–471 kW by engine | 90 km/h limiter | long-haul/high productivity | off-map German import |
 | **Fatra Fénix** | 2011 | Tatra Phoenix | 4×4–8×8 rigid/tractor, up to ~45 t combination in road build | 227–390 kW | 85 km/h | heavy regional/rough terrain | Kopřivnice |
 | **MANN TGE Cargo** | 2017 | MAN TGE / modern large van | 1.2–3.1 t payload depending chassis | 103–130 kW | 100–120 km/h game cap by body | dense urban/light freight | import |
-| **Mercator eActros 600** | 2024 | Mercedes eActros 600 | 40–44 t electric tractor class | ~400 kW class continuous/peak higher | 90 km/h limiter | high-capacity zero-tailpipe-emission trunk routes | off-map import; requires charging |
-| **Fatra E-Force** | 2025 | modern battery-electric heavy Tatra development direction | heavy rigid, ~19–45 t class | ~300+ kW | 85 km/h | construction/industrial zero-emission niches | Kopřivnice if technology/capacity exists |
+| **Mercator eActros 600** | 2024 | Mercedes-Benz eActros 600 | 44 t technically permissible combination mass | 400 kW continuous / 600 kW max | 90 km/h limiter authoring cap | high-capacity zero-tailpipe-emission trunk routes | off-map German import; 600 kWh usable battery, charging required |
 
 ### Road body/configuration rule
 
@@ -192,7 +191,7 @@ Body changes alter tare mass, payload, cargo compatibility, price, loading metho
 |---|---:|---|---|---:|---:|---|---|
 | **Koňský omnibus O12** | pre-1900 | horse omnibus | 12 seated | animal | 8 km/h practical | city/local | local coachbuilder |
 | **Benc Omnibus 1895** | 1895 | Benz Omnibus | 7 passengers + driver | 3.7 kW | ~15 km/h practical | tiny pioneering motor service | off-map import |
-| **Lorin & Klement H-Bus** | 1907 | early L&K bus/commercial chassis | ~12–16 seats | ~18–25 kW | ~30 km/h | local/interurban | Mladá Boleslav |
+| **Lorin & Klement H-Bus** | 1908 | L&K Type H omnibus | ~12 seats authoring configuration | ~23.5 kW (32 hp) | ~30 km/h authoring target | local/interurban | Mladá Boleslav |
 | **Pragov NO** | 1930 | Praga NO bus family | ~30–40 seats | ~60–75 kW | ~60 km/h | interurban/city | Praha |
 | **Neškoda 706 RO** | 1947 | Škoda 706 RO | ~35–40 seated, ~60 total | ~100 kW | ~65 km/h | first post-war mass bus | domestic build |
 | **Neškoda 706 RTO** | 1958 | Škoda 706 RTO | ~38–41 seated; urban total ~70 | ~118 kW | ~85 km/h | city/intercity variants | domestic build / Karusa bodywork |
@@ -204,7 +203,7 @@ Body changes alter tare mass, payload, cargo compatibility, price, loading metho
 | **Karusa C954** | 2002 | Karosa C 954 | 49 or 53 seated, ~88 total | 228 kW | 105 km/h | high-floor intercity | Vysoké Mýto |
 | **SORA CN12** | 2004 | SOR CN 12 | 39–45 seated + standing | 194–210 kW | 100 km/h | low-entry regional | Libchavy |
 | **Ivego Crossway 12** | 2006 | Irisbus/Iveco Crossway | ~45–55 seated | ~220–265 kW | 100 km/h | mainstream intercity | off-map / licensed assembly |
-| **SORA NS12E** | 2017 | SOR NS 12 electric family | ~30–40 seated, ~80 total | electric ~160–250 kW class | ~80 km/h | city electric | Libchavy; battery supply required |
+| **SORA NS12E** | 2017 | SOR NS 12 electric family | 29–35 seated + standing by configuration | 160 kW | 80 km/h | city electric | Libchavy; 242/388 kWh battery variants, charging required |
 | **Ivego Crossway LE Elec** | 2025 | Crossway LE electric | configuration-dependent, ~80 total | 290 kW rated / 310 kW max drive | 85 km/h | modern regional/city electric | off-map import; charging required |
 
 ## 8. Era coverage — player should never be left with one sensible option
