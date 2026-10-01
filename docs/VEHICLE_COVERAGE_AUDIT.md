@@ -107,6 +107,30 @@ These are not unresolved gameplay decisions.
 7. **Certification data** — exact country/type approval rules should be authored only where they create meaningful compatibility or import decisions.
 8. **Tests** — coverage, physical manufacture/import, delivery, retrofit and used-vehicle identity need automated/acceptance evidence.
 
+## 7.1 Canonical authored-data count
+
+Current `content/vehicles/` authoring coverage contains:
+
+- **100 vehicle model families** total;
+- **58 rail** and **42 road** model families;
+- **140 built-in templates**;
+- **57 equipment groups**;
+- **124 equipment options**.
+
+Functional model-family breakdown:
+
+- 24 locomotives;
+- 16 freight-wagon families;
+- 5 conventional passenger-coach families + 1 service coach + 1 modern coach set;
+- 6 legacy/regional railcars;
+- 3 EMUs;
+- 2 DMUs;
+- 19 trucks;
+- 20 buses;
+- 3 horse-drawn opening families.
+
+These counts are generated from the canonical JSON authoring packs, not release-completion claims. Art, explicit `money` balancing and runtime simulation remain separate completion gates.
+
 ## 8. Audit outcome
 
 The expanded roster no longer has an obvious broad-era/core-role gap that requires inventing an anachronistic vehicle.
