@@ -321,6 +321,10 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
         if not isinstance(platform, dict):
             errors.append(f"{location}: missing platform object")
         else:
+            if "empty_mass_t" not in platform:
+                errors.append(
+                    f"{location}: platform.empty_mass_t key required; use null only when the value is explicitly unresolved"
+                )
             speed = platform.get("max_speed_kph")
             if not isinstance(speed, (int, float)) or speed <= 0:
                 errors.append(f"{location}: max_speed_kph must be positive")
