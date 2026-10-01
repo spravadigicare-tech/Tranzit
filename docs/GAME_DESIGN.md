@@ -1858,6 +1858,8 @@ Every authored commodity chain must ultimately terminate in a **real final-use s
 
 The final sink does not have to be a literal municipal authority. A shop selling clothing, a furniture retailer, a construction project consuming cement/steel, a utility consuming fuel/gas, or a transport company consuming coal/fuel are all valid final-use endpoints because their output is service/activity rather than another transportable commodity.
 
+For manufactured retail items that are not strategically distinct enough to warrant their own cargo type, use one aggregated **consumer goods** commodity. Important categories with materially different chains or handling—such as food, clothing and furniture—remain separate. This aggregation prevents the late-game commodity catalogue from fragmenting into many low-value retail SKUs.
+
 ### 10.2 Industrial geography
 
 Industry is dynamic but geographically grounded.
