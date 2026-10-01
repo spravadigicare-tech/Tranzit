@@ -56,7 +56,7 @@ class VehicleContentValidatorTests(unittest.TestCase):
                     "regional_market_profile_id": "r",
                     "equipment_group_ids": ["g"],
                     "built_in_template_ids": ["t"],
-                    "platform": {"max_speed_kph": 10, "structural_speed_limit_kph": 10},
+                    "platform": {"empty_mass_t": 1, "max_speed_kph": 10, "structural_speed_limit_kph": 10},
                     "production": {
                         "factory_ids": ["p"],
                         "material_recipe_id": "recipe",
@@ -186,6 +186,15 @@ class VehicleContentValidatorTests(unittest.TestCase):
             errors = check_vehicle_content(root).errors
             self.assertTrue(any("maintenance_profile required" in x for x in errors))
             self.assertTrue(any("consumption_profile.type required" in x for x in errors))
+
+    def test_empty_mass_key_is_explicit_even_when_unresolved(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            del data["models"][0]["platform"]["empty_mass_t"]
+            path.write_text(json.dumps(data), encoding="utf-8")
+            self.assertTrue(any("empty_mass_t key required" in x for x in check_vehicle_content(root).errors))
 
     def test_condition_distribution_must_sum_to_one(self):
         directory, root, base = self.fixture()
