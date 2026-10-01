@@ -137,12 +137,13 @@
       },
       "state": "off_map_active",
       "capabilities": [
-        "parts_support"
+        "parts_support",
+        "light_delivery_vehicle_series"
       ],
       "explicitly_excluded": [
         "benc_omnibus_1895_new_build"
       ],
-      "notes": "The 1895 omnibus family is opening-world used stock, not a current 1900 series-production offer."
+      "notes": "Benc light delivery vehicles remain available as new series/import orders in 1900; the pioneering 1895 omnibus itself is used/existing stock only."
     },
     {
       "manufacturer_id": "thornycroft_import",
