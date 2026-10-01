@@ -1836,6 +1836,8 @@ Resource extraction remains **resource-specific**. Coal mines, iron-ore mines, s
 
 For textiles, the baseline game uses one aggregated **textile raw materials** commodity instead of splitting wool and cotton into separate cargo types. Processing still creates distinct textiles/fabric and then clothing/garments for retail/final consumption. This abstraction is intentional to keep the commodity catalogue manageable while preserving a multi-stage transport chain.
 
+Industrial recipes can **evolve historically** as new materials and processes become available. For example, later textile production may begin requiring dyes, industrial chemicals or synthetic inputs. The same principle applies to other industries: newly introduced technologies can add or replace real recipe inputs and create new supplier/transport relationships. Do not treat this as a free global stat upgrade; a firm must actually obtain the newly required physical inputs, or continue an older viable process where the design/content allows it.
+
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
 ### 10.2 Industrial geography
