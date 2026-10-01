@@ -143,7 +143,7 @@ For V1, the currently defined multi-operator passenger-ticket mechanism is the *
 
 Connection-agreement mechanics are intentionally unspecified pending a separate redesign in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md).
 
-The bilateral agreement carries **two directional partner rates in money/km** when capacity resale is enabled both ways: one rate for what the partner owes when selling our capacity, and one rate for what we owe when selling theirs. Either direction can be disabled and the rates may differ. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the applicable directional partner rate. The difference is the seller's margin and may be positive or negative.
+The bilateral agreement configures capacity resale **per party/direction**. Each direction has its own enabled state, explicit covered Line set and partner rate in money/km. The two Line sets and rates may differ, and one direction may be disabled entirely. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the applicable directional partner rate. The difference is the seller's margin and may be positive or negative.
 
 The UI must show, before accepting or changing the agreement:
 
