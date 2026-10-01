@@ -341,6 +341,8 @@ Known infrastructure links lead to the actual station, depot, corridor or other 
 
 For industrial/customer firms, Operation and network can also expose **legitimately known own-logistics capability** relevant to doing business with the player, such as a customer-owned loading siding, freight yard/dock, or a declared ability to collect/deliver from a named terminal with its own local road capacity. Do not infer or reveal the firm's complete private vehicle fleet from that capability. Contractually offered capability can be shown with the scope needed for the proposal (endpoint, cargo compatibility, quantity/throughput, time window) without exposing unrelated assets.
 
+Where a non-transport firm legitimately has exceptional captive intercity **road** capacity, never summarize this as a blanket "own transport" capability. Show only the known qualifying origin-destination/cargo scope and the bounded usable quantity/time window. A private siding, customer-owned wagons or an industrial shunter never imply customer-operated mainline rail haulage; the rail carrier remains a separate real operator.
+
 ## 17. Products and services reuse the owning workflows
 
 This card is a company-scoped entry into existing commercial systems, not a parallel marketplace. Show only actual known offers or a legitimate request-for-offer action. Capability is not guaranteed availability, and opening a quote does not reserve capacity.
