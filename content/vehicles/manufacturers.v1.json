@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "manufacturers": [
+    {
+      "id": "cms_praha",
+      "display_name": "ČMS Praha",
+      "real_inspiration": "BMMF / ČKD lineage",
+      "home_region": "cz_boh_central",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_cms_praha"
+      ],
+      "notes": "Steam/rail engineering lineage; later evolves into ČMD identity without rewriting original builder on existing assets."
+    },
+    {
+      "id": "cmd_praha",
+      "display_name": "ČMD Praha",
+      "real_inspiration": "ČKD",
+      "home_region": "cz_boh_central",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_cmd_praha"
+      ],
+      "notes": "Later Prague locomotive/vehicle production lineage."
+    },
+    {
+      "id": "neskoda_plzen",
+      "display_name": "Neškoda Plzeň",
+      "real_inspiration": "Škoda Works / Škoda Transportation",
+      "home_region": "cz_boh_west",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_neskoda_plzen"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1917,
+          "capability": "locomotive_repair"
+        },
+        {
+          "year": 1920,
+          "capability": "complete_locomotive_series_production"
+        }
+      ],
+      "notes": "Complete locomotive production begins in 1920; before that the works may supply heavy engineering/components but not complete player-order locomotives."
+    },
+    {
+      "id": "ringhauer_smichov",
+      "display_name": "Ringhauer Smíchov",
+      "real_inspiration": "Ringhoffer",
+      "home_region": "cz_boh_central",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_ringhauer_smichov"
+      ],
+      "notes": "Passenger/freight rolling-stock and body production lineage."
+    },
+    {
+      "id": "studena_vagonka",
+      "display_name": "Studena Vagónka",
+      "real_inspiration": "Staudinger Waggonfabrik / Vagonka Studénka / Škoda Vagonka",
+      "home_region": "cz_mor_north",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_studena",
+        "plant_vagonka_ostrava"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1900,
+          "capability": "company_founded",
+          "source_date": "1900-12-12"
+        },
+        {
+          "year": 2001,
+          "capability": "passenger_vehicle_production_moves_to_ostrava"
+        },
+        {
+          "year": 2005,
+          "capability": "skoda_group_lineage"
+        }
+      ],
+      "notes": "The January-like opening of a 1900 game must not treat Studénka as a mature supplier before its December 1900 founding."
+    },
+    {
+      "id": "lorin_klement",
+      "display_name": "Lorin & Klement",
+      "real_inspiration": "Laurin & Klement",
+      "home_region": "cz_boh_central",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_lk_boleslav"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1908,
+          "capability": "documented_type_e_commercial_family"
+        }
+      ],
+      "notes": "Emerging motor manufacturer around the start; exact models still obey their own introduction dates."
+    },
+    {
+      "id": "fatra_koprivnice",
+      "display_name": "Fatra Kopřivnice",
+      "real_inspiration": "Tatra",
+      "home_region": "cz_mor_north",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_fatra_koprivnice"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1881,
+          "capability": "rail_wagon_production"
+        },
+        {
+          "year": 1897,
+          "capability": "motor_car"
+        },
+        {
+          "year": 1898,
+          "capability": "truck"
+        }
+      ],
+      "notes": "Long-running heavy road-vehicle lineage."
+    },
+    {
+      "id": "pragov_praha",
+      "display_name": "Pragov Praha",
+      "real_inspiration": "Praga",
+      "home_region": "cz_boh_central",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_pragov_praha"
+      ],
+      "notes": "Truck/bus/light-commercial lineage; later production may move between plants while brand identity remains."
+    },
+    {
+      "id": "aviat_letnany",
+      "display_name": "Aviat Letňany",
+      "real_inspiration": "Avia",
+      "home_region": "cz_boh_central",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_aviat_letnany"
+      ],
+      "notes": "Light/medium commercial-vehicle production in the later 20th century."
+    },
+    {
+      "id": "viaz",
+      "display_name": "VIAZ",
+      "real_inspiration": "LIAZ",
+      "home_region": "cz_boh_north",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_viaz_mnichovo_hradiste"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1974,
+          "capability": "series_100_production"
+        }
+      ],
+      "notes": "Heavy road-truck lineage."
+    },
+    {
+      "id": "karusa_vysoke_myto",
+      "display_name": "Karusa Vysoké Mýto",
+      "real_inspiration": "Sodomka / Karosa / Irisbus / Iveco Bus",
+      "home_region": "cz_boh_east",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_karusa_vysoke_myto"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1928,
+          "capability": "first_bus_body"
+        },
+        {
+          "year": 1948,
+          "capability": "karosa_bus_specialization"
+        },
+        {
+          "year": 1981,
+          "capability": "series_700"
+        },
+        {
+          "year": 1999,
+          "capability": "irisbus_control"
+        },
+        {
+          "year": 2003,
+          "capability": "iveco_ownership"
+        },
+        {
+          "year": 2013,
+          "capability": "iveco_bus_brand"
+        }
+      ],
+      "notes": "One physical production-site lineage with changing ownership/branding."
+    },
+    {
+      "id": "sora_libchavy",
+      "display_name": "SORA Libchavy",
+      "real_inspiration": "SOR Libchavy",
+      "home_region": "cz_boh_east",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_sora_libchavy"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1991,
+          "capability": "company_founded"
+        },
+        {
+          "year": 1993,
+          "capability": "first_prototype"
+        }
+      ],
+      "notes": "Modern bus producer."
+    },
+    {
+      "id": "cz_loka",
+      "display_name": "CZ LOKA",
+      "real_inspiration": "CZ LOKO",
+      "home_region": "cz_boh_east",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_czloko_ceska_trebova"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1849,
+          "capability": "rail_workshops"
+        },
+        {
+          "year": 1966,
+          "capability": "diesel_electric_repair"
+        },
+        {
+          "year": 1988,
+          "capability": "electric_locomotive_repair"
+        },
+        {
+          "year": 2002,
+          "capability": "modernization_electric_transmission"
+        }
+      ],
+      "notes": "Rebuild/service capability predates own-new-build capability."
+    },
+    {
+      "id": "daimlar_motoren",
+      "display_name": "Daimlar Motoren",
+      "real_inspiration": "Daimler",
+      "home_region": "de",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_de_daimlar"
+      ],
+      "notes": "Early and later German commercial-vehicle import source."
+    },
+    {
+      "id": "benc_cie",
+      "display_name": "Benc & Cie.",
+      "real_inspiration": "Benz",
+      "home_region": "de",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_de_benc"
+      ],
+      "notes": "Early German motor-vehicle import source."
+    },
+    {
+      "id": "mercator_benz",
+      "display_name": "Mercator-Benz",
+      "real_inspiration": "Mercedes-Benz",
+      "home_region": "de",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_de_mercator"
+      ],
+      "notes": "Later German truck/bus import lineage."
+    },
+    {
+      "id": "mann",
+      "display_name": "MANN",
+      "real_inspiration": "MAN",
+      "home_region": "de",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_de_mann"
+      ],
+      "notes": "German commercial-vehicle import source."
+    },
+    {
+      "id": "simens_mobility",
+      "display_name": "Símens Mobility",
+      "real_inspiration": "Siemens Mobility",
+      "home_region": "de",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_de_simens"
+      ],
+      "notes": "Modern rail-vehicle platform supplier."
+    },
+    {
+      "id": "bombardir_transport",
+      "display_name": "Bombardír Transportation",
+      "real_inspiration": "Bombardier / TRAXX lineage",
+      "home_region": "de",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_de_bombardir"
+      ],
+      "notes": "Modern international rail supplier."
+    },
+    {
+      "id": "peska_bydgoszcz",
+      "display_name": "PESKA Bydgoszcz",
+      "real_inspiration": "PESA",
+      "home_region": "pl",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_pl_peska"
+      ],
+      "notes": "Modern Polish rail manufacturer."
+    },
+    {
+      "id": "alstrom_ferroviaria",
+      "display_name": "Alstrom Ferroviaria",
+      "real_inspiration": "Fiat Ferroviaria / Alstom",
+      "home_region": "it_fr",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_itfr_alstrom"
+      ],
+      "notes": "Modern tilting/high-speed trainset source."
+    },
+    {
+      "id": "stadler_rail",
+      "display_name": "Städler Rail",
+      "real_inspiration": "Stadler Rail",
+      "home_region": "ch_pl",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_chpl_stadler"
+      ],
+      "notes": "Modern regional/mainline rolling-stock source."
+    },
+    {
+      "id": "ikarusz",
+      "display_name": "Ikarusz",
+      "real_inspiration": "Ikarus",
+      "home_region": "hu",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_hu_ikarusz"
+      ],
+      "notes": "Strong Central/Eastern European export presence in the later socialist era."
+    },
+    {
+      "id": "solaris_bus",
+      "display_name": "Soláris Bus",
+      "real_inspiration": "Solaris Bus & Coach",
+      "home_region": "pl",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_pl_solaris"
+      ],
+      "capability_anchors": [
+        {
+          "year": 1999,
+          "capability": "urbino_family_customer_deliveries"
+        }
+      ],
+      "notes": "Modern Polish bus producer."
+    },
+    {
+      "id": "local_coachbuilder",
+      "display_name": "Místní karosárna",
+      "real_inspiration": "Local coachbuilders",
+      "home_region": "local",
+      "source_kind": "local_builder",
+      "plant_ids": [],
+      "notes": "Represents real small local horse-vehicle/body builders. Runtime instances are tied to concrete local firms."
+    },
+    {
+      "id": "thornycroft_import",
+      "display_name": "Thornycroft Works",
+      "real_inspiration": "Thornycroft",
+      "home_region": "gb",
+      "source_kind": "off_map",
+      "plant_ids": [
+        "macro_gb_thornycroft"
+      ],
+      "notes": "Rare British steam-road import source in the 1900 opening era."
+    }
+  ]
+}
