@@ -55,7 +55,7 @@ Definitions: see V1_IMPLEMENTATION_BRIEF Section 6. Use actual code/test paths a
 
 ## Next executable task
 
-Follow docs/OPENCODE_START.md. Inspect the current repo and local Unity/toolchain, choose/pin the compatible editor/packages, create the real project/build/test foundation and begin M0. Do not spend the first implementation session replacing the already prepared high-level plan.
+Execute [CODEX_V1_MASTER_PROMPT.md](CODEX_V1_MASTER_PROMPT.md) under [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md). Inspect the current repo and local Unity/toolchain, choose/pin the compatible editor/packages, create the real project/build/test foundation and begin M0. Do not spend the first implementation session replacing the prepared implementation assignment with another broad plan.
 
 ## Ongoing entry template
 
