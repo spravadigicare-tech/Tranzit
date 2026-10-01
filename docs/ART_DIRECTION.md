@@ -864,10 +864,132 @@ Pollution intensity should depend on real nearby sources, technology, weather an
 
 The purpose is to make industrial history and technological progress perceptible in the atmosphere, not to turn pollution into an exaggerated visual gimmick.
 
-## 18. Still to define
+## 18. Regional rural identity and dynamic land use
+
+### 18.1 Regional landscape identity
+
+Do not use hard country-biome skins.
+
+Regional rural appearance should emerge from combinations of:
+
+- relief and elevation;
+- climate;
+- soil/productive land character;
+- historical land-use structure;
+- agriculture/forestry mix;
+- settlement pattern;
+- transport access;
+- era.
+
+Transitions should normally be gradual across modern borders.
+
+Representative visual families may include:
+
+- lowland intensive agriculture;
+- mixed upland farming;
+- mountain/piedmont pasture/forest landscapes;
+- forestry-dominant areas;
+- orchard/fruit-growing landscapes;
+- vineyard landscapes;
+- industrialized rural/peri-urban areas.
+
+### 18.2 Agriculture and simulation consistency
+
+Agricultural visuals should broadly agree with the actual simulated regional economy without becoming a second hidden economic model.
+
+Examples:
+
+- grain production should support a landscape with meaningful arable fields;
+- livestock regions may show more pasture/forage land;
+- fruit/vegetable production may appear through orchards, gardens or intensive smaller plots;
+- forestry production should correspond to plausible managed woodland.
+
+One simulated commodity group may map to several plausible visual land-use forms depending on region.
+
+### 18.3 Seasonal crop-state progression
+
+Fields should visibly pass through seasonal production states rather than changing only through one global seasonal tint.
+
+A crop field may progress through states such as:
+
+- prepared/bare soil;
+- early growth;
+- mature green;
+- ripe/dry;
+- harvested/stubble;
+- post-harvest/preparation.
+
+Different fields can be in different states at the same time.
+
+This is primarily a visual land-state system and does not require per-plant simulation.
+
+### 18.4 Dynamic land-use change
+
+Agricultural land use may **change over long periods in response to the real economy and settlement growth**.
+
+Possible transitions include:
+
+- active field → fallow/abandoned → scrub/young woodland;
+- arable → pasture;
+- pasture → arable;
+- field → orchard/vineyard/intensive horticulture where regionally plausible;
+- agricultural parcel → urban/industrial/logistics development;
+- smaller parcels → consolidated larger fields;
+- later subdivision where the world/economy supports it.
+
+These changes should be **slow and persistent**, not monthly cosmetic toggles.
+
+Land-use transitions should have inertia and should normally follow meaningful causes such as:
+
+- farm/facility closure;
+- sustained production change;
+- land-value/development pressure;
+- regional restructuring;
+- city expansion;
+- infrastructure change;
+- historically authored transitions.
+
+### 18.5 Farms and agricultural facilities
+
+Farm visual language should evolve historically.
+
+Around 1900, farms may include:
+
+- farmhouses/yard complexes;
+- barns;
+- stables;
+- wells;
+- fences/gates;
+- hay/straw stacks;
+- small storage structures.
+
+Later development may add:
+
+- large agricultural sheds;
+- silos;
+- mechanized yards;
+- larger storage/handling facilities.
+
+Older farm structures can survive beside later additions rather than being automatically replaced.
+
+### 18.6 Climate, snow and elevation
+
+Seasonal presentation should not be globally uniform.
+
+Snow cover and winter appearance may vary by:
+
+- elevation;
+- regional climate;
+- current weather;
+- temperature state.
+
+A lowland area can therefore remain wet/bare while nearby mountains are snow-covered.
+
+The goal is geographic plausibility, not a detailed climate-simulation subsystem.
+
+## 19. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
-- regional rural landscape identities and exact field/crop palette;
 - final UI colour/type/icon tokens;
 - LOD/asset technical budgets after the Unity rendering baseline is selected.
