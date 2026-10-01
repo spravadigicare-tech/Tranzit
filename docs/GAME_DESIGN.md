@@ -4830,6 +4830,19 @@ Automatic reorder thresholds can be configured and later delegated.
 
 Recurring supply agreements can use Auto-renew under Section 11.12. Renewal extends the commercial agreement; inventory reorder thresholds separately determine actual orders and deliveries. Renewing a supply contract never fills a depot automatically or bypasses physical transport.
 
+For scheduled recurring physical-supply agreements, use the game's two-week month directly rather than Gregorian-style numeric delivery dates.
+
+Supported baseline schedule forms are:
+
+- **Weekly** — select one or more weekdays. The delivery recurs on those weekdays in both game weeks of every active month. Selecting Tuesday, Wednesday and Thursday therefore creates three scheduled deliveries per week, six per 14-day month.
+- **Once per month** — choose **Week 1** or **Week 2**, then either a specific weekday in that week or an allowed delivery window covering that selected week. A window means the supplier may fulfil the one monthly delivery on any valid day inside it; it does not create seven deliveries.
+
+Each scheduled occurrence is one contractual delivery with its own physical fulfilment state.
+
+The baseline commercial price for this recurring-supply model is **price per delivery**. Do not silently reinterpret it as price per tonne/unit or a monthly subscription. If one scheduled delivery costs 1,600 money, each fulfilled scheduled occurrence creates that 1,600-money commercial charge exactly once.
+
+Quantity, item, handover location and transport responsibility remain explicit contract terms. A scheduled delivery still requires actual supplier stock/production, storage capacity and physical transport; reaching the scheduled weekday does not teleport inventory.
+
 Electricity is purchased through physical grid connections/capacity rather than moved as cargo wagons.
 
 ## 19. Infrastructure ownership and access
