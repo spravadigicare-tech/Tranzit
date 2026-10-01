@@ -19,7 +19,8 @@
 5. **Off-map factories are still physical sources.** They are represented by macro production capacity outside the detailed map. Completed vehicles enter at a valid rail/road border or import terminal and then continue physically to the buyer.
 6. **Specifications are transparent.** Performance is not a hidden "era bonus". Power, tractive effort, mass, capacity, axle load, route compatibility, consumption, maintenance and crew requirements create the gameplay differences.
 7. **Prototype values are rounded game-authoring targets.** Exact production batches varied. Where a family covers several real subtypes, the game uses a representative value and records the real prototype/source in the content data.
-8. **The map begins in 1900 but the world does not.** Period-appropriate older vehicles already exist in 1900 as used stock. Their manufacture date, condition and owner are seeded rather than replaying pre-1900 production.
+8. **Introduction dates are fixed historical content.** A model/variant family appears on its authored historical date derived from the real prototype. Availability to the player can still be delayed by capacity, stock, approval, trade or delivery.
+9. **The map begins in 1900 but the world does not.** Period-appropriate older vehicles already exist in 1900 as used stock. Their manufacture date, condition and owner are seeded rather than replaying pre-1900 production.
 
 ## 2. Fictional manufacturer lineages
 
