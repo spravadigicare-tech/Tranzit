@@ -268,6 +268,34 @@ A distant source can be commercially unattractive without being artificially for
 
 The external transport leg is paid by the buyer unless the purchase contract explicitly includes delivery. The seller may arrange transport, but it still uses real finite carrier capacity and real travel time. No off-map manufacturer gets a free hidden delivery shortcut.
 
+### 9.2.1 Target-market adaptation and certification
+
+Technical adaptation for the destination market is normally the **supplier's responsibility**, not a separate player workshop project before delivery.
+
+When a vehicle needs destination-specific changes, the manufacturer, dealer or contracted bodybuilder can include them in the order configuration and price. Depending on era and vehicle type this can include, for example:
+
+- lighting/signalling equipment;
+- braking/control equipment;
+- couplers/buffers;
+- gauges/instruments/markings;
+- electrical or heating compatibility;
+- road-side driving equipment and legally required mirrors/lights;
+- country-specific safety or radio/train-protection equipment where historically applicable.
+
+The player sees the added cost, lead time and any resulting performance/weight/configuration consequences before accepting the order.
+
+**National certification/type approval is separate from those physical modifications.**
+
+If the exact vehicle model/configuration is already approved for normal operation in the destination country, the player's newly purchased units only need the ordinary registration/acceptance/inspection steps applicable to that era.
+
+If the model/configuration has **not yet been operated/approved in that country**, the buyer may have to fund and wait for a first national type-approval/certification process before normal commercial use. The vehicle can still be manufactured and delivered while approval is pending if legally/logistically plausible, but it cannot enter normal commercial service until approval is complete.
+
+Once a model/configuration has a valid approval in that country, later identical units do **not** repeat the full first-type process. They use the simpler per-unit registration/acceptance path unless regulation, configuration or technical standards materially change.
+
+Certification complexity depends on real compatibility questions, not on an abstract foreign-vehicle penalty. Rail examples include gauge, loading gauge, axle load, braking, couplers, electrification, train protection and control systems. Road examples include dimensions, axle/GVW limits, brakes, lighting, visibility, steering/layout and other period-appropriate national requirements.
+
+A supplier may offer a pre-approved destination-market variant. That can cost more than the base export model but avoids a first-buyer adaptation burden and may shorten approval.
+
 ### 9.3 Dealer stock
 
 Dealers may pre-order common configurations. Dealer stock therefore has:
