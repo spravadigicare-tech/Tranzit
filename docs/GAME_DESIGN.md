@@ -1868,6 +1868,17 @@ Local price formation is driven by the simulated economy rather than a fixed glo
 
 A local price is an economic signal, not a guaranteed trade. A high price in Brno and a low price in Jihlava can create an incentive for firms to buy/sell across those markets, but actual trade still requires willing firms, compatible quantities, transport, facilities, licences and contractual terms.
 
+Transport can **change the local markets themselves**. When sustained flows move a commodity from a surplus/cheap market into a deficit/expensive market:
+
+- the origin surplus shrinks and its local price can rise;
+- the destination deficit shrinks and its local price can fall;
+- the price gap and unmet demand can therefore narrow over time;
+- if demand, production or accessibility later changes, the gap can widen again.
+
+Do not preserve an artificial permanent arbitrage gap after transport has materially changed the underlying supply/demand balance. Likewise, do not snap prices to equality instantly: adjustment follows the coarse/event-driven market update model and actual physical deliveries/available stock.
+
+This means a successful freight corridor can partially consume the market imbalance that originally made it attractive. Long-term profitability depends on continuing production/consumption, growth, seasonality, competing carriers and changing transport/access costs rather than a fixed route bonus.
+
 Prices must be explainable. The UI should be able to show why a market is expensive/cheap, for example:
 
 > Brno — timber  
