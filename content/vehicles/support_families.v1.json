@@ -32,6 +32,11 @@
       "description": "ČKD-style diesel-electric families"
     },
     {
+      "id": "rail_diesel_electric_modern_import",
+      "name": "Rail diesel-electric modern import",
+      "description": "Modern imported/new-build diesel-electric locomotives with electronic diagnostics and OEM/specialist support"
+    },
+    {
       "id": "rail_electric_skoda_legacy_dc",
       "name": "Rail electric legacy DC",
       "description": "Early DC electric locomotives"
