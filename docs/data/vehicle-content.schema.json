@@ -594,6 +594,16 @@
         },
         "additionalProperties": false
       }
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_\\-\\.]+$"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "additionalProperties": false
