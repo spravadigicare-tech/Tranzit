@@ -102,6 +102,19 @@ A **Select all current Lines** convenience action may populate the current list,
 
 These are settlement terms between the companies, not the public passenger tariff.
 
+For V1, this clause applies only to a **single-journey two-operator through ticket** containing at least one leg operated by the selling carrier and at least one covered Line of the partner. The agreement is not a general ticket-reseller licence, does not permit recursive resale of a third carrier's capacity, and does not create a shared multi-company weekly/monthly pass.
+
+Show a concise scope note in the clause detail:
+
+- single journeys only;
+- current explicit partner Lines;
+- public partner fare remains passenger-facing;
+- negotiated money/km rate is internal settlement;
+- capacity/reservation remains real;
+- connection protection/timetable coordination is **not included** by this clause.
+
+When useful, show one or two current fare examples with public partner fare, settlement and resulting margin, including a negative-margin warning when applicable. Examples are calculated from current data and never become guaranteed future prices.
+
 The builder remains intentionally small. Do not expose arbitrary legal text, dozens of generic modifiers or clauses without a real simulation owner.
 
 Submitting creates a pending bilateral proposal. The partner can accept, reject or return a counterproposal with changed explicit terms. Only accepted clauses become binding rights/obligations.
