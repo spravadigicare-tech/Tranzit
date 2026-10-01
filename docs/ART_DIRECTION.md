@@ -428,13 +428,78 @@ They should support:
 
 Water rendering should prioritize visual quality and readability over expensive fluid simulation. A river should visibly shape the surrounding landscape rather than appear cut into an otherwise unchanged ground material.
 
-## 13. Still to define
+## 13. Roads, railways and infrastructure ageing
+
+### 13.1 Roads and paths
+
+Roads and paths must read as physical infrastructure embedded in the terrain rather than a flat texture spline.
+
+Depending on route class, era and terrain, road construction may visibly include:
+
+- cut-and-fill earthworks;
+- shallow embankments and cuttings;
+- drainage ditches;
+- shoulders/verges;
+- culverts;
+- retaining walls;
+- bridges;
+- curbs, sidewalks and later-era roadside engineering.
+
+Road visual classes evolve historically. A 1900 network can include field tracks, unpaved roads, gravel/macadam roads, paved urban streets and better main routes; later eras add asphalt/concrete surfaces, broader carriageways, markings, barriers, lighting and period-appropriate junction treatment.
+
+Upgrading a road should normally preserve its historical alignment unless the player/world actually rebuilds or reroutes it.
+
+Roadside detail is contextual rather than uniformly scattered. Period- and place-appropriate elements may include tree lines, fences/gates, wells, shrines/crosses, drainage, utility/telegraph poles, grass verges and field access tracks.
+
+### 13.2 Railway permanent way
+
+Railways receive a higher functional-detail priority because they are a primary visual subject.
+
+At close supported zoom, railway infrastructure should visibly include:
+
+- two actual rails;
+- sleepers/ties;
+- ballast;
+- geometrically correct turnouts/switches;
+- crossings and junction geometry;
+- signals;
+- period-appropriate lineside poles/wiring/telegraph/electrification equipment;
+- larger technical cabinets/markers where useful;
+- drainage, embankments and cuttings.
+
+Do not spend geometry on every fastening bolt. Preserve the parts that define railway function and silhouette.
+
+Turnouts and crossings must visually correspond to the actual track graph. Do not render disconnected spline overlaps that trains magically traverse.
+
+Rail corridors may include context-appropriate vegetation, fences, drainage, service paths and technical equipment. Main lines can look more maintained than lightly used sidings or industrial branches.
+
+### 13.3 Visual ageing and maintenance state
+
+Infrastructure should **visually age gradually** without becoming a binary pristine/ruined system.
+
+Ageing cues may include:
+
+- fading/discolouration;
+- dirt and soot;
+- weathering;
+- ballast colour and contamination;
+- sleeper wear;
+- road-surface patching/fading;
+- vegetation encroachment at edges;
+- small maintenance repairs;
+- patina on structures and buildings.
+
+The intensity should depend on age, environment, infrastructure type and actual maintenance state where that information exists.
+
+Major maintenance, renewal or reconstruction may visibly restore or replace affected surfaces/components. This does not require every maintenance action to swap the entire asset.
+
+Visual condition is an **orientation cue**, never the authoritative technical-state UI. The rendering must not imply a precise failure probability or maintenance threshold that the simulation has not actually reached.
+
+## 14. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
 - regional rural landscape identities and exact field/crop palette;
-- roads, paths and roadside treatment;
-- railway permanent-way visual detail and trackside equipment;
 - bridges, tunnels, earthworks and construction-state presentation;
 - roads, paths and roadside treatment;
 - railway permanent-way visual detail and trackside equipment;
