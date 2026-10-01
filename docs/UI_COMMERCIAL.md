@@ -57,6 +57,8 @@ Example:
 
 This does not guarantee that any specific firm will sign a contract or that a route is profitable.
 
+Market values are dynamic. If real freight flows reduce a surplus at the origin and a deficit at the destination, the displayed local prices and imbalance must update accordingly. A corridor that was initially highly attractive can become less attractive as it successfully integrates those markets.
+
 Where legitimate information exists, the player can drill into known producers/buyers and their company detail.
 
 ### 2.3 Transport-market signal
