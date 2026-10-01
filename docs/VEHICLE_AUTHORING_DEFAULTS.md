@@ -33,6 +33,29 @@ Use separate IDs for:
 
 Renaming, mergers and ownership changes never rewrite stable IDs.
 
+## 2.1 Versioned content packs and merge rules
+
+Vehicle data may be split into multiple versioned content packs by era or content stage rather than stored in one giant file.
+
+Every pack declares:
+
+- `schema_version`;
+- `pack_id`;
+- `depends_on[]`;
+- arrays of manufacturers/factories/support families/model families or dated extensions.
+
+Merge rules:
+
+1. stable IDs are global;
+2. a new ID creates a new object;
+3. an existing ID may be extended only through explicitly dated additive capability/market/support records;
+4. a pack must not silently replace a physical model's prototype identity, introduction date or platform geometry;
+5. conflicting duplicate scalar definitions are an authoring error;
+6. later pack versioning can supersede an earlier record only through an explicit migration/version change, not load order;
+7. save files store stable IDs plus content version so existing physical assets survive data-pack evolution.
+
+This allows, for example, a 1900 opening pack and a 1923–1959 progression pack to share `Neškoda` or `ČMS/ČMD` manufacturer identities without creating duplicate companies.
+
 ## 3. Manufacturer/factory capability states
 
 Every factory/model pairing has a dated capability timeline.
