@@ -437,6 +437,38 @@ Templates should use clear player-facing names such as `Economy`, `Business`, `E
 
 The player may create arbitrary **supported combinations of equipment** inside the platform's authored compatibility rules. The editor automatically blocks mutually incompatible combinations and explains the blocker rather than allowing impossible builds.
 
+### Template pricing and retrofit costing
+
+A vehicle template does **not** have an independently hand-authored total price. Its commercial price is derived from explicit components:
+
+- base physical platform/chassis/vehicle price;
+- selected factory equipment/packages;
+- interior/service equipment;
+- destination-market adaptation where applicable;
+- manufacturer/bodybuilder labour;
+- dealer/import/delivery costs where applicable.
+
+For a new vehicle order, the order UI shows both the base platform price and the incremental price of each selected package, then the resulting configured unit price.
+
+For an existing vehicle retrofit, the player pays only the actual conversion scope:
+
+- new equipment/parts;
+- workshop labour and capacity;
+- removal/disassembly work where required;
+- certification/inspection where applicable;
+- transport to/from the workshop if external.
+
+Removed equipment can have explicit residual handling. Depending on the item and condition it may:
+
+- become reusable company inventory;
+- be sold/traded to the workshop/provider;
+- be scrapped for a visible salvage value;
+- have no meaningful residual value.
+
+The game must not grant a generic percentage refund. Residual value comes from the actual removed equipment and its condition/marketability.
+
+This makes a player-defined template economically transparent: changing one equipment package changes the resulting purchase/retrofit cost through visible component costs rather than through an opaque preset multiplier.
+
 The editor must never imply that the player designs a vehicle from first principles. It combines real supported equipment, interior and technical packages within the fixed physical platform of that model family.
 
 ## 10. Core specification schema for every authored vehicle
