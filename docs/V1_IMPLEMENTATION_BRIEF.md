@@ -138,7 +138,7 @@ The following rows define minimum operational behaviour, not just class names. E
 | SYS-01 | 1–5, 41 | Shared clock, no-grid world, logical physical continuity, streamed presentation, reproducible simulation and structured explanations |
 | SYS-02 | 2–3, 6, 35–36 | 1900 world, legal region expansion, aggregate inactive world, season/day cycles, demand changes, visible city development and historical/technology events |
 | SYS-03 | 7–9, 28 | Physical branches, office setup/equipment/staff/workload, named directors/managers, salary/qualified labour supply, delegation permissions, reputation and customer-specific history |
-| SYS-04 | 10–11 | Firms with inventories, production/consumption, capacity and cash-flow constraints; real cargo/passenger opportunities, tenders, bids, contracts, SLA, bonuses, renegotiation, expansion, cancellation and renewal |
+| SYS-04 | 10–11 | Firms with inventories, production/consumption/final-consumption roles, evolving local market areas and explainable reference prices; real cargo/passenger opportunities, producer/buyer transport proposals, transparent sealed public tenders, bids, contracts, SLA, bonuses, renegotiation, expansion, cancellation and renewal |
 | SYS-05 | 11–12, 30 | Contract/shipment transport plans, split lots, multi-leg routing, physical storage, cutoffs, allocation protection, recovery and external carrier procurement |
 | SYS-06 | 13–14, 19–20 | Road/rail compatibility, railway section and station capacity, dynamic tracks/platforms, access ownership/charges, coordinated capacity ordering and actual occupancy |
 | SYS-07 | 14–18 | Per-asset fleet, physical shunting/turning, consistent duties, manufacturer/dealer/used/lease acquisition, delivery, fuel/supplies, service, retrofit, rescue and scrapping |
@@ -190,7 +190,15 @@ Cancellation/lease expiry must not teleport a running asset back to its owner. S
 
 ### 6.4 Economy, competition and development
 
-Production recipes consume inventories and produce defined outputs. Missing inputs affect real production and transport demand. Imports/exports at macro boundaries may use aggregate external supply, but not unlimited free supplies inserted directly into player facilities.
+Production recipes consume inventories and produce defined outputs. Missing inputs affect real production and transport demand. Representative final consumers/services can consume physical goods without producing another transportable commodity; sustained shortages reduce supported activity/city growth gradually and can create real additional supply/transport demand rather than binary shutdowns. Imports/exports at macro boundaries may use aggregate external supply, but not unlimited free supplies inserted directly into player facilities.
+
+Implement firm/facility identities separately from physical property so closures, failures, acquisition, brownfield vacancy and later adaptive reuse do not delete the world geometry. Commodity catalogues and base/reference values evolve historically; older commodities decline organically instead of disappearing at a hard date.
+
+Local commodity pricing uses coarse/event-driven market areas that can be smaller than a city and evolve gradually with development/accessibility. Reference prices remain explainable signals around historically evolving base values; concrete firm prices are negotiated separately. Opening Market commodity analysis exposes surplus/deficit and reference price together without revealing unknown private firms.
+
+Freight recurring business remains primarily contract-driven. Open/spot carriage can use spare compatible capacity under published category/commodity tariffs, but each firm can route only a bounded percentage of its real uncontracted flow this way. No anonymous demand may be generated to fill a Line.
+
+Public-service tender AI uses the same feasibility/cost authority as the player. Each bid contains a concrete feasible Line/Pattern service proposal and must meet mandatory conditions before submission. Rival submissions are sealed until closing; published scoring gives price/requested subsidy the largest normal weight and can include relevant-mode operating reliability, commercial reliability, comfort and reputation. Awarded operators may change internal resources while preserving binding service outcomes; repeated/material failure follows explicit penalty/cure/termination/re-tender rules.
 
 Ordinary employees are aggregate qualified capacity. Named managers/directors use the shared labour market with real availability, salary, relevant skills, workload and budget permissions. AI carriers use the same market and command validation. Avoid omniscient future disruptions, perfect guaranteed bids or camera-dependent cost exemptions.
 
@@ -228,11 +236,11 @@ Required player screens/workflows:
 | World interaction | Rotate/pan/zoom, selection, follow vehicle, hover details, UI-D41 upper HUD Search/Layers, navigation to an event, legend and network/ownership overlays |
 | Construction | Catalogue, ghost preview, rotate/snap, valid/invalid geometry, itemized quote, confirm/cancel, progress and affected operation |
 | Company | Branches and workload, salary/crew reserve, managers/delegation, finances/loans, legal access/region expansion, UI-D39 group holdings/owner directives and UI-D41 final navigation access |
-| Commercial | Filterable opportunity board, contract planner/readiness/economics, bid/accept/amend/cancel/renew, shipment progress |
+| Commercial | Market with local commodity surplus/deficit/reference prices and map handoff; filterable Opportunity Board including public tenders; producer/buyer transport proposals; concrete tender/service plans with sealed rivals and transparent scoring; contract planner/readiness/economics, bid/accept/amend/cancel/renew, shipment progress |
 | Operations | Lines/Pattern versions/calendars, capacity orders/timeline, duties/fleet assignment, departures, actual delays and action reasons |
 | Assets | Marketplace, order/delivery tracking, physical fleet details, workshops/service policies, fuel/storage/support |
 | Passenger/cargo detail | Per-leg commitments, actual quantity/capacity, queues/transfers, protected reservations, recovery and cost consequences |
-| World/business context | Cities/firms/production, competitors, partnerships, UI-D39 company/infrastructure acquisitions, UI-D38 Technology/research/adoption, UI-D40 World News/history and major disruptions |
+| World/business context | Cities/firms/production/final consumption, evolving market areas, public state/region/city priorities, competitors, partnerships, UI-D39 company/infrastructure acquisitions, UI-D38 Technology/research/adoption, UI-D40 World News/history and major disruptions |
 
 Aggregate data must be drillable. A disabled action explains its specific blocker and links to a corrective workflow. Distinguish simulation facts, estimates and commercial promises. No decorative financial chart with invented data.
 
