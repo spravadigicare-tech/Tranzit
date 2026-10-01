@@ -80,8 +80,6 @@ For passenger cooperation, the currently defined clause is:
 
 - **Sell partner capacity on through tickets**, independently enabled in each direction.
 
-Passenger connection-agreement clauses are intentionally unspecified until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned from scratch.
-
 When capacity resale is enabled, configure each party independently in its own column.
 
 Example:
@@ -111,7 +109,7 @@ Show a concise scope note in the clause detail:
 - public partner fare remains passenger-facing;
 - negotiated money/km rate is internal settlement;
 - capacity/reservation remains real;
-- connection protection/timetable coordination is **not included** by this clause.
+- timetable coordination, a guaranteed transfer and connection-specific hold/rebooking behaviour are **not created** by this clause.
 
 When useful, show one or two current fare examples with public partner fare, settlement and resulting margin, including a negative-margin warning when applicable. Examples are calculated from current data and never become guaranteed future prices.
 
@@ -293,7 +291,7 @@ These scenarios describe evidence to collect when implemented, not a claim of pa
 | EXTCO-A13 | Inspect a minority shareholding, a subsidiary and a company acquired or dissolved in the recorded history. Ownership percentage does not grant invented control or private information; stable original identity, agreements and verified successor links remain. |
 | EXTCO-A14 | Save/load with an open pinned company, stale observations, current offers and historical events, including a macro-region company. Knowledge and permissions are revalidated without discovering hidden data, replaying events, activating regions or changing pause state. |
 | EXTCO-A15 | Inspect an industrial customer that owns a private siding and limited local pickup vehicle capacity. Show only legitimately known/contractually offered logistics capability. Use it in a freight proposal, then verify the physical customer-provided leg/endpoint uses finite real capacity and no hidden public-carrier service or teleportation appears. |
-| EXTCO-A16 | Configure asymmetric passenger capacity resale, inspect a positive- and negative-margin example, then sell one valid two-operator single-journey through ticket. The company detail shows explicit directional Line scope/rate and the sold ticket's captured agreement version; it does not offer partner-only resale, recursive third-carrier resale, shared multi-company period products or connection protection from this clause. |
+| EXTCO-A16 | Configure asymmetric passenger capacity resale, inspect a positive- and negative-margin example, then sell one valid two-operator single-journey through ticket. The company detail shows explicit directional Line scope/rate and the sold ticket's captured agreement version; it does not offer partner-only resale, recursive third-carrier resale, shared multi-company period products, timetable coordination, a guaranteed transfer or automatic partner rebooking. |
 
 ## 14. Decision record
 
