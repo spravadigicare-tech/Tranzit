@@ -509,6 +509,35 @@ The overhaul price, duration and achievable result depend on:
 - retained manufacturer/specialist know-how;
 - chosen target template/retrofit scope.
 
+### 9.4.2 Off-map resale and export
+
+Used vehicles can be sold to buyers outside the detailed playable map when a legitimate external market exists.
+
+The off-map buyer may value a vehicle differently from the local market because of:
+
+- regional demand;
+- local fleet age;
+- parts/support availability;
+- technical compatibility;
+- regulatory acceptance;
+- scarcity;
+- current trade restrictions;
+- the vehicle's individual condition and configuration.
+
+This can make an older vehicle unattractive domestically but still commercially valuable abroad.
+
+For ordinary off-map resale, **the buyer collects**:
+
+1. the vehicle remains in the player's ownership and physical custody until the agreed handover;
+2. the player must place it at a reachable agreed collection point;
+3. the external buyer or its carrier arrives and takes custody;
+4. all onward transport beyond the handover is the buyer's responsibility and cost;
+5. after physical handover, the asset leaves detailed active-world simulation and is retained only in ownership/history records.
+
+The player does not manage the buyer's long-distance export route, shipping or border logistics after handover. This is intentionally simpler than inbound imports, because the player's operational responsibility ends at collection.
+
+A sale is not completed merely because the player clicked Accept. If the vehicle cannot reach the handover point or is not in the agreed condition/configuration, settlement waits or the sale fails under the contract terms.
+
 ### 9.5 Historical production changes
 
 Ordinary factory production can change because:
