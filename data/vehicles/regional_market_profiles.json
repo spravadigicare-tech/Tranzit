@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "regional_market_profiles": [
+    {
+      "id": "central_eu_domestic_early",
+      "home": [
+        "czech_bohemian"
+      ],
+      "core_export": [
+        "austria",
+        "germany",
+        "poland",
+        "slovakia"
+      ],
+      "secondary_export": [
+        "central_europe_other"
+      ],
+      "rare_import": [
+        "western_europe",
+        "overseas"
+      ]
+    },
+    {
+      "id": "central_eu_regional_import_early",
+      "home": [
+        "austria"
+      ],
+      "core_export": [
+        "czech_bohemian",
+        "germany",
+        "hungary"
+      ],
+      "secondary_export": [
+        "central_europe_other"
+      ],
+      "rare_import": [
+        "western_europe",
+        "overseas"
+      ]
+    },
+    {
+      "id": "central_eu_specialist_early",
+      "home": [
+        "czech_bohemian",
+        "austria"
+      ],
+      "core_export": [
+        "central_europe"
+      ],
+      "secondary_export": [
+        "western_europe"
+      ],
+      "rare_import": [
+        "overseas"
+      ]
+    },
+    {
+      "id": "local_universal_early",
+      "home": [
+        "local"
+      ],
+      "core_export": [],
+      "secondary_export": [],
+      "rare_import": []
+    },
+    {
+      "id": "germany_core_export_early",
+      "home": [
+        "germany"
+      ],
+      "core_export": [
+        "czech_bohemian",
+        "austria",
+        "western_europe"
+      ],
+      "secondary_export": [
+        "central_europe_other"
+      ],
+      "rare_import": [
+        "overseas"
+      ]
+    },
+    {
+      "id": "germany_rare_import_early",
+      "home": [
+        "germany"
+      ],
+      "core_export": [
+        "western_europe"
+      ],
+      "secondary_export": [
+        "czech_bohemian",
+        "austria"
+      ],
+      "rare_import": [
+        "eastern_europe",
+        "overseas"
+      ]
+    },
+    {
+      "id": "britain_rare_import_early",
+      "home": [
+        "britain"
+      ],
+      "core_export": [
+        "western_europe"
+      ],
+      "secondary_export": [
+        "germany"
+      ],
+      "rare_import": [
+        "czech_bohemian",
+        "austria",
+        "eastern_europe"
+      ]
+    }
+  ],
+  "tier_defaults": {
+    "home": {
+      "dealer_stock_weight": 1,
+      "parts_support_weight": 1,
+      "quote_friction": 0
+    },
+    "core_export": {
+      "dealer_stock_weight": 0.65,
+      "parts_support_weight": 0.7,
+      "quote_friction": 0.15
+    },
+    "secondary_export": {
+      "dealer_stock_weight": 0.25,
+      "parts_support_weight": 0.35,
+      "quote_friction": 0.4
+    },
+    "rare_import": {
+      "dealer_stock_weight": 0.05,
+      "parts_support_weight": 0.1,
+      "quote_friction": 0.8
+    }
+  }
+}
