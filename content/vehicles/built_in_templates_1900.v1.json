@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "scope": "1900 built-in vehicle templates",
+  "templates": [
+    {
+      "id": "cms_97_standard_1900",
+      "model_id": "cms_97_mravenec",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "cms_99_standard_1900",
+      "model_id": "cms_99_lokalka",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "cms_170_freight_1900",
+      "model_id": "cms_170_horal",
+      "name": "Freight",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "cms_6_express_1900",
+      "model_id": "cms_6_rychlik",
+      "name": "Express",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_o10_standard",
+      "model_id": "ringhauer_o10",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "wagon_brake_basic_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_g10_standard",
+      "model_id": "ringhauer_g10",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "wagon_brake_basic_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_p12_standard",
+      "model_id": "ringhauer_p12",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "wagon_brake_basic_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_z10_standard",
+      "model_id": "ringhauer_z10",
+      "name": "Industrial liquid",
+      "equipment_option_ids": [
+        "wagon_brake_basic_1900",
+        "tank_general_oil_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_i8_ice",
+      "model_id": "ringhauer_i8_lednice",
+      "name": "Ice",
+      "equipment_option_ids": [
+        "wagon_brake_basic_1900",
+        "ice_van_iceboxes_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_h15_standard",
+      "model_id": "ringhauer_h15",
+      "name": "Heavy load",
+      "equipment_option_ids": [
+        "wagon_brake_basic_1900",
+        "heavy_load_standard_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_l2_economy",
+      "model_id": "ringhauer_l2",
+      "name": "Economy",
+      "equipment_option_ids": [
+        "coach_layout_economy_1900",
+        "coach_basic_lighting_1900",
+        "coach_brake_basic_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_b4_economy",
+      "model_id": "ringhauer_b4_corridor",
+      "name": "Economy",
+      "equipment_option_ids": [
+        "coach_layout_economy_1900",
+        "coach_basic_lighting_1900",
+        "coach_steam_heat_1900",
+        "coach_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_b4_business",
+      "model_id": "ringhauer_b4_corridor",
+      "name": "Business",
+      "equipment_option_ids": [
+        "coach_layout_business_1900",
+        "coach_improved_lighting_1900",
+        "coach_steam_heat_1900",
+        "coach_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_luxus_sleeper",
+      "model_id": "ringhauer_luxus_schlaf",
+      "name": "Sleeper",
+      "equipment_option_ids": [
+        "coach_layout_sleeper_1900",
+        "coach_improved_lighting_1900",
+        "coach_steam_heat_1900",
+        "coach_brake_continuous_1900",
+        "coach_service_linen_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_luxus_dining",
+      "model_id": "ringhauer_luxus_schlaf",
+      "name": "Dining",
+      "equipment_option_ids": [
+        "coach_layout_dining_1900",
+        "coach_improved_lighting_1900",
+        "coach_steam_heat_1900",
+        "coach_brake_continuous_1900",
+        "coach_service_catering_1900"
+      ]
+    },
+    {
+      "id": "ringhauer_post_standard",
+      "model_id": "ringhauer_post_gepack",
+      "name": "Post + baggage",
+      "equipment_option_ids": [
+        "service_coach_post_baggage_1900",
+        "coach_brake_basic_1900"
+      ]
+    },
+    {
+      "id": "road_h2_flatbed",
+      "model_id": "road_h2_city_dray",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "horse_body_flatbed_1900"
+      ]
+    },
+    {
+      "id": "road_h4_heavy_flatbed",
+      "model_id": "road_h4_heavy_wagon",
+      "name": "Heavy flatbed",
+      "equipment_option_ids": [
+        "horse_body_flatbed_1900"
+      ]
+    },
+    {
+      "id": "daimlar_1896_flatbed",
+      "model_id": "daimlar_lastwagen_1896",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "daimlar_flatbed_1896"
+      ]
+    },
+    {
+      "id": "thornycroft_1t_platform",
+      "model_id": "thornycroft_steam_1t",
+      "name": "Platform",
+      "equipment_option_ids": [
+        "thornycroft_platform_1896"
+      ]
+    },
+    {
+      "id": "horse_omnibus_12_basic",
+      "model_id": "horse_omnibus_o12",
+      "name": "Basic",
+      "equipment_option_ids": [
+        "horse_bus_basic_12_1900"
+      ]
+    },
+    {
+      "id": "benc_1895_landauer",
+      "model_id": "benc_omnibus_1895",
+      "name": "Landauer",
+      "equipment_option_ids": [
+        "benc_landauer_1895"
+      ]
+    }
+  ]
+}
