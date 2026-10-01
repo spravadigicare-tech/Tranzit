@@ -1884,6 +1884,37 @@ A private rail siding/industrial freight station can eliminate a road first/last
 
 Firms can invest in, expand, replace or abandon these logistics capabilities when expected recurring logistics cost/benefit justifies it. The exact AI investment thresholds are balancing/content parameters.
 
+#### Preserve a real transport market
+
+Firm-owned logistics uses a **make-or-buy** decision and must not collapse the carrier market.
+
+A normal non-transport firm should internalize transport only where owning the capability is economically credible. The decision considers:
+
+- recurring volume and regularity;
+- trip distance and local versus trunk-haul character;
+- vehicle/facility utilization;
+- capital, staffing, maintenance and parking/storage cost;
+- required specialist equipment;
+- reliability/control benefit;
+- availability and price of external carriers;
+- seasonal/peak variability;
+- whether a private siding/endpoint improves access without replacing the actual trunk carrier.
+
+Default economic tendency:
+
+- **short, frequent and predictable first/last-mile flows** are the strongest candidates for own-account vehicles;
+- **long-distance, low-frequency, irregular, seasonal, peak/surge or specialist flows** are more likely to be outsourced;
+- a private industrial siding normally removes a road transfer leg but **creates/enables direct rail demand** rather than turning the industrial firm into a railway carrier;
+- own-account vehicles carry that firm's own inputs/outputs and do not solicit unrelated third-party freight.
+
+A firm should not size an owned fleet for its absolute peak if buying external capacity for occasional peaks is cheaper. Even firms with own vehicles can therefore generate transport opportunities for overflow, distant destinations, specialist cargo, disruption recovery or routes/modes they do not operate themselves.
+
+Transport demand is derived from real goods flows first. The firm's logistics choice then decides **which legs it performs itself and which legs become carrier demand**. Do not reduce underlying physical production/consumption merely because a firm owns a truck.
+
+To avoid convergence toward universal self-haulage, AI investment requires a real expected-payback case and carries continuing costs/capacity risk. A vehicle that is idle much of the time, a rarely used private siding or duplicated specialist capability should be economically unattractive. Outsourcing remains a normal long-term strategy, not merely an early-game fallback.
+
+Conversely, the simulation must not artificially force outsourcing when own-account transport is clearly economical. The goal is a mixed market in which some legs are customer-provided and many others remain available to transport companies because specialization, scale, distance, mode access and demand variability make external carriage competitive.
+
 Firms, operating facilities and physical buildings are separate identities. A firm can close a plant, fail or be acquired without deleting the building. A vacated industrial property can remain idle, be purchased and adapted by another firm, or be converted over time to another plausible use such as warehousing, offices or housing. New industries may therefore reuse older industrial sites rather than always building on untouched land.
 
 The economy supports three broad physical-goods roles without forcing every firm to have a transportable output:
