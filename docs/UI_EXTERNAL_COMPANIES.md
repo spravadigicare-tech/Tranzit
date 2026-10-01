@@ -81,10 +81,23 @@ For passenger cooperation, the currently defined clause is:
 
 Connection-agreement clauses are intentionally unspecified until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned from scratch.
 
-When capacity resale is enabled, show the two separate settlement rates clearly:
+When capacity resale is enabled, configure each party independently in its own column.
 
-> They may sell our capacity: **0.47 money/km**  
-> We may sell their capacity: **0.42 money/km**
+Example:
+
+> **Our company**  
+> Partner may sell our capacity: ✓  
+> Covered Lines: R12 Praha–Brno, R18 Praha–Plzeň  
+> Rate owed to us: **0.47 money/km**
+>
+> **Morava Rail**  
+> We may sell their capacity: ✓  
+> Covered Lines: MR4 Brno–Vídeň  
+> Rate owed to them: **0.42 money/km**
+
+The two directions may have different enabled states, Line scopes and rates.
+
+A **Select all current Lines** convenience action may populate the current list, but the accepted agreement stores explicit Line identities. Newly created Lines are not automatically added.
 
 These are settlement terms between the companies, not the public passenger tariff.
 
