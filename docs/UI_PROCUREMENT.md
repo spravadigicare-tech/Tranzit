@@ -136,6 +136,10 @@ The projection should consider only information the company can reasonably know,
 
 Label estimates and forecast horizon. Do not present uncertain supplier/transport arrival as guaranteed.
 
+For perishable supplies, projected stock cover uses **usable stock at expected consumption time**, not nominal tonnes alone. Show the storage condition and effective freshness horizon where material. Cold storage can support a larger safe target buffer because it slows spoilage; without compatible cold storage, reorder/target policy is clamped to what can plausibly be consumed before the stock becomes unacceptable.
+
+Default policy bands are 2–4 days for fresh/perishable stock with suitable cold storage, roughly 1–2 days without it, 5–10 days for ordinary goods, 7–14 for industrial materials and 10–20 for strategic/operating supplies. These remain editable/authorable policies subject to real facility capacity and supplier lead time.
+
 ## 6. Procurement orders
 
 The Orders view contains real purchase lifecycle records, not only invoices.
