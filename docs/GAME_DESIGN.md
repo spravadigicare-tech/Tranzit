@@ -3102,7 +3102,15 @@ These are authorable balancing bands, not universal chemistry. A commodity can i
 
 Refrigeration **reduces the rate of quality loss; it never stops or reverses ageing**. A short non-refrigerated transfer therefore consumes the ambient-rate portion of the remaining quality budget even when both adjacent legs are refrigerated.
 
-For performance, spoilage is not updated every frame or every game minute. Each CargoLot stores the last evaluated simulation timestamp, accumulated exposure and current physical condition. On a relevant event—condition/location change, handling completion, allocation/feasibility check, market/inventory evaluation, UI inspection or save boundary—the simulation integrates the elapsed game time analytically and updates exposure exactly once. Remote/macro simulation uses the same elapsed-time result.
+For performance, spoilage is not updated every frame or every game minute. Each CargoLot stores the last evaluated simulation timestamp, accumulated exposure and current physical condition.
+
+**Idle cargo must still spoil on time.** Whenever a lot enters a condition/location or its condition multiplier changes, the simulation calculates the next material quality threshold (for example value-loss band, contract-acceptance threshold or unusable/spoiled state) and schedules that timestamp in the normal simulation event queue. When the threshold event fires, the lot's exposure/quality is advanced to that game time, its commercial/usable state is updated and any resulting market/inventory/contract consequence becomes real even if nobody opened or moved the cargo.
+
+Condition/location changes, handling completion, allocation/feasibility checks, market/inventory evaluation, UI inspection and save boundaries can also analytically catch the lot up to the current simulation timestamp, but these are safeguards/reads rather than the only way spoilage progresses. Re-entering the same lot must not duplicate scheduled threshold events; changing storage/vehicle conditions cancels/supersedes the old threshold and schedules the new one deterministically.
+
+A lot that becomes spoiled/unacceptable still physically occupies its wagon, vehicle, warehouse or handling space until it is actually disposed of, returned, reclassified or otherwise moved through a valid physical flow.
+
+Remote/macro simulation uses the same scheduled-threshold semantics and elapsed-time result.
 
 #### Initial V1 perishability profiles
 
