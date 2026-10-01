@@ -1828,6 +1828,8 @@ For the 1900 economy, food consumption is not one generic commodity. Use a limit
 
 Construction demand likewise uses distinct physical commodities rather than one generic building-material item. Baseline 1900 coverage includes stone/gravel, bricks, cement, processed timber and steel products where historically/regionally appropriate. Their different sources, storage/handling requirements and compatible vehicles should create materially different logistics without splitting into unnecessary retail-level variants.
 
+For heavy industry, **coke is not a separate player-facing transport commodity** in the baseline design. Coal covers the relevant solid-fuel/reductant input at the gameplay level; internal processing detail may be abstracted inside the industrial recipe where needed. This keeps the useful transport decisions around coal, iron ore, iron/steel, metal products and machinery without an extra near-duplicate cargo step.
+
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
 ### 10.2 Industrial geography
