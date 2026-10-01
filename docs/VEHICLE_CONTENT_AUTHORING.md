@@ -634,7 +634,7 @@ A vehicle family is **content-data complete** only when it has:
 Art/prefab/sound/test completeness remains separate and is still required before the row counts as delivered V1 content.
 
 
-## 15. Machine-readable canonical content layout
+## 17. Machine-readable canonical content layout
 
 The canonical machine-readable authoring data lives only in `content/vehicles/`. Do not create a parallel `data/vehicles` hierarchy or a second schema.
 
@@ -658,7 +658,7 @@ Every model file uses the same stable concepts: model identity, manufacturer/sou
 
 A concrete runtime vehicle remains separate from these definitions and stores its own physical identity, owner, location, template, condition, mileage/hours and history.
 
-## 16. Content completion gate
+## 18. Content completion gate
 
 A vehicle family counts as **authored data complete** only when it has:
 
