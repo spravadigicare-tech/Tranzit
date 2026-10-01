@@ -49,6 +49,10 @@ The names should feel recognisable enough to be a historical wink without using 
 | **Alstrom Ferroviaria** | Alstom / Fiat Ferroviaria | off-map Italy/France | Import |
 | **Ivego Bus** | Iveco Bus | off-map / licensed local body production where historically justified | Import or local assembly offer |
 | **Städler Rail** | Stadler Rail | off-map Switzerland/Poland | Import |
+| **Bombardír Transportation** | Bombardier Transportation / later Alstom TRAXX lineage | off-map Germany | Import |
+| **Ikarusz** | Ikarus | off-map Hungary | Import |
+| **Soláris Bus** | Solaris Bus & Coach | off-map Poland | Import |
+| **Aviat Letňany** | Avia | Praha-Letňany | Active-map light/medium commercial vehicle factory |
 
 A corporate merger or ownership change must not delete old physical vehicles or their original manufacturer identity.
 
@@ -62,17 +66,23 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **ČMS 99 “Lokálka”** | 1897 | kkStB 99 / ČSD 320.0 | local mixed traffic | ~300 kW / ~70 kN | 50 km/h | 39 t | light branch-line locomotive; low coal/water endurance | Praha factory; used stock common in 1900 |
 | **ČMS 170 “Horal”** | 1897 | kkStB 170 / ČSD 434.0 | heavy freight, gradients | ~900 kW / ~125 kN | 60 km/h | 69 t loco + tender | ~14 t axle load; tender requires turning/run-around planning | multiple Austro-Hungarian plants; Praha build or regional import |
 | **ČMS 6 “Rychlík”** | 1894 | kkStB 6 / contemporary express 2'B engines | passenger / express | ~700 kW / ~70 kN | 80 km/h | ~55 t + tender | less adhesion than freight engines; needs better track | active-map or Austrian off-map supply |
+| **Neškoda N534 “Dříč”** | 1923 | ČSD 534.0 | heavy general freight | ~1,000 kW class / high adhesion | 60 km/h | 81–86 t loco | five coupled axles; freight-biased; stronger track than local engines | Plzeň/Praha active-map manufacture |
 | **Neškoda N387 “Mikádo”** | 1926 | ČSD 387.0 | premier express | 1,546 kW / 109 kN | 110 km/h | 92.8 t loco | 150 m curves, high coal/water use, good track required | **Plzeň factory**, active-map manufacture |
 | **Neškoda N475 “Šlechtična”** | 1947 | ČSD 475.1 | universal passenger / fast mixed | 1,480 kW / ~150 kN | 100 km/h | 102.7 t loco | 150 m curves; stronger track and depot facilities | **Plzeň factory** |
 | **Neškoda N556 “Silák”** | 1951 | ČSD 556.0 | maximum steam freight | 1,620 kW / 218 kN | 80 km/h | 99 t loco, ~185 t with tender | 16.8 t axle load; large turntable/service demand | **Plzeň factory** |
 | **Neškoda N498 “Albatros”** | 1954 | ČSD 498.1 | top steam express | 2,000 kW / ~180 kN | 120 km/h | 113 t loco | premium track; expensive coal/water/service | **Plzeň factory** |
 | **Neškoda E500 “Bobina”** | 1953 | ČSD E 499.0 / class 140 | early mainline DC electric | 2,032 kW cont. / 212 kN | 120 km/h | 80–82 t | 3 kV DC only, ~20 t axle load | **Plzeň factory** |
 | **ČMD D435 “Hektor”** | 1958 | ČSD T 435.0 / class 720 | shunting, local freight | 553 kW / 200 kN start | 60 km/h | 61 t | no train heating in base build; excellent 70 m curve access | **Praha factory** |
+| **ČMD D669 “Čmelda”** | 1963 | ČSD T 669.0 / class 770 | heavy shunting / short-haul freight | 993 kW / 280 kN | 90 km/h | 114.6 t | six axles, ~19 t/axle; exceptional low-speed adhesion, poor high-speed economics | Praha/Dubnica production |
 | **Neškoda E670 “Šestikolo”** | 1961 | ČSD E 669.1 / class 181 | heavy electric freight | ~2,790 kW / ~340 kN | 90 km/h | ~124 t | 3 kV DC, six axles, high track load but huge adhesion | **Plzeň factory** |
+| **Neškoda A489 “Laminát”** | 1966 | ČSD S 489.0 / class 230 | AC electric freight/passenger | 3,080 kW / 320 kN | 110 km/h | 85 t | 25 kV 50 Hz only; ~21 t/axle; powerful but voltage-limited | Plzeň factory |
 | **ČMD D478 “Barda”** | 1964 | ČSD T 478.1 / classes 749/751 | universal diesel mainline | 1,103 kW / 215 kN | 100 km/h | 75 t | diesel; passenger-heating capability depends on version | **Praha factory** |
 | **ČMD D753 “Brýlovec”** | 1970 | ČSD T 478.3 / class 753 | mainline diesel freight/passenger | ~1,325 kW / ~215 kN | 100 km/h | ~74 t | 4 axles, diesel; later retrofit families possible | **Praha factory** |
+| **ČMD D742 “Kocour”** | 1977 | ČSD T 466.2 / class 742 | shunting / medium freight | 883 kW / 192 kN | 90 km/h | 64 t | 80 m curves, 16 t axle load; cheaper/lighter than six-axle freight diesels | Praha factory |
 | **Neškoda ES500 “Eso”** | 1980 | ČSD ES 499.1 / class 363 | dual-system universal electric | 3,480 kW DC / 3,060 kW AC | 120 km/h | 87 t | 3 kV DC + 25 kV 50 Hz; ~21.8 t axle load | **Plzeň factory** |
 | **Neškoda E162 “Pershing”** | 1984 | classes 162/163 | fast single-system electric | 3,480 kW / ~285 kN | 140 km/h | ~85 t | cheaper than multisystem; route-limited by voltage | **Plzeň factory** |
+| **Símens ER20 “Euroběžec”** | 2002 | Siemens ER20 Eurorunner | modern universal diesel | 2,000 kW / 235–250 kN | 140 km/h | 80 t | diesel-electric; strong mixed passenger/freight option where electrification is absent | off-map Austrian/German production → rail import |
+| **Bombardír TRAX MS** | 2006 | Bombardier TRAXX F140 MS2 | international electric freight | 5,600 kW / 300 kN | 140 km/h | 85 t | 3/1.5 kV DC + 15/25 kV AC packages; freight-biased alternative to fast universal electrics | off-map German production → rail import |
 | **Neškoda 109X “Zátopek”** | 2008 | Škoda 109E / class 380 | premium multisystem express | 6,400 kW / 275 kN | 200 km/h | 88 t | 3 kV DC + 25 kV AC + 15 kV AC; modern signalling/approval | **Plzeň factory** |
 | **Símens Vektron MS** | 2010 | Siemens Vectron MS | universal international electric | 6,400 kW / ~300 kN | 200 km/h | ~90 t | multi-system configuration; country packages/ETCS matter | off-map German manufacture → rail import |
 | **CZ LOKA EffiShunter 1000** | 2017 | CZ LOKO EffiShunter 1000 | modern shunting/local freight | ~900–970 kW / up to ~340 kN | 100 km/h | ~80–92 t by version | diesel-electric/AC traction; efficient low-speed work | active-map modern works / finite factory capacity |
@@ -96,9 +106,12 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **ČMS M120 “Věžák”** | 1930 | ČSD M 120.4 | petrol railcar | ~32 seats | ~55 km/h | ~90 kW / ~12 t | very cheap branch-line train, no locomotive/run-around | Praha factory |
 | **Studena M131 “Hurvínek”** | 1948 | ČSD M 131.1 | diesel railcar | ~48 seats | 60 km/h | ~114 kW / ~16 t | branch-line economy, can work with trailers | Studénka factory |
 | **Studena M262 “Kredenc”** | 1949 | ČSD M 262.0 | diesel railcar | ~56 seats | 90 km/h | ~300 kW / ~43 t | faster regional service, more comfort/cost | Studénka factory |
+| **Studena M240 “Kačena”** | 1959 | ČSD M 240.0 / class 820 | diesel railcar | 56 seated + 46 standing | 70 km/h | 206 kW / 40.8 t | stronger/more spacious regional railcar than M131; still branch-line oriented | Studénka factory |
 | **Ringhauer Y64** | 1964 | UIC-Y family | bogie coach | 72–88 seats by class | 140 km/h | ~38–42 t | standardized mainline coach, steam/electric heating variants | domestic works or regional licence build |
 | **Studena M152 “Orchestrion”** | 1975 | ČSD M 152.0 / class 810 | diesel railcar | 55 seated + 40 standing | 80 km/h | 155 kW / 20 t | tiny lines, very low axle load/cost, modest acceleration/comfort | Studénka factory |
+| **Studena 842 “Rakvička”** | 1988 | ČD/ČSD class 842 | diesel railcar | 64 fixed + 16 folding seats | 100 km/h | ~2×242 kW class / ~47 t | faster regional diesel unit with more luggage/bike flexibility | Studénka factory |
 | **Ringhauer Z80** | 1980 | UIC-Z / Bmz-type coach | fast coach | ~60–80 seats | 160 km/h | ~42–48 t | faster, air-conditioned variants, higher comfort and electrical demand | domestic / off-map licensed builds |
+| **Studena 471 “Mamut”** | 1997 | ČD class 471 CityElefant | 3-car double-deck EMU | 310 seats / up to ~640 total | 140 km/h | 2,000 kW / ~155 t | very high suburban capacity, regenerative braking, 3 kV DC only | Studénka/Plzeň active-map production |
 | **Alstrom 680 “Nakláněč”** | 2003 | ČD class 680 Pendolino | 7-car EMU | 331 seats | 200 km/h | 3,920 kW / 385 t | tilting, multisystem, expensive dedicated fixed consist | off-map Italy → rail import |
 | **PESKA 844 “RegioRys”** | 2011 | PESA Link II / class 844 | 2-car DMU | 120 seated + ~120 standing | 120 km/h | 2×390 kW / 84.4 t | low-entry regional diesel, 1st-class zone, bikes/WC | off-map Poland → rail import |
 | **Neškoda 640 “Panter”** | 2012 | RegioPanter | 3-car EMU | 234 seated | 160 km/h | 2,040 kW / ~151–152 t | fast acceleration, low-floor regional electric, dual-voltage | Plzeň/Studénka active-map manufacture |
@@ -161,7 +174,10 @@ This already gives four different 1900 freight choices without introducing an an
 | **Pragov RN** | 1933 | Praga RN | medium rigid, ~2–3 t | ~38–50 kW | ~60 km/h | versatile medium freight | Praha |
 | **Fatra 111** | 1942 | Tatra 111 | 6×6, ~8–10 t | ~154 kW | 65 km/h | heavy/rough-road freight | Kopřivnice |
 | **Pragov V3S** | 1953 | Praga V3S | 6×6, 5.5 t road / 3.5 t off-road | 70 kW | 60 km/h | construction, rough roads, recovery | Praha |
+| **Fatra 138** | 1959 | Tatra 138 | 6×6, up to 12 t road payload | 132.5 kW | 72 km/h | heavy construction/terrain freight | Kopřivnice |
 | **Neškoda 706 RT** | 1957 | Škoda 706 RT | rigid/tractor, ~7–9 t chassis payload | ~118 kW | ~70 km/h | normal regional freight | domestic heavy truck works |
+| **Aviat A30** | 1970 | Avia A30 | medium rigid, ~3 t payload | ~59 kW | ~80 km/h | urban/regional distribution between van and heavy-truck classes | Letňany |
+| **Fatra 148** | 1972 | Tatra 148 | 6×6 heavy rigid, up to ~12 t road payload by body | 148.6 kW | ~70 km/h | quarry/construction/heavy regional work | Kopřivnice |
 | **VIAZ 100** | 1974 | LIAZ 100 | rigid or tractor; ~16–38 t GVW/GCW class | ~200–235 kW | 85 km/h | highway freight | Liberec/Mnichovo Hradiště lineage |
 | **Fatra 815** | 1983 | Tatra 815 | 4×4–8×8; heavy rigid/tractor | 170–265+ kW | 80 km/h | quarry, construction, heavy haul | Kopřivnice |
 | **Mercator Actros I** | 1996 | Mercedes-Benz Actros | 4×2 tractor, 40 t GCW class | ~290–390 kW | 90 km/h limiter | long-haul | off-map German import |
@@ -197,12 +213,16 @@ Body changes alter tare mass, payload, cargo compatibility, price, loading metho
 | **Neškoda 706 RTO** | 1958 | Škoda 706 RTO | ~38–41 seated; urban total ~70 | ~118 kW | ~85 km/h | city/intercity variants | domestic build / Karusa bodywork |
 | **Karusa ŠM 11** | 1965 | Karosa ŠM 11 | 24–31 seated + 59–67 standing | 132–154 kW | 65 km/h | high-capacity city bus | Vysoké Mýto |
 | **Karusa ŠL 11** | 1965 | Karosa ŠL 11 | ~45 seated + ~30–40 standing | ~132–147 kW | 70–100 km/h by version | regional bus | Vysoké Mýto |
+| **Ikarusz 280 “Harmonika”** | 1973 | Ikarus 280 | 37 seated + ~103 standing in common city configuration | 141–184 kW | ~70 km/h authoring cap | articulated high-capacity city bus | off-map Hungary import |
+| **Mercator O303** | 1974 | Mercedes-Benz O303 | ~41–55 seats by coach template | 141–235 kW early options | 100 km/h authoring cap | premium/intercity/coach; expensive but fast and comfortable | off-map Germany import |
 | **Karusa C734** | 1981 | Karosa C 734 | 45 seated + ~27–30 standing | 148–155 kW | 100 km/h | durable intercity/regional | Vysoké Mýto |
 | **Karusa B731** | 1981 | Karosa B 731 | ~31 seated, ~90 total | ~148–190 kW by batch | ~70 km/h | city bus, automatic | Vysoké Mýto |
 | **Karusa C934** | 1996 | Karosa C 934 | ~45 seated | ~180–220 kW | 100 km/h | improved regional/intercity | Vysoké Mýto |
+| **Soláris Urbino 12** | 1999 | Solaris Urbino 12 | up to ~105 total in diesel city form | 162–184 kW typical early configurations | ~80 km/h city cap | low-floor city alternative; later hybrid/electric template branches | off-map Poland import |
 | **Karusa C954** | 2002 | Karosa C 954 | 49 or 53 seated, ~88 total | 228 kW | 105 km/h | high-floor intercity | Vysoké Mýto |
 | **SORA CN12** | 2004 | SOR CN 12 | 39–45 seated + standing | 194–210 kW | 100 km/h | low-entry regional | Libchavy |
 | **Ivego Crossway 12** | 2006 | Irisbus/Iveco Crossway | ~45–55 seated | ~220–265 kW | 100 km/h | mainstream intercity | off-map / licensed assembly |
+| **MANN Lion City 12** | 2004 | MAN Lion's City lineage | up to 37 seats in modern 12 m diesel template + standing | 206–265 kW in later diesel templates | ~80 km/h city cap | premium modern city bus with diesel/HVO/hybrid branches | off-map Germany import |
 | **SORA NS12E** | 2017 | SOR NS 12 electric family | 29–35 seated + standing by configuration | 160 kW | 80 km/h | city electric | Libchavy; 242/388 kWh battery variants, charging required |
 | **Ivego Crossway LE Elec** | 2025 | Crossway LE electric | configuration-dependent, ~80 total | 290 kW rated / 310 kW max drive | 85 km/h | modern regional/city electric | off-map import; charging required |
 
@@ -252,6 +272,35 @@ A manufacturer can lose or regain a capability because of:
 A player cannot order a factory-new obsolete model merely because it is visible in the catalogue. The marketplace must show the current reason, e.g. `no current new-build capability`, while still showing real used assets, rebuild services and compatible parts/support offers.
 
 If a successor or specialist later restores a real production capability, the model may again receive new-build offers with explicit finite capacity, cost and lead time. This is a real world-state change, not an automatic "retro vehicle" toggle.
+
+### 8.1 Coverage acceptance rule
+
+The catalogue is balanced around **meaningful acquisition choices**, not a fixed number of brand-new models every calendar year.
+
+For each core operating role and broad era, content authoring should provide at least **three materially different acquisition strategies** whenever historically plausible. These may combine:
+
+1. a current/new mainstream model;
+2. a current/new specialist, premium, lighter or heavier alternative;
+3. a credible used older model, imported competitor, lease/rental option or rebuild route.
+
+Core roles checked by this rule are:
+
+- light/local rail traction;
+- heavy freight rail traction;
+- passenger/fast rail traction or self-propelled regional service;
+- ordinary general-purpose road freight;
+- heavy/specialist road freight;
+- local/city bus;
+- regional/intercity bus/coach;
+- ordinary general freight wagon;
+- bulk/heavy/specialized wagon;
+- ordinary passenger coach or equivalent multiple-unit capacity.
+
+This rule does **not** guarantee that three physical vehicles are in stock at every moment. Factory backlog, finite dealer stock, used-market supply and import logistics remain real. It guarantees that the authored historical market has several credible paths rather than one designer-selected obvious answer.
+
+If an era genuinely lacks three technically distinct new products for a niche role, preserve historical reality and use used stock/import/rebuild/operational trade-offs instead of inventing an anachronistic vehicle.
+
+A release/content audit should flag any continuous period longer than roughly one decade in which a core role has only one credible acquisition strategy despite historically available alternatives.
 
 ## 9. Acquisition, manufacture and import implementation
 
