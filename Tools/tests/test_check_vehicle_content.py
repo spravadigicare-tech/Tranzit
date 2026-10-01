@@ -135,6 +135,17 @@ class VehicleContentValidatorTests(unittest.TestCase):
             path.write_text(json.dumps(data), encoding="utf-8")
             self.assertTrue(any("capability_policy_id" in x for x in check_vehicle_content(root).errors))
 
+    def test_1900_role_minimums_enforced_for_canonical_scope(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            data["scope"] = "1900 opening vehicle families"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            errors = check_vehicle_content(root).errors
+            self.assertTrue(any("opening steam locomotives coverage" in x for x in errors))
+            self.assertTrue(any("opening road freight coverage" in x for x in errors))
+
     def test_condition_distribution_must_sum_to_one(self):
         directory, root, base = self.fixture()
         with directory:
