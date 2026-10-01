@@ -45,7 +45,8 @@
         "special_build_days": 63,
         "base_cost_index": 135,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_early"
+        "material_recipe_id": "prod_steam_locomotive_early",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "steam_mainline",
@@ -115,7 +116,8 @@
         "special_build_days": 70,
         "base_cost_index": 165,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_early"
+        "material_recipe_id": "prod_steam_locomotive_early",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "steam_mainline",
@@ -185,7 +187,8 @@
         "special_build_days": 40,
         "base_cost_index": 105,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_railcar_legacy"
+        "material_recipe_id": "prod_railcar_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "light_railcar",
@@ -253,7 +256,8 @@
         "special_build_days": 78,
         "base_cost_index": 160,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_late"
+        "material_recipe_id": "prod_steam_locomotive_late",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "steam_heavy_modern",
@@ -325,7 +329,8 @@
         "special_build_days": 30,
         "base_cost_index": 95,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_railcar_legacy"
+        "material_recipe_id": "prod_railcar_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "light_railcar",
@@ -392,7 +397,8 @@
         "special_build_days": 44,
         "base_cost_index": 125,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_railcar_legacy"
+        "material_recipe_id": "prod_railcar_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "regional_railcar",
@@ -457,7 +463,8 @@
         "special_build_days": 82,
         "base_cost_index": 175,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_late"
+        "material_recipe_id": "prod_steam_locomotive_late",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "steam_heavy_modern",
@@ -527,7 +534,8 @@
         "special_build_days": 90,
         "base_cost_index": 190,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_late"
+        "material_recipe_id": "prod_steam_locomotive_late",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "steam_heavy_modern",
@@ -600,7 +608,8 @@
         "special_build_days": 84,
         "base_cost_index": 145,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_electric_locomotive_legacy"
+        "material_recipe_id": "prod_electric_locomotive_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "electric_legacy_dc",
@@ -666,7 +675,8 @@
         "special_build_days": 62,
         "base_cost_index": 90,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_diesel_locomotive_legacy"
+        "material_recipe_id": "prod_diesel_locomotive_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "ckd_diesel_electric",
@@ -733,7 +743,8 @@
         "special_build_days": 45,
         "base_cost_index": 120,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_railcar_legacy"
+        "material_recipe_id": "prod_railcar_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "regional_railcar",
@@ -795,7 +806,8 @@
         "special_build_days": 12,
         "base_cost_index": 60,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_basic",
@@ -857,7 +869,8 @@
         "special_build_days": 14,
         "base_cost_index": 70,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_basic",
@@ -920,7 +933,8 @@
         "special_build_days": 14,
         "base_cost_index": 72,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_basic",
@@ -984,7 +998,8 @@
         "special_build_days": 22,
         "base_cost_index": 75,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "legacy_road_medium",
@@ -1051,7 +1066,8 @@
         "special_build_days": 24,
         "base_cost_index": 85,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "legacy_road_medium",
@@ -1123,7 +1139,8 @@
         "special_build_days": 30,
         "base_cost_index": 120,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "tatra_aircooled_heavy",
@@ -1196,7 +1213,8 @@
         "special_build_days": 26,
         "base_cost_index": 90,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "v3s",
@@ -1266,7 +1284,8 @@
         "special_build_days": 28,
         "base_cost_index": 100,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "liaz_legacy",
@@ -1334,7 +1353,8 @@
         "special_build_days": 30,
         "base_cost_index": 95,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "legacy_bus",
@@ -1403,7 +1423,8 @@
         "special_build_days": 32,
         "base_cost_index": 100,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "legacy_bus",
@@ -1473,7 +1494,8 @@
         "special_build_days": 24,
         "base_cost_index": 105,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "karosa_legacy",
@@ -1544,7 +1566,8 @@
         "special_build_days": 22,
         "base_cost_index": 110,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "karosa_legacy",
@@ -1615,7 +1638,8 @@
         "special_build_days": 23,
         "base_cost_index": 145,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_legacy"
+        "material_recipe_id": "prod_road_diesel_legacy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "heavy_aircooled_legacy",
