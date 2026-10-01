@@ -61,7 +61,8 @@ Quotes, discovered opportunities, draft bids and unaccepted proposals are not ac
 
 ## 3.1 Bilateral cooperation agreement builder
 
-Recurring cooperation between two companies can be proposed/amended through one structured bilateral agreement builder.
+Recurring bilateral business agreements between two companies can reuse one structured agreement-builder pattern where the underlying contract type supports it. This includes carrier cooperation and recurring supplier agreements; it does not force customer tenders, one-off purchases or unrelated legal objects into one generic contract.
+
 
 The editor is visually split into the two parties:
 
