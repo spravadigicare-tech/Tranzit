@@ -148,6 +148,8 @@ def check_repository(root: Path, *, enforce_contract: bool = True) -> Result:
         scope = content('docs/V1_SCOPE.md')
         readme = content('README.md')
         pipeline = content('docs/DATA_PIPELINE.md')
+        master_prompt = content('docs/CODEX_V1_MASTER_PROMPT.md')
+        engineering = content('docs/ENGINEERING_STANDARDS.md')
         required_sections = {'3.4', '11.0.1', '11.9', '15.11', '18.2', '32.2'}
         if not required_sections <= set(NUMBERED.findall(core)):
             errors.append('Canonical mechanics sections are missing')
@@ -176,6 +178,12 @@ def check_repository(root: Path, *, enforce_contract: bool = True) -> Result:
                 errors.append(f'V1 scope must point to canonical mechanics: {anchor}')
         if 'gregorian-month-proportional-v1' not in pipeline:
             errors.append('Missing versioned source-date conversion')
+        for phrase in ('M0 — Reproducible foundation', 'M8 — Release verification', 'Do not stop after planning'):
+            if phrase not in master_prompt:
+                errors.append(f'Persistent Codex assignment missing execution contract: {phrase}')
+        for phrase in ('Simulation state is separate from rendering', 'fixed-point integer accounting', 'Performance work order'):
+            if phrase not in engineering:
+                errors.append(f'Engineering standards missing required convention: {phrase}')
         # Ensure an omission cannot silently remove a subsystem from the ledger.
         expected = {f'SYS-{i:02d}' for i in range(1, 17)}
         for name in ('docs/V1_IMPLEMENTATION_BRIEF.md', 'docs/IMPLEMENTATION_STATUS.md'):
