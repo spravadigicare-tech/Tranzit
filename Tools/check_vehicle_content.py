@@ -138,6 +138,7 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
     production_recipe_set = set(production_recipe_ids)
 
     capability_doc = docs.get("factory_capability_policies.v1.json", {})
+    capability_states = set(capability_doc.get("states", [])) if isinstance(capability_doc, dict) else set()
     capability_policies = capability_doc.get("policies", []) if isinstance(capability_doc, dict) else []
     capability_policy_ids = [
         x.get("id")
@@ -273,8 +274,22 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
             capability_policy_id = production.get("capability_policy_id")
             if capability_policy_id not in capability_policy_set:
                 errors.append(f"{location}: unknown or missing capability_policy_id {capability_policy_id}")
+            base_cost_index = production.get("base_cost_index")
+            if not isinstance(base_cost_index, (int, float)) or base_cost_index < 0:
+                errors.append(f"{location}: production.base_cost_index must be a non-negative number")
+            capability_state = production.get("initial_capability_state")
+            if capability_state not in capability_states:
+                errors.append(f"{location}: unknown or missing initial_capability_state {capability_state}")
         else:
             errors.append(f"{location}: missing production object")
+
+        maintenance = model.get("maintenance_profile")
+        if not isinstance(maintenance, dict) or not maintenance:
+            errors.append(f"{location}: non-empty maintenance_profile required")
+
+        consumption = model.get("consumption_profile")
+        if not isinstance(consumption, dict) or not isinstance(consumption.get("type"), str):
+            errors.append(f"{location}: consumption_profile.type required")
 
         year = model.get("introduction_year")
         if not isinstance(year, int) or not (1800 <= year <= 2100):
