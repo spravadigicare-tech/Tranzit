@@ -123,4 +123,4 @@ These scenarios extend the UI evidence required by [V1_ACCEPTANCE_TESTS.md](V1_A
 |---|---|---|
 | UI-D14 | Station/terminal overview and relevant cards; a separate station-style arrivals/departures window; serving-Line list and information; embedded track/platform/stand schematic deferred | CONFIRMED on 2026-09-30 |
 
-This focused decision complements UI-D01–UI-D13 in UI_UX_DESIGN. It does not approve other unresolved screens, depot-specific UI, exact fonts/colours, optional combined-board view or a new passenger-information technology.
+This focused decision complements the global UI rules in UI_UX_DESIGN and the other confirmed focused UI specifications. It does not override depot/workshop UI, exact implementation-level visual tokens, the deferred optional combined-board choice or passenger-information technology rules owned elsewhere.
