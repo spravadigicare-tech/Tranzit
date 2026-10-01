@@ -111,53 +111,90 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
         errors.append(f"regional_market_profiles.v1.json: duplicate profile id {duplicate}")
     profile_set = set(profile_ids)
 
-    equipment_doc = docs.get("equipment_options_1900.v1.json", {})
-    groups = equipment_doc.get("groups", []) if isinstance(equipment_doc, dict) else []
-    group_ids = [x.get("id") for x in groups if isinstance(x, dict) and isinstance(x.get("id"), str)]
-    for duplicate in sorted(_duplicates(group_ids)):
-        errors.append(f"equipment_options_1900.v1.json: duplicate group id {duplicate}")
-    group_set = set(group_ids)
+    equipment_sources: list[tuple[str, dict[str, Any]]] = []
+    for name, document in docs.items():
+        if name.startswith("equipment_options_") and name.endswith(".v1.json") and isinstance(document, dict):
+            equipment_sources.append((name, document))
+    groups: list[dict[str, Any]] = []
+    group_source: dict[str, str] = {}
     option_to_group: dict[str, str] = {}
+    option_source: dict[str, str] = {}
+    group_ids: list[str] = []
     option_ids: list[str] = []
-    for group in groups:
-        if not isinstance(group, dict):
-            continue
-        group_id = group.get("id")
-        for option in group.get("options", []):
-            if not isinstance(option, dict) or not isinstance(option.get("id"), str):
+    for name, equipment_doc in sorted(equipment_sources):
+        for group in equipment_doc.get("groups", []):
+            if not isinstance(group, dict) or not isinstance(group.get("id"), str):
                 continue
-            option_id = option["id"]
-            option_ids.append(option_id)
-            if option_id in option_to_group:
-                errors.append(
-                    f"equipment_options_1900.v1.json: option {option_id} appears in both "
-                    f"{option_to_group[option_id]} and {group_id}"
-                )
+            group_id = group["id"]
+            groups.append(group)
+            group_ids.append(group_id)
+            if group_id in group_source:
+                errors.append(f"{name}: duplicate equipment group id {group_id} also defined in {group_source[group_id]}")
             else:
-                option_to_group[option_id] = str(group_id)
-    for duplicate in sorted(_duplicates(option_ids)):
-        errors.append(f"equipment_options_1900.v1.json: duplicate option id {duplicate}")
+                group_source[group_id] = name
+            for option in group.get("options", []):
+                if not isinstance(option, dict) or not isinstance(option.get("id"), str):
+                    continue
+                option_id = option["id"]
+                option_ids.append(option_id)
+                if option_id in option_to_group:
+                    errors.append(
+                        f"{name}: option {option_id} appears in both "
+                        f"{option_to_group[option_id]} and {group_id}"
+                    )
+                else:
+                    option_to_group[option_id] = group_id
+                    option_source[option_id] = name
+    group_set = set(group_ids)
     option_set = set(option_ids)
 
-    model_doc = docs.get("vehicle_models_1900.v1.json", {})
-    models = model_doc.get("models", []) if isinstance(model_doc, dict) else []
-    model_ids = [x.get("id") for x in models if isinstance(x, dict) and isinstance(x.get("id"), str)]
-    for duplicate in sorted(_duplicates(model_ids)):
-        errors.append(f"vehicle_models_1900.v1.json: duplicate model id {duplicate}")
+    model_sources: list[tuple[str, dict[str, Any]]] = []
+    models: list[dict[str, Any]] = []
+    model_source: dict[str, str] = {}
+    model_ids: list[str] = []
+    for name, document in docs.items():
+        if name.startswith("vehicle_models_") and name.endswith(".v1.json") and isinstance(document, dict):
+            model_sources.append((name, document))
+    for name, model_doc in sorted(model_sources):
+        for model in model_doc.get("models", []):
+            if not isinstance(model, dict) or not isinstance(model.get("id"), str):
+                continue
+            model_id = model["id"]
+            models.append(model)
+            model_ids.append(model_id)
+            if model_id in model_source:
+                errors.append(f"{name}: duplicate model id {model_id} also defined in {model_source[model_id]}")
+            else:
+                model_source[model_id] = name
     model_set = set(model_ids)
 
-    template_doc = docs.get("built_in_templates_1900.v1.json", {})
-    templates = template_doc.get("templates", []) if isinstance(template_doc, dict) else []
-    template_ids = [x.get("id") for x in templates if isinstance(x, dict) and isinstance(x.get("id"), str)]
-    for duplicate in sorted(_duplicates(template_ids)):
-        errors.append(f"built_in_templates_1900.v1.json: duplicate template id {duplicate}")
+    template_sources: list[tuple[str, dict[str, Any]]] = []
+    templates: list[dict[str, Any]] = []
+    template_source: dict[str, str] = {}
+    template_ids: list[str] = []
+    for name, document in docs.items():
+        if name.startswith("built_in_templates_") and name.endswith(".v1.json") and isinstance(document, dict):
+            template_sources.append((name, document))
+    for name, template_doc in sorted(template_sources):
+        for template in template_doc.get("templates", []):
+            if not isinstance(template, dict) or not isinstance(template.get("id"), str):
+                continue
+            template_id = template["id"]
+            templates.append(template)
+            template_ids.append(template_id)
+            if template_id in template_source:
+                errors.append(f"{name}: duplicate template id {template_id} also defined in {template_source[template_id]}")
+            else:
+                template_source[template_id] = name
     template_set = set(template_ids)
 
     for index, model in enumerate(models):
         if not isinstance(model, dict):
-            errors.append(f"vehicle_models_1900.v1.json.models[{index}]: expected object")
+            errors.append(f"vehicle_models_*.v1.json.models[{index}]: expected object")
             continue
-        location = f"vehicle_models_1900.v1.json:{model.get('id', index)}"
+        model_id = model.get("id")
+        source_name = model_source.get(str(model_id), "vehicle_models_*.v1.json")
+        location = f"{source_name}:{model_id if model_id is not None else index}"
         if model.get("schema_version") != 1:
             errors.append(f"{location}: schema_version must be 1")
         manufacturer_id = model.get("manufacturer_id")
@@ -213,9 +250,11 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
     template_model_counts = {model_id: 0 for model_id in model_set}
     for index, template in enumerate(templates):
         if not isinstance(template, dict):
-            errors.append(f"built_in_templates_1900.v1.json.templates[{index}]: expected object")
+            errors.append(f"built_in_templates_*.v1.json.templates[{index}]: expected object")
             continue
-        location = f"built_in_templates_1900.v1.json:{template.get('id', index)}"
+        template_id = template.get("id")
+        source_name = template_source.get(str(template_id), "built_in_templates_*.v1.json")
+        location = f"{source_name}:{template_id if template_id is not None else index}"
         model_id = template.get("model_id")
         if model_id not in model_set:
             errors.append(f"{location}: unknown model_id {model_id}")
