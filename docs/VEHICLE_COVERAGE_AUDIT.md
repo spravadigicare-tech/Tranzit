@@ -47,7 +47,7 @@ This is not a stock guarantee. Finite manufacturing, dealer inventory and used-m
 
 | Era | Light/local | General freight | Heavy/specialist | Status |
 |---|---|---|---|---|
-| 1900–1907 | H2 horse dray / Benc Lieferwagen 300 | H4 heavy horse wagon / Daimlar import | Daimlar heavier motor truck / rare Thornycroft steam | **Good for period reality** |
+| 1900–1907 | H2 horse dray / Benc Lieferwagen 300 | H4 heavy horse wagon / Daimlar import | Daimlar heavier motor truck / rare Thorncroft steam | **Good for period reality** |
 | 1908–1914 | L&K E Cargo | Daimlar imported trucks + horse competition | H4 / larger Daimlar / steam specialist | **Good** |
 | 1915–1932 | Fatra 13 late in period / older light motor | Pragov N + imports | horses remain useful; larger imported trucks | **Adequate; import market is important here** |
 | 1933–1952 | Pragov RN | Pragov N/RN + used/imports | Fatra 111 | **Good** |
