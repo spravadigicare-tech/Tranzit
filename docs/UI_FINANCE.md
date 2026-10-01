@@ -6,7 +6,7 @@ Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), particularly UI-D07 (floating wind
 
 ## 1. One finance workspace
 
-Open the same **Finance / Finance** window through **Company / Firma** or by clicking the company's cash amount in the fixed bottom bar. Reuse/focus the existing matching view rather than creating an unrelated second dashboard. Keep normal movement, resizing, pinning, minimize/restore and map access.
+Open the same **Finance / Finance** window through **Company / Firma** or by clicking the company's cash/current-period result in the **upper-left HUD** under UI-D41. Reuse/focus the existing matching view rather than creating an unrelated second dashboard. Keep normal movement, resizing, pinning, minimize/restore and map access.
 
 The overview answers three questions: **How much cash is available now? What is generating or consuming money? What will the company have to pay?** Keep a compact visible summary, explanations on hover/keyboard focus and complete breakdowns on click. Do not expose every transaction or calculation on the default screen.
 
