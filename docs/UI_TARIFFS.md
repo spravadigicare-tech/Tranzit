@@ -157,7 +157,13 @@ Do not block a negative-margin agreement merely because it is commercially unatt
 
 A negative rate margin can still be rational because of network attractiveness, feeder traffic or strategic expansion. AI partner offers can reflect relationship/reputation, competitive tension, expected volume and strategic interest without exposing a deep negotiation simulator.
 
-This does **not** yet create a shared multi-company weekly/monthly network pass or a multi-operator tariff-governance system. Those broader products remain the separate V1-boundary decision tracked in TODO.
+For first-playable V1 this mechanism is deliberately limited to **single-journey through tickets**. It does **not** create a shared multi-company weekly/monthly network pass or a jointly governed multi-operator tariff system. Company/integrated-system period products remain owned by one carrier; a held seller pass can cover an eligible seller-operated leg but does not cover the partner-operated leg.
+
+A through-ticket sale has one retailing carrier and one partner carrier in V1. The itinerary must include at least one seller-operated leg plus at least one covered partner Line; the player cannot use a positive resale margin to run a pure ticket-broker business for partner-only journeys. Partner capacity cannot be recursively resold through another carrier's agreements.
+
+In the ticket quote/detail show the passenger-facing breakdown by operator/segment, applied tariff/product, class/supplement and total. In the player's commercial detail additionally show the captured partner rate, tariff distance, settlement and resulting margin. Later changes to tariffs or the bilateral agreement do not rewrite those stored values for an already sold ticket.
+
+The capacity-sales agreement alone does not promise a protected transfer. Label a multi-operator itinerary as **Unprotected transfer** unless separate connection/recovery rights actually protect it; do not imply timetable holds or automatic partner rebooking from capacity resale alone. Reservation-required partner legs can be sold only after a real compatible reservation is confirmed through an available period-appropriate partner sales/booking channel.
 
 ## 8. Consistency rules
 
