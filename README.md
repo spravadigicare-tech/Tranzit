@@ -26,6 +26,7 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 |---|---|
 | [V1 Scope](docs/V1_SCOPE.md) | Approved release subset, time/distance rules, enduring vehicles and shipment splitting |
 | [Implementation Brief](docs/V1_IMPLEMENTATION_BRIEF.md) | Architecture, subsystem coverage, M0–M8 work order, UI/art and delivery requirements |
+| [Art Direction](docs/ART_DIRECTION.md) | Confirmed atmospheric simple-realism/model-world direction: camera/scale, asset detail budget, organic Central-European city fabric, lighting, weather, seasons, vegetation, props and visible life |
 | [UI/UX Design](docs/UI_UX_DESIGN.md) | Global minimalism/tooltips/consistency, confirmed window/HUD/navigation/pause/link rules, vehicle overview and card-based Line workspace; decision register and remaining implementation-level visual/layout details |
 | [Station and Terminal UI](docs/UI_STATIONS.md) | Confirmed UI-D14: station overview, separate arrivals/departures board, serving-Line information; embedded station schematic deferred |
 | [Depot, Garage and Workshop UI](docs/UI_DEPOTS.md) | Confirmed UI-D16: operational overview, on-site/expected/linked vehicles, task cards and supported Lines; ownership-aware service management without mandatory micromanagement |
