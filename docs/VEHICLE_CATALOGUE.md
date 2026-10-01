@@ -399,6 +399,10 @@ A distant source can be commercially unattractive without being artificially for
 
 The external transport leg is paid by the buyer unless the purchase contract explicitly includes delivery. The seller may arrange transport, but it still uses real finite carrier capacity and real travel time. No off-map manufacturer gets a free hidden delivery shortcut.
 
+Off-map availability is also subject to the shared historical-trade state in GAME_DESIGN Section 35.1. A distant manufacturer can remain known/searchable while a current war, border closure, trade restriction, payment constraint or broken transport corridor prevents a new order from being fulfilled. The UI shows that current reason instead of deleting the model from the catalogue.
+
+The same rule applies to genuine spare parts and factory/specialist support. A vehicle already owned by the player remains owned and operable while technically serviceable, but disrupted trade can increase support lead time/cost or force use of local substitute parts and independent workshops where a real compatible capability exists.
+
 ### 9.2.1 Target-market adaptation and certification
 
 Technical adaptation for the destination market is normally the **supplier's responsibility**, not a separate player workshop project before delivery.
