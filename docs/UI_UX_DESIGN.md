@@ -177,7 +177,7 @@ Examples are presentation patterns, not a locked icon asset:
 
 Apply the icon consistently in places such as:
 
-- bottom-bar cash;
+- upper-left HUD cash;
 - price and fee fields;
 - offer/order summaries;
 - finance cards/tables;
@@ -308,7 +308,7 @@ Do not invent completion estimates or offer impossible recovery. Fueling remains
 
 UI-D27's complete bilateral agreement list remains directly accessible. Offers lead to their existing fleet, maintenance, construction, procurement, commercial or External Transport Order workflows. Public services, observations, contractual/commercial knowledge and estimates retain their source, date and permission boundaries. Old sightings are not current fleet totals or live tracking, and linked competitor details cannot reveal private duties, bids, accounts or unrelated agreements.
 
-Known ownership, distributions and company history are inspectable, including retained identity after acquisition or dissolution. UI-D37 does not decide acquisition transaction mechanics, create control rights from a minority holding, or finalize the separate world-news workflow. Those remain tracked in [TODO.md](TODO.md).
+Known ownership, distributions and company history are inspectable, including retained identity after acquisition or dissolution. UI-D37 itself does not create control rights from a minority holding or duplicate acquisition/news workflows: confirmed UI-D39 owns ownership/acquisition/group-control actions, while confirmed UI-D40 owns World News/history.
 
 ## 6. Planning and Line-management workflows
 
@@ -584,7 +584,7 @@ These checks describe required evidence for the confirmed directions, not comple
 |---|---|---|
 | UI-A01 | UI-D01, contemporary dark interface | Actual in-game management/detail windows use the agreed dark direction over the model world; no substituted light/parchment primary theme or claim that a generated mockup is in-engine evidence |
 | UI-A02 | UI-D02, movable floating windows | Open representative management and object-detail panels and move them to another usable part of the screen; no mandatory fixed-right inspector; moving a window changes no gameplay position/state |
-| UI-A03 | UI-D06 and top-level UI-D05, fixed bottom bar | Reach the accepted navigation groups, construction, cash, date/time, pause, speed and incident access from the bottom bar; opening windows or construction tools does not remove those controls; verify CZ/EN and enlarged UI without material clipping |
+| UI-A03 | UI-D06/UI-D41, final HUD and bottom bar | Reach company/finance in the upper-left HUD, Search/Layers in the upper-right, and Build + grouped navigation + Events/date/time/pause/speed in the bottom bar; opening windows or construction tools does not remove the applicable persistent controls; verify CZ/EN and enlarged UI without material clipping |
 | UI-A04 | UI-D07, selection reuse and content pinning | Select A then B and verify reuse of the unpinned detail; pin B and select C, verifying B stays live and unchanged in identity while C uses another reusable inspector; open a separate detail explicitly without duplicate simulation objects or silently discarded dirty edits |
 | UI-A05 | UI-D07, workspace controls and recovery | Move/resize multiple related views, minimize and restore a draft, change resolution/UI scale and reset the layout; titles, essential controls and the bar remain reachable; restoring geometry changes no game state; do not require optional snap/maximize controls as release gates |
 | UI-A06 | UI-D07 and existing command safety, multiple-view input | Clicking, scrolling or dragging inside a window does not select/place/pan the world beneath it; repeated submissions through different windows cannot double-book or double-charge; stale/deleted object references cannot issue valid new commitments |
