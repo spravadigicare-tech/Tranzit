@@ -104,7 +104,11 @@ For the baseline textile chain, use one aggregated input commodity **textile raw
 
 The textile/consumer-goods chain must support **historical recipe evolution**. Later-era recipes may add newly relevant inputs such as dyes, industrial chemicals, synthetic fibres or other historically appropriate materials. These later inputs are introduced through dated content/technology availability, not by player level, and should create new transport flows rather than silently changing output for free.
 
-Keep **crude oil**, **natural gas**, and **refined fuels** as separate commodity families. Crude oil and natural gas are primary/extractive inputs tied to suitable deposits/regions; refined fuels are downstream products created by processing crude oil. Their regional importance and demand evolve historically rather than appearing at full modern scale in 1900. Natural gas must not be collapsed into crude oil or refined fuel merely because all belong to the energy/chemical economy. Water and traction feed/consumables may be additional supplies.
+Keep **crude oil**, **raw natural gas**, **processed/distribution gas**, and **refined fuels** as separate economic products. Crude oil and raw natural gas are primary/extractive inputs tied to suitable deposits/regions. Refined fuels are downstream products of crude-oil processing. Raw natural gas must be treated/processed before it becomes distribution-quality gas for city/industrial consumption.
+
+The gas economy evolves historically. Around the 1900 start, cities can also obtain **town/distribution gas from coal-based gasworks** where regionally appropriate; later, processed natural gas can increasingly replace that production route. This allows one downstream city/industrial gas demand to be supplied by different historically plausible production technologies over time.
+
+Distribution gas is primarily a utility-network product rather than ordinary wagon/truck freight. Do not require generic rail/road vehicles to transport pipeline gas. If LPG or another transportable gas-derived liquid is added later, model it as a separate cargo definition with its own handling rules. Water and traction feed/consumables may be additional supplies.
 
 Do not split consumer goods down to individual retail SKUs. The purpose of the extra food categories is to create distinct production, perishability/handling and transport decisions, not to simulate every product sold by a shop.
 
