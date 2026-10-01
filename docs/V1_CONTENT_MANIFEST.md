@@ -209,7 +209,7 @@ These are **gameplay seed defaults**, not claims about the exact historical outp
 | Meat processor | 15 | 45 | 110 | t/week meat |
 | Dairy-producing aggregate | 20 | 60 | 140 | t/week dairy products |
 | Produce-growing aggregate | 30 | 90 | 200 | t/week fruit/vegetables |
-| Textile-raw-material aggregate | 25 | 75 | 180 | t/week |
+| Textile-raw-material aggregate | 30 | 90 | 210 | t/week |
 | Textile mill | 25 | 75 | 180 | t/week textiles/fabric |
 | Clothing works | 10 | 35 | 90 | t/week clothing/garments |
 | Brickworks | 100 | 300 | 700 | t/week |
@@ -254,6 +254,18 @@ Coefficients are physical input tonnes required for **1.00 t of player-facing ou
 | Consumer goods | 0.35 t processed wood + 0.25 t textiles/fabric + 0.35 t metal products + 0.15 t paper products |
 
 Coal-gas works, electricity generation and other utility conversions use explicit energy/utility coefficients in their facility definitions because the downstream product is not ordinary freight mass. Construction projects keep their own bill of materials by project type/era rather than using one generic tonnes-in/tonnes-out factory recipe.
+
+For initial 1900 construction balancing, scale each real project from its geometry/size/civil-work estimate, then distribute the resulting physical material requirement with an authored project-family mix. The values below are reference mixes per **100 t of represented physical construction material**; they are not a universal 100 t project size and may be overridden for a concrete bridge, tunnel, building or corridor when its design requires it.
+
+| 1900 project family | Stone/gravel | Bricks | Cement | Processed wood | Iron/steel/metal products | Glass | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Ordinary urban/office building | 10 t | 30 t | 15 t | 20 t | 15 t | 10 t | 100 t |
+| Freight/passenger terminal or depot building | 20 t | 20 t | 20 t | 15 t | 20 t | 5 t | 100 t |
+| Ordinary road/access works | 55 t | 10 t | 20 t | 5 t | 10 t | 0 t | 100 t |
+| Ordinary rail formation/track/station civil package | 50 t | 5 t | 10 t | 10 t | 25 t | 0 t | 100 t |
+| Bridge/tunnel/heavy civil package | 35 t | 10 t | 30 t | 5 t | 20 t | 0 t | 100 t |
+
+The mix defines commodity composition only. Track length, building footprint, earthworks, bridge span, tunnel length and authored engineering difficulty determine the actual project quantity. Do not charge a 100 t flat package for every project, and do not let the percentages bypass physical staged deliveries.
 
 #### Initial inventory and world-seed rules
 
