@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "scope": "1990-2026 built-in vehicle templates",
+  "templates": [
+    {
+      "id": "studena_471_suburban",
+      "model_id": "studena_471_mamut_1997",
+      "name": "Suburban",
+      "equipment_option_ids": [
+        "regional_economy_1997",
+        "comfort_hvac_1997"
+      ]
+    },
+    {
+      "id": "studena_471_mixed",
+      "model_id": "studena_471_mamut_1997",
+      "name": "Economy + Business",
+      "equipment_option_ids": [
+        "regional_mixed_1997",
+        "comfort_hvac_1997"
+      ]
+    },
+    {
+      "id": "simens_er20_czsk",
+      "model_id": "simens_er20_eurobezek_2002",
+      "name": "CZ/SK",
+      "equipment_option_ids": [
+        "country_cz_sk_2000"
+      ]
+    },
+    {
+      "id": "alstrom_680_international",
+      "model_id": "alstrom_680_naklanec_2003",
+      "name": "International",
+      "equipment_option_ids": [
+        "country_cz_sk_2000",
+        "country_de_at_2000",
+        "comfort_hvac_1997",
+        "comfort_power_2005"
+      ]
+    },
+    {
+      "id": "bombardir_trax_ms_central",
+      "model_id": "bombardir_trax_ms_2006",
+      "name": "Central Europe",
+      "equipment_option_ids": [
+        "country_cz_sk_2000",
+        "country_de_at_2000"
+      ]
+    },
+    {
+      "id": "neskoda_109x_international",
+      "model_id": "neskoda_109x_zatopek_2008",
+      "name": "International",
+      "equipment_option_ids": [
+        "country_cz_sk_2000",
+        "country_de_at_2000",
+        "country_pl_2000",
+        "etcs_package_2005"
+      ]
+    },
+    {
+      "id": "simens_vekton_ms_international",
+      "model_id": "simens_vekton_ms_2010",
+      "name": "International",
+      "equipment_option_ids": [
+        "country_cz_sk_2000",
+        "country_de_at_2000",
+        "country_pl_2000",
+        "etcs_package_2005"
+      ]
+    },
+    {
+      "id": "peska_844_regional",
+      "model_id": "peska_844_regiorys_2011",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "regional_mixed_1997",
+        "comfort_hvac_1997",
+        "comfort_power_2005"
+      ]
+    },
+    {
+      "id": "neskoda_640_regional",
+      "model_id": "neskoda_640_panter_2012",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "regional_mixed_1997",
+        "comfort_hvac_1997",
+        "comfort_power_2005",
+        "comfort_wifi_2010"
+      ]
+    },
+    {
+      "id": "czloka_effishunter1000_czsk",
+      "model_id": "czloka_effishunter1000_2017",
+      "name": "CZ/SK",
+      "equipment_option_ids": [
+        "country_cz_sk_2000",
+        "etcs_package_2005"
+      ]
+    },
+    {
+      "id": "peska_847_regional",
+      "model_id": "peska_847_regiolisska_2023",
+      "name": "Regional Flex",
+      "equipment_option_ids": [
+        "regional_flex_2005",
+        "comfort_hvac_1997",
+        "comfort_power_2005",
+        "comfort_wifi_2010"
+      ]
+    },
+    {
+      "id": "neskoda_comfort9_international",
+      "model_id": "neskoda_comfort9_2025",
+      "name": "International",
+      "equipment_option_ids": [
+        "comfortjet_dining_2025",
+        "comfortjet_accessibility_2025",
+        "comfortjet_connectivity_2025"
+      ]
+    },
+    {
+      "id": "s70_intermodal_container",
+      "model_id": "s70_intermodal_1995",
+      "name": "Container / swap body",
+      "equipment_option_ids": [
+        "intermodal_container_1995",
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "s70_intermodal_semitrailer",
+      "model_id": "s70_intermodal_1995",
+      "name": "Semi-trailer",
+      "equipment_option_ids": [
+        "intermodal_semitrailer_2000",
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "f68_megahopper_standard",
+      "model_id": "f68_megahopper_2000",
+      "name": "Bulk",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "mercator_actros_day",
+      "model_id": "mercator_actros1_1996",
+      "name": "Day cab",
+      "equipment_option_ids": [
+        "truck_daycab_1996"
+      ]
+    },
+    {
+      "id": "mercator_actros_longhaul",
+      "model_id": "mercator_actros1_1996",
+      "name": "Long-haul",
+      "equipment_option_ids": [
+        "truck_longhaul_1996"
+      ]
+    },
+    {
+      "id": "mann_tgx_longhaul",
+      "model_id": "mann_tgx_2007",
+      "name": "Long-haul",
+      "equipment_option_ids": [
+        "truck_longhaul_1996"
+      ]
+    },
+    {
+      "id": "fatra_fenix_6x6",
+      "model_id": "fatra_fenix_2011",
+      "name": "6x6",
+      "equipment_option_ids": [
+        "fenix_6x6_2011"
+      ]
+    },
+    {
+      "id": "fatra_fenix_8x8",
+      "model_id": "fatra_fenix_2011",
+      "name": "8x8",
+      "equipment_option_ids": [
+        "fenix_8x8_2011"
+      ]
+    },
+    {
+      "id": "mann_tge_van",
+      "model_id": "mann_tge_cargo_2017",
+      "name": "Panel van",
+      "equipment_option_ids": [
+        "tge_van_2017"
+      ]
+    },
+    {
+      "id": "mann_tge_box",
+      "model_id": "mann_tge_cargo_2017",
+      "name": "Box",
+      "equipment_option_ids": [
+        "tge_chassis_box_2017"
+      ]
+    },
+    {
+      "id": "mercator_eactros600_longhaul",
+      "model_id": "mercator_eactros600_2024",
+      "name": "Long-haul 600",
+      "equipment_option_ids": [
+        "eactros_600_2024",
+        "truck_longhaul_neo_2012"
+      ]
+    },
+    {
+      "id": "karusa_c934_regional",
+      "model_id": "karusa_c934_1996",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "bus_regional_1996"
+      ]
+    },
+    {
+      "id": "solaris_urbino12_city",
+      "model_id": "solaris_urbino12_1999",
+      "name": "City",
+      "equipment_option_ids": [
+        "bus_city_dense_1996",
+        "bus_hvac_1999"
+      ]
+    },
+    {
+      "id": "karusa_c954_regional",
+      "model_id": "karusa_c954_2002",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "bus_regional_1996",
+        "bus_hvac_1999"
+      ]
+    },
+    {
+      "id": "mann_lioncity12_city",
+      "model_id": "mann_lioncity12_2004",
+      "name": "City",
+      "equipment_option_ids": [
+        "bus_city_dense_1996",
+        "bus_hvac_1999",
+        "bus_low_entry_flex_2004"
+      ]
+    },
+    {
+      "id": "sora_cn12_regional",
+      "model_id": "sora_cn12_2004",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "bus_regional_1996",
+        "bus_hvac_1999",
+        "bus_low_entry_flex_2004"
+      ]
+    },
+    {
+      "id": "ivego_crossway12_regional",
+      "model_id": "ivego_crossway12_2006",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "bus_regional_1996",
+        "bus_hvac_1999",
+        "bus_low_entry_flex_2004"
+      ]
+    },
+    {
+      "id": "ivego_crossway12_coach",
+      "model_id": "ivego_crossway12_2006",
+      "name": "Coach",
+      "equipment_option_ids": [
+        "bus_coach_1996",
+        "bus_hvac_1999"
+      ]
+    },
+    {
+      "id": "sora_ns12e_city",
+      "model_id": "sora_ns12e_2017",
+      "name": "City Electric",
+      "equipment_option_ids": [
+        "bus_city_dense_1996",
+        "bus_hvac_1999",
+        "bus_low_entry_flex_2004",
+        "bus_ev_standard_2017"
+      ]
+    },
+    {
+      "id": "sora_ns12e_extended",
+      "model_id": "sora_ns12e_2017",
+      "name": "City Electric Extended",
+      "equipment_option_ids": [
+        "bus_city_dense_1996",
+        "bus_hvac_1999",
+        "bus_low_entry_flex_2004",
+        "bus_ev_extended_2019"
+      ]
+    },
+    {
+      "id": "ivego_crossway_le_elec_regional",
+      "model_id": "ivego_crossway_le_elec_2025",
+      "name": "Regional Electric",
+      "equipment_option_ids": [
+        "bus_regional_1996",
+        "bus_hvac_1999",
+        "bus_low_entry_flex_2004",
+        "bus_ev_extended_2019"
+      ]
+    }
+  ]
+}
