@@ -54,7 +54,8 @@
         "special_build_days": 42,
         "base_cost_index": 80,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_early"
+        "material_recipe_id": "prod_steam_locomotive_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "steam_light",
@@ -130,7 +131,8 @@
         "special_build_days": 48,
         "base_cost_index": 90,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_early"
+        "material_recipe_id": "prod_steam_locomotive_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "steam_light",
@@ -207,7 +209,8 @@
         "special_build_days": 63,
         "base_cost_index": 115,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_steam_locomotive_early"
+        "material_recipe_id": "prod_steam_locomotive_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "steam_mainline",
@@ -280,7 +283,8 @@
         "special_build_days": null,
         "base_cost_index": 130,
         "initial_capability_state": "used_market_only",
-        "material_recipe_id": "prod_steam_locomotive_early"
+        "material_recipe_id": "prod_steam_locomotive_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "steam_mainline",
@@ -351,7 +355,8 @@
         "special_build_days": 12,
         "base_cost_index": 40,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_basic",
@@ -416,7 +421,8 @@
         "special_build_days": 13,
         "base_cost_index": 45,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_basic",
@@ -483,7 +489,8 @@
         "special_build_days": 12,
         "base_cost_index": 45,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_basic",
@@ -548,7 +555,8 @@
         "special_build_days": 16,
         "base_cost_index": 70,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_basic"
+        "material_recipe_id": "prod_freight_wagon_basic",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_special",
@@ -617,7 +625,8 @@
         "special_build_days": 18,
         "base_cost_index": 80,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_special"
+        "material_recipe_id": "prod_freight_wagon_special",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_special",
@@ -685,7 +694,8 @@
         "special_build_days": 20,
         "base_cost_index": 90,
         "initial_capability_state": "low_rate_special_order",
-        "material_recipe_id": "prod_freight_wagon_special"
+        "material_recipe_id": "prod_freight_wagon_special",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_special",
@@ -753,7 +763,8 @@
         "special_build_days": 18,
         "base_cost_index": 70,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_passenger_coach_early"
+        "material_recipe_id": "prod_passenger_coach_early",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "coach_wood_legacy",
@@ -825,7 +836,8 @@
         "special_build_days": 28,
         "base_cost_index": 100,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_passenger_coach_early"
+        "material_recipe_id": "prod_passenger_coach_early",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "coach_wood_legacy",
@@ -900,7 +912,8 @@
         "special_build_days": 35,
         "base_cost_index": 145,
         "initial_capability_state": "low_rate_special_order",
-        "material_recipe_id": "prod_passenger_coach_early"
+        "material_recipe_id": "prod_passenger_coach_early",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "coach_wood_legacy",
@@ -977,7 +990,8 @@
         "special_build_days": 20,
         "base_cost_index": 80,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_passenger_coach_early"
+        "material_recipe_id": "prod_passenger_coach_early",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "coach_wood_legacy",
@@ -1044,7 +1058,8 @@
         "special_build_days": 10,
         "base_cost_index": 45,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_horse_vehicle"
+        "material_recipe_id": "prod_horse_vehicle",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "horse_vehicle",
@@ -1113,7 +1128,8 @@
         "special_build_days": 14,
         "base_cost_index": 60,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_horse_vehicle"
+        "material_recipe_id": "prod_horse_vehicle",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "horse_vehicle",
@@ -1182,7 +1198,8 @@
         "special_build_days": 28,
         "base_cost_index": 145,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_motor_early"
+        "material_recipe_id": "prod_road_motor_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "early_petrol",
@@ -1252,7 +1269,8 @@
         "special_build_days": 38,
         "base_cost_index": 160,
         "initial_capability_state": "low_rate_special_order",
-        "material_recipe_id": "prod_road_motor_early"
+        "material_recipe_id": "prod_road_motor_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "early_steam_road",
@@ -1321,7 +1339,8 @@
         "special_build_days": 14,
         "base_cost_index": 50,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_horse_vehicle"
+        "material_recipe_id": "prod_horse_vehicle",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "horse_vehicle",
@@ -1391,7 +1410,8 @@
         "special_build_days": null,
         "base_cost_index": 150,
         "initial_capability_state": "used_market_only",
-        "material_recipe_id": "prod_road_motor_early"
+        "material_recipe_id": "prod_road_motor_early",
+        "capability_policy_id": "cap_pioneer_short_series"
       },
       "maintenance_profile": {
         "family": "early_petrol",
