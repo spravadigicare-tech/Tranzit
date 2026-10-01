@@ -1,0 +1,490 @@
+{
+  "schema_version": "1.0.0",
+  "manufacturers": [
+    {
+      "id": "cms_praha",
+      "name_key": "manufacturer.cms_praha",
+      "real_inspiration": "Böhmisch-Mährische Maschinenfabrik / ČKD lineage",
+      "home_market_tags": [
+        "bohemia",
+        "moravia"
+      ],
+      "notes": "Active-map rail manufacturer lineage."
+    },
+    {
+      "id": "benc_cie",
+      "name_key": "manufacturer.benc_cie",
+      "real_inspiration": "Benz & Cie.",
+      "home_market_tags": [
+        "germany"
+      ],
+      "notes": "Off-map German early motor manufacturer."
+    },
+    {
+      "id": "daimlar_motoren",
+      "name_key": "manufacturer.daimlar_motoren",
+      "real_inspiration": "Daimler-Motoren-Gesellschaft",
+      "home_market_tags": [
+        "germany"
+      ],
+      "notes": "Off-map German early motor manufacturer."
+    },
+    {
+      "id": "local_coachbuilders",
+      "name_key": "manufacturer.local_coachbuilders",
+      "real_inspiration": "Local coachbuilders and wagon makers",
+      "home_market_tags": [
+        "local"
+      ],
+      "notes": "Abstracted local supplier class for horse-drawn road vehicles."
+    }
+  ],
+  "factories": [
+    {
+      "id": "factory_cms_praha_rail",
+      "manufacturer_id": "cms_praha",
+      "location_mode": "active_map",
+      "location_key": "praha",
+      "capabilities": [
+        {
+          "model_family_id": "rail_cms_97_mravenec",
+          "from": "1878-01-01",
+          "to": "1911-12-14",
+          "state": "series",
+          "base_work_units": 80,
+          "batch_efficiency": 0.82,
+          "notes": "Representative local-steam build capacity."
+        },
+        {
+          "model_family_id": "rail_cms_99_lokalka",
+          "from": "1897-01-01",
+          "to": "1907-12-14",
+          "state": "series",
+          "base_work_units": 95,
+          "batch_efficiency": 0.8,
+          "notes": "BMMF was one of the historical builders."
+        }
+      ]
+    },
+    {
+      "id": "factory_benc_mannheim",
+      "manufacturer_id": "benc_cie",
+      "location_mode": "off_map",
+      "location_key": "mannheim_germany",
+      "capabilities": [
+        {
+          "model_family_id": "road_benc_lieferwagen_300",
+          "from": "1896-01-01",
+          "to": "1902-12-14",
+          "state": "series",
+          "base_work_units": 18,
+          "batch_efficiency": 0.68,
+          "notes": "Representative early light-commercial production."
+        },
+        {
+          "model_family_id": "bus_benc_omnibus_1895",
+          "from": "1895-01-01",
+          "to": "1896-12-14",
+          "state": "low_rate",
+          "base_work_units": 24,
+          "batch_efficiency": 0.55,
+          "notes": "Pioneering omnibus; rare by 1900."
+        }
+      ]
+    },
+    {
+      "id": "factory_daimlar_cannstatt",
+      "manufacturer_id": "daimlar_motoren",
+      "location_mode": "off_map",
+      "location_key": "cannstatt_germany",
+      "capabilities": [
+        {
+          "model_family_id": "road_daimlar_lastwagen_1896",
+          "from": "1896-01-01",
+          "to": "1900-12-14",
+          "state": "low_rate",
+          "base_work_units": 28,
+          "batch_efficiency": 0.6,
+          "notes": "Representative pioneering motor-truck production."
+        }
+      ]
+    }
+  ],
+  "support_families": [
+    {
+      "id": "rail_steam_light_pre1918",
+      "mode": "rail",
+      "required_capabilities": [
+        "steam_boiler_light",
+        "mechanical_rods",
+        "wheelset_basic"
+      ],
+      "notes": "Small/local steam locomotive support."
+    },
+    {
+      "id": "road_petrol_pioneer_pre1914",
+      "mode": "road",
+      "required_capabilities": [
+        "early_petrol_engine",
+        "chain_or_primitive_drive",
+        "coachbuilt_body"
+      ],
+      "notes": "Pioneering petrol commercial vehicles."
+    },
+    {
+      "id": "road_horse_operation",
+      "mode": "horse",
+      "required_capabilities": [
+        "wagon_wheelwork",
+        "harness_service",
+        "stable_support"
+      ],
+      "notes": "Aggregate horse-road operation."
+    }
+  ],
+  "model_families": [
+    {
+      "id": "rail_cms_97_mravenec",
+      "manufacturer_id": "cms_praha",
+      "display_name_key": "vehicle.rail.cms97.name",
+      "real_prototype_reference": "kkStB 97 / later ČSD 310.0",
+      "introduction_date": "1878-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "steam",
+        "yard",
+        "local",
+        "mixed",
+        "light"
+      ],
+      "support_family_id": "rail_steam_light_pre1918",
+      "platform": {
+        "empty_mass_t": 22.1,
+        "service_mass_t": 29,
+        "length_m": 7.927,
+        "width_m": null,
+        "height_m": 4.034,
+        "axle_count": 3,
+        "axle_load_t": 9.7,
+        "structural_max_speed_kph": 40,
+        "minimum_curve_m": 90,
+        "gauge_mm": 1435,
+        "fixed_body_family": "steam_tank_0_6_0"
+      },
+      "performance": {
+        "power_kw": 230,
+        "starting_tractive_effort_kn": 45,
+        "fuel_or_energy": "coal",
+        "energy_systems": [
+          "steam_coal_water"
+        ],
+        "consumption_model_id": "steam_light_compound_simple"
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "bohemia",
+          "from": "1878-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "moravia",
+          "from": "1878-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "austria",
+          "from": "1878-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [
+        "simple_mechanical_design",
+        "mature_mass_produced_family"
+      ],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_cms_97_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [
+            "brake_package",
+            "lamp_package",
+            "cab_weather_package"
+          ],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": "Representative 1900 configuration."
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": [
+        "https://en.wikipedia.org/wiki/KkStB_97"
+      ]
+    },
+    {
+      "id": "rail_cms_99_lokalka",
+      "manufacturer_id": "cms_praha",
+      "display_name_key": "vehicle.rail.cms99.name",
+      "real_prototype_reference": "kkStB 99 / later ČSD 320.0",
+      "introduction_date": "1897-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "steam",
+        "local",
+        "mixed",
+        "branch"
+      ],
+      "support_family_id": "rail_steam_light_pre1918",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 39.3,
+        "length_m": 8.866,
+        "width_m": null,
+        "height_m": 4.4,
+        "axle_count": 4,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 50,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "steam_tank_1_6_0"
+      },
+      "performance": {
+        "power_kw": 294,
+        "starting_tractive_effort_kn": 70,
+        "fuel_or_energy": "coal",
+        "energy_systems": [
+          "steam_coal_water"
+        ],
+        "consumption_model_id": "steam_local_compound"
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "bohemia",
+          "from": "1897-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "moravia",
+          "from": "1897-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "austria",
+          "from": "1897-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [
+        "compound_steam_complexity",
+        "branch_line_friendly"
+      ],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_cms_99_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [
+            "brake_package",
+            "lamp_package",
+            "cab_weather_package"
+          ],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": "Representative 1900 configuration."
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": [
+        "https://en.wikipedia.org/wiki/KkStB_99"
+      ]
+    },
+    {
+      "id": "road_benc_lieferwagen_300",
+      "manufacturer_id": "benc_cie",
+      "display_name_key": "vehicle.road.benc_lieferwagen_300.name",
+      "real_prototype_reference": "Benz Lieferungswagen / Combinations-Lieferungswagen",
+      "introduction_date": "1896-01-01",
+      "mode": "road",
+      "role_tags": [
+        "petrol",
+        "light_freight",
+        "urban",
+        "pioneer"
+      ],
+      "support_family_id": "road_petrol_pioneer_pre1914",
+      "platform": {
+        "empty_mass_t": 0.7,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 20,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "early_delivery_van"
+      },
+      "performance": {
+        "power_kw": 4.4,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "petrol",
+        "energy_systems": [
+          "petrol"
+        ],
+        "consumption_model_id": "road_petrol_pioneer_light"
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1896-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "bohemia",
+          "from": "1896-01-01",
+          "to": null,
+          "relationship": "rare_export"
+        }
+      ],
+      "failure_characteristics": [
+        "pioneer_technology",
+        "specialist_support_required"
+      ],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_benc_lieferwagen_box",
+          "capacity": {
+            "payload_t": 0.3,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [
+            "body_cargo_fitout",
+            "lamp_package"
+          ],
+          "default_templates": [
+            "cargo_standard"
+          ],
+          "notes": "Fixed delivery-van body."
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": [
+        "https://media.mercedes-benz.com/article/f389440e-7b05-4182-b012-48e616269f83"
+      ]
+    },
+    {
+      "id": "bus_benc_omnibus_1895",
+      "manufacturer_id": "benc_cie",
+      "display_name_key": "vehicle.bus.benc_omnibus_1895.name",
+      "real_prototype_reference": "Benz Omnibus 1895",
+      "introduction_date": "1895-01-01",
+      "mode": "road",
+      "role_tags": [
+        "petrol",
+        "passenger",
+        "local",
+        "pioneer"
+      ],
+      "support_family_id": "road_petrol_pioneer_pre1914",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 15,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "early_omnibus"
+      },
+      "performance": {
+        "power_kw": 3.7,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "petrol",
+        "energy_systems": [
+          "petrol"
+        ],
+        "consumption_model_id": "road_petrol_pioneer_bus"
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1895-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "bohemia",
+          "from": "1895-01-01",
+          "to": null,
+          "relationship": "rare_export"
+        }
+      ],
+      "failure_characteristics": [
+        "pioneer_technology",
+        "poor_road_sensitivity"
+      ],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_benc_omnibus_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 8,
+            "standing": 0,
+            "berths": null
+          },
+          "supported_equipment_groups": [
+            "weather_protection",
+            "lamp_package"
+          ],
+          "default_templates": [
+            "local_standard"
+          ],
+          "notes": "Eight-seat pioneering omnibus."
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": [
+        "https://media.mercedes-benz.com/article/552e51f0-5228-4273-85de-bbff095f194d"
+      ]
+    }
+  ]
+}
