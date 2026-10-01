@@ -56,7 +56,7 @@ No unresolved product decision is currently recorded here.
 
 ### Implementation handoff
 
-- [ ] **[IMPL] Reinspect the current repository/toolchain and begin M0** according to [OPENCODE_START.md](OPENCODE_START.md) and [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md).
+- [ ] **[IMPL] Execute the persistent V1 assignment from [CODEX_V1_MASTER_PROMPT.md](CODEX_V1_MASTER_PROMPT.md)** — reinspect the repository/toolchain and begin/continue M0–M8 autonomously under [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md), using [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md) and acceptance evidence as the release contract.
 - [ ] **[IMPL] Maintain [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)** as code/tests/evidence appear; do not infer implementation from the completed design backlog.
 - [ ] **[TEST] Execute acceptance/build evidence progressively** rather than waiting until the end; formal release gates remain in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md). UI-D37's EXTCO-A01–EXTCO-A16 are evidence requirements, not executed gameplay tests.
 
