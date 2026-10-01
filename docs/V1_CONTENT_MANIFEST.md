@@ -44,7 +44,7 @@ The initial economy needs stocked inventories, qualified labour, supply sellers 
 
 ## 3. Initial vehicle catalogue
 
-The researched base-game roster, fictional manufacturer lineages, representative specifications, era coverage and physical manufacture/import plan are maintained in [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md). That catalogue is an authored content specification, not implementation evidence; a vehicle counts as delivered only under the completeness rules in this manifest.
+The researched base-game roster, fictional manufacturer lineages, representative specifications, era coverage and physical manufacture/import plan are maintained in [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md), with balancing/data conventions in [VEHICLE_AUTHORING_DEFAULTS.md](VEHICLE_AUTHORING_DEFAULTS.md) and broad-era coverage checks in [VEHICLE_COVERAGE_AUDIT.md](VEHICLE_COVERAGE_AUDIT.md). The initial machine-readable contract is `docs/data/vehicle-content.schema.json`; `docs/data/vehicle-seed-1900.v1.json` is an incremental authored seed, not a claim that the full catalogue is already encoded or implemented. A vehicle counts as delivered only under the completeness rules in this manifest.
 
 All brands and model names are fictional. Research the plausibility of technology, dates, performance and appearance before finalizing. The IDs below identify roles, not exact approved real-world models.
 
