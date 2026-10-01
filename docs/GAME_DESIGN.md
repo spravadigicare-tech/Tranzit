@@ -759,11 +759,11 @@ Overload should degrade performance progressively rather than suddenly disabling
 
 A newly founded company begins with a **local-office operating model**.
 
-At this stage, a branch's ordinary commercial reach is the **city/locality in which that branch physically exists**.
+At this stage, a branch's ordinary commercial reach is the **city/locality market in which that branch physically exists** — effectively **0 hops** from that branch in the commercial-market graph.
 
-The Opportunity Board therefore shows routine commercial opportunities only for cities where the company has an active branch.
+The Opportunity Board therefore shows routine private commercial opportunities only inside city/locality markets currently covered by the company's branches and communication systems.
 
-To commercially serve another city under this early operating model, the company normally needs an active branch in that city as well.
+To commercially serve another city/locality market under this earliest operating model, the company normally needs an active branch there as well. Internal economic centres/neighbourhoods inside the same city market do **not** each require their own branch.
 
 "Serve" means that the city is a commercial origin, destination or scheduled passenger/cargo stop where the company boards, alights, loads, unloads, sells/fulfils local transport or maintains a local customer relationship.
 
@@ -780,9 +780,11 @@ This applies consistently to passenger and cargo operations where local commerci
 
 The rule creates a deliberate early-company expansion loop:
 
-**build branch → discover local demand → secure endpoint/access → start service → expand to another city → build another branch**
+**build branch → discover that market's local demand → secure endpoint/access → start service → expand commercial coverage to another market → establish another branch or unlock a valid broader-coverage system**
 
-It is not a kilometre-radius system.
+It is not a kilometre-radius system. Commercial markets form a **neighbour/adjoining-market graph**. Early coverage starts at 0 hops around each branch; later company organization and communications can expand ordinary commercial reach to 1 hop, 2 hops and eventually broader regional coverage. The exact historical unlocks are authored, but the graph distance remains explainable in UI.
+
+Coverage from several branches is the union of their reachable markets. A market can therefore become commercially reachable from an existing branch without constructing a second office once the company's adopted systems legitimately support that hop distance.
 
 #### Technology-driven reduction of branch dependence
 
@@ -805,10 +807,11 @@ Early improvements can reduce administrative friction and allow some centralized
 
 Later systems can explicitly unlock broader operating models, for example:
 
-- one branch can commercially cover several nearby cities;
+- one branch can commercially cover directly neighbouring city/locality markets (1 hop);
+- stronger communications/organization can extend this to 2 hops where historically appropriate;
 - a regional headquarters can cover a defined broader territory;
 - some customer types no longer require a local office;
-- modern online systems can remove the branch-at-every-stop requirement for ordinary business almost entirely.
+- modern online systems can remove the branch-at-every-market requirement for ordinary business almost entirely.
 
 Even in a modern company, a branch can still be required where:
 
@@ -825,9 +828,10 @@ Opportunity discovery follows the current branch/technology coverage rules.
 
 At the starting local-office stage:
 
-- routine Opportunity Board results are limited to cities with active branches;
-- filters cannot reveal ordinary hidden opportunities in unserved cities;
-- building a new branch causes that city's normal commercial pipeline to become visible.
+- routine Opportunity Board results are limited to the city/locality markets containing active branches;
+- filters cannot reveal ordinary hidden opportunities in uncovered markets;
+- internal districts/economic centres in that same market are included without extra branches;
+- building a new branch creates another 0-hop coverage origin, while later systems can expand coverage outward by the permitted market-hop distance.
 
 Later communication/business-system upgrades can broaden what appears on the Opportunity Board in line with the newly unlocked commercial coverage.
 
@@ -838,6 +842,8 @@ If a visible contract requires service in a city that the company cannot yet com
 > **Local presence required: establish branch in [city]**
 
 or the appropriate technology/coverage alternative.
+
+For **urban passenger transport inside one city/locality market**, separate branches are not required for each internal economic centre, district or stop. One commercially valid presence in the city plus the relevant passenger-service licence/concession can support services across its internal centres. Crossing into another city/locality market is a separate commercial-coverage question and follows the current branch/technology rules.
 
 #### Physical growth
 
@@ -1922,11 +1928,28 @@ Better infrastructure can open previously uneconomic markets.
 
 ### 10.5 Local commodity markets and prices
 
-Physical commodities have **real local market prices** that can differ between market areas, including several distinct market areas inside one large city.
+Physical commodities have **real local market prices** that differ between **city/locality markets**. One city/locality normally owns one stable commodity market; a growing city does **not** split into several independent price markets merely because new districts or industrial zones appear.
 
-The hierarchy is **firm/facility → market area → city/region aggregation**. A market area is a local economic catchment, not a teleportation zone. Two firms in the same market area still require real physical transport between their actual endpoints. Small settlements may have one market area; large cities can have several, such as a centre, industrial district, port/rail district or peripheral production zone.
+The hierarchy is **firm/facility → economic centre/neighbourhood → city/locality market → region aggregation**.
 
-Market-area boundaries can evolve gradually as cities expand, industrial concentrations move and transport accessibility changes. Do not redraw them every tick; changes are coarse/event-driven and preserve stable identities/history where possible.
+A firm/facility is always a concrete economic actor and physical endpoint, never "the market". It belongs to one city/locality market and normally to one internal economic centre/neighbourhood for spatial simulation and UI context.
+
+Inside a city market, several **economic centres** can exist and evolve over time, for example:
+
+- historic/commercial centre;
+- residential district;
+- industrial zone;
+- rail/freight district;
+- peripheral production/logistics cluster;
+- later-developed suburban centre.
+
+Economic centres are not independent commodity markets and do not receive their own local reference price. They are spatial concentrations of population, jobs, firms, services and transport demand inside the same city economy. New centres can emerge, grow, decline, change role or become brownfields as real firms, housing, infrastructure and accessibility change. The city's market identity remains stable while its internal economic geography evolves.
+
+A city/locality market is also **not a teleportation zone**. Two firms in the same market still require real physical transport between their actual endpoints. Internal road distance, congestion, handling, terminal access and delivery cost remain real even though both firms observe the same city-level commodity reference signal.
+
+Economic centres provide the common spatial basis for intra-city passenger demand. Residential, employment, commercial and transport-hub centres create directional origin-destination flows between each other. Urban public transport can connect those centres and improve actual accessibility, labour reach and service access; successful urban transport can therefore influence later city growth and where new centres emerge without directly "moving" freight inventories or creating a second commodity market.
+
+Market identities follow cities/localities rather than continuously redrawn catchment polygons. Exact settlement creation/merger rules are world/city-development content; ordinary urban expansion changes internal centres, not the market's identity.
 
 Each commodity has a historically evolving **base/reference value** appropriate to the era. Local price formation is anchored around that value but driven by the simulated local economy rather than a fixed global commodity table. Relevant inputs include:
 
@@ -1971,7 +1994,7 @@ Local price changes are event/coarse-tick driven and aggregated. The **normal ma
 
 On an ordinary daily market update, the local reference price may move by at most **±5% of its previous reference price**. This is a cap, not a target movement: a near-balanced market can move only fractionally, while a severe sustained imbalance can hit the cap across several successive days. The model therefore responds visibly without allowing one ordinary delivery or one routine day to create a large price spike.
 
-For performance and predictability, each **market-area × commodity** pair performs at most **two ordinary market calculations per game day** (nominally one every 12 game hours). Multiple deliveries, production events and consumption events update authoritative inventories/flows immediately but are aggregated until the next scheduled market calculation rather than causing a full recalculation after every event.
+For performance and predictability, each **city/locality market × commodity** pair performs at most **two ordinary market calculations per game day** (nominally one every 12 game hours). Multiple deliveries, production events and consumption events update authoritative inventories/flows immediately but are aggregated until the next scheduled market calculation rather than causing a full recalculation after every event.
 
 The heavier market calculation produces/refreshes the current **target reference price and pressure state**. The displayed/authoritative local reference price can then move in up to **four lightweight price-adjustment steps per game day** (nominally one every 6 game hours) toward that latest target. A price-adjustment step does not rescan firms/routes/markets; it only applies the already-computed market pressure/target.
 
@@ -1988,7 +2011,7 @@ The player can inspect aggregated market intelligence to identify potential tran
 Useful views can include:
 
 - commodity;
-- city/market area;
+- city/locality market;
 - local production;
 - local consumption;
 - surplus/deficit;
