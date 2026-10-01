@@ -104,7 +104,7 @@ These are required checks for this confirmed UI direction, not claims that an im
 
 | ID | Scenario |
 |---|---|
-| FINUI-A01 | Open Finance through Company and the bottom-bar cash value. Verify the same workspace, compact summary/cards, clear current-cash versus period-result versus future-payment basis, readable CZ/EN and enlarged UI. |
+| FINUI-A01 | Open Finance through Company and the upper-left HUD cash/current-period result. Verify the same workspace, compact summary/cards, clear current-cash versus period-result versus future-payment basis, readable CZ/EN and enlarged UI. |
 | FINUI-A02 | Drill from a company cost total into a Line, vehicle/workshop and its charge. Retain period/source context, stable links and history for a retired asset; shared costs and cross-view totals reconcile without duplicate postings. |
 | FINUI-A03 | Compare current cash, unpaid incoming amounts, accepted stage payments and variable forecasts. Change the look-ahead and inspect assumptions; unknown values are not zero and projected cash is not current spendable money. |
 | FINUI-A04 | Include/exclude an unstarted plan in a spending scenario. It creates no debt/order/operation. Separately accepted land, vehicle or supplier commitments remain in the baseline, including after deleting the draft, and are not counted again in its incremental estimate. |
