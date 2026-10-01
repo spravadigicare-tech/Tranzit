@@ -60,11 +60,11 @@ Transport one 100 t shipment using road collection, rail trunk and road delivery
 
 Pass: exactly 100 t is accounted for unless a separately recorded loss is injected; parts recover independently; no duplicated reservation or virtual transfer; final payment/completion follows actual accepted delivery.
 
-### G-05 — Passenger revenue, integrated tickets and a protected transfer
+### G-05 — Passenger revenue, integrated tickets and the unprotected-transfer boundary
 
-Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Define a company/default tariff and an integrated rail/bus tariff system with one single-journey product plus weekly and monthly passes. Use open/optional/required reservations where supported and at least two capacity zones/products. Sell a period pass, use it across a covered transfer, observe actual queues/crowding and verify that pass ownership does not create capacity. Miss a protected connection and reduce the next train's capacity.
+Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Define a company/default tariff and an integrated rail/bus tariff system with one single-journey product plus weekly and monthly passes. Use open/optional/required reservations where supported and at least two capacity zones/products. Sell a period pass, use it across a covered transfer, observe actual queues/crowding and verify that pass ownership does not create capacity. Also sell the currently defined two-operator through ticket under the partner-capacity-sales clause, then delay the inbound leg and reduce onward capacity without adding any connection-protection clause.
 
-Pass: one integrated covered journey does not charge duplicate base fares at each transfer; weekly/monthly validity uses 7/14 game days; a pass sale posts revenue once while covered boardings do not duplicate cash; mandatory reservations still use real segment capacity; sold product terms survive later tariff changes; re-accommodation/rebooking/refund follows rules, money/capacity reconcile, and the player can inspect why passengers chose or rejected the service.
+Pass: one integrated covered journey does not charge duplicate base fares at each transfer; weekly/monthly validity uses 7/14 game days; a pass sale posts revenue once while covered boardings do not duplicate cash; mandatory reservations still use real segment capacity; sold product terms survive later tariff changes; the partner segment settles exactly once under its captured agreement version; the transfer remains visibly unprotected and creates no inferred timetable hold, guarantee or automatic partner rebooking. Connection-specific recovery acceptance is added only after CONNECTION_AGREEMENTS is approved.
 
 ### G-06 — Contract lifecycle and capacity release
 
@@ -184,7 +184,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | V-11 | External support declines but own workshop retains capability | Quotes expose provider/parts/capacity costs; internal staff/equipment/supplies still consumed |
 | V-12 | Mandatory driver unavailable versus optional service crew shortage | No driverless dispatch; optional shortage follows legal/product limits and actual service effects |
 | V-13 | Vehicle ready but crew shift/rest capacity exhausted | Real crew feasibility/recovery, no use of the same qualified capacity twice |
-| V-14 | Substitute or shorten a consist | Revalidate operating envelope and protected capacity; correct rebooking/refunds for displaced users |
+| V-14 | Substitute or shorten a consist | Revalidate operating envelope and already sold/reserved passenger capacity; apply only the approved displacement/refund/recovery rules for affected users |
 | V-15 | Corridor and non-through coaches use onboard sales; repeat with prepaid tickets | Ordinary circulation adds no ticketing dwell; only actually required non-through handling adds aggregate dwell; no per-person staffing |
 | V-16 | Two future Patterns claim the same compatible fleet before concrete asset selection | Shared interval/capability reservations prevent overcommitment; later asset binding does not reserve the resource twice |
 | V-17 | Road turnaround: 4-minute exchange, parallel 2-minute crew change, 2-minute buffer | Physical minimum is 4 minutes, planned turnaround 6 minutes; optional buffer is not charged as mandatory work |
@@ -204,7 +204,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | F-09 | Suspend until further notice, retain/release slots, then resume | Ongoing costs visible; tickets/contracts preserved; full readiness check on restart |
 | F-10 | Sold passenger A→B and another B→C reservation | Correct per-zone per-segment capacity; no needless whole-route seat lock or oversell |
 | F-11 | Walk-up passenger denied boarding | Remains in aggregate physical queue or follows explicit abandonment/rebooking; no disappearance/reappearance elsewhere |
-| F-12 | Protected missed connection due to own/partner/external cause | Actual acceptable rebooking/partner option or refund; responsibility and compensation distinct |
+| F-12 | Passenger connection-agreement protection/recovery | **RESERVED pending CONNECTION_AGREEMENTS.** Do not infer the withdrawn hold/rebooking/responsibility mechanics. Replace this row with an executable fixture/result when the dedicated specification is approved. |
 | F-13 | Old timetable-only versus later realtime information | Passenger choice reacts only to plausibly available information; actual vehicle state unchanged |
 | F-14 | Group passenger contract and ordinary tariff bookings share a Trip | Shared real capacity, separate prices/obligations, no duplicate revenue |
 | F-15 | Negative cash, salvageable assets and later deep insolvency | Distress process before game over; costs/loans/sales reconcile without free rescues |
@@ -318,8 +318,8 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 
 Test interactions, not only individual systems. Required high-risk combinations include:
 
-- split shipment + delayed feeder + saturated next Trip + protected booking;
-- short-formed train + already sold class capacity + protected passenger transfer;
+- split shipment + delayed feeder + saturated next Trip + confirmed booking;
+- short-formed train + already sold class capacity + ordinary passenger transfer;
 - infrastructure owner fault + missed slot + downstream customer SLA;
 - construction closure + busy yard + emergency rescue;
 - renewal + changing Pattern version + prepaid partial cancellation;
