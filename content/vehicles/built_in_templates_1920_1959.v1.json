@@ -40,7 +40,7 @@
     },
     {
       "id": "kralopole_m262_standard",
-      "model_id": "kralopole_m262_kredenc_1948",
+      "model_id": "kralopole_m262_kredenc_1949",
       "name": "Standard",
       "equipment_option_ids": []
     },
@@ -54,7 +54,7 @@
     },
     {
       "id": "neskoda_n498_express",
-      "model_id": "neskoda_n498_albatros_1952",
+      "model_id": "neskoda_n498_albatros_1954",
       "name": "Express",
       "equipment_option_ids": [
         "steam_operating_standard_1900"
