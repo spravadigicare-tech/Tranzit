@@ -2636,6 +2636,10 @@ Contract types include:
 
 Contract awards should consider transparent factors such as price, capacity, reliability, relevant reputation and customer-specific relationship history. The player must be able to inspect the important decision factors before or after bidding.
 
+Public authorities can maintain a small set of **public development/transport priorities** derived from real aggregate conditions and policy goals, such as an under-served passenger corridor, insufficient freight capacity, poor regional accessibility or a strategically important economic connection. These priorities are inspectable before a tender exists and show the supporting known problem/evidence and status. A priority is not a guaranteed future tender.
+
+Authorities are not omniscient and do not subsidize a corridor merely because the player could profit from it. A service tender is created when the authority has a real public/strategic need, available policy/budget authority and the existing market/service does not already satisfy the stated requirement. The tender's payment is a public service/operating subsidy or other explicit contract payment; it does not fabricate passengers or cargo.
+
 For **public/state/municipal service tenders**, use an explicit two-stage rule:
 
 1. every submitted proposal must satisfy all mandatory tender requirements; an invalid proposal cannot be submitted as a compliant bid;
