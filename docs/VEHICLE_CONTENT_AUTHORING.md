@@ -632,3 +632,54 @@ A vehicle family is **content-data complete** only when it has:
 - explicit `money` price after economy balancing.
 
 Art/prefab/sound/test completeness remains separate and is still required before the row counts as delivered V1 content.
+
+
+## 15. Machine-readable canonical content layout
+
+The canonical machine-readable authoring data lives only in `content/vehicles/`. Do not create a parallel `data/vehicles` hierarchy or a second schema.
+
+Current versioned content packs cover the full authored base-game timeline:
+
+- `vehicle_models_1900.v1.json`, `built_in_templates_1900.v1.json`, `equipment_options_1900.v1.json`;
+- `vehicle_models_1901_1919.v1.json`, `built_in_templates_1901_1919.v1.json`, `equipment_options_1901_1919.v1.json`;
+- `vehicle_models_1920_1959.v1.json`, `built_in_templates_1920_1959.v1.json`, `equipment_options_1920_1959.v1.json`;
+- `vehicle_models_1960_1989.v1.json`, `built_in_templates_1960_1989.v1.json`, `equipment_options_1960_1989.v1.json`;
+- `vehicle_models_1990_2026.v1.json`, `built_in_templates_1990_2026.v1.json`, `equipment_options_1990_2026.v1.json`.
+
+Shared definitions remain in:
+
+- `manufacturers.v1.json`;
+- `support_families.v1.json`;
+- `regional_market_profiles.v1.json`;
+- `opening_market_1900.v1.json`;
+- `vehicle_model.schema.v1.json`.
+
+Every model file uses the same stable concepts: model identity, manufacturer/source, fixed historical introduction, platform limits, production/source capability, maintenance/consumption profile, supported equipment groups, built-in templates and provenance.
+
+A concrete runtime vehicle remains separate from these definitions and stores its own physical identity, owner, location, template, condition, mileage/hours and history.
+
+## 16. Content completion gate
+
+A vehicle family counts as **authored data complete** only when it has:
+
+- a model row with provenance;
+- at least one valid built-in template;
+- every referenced equipment group/option present;
+- manufacturer/factory source;
+- regional market profile;
+- support family;
+- production lead-time/cost basis;
+- maintenance and consumption authoring basis.
+
+It counts as **game-content complete** only after the remaining implementation layer also exists:
+
+- functional prefab/mesh and LODs;
+- materials/animations/lights/coupling/access anchors as applicable;
+- sound references;
+- localized player-facing text;
+- explicit `money` balancing;
+- save/load support;
+- physical production/import/dealer/used-market runtime implementation;
+- compatibility/retrofit/resale tests.
+
+The JSON authoring pack therefore closes the historical roster/data-design gap; it does not by itself claim the vehicles are implemented in Unity.
