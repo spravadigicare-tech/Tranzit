@@ -7,7 +7,7 @@ This document defines engineering conventions, architecture boundaries, performa
 
 ## 1. Engineering goals
 
-Build Tranzit as a long-lived simulation product, not a disposable prototype.
+Build Tranzit as a long-lived simulation product, not a disposable prototype. **Simulation state is separate from rendering.**
 
 Every implementation choice should support:
 
