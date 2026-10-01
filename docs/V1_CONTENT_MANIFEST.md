@@ -153,8 +153,14 @@ The first-playable 1900 economy uses the following **canonical chain families**.
 | Electricity | coal/other historically available generation input → electricity | city, industry and later electric transport; utility-network delivery |
 | Oil products | crude oil → refined fuels | transport, industry and selected city/utility use; low/region-specific importance in 1900, growing later |
 | General manufactured goods | metal products + textiles/wood/other relevant inputs → consumer goods | retail / city consumption |
+| Spare parts and maintenance supplies | iron/steel + metal products + machinery/industrial chemicals where relevant → spare parts | workshops, factories, depots, utilities and infrastructure maintenance |
+| Lubricants and technical fluids | refined fuels / chemical processing → lubricants/technical fluids | vehicles, workshops and industrial machinery |
 
 **Furniture is a distinct final commodity.** Later furniture recipes may add industrial chemicals, plastics, textiles or other materials, but processed wood remains a meaningful core input.
+
+**Spare parts are a distinct transportable commodity family.** Heavy industry and machinery production do not end when a machine is sold: vehicles, factories, workshops, utilities and infrastructure consume replacement parts throughout their operating lives. Early spare parts can be dominated by iron/steel and mechanical components; later recipes may add rubber, industrial chemicals, plastics, electronics and semiconductor components. This creates recurring secondary freight demand tied to the installed asset base rather than only to new construction.
+
+Routine consumables can likewise evolve. Coal-fired/steam equipment consumes coal and water; later combustion equipment increasingly consumes refined fuels plus lubricants/technical fluids; electric equipment shifts operating demand toward electricity while still needing physical spare parts and maintenance supplies.
 
 **Livestock is a physical cargo** where the transport/region supports it. Meat is a separate downstream commodity. The design does not require a separate raw-milk cargo in V1; dairy production can output the canonical dairy-products commodity directly at the chosen simulation abstraction.
 
@@ -180,6 +186,19 @@ Later economic development adds new commodities and recipe inputs while preservi
 | LPG or other transportable gas-derived products | gas/oil processing → dedicated tank-compatible cargo → city/industry/transport consumers where historically appropriate |
 
 Do not add a later commodity merely because it existed historically. It should create a distinct supply, handling, transport, investment or demand decision. Conversely, new technology can add an input to an existing recipe without requiring a brand-new final commodity.
+
+Historical development changes **market shares and demand composition**, not only the catalogue. A new technology can reduce demand for an older commodity by replacing some of its actual uses. This displacement is gradual, regional and sector-specific rather than a hard global switch.
+
+Coal is the canonical example:
+
+- around 1900 it can dominate steam transport, heavy industry, heating, electricity generation and town-gas production;
+- later oil/refined fuels can displace part of transport and industrial fuel demand;
+- electricity can displace direct coal use in traction, machinery and some city/industrial uses;
+- processed natural gas can displace coal-based town gas and some heating/industrial demand;
+- cleaner/newer generation technologies can reduce power-sector coal demand;
+- surviving steelmaking, legacy boilers, heating, heritage equipment or regions with favourable coal economics can continue consuming coal.
+
+The same principle applies elsewhere: plastics can replace some wood/metal/textile uses, electronics can replace mechanical/electromechanical components, synthetic fibres can take some textile-raw-material share, but none of these transitions globally deletes the older commodity.
 
 Older production routes stay valid until real economics/technology/support cause firms to modernize, shrink or close. A new chain does not globally delete its predecessor.
 
