@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "scope": "1920–1959 built-in templates",
+  "templates": [
+    {
+      "id": "neskoda_n534_freight",
+      "model_id": "neskoda_n534_dric_1923",
+      "name": "Freight",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "neskoda_n387_express",
+      "model_id": "neskoda_n387_mikado_1926",
+      "name": "Express",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "fatra_m120_standard",
+      "model_id": "fatra_m120_vezak_1930",
+      "name": "Standard",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "neskoda_n475_universal",
+      "model_id": "neskoda_n475_slechticna_1947",
+      "name": "Universal",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "fatra_m131_standard",
+      "model_id": "fatra_m131_hurvinek_1948",
+      "name": "Standard",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "kralopole_m262_standard",
+      "model_id": "kralopole_m262_kredenc_1948",
+      "name": "Standard",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "neskoda_n556_freight",
+      "model_id": "neskoda_n556_silak_1951",
+      "name": "Heavy freight",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "neskoda_n498_express",
+      "model_id": "neskoda_n498_albatros_1952",
+      "name": "Express",
+      "equipment_option_ids": [
+        "steam_operating_standard_1900"
+      ]
+    },
+    {
+      "id": "neskoda_e500_standard",
+      "model_id": "neskoda_e500_bobina_1953",
+      "name": "3 kV DC",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "cmd_d435_standard",
+      "model_id": "cmd_d435_hektor_1958",
+      "name": "Freight / shunting",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "studena_m240_standard",
+      "model_id": "studena_m240_kacena_1959",
+      "name": "Standard",
+      "equipment_option_ids": []
+    },
+    {
+      "id": "r20_open_standard",
+      "model_id": "r20_open_1930",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "g25_standard",
+      "model_id": "g25_standard_1950",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "e28_standard",
+      "model_id": "e28_standard_1955",
+      "name": "Standard",
+      "equipment_option_ids": [
+        "wagon_brake_continuous_1900"
+      ]
+    },
+    {
+      "id": "fatra13_flatbed",
+      "model_id": "fatra13_1924",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "fatra13_flatbed_1924"
+      ]
+    },
+    {
+      "id": "fatra13_box",
+      "model_id": "fatra13_1924",
+      "name": "Box",
+      "equipment_option_ids": [
+        "fatra13_box_1924"
+      ]
+    },
+    {
+      "id": "pragov_rn_flatbed",
+      "model_id": "pragov_rn_1933",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "pragov_rn_flatbed_1933"
+      ]
+    },
+    {
+      "id": "pragov_rn_box",
+      "model_id": "pragov_rn_1933",
+      "name": "Box",
+      "equipment_option_ids": [
+        "pragov_rn_box_1933"
+      ]
+    },
+    {
+      "id": "pragov_rn_tipper",
+      "model_id": "pragov_rn_1933",
+      "name": "Tipper",
+      "equipment_option_ids": [
+        "pragov_rn_tipper_1933"
+      ]
+    },
+    {
+      "id": "fatra111_flatbed",
+      "model_id": "fatra111_1942",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "fatra111_flatbed_1942"
+      ]
+    },
+    {
+      "id": "fatra111_tipper",
+      "model_id": "fatra111_1942",
+      "name": "Tipper",
+      "equipment_option_ids": [
+        "fatra111_tipper_1946"
+      ]
+    },
+    {
+      "id": "fatra111_tractor",
+      "model_id": "fatra111_1942",
+      "name": "Heavy tractor",
+      "equipment_option_ids": [
+        "fatra111_tractor_1947"
+      ]
+    },
+    {
+      "id": "pragov_v3s_flatbed",
+      "model_id": "pragov_v3s_1953",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "pragov_v3s_flatbed_1953"
+      ]
+    },
+    {
+      "id": "pragov_v3s_tipper",
+      "model_id": "pragov_v3s_1953",
+      "name": "Tipper",
+      "equipment_option_ids": [
+        "pragov_v3s_tipper_1953"
+      ]
+    },
+    {
+      "id": "pragov_v3s_recovery",
+      "model_id": "pragov_v3s_1953",
+      "name": "Recovery",
+      "equipment_option_ids": [
+        "pragov_v3s_recovery_1954"
+      ]
+    },
+    {
+      "id": "neskoda706rt_flatbed",
+      "model_id": "neskoda706rt_1957",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "neskoda706rt_flatbed_1957"
+      ]
+    },
+    {
+      "id": "neskoda706rt_box",
+      "model_id": "neskoda706rt_1957",
+      "name": "Box",
+      "equipment_option_ids": [
+        "neskoda706rt_box_1957"
+      ]
+    },
+    {
+      "id": "neskoda706rt_tractor",
+      "model_id": "neskoda706rt_1957",
+      "name": "Tractor",
+      "equipment_option_ids": [
+        "neskoda706rt_tractor_1957"
+      ]
+    },
+    {
+      "id": "pragov_no_city",
+      "model_id": "pragov_no_1925",
+      "name": "City",
+      "equipment_option_ids": [
+        "pragov_no_city_1925"
+      ]
+    },
+    {
+      "id": "pragov_ndo_city",
+      "model_id": "pragov_ndo_1939",
+      "name": "City",
+      "equipment_option_ids": [
+        "pragov_ndo_city_1947"
+      ]
+    },
+    {
+      "id": "pragov_ndo_coach",
+      "model_id": "pragov_ndo_1939",
+      "name": "Coach",
+      "equipment_option_ids": [
+        "pragov_ndo_coach_1948"
+      ]
+    },
+    {
+      "id": "neskoda706ro_city",
+      "model_id": "neskoda706ro_1947",
+      "name": "City",
+      "equipment_option_ids": [
+        "neskoda706ro_city_1947"
+      ]
+    },
+    {
+      "id": "neskoda706ro_regional",
+      "model_id": "neskoda706ro_1947",
+      "name": "Regional",
+      "equipment_option_ids": [
+        "neskoda706ro_regional_1947"
+      ]
+    },
+    {
+      "id": "neskoda706ro_coach",
+      "model_id": "neskoda706ro_1947",
+      "name": "Coach",
+      "equipment_option_ids": [
+        "neskoda706ro_coach_1947"
+      ]
+    },
+    {
+      "id": "neskoda706rto_city",
+      "model_id": "neskoda706rto_1958",
+      "name": "MTZ City",
+      "equipment_option_ids": [
+        "neskoda706rto_mtz_1958"
+      ]
+    },
+    {
+      "id": "neskoda706rto_regional",
+      "model_id": "neskoda706rto_1958",
+      "name": "CAR Regional",
+      "equipment_option_ids": [
+        "neskoda706rto_car_1958"
+      ]
+    },
+    {
+      "id": "neskoda706rto_lux",
+      "model_id": "neskoda706rto_1958",
+      "name": "LUX Coach",
+      "equipment_option_ids": [
+        "neskoda706rto_lux_1958"
+      ]
+    }
+  ]
+}
