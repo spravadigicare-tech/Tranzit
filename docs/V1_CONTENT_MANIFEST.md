@@ -188,6 +188,87 @@ Brickworks may use local on-site clay/mineral resources rather than creating a d
 
 Iron and steel remain independent. A downstream recipe can require iron, steel, or both simultaneously. Steel is not a universal upgrade token and neither commodity substitutes for the other unless a separate recipe explicitly says so.
 
+### Initial 1900 production, recipe and seed balancing
+
+These are **gameplay seed defaults**, not claims about the exact historical output of a named real plant. Actual authored firms may override them from sourced/local content. All freight quantities use physical tonnes; utility-network outputs use their own declared utility unit and are never silently converted into tonnes.
+
+#### Facility output-capacity bands
+
+| Facility family | Small | Medium | Large | Unit |
+|---|---:|---:|---:|---|
+| Coal mine | 250 | 700 | 1,800 | t/week |
+| Iron-ore mine | 150 | 450 | 1,100 | t/week |
+| Stone/gravel quarry | 250 | 650 | 1,500 | t/week |
+| Forestry operation | 90 | 250 | 600 | t/week timber |
+| Sawmill / wood processing | 70 | 200 | 500 | t/week processed wood |
+| Furniture works | 15 | 50 | 120 | t/week |
+| Paper works | 20 | 70 | 180 | t/week |
+| Grain-producing aggregate | 80 | 220 | 500 | t/week |
+| Mill / bakery aggregate | 35 | 110 | 260 | t/week flour/bakery products |
+| Livestock-producing aggregate | 25 | 70 | 160 | t/week live-equivalent cargo |
+| Meat processor | 15 | 45 | 110 | t/week meat |
+| Dairy-producing aggregate | 20 | 60 | 140 | t/week dairy products |
+| Produce-growing aggregate | 30 | 90 | 200 | t/week fruit/vegetables |
+| Textile-raw-material aggregate | 25 | 75 | 180 | t/week |
+| Textile mill | 25 | 75 | 180 | t/week textiles/fabric |
+| Clothing works | 10 | 35 | 90 | t/week clothing/garments |
+| Brickworks | 100 | 300 | 700 | t/week |
+| Cement works | 100 | 300 | 800 | t/week |
+| Glassworks | 25 | 80 | 200 | t/week |
+| Iron works | 80 | 240 | 600 | t/week iron |
+| Steel works | 70 | 220 | 550 | t/week steel |
+| Metalworking works | 30 | 100 | 260 | t/week metal products |
+| Machinery works | 12 | 40 | 110 | t/week machinery |
+| Basic spare-parts works | 8 | 30 | 80 | t/week basic spare parts |
+| Oil refinery, where regionally authored | 70 | 220 | 600 | t/week refined fuels |
+| Lubricants / technical-fluids works | 8 | 25 | 70 | t/week |
+| General manufacturing works | 15 | 50 | 140 | t/week consumer goods |
+
+A facility's nominal band is not guaranteed output. Real production is limited by available inputs, workforce, maintenance, power/utility service, storage, recipe version and operating state. Initial ordinary utilization should usually land around **65–80% of nominal capacity** so the world has both spare capacity and meaningful shortage/expansion pressure without every plant starting either idle or saturated.
+
+Gasworks and electricity plants use explicit utility capacity in their declared utility unit/week. Size them from connected demand with approximately **10–25% normal reserve above expected ordinary peak**, then let fuel/input shortages and plant outages reduce actual output. Do not force these network utilities into freight-tonnage capacity solely to reuse the table above.
+
+#### Baseline 1900 recipe coefficients
+
+Coefficients are physical input tonnes required for **1.00 t of player-facing output** unless the input is explicitly local/non-transported. Waste/by-product mass can remain abstract only when it is not a meaningful transport commodity.
+
+| Process | Inputs for 1.00 t output |
+|---|---|
+| Sawmill / processed wood | 1.33 t timber |
+| Furniture | 1.15 t processed wood |
+| Paper products | 1.20 t timber/processed wood + 0.08 t coal |
+| Flour/bakery products | 1.10 t grain + 0.04 t coal/energy input |
+| Meat processing | 1.30 t livestock |
+| Textiles/fabric | 1.10 t textile raw materials + 0.06 t coal/energy input |
+| Clothing/garments | 1.05 t textiles/fabric |
+| Bricks | suitable local mineral/clay resource + 0.12 t coal |
+| Cement | suitable local mineral/limestone resource + 0.18 t coal |
+| Glass | suitable local mineral inputs + 0.22 t coal |
+| Iron | 1.60 t iron ore + 0.90 t coal |
+| Steel | 1.05 t iron + 0.45 t coal |
+| Metal products | 1.08 t iron **or** steel according to authored recipe version |
+| Machinery | 0.55 t steel + 0.55 t metal products |
+| Basic spare parts | 0.35 t steel + 0.75 t metal products |
+| Refined fuels | 1.05 t crude oil |
+| Lubricants / technical fluids | 1.15 t refined fuels or an authored later chemical-feedstock recipe |
+| Consumer goods | 0.35 t processed wood + 0.25 t textiles/fabric + 0.35 t metal products + 0.15 t paper products |
+
+Coal-gas works, electricity generation and other utility conversions use explicit energy/utility coefficients in their facility definitions because the downstream product is not ordinary freight mass. Construction projects keep their own bill of materials by project type/era rather than using one generic tonnes-in/tonnes-out factory recipe.
+
+#### Initial inventory and world-seed rules
+
+- Primary/resource producers start with approximately **3–7 days of normal output** in usable output storage when the commodity is storable; perishable agricultural output respects its shorter quality window.
+- Ordinary processors start with approximately **7–10 days of normal input consumption** and **3–7 days of normal output**. Perishable processors instead start around **1–2 days** of compatible input/output unless cold storage justifies the wider Section 4 stock-policy band.
+- Final consumers/services start near the commodity-specific stock-policy target already defined above, never with an arbitrary infinite buffer.
+- Strategic operating inputs such as coal, basic spare parts and construction/maintenance supplies at major facilities normally start around **10–15 days** where storage is physically available.
+- Seeded inventory is created only at world initialization and is fully owned/accounted physical stock. There is no periodic free refill.
+- Initial authored supply should cover approximately **90–110% of ordinary world demand by commodity at the full-world level**, while deliberate geographic concentration creates real surplus and deficit markets. A commodity can be regionally scarce; the world generator/content pass must not make an essential chain globally impossible.
+- Resource/heavy-industry chains should create substantial intercity movement by geography rather than local self-sufficiency. In each tested starting area, author at least **two recurring rail-suitable freight flows at 150 t/week or more**, **two road-suitable recurring flows in the 10–60 t/week range**, and **one time-sensitive/perishable flow** whose endpoints are physically reachable.
+- Do not satisfy those fixture requirements with anonymous cargo generators. Every seeded flow must originate in real production/inventory and terminate in a real recipe, final-use sink, project or operating-consumption demand.
+- When initial contracts/carrier commitments already cover part of a seeded flow, reserve only that real committed share. Unserved/contestable demand remains available through the normal opportunity/proposal/open-carriage rules rather than being duplicated.
+
+These values should be stored in versioned balancing/content data. Playtests may revise them by sector or era, but changes must preserve explicit units, recipe conservation, physical inventories and the requirement for viable freight corridors.
+
 ### Maintenance and installed-base demand
 
 The economy must create freight not only from **new production**, but from the installed asset base.
