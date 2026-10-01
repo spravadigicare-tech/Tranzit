@@ -100,7 +100,9 @@ This does **not** merge extraction sites. Resource industries remain distinct by
 
 Keep **iron and steel as separate player-facing commodities** in the 1900 industrial catalogue. Downstream recipes specify their actual material requirements independently: a firm/process may require iron, steel, or **both as separate simultaneous inputs**. Do not treat iron and steel as generic substitutes or silently collapse them into one metal input.
 
-For the baseline textile chain, use one aggregated input commodity **textile raw materials** rather than separate wool/cotton cargo entries. Keep downstream **textiles/fabric** and **clothing/garments** as distinct commodities so the chain remains: textile raw materials → textiles/fabric → clothing/garments → retail/final consumption. Water and traction feed/consumables may be additional supplies.
+For the baseline textile chain, use one aggregated input commodity **textile raw materials** rather than separate wool/cotton cargo entries. Keep downstream **textiles/fabric** and **clothing/garments** as distinct commodities so the chain remains: textile raw materials → textiles/fabric → clothing/garments → retail/final consumption.
+
+The textile/consumer-goods chain must support **historical recipe evolution**. Later-era recipes may add newly relevant inputs such as dyes, industrial chemicals, synthetic fibres or other historically appropriate materials. These later inputs are introduced through dated content/technology availability, not by player level, and should create new transport flows rather than silently changing output for free. Water and traction feed/consumables may be additional supplies.
 
 Do not split consumer goods down to individual retail SKUs. The purpose of the extra food categories is to create distinct production, perishability/handling and transport decisions, not to simulate every product sold by a shop.
 
