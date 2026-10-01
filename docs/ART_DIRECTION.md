@@ -311,7 +311,7 @@ Representative visual activity may include:
 
 The visual layer can use simulation LOD and representative agents as long as it does not contradict the actual operating state. A visually busy facility must not imply production or loading that the simulation says is inactive.
 
-Human characters can remain stylized/simple enough for the miniature presentation; exact character-detail rules remain open.
+Human characters remain stylized/simple enough for the miniature presentation. Exact mesh/texture budgets are implementation-level tuning under the later character rules, not an unresolved product decision.
 
 ## 10. UI visual character
 
