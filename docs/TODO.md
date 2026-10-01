@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-09-30 after confirming binding commands during pause and final CZ/EN terminology. The only remaining explicit V1 product clarification is the boundary for multi-operator passenger ticket cooperation; after that, run the final repository-wide consistency audit.
+Last reviewed: 2026-10-01. At the player's request, further connection-agreement design is handed off to a separate conversation. Connection agreements remain in V1; only discussion in this thread is paused. Preserve accepted passenger-cooperation rules and keep unresolved details open until the separate discussion is reconciled into the owning specifications.
 
 ## How to use this backlog
 
@@ -37,18 +37,18 @@ Rules:
 
 ## Now
 
-### Finish the remaining major UI/UX gaps
-
+Continue independent V1 work. Do not reopen connection-agreement design in this conversation; its separate-thread handoff remains under Open decisions rather than Deferred or Done.
 
 ## Open decisions
 
-- [ ] **[DESIGN] Multi-operator passenger ticket cooperation boundary for V1** — own-company integrated tariffs/ticket products are confirmed. Decide whether V1 must also support multi-operator ticket recognition/settlement/governance; if not, explicitly defer that layer while retaining the existing passenger-cooperation architecture.
+- [ ] **[DESIGN] Connection agreements — separate-thread handoff; still required for V1** — the player explicitly moved this topic to another conversation on 2026-10-01, not out of V1. Preserve the accepted station/terminal connection-coordination concept and bilateral clause builder in [GAME_DESIGN.md](GAME_DESIGN.md), Section 30.3, and [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md). Carry forward the user's requested direction: a framework agreement at a transfer node, a negotiated readiness/start date, daily connection frequency, a coordinated plan in the agreement window that can remain incomplete like a Line draft, selection of existing Lines where available, and explicit termination rules. Finalize the precise lifecycle, readiness/activation, service coverage, changes, notice/termination and any delayed-transfer protection in that separate thread. The latest suggested waiting limits, notice periods, penalties and readiness examples are not blanket-approved defaults. Do not delete existing rules, mark this complete, or classify it as a post-V1 feature. Other independent work may proceed.
+- [ ] **[DESIGN] Remaining multi-operator passenger ticket cooperation details for V1** — retain the already agreed capacity-sales clause, two directional partner rates and public-tariff-versus-partner-rate margin model, including negative margins. Complete remaining ticket cooperation and product-scope details without reopening those choices. Shared multi-company weekly/monthly products and tariff governance remain a separate unresolved scope question. Connection coordination and partner-capacity sales remain independent; pausing the connection discussion does not remove or finalize the capacity-sales workflow.
 
 ## Next
 
 ### After the remaining UI decisions
 
-- [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording only where a decision has actually been confirmed, verify cross-links, decision table and acceptance scenarios. Final navigation/search and remaining focus/notification details remain proposals until accepted.
+- [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording only where a decision has actually been confirmed, verify cross-links, decision table and acceptance scenarios. UI-D41 navigation/search and UI-D08 focus/notification behaviour are already confirmed. Keep connection-agreement details open until the separate-thread decisions are reconciled; do not report all V1 design decisions as closed in the meantime.
 - [ ] **[DOC] Reconcile final navigation with README, UI_UX_DESIGN and V1_IMPLEMENTATION_BRIEF**.
 
 ### Implementation handoff
