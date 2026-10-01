@@ -105,7 +105,7 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **Bombardír TRAX MS** | 2006 | Bombardier TRAXX F140 MS2 | international electric freight | 5,600 kW / 300 kN | 140 km/h | 85 t | 3/1.5 kV DC + 15/25 kV AC packages; freight-biased alternative to fast universal electrics | off-map German production → rail import |
 | **Neškoda 109X “Zátopek”** | 2008 | Škoda 109E / class 380 | premium multisystem express | 6,400 kW / 275 kN | 200 km/h | 88 t | 3 kV DC + 25 kV AC + 15 kV AC; modern signalling/approval | **Plzeň factory** |
 | **Símens Vektron MS** | 2010 | Siemens Vectron MS | universal international electric | 6,400 kW / ~300 kN | 200 km/h | ~90 t | multi-system configuration; country packages/ETCS matter | off-map German manufacture → rail import |
-| **CZ LOKA EffiShunter 1000** | 2017 | CZ LOKO EffiShunter 1000 | modern shunting/local freight | ~900–970 kW / up to ~340 kN | 100 km/h | ~80–92 t by version | diesel-electric/AC traction; efficient low-speed work | active-map modern works / finite factory capacity |
+| **CZ LOKA EffiShunter 1000** | 2017 | CZ LOKO EffiShunter 1000 | modern shunting/local freight | 895 kW / 262 kN | 100 km/h | 80 t representative EU configuration | diesel-electric AC/AC traction; 80 m minimum curve; optional ETCS/country packages | active-map modern works / finite factory capacity |
 
 ### 3.2 Why this remains a choice rather than a linear upgrade
 
