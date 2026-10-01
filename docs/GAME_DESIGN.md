@@ -5653,12 +5653,22 @@ A through journey can use multiple operators under one itinerary/ticket when the
 
 #### Partner capacity settlement
 
-The partner-capacity-sales clause carries **two directional partner rates in money/km**, one for each possible resale direction:
+The partner-capacity-sales clause is configured **independently for each side of the bilateral agreement**.
 
-- **Partner sells our capacity** → rate owed to us per km;
-- **We sell partner capacity** → rate owed to the partner per km.
+For each direction, the agreement shows:
 
-Each direction can be enabled or disabled independently. If enabled, its rate is explicit in the agreement. The two rates do not have to match.
+- whether that side may sell the other company's capacity;
+- the specific eligible Lines covered by that right;
+- the partner rate in money/km owed to the operating carrier.
+
+The two directions are therefore separate:
+
+- **Partner sells our capacity** → selected player-company Lines + rate owed to us per km;
+- **We sell partner capacity** → selected partner Lines + rate owed to the partner per km.
+
+Either direction can be enabled or disabled independently. The selected Line sets and rates do not have to match.
+
+The Line scope is explicit and versioned with the agreement. Selecting **all current Lines** is allowed as an editing convenience, but it stores the current concrete Line set; a future newly created Line is not silently added to the agreement without an amendment.
 
 Keep retail price and settlement price separate:
 
