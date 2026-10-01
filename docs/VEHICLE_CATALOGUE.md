@@ -87,7 +87,7 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **ČMS 170 “Horal”** | 1897 | kkStB 170 / ČSD 434.0 | heavy freight, gradients | ~690 kW continuous / ~880 kW peak | 60 km/h | ~69 t locomotive | heavy adhesion locomotive; tender requires turning/run-around planning | multiple Austro-Hungarian plants; Praha build or regional import |
 | **ČMS 6 “Rychlík”** | 1894 | kkStB 6 / ČSD 264.0 | passenger / express | ~588 kW continuous / ~736 kW peak | 90 km/h | 56.1 t locomotive | high-speed passenger gearing and relatively low adhesion mass; production ended before 1900 so opening supply is used stock | Austrian off-map used stock / existing world assets |
 | **Neškoda N534 “Dříč”** | 1923 | ČSD 534.0 | heavy general freight | 1,208 kW indicated / high adhesion | 60 km/h | 81.3–84 t loco | five coupled axles, 150 m curves; freight-biased | Plzeň/Praha active-map manufacture |
-| **Neškoda N387 “Mikádo”** | 1926 | ČSD 387.0 | premier express | 1,546 kW / 109 kN | 110 km/h | 92.8 t loco | 150 m curves, high coal/water use, good track required | **Plzeň factory**, active-map manufacture |
+| **Neškoda N387 “Mikádo”** | 1926 | ČSD 387.0 | premier express | ~1,500–1,546 kW / ~97–109 kN by batch/source | 110 km/h standard (some batches historically 120 before later standardization) | 89.6–92.6 t loco | ~160 m curves, ~17 t axle load; high coal/water use, good mainline track required | **Plzeň factory**, active-map manufacture |
 | **Neškoda N475 “Šlechtična”** | 1947 | ČSD 475.1 | universal passenger / fast mixed | 1,480 kW / ~150 kN | 100 km/h | 102.7 t loco | 150 m curves; stronger track and depot facilities | **Plzeň factory** |
 | **Neškoda N556 “Silák”** | 1951 | ČSD 556.0 | maximum steam freight | 1,472 kW continuous / ~218 kN | 80 km/h | 99 t loco | 120 m curves; large tender/turning/service demand | **Plzeň factory** |
 | **Neškoda N498 “Albatros”** | 1954 | ČSD 498.1 | top steam express | 2,000 kW / ~180 kN | 120 km/h | 113 t loco | premium track; expensive coal/water/service | **Plzeň factory** |
@@ -1002,6 +1002,7 @@ The following sources were used to anchor dates and representative specification
 - class 680 Pendolino: public ČD/class technical data
 
 ### Road
+- Busportal 706 RO preserved technical data: https://www.busportal.cz/clanek/skoda-706-ro-ladislava-tetery-z-kromerize-se-predstavila-3395
 - Benz delivery van 1896: https://media.mercedes-benz.com/article/f389440e-7b05-4182-b012-48e616269f83
 - Daimler Motor-Lastwagen 1896: https://de.wikipedia.org/wiki/Daimler_Motor-Lastwagen_%281896%29
 - Laurin & Klement Type E commercial/omnibus: https://www.skoda-storyboard.com/cs/tiskove-zpravy-archiv/pribehy-mene-znamych-modelu-z-historie-125-let-skoda-auto-laurin-klement-e-cerna-hora/
