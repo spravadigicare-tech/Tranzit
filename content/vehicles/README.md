@@ -6,16 +6,17 @@ It is intentionally separate from gameplay code and art. A row here is not a cla
 
 ## Current scope
 
-The first committed pack covers:
+The committed authoring pack now covers:
 
 - manufacturer/source identities;
 - support/maintenance families;
 - regional market-presence profiles;
 - the complete 1900 opening vehicle families required by the current V1 content target;
-- 1900 equipment options/templates;
-- opening-market seeding defaults.
+- dated model/template/equipment packs for **1900, 1901–1919, 1920–1959, 1960–1989 and 1990–2026**;
+- opening-market seeding defaults for the 1900 start;
+- historical progression from steam/horse/early motor operation through diesel/electric rail, standardized road fleets, intermodal equipment and modern electric vehicles.
 
-Later-era vehicle rows should be added only after their representative prototype values, source and production lineage are validated.
+Rows remain authoring data, not implemented Unity assets. Representative prototype values, sources and production lineages are retained per model; values marked as authoring estimates still require final asset/balance validation before release.
 
 ## Rules
 
