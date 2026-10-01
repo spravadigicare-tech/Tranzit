@@ -987,9 +987,137 @@ A lowland area can therefore remain wet/bare while nearby mountains are snow-cov
 
 The goal is geographic plausibility, not a detailed climate-simulation subsystem.
 
-## 19. Still to define
+## 19. UI visual language
 
-The following visual areas remain to be specified in this art-direction thread:
+The main interaction/behaviour rules remain owned by [UI_UX_DESIGN.md](UI_UX_DESIGN.md). This section defines only the visual character.
 
-- final UI colour/type/icon tokens;
-- LOD/asset technical budgets after the Unity rendering baseline is selected.
+### 19.1 Overall character
+
+Use a restrained contemporary dark interface with a subtle technical/industrial transport character.
+
+Prefer:
+
+- charcoal/slate surfaces rather than pure black;
+- slightly lighter panels/windows;
+- restrained thin borders;
+- modest corner rounding;
+- limited translucency;
+- minimal decorative shadowing;
+- high information density without clutter.
+
+Avoid:
+
+- glassmorphism;
+- neon glow;
+- large website-like cards;
+- strong brand-style gradients;
+- period-themed chrome across the whole interface;
+- sci-fi dashboard styling.
+
+The world should remain the most visually colourful element on screen.
+
+### 19.2 Colour roles
+
+Use a neutral base plus functional semantic accents rather than one dominant brand colour.
+
+Typical semantic roles include:
+
+- primary interaction/accent: restrained steel/cyan-blue family;
+- positive/available: green;
+- warning: amber;
+- critical/error: red;
+- plan/draft/proposed state: restrained blue-violet family;
+- inactive/disabled: neutral grey.
+
+Exact hues remain implementation-level token work.
+
+Line-identification colours remain a separate system and must not be confused with warning/error state colours.
+
+### 19.3 Typography
+
+Use a highly readable neutral sans-serif as the primary interface typeface.
+
+Technical character should come from:
+
+- compact labels;
+- aligned numeric values;
+- tables;
+- diagrams;
+- consistent information hierarchy;
+- specialist contextual surfaces.
+
+Do not use a retro railway display/typewriter style as the main UI font. Specialist views such as station boards may use more distinctive period/technical typography while retaining common controls and accessibility.
+
+### 19.4 Icons
+
+Use a consistent factual icon system, preferably a restrained line/solid hybrid suited to dense management UI.
+
+Icons should describe actual objects/actions rather than relying on emoji or decorative metaphors.
+
+Typical subjects include:
+
+- rail/road vehicles;
+- cargo/shipment;
+- contracts;
+- facilities;
+- maintenance;
+- workforce;
+- incidents;
+- construction;
+- ownership/access.
+
+The already-confirmed neutral money token/coin icon remains separate from real-world currency symbols.
+
+### 19.5 Floating-window treatment
+
+Floating windows should be highly readable over the world without dimming the whole scene.
+
+Prefer mostly opaque panels (roughly near-opaque as an art target, not a locked percentage) so data remains legible. Ordinary windows do not need a global darkened backdrop.
+
+Multiple windows can coexist while the world remains visible and active behind them according to the confirmed interaction rules.
+
+### 19.6 Motion
+
+UI animation should be brief, precise and functional.
+
+Appropriate uses include:
+
+- opening/closing;
+- hover/focus feedback;
+- short rearrangement transitions;
+- highlighting a changed value;
+- restrained pulse/attention feedback for genuinely important new states.
+
+Avoid:
+
+- bounce-heavy motion;
+- long transitions;
+- flying cards;
+- animated gradients;
+- movement that slows repeated management work.
+
+### 19.7 Technical drawings and orthographic previews
+
+Context-specific technical views may use small orthographic silhouettes, engineering-style line drawings or dimension cues.
+
+Useful contexts include:
+
+- vehicle catalogue/comparison;
+- retrofit;
+- bridge/construction selection;
+- station/infrastructure detail.
+
+This technical language should support the object being inspected rather than becoming decorative chrome across the entire interface.
+
+### 19.8 Tokens deliberately left open
+
+Do **not** lock exact HEX colours, font family, opacity, border radius or pixel spacing before testing real mockups and in-engine UI.
+
+Those values should be finalized through visual implementation and readability testing while preserving the principles above.
+
+## 20. Still to define
+
+The remaining art-direction work is primarily technical implementation validation:
+
+- LOD/asset/rendering budgets after the Unity rendering baseline is selected;
+- exact UI design tokens after real mockup/in-engine readability testing.
