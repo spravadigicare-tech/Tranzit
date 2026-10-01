@@ -1832,7 +1832,12 @@ Construction demand likewise uses distinct physical commodities rather than one 
 
 For heavy industry, **coke is not a separate player-facing transport commodity** in the baseline design. Coal covers the relevant solid-fuel/reductant input at the gameplay level; internal processing detail may be abstracted inside the industrial recipe where needed. This keeps the useful transport decisions around coal, iron ore, iron/steel, metal products and machinery without an extra near-duplicate cargo step.
 
-Heavy industry also feeds the installed economy after initial construction. Iron/steel, metal-products and machinery sectors can produce **spare parts** consumed by factories, vehicles, depots/workshops, utilities and infrastructure maintenance. Later spare-part recipes can incorporate industrial chemicals, plastics, electronics and chips as technologies evolve. Asset maintenance must therefore create recurring secondary freight flows instead of being represented only by a money expense.
+Heavy industry also feeds the installed economy after initial construction through two spare-parts generations:
+
+- **basic spare parts** for older/mechanical vehicles, factories, workshops, utilities and infrastructure;
+- **modern spare parts**, introduced later for newer equipment and systems and increasingly using plastics, industrial chemicals, electronics and semiconductor components.
+
+An asset's technology/content definition determines which spare-parts generation it consumes. Newer parts do not automatically replace the needs of older equipment, so a long-lived legacy fleet or factory can keep supporting real basic-spare-parts demand while modern assets create a parallel newer supply chain. Asset maintenance must therefore create recurring secondary freight flows instead of being represented only by a money expense.
 
 Resource extraction remains **resource-specific**. Coal mines, iron-ore mines, stone/gravel quarries and other extraction industries are separate facility/industry types tied to plausible deposits and producing their own commodities. Do not collapse them into one generic mine merely because some downstream processing detail is abstracted.
 
