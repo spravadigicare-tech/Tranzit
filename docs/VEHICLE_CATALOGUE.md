@@ -250,13 +250,23 @@ Do not require the player to source these inputs for a third-party manufacturer 
 
 ### 9.2 Off-map manufacture
 
+Vehicle purchasing is **not limited by the player's commercial presence, branches, licences or the detailed playable map**. A company based entirely inside the active world may order a historically plausible vehicle from a manufacturer in another playable country, from a neighbouring off-map region, or from a much more distant market such as Britain, France or the United States.
+
 For an external manufacturer:
 
-1. the order consumes finite macro factory capacity;
+1. the order consumes finite macro factory capacity at the real source region represented by that manufacturer;
 2. a completion date is generated from the actual external backlog/capacity model;
-3. once complete, the physical unit appears **only at the selected border/import node**, not at the player's depot;
-4. import/border/customs/approval time and cost are applied where historically/jurisdictionally relevant;
-5. the vehicle then travels or is hauled/transported to the player's receiving point using GAME_DESIGN Section 15.8.
+3. after completion, the vehicle enters a **long-distance delivery chain** rather than teleporting to the active map;
+4. delivery cost and duration depend on source distance, vehicle type, required transshipment/handling, transport mode, permits/customs and historically available logistics;
+5. the shipment reaches the active world through a suitable border/import node or other authored gateway and only then continues physically to the buyer's receiving point;
+6. import/border/customs/approval time and cost are applied where historically/jurisdictionally relevant;
+7. the final in-map movement follows GAME_DESIGN Section 15.8.
+
+The player therefore does **not** need a branch or operating licence in the manufacturer's country merely to buy a vehicle there. Operating that vehicle commercially in a jurisdiction remains subject to the normal local licences, approvals and route compatibility.
+
+A distant source can be commercially unattractive without being artificially forbidden. For example, importing a British steam road vehicle into Bohemia in 1900 may be possible but expensive and slow because the player pays the real delivery chain from Britain to the active-world import point. Likewise, a later North American specialist vehicle can be imported if the period has suitable shipping/rail/road logistics and the vehicle can be legally and technically accepted.
+
+The external transport leg is paid by the buyer unless the purchase contract explicitly includes delivery. The seller may arrange transport, but it still uses real finite carrier capacity and real travel time. No off-map manufacturer gets a free hidden delivery shortcut.
 
 ### 9.3 Dealer stock
 
