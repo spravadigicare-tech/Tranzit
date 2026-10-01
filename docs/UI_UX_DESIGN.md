@@ -117,7 +117,7 @@ The accepted composition is a map workspace with floating windows and a fixed bo
 | Central world | Normal 3D map interaction and contextual overlays, with windows placed by the player | Main workspace; detailed overlays remain proposed |
 | Movable floating windows | Object inspectors, company/asset/business views and planning workspaces | CONFIRMED under UI-D02 and UI-D07 |
 | Fixed bottom bar | Main navigation, construction entry, important status and time controls | CONFIRMED under UI-D06 |
-| Contextual tools | Construction catalogue/options or the current planner's actions, separate from the persistent bar | Separation confirmed; floating tool window versus temporary area above the bar remains unresolved |
+| Contextual tools | Construction catalogue/options or the current planner's actions, separate from the persistent bar | Use the shared compact **floating tool-window** pattern; do not add a second temporary full-width strip above the bottom bar |
 | Event access | Compact incident/decision indicator in the bar, opening the event view | CONFIRMED with UI-D24 event-centre layout; critical-event pause remains owned by UI-D08 |
 
 Use the bottom bar instead of a mandatory permanent left navigation rail or separate full-width top status strip. Contextual windows may contain their own navigation/status without duplicating the entire global control system. Keep the bottom bar reachable while ordinary windows are open.
