@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "scope": "1901–1919 built-in vehicle templates",
+  "templates": [
+    {
+      "id": "lk_e_cargo_van_1908",
+      "model_id": "lk_e_cargo_1908",
+      "name": "Van",
+      "equipment_option_ids": [
+        "lk_e_van_1908"
+      ]
+    },
+    {
+      "id": "lk_e_cargo_flatbed_1908",
+      "model_id": "lk_e_cargo_1908",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "lk_e_flatbed_1908"
+      ]
+    },
+    {
+      "id": "lk_e_omnibus_postal_1908",
+      "model_id": "lk_e_omnibus_1908",
+      "name": "Postal",
+      "equipment_option_ids": [
+        "lk_e_postal_bus_1908"
+      ]
+    },
+    {
+      "id": "lk_e_omnibus_summer_1908",
+      "model_id": "lk_e_omnibus_1908",
+      "name": "Summer",
+      "equipment_option_ids": [
+        "lk_e_summer_bus_1908"
+      ]
+    },
+    {
+      "id": "pragov_n_flatbed_1915",
+      "model_id": "pragov_n_1915",
+      "name": "Flatbed",
+      "equipment_option_ids": [
+        "pragov_n_flatbed_1915"
+      ]
+    },
+    {
+      "id": "pragov_n_tipper_1915",
+      "model_id": "pragov_n_1915",
+      "name": "Tipper",
+      "equipment_option_ids": [
+        "pragov_n_tipper_1915"
+      ]
+    },
+    {
+      "id": "pragov_n_tank_1915",
+      "model_id": "pragov_n_1915",
+      "name": "Tank",
+      "equipment_option_ids": [
+        "pragov_n_tank_1915"
+      ]
+    }
+  ]
+}
