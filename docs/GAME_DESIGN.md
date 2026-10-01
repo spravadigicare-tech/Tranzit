@@ -4131,6 +4131,47 @@ The order UI should show:
 
 A production estimate can move when the manufacturer's real supply/capacity situation changes, but material delays should be explained rather than silently changing a date.
 
+### 15.2.1 Fleet orders and framework manufacturing contracts
+
+Manufacturer ordering supports both ordinary single-unit purchases and larger fleet orders.
+
+A larger order can negotiate:
+
+- lower unit price from production scale and predictable demand;
+- staged/batch delivery dates;
+- configuration standardization across the fleet;
+- reserved production capacity;
+- agreed escalation/indexation terms for long production runs;
+- optional spare-parts/support packages;
+- cancellation/change terms appropriate to work already committed.
+
+A quantity discount is never a free abstract percentage. It comes from real manufacturing economics such as setup/tooling spread, purchasing scale, standardized configuration and predictable factory utilization.
+
+Large fleet orders consume real factory capacity. The manufacturer can therefore:
+
+- schedule production in batches;
+- delay later units when inputs/capacity are constrained;
+- reject or renegotiate an order it cannot realistically fulfil;
+- prioritize according to real contractual commitments;
+- expand production capacity if expected demand and economics justify the investment.
+
+Capacity expansion is a real manufacturer decision/project with time, capital, workforce, equipment and supply implications. A player order does not instantly create extra production lines.
+
+For very large or recurring procurement, the parties can use a framework/manufacturing agreement that defines an overall quantity or call-off range while individual batches remain real physical production orders.
+
+The player should see:
+
+- configured unit price;
+- quantity and total committed value;
+- first and final estimated completion;
+- batch plan;
+- factory capacity/backlog impact;
+- known material/supplier risk;
+- cancellation/change consequences;
+- delivery/import responsibility.
+
+A fleet order never spawns the complete quantity at contract signing. Ownership/readiness follows actual production and physical delivery for each completed unit or batch.
+
 ### 15.3 Dealers and immediately available new stock
 
 Vehicle dealers/distributors are commercial entities that can purchase new vehicles from manufacturers and hold a limited number as **physical dealer stock**.
