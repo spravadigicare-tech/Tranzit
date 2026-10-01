@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "scope": "1901–1919 vehicle introductions",
+  "models": [
+    {
+      "schema_version": 1,
+      "id": "lk_e_cargo_1908",
+      "display_name": "Lorin & Klement E Cargo",
+      "real_prototype": "Laurin & Klement E Černá Hora cargo variants",
+      "introduction_year": 1908,
+      "date_precision": "year",
+      "manufacturer_id": "lorin_klement",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "light_freight",
+        "postal_freight",
+        "local_delivery"
+      ],
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 3.69,
+        "width_m": 1.6,
+        "height_m": 2.82,
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "max_speed_kph": 30,
+        "structural_speed_limit_kph": 30,
+        "payload_t": 0.9,
+        "cargo_volume_m3": 4.8,
+        "power_kw": 25.7,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "petrol"
+        ],
+        "wheelbase_m": 2.21
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_lk_boleslav"
+        ],
+        "series_build_days": 18,
+        "special_build_days": 28,
+        "base_cost_index": 115,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "early_petrol",
+        "light_service_km": 900,
+        "workshop_service_km": 4500,
+        "major_overhaul_km": 30000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "lk_e_cargo_body_1908"
+      ],
+      "built_in_template_ids": [
+        "lk_e_cargo_van_1908",
+        "lk_e_cargo_flatbed_1908"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skoda-storyboard.com/cs/tiskove-zpravy-archiv/pribehy-mene-znamych-modelu-z-historie-125-let-skoda-auto-laurin-klement-e-cerna-hora/"
+        ],
+        "notes": "Official Škoda historical release: 3690×1600 mm, 2820 mm high, 25.7 kW, 20–30 km/h practical speed, 900 kg / 4.8 m³ cargo, 2210 mm wheelbase.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "lk_e_omnibus_1908",
+      "display_name": "Lorin & Klement E Omnibus",
+      "real_prototype": "Laurin & Klement E Černá Hora omnibus variants",
+      "introduction_year": 1908,
+      "date_precision": "year",
+      "manufacturer_id": "lorin_klement",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "local_passenger",
+        "postal_bus",
+        "interurban_early"
+      ],
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 3.69,
+        "width_m": 1.6,
+        "height_m": 2.82,
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "max_speed_kph": 30,
+        "structural_speed_limit_kph": 30,
+        "seats": 5,
+        "standing": 0,
+        "power_kw": 25.7,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "petrol"
+        ],
+        "wheelbase_m": 2.21
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_lk_boleslav"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 30,
+        "base_cost_index": 125,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "early_petrol",
+        "light_service_km": 800,
+        "workshop_service_km": 4000,
+        "major_overhaul_km": 28000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "lk_e_bus_body_1908"
+      ],
+      "built_in_template_ids": [
+        "lk_e_omnibus_postal_1908",
+        "lk_e_omnibus_summer_1908"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skoda-storyboard.com/cs/tiskove-zpravy-archiv/pribehy-mene-znamych-modelu-z-historie-125-let-skoda-auto-laurin-klement-e-cerna-hora/"
+        ],
+        "notes": "Official source documents enclosed postal version for five passengers + 1.3 m³ mail and open summer body for 12 passengers. These are factory body variants, not workshop body retrofits.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "pragov_n_1915",
+      "display_name": "Pragov N",
+      "real_prototype": "Praga N",
+      "introduction_year": 1915,
+      "date_precision": "year",
+      "manufacturer_id": "pragov_praha",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "heavy_road_freight",
+        "municipal",
+        "industrial"
+      ],
+      "support_family_id": "road_cz_medium_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 7.14,
+        "width_m": 2.2,
+        "height_m": null,
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "max_speed_kph": 30,
+        "structural_speed_limit_kph": 35,
+        "payload_t": 5,
+        "power_kw": 36.7,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "petrol"
+        ],
+        "engine_displacement_l": 7.478
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_pragov_praha"
+        ],
+        "series_build_days": 24,
+        "special_build_days": 36,
+        "base_cost_index": 130,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "early_petrol",
+        "light_service_km": 900,
+        "workshop_service_km": 5000,
+        "major_overhaul_km": 35000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": 42,
+        "reference_note": "Later official 1958 norm for surviving Praga N used as balancing reference, not claimed as exact 1915 consumption."
+      },
+      "equipment_group_ids": [
+        "pragov_n_factory_body_1915"
+      ],
+      "built_in_template_ids": [
+        "pragov_n_flatbed_1915",
+        "pragov_n_tipper_1915",
+        "pragov_n_tank_1915"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://pragaglobal.com/praga-history/",
+          "https://motomuseum-hostalek.cz/index.php?grhead=2&id_art=1256&id_group=21&nav=01&t=_art_print"
+        ],
+        "notes": "Praga history and specialist museum material: introduced 1915, initial 5 t payload, 7.478 l four-cylinder, 50 hp≈36.7 kW, ~30 km/h representative early series.",
+        "confidence": "high"
+      }
+    }
+  ]
+}
