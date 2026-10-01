@@ -16,9 +16,74 @@ Keep these states visually and semantically separate. An opportunity is not yet 
 
 Use compact lists as the default. Do not present the three views as giant dashboard tiles. Preserve filters, sorting, selection and scroll during live refresh. Important object/customer/Line/Shipment references use exact-object links under UI-D09.
 
-## 2. Opportunities
+## 2. Market / Trh
 
-### 2.1 Opportunity Board
+The Market view helps the player discover **where transport demand may emerge** before a concrete contract/opportunity exists.
+
+It presents known local commodity-market information derived from the simulated economy.
+
+### 2.1 Commodity overview
+
+Default rows can show:
+
+- commodity;
+- selected city/market area;
+- local production;
+- local consumption;
+- surplus/deficit;
+- local reference price;
+- recent price trend;
+- known major producers/buyers where information permits.
+
+The view must distinguish real known values from estimates/stale information.
+
+### 2.2 Commodity detail and map
+
+Opening a commodity can project the same information spatially across the map.
+
+Example:
+
+> Jihlava — timber  
+> Production: 420 t/month  
+> Consumption: 160 t/month  
+> Net surplus: +260 t/month  
+> Reference price: 18 money/t
+>
+> Brno — timber  
+> Production: 80 t/month  
+> Consumption: 390 t/month  
+> Net deficit: −310 t/month  
+> Reference price: 27 money/t
+
+This does not guarantee that any specific firm will sign a contract or that a route is profitable.
+
+Where legitimate information exists, the player can drill into known producers/buyers and their company detail.
+
+### 2.3 Transport-market signal
+
+Where enough information exists, the Market view can also show a transport-market perspective for a corridor/commodity, such as:
+
+- known or estimated freight demand volume;
+- known competing carrier/service presence;
+- observed/known transport-rate range;
+- currently constrained or abundant transport capacity.
+
+These are reference signals, not a hidden profitability score.
+
+Avoid labels such as "best route" or opaque opportunity percentages. Show the underlying quantities/prices/capacity context instead.
+
+### 2.4 Relationship to Opportunities
+
+Market intelligence and Opportunities are separate:
+
+- **Market** shows structural supply/demand/price imbalances;
+- **Opportunities** shows concrete jobs, tenders and offers from real counterparties.
+
+Actions from Market can navigate to known producers/buyers, search/filter Opportunities for that commodity/area, or start a relevant planning workflow where one exists. They must not fabricate a customer contract.
+
+## 3. Opportunities
+
+### 3.1 Opportunity Board
 
 Implement the existing Opportunity Board as a dense but readable list that scales from a small local company to a larger operator. Only opportunities the company can legitimately discover under the simulation rules appear.
 
@@ -38,17 +103,17 @@ Use tooltips for secondary qualification requirements, margin assumptions, licen
 
 Filters should cover the existing relevant Opportunity Board dimensions without forcing all controls onto one line. Group them by task, such as transport, geography/customer, commercial type, timing/value and feasibility. Support clear-all. Search and sort are visible. More advanced saved filter presets can remain a later refinement if not otherwise required.
 
-### 2.2 Feasibility summary
+### 3.2 Feasibility summary
 
 A row can say, for example, **Ready**, **Requires investment**, **Missing licence/access**, **Capacity conflict** or **Not yet evaluated**, using the underlying structured reasons. This is an aid, not an automatic bid decision.
 
 Hover/focus explains the main concrete reasons. Clicking a missing legal requirement opens the exact market-entry/licence/permit dependency in the confirmed UI-D33 [UI_LICENCES_MARKETS.md](UI_LICENCES_MARKETS.md); physical infrastructure-access gaps continue to use their owning capacity/access workflow. Clicking other statuses opens their relevant evaluation/detail. Never calculate a fake percentage of readiness or hide uncertainty. Customer forecast volume remains labelled as forecast unless contract terms guarantee it.
 
-## 3. Opportunity detail and offer drafting
+## 4. Opportunity detail and offer drafting
 
 Opening an opportunity keeps the source list available and opens/focuses its detail. Show a compact commercial summary first: customer, requirement, dates, guaranteed versus estimated quantities, offered/bid price, SLA, bonuses/penalties, qualifications and deadline.
 
-### 3.1 Non-linear offer cards
+### 4.1 Non-linear offer cards
 
 Use independently openable cards, not a mandatory Next/Back wizard. The player may work on an offer over time and in any order.
 
