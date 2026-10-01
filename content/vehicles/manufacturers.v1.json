@@ -429,6 +429,17 @@
         "macro_at_wiener_neustadt"
       ],
       "notes": "Wiener Neustadt steam-locomotive builder represented as an off-map Austrian manufacturer."
+    },
+    {
+      "id": "kralopole_brno",
+      "display_name": "Králopole Brno",
+      "real_inspiration": "Královopolská strojírna Brno",
+      "home_region": "cz_mor_south",
+      "source_kind": "active_map",
+      "plant_ids": [
+        "plant_kralopole_brno"
+      ],
+      "notes": "Railcar/rolling-stock body and assembly source; important early M262 production partner."
     }
   ]
 }
