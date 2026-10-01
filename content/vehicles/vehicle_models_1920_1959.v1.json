@@ -583,6 +583,7 @@
       "support_family_id": "rail_electric_skoda_legacy_dc",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 15.74,
         "service_mass_t": 82,
         "max_speed_kph": 120,
@@ -650,6 +651,7 @@
       "support_family_id": "rail_diesel_electric_ckd",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12.56,
         "service_mass_t": 61,
         "max_speed_kph": 60,
@@ -717,6 +719,7 @@
       "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 18.5,
         "service_mass_t": 31.6,
         "max_speed_kph": 70,
