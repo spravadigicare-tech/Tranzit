@@ -120,7 +120,11 @@ Do not split consumer goods down to individual retail SKUs. The purpose of the e
 
 The catalogue must exercise bulk mass, volume-limited goods, indivisible units, perishable/temperature-sensitive cargo and a restricted/hazardous handling case. Standardized modern container/pallet systems must not appear in 1900 merely because the generic allocation engine supports them; introduce them with the appropriate later content.
 
-At least four complete linked economic chains must operate, including extraction/agriculture, processing and a real consumer. At least one chain supplies vehicle operations, one supplies construction, one contains perishable cargo and one supports a multi-leg road/rail transfer. Example authoring chains are timber → processed wood → construction, grain → food processing → city consumption, ore/energy → metal products → manufacturing, and local food → distribution → consumers. Exact recipes and ratios are balancing data, with explicit unit conversions.
+At least four complete linked economic chains must operate, including extraction/agriculture, processing and a real **final-use sink**. No authored chain may terminate at a producer/intermediate commodity with no downstream use.
+
+The ultimate sink of every chain must be part of the city/urban economy, directly or indirectly: household-facing retail/services, construction/buildings, utilities, public institutions, transport/operating consumption, or another final-use activity that ultimately supports city population, employment, services or development. Intermediate industrial firms can of course consume each other's outputs, but every chain must eventually reach one of these final-use sinks.
+
+At least one chain supplies vehicle operations, one supplies construction, one contains perishable cargo and one supports a multi-leg road/rail transfer. Example authoring chains are timber → processed wood → furniture/construction → city use, grain → food processing → retail → city consumption, ore/energy → iron/steel → machinery/manufactured goods → city/industrial final use, and local food → distribution → consumers. Exact recipes and ratios are balancing data, with explicit unit conversions.
 
 Consumption/production cannot create free inventory. A recipe is an explicit conversion, with declared waste/loss where used. Cargo conservation tests concern transportation quantities; production is an authorized inventory transformation, not a false invariant violation.
 
