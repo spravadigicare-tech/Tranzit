@@ -1824,6 +1824,8 @@ The economy supports three broad physical-goods roles without forcing every firm
 
 Representative shops, distributors, hospitality/services, institutions and similar entities can stand in for household-facing consumption. Do not simulate every household or every small shop individually. Their physical inputs still have real inventories and delivery needs; their non-cargo output can contribute to local commercial activity, service availability and city development.
 
+For the 1900 economy, food consumption is not one generic commodity. Use a limited set of meaningful categories such as grain, flour/bakery products, meat, dairy products and fruit/vegetables, with appropriate production/processing/storage and perishability differences. Keep the level above individual retail products so the system remains legible and scalable.
+
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
 ### 10.2 Industrial geography
