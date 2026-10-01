@@ -20,7 +20,7 @@ Use independently openable compact cards, not a mandatory setup sequence:
 | Licences and permissions / Licence a oprávnění | What the company may operate and where, applications, requirements, validity and renewal/expiry risks; open the confirmed UI-D33 Licences and expansion workspace for the full market/licence/permit/application view |
 | Company systems / Firemní systémy | Actually adopted communication/business systems, current capabilities, available improvements and their concrete requirements/effects; open UI-D38 Technology for research/unlock/adoption state |
 
-Provide direct access to Finance, opening/focusing the same window as the bottom-bar cash amount. Do not maintain a second balance, loan interface or transaction history inside Company. UI-D39 owns group/subsidiary control. Company adds a compact **Our group / Naše skupina** view when relevant, showing ownership, control state, broad direction, active owner directives and important decisions/issues. Controlled subsidiaries remain AI-managed; do not duplicate their full Line/Fleet/Finance UI inside the parent overview.
+Provide direct access to Finance, opening/focusing the same window as the upper-left HUD cash/current-period result under UI-D41. Do not maintain a second balance, loan interface or transaction history inside Company. UI-D39 owns group/subsidiary control. Company adds a compact **Our group / Naše skupina** view when relevant, showing ownership, control state, broad direction, active owner directives and important decisions/issues. Controlled subsidiaries remain AI-managed; do not duplicate their full Line/Fleet/Finance UI inside the parent overview.
 
 ## 2. Branch list and detail
 
