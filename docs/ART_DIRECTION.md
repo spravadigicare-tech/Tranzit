@@ -590,12 +590,104 @@ In that mode, relevant terrain becomes transparent, faded or sectioned enough to
 
 The cutaway is an analysis/presentation mode only. It does not alter the physical route, simulation, travel time or visibility/knowledge rules.
 
-## 15. Still to define
+## 15. Regional and historical architecture
+
+### 15.1 Authoring scope
+
+The world uses real geography and real settlement locations where supported by the authored world data, but **not every town or village is individually hand-modelled**.
+
+Authoring effort should be concentrated on:
+
+- major cities;
+- nationally/regionally important settlements;
+- distinctive transport/industrial locations;
+- major historical landmarks;
+- iconic stations, bridges, factories or civic buildings where their identity materially improves the world.
+
+Smaller towns and villages normally use regional/historical procedural or rule-based assembly from reusable kits. Their placement, broad scale, terrain relationship and important through-routes should remain geographically plausible, but ordinary buildings do not need one-to-one historical reconstruction.
+
+### 15.2 Architectural identity
+
+Building appearance should derive from a combination such as:
+
+> function × construction era × region × density × economic level × age/condition
+
+Do not use one national skin per country. Regional architectural identity should emerge through combinations of:
+
+- roof forms;
+- materials;
+- facade proportions;
+- building width/height;
+- street relationship;
+- rural farm/yard form;
+- industrial construction;
+- civic/transport architecture;
+- colour/material tendencies.
+
+Neighbouring industrial regions may resemble each other more than distant regions inside the same modern country.
+
+### 15.3 Historical layering
+
+Cities should accumulate architecture over time rather than switching to a new era skin.
+
+Representative broad visual eras include:
+
+- **pre-1918 / around 1900:** historic blocks, tenements, row houses, farmsteads, brick industry, period stations and ornamented civic buildings;
+- **1918–1945:** continuation of traditional fabric plus modernism/functionalism, expanding suburbs and newer civic/industrial forms;
+- **1945–1990:** older fabric remains, while panel/prefabricated housing, larger industrial complexes, cultural/commercial centres and wider infrastructure appear;
+- **1990+**: suburban expansion, logistics/retail, modern offices/housing, brownfield redevelopment and restoration of older fabric.
+
+These are visual trends, not hard date unlocks.
+
+### 15.4 Growth, replacement and preservation
+
+Ordinary urban buildings may be replaced, extended, repurposed or densified over time where the city-development simulation supports it.
+
+Possible long-term outcomes include:
+
+- retained building;
+- renovation/restoration;
+- change of use;
+- extension/rear-wing addition;
+- replacement by denser/newer development;
+- decline;
+- protected preservation.
+
+**Most of a historic urban core should remain protected from ordinary redevelopment.** Historic centres should preserve a strong majority of their characteristic street fabric and older buildings over long campaigns.
+
+Protection is stronger for:
+
+- major landmarks;
+- heritage/civic/religious buildings;
+- highly characteristic historic blocks;
+- nationally or locally important structures.
+
+Replacement pressure should therefore occur more strongly in peripheral, transitional, industrial/brownfield and later-developed areas than in the protected historic core.
+
+The protection rule preserves historical identity without freezing the entire city. Non-protected buildings inside or near an old centre can still change where plausible.
+
+### 15.5 Villages and small towns
+
+Small settlements should use organic Central-European structure rather than a clean grid.
+
+Typical elements may include:
+
+- development along historic roads;
+- village greens/squares;
+- farmsteads with yards and barns;
+- gardens/orchards;
+- wells;
+- fences/gates;
+- churches/chapels where appropriate;
+- irregular side roads and field access.
+
+A village may expand, merge into a larger built-up area or eventually be absorbed by urban growth. The visual system must support that transition without requiring a bespoke hand-authored model for each settlement.
+
+## 16. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
 - regional rural landscape identities and exact field/crop palette;
-- regional/country architectural identity and historical urban-era kits;
 - exact pedestrian/character style and animation density;
 - detailed VFX language for smoke, steam, dust, mud and construction;
 - final UI colour/type/icon tokens;
