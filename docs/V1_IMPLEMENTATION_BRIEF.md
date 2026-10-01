@@ -138,7 +138,7 @@ The following rows define minimum operational behaviour, not just class names. E
 | SYS-01 | 1–5, 41 | Shared clock, no-grid world, logical physical continuity, streamed presentation, reproducible simulation and structured explanations |
 | SYS-02 | 2–3, 6, 35–36 | 1900 world, legal region expansion, aggregate inactive world, season/day cycles, demand changes, visible city development and historical/technology events |
 | SYS-03 | 7–9, 28 | Physical branches, office setup/equipment/staff/workload, named directors/managers, salary/qualified labour supply, delegation permissions, reputation and customer-specific history |
-| SYS-04 | 10–11 | Firms with inventories, production/consumption/final-consumption roles, evolving local market areas and explainable reference prices; real cargo/passenger opportunities, producer/buyer transport proposals, transparent sealed public tenders, bids, contracts, SLA, bonuses, renegotiation, expansion, cancellation and renewal |
+| SYS-04 | 10–11 | Firms with inventories, production/consumption/final-consumption roles, stable city/locality commodity markets with evolving internal economic centres and explainable reference prices; real cargo/passenger opportunities, producer/buyer transport proposals, transparent sealed public tenders, bids, contracts, SLA, bonuses, renegotiation, expansion, cancellation and renewal |
 | SYS-05 | 11–12, 30 | Contract/shipment transport plans, split lots, multi-leg routing, physical storage, cutoffs, allocation protection, recovery and external carrier procurement |
 | SYS-06 | 13–14, 19–20 | Road/rail compatibility, railway section and station capacity, dynamic tracks/platforms, access ownership/charges, coordinated capacity ordering and actual occupancy |
 | SYS-07 | 14–18 | Per-asset fleet, physical shunting/turning, consistent duties, manufacturer/dealer/used/lease acquisition, delivery, fuel/supplies, service, retrofit, rescue and scrapping |
@@ -194,7 +194,7 @@ Production recipes consume inventories and produce defined outputs. Missing inpu
 
 Implement firm/facility identities separately from physical property so closures, failures, acquisition, brownfield vacancy and later adaptive reuse do not delete the world geometry. Commodity catalogues and base/reference values evolve historically; older commodities decline organically instead of disappearing at a hard date.
 
-Local commodity pricing uses coarse/event-driven market areas that can be smaller than a city and evolve gradually with development/accessibility. Reference prices remain explainable signals around historically evolving base values; concrete firm prices are negotiated separately. Opening Market commodity analysis exposes surplus/deficit and reference price together without revealing unknown private firms.
+Local commodity pricing uses one stable commodity market per city/locality. Internal economic centres/neighbourhoods can emerge and evolve as population, firms, jobs, infrastructure and accessibility change, but they do not become separate reference-price markets. Reference prices remain explainable signals around historically evolving base values; concrete firm prices are negotiated separately. Opening Market commodity analysis exposes city-market surplus/deficit and reference price together without revealing unknown private firms.
 
 Freight recurring business remains primarily contract-driven. Open/spot carriage can use spare compatible capacity under published category/commodity tariffs, but each firm can route only a bounded percentage of its real uncontracted flow this way. No anonymous demand may be generated to fill a Line.
 
@@ -240,7 +240,7 @@ Required player screens/workflows:
 | Operations | Lines/Pattern versions/calendars, capacity orders/timeline, duties/fleet assignment, departures, actual delays and action reasons |
 | Assets | Marketplace, order/delivery tracking, physical fleet details, workshops/service policies, fuel/storage/support |
 | Passenger/cargo detail | Per-leg commitments, actual quantity/capacity, queues/transfers, protected reservations, recovery and cost consequences |
-| World/business context | Cities/firms/production/final consumption, evolving market areas, public state/region/city priorities, competitors, partnerships, UI-D39 company/infrastructure acquisitions, UI-D38 Technology/research/adoption, UI-D40 World News/history and major disruptions |
+| World/business context | Cities/firms/production/final consumption, stable city/locality markets with evolving internal economic centres, public state/region/city priorities, competitors, partnerships, UI-D39 company/infrastructure acquisitions, UI-D38 Technology/research/adoption, UI-D40 World News/history and major disruptions |
 
 Aggregate data must be drillable. A disabled action explains its specific blocker and links to a corrective workflow. Distinguish simulation facts, estimates and commercial promises. No decorative financial chart with invented data.
 
