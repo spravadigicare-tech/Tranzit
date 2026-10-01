@@ -1432,11 +1432,13 @@
         "structural_speed_limit_kph": 75,
         "seats": 37,
         "standing": 103,
-        "power_kw": 141,
+        "power_kw": 141.2,
         "axle_count": 3,
         "fuel_energy": [
           "diesel"
-        ]
+        ],
+        "height_m": 3.16,
+        "empty_mass_t": 12.5
       },
       "production": {
         "source_kind": "off_map",
@@ -1466,8 +1468,8 @@
         "source_urls": [
           "https://www.ikarusy.net/o_ikarusu.html"
         ],
-        "notes": "Representative common city configuration.",
-        "confidence": "medium"
+        "notes": "Ikarus 280.08 technical data: 16.5×2.5×3.16 m, 12.5 t vehicle mass, 37 seated + 103 standing, 141.2 kW Rába-MAN engine. Later batches varied; this template represents the common 280.08 city configuration.",
+        "confidence": "high"
       }
     },
     {
