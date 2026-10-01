@@ -49,6 +49,8 @@ class VehicleContentValidatorTests(unittest.TestCase):
                     "schema_version": 1,
                     "id": "v",
                     "introduction_year": 1900,
+                    "mode": "rail",
+                    "vehicle_kind": "locomotive",
                     "manufacturer_id": "m",
                     "support_family_id": "s",
                     "regional_market_profile_id": "r",
@@ -94,6 +96,24 @@ class VehicleContentValidatorTests(unittest.TestCase):
         directory, root, _ = self.fixture()
         with directory:
             self.assertEqual(check_vehicle_content(root).errors, ())
+
+    def test_vehicle_kind_must_match_mode(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            data["models"][0]["vehicle_kind"] = "truck"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            self.assertTrue(any("vehicle_kind" in x and "invalid for mode" in x for x in check_vehicle_content(root).errors))
+
+    def test_unknown_vehicle_kind_rejected(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            data["models"][0]["vehicle_kind"] = "hovercraft"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            self.assertTrue(any("vehicle_kind" in x and "invalid for mode" in x for x in check_vehicle_content(root).errors))
 
     def test_unknown_reference_rejected(self):
         directory, root, base = self.fixture()
