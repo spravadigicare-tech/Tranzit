@@ -326,6 +326,116 @@ Ordinary factory production can change because:
 
 That affects **offers**, not the model definition. A player with an old locomotive does not lose it because the real-world production run ended.
 
+## 9.6 Vehicle templates, variants and conversions
+
+Every materially different vehicle configuration is represented by its own **vehicle template / variant** under one underlying model family.
+
+Examples:
+
+- passenger coach family:
+  - `Economy`
+  - `Business`
+  - `Economy Neo`
+  - `Business Neo`
+- locomotive family:
+  - original production configuration;
+  - later train-protection retrofit;
+  - revised heating/control package;
+  - major engine/traction rebuild;
+- road vehicle family:
+  - flatbed;
+  - box body;
+  - refrigerated body;
+  - tanker;
+  - recovery body;
+  - later upgraded driveline/interior/safety package.
+
+A template is not only a cosmetic skin. It defines the actual configuration that matters to simulation, such as:
+
+- passenger classes/zones and seat count;
+- cargo/body compatibility and payload;
+- installed equipment;
+- power/traction package;
+- braking/control systems;
+- heating/HVAC;
+- accessibility;
+- comfort/service equipment;
+- energy/fuel system;
+- safety/train-protection package;
+- mass and resulting axle/payload consequences;
+- maintenance and parts family.
+
+A concrete physical vehicle instance always references exactly one active template.
+
+Changing configuration does **not** mutate statistics instantly. A conversion creates a real workshop/manufacturer job that:
+
+1. reserves the physical vehicle;
+2. requires a compatible workshop/provider and skills;
+3. consumes real parts/materials;
+4. occupies real workshop time/capacity;
+5. changes the vehicle instance to the target template only when the job finishes.
+
+The same serial/asset identity remains throughout the conversion. Ownership history, mileage, age and maintenance history are preserved.
+
+Each conversion path is explicit. The game does not automatically allow arbitrary movement between every pair of templates. A conversion definition can specify:
+
+- valid source template(s);
+- target template;
+- eligible workshop/provider families;
+- required parts/materials;
+- labour/plant time;
+- cost;
+- minimum/maximum vehicle condition where relevant;
+- whether seats/body/equipment removed from the vehicle have residual value or reusable stock;
+- certification/inspection required after the conversion;
+- performance/capacity changes.
+
+### Simple fleet-template editor
+
+The player-facing editor must remain intentionally simple and understandable.
+
+The normal workflow is:
+
+1. choose the **vehicle model family**;
+2. choose or duplicate an existing **template**;
+3. edit only the small set of meaningful configuration groups supported by that family;
+4. see the resulting capacity, compatibility, weight, cost and maintenance consequences immediately;
+5. save the template under a player-facing name;
+6. apply it to a new manufacturer order or create a conversion job for existing vehicles.
+
+Do not expose engineering-level component trees, hundreds of individual part numbers or free-form stat editing.
+
+For a passenger coach, the editor may expose groups such as:
+
+- passenger layout/class zones;
+- seat density/comfort package;
+- luggage/bike/wheelchair allocation;
+- HVAC/heating package;
+- catering/service equipment;
+- accessibility package;
+- approved speed/braking/control package.
+
+For a truck:
+
+- chassis-cab family;
+- body type;
+- cargo equipment;
+- refrigeration/tank/specialist package;
+- engine/driveline option when genuinely offered;
+- safety/comfort package.
+
+For a locomotive:
+
+- only historically and technically supported factory/retrofit packages;
+- train protection/control;
+- heating/electrical package;
+- approved traction/engine rebuilds;
+- country equipment packages.
+
+Templates should use clear player-facing names such as `Economy`, `Business`, `Economy Neo` or a custom player name. Internally they retain stable IDs and structured component/configuration references.
+
+The editor must never imply that the player designs a vehicle from first principles. It configures or converts within real supported options for that model family.
+
 ## 10. Core specification schema for every authored vehicle
 
 Machine-readable vehicle data should eventually include at least:
