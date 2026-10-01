@@ -18,6 +18,7 @@ Read with [GAME_DESIGN.md](GAME_DESIGN.md) and [CONTRACT_CANCELLATION.md](CONTRA
 | Geography | Real settlement locations, rivers and relief; a historically plausible authored 1900 world, not an exact reconstruction of every historical property |
 | Names | Real cities/landmarks; fictional transport companies, commercial firms, manufacturers and vehicle brands; familiar Czech city names in Czech UI |
 | Existing world | Working third-party/public roads, railways, stations, firms and competitors already exist at game start |
+| Public infrastructure contracts | V1 includes all three confirmed public corridor/infrastructure models: state-owned infrastructure with player service operating right, Build–Operate–Transfer concession, and publicly co-funded private infrastructure with explicit funding/access/service conditions |
 | Player start | Small, mode-neutral company financed by one of three favourable founding loans; no free branch, fleet or depot |
 | Currency | One accounting unit named `money`; compact UI amounts may use one dedicated neutral coin/token icon as shorthand, but no real-world currency symbols, historical currency switching or foreign-exchange subsystem |
 | Language | Complete Czech and English UI; stable English code/data IDs; localization from the start |
