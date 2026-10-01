@@ -67,7 +67,7 @@ If TODO and IMPLEMENTATION_STATUS disagree, resolve the stale document rather th
 
 Implement an actual offline Windows game with coherent 3D graphics, Czech/English UI and full persistence. Do not stop at a scaffold, blank UI, isolated simulation or one moving train and call it V1.
 
-The first release uses the **1900 start only**, with continuing historical/technology progression, **rail and road** for freight/passengers, local/intercity buses, the approved Czech-and-adjoining-region world, one unit named **money**, real competitors and the applicable connected business/operational systems. Later start presets and water/tram/trolleybus/metro operation remain future base-game scope. Aircraft remain excluded.
+The first release uses the **1900 start only**, with continuing historical/technology progression, **rail and road** for freight/passengers, local/intercity buses, the approved Czech-and-adjoining-region world, one unit named **money**, real competitors and the applicable connected business/operational systems. Passenger inter-operator cooperation is limited to the defined bilateral **partner-capacity-sale through-ticket** mechanism; ordinary transfers create no separate passenger connection-agreement, protected-transfer or hold subsystem. Later start presets and water/tram/trolleybus/metro operation remain future base-game scope. Aircraft remain excluded.
 
 Simple coherent original modular assets are acceptable. Debug primitives with labels are not finished player-facing graphics. Develop presentation, localization, persistence and tests alongside the simulation.
 
