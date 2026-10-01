@@ -272,6 +272,7 @@
         },
         "initial_capability_state": {
           "enum": [
+            "prototype_pre_series",
             "series_production",
             "low_rate_special_order",
             "parts_and_overhaul_only",
