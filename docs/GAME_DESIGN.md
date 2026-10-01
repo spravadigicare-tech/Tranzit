@@ -2143,6 +2143,30 @@ One of the main pressure inputs is **stock coverage measured in days of normal c
 
 Material exceptional events such as a major mine/factory closure, severe disruption, sudden loss of a dominant supplier or abrupt market-access change may trigger an explicit early recalculation and use the exceptional-shock response. A genuinely exceptional shock may move the local reference price by at most **±15% over one full game day**. This is still a cap, not an automatic jump. Ordinary shortages, one late delivery or routine production variation remain under the normal ±5% daily cap. Do not continuously solve every firm-to-firm market pair every frame.
 
+#### Reference-price response curve
+
+The ordinary market calculation derives one explainable target-price multiplier from three explicit components:
+
+1. **usable stock coverage** relative to the commodity/consumer target coverage;
+2. **near-term physical flow balance** over the configured forecast horizon;
+3. **alternative-market relief/access** for the same imbalance, including realistic delivered cost, transport capacity and arrival/departure timing.
+
+The initial V1 curve and bounds are versioned balancing data in V1_CONTENT_MANIFEST. The algorithm is fixed:
+
+- calculate usable stock coverage from physical, quality-eligible, uncommitted inventory divided by normal daily consumption;
+- map stock coverage/target-coverage ratio through the configured piecewise stock-pressure curve using linear interpolation;
+- calculate projected supply minus projected consumption over the configured short horizon, normalize it by projected consumption and map it through the configured piecewise flow-pressure curve;
+- calculate a bounded alternative-access contribution. For a deficit, credible import relief reduces upward pressure; for a surplus, credible export relief reduces downward pressure. Isolation does the opposite. Confirmed physical movements count more strongly than merely available but uncontracted outside capacity;
+- sum the three percentage contributions around the historical/era base value, then clamp the resulting target multiplier to the configured ordinary target range;
+- smooth the newly calculated target against the previous target using the configured target-response factor so one recalculation does not create oscillation;
+- move the authoritative/displayed reference price toward that smoothed target only through the scheduled lightweight adjustment steps and the existing daily movement cap.
+
+The pressure components are signed contributions, not hidden profit scores. The simulation retains each component, its source values and the final clamp/smoothing result so Market UI/debugging can explain, for example, that a price is +25% from low stock, +10% from projected deficit and -6% from credible inbound relief.
+
+When an explicitly classified exceptional shock is active, the same component model is used unless the shock directly changes an input. Only the wider exceptional target bounds and ±15% daily movement cap apply; an exceptional flag does not add an arbitrary extra price bonus.
+
+If normal daily consumption is effectively zero, do not divide by a fabricated tiny demand value to manufacture extreme scarcity. A market with no real buyer demand uses actual outstanding demand/inventory/flow state and cannot become expensive merely because stock-days are mathematically undefined.
+
 ### 10.6 Market intelligence for transport opportunities
 
 The player can inspect aggregated market intelligence to identify potential transport corridors before a concrete customer opportunity exists.
