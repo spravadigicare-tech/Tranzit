@@ -43,7 +43,7 @@ Show every canonical agreement/committed order between the two companies that al
 - carrier partnership/framework agreements;
 - subcontracting or recurring external-transport arrangements;
 - one-off External Transport Orders that are still active, in execution or retained in history;
-- through-ticket / protected-connection partnership agreements;
+- through-ticket / passenger-cooperation agreements;
 - infrastructure access agreements;
 - rail/station Capacity Orders and related capacity agreements;
 - station/terminal/depot/workshop/facility rental or service access;
@@ -51,7 +51,6 @@ Show every canonical agreement/committed order between the two companies that al
 - fuel/material/supply agreements;
 - vehicle lease/rental agreements;
 - property/infrastructure lease or access arrangements;
-- connection agreements;
 - other accepted bilateral contracts/committed orders already defined by the core game.
 
 This list is illustrative, not permission to invent a new agreement type.
@@ -76,10 +75,11 @@ Supported clauses appear as explicit options under the side that grants the righ
 
 Do not force mirrored terms.
 
-For passenger cooperation, the initial clause set includes:
+For passenger cooperation, the currently defined clause is:
 
-- **Connection coordination at a station/terminal**, with the relevant place/destination each side is intended to connect;
 - **Sell partner capacity on through tickets**, independently enabled in each direction.
+
+Connection-agreement clauses are intentionally unspecified until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned from scratch.
 
 When capacity resale is enabled, show the two separate settlement rates clearly:
 
