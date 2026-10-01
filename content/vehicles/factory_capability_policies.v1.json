@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "states": [
+    "series_production",
+    "low_rate_special_order",
+    "parts_and_overhaul_only",
+    "external_specialist_support_only",
+    "used_market_only"
+  ],
+  "policies": [
+    {
+      "id": "cap_standard_series",
+      "description": "Ordinary serial vehicle family with gradual capability decline instead of a hard retirement date.",
+      "evaluation_cadence_game_months": 12,
+      "transitions": [
+        {
+          "from": "series_production",
+          "to": "low_rate_special_order",
+          "conditions": [
+            "successor_or_newer_competing_line_exists",
+            "sustained_factory_utilization_below_35_percent_for_12_game_months"
+          ],
+          "requires_both": false
+        },
+        {
+          "from": "low_rate_special_order",
+          "to": "parts_and_overhaul_only",
+          "conditions": [
+            "no_complete_new_build_orders_for_24_game_months",
+            "tooling_or_supplier_economics_do_not_support_complete_build"
+          ],
+          "requires_both": true
+        },
+        {
+          "from": "parts_and_overhaul_only",
+          "to": "external_specialist_support_only",
+          "conditions": [
+            "factory_no_longer_retains_full_support_capability"
+          ],
+          "requires_both": false
+        },
+        {
+          "from": "external_specialist_support_only",
+          "to": "used_market_only",
+          "conditions": [
+            "no_active_compatible_support_provider_or_parts_source"
+          ],
+          "requires_both": false
+        }
+      ],
+      "allow_reactivation": true,
+      "historical_event_override": true
+    },
+    {
+      "id": "cap_pioneer_short_series",
+      "description": "Pioneering/early motor or unusually short production family; ordinary new-build capability is less sticky.",
+      "evaluation_cadence_game_months": 6,
+      "transitions": [
+        {
+          "from": "series_production",
+          "to": "low_rate_special_order",
+          "conditions": [
+            "newer_factory_successor_exists",
+            "sustained_low_order_volume_for_6_game_months"
+          ],
+          "requires_both": false
+        },
+        {
+          "from": "low_rate_special_order",
+          "to": "parts_and_overhaul_only",
+          "conditions": [
+            "no_complete_build_for_12_game_months",
+            "tooling_not_economically_retained"
+          ],
+          "requires_both": true
+        }
+      ],
+      "allow_reactivation": true,
+      "historical_event_override": true
+    },
+    {
+      "id": "cap_long_lived_utility",
+      "description": "Standardized wagons, coaches and durable utility fleets whose tooling/support may remain economic for long periods.",
+      "evaluation_cadence_game_months": 12,
+      "transitions": [
+        {
+          "from": "series_production",
+          "to": "low_rate_special_order",
+          "conditions": [
+            "successor_exists",
+            "sustained_factory_utilization_below_20_percent_for_24_game_months"
+          ],
+          "requires_both": true
+        },
+        {
+          "from": "low_rate_special_order",
+          "to": "parts_and_overhaul_only",
+          "conditions": [
+            "no_complete_new_build_orders_for_36_game_months"
+          ],
+          "requires_both": false
+        }
+      ],
+      "allow_reactivation": true,
+      "historical_event_override": true
+    },
+    {
+      "id": "cap_specialist_low_volume",
+      "description": "Specialist/heavy/premium vehicle whose production can remain low-rate while support remains valuable.",
+      "evaluation_cadence_game_months": 12,
+      "transitions": [
+        {
+          "from": "series_production",
+          "to": "low_rate_special_order",
+          "conditions": [
+            "series_demand_no_longer_supports_dedicated_line"
+          ],
+          "requires_both": false
+        },
+        {
+          "from": "low_rate_special_order",
+          "to": "parts_and_overhaul_only",
+          "conditions": [
+            "special_build_capability_no_longer_profitable_or_tooling_lost"
+          ],
+          "requires_both": false
+        }
+      ],
+      "allow_reactivation": true,
+      "historical_event_override": true
+    },
+    {
+      "id": "cap_fixed_programme",
+      "description": "Integrated trainset/large programme where complete new builds depend on an active programme/tooling contract.",
+      "evaluation_cadence_game_months": 12,
+      "transitions": [
+        {
+          "from": "series_production",
+          "to": "parts_and_overhaul_only",
+          "conditions": [
+            "programme_closed_or_complete_build_tooling_repurposed"
+          ],
+          "requires_both": false
+        },
+        {
+          "from": "parts_and_overhaul_only",
+          "to": "external_specialist_support_only",
+          "conditions": [
+            "original_factory_support_contract_ends_and_only_specialists_remain"
+          ],
+          "requires_both": false
+        }
+      ],
+      "allow_reactivation": false,
+      "historical_event_override": true
+    }
+  ]
+}
