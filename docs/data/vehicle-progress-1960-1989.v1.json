@@ -1,0 +1,2239 @@
+{
+  "schema_version": "1.0.0",
+  "pack_id": "vehicle_progression_1960_1989_v1",
+  "depends_on": [
+    "vehicle_seed_1900_v1",
+    "vehicle_progression_1915_1959_v1"
+  ],
+  "manufacturers": [
+    {
+      "id": "viaz",
+      "name_key": "manufacturer.viaz",
+      "real_inspiration": "LIAZ",
+      "home_market_tags": [
+        "czechoslovakia"
+      ],
+      "notes": "Heavy road vehicle producer."
+    },
+    {
+      "id": "aviat_letnany",
+      "name_key": "manufacturer.aviat_letnany",
+      "real_inspiration": "Avia",
+      "home_market_tags": [
+        "czechoslovakia"
+      ],
+      "notes": "Light/medium commercial vehicle producer."
+    },
+    {
+      "id": "ikarusz",
+      "name_key": "manufacturer.ikarusz",
+      "real_inspiration": "Ikarus",
+      "home_market_tags": [
+        "hungary"
+      ],
+      "notes": "Large export bus producer."
+    },
+    {
+      "id": "mercator_benz",
+      "name_key": "manufacturer.mercator_benz",
+      "real_inspiration": "Mercedes-Benz",
+      "home_market_tags": [
+        "germany"
+      ],
+      "notes": "Broad European road vehicle producer."
+    }
+  ],
+  "factories": [
+    {
+      "id": "factory_neskoda_plzen_1960",
+      "manufacturer_id": "neskoda_plzen",
+      "location_mode": "active_map",
+      "location_key": "plzen",
+      "capabilities": [
+        {
+          "model_family_id": "rail_neskoda_e670_sestikolo",
+          "from": "1961-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 200,
+          "batch_efficiency": 0.8,
+          "notes": "Heavy DC freight electric."
+        },
+        {
+          "model_family_id": "rail_neskoda_a489_laminat",
+          "from": "1966-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 190,
+          "batch_efficiency": 0.82,
+          "notes": "AC electric."
+        },
+        {
+          "model_family_id": "rail_neskoda_es500_eso",
+          "from": "1980-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 205,
+          "batch_efficiency": 0.84,
+          "notes": "Dual-system electric."
+        },
+        {
+          "model_family_id": "rail_neskoda_e162_pershing",
+          "from": "1984-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 200,
+          "batch_efficiency": 0.84,
+          "notes": "Fast single-system electric."
+        }
+      ]
+    },
+    {
+      "id": "factory_cmd_praha_1960",
+      "manufacturer_id": "cmd_praha",
+      "location_mode": "active_map",
+      "location_key": "praha",
+      "capabilities": [
+        {
+          "model_family_id": "rail_cmd_d669_cmelda",
+          "from": "1963-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 135,
+          "batch_efficiency": 0.86,
+          "notes": "Heavy diesel shunter."
+        },
+        {
+          "model_family_id": "rail_cmd_d478_barda",
+          "from": "1964-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 145,
+          "batch_efficiency": 0.86,
+          "notes": "Mainline diesel."
+        },
+        {
+          "model_family_id": "rail_cmd_d753_brylovec",
+          "from": "1970-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 150,
+          "batch_efficiency": 0.87,
+          "notes": "Mainline diesel successor."
+        },
+        {
+          "model_family_id": "rail_cmd_d742_kocour",
+          "from": "1977-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 115,
+          "batch_efficiency": 0.9,
+          "notes": "Medium diesel shunter/freight."
+        }
+      ]
+    },
+    {
+      "id": "factory_ringhauer_1960",
+      "manufacturer_id": "ringhauer_smichov",
+      "location_mode": "active_map",
+      "location_key": "praha_smichov",
+      "capabilities": [
+        {
+          "model_family_id": "coach_ringhauer_y64",
+          "from": "1964-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 40,
+          "batch_efficiency": 0.94,
+          "notes": "UIC-Y coach."
+        },
+        {
+          "model_family_id": "coach_ringhauer_z80",
+          "from": "1980-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 44,
+          "batch_efficiency": 0.93,
+          "notes": "Fast UIC-Z/Bmz-type coach."
+        }
+      ]
+    },
+    {
+      "id": "factory_karusa_1960",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "location_mode": "active_map",
+      "location_key": "vysoke_myto",
+      "capabilities": [
+        {
+          "model_family_id": "bus_karusa_sm11",
+          "from": "1965-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 46,
+          "batch_efficiency": 0.93,
+          "notes": "City bus."
+        },
+        {
+          "model_family_id": "bus_karusa_sl11",
+          "from": "1965-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 47,
+          "batch_efficiency": 0.92,
+          "notes": "Regional bus."
+        },
+        {
+          "model_family_id": "bus_karusa_c734",
+          "from": "1981-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 45,
+          "batch_efficiency": 0.94,
+          "notes": "Regional/intercity bus."
+        },
+        {
+          "model_family_id": "bus_karusa_b731",
+          "from": "1981-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 45,
+          "batch_efficiency": 0.94,
+          "notes": "City bus."
+        }
+      ]
+    },
+    {
+      "id": "factory_aviat_letnany",
+      "manufacturer_id": "aviat_letnany",
+      "location_mode": "active_map",
+      "location_key": "praha_letnany",
+      "capabilities": [
+        {
+          "model_family_id": "road_aviat_a30",
+          "from": "1970-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 24,
+          "batch_efficiency": 0.94,
+          "notes": "Light/medium distribution truck."
+        }
+      ]
+    },
+    {
+      "id": "factory_fatra_1960",
+      "manufacturer_id": "fatra_koprivnice",
+      "location_mode": "active_map",
+      "location_key": "koprivnice",
+      "capabilities": [
+        {
+          "model_family_id": "road_fatra_148",
+          "from": "1972-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 50,
+          "batch_efficiency": 0.92,
+          "notes": "Heavy 6x6."
+        },
+        {
+          "model_family_id": "road_fatra_815",
+          "from": "1983-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 55,
+          "batch_efficiency": 0.93,
+          "notes": "Modular heavy truck."
+        }
+      ]
+    },
+    {
+      "id": "factory_viaz",
+      "manufacturer_id": "viaz",
+      "location_mode": "active_map",
+      "location_key": "liberec_mnichovo_hradiste",
+      "capabilities": [
+        {
+          "model_family_id": "road_viaz_100",
+          "from": "1974-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 40,
+          "batch_efficiency": 0.94,
+          "notes": "Heavy highway freight."
+        }
+      ]
+    },
+    {
+      "id": "factory_studena_1960",
+      "manufacturer_id": "studena_vagonka",
+      "location_mode": "active_map",
+      "location_key": "studenka",
+      "capabilities": [
+        {
+          "model_family_id": "rail_studena_m152_orchestrion",
+          "from": "1975-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 42,
+          "batch_efficiency": 0.94,
+          "notes": "Light railcar."
+        },
+        {
+          "model_family_id": "rail_studena_842_rakvicka",
+          "from": "1988-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 68,
+          "batch_efficiency": 0.9,
+          "notes": "Regional diesel railcar."
+        }
+      ]
+    },
+    {
+      "id": "factory_ikarusz_hungary",
+      "manufacturer_id": "ikarusz",
+      "location_mode": "off_map",
+      "location_key": "hungary",
+      "capabilities": [
+        {
+          "model_family_id": "bus_ikarusz_280",
+          "from": "1973-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 48,
+          "batch_efficiency": 0.95,
+          "notes": "Articulated export bus."
+        }
+      ]
+    },
+    {
+      "id": "factory_mercator_germany",
+      "manufacturer_id": "mercator_benz",
+      "location_mode": "off_map",
+      "location_key": "germany",
+      "capabilities": [
+        {
+          "model_family_id": "bus_mercator_o303",
+          "from": "1974-01-01",
+          "to": null,
+          "state": "series",
+          "base_work_units": 52,
+          "batch_efficiency": 0.92,
+          "notes": "Premium/intercity coach."
+        }
+      ]
+    }
+  ],
+  "support_families": [
+    {
+      "id": "rail_electric_ac_legacy",
+      "mode": "rail",
+      "required_capabilities": [
+        "high_voltage_ac",
+        "transformer_legacy",
+        "traction_motors",
+        "legacy_controls"
+      ],
+      "notes": "Legacy 25 kV AC traction."
+    },
+    {
+      "id": "rail_electric_dualsystem_legacy",
+      "mode": "rail",
+      "required_capabilities": [
+        "high_voltage_dc",
+        "high_voltage_ac",
+        "legacy_power_electronics",
+        "traction_motors"
+      ],
+      "notes": "Legacy dual-system electric traction."
+    },
+    {
+      "id": "rail_coach_steel_conventional",
+      "mode": "rail",
+      "required_capabilities": [
+        "steel_coach_body",
+        "bogie_service",
+        "air_brakes",
+        "hvac_or_heating"
+      ],
+      "notes": "Conventional steel passenger coaches."
+    },
+    {
+      "id": "road_light_medium_legacy",
+      "mode": "road",
+      "required_capabilities": [
+        "medium_diesel",
+        "manual_gearbox",
+        "hydraulic_or_air_brakes"
+      ],
+      "notes": "Light/medium distribution road vehicles."
+    },
+    {
+      "id": "bus_legacy_rear_engine",
+      "mode": "road",
+      "required_capabilities": [
+        "rear_engine_bus",
+        "air_brakes",
+        "bus_body_legacy"
+      ],
+      "notes": "Š-series/700/Ikarus-era bus support."
+    }
+  ],
+  "model_families": [
+    {
+      "id": "rail_neskoda_e670_sestikolo",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.rail.sestikolo.name",
+      "real_prototype_reference": "ČSD E 669.1 / class 181",
+      "introduction_date": "1961-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "dc",
+        "heavy_freight"
+      ],
+      "support_family_id": "rail_electric_dc_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 124,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_co_co_legacy"
+      },
+      "performance": {
+        "power_kw": 2790,
+        "starting_tractive_effort_kn": 340,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_sestikolo_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_cmd_d669_cmelda",
+      "manufacturer_id": "cmd_praha",
+      "display_name_key": "vehicle.rail.cmelda.name",
+      "real_prototype_reference": "ČSD T 669.0 / class 770",
+      "introduction_date": "1963-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "diesel_electric",
+        "heavy_shunting",
+        "short_freight"
+      ],
+      "support_family_id": "rail_diesel_electric_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 114.6,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "diesel_co_co_heavy"
+      },
+      "performance": {
+        "power_kw": 993,
+        "starting_tractive_effort_kn": 280,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_cmelda_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_cmd_d478_barda",
+      "manufacturer_id": "cmd_praha",
+      "display_name_key": "vehicle.rail.barda.name",
+      "real_prototype_reference": "ČSD T 478.1 / classes 749/751",
+      "introduction_date": "1964-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "diesel_electric",
+        "mainline",
+        "mixed",
+        "passenger"
+      ],
+      "support_family_id": "rail_diesel_electric_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 75,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "diesel_bobo_mainline"
+      },
+      "performance": {
+        "power_kw": 1103,
+        "starting_tractive_effort_kn": 215,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_barda_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "coach_ringhauer_y64",
+      "manufacturer_id": "ringhauer_smichov",
+      "display_name_key": "vehicle.coach.y64.name",
+      "real_prototype_reference": "UIC-Y family",
+      "introduction_date": "1964-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "coach",
+        "mainline",
+        "standardized"
+      ],
+      "support_family_id": "rail_coach_steel_conventional",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 40,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 140,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "coach_uic_y"
+      },
+      "performance": {
+        "power_kw": null,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": null,
+        "energy_systems": [],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "coach_y64_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 80,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_karusa_sm11",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "display_name_key": "vehicle.bus.sm11.name",
+      "real_prototype_reference": "Karosa ŠM 11",
+      "introduction_date": "1965-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "city",
+        "diesel"
+      ],
+      "support_family_id": "bus_legacy_rear_engine",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 65,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_rear_engine_city"
+      },
+      "performance": {
+        "power_kw": 143,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_sm11_city",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 28,
+            "standing": 63,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_karusa_sl11",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "display_name_key": "vehicle.bus.sl11.name",
+      "real_prototype_reference": "Karosa ŠL 11",
+      "introduction_date": "1965-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "diesel"
+      ],
+      "support_family_id": "bus_legacy_rear_engine",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_rear_engine_regional"
+      },
+      "performance": {
+        "power_kw": 143,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_sl11_regional",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 45,
+            "standing": 30,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_neskoda_a489_laminat",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.rail.laminat.name",
+      "real_prototype_reference": "ČSD S 489.0 / class 230",
+      "introduction_date": "1966-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "ac",
+        "mixed",
+        "freight",
+        "passenger"
+      ],
+      "support_family_id": "rail_electric_ac_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 85,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 110,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_bobo_ac_legacy"
+      },
+      "performance": {
+        "power_kw": 3080,
+        "starting_tractive_effort_kn": 320,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "25kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_laminat_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_aviat_a30",
+      "manufacturer_id": "aviat_letnany",
+      "display_name_key": "vehicle.road.a30.name",
+      "real_prototype_reference": "Avia A30",
+      "introduction_date": "1970-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "light_medium",
+        "distribution",
+        "diesel"
+      ],
+      "support_family_id": "road_light_medium_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 80,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "medium_rigid_distribution"
+      },
+      "performance": {
+        "power_kw": 59,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_a30_standard",
+          "capacity": {
+            "payload_t": 3,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_cmd_d753_brylovec",
+      "manufacturer_id": "cmd_praha",
+      "display_name_key": "vehicle.rail.brylovec.name",
+      "real_prototype_reference": "ČSD T 478.3 / class 753",
+      "introduction_date": "1970-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "diesel_electric",
+        "mainline",
+        "mixed"
+      ],
+      "support_family_id": "rail_diesel_electric_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 74,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "diesel_bobo_mainline"
+      },
+      "performance": {
+        "power_kw": 1325,
+        "starting_tractive_effort_kn": 215,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_brylovec_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_fatra_148",
+      "manufacturer_id": "fatra_koprivnice",
+      "display_name_key": "vehicle.road.fatra148.name",
+      "real_prototype_reference": "Tatra 148",
+      "introduction_date": "1972-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "heavy",
+        "6x6",
+        "construction"
+      ],
+      "support_family_id": "road_heavy_diesel_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 70,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "heavy_6x6_legacy"
+      },
+      "performance": {
+        "power_kw": 149,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_fatra148_standard",
+          "capacity": {
+            "payload_t": 12,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_ikarusz_280",
+      "manufacturer_id": "ikarusz",
+      "display_name_key": "vehicle.bus.ikarusz280.name",
+      "real_prototype_reference": "Ikarus 280",
+      "introduction_date": "1973-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "city",
+        "articulated",
+        "diesel"
+      ],
+      "support_family_id": "bus_legacy_rear_engine",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 70,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_articulated_legacy"
+      },
+      "performance": {
+        "power_kw": 170,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "hungary",
+          "from": "1973-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1973-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_ikarusz280_city",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 37,
+            "standing": 103,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_mercator_o303",
+      "manufacturer_id": "mercator_benz",
+      "display_name_key": "vehicle.bus.o303.name",
+      "real_prototype_reference": "Mercedes-Benz O303",
+      "introduction_date": "1974-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "intercity",
+        "coach",
+        "premium"
+      ],
+      "support_family_id": "bus_legacy_rear_engine",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "coach_highfloor_rear_engine"
+      },
+      "performance": {
+        "power_kw": 190,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "rare_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_o303_coach",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 49,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_viaz_100",
+      "manufacturer_id": "viaz",
+      "display_name_key": "vehicle.road.viaz100.name",
+      "real_prototype_reference": "LIAZ 100",
+      "introduction_date": "1974-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "heavy",
+        "tractor",
+        "diesel"
+      ],
+      "support_family_id": "road_heavy_diesel_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 85,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "heavy_rigid_or_tractor"
+      },
+      "performance": {
+        "power_kw": 220,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_viaz100_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_studena_m152_orchestrion",
+      "manufacturer_id": "studena_vagonka",
+      "display_name_key": "vehicle.rail.m152.name",
+      "real_prototype_reference": "ČSD M 152.0 / class 810",
+      "introduction_date": "1975-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "railcar",
+        "diesel",
+        "branch",
+        "passenger"
+      ],
+      "support_family_id": "rail_multiple_unit_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 20,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 80,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "railcar_light_legacy"
+      },
+      "performance": {
+        "power_kw": 155,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_m152_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 55,
+            "standing": 40,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_cmd_d742_kocour",
+      "manufacturer_id": "cmd_praha",
+      "display_name_key": "vehicle.rail.kocour.name",
+      "real_prototype_reference": "ČSD T 466.2 / class 742",
+      "introduction_date": "1977-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "diesel_electric",
+        "shunting",
+        "medium_freight"
+      ],
+      "support_family_id": "rail_diesel_electric_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 64,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 90,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "diesel_bobo_shunter"
+      },
+      "performance": {
+        "power_kw": 883,
+        "starting_tractive_effort_kn": 192,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel_electric"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_kocour_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_neskoda_es500_eso",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.rail.eso.name",
+      "real_prototype_reference": "ČSD ES 499.1 / class 363",
+      "introduction_date": "1980-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "dual_system",
+        "universal"
+      ],
+      "support_family_id": "rail_electric_dualsystem_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 87,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 120,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_bobo_dualsystem"
+      },
+      "performance": {
+        "power_kw": 3480,
+        "starting_tractive_effort_kn": 285,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc",
+          "25kv_ac"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_eso_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "coach_ringhauer_z80",
+      "manufacturer_id": "ringhauer_smichov",
+      "display_name_key": "vehicle.coach.z80.name",
+      "real_prototype_reference": "UIC-Z / Bmz-type coach",
+      "introduction_date": "1980-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "coach",
+        "fast",
+        "high_comfort"
+      ],
+      "support_family_id": "rail_coach_steel_conventional",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 45,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 160,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "coach_uic_z"
+      },
+      "performance": {
+        "power_kw": null,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": null,
+        "energy_systems": [],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "coach_z80_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 72,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_karusa_c734",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "display_name_key": "vehicle.bus.c734.name",
+      "real_prototype_reference": "Karosa C 734",
+      "introduction_date": "1981-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "regional",
+        "intercity",
+        "diesel"
+      ],
+      "support_family_id": "bus_legacy_rear_engine",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_rear_engine_regional"
+      },
+      "performance": {
+        "power_kw": 152,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_c734_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 45,
+            "standing": 28,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "bus_karusa_b731",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "display_name_key": "vehicle.bus.b731.name",
+      "real_prototype_reference": "Karosa B 731",
+      "introduction_date": "1981-01-01",
+      "mode": "road",
+      "role_tags": [
+        "bus",
+        "city",
+        "diesel",
+        "automatic"
+      ],
+      "support_family_id": "bus_legacy_rear_engine",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 70,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "bus_rear_engine_city"
+      },
+      "performance": {
+        "power_kw": 170,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "bus_b731_city",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 31,
+            "standing": 59,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "road_fatra_815",
+      "manufacturer_id": "fatra_koprivnice",
+      "display_name_key": "vehicle.road.fatra815.name",
+      "real_prototype_reference": "Tatra 815",
+      "introduction_date": "1983-01-01",
+      "mode": "road",
+      "role_tags": [
+        "freight",
+        "heavy",
+        "rough_road",
+        "diesel"
+      ],
+      "support_family_id": "road_heavy_diesel_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 80,
+        "minimum_curve_m": null,
+        "gauge_mm": null,
+        "fixed_body_family": "heavy_multiaxle_modular"
+      },
+      "performance": {
+        "power_kw": 220,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "road_fatra815_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_neskoda_e162_pershing",
+      "manufacturer_id": "neskoda_plzen",
+      "display_name_key": "vehicle.rail.pershing.name",
+      "real_prototype_reference": "ČSD/ČD classes 162/163",
+      "introduction_date": "1984-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "electric",
+        "single_system",
+        "fast"
+      ],
+      "support_family_id": "rail_electric_dc_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 85,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 140,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "electric_bobo_fast"
+      },
+      "performance": {
+        "power_kw": 3480,
+        "starting_tractive_effort_kn": 285,
+        "fuel_or_energy": "electricity",
+        "energy_systems": [
+          "3kv_dc"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "C",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_pershing_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": null,
+            "standing": null,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    },
+    {
+      "id": "rail_studena_842_rakvicka",
+      "manufacturer_id": "studena_vagonka",
+      "display_name_key": "vehicle.rail.842.name",
+      "real_prototype_reference": "ČSD/ČD class 842",
+      "introduction_date": "1988-01-01",
+      "mode": "rail",
+      "role_tags": [
+        "railcar",
+        "diesel",
+        "regional",
+        "passenger"
+      ],
+      "support_family_id": "rail_multiple_unit_legacy",
+      "platform": {
+        "empty_mass_t": null,
+        "service_mass_t": 47,
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "axle_count": null,
+        "axle_load_t": null,
+        "structural_max_speed_kph": 100,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fixed_body_family": "railcar_regional_legacy"
+      },
+      "performance": {
+        "power_kw": 484,
+        "starting_tractive_effort_kn": null,
+        "fuel_or_energy": "diesel",
+        "energy_systems": [
+          "diesel"
+        ],
+        "consumption_model_id": null
+      },
+      "regional_market_profile": [
+        {
+          "market_tag": "czechoslovakia",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "home"
+        },
+        {
+          "market_tag": "poland",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "hungary",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        },
+        {
+          "market_tag": "east_germany",
+          "from": "1960-01-01",
+          "to": null,
+          "relationship": "strong_export"
+        }
+      ],
+      "failure_characteristics": [],
+      "maintenance_band": "B",
+      "maintenance_triggers": [],
+      "factory_variants": [
+        {
+          "id": "rail_842_standard",
+          "capacity": {
+            "payload_t": null,
+            "cargo_volume_m3": null,
+            "seated": 64,
+            "standing": 16,
+            "berths": null
+          },
+          "supported_equipment_groups": [],
+          "default_templates": [
+            "standard"
+          ],
+          "notes": ""
+        }
+      ],
+      "equipment_options": [],
+      "retrofit_paths": [],
+      "sources": []
+    }
+  ]
+}
