@@ -1889,6 +1889,8 @@ Examples:
 
 Demand can also be seasonal where the underlying economy supports it. Examples include harvests, food processing, heating fuel, construction seasons and other recurring production/consumption cycles.
 
+The canonical first-playable 1900 commodity/chain catalogue is owned by [V1_CONTENT_MANIFEST.md](V1_CONTENT_MANIFEST.md). It includes forestry/furniture/construction, several food chains, textiles, distinct construction materials, coal/iron/steel/metal/machinery, early gas/electric utility demand, historically bounded oil products and general consumer goods. Later historical content adds chemicals, plastics, natural gas, fertilizers, electronics and semiconductor components without globally deleting older viable routes.
+
 Seasonality must come from the actual simulated business/population context rather than flat global multipliers. Its intensity and cargo mix can change by era, region, technology and economic development.
 
 Industrial decline can leave physical brownfields.
