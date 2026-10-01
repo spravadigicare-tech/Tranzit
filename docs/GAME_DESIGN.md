@@ -4791,11 +4791,26 @@ Remote rendering may be aggregated, but the logical movement/location must remai
 
 ### 15.9 Retrofit
 
-Vehicles and wagons can receive period-appropriate retrofits.
+Vehicles and wagons can receive period-appropriate retrofits through the shared **vehicle template / variant** system defined in [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md).
 
-Retrofit can improve condition, comfort or systems and extend life, but only within structural limits.
+A physical vehicle always has one active configuration template. The player can create a reusable target template by combining only equipment/packages that the underlying platform actually supports.
 
-Dealer/manufacturer-authorized retrofit can be one source of retrofit work, but any provider still needs appropriate physical workshop capability and time.
+Retrofit does **not** redesign the body shell/frame or turn one physical platform into an unrelated vehicle. Historically different body/chassis forms are separate factory-produced variants/models. Retrofit is limited to supported interior, service and technical equipment within the existing platform.
+
+A retrofit is a real workshop job:
+
+- the physical vehicle must reach a compatible own or external workshop;
+- the target template must be reachable through an authored conversion path;
+- required parts/materials and workshop skills/capacity are consumed;
+- work takes real time;
+- any required inspection/certification must complete;
+- only then does the vehicle switch to the target template.
+
+The same asset identity, age, mileage/hours, ownership and service history remain. Removed equipment can become stock, be sold/traded or be scrapped according to its actual residual value.
+
+A template may change capacity, comfort, mass, consumption, maintenance requirements, compatibility and even the **permitted** maximum operating speed when the installed package/certification supports it. It can never exceed the underlying platform's structural/design limit.
+
+Dealer/manufacturer-authorized retrofit is one source of retrofit work, but independent specialists or the player's own workshop may perform it when they have the genuine compatible capability. No provider gets instant abstract conversion.
 
 ### 15.10 Scrapping
 
