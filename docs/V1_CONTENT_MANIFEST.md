@@ -126,7 +126,62 @@ The ultimate sink of every chain must be part of the city/urban economy, directl
 
 Use a generic final commodity **consumer goods** for manufactured retail products that do not justify their own gameplay-relevant category. Keep clearly distinct categories such as food groups, clothing/garments and furniture separate where their production, handling or demand creates meaningful transport decisions. Do not proliferate dozens of retail SKUs solely for realism.
 
-At least one chain supplies vehicle operations, one supplies construction, one contains perishable cargo and one supports a multi-leg road/rail transfer. Example authoring chains are timber → processed wood → furniture/construction → city use, grain → food processing → retail → city consumption, ore/energy → iron/steel → machinery/manufactured goods → city/industrial final use, and local food → distribution → consumers. Exact recipes and ratios are balancing data, with explicit unit conversions.
+At least one chain supplies vehicle operations, one supplies construction, one contains perishable cargo and one supports a multi-leg road/rail transfer. Exact recipes and ratios are balancing data, with explicit unit conversions.
+
+### Canonical 1900 commodity chains
+
+The first-playable 1900 economy uses the following **canonical chain families**. Regional maps need not contain every producer, but the content set and simulation must support these identities and relationships.
+
+| Chain | Physical flow | Final-use sink / purpose |
+|---|---|---|
+| Forestry and furniture | timber → processed wood → furniture | furniture retail / city consumption |
+| Forestry and construction | timber → processed wood → construction | buildings, infrastructure and city development |
+| Grain and bakery | grain → flour/bakery products | food retail / city consumption |
+| Meat | livestock → meat | food retail / city consumption |
+| Dairy | dairy production → dairy products | food retail / city consumption |
+| Produce | fruit/vegetables → distribution/retail | food retail / city consumption |
+| Textile | textile raw materials → textiles/fabric → clothing/garments | clothing retail / city consumption |
+| Stone and aggregates | stone/gravel → construction | buildings, roads, rail works and city development |
+| Bricks | local clay/resource + fuel → bricks → construction | buildings and infrastructure |
+| Cement | stone/limestone resource + fuel → cement → construction | buildings and infrastructure |
+| Iron | iron ore + coal → iron | metalworking, machinery and construction inputs |
+| Steel | iron + coal/energy → steel | higher-grade metalworking, machinery and construction inputs |
+| Metal products | iron and/or steel → metal products | construction, workshops, equipment and later consumer manufacturing |
+| Machinery | iron and/or steel + metal products → machinery | industrial/utility/transport investment, replacement and modernization |
+| Coal energy | coal → industrial/transport fuel use | steam transport, industry, heating and power/gas production |
+| Town/distribution gas | coal → gasworks → distribution gas | city/industrial gas utility demand |
+| Electricity | coal/other historically available generation input → electricity | city, industry and later electric transport; utility-network delivery |
+| Oil products | crude oil → refined fuels | transport, industry and selected city/utility use; low/region-specific importance in 1900, growing later |
+| General manufactured goods | metal products + textiles/wood/other relevant inputs → consumer goods | retail / city consumption |
+
+**Furniture is a distinct final commodity.** Later furniture recipes may add industrial chemicals, plastics, textiles or other materials, but processed wood remains a meaningful core input.
+
+**Livestock is a physical cargo** where the transport/region supports it. Meat is a separate downstream commodity. The design does not require a separate raw-milk cargo in V1; dairy production can output the canonical dairy-products commodity directly at the chosen simulation abstraction.
+
+Brickworks may use a local on-site clay/resource rather than requiring clay to become another transport commodity. Cement plants similarly use the appropriate local mineral resource plus transported fuel/inputs where needed. This preserves distinct brick/cement logistics without adding low-value intermediate cargo solely for recipe completeness.
+
+Iron and steel remain independent. A machinery or metal-products recipe may require one or both simultaneously. Steel production is not an automatic conversion of every unit of iron; each facility has its own real recipe/capacity.
+
+The 1900 set intentionally includes **crude oil/refined fuels** only where historically and regionally plausible; it must not create a modern petroleum economy everywhere at game start. **Raw natural gas is a later/region-dependent primary resource** unless the authored 1900 region genuinely supports it. Coal-based gasworks provide the normal early route into the canonical distribution-gas utility product.
+
+### Historical chain expansion after 1900
+
+Later economic development adds new commodities and recipe inputs while preserving older viable chains:
+
+| Later addition | Typical relationships |
+|---|---|
+| raw natural gas | extraction → treatment → canonical distribution gas; can also feed chemicals where appropriate |
+| industrial chemicals | oil/gas/coal/other feedstocks → chemicals → textiles, furniture, plastics, fertilizers and manufactured goods |
+| plastics | industrial chemicals → plastics → consumer goods, furniture, equipment and later manufacturing |
+| fertilizers | industrial chemicals → fertilizer → agriculture → higher/changed food production |
+| synthetic textile inputs | industrial chemicals → canonical textile raw materials or a later explicit input where content warrants it |
+| electronics | metal products + plastics + industrial chemicals + electricity → electronics/consumer goods |
+| semiconductor chips/components | advanced industrial chemicals + metal products + electricity/high-tech production → chips/components → electronics, machinery and advanced equipment |
+| LPG or other transportable gas-derived products | gas/oil processing → dedicated tank-compatible cargo → city/industry/transport consumers where historically appropriate |
+
+Do not add a later commodity merely because it existed historically. It should create a distinct supply, handling, transport, investment or demand decision. Conversely, new technology can add an input to an existing recipe without requiring a brand-new final commodity.
+
+Older production routes stay valid until real economics/technology/support cause firms to modernize, shrink or close. A new chain does not globally delete its predecessor.
 
 Consumption/production cannot create free inventory. A recipe is an explicit conversion, with declared waste/loss where used. Cargo conservation tests concern transportation quantities; production is an authorized inventory transformation, not a false invariant violation.
 
