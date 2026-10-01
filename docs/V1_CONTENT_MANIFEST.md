@@ -321,6 +321,78 @@ Firm logistics uses GAME_DESIGN Section 10's make-or-buy rules. Local first/last
 
 The intercity road ceiling is per real origin-destination/cargo/handling lane and cannot be multiplied by splitting one flow into nominal internal departments. A genuinely licensed transport subsidiary is a carrier and follows normal carrier economics, licensing, capacity and competition rules instead of this captive exception.
 
+### 7.3 Commodity reference-price response defaults
+
+The market-price algorithm is defined in GAME_DESIGN Section 10.5. These values make the initial V1 curve deterministic and inspectable.
+
+**Calculation cadence and smoothing**
+
+| Parameter | Initial default |
+|---|---:|
+| Heavy market calculations | 2 per game day |
+| Price-adjustment opportunities | 4 per game day |
+| Near-term flow forecast horizon | 7 game days |
+| Newly calculated target-response factor | 50% new raw target + 50% previous target |
+| Price-adjustment deadband | 0.5% of current reference price |
+| Ordinary target multiplier range | 0.50×–2.00× era/base value |
+| Exceptional target multiplier range | 0.35×–3.00× era/base value |
+| Ordinary day-anchor movement band | 0.95×–1.05× day-opening reference price |
+| Exceptional day-anchor movement band | 0.85×–1.15× day-opening reference price |
+| Ordinary per-adjustment maximum | 1.25% of day-opening reference price |
+| Exceptional per-adjustment maximum | 3.75% of day-opening reference price |
+
+The day-opening reference price is captured once at the start of each game day. Every lightweight adjustment clamps both its step size and the full-day band, so four updates cannot multiply the daily limit.
+
+**Stock-coverage contribution**
+
+Let `coverage_ratio = usable_stock_days / target_stock_days`, using the applicable commodity/consumer stock target and only physical inventory that is quality-compatible and not already committed elsewhere. Interpolate linearly between these points:
+
+| Coverage ratio | Target-price contribution |
+|---:|---:|
+| 0.00× | +70% |
+| 0.25× | +45% |
+| 0.50× | +25% |
+| 0.75× | +10% |
+| 1.00× | 0% |
+| 1.50× | -10% |
+| 2.00× | -18% |
+| 3.00× or more | -30% |
+
+**Near-term flow contribution**
+
+Over the next 7 game days calculate confirmed/physically supportable local production plus confirmed inbound movement minus normal consumption and contracted outbound movement. Normalize by projected consumption over the same horizon. Interpolate linearly between these points:
+
+| Net projected balance / projected consumption | Target-price contribution |
+|---:|---:|
+| -100% or worse | +20% |
+| -50% | +10% |
+| 0% | 0% |
+| +50% | -8% |
+| +100% or better | -15% |
+
+Confirmed inbound/outbound movement is already part of this flow term and must not be counted again as alternative-market relief.
+
+**Alternative-market relief/access contribution**
+
+For a material projected deficit or surplus, compute `relief_ratio` from **additional uncommitted** physically executable external capacity over the same 7-day horizon divided by the absolute projected gap, clamped to 0–1. Capacity is weighted by economics before entering the numerator:
+
+- a concrete available but uncommitted external transport/supply option contributes at most 50% of its physical quantity until committed;
+- for deficit imports, cost competitiveness is `clamp((2.0 × base_value - delivered_cost) / base_value, 0, 1)`;
+- for surplus exports, cost competitiveness is `clamp((netback_value - 0.5 × base_value) / (0.5 × base_value), 0, 1)`;
+- infeasible routes, incompatible handling, unavailable capacity or arrivals/departures outside the horizon contribute zero.
+
+Then:
+
+- projected **deficit**: access contribution = `+10% × (1 - 2 × relief_ratio)`;
+- projected **surplus**: access contribution = `-10% × (1 - 2 × relief_ratio)`;
+- near-balanced projected flow within ±10% of consumption: access contribution = 0%.
+
+Thus an isolated deficit can add up to +10%, while enough credible alternative import capacity can turn the access term to -10%; the surplus case is symmetric.
+
+The raw target multiplier is `1 + stock_contribution + flow_contribution + access_contribution`, clamped to the ordinary or exceptional target range, then smoothed by the target-response factor. Each component and clamp result must be retained for explanation/debug UI.
+
+If projected normal consumption is effectively zero and there is no outstanding buyer demand, stock-days are treated as undefined rather than divided by an epsilon. With neither real demand nor stock, target reference price relaxes toward 1.00× base. With stock but no real demand, use the oversupply end of the flow curve rather than manufacturing scarcity.
+
 - Currency is exactly `money`. Use fixed-point arithmetic, for example 100 internal subunits per money, and make display precision independent of simulation units.
 - Three founding-loan tiers have predictable favourable terms. A possible initial convention is 2% nominal annual interest over 20 game years, monthly amortizing repayments and no punitive tier-specific interest increase. The same 168-day year/12-month calendar applies. If using this convention, derive the monthly payment from principal and monthly rate; do not charge accrued interest twice.
 - Set the principal of each tier from a tested setup basket, not an arbitrary impressive number. The small basket includes real office setup/director/staff, the necessary licences, endpoint access, one viable road vehicle, delivery and support, plus a working-capital reserve. The standard/large baskets offer broader options and a credible modest rail setup where justified.
