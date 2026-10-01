@@ -102,7 +102,9 @@ Keep **iron and steel as separate player-facing commodities** in the 1900 indust
 
 For the baseline textile chain, use one aggregated input commodity **textile raw materials** rather than separate wool/cotton cargo entries. Keep downstream **textiles/fabric** and **clothing/garments** as distinct commodities so the chain remains: textile raw materials → textiles/fabric → clothing/garments → retail/final consumption.
 
-The textile/consumer-goods chain must support **historical recipe evolution**. Later-era recipes may add newly relevant inputs such as dyes, industrial chemicals, synthetic fibres or other historically appropriate materials. These later inputs are introduced through dated content/technology availability, not by player level, and should create new transport flows rather than silently changing output for free. Water and traction feed/consumables may be additional supplies.
+The textile/consumer-goods chain must support **historical recipe evolution**. Later-era recipes may add newly relevant inputs such as dyes, industrial chemicals, synthetic fibres or other historically appropriate materials. These later inputs are introduced through dated content/technology availability, not by player level, and should create new transport flows rather than silently changing output for free.
+
+Keep **crude oil**, **natural gas**, and **refined fuels** as separate commodity families. Crude oil and natural gas are primary/extractive inputs tied to suitable deposits/regions; refined fuels are downstream products created by processing crude oil. Their regional importance and demand evolve historically rather than appearing at full modern scale in 1900. Natural gas must not be collapsed into crude oil or refined fuel merely because all belong to the energy/chemical economy. Water and traction feed/consumables may be additional supplies.
 
 Do not split consumer goods down to individual retail SKUs. The purpose of the extra food categories is to create distinct production, perishability/handling and transport decisions, not to simulate every product sold by a shop.
 
