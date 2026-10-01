@@ -103,7 +103,7 @@ Links resolve stable identities and preserve source context, pinned objects and 
 
 Refresh from actual state changes; do not recalculate the whole company every rendered frame or create per-person workers for this screen. Save/load preserves actual people, role assignments, policies, workforce capacity, office state, applications and adoption progress. Restoring a window/filter does not hire, pay, apply a draft or duplicate decisions.
 
-Normal window/card/tooltip use never changes speed or pause. Planning remains available in manual or critical-event pause, while recruitment, application processing, training and other time-driven work stay stopped. Binding commands retain existing validation/timing rules; this UI decision does not settle the separately unresolved general timing of binding commands during pause.
+Normal window/card/tooltip use never changes speed or pause. Planning remains available in manual or critical-event pause, while recruitment, application processing, training and other time-driven work stay stopped. Binding commands follow the canonical paused-command rule in GAME_DESIGN Section 3.4.1: after explicit confirmation and revalidation they may commit once at the current game timestamp, while all time-driven processing and physical work remain stopped until simulation time resumes.
 
 ## 8. Acceptance evidence to collect
 
