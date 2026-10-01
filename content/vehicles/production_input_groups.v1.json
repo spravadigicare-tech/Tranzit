@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "units": "relative_material_units_per_vehicle",
+  "mapping_status": "logical groups; map to canonical economy commodity IDs when economy content manifests are created",
+  "recipes": [
+    {
+      "id": "prod_steam_locomotive_early",
+      "applies": "steam locomotive pre-1940",
+      "inputs": {
+        "steel_metal": 48,
+        "machinery": 28,
+        "timber": 8,
+        "brake_coupler": 6,
+        "interior_glass": 3,
+        "other": 7
+      }
+    },
+    {
+      "id": "prod_steam_locomotive_late",
+      "applies": "large mature steam locomotive",
+      "inputs": {
+        "steel_metal": 52,
+        "machinery": 30,
+        "brake_coupler": 6,
+        "electrical": 2,
+        "interior_glass": 2,
+        "other": 8
+      }
+    },
+    {
+      "id": "prod_diesel_locomotive_legacy",
+      "applies": "legacy diesel-electric locomotive",
+      "inputs": {
+        "steel_metal": 42,
+        "machinery_engine": 28,
+        "electrical": 14,
+        "brake_coupler": 6,
+        "rubber_plastics": 2,
+        "interior_glass": 3,
+        "other": 5
+      }
+    },
+    {
+      "id": "prod_diesel_locomotive_modern",
+      "applies": "modern diesel-electric locomotive",
+      "inputs": {
+        "steel_metal": 34,
+        "machinery_engine": 24,
+        "electrical": 18,
+        "electronics": 10,
+        "brake_coupler": 5,
+        "rubber_plastics": 3,
+        "interior_glass": 3,
+        "other": 3
+      }
+    },
+    {
+      "id": "prod_electric_locomotive_legacy",
+      "applies": "legacy electric locomotive",
+      "inputs": {
+        "steel_metal": 40,
+        "electrical_traction": 30,
+        "machinery": 12,
+        "brake_coupler": 6,
+        "electronics": 3,
+        "interior_glass": 3,
+        "other": 6
+      }
+    },
+    {
+      "id": "prod_electric_locomotive_modern",
+      "applies": "modern multisystem electric locomotive",
+      "inputs": {
+        "steel_metal": 30,
+        "electrical_traction": 28,
+        "electronics": 20,
+        "machinery": 8,
+        "brake_coupler": 5,
+        "rubber_plastics": 3,
+        "interior_glass": 3,
+        "other": 3
+      }
+    },
+    {
+      "id": "prod_railcar_legacy",
+      "applies": "legacy railcar",
+      "inputs": {
+        "steel_metal": 30,
+        "machinery_engine": 24,
+        "brake_coupler": 6,
+        "interior": 15,
+        "electrical": 6,
+        "rubber_plastics": 4,
+        "glass": 5,
+        "other": 10
+      }
+    },
+    {
+      "id": "prod_dmu_modern",
+      "applies": "modern DMU",
+      "inputs": {
+        "steel_metal": 25,
+        "machinery_engine": 20,
+        "electrical": 15,
+        "electronics": 10,
+        "interior": 14,
+        "rubber_plastics": 6,
+        "glass": 5,
+        "brake_coupler": 3,
+        "other": 2
+      }
+    },
+    {
+      "id": "prod_emu_modern",
+      "applies": "modern EMU",
+      "inputs": {
+        "steel_metal": 24,
+        "electrical_traction": 23,
+        "electronics": 13,
+        "interior": 16,
+        "rubber_plastics": 6,
+        "glass": 6,
+        "brake_coupler": 4,
+        "other": 8
+      }
+    },
+    {
+      "id": "prod_highspeed_trainset",
+      "applies": "integrated premium/high-speed trainset",
+      "inputs": {
+        "steel_metal": 22,
+        "electrical_traction": 22,
+        "electronics": 16,
+        "interior": 18,
+        "rubber_plastics": 6,
+        "glass": 6,
+        "brake_coupler": 3,
+        "other": 7
+      }
+    },
+    {
+      "id": "prod_passenger_coach_early",
+      "applies": "wood/early steel passenger coach",
+      "inputs": {
+        "steel_metal": 28,
+        "timber": 34,
+        "interior": 18,
+        "brake_coupler": 7,
+        "glass": 4,
+        "other": 9
+      }
+    },
+    {
+      "id": "prod_passenger_coach_modern",
+      "applies": "modern steel passenger coach/set car",
+      "inputs": {
+        "steel_metal": 38,
+        "interior": 24,
+        "electrical": 12,
+        "electronics": 5,
+        "rubber_plastics": 7,
+        "glass": 6,
+        "brake_coupler": 5,
+        "other": 3
+      }
+    },
+    {
+      "id": "prod_freight_wagon_basic",
+      "applies": "ordinary open/covered/flat freight wagon",
+      "inputs": {
+        "steel_metal": 62,
+        "timber": 14,
+        "brake_coupler": 10,
+        "machinery": 3,
+        "other": 11
+      }
+    },
+    {
+      "id": "prod_freight_wagon_special",
+      "applies": "tank/reefer/heavy/special freight wagon",
+      "inputs": {
+        "steel_metal": 58,
+        "machinery": 12,
+        "brake_coupler": 9,
+        "insulation_special": 8,
+        "electrical": 3,
+        "other": 10
+      }
+    },
+    {
+      "id": "prod_freight_wagon_modern",
+      "applies": "modern bogie/intermodal freight wagon",
+      "inputs": {
+        "steel_metal": 68,
+        "brake_coupler": 10,
+        "machinery": 7,
+        "rubber_plastics": 3,
+        "electrical": 2,
+        "other": 10
+      }
+    },
+    {
+      "id": "prod_horse_vehicle",
+      "applies": "horse-drawn road vehicle",
+      "inputs": {
+        "timber": 58,
+        "steel_metal": 18,
+        "leather_textile": 12,
+        "machinery": 2,
+        "other": 10
+      }
+    },
+    {
+      "id": "prod_road_motor_early",
+      "applies": "early petrol/steam road vehicle",
+      "inputs": {
+        "steel_metal": 36,
+        "machinery_engine": 30,
+        "timber": 15,
+        "rubber": 5,
+        "glass": 3,
+        "electrical": 2,
+        "other": 9
+      }
+    },
+    {
+      "id": "prod_road_diesel_legacy",
+      "applies": "mid-century diesel truck/bus",
+      "inputs": {
+        "steel_metal": 42,
+        "machinery_engine": 25,
+        "rubber": 10,
+        "glass": 5,
+        "electrical": 5,
+        "interior": 6,
+        "other": 7
+      }
+    },
+    {
+      "id": "prod_road_diesel_modern",
+      "applies": "modern diesel truck/van",
+      "inputs": {
+        "steel_metal": 34,
+        "machinery_engine": 22,
+        "rubber_plastics": 12,
+        "glass": 6,
+        "electrical": 9,
+        "electronics": 8,
+        "interior": 5,
+        "other": 4
+      }
+    },
+    {
+      "id": "prod_bus_modern",
+      "applies": "modern diesel/HVO bus",
+      "inputs": {
+        "steel_metal": 30,
+        "machinery_engine": 18,
+        "rubber_plastics": 10,
+        "glass": 10,
+        "electrical": 10,
+        "electronics": 8,
+        "interior": 10,
+        "other": 4
+      }
+    },
+    {
+      "id": "prod_road_bev_heavy",
+      "applies": "battery-electric heavy truck",
+      "inputs": {
+        "steel_metal": 28,
+        "electrical_traction": 12,
+        "electronics": 9,
+        "battery_pack": 30,
+        "rubber_plastics": 9,
+        "glass": 4,
+        "interior": 4,
+        "other": 4
+      }
+    },
+    {
+      "id": "prod_bus_bev",
+      "applies": "battery-electric bus",
+      "inputs": {
+        "steel_metal": 25,
+        "electrical_traction": 10,
+        "electronics": 9,
+        "battery_pack": 27,
+        "rubber_plastics": 8,
+        "glass": 9,
+        "interior": 9,
+        "other": 3
+      }
+    }
+  ]
+}
