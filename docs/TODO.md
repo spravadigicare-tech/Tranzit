@@ -9,7 +9,7 @@
 > - Release proof belongs in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md) and recorded evidence.
 > - Completed design decisions remain documented in their owning files even after they leave this backlog.
 
-Last reviewed: 2026-10-01. At the player's request, further passenger connection-agreement design is handed off to a separate conversation. Passenger connection agreements remain in V1; only discussion in this thread is paused. Preserve accepted passenger-cooperation rules and keep unresolved details open until the separate discussion is reconciled into the owning specifications.
+Last reviewed: 2026-10-01. Passenger connection agreements have been removed from the current design. Passenger cooperation is limited to the already confirmed partner-capacity-sale through-ticket mechanism; ordinary transfers create no separate bilateral connection object, guarantee or hold policy.
 
 ## How to use this backlog
 
@@ -37,11 +37,11 @@ Rules:
 
 ## Now
 
-The market/economy/public-tender, V1 multi-operator passenger-ticket and final UI/navigation documentation passes are complete and reconciled. Keep passenger connection-agreement design in its separate thread. The next executable work in this repository is the implementation handoff/M0 work below; do not treat the still-blank connection-agreement specification as decided.
+The market/economy/public-tender, V1 multi-operator passenger-ticket and final UI/navigation documentation passes are complete and reconciled. Passenger connection agreements are no longer an open design item. The next executable work in this repository is the implementation handoff/M0 work below.
 
 ## Open decisions
 
-- [ ] **[DESIGN] Passenger connection agreements — redesign from scratch in separate thread** — still required for V1. The dedicated [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is intentionally blank; do not carry forward prior draft mechanics unless explicitly re-approved there.
+No unresolved product decision is currently recorded here.
 
 ## Next
 
@@ -102,8 +102,8 @@ These are completed design/documentation tasks, not implemented game features. R
 - [x] UI-D39 — ownership/acquisitions/infrastructure market; controlled subsidiaries remain AI-managed, with a small owner-action set and separate company economies.
 - [x] UI-D40 — simple World News/history feed with significant world changes, known player impact and strict separation from UI-D24 incidents.
 - [x] UI-D41 — final HUD/navigation and global search, with company/finance top-left, Search/Layers top-right and grouped bottom navigation.
-- [x] **[DESIGN/DOC] V1 multi-operator passenger ticket cooperation (2026-10-01)** — retained asymmetric Line-scoped partner-capacity sales and two directional money/km rates with public-fare-versus-settlement margin including negative margins. V1 is explicitly limited to a two-operator single-journey through ticket containing a seller leg and partner leg; no pure/recursive resale or shared multi-company weekly/monthly pass. Sold tickets capture fare/agreement versions, real reservation rules still apply, and capacity resale alone creates no timetable coordination or protected connection.
-- [x] **[DOC] Final UI/navigation consistency audit (2026-10-01)** — reconciled README, UI_UX_DESIGN, UI_NAVIGATION-dependent focused specs and V1_IMPLEMENTATION_BRIEF with confirmed UI-D36–UI-D41. Removed stale pending claims, fixed Finance/cash to the upper-left HUD, Layers to the upper-right HUD, retained Build + Operations/Business/Assets | Company/World + Events/time in the bottom bar, and made UI_NAVIGATION authoritative so workflow tables cannot create a second navigation taxonomy. Passenger connection-agreement design remains intentionally open in its separate specification.
+- [x] **[DESIGN/DOC] V1 multi-operator passenger ticket cooperation (2026-10-01)** — retained asymmetric Line-scoped partner-capacity sales and two directional money/km rates with public-fare-versus-settlement margin including negative margins. V1 is explicitly limited to a two-operator single-journey through ticket containing a seller leg and partner leg; no pure/recursive resale or shared multi-company weekly/monthly pass. Sold tickets capture fare/agreement versions and real reservation rules still apply. No separate passenger connection-agreement/protected-transfer/hold mechanic exists in the current design.
+- [x] **[DOC] Final UI/navigation consistency audit (2026-10-01)** — reconciled README, UI_UX_DESIGN, UI_NAVIGATION-dependent focused specs and V1_IMPLEMENTATION_BRIEF with confirmed UI-D36–UI-D41. Removed stale pending claims, fixed Finance/cash to the upper-left HUD, Layers to the upper-right HUD, retained Build + Operations/Business/Assets | Company/World + Events/time in the bottom bar, and made UI_NAVIGATION authoritative so workflow tables cannot create a second navigation taxonomy.
 - [x] **[DESIGN/DOC] Market/economy refinement (2026-10-01)** — confirmed stable city/locality commodity markets with evolving internal economic centres, final-consumer sinks, historical commodity evolution, reference-versus-negotiated prices, active producer/buyer transport proposals, contract-first freight with transparently flow-dependent bounded open carriage, transparent concrete-plan public-service tenders, and all three public infrastructure/concession models in V1; subsequent price-response, centre/logistics and production/recipe balancing passes below complete the associated initial V1 defaults.
 - [x] **[DESIGN/CONTENT] Economic-centre and firm-logistics balancing defaults (2026-10-01)** — set monthly centre-development evaluation, 800 m target/1,000 m split review, explicit resident/job/anchor formation gates, persistence/decline rules, and no hard centre-count cap. Firm logistics now uses explicit local make-or-buy defaults; exceptional captive intercity road capacity requires sustained large/specialist lane utilization, targets 25–35% of stable base load and is hard-capped at 40%, while non-transport captive mainline rail haulage remains 0%. Core design, content manifest, implementation brief and acceptance scenarios are reconciled.
 - [x] **[DESIGN/CONTENT] Commodity reference-price response curve (2026-10-01)** — defined an explainable stock-coverage + 7-day flow + alternative-access target model, explicit piecewise contributions, 50% target smoothing, 0.5% deadband, ordinary 0.50×–2.00× target range with ±5% daily movement, and exceptional 0.35×–3.00× target range with ±15% daily movement. Implementation brief and acceptance coverage are reconciled.
