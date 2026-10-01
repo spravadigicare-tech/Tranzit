@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.0.0",
+  "content_set": "v1_1900_opening",
+  "status": "authoring_baseline",
+  "notes": [
+    "Values are representative game-authoring anchors for the 1900 opening set.",
+    "Historical subseries varied; exact production batches remain separately authorable.",
+    "No available_until field is permitted."
+  ],
+  "vehicle_model_families": [
+    {
+      "id": "rail_steam_cms_97_mravenec",
+      "fictional_name": "ČMS 97 Mravenec",
+      "manufacturer_id": "mfr_cms_praha",
+      "real_prototype_reference": "kkStB 97 / ČSD 310.0",
+      "introduction_year": 1878,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "steam_locomotive",
+      "role_tags": [
+        "yard",
+        "industrial",
+        "branch",
+        "light_mixed"
+      ],
+      "propulsion": "steam_coal",
+      "continuous_power_kw": 230,
+      "max_speed_kph": 40,
+      "service_mass_t": 29,
+      "axle_count": 3,
+      "axle_load_t": 9.7,
+      "minimum_curve_m": 90,
+      "gauge_mm": 1435,
+      "support_family_id": "steam_light_central_eu",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 55,
+      "authoring_confidence": "high",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/KkStB_97"
+      ]
+    },
+    {
+      "id": "rail_steam_cms_99_lokalka",
+      "fictional_name": "ČMS 99 Lokálka",
+      "manufacturer_id": "mfr_cms_praha",
+      "real_prototype_reference": "kkStB 99 / ČSD 320.0",
+      "introduction_year": 1897,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "steam_locomotive",
+      "role_tags": [
+        "branch",
+        "local_mixed",
+        "light_passenger",
+        "light_freight"
+      ],
+      "propulsion": "steam_coal",
+      "continuous_power_kw": null,
+      "max_speed_kph": 50,
+      "service_mass_t": 39.3,
+      "axle_count": 4,
+      "axle_load_t": null,
+      "minimum_curve_m": null,
+      "gauge_mm": 1435,
+      "support_family_id": "steam_light_central_eu",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 75,
+      "authoring_confidence": "medium",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/KkStB_99"
+      ]
+    },
+    {
+      "id": "rail_steam_cms_170_horal",
+      "fictional_name": "ČMS 170 Horal",
+      "manufacturer_id": "mfr_cms_praha",
+      "real_prototype_reference": "kkStB 170 / ČSD 434.0",
+      "introduction_year": 1897,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "steam_locomotive",
+      "role_tags": [
+        "heavy_freight",
+        "gradient",
+        "mainline_mixed"
+      ],
+      "propulsion": "steam_coal",
+      "continuous_power_kw": 850,
+      "starting_tractive_effort_kn": 111,
+      "max_speed_kph": 60,
+      "service_mass_t": 69.5,
+      "axle_count": 5,
+      "axle_load_t": 14,
+      "minimum_curve_m": null,
+      "gauge_mm": 1435,
+      "support_family_id": "steam_mainline_central_eu",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 100,
+      "authoring_confidence": "medium_high",
+      "source_urls": [
+        "https://www.loco-info.com/view.aspx?id=-682&type=Country",
+        "https://www.zeleznicnipoklady.cz/?product=434-2315"
+      ]
+    },
+    {
+      "id": "rail_steam_cms_6_rychlik",
+      "fictional_name": "ČMS 6 Rychlík",
+      "manufacturer_id": "mfr_regional_austrian_steam",
+      "real_prototype_reference": "kkStB 6 / ČSD 264.0",
+      "introduction_year": 1894,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "steam_locomotive",
+      "role_tags": [
+        "express",
+        "passenger"
+      ],
+      "propulsion": "steam_coal",
+      "continuous_power_kw": 588,
+      "peak_power_kw": 735,
+      "max_speed_kph": 90,
+      "service_mass_t": 56.1,
+      "axle_count": 4,
+      "axle_load_t": null,
+      "minimum_curve_m": null,
+      "gauge_mm": 1435,
+      "support_family_id": "steam_mainline_central_eu",
+      "regional_market_profile_id": "central_eu_regional_import_early",
+      "cost_index": 125,
+      "authoring_confidence": "high",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/KkStB_6"
+      ]
+    },
+    {
+      "id": "wagon_open_ringhauer_o10",
+      "fictional_name": "Ringhauer O10",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative Central-European 2-axle open wagon",
+      "introduction_year": 1880,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "role_tags": [
+        "bulk",
+        "coal",
+        "ore",
+        "timber"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 45,
+      "empty_mass_t": 8,
+      "payload_t": 10,
+      "cargo_volume_m3": 22,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "wagon_early_2axle",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 50,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "wagon_covered_ringhauer_g10",
+      "fictional_name": "Ringhauer G10",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative Central-European 2-axle covered goods wagon",
+      "introduction_year": 1880,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "role_tags": [
+        "general_cargo",
+        "bagged_goods"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 55,
+      "empty_mass_t": 9,
+      "payload_t": 10,
+      "cargo_volume_m3": 35,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "wagon_early_2axle",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 55,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "wagon_flat_ringhauer_p12",
+      "fictional_name": "Ringhauer P12",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative 2-axle flat/bolster wagon",
+      "introduction_year": 1885,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "role_tags": [
+        "timber",
+        "machinery",
+        "long_load"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 50,
+      "empty_mass_t": 7,
+      "payload_t": 12,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "wagon_early_2axle",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 55,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "wagon_tank_ringhauer_z10",
+      "fictional_name": "Ringhauer Z10",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative early riveted tank wagon",
+      "introduction_year": 1890,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "role_tags": [
+        "liquid",
+        "fuel",
+        "chemical"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 45,
+      "empty_mass_t": 8,
+      "payload_t": 10,
+      "cargo_volume_m3": 12,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "wagon_early_2axle",
+      "regional_market_profile_id": "central_eu_specialist_early",
+      "cost_index": 85,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "wagon_reefer_ringhauer_i8",
+      "fictional_name": "Ringhauer I8 Lednice",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative ice-insulated/refrigerated van",
+      "introduction_year": 1895,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "role_tags": [
+        "perishable",
+        "meat",
+        "dairy",
+        "ice_cooled"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 55,
+      "empty_mass_t": 10,
+      "payload_t": 8,
+      "cargo_volume_m3": 28,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "wagon_early_2axle",
+      "regional_market_profile_id": "central_eu_specialist_early",
+      "cost_index": 95,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "wagon_heavy_ringhauer_h15",
+      "fictional_name": "Ringhauer H15",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative early heavy machinery/well wagon",
+      "introduction_year": 1890,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "role_tags": [
+        "heavy_load",
+        "machinery",
+        "indivisible"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 40,
+      "empty_mass_t": 10,
+      "payload_t": 15,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "wagon_early_2axle",
+      "regional_market_profile_id": "central_eu_specialist_early",
+      "cost_index": 110,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "coach_ringhauer_l2",
+      "fictional_name": "Ringhauer L2",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative Central-European 2-axle wooden local coach",
+      "introduction_year": 1885,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "role_tags": [
+        "local",
+        "economy"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 50,
+      "empty_mass_t": 11,
+      "seats": 42,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "passenger_coach_wood_early",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 60,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "coach_ringhauer_b4",
+      "fictional_name": "Ringhauer B4 Corridor",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative 4-axle bogie corridor coach",
+      "introduction_year": 1895,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "role_tags": [
+        "regional",
+        "express",
+        "corridor"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 80,
+      "empty_mass_t": 27,
+      "seats": 54,
+      "axle_count": 4,
+      "gauge_mm": 1435,
+      "support_family_id": "passenger_coach_wood_early",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 100,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "coach_ringhauer_luxus_schlaf",
+      "fictional_name": "Ringhauer Luxus Schlaf",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative period sleeper/dining stock",
+      "introduction_year": 1898,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "role_tags": [
+        "sleeper",
+        "premium",
+        "long_distance"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 80,
+      "empty_mass_t": 30,
+      "berths": 22,
+      "axle_count": 4,
+      "gauge_mm": 1435,
+      "support_family_id": "passenger_coach_wood_early",
+      "regional_market_profile_id": "central_eu_specialist_early",
+      "cost_index": 145,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "coach_ringhauer_post_gepack",
+      "fictional_name": "Ringhauer Post/Gepäck",
+      "manufacturer_id": "mfr_ringhauer_smichov",
+      "real_prototype_reference": "Representative baggage/post/service coach",
+      "introduction_year": 1885,
+      "vehicle_mode": "rail",
+      "vehicle_kind": "service_coach",
+      "role_tags": [
+        "baggage",
+        "mail",
+        "service"
+      ],
+      "propulsion": "none",
+      "max_speed_kph": 65,
+      "empty_mass_t": 14,
+      "cargo_volume_m3": 32,
+      "axle_count": 2,
+      "gauge_mm": 1435,
+      "support_family_id": "passenger_coach_wood_early",
+      "regional_market_profile_id": "central_eu_domestic_early",
+      "cost_index": 70,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "road_horse_h2",
+      "fictional_name": "Městský valník H2",
+      "manufacturer_id": "mfr_local_coachbuilder",
+      "real_prototype_reference": "Representative 2-horse urban dray",
+      "introduction_year": 1850,
+      "vehicle_mode": "road",
+      "vehicle_kind": "freight_vehicle",
+      "role_tags": [
+        "urban",
+        "general_freight",
+        "horse"
+      ],
+      "propulsion": "animal",
+      "max_speed_kph": 8,
+      "payload_t": 2,
+      "support_family_id": "road_horse_traction",
+      "regional_market_profile_id": "local_universal_early",
+      "cost_index": 45,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "road_horse_h4",
+      "fictional_name": "Těžký povoz H4",
+      "manufacturer_id": "mfr_local_coachbuilder",
+      "real_prototype_reference": "Representative 4-horse heavy wagon",
+      "introduction_year": 1850,
+      "vehicle_mode": "road",
+      "vehicle_kind": "freight_vehicle",
+      "role_tags": [
+        "heavy_local",
+        "general_freight",
+        "horse"
+      ],
+      "propulsion": "animal",
+      "max_speed_kph": 6,
+      "payload_t": 4,
+      "support_family_id": "road_horse_traction",
+      "regional_market_profile_id": "local_universal_early",
+      "cost_index": 60,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "road_daimlar_lastwagen_5",
+      "fictional_name": "Daimlar Lastwagen 5",
+      "manufacturer_id": "mfr_daimlar_motoren",
+      "real_prototype_reference": "Daimler Motor-Lastwagen 1896",
+      "introduction_year": 1896,
+      "vehicle_mode": "road",
+      "vehicle_kind": "freight_vehicle",
+      "role_tags": [
+        "early_motor",
+        "general_freight",
+        "import"
+      ],
+      "propulsion": "petrol",
+      "continuous_power_kw": 4.4,
+      "max_speed_kph": 12,
+      "empty_mass_t": 1.5,
+      "payload_t": 1.5,
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "germany_core_export_early",
+      "cost_index": 140,
+      "authoring_confidence": "high",
+      "source_urls": [
+        "https://de.wikipedia.org/wiki/Daimler_Motor-Lastwagen_%281896%29"
+      ]
+    },
+    {
+      "id": "road_thornycroft_steam_1t",
+      "fictional_name": "Thornycroft Steam 1T Konvice",
+      "manufacturer_id": "mfr_thornycroft_uk",
+      "real_prototype_reference": "Thornycroft Steam Motor-Carriage 1896",
+      "introduction_year": 1896,
+      "vehicle_mode": "road",
+      "vehicle_kind": "freight_vehicle",
+      "role_tags": [
+        "steam_road",
+        "specialist",
+        "import"
+      ],
+      "propulsion": "steam_coke",
+      "max_speed_kph": 14,
+      "payload_t": 1,
+      "support_family_id": "road_steam_early",
+      "regional_market_profile_id": "britain_rare_import_early",
+      "cost_index": 150,
+      "authoring_confidence": "medium_high",
+      "source_urls": [
+        "https://www.carsandracingstuff.com/library/articles/22063.php"
+      ]
+    },
+    {
+      "id": "road_horse_omnibus_o12",
+      "fictional_name": "Koňský omnibus O12",
+      "manufacturer_id": "mfr_local_coachbuilder",
+      "real_prototype_reference": "Representative horse omnibus",
+      "introduction_year": 1850,
+      "vehicle_mode": "road",
+      "vehicle_kind": "passenger_vehicle",
+      "role_tags": [
+        "local_bus",
+        "horse"
+      ],
+      "propulsion": "animal",
+      "max_speed_kph": 8,
+      "seats": 12,
+      "support_family_id": "road_horse_traction",
+      "regional_market_profile_id": "local_universal_early",
+      "cost_index": 50,
+      "authoring_confidence": "authoring_estimate"
+    },
+    {
+      "id": "road_benc_omnibus_1895",
+      "fictional_name": "Benc Omnibus 1895",
+      "manufacturer_id": "mfr_benc_cie",
+      "real_prototype_reference": "Benz Omnibus 1895",
+      "introduction_year": 1895,
+      "vehicle_mode": "road",
+      "vehicle_kind": "passenger_vehicle",
+      "role_tags": [
+        "early_motor_bus",
+        "import"
+      ],
+      "propulsion": "petrol",
+      "continuous_power_kw": 3.7,
+      "max_speed_kph": 20,
+      "empty_mass_t": 1.2,
+      "seats": 7,
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "germany_rare_import_early",
+      "cost_index": 145,
+      "authoring_confidence": "high",
+      "source_urls": [
+        "https://de.wikipedia.org/wiki/Benz_Omnibus_%281895%29"
+      ]
+    }
+  ]
+}
