@@ -760,7 +760,7 @@
         "type": "none"
       },
       "equipment_group_ids": [
-        "rail_wagon_brake_1900"
+        "freight_wagon_brake_1900"
       ],
       "built_in_template_ids": [
         "r20_open_standard"
@@ -821,7 +821,7 @@
         "type": "none"
       },
       "equipment_group_ids": [
-        "rail_wagon_brake_1900"
+        "freight_wagon_brake_1900"
       ],
       "built_in_template_ids": [
         "g25_standard"
@@ -883,7 +883,7 @@
         "type": "none"
       },
       "equipment_group_ids": [
-        "rail_wagon_brake_1900"
+        "freight_wagon_brake_1900"
       ],
       "built_in_template_ids": [
         "e28_standard"
