@@ -1011,7 +1011,8 @@
         "litres_per_100km_reference": null
       },
       "equipment_group_ids": [
-        "pragov_rn_body_1933"
+        "pragov_rn_body_1933",
+        "pragov_rn_series_package"
       ],
       "built_in_template_ids": [
         "pragov_rn_flatbed",
@@ -1077,7 +1078,8 @@
         "litres_per_100km_reference": null
       },
       "equipment_group_ids": [
-        "fatra111_body_1942"
+        "fatra111_body_1942",
+        "fatra111_series_package"
       ],
       "built_in_template_ids": [
         "fatra111_flatbed",
