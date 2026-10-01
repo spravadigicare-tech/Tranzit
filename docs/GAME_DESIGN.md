@@ -266,29 +266,49 @@ The 16× setting is a simulation/performance requirement to validate on represen
 
 ## 4. Visual direction
 
+The focused execution specification is [ART_DIRECTION.md](ART_DIRECTION.md). This section owns the high-level visual contract; the focused document expands it without changing gameplay rules.
+
 ### 4.1 Camera and presentation
 
-- 3D top-down strategy camera.
-- Free camera rotation.
+- 3D top-down strategy camera with free rotation and a broad usable tilt range.
 - Strong diorama/model-world/model-railway feeling.
 - The player should feel like they are building and managing a living miniature world.
-- No first-person mode is required.
+- The closest normal view may approach roughly above-rooftop height, but no first-person or literal street-level mode is required.
+- Use slight visual scale exaggeration for vehicles/infrastructure where needed for strategic readability without turning the world into a toy.
+- Roofscape, silhouettes and the physical operation of infrastructure must remain readable from the supported oblique top-down camera.
 
 ### 4.2 Art direction
 
-Stylized realism: visually believable but slightly illustrated/stylized rather than photorealistic.
+Use **atmospheric simple realism**: believable proportions and recognizable historical forms with selective simplification rather than photorealism or low-poly caricature.
 
-Strong Central/Eastern European identity:
+Visual quality should come primarily from:
 
-- European street patterns,
-- dense historic centres,
-- traditional blocks,
-- industrial districts,
-- later socialist-era housing estates where appropriate,
-- suburban growth,
-- occasional high-rise landmarks but few generic skyscrapers,
-- regional architectural differences,
-- historical evolution of building styles.
+- lighting, shadows and atmosphere;
+- weather and gradual seasonal change;
+- strong silhouettes and roof forms;
+- believable materials;
+- coherent Central-European city/block/industrial composition;
+- environmental props and representative visible life;
+- functional readability from strategic camera distances.
+
+Ordinary assets model geometry that changes silhouette, volume or function; most micro-surface detail belongs in materials/textures. Landmarks and major transport/industrial structures may carry more geometric detail.
+
+Strong Central/Eastern European identity remains mandatory:
+
+- organic European street patterns rather than generic clean grids;
+- dense historic fabric and irregular blocks;
+- traditional and regional architecture;
+- industrial districts;
+- later socialist-era housing estates where appropriate;
+- suburban growth;
+- occasional high-rise or civic/transport landmarks rather than generic skyscraper fields;
+- historical evolution of building styles and city structure.
+
+Economic centres are the existing simulation units from Sections 6.2 and 10.5, not single visual downtown points. One economic centre may contain many streets and blocks, grow physically over time and later sit next to other centres inside one continuous city. Street/block generation must follow real physical urban structure rather than visual centre-radius bubbles.
+
+Run a full day/night cycle. A black/near-black night sky is acceptable, but moonlight, ambient illumination and historically appropriate artificial lighting must keep normal operation readable. Weather should materially transform surfaces and atmosphere, and seasons should transition gradually.
+
+Vehicles retain the defining silhouettes and recognizable construction cues of their real historical inspirations while simplifying unreadable microdetail and allowing fictionalized variants under the existing vehicle-content rules.
 
 Cities must not look like generic American grids.
 
