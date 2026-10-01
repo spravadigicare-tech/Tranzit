@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "content_set": "v1_1900_opening",
+  "templates": [
+    {
+      "id": "tpl_cms97_standard",
+      "model_family_id": "rail_steam_cms_97_mravenec",
+      "display_name": "Standard",
+      "built_in": true,
+      "equipment_option_ids": [
+        "steam_basic_brake",
+        "steam_basic_lamp"
+      ]
+    },
+    {
+      "id": "tpl_cms99_standard",
+      "model_family_id": "rail_steam_cms_99_lokalka",
+      "display_name": "Standard",
+      "built_in": true,
+      "equipment_option_ids": [
+        "steam_basic_brake",
+        "steam_basic_lamp"
+      ]
+    },
+    {
+      "id": "tpl_cms170_freight",
+      "model_family_id": "rail_steam_cms_170_horal",
+      "display_name": "Freight",
+      "built_in": true,
+      "equipment_option_ids": [
+        "steam_mainline_brake",
+        "steam_tender_standard"
+      ]
+    },
+    {
+      "id": "tpl_cms6_express",
+      "model_family_id": "rail_steam_cms_6_rychlik",
+      "display_name": "Express",
+      "built_in": true,
+      "equipment_option_ids": [
+        "steam_mainline_brake",
+        "steam_tender_standard"
+      ]
+    },
+    {
+      "id": "tpl_o10_bulk",
+      "model_family_id": "wagon_open_ringhauer_o10",
+      "display_name": "Bulk",
+      "built_in": true,
+      "equipment_option_ids": [
+        "wagon_handbrake_basic"
+      ]
+    },
+    {
+      "id": "tpl_g10_general",
+      "model_family_id": "wagon_covered_ringhauer_g10",
+      "display_name": "General cargo",
+      "built_in": true,
+      "equipment_option_ids": [
+        "wagon_handbrake_basic"
+      ]
+    },
+    {
+      "id": "tpl_p12_longload",
+      "model_family_id": "wagon_flat_ringhauer_p12",
+      "display_name": "Long load",
+      "built_in": true,
+      "equipment_option_ids": [
+        "wagon_stanchions_basic"
+      ]
+    },
+    {
+      "id": "tpl_z10_liquid",
+      "model_family_id": "wagon_tank_ringhauer_z10",
+      "display_name": "Industrial liquid",
+      "built_in": true,
+      "equipment_option_ids": [
+        "wagon_tank_basic"
+      ]
+    },
+    {
+      "id": "tpl_i8_ice",
+      "model_family_id": "wagon_reefer_ringhauer_i8",
+      "display_name": "Ice cooled",
+      "built_in": true,
+      "equipment_option_ids": [
+        "wagon_insulation_ice"
+      ]
+    },
+    {
+      "id": "tpl_h15_heavy",
+      "model_family_id": "wagon_heavy_ringhauer_h15",
+      "display_name": "Heavy machinery",
+      "built_in": true,
+      "equipment_option_ids": [
+        "wagon_heavy_tie_down"
+      ]
+    },
+    {
+      "id": "tpl_l2_economy",
+      "model_family_id": "coach_ringhauer_l2",
+      "display_name": "Economy",
+      "built_in": true,
+      "equipment_option_ids": [
+        "coach_wood_economy_seats",
+        "coach_basic_heating"
+      ]
+    },
+    {
+      "id": "tpl_b4_economy",
+      "model_family_id": "coach_ringhauer_b4",
+      "display_name": "Economy Corridor",
+      "built_in": true,
+      "equipment_option_ids": [
+        "coach_bogie_economy_seats",
+        "coach_basic_heating",
+        "coach_corridor"
+      ]
+    },
+    {
+      "id": "tpl_b4_business",
+      "model_family_id": "coach_ringhauer_b4",
+      "display_name": "Business",
+      "built_in": true,
+      "equipment_option_ids": [
+        "coach_bogie_business_seats",
+        "coach_basic_heating",
+        "coach_corridor"
+      ]
+    },
+    {
+      "id": "tpl_luxus_sleeper",
+      "model_family_id": "coach_ringhauer_luxus_schlaf",
+      "display_name": "Sleeper",
+      "built_in": true,
+      "equipment_option_ids": [
+        "coach_sleeper_berths",
+        "coach_premium_heating",
+        "coach_corridor"
+      ]
+    },
+    {
+      "id": "tpl_post_baggage",
+      "model_family_id": "coach_ringhauer_post_gepack",
+      "display_name": "Baggage & mail",
+      "built_in": true,
+      "equipment_option_ids": [
+        "coach_baggage_racks",
+        "coach_mail_compartment"
+      ]
+    },
+    {
+      "id": "tpl_h2_flatbed",
+      "model_family_id": "road_horse_h2",
+      "display_name": "Flatbed",
+      "built_in": true,
+      "equipment_option_ids": [
+        "road_horse_flatbed"
+      ]
+    },
+    {
+      "id": "tpl_h4_heavy",
+      "model_family_id": "road_horse_h4",
+      "display_name": "Heavy flatbed",
+      "built_in": true,
+      "equipment_option_ids": [
+        "road_horse_heavy_flatbed"
+      ]
+    },
+    {
+      "id": "tpl_daimlar_15t",
+      "model_family_id": "road_daimlar_lastwagen_5",
+      "display_name": "1.5 t Cargo",
+      "built_in": true,
+      "equipment_option_ids": [
+        "road_early_motor_flatbed"
+      ]
+    },
+    {
+      "id": "tpl_thornycroft_1t",
+      "model_family_id": "road_thornycroft_steam_1t",
+      "display_name": "1 t Cargo",
+      "built_in": true,
+      "equipment_option_ids": [
+        "road_steam_flatbed"
+      ]
+    },
+    {
+      "id": "tpl_omnibus_o12_standard",
+      "model_family_id": "road_horse_omnibus_o12",
+      "display_name": "Standard",
+      "built_in": true,
+      "equipment_option_ids": [
+        "bus_horse_standard_seats"
+      ]
+    },
+    {
+      "id": "tpl_benc_7p",
+      "model_family_id": "road_benc_omnibus_1895",
+      "display_name": "7 passenger",
+      "built_in": true,
+      "equipment_option_ids": [
+        "bus_early_motor_standard_seats"
+      ]
+    }
+  ]
+}
