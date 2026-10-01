@@ -1834,6 +1834,8 @@ Resource extraction remains **resource-specific**. Coal mines, iron-ore mines, s
 
 **Iron and steel are distinct transport/economic commodities.** Industrial recipes declare each required input independently. A downstream firm may require iron, steel, or **both at the same time** for different parts of its production process. They are not generic substitutes and must not be silently treated as interchangeable.
 
+For textiles, the baseline game uses one aggregated **textile raw materials** commodity instead of splitting wool and cotton into separate cargo types. Processing still creates distinct textiles/fabric and then clothing/garments for retail/final consumption. This abstraction is intentional to keep the commodity catalogue manageable while preserving a multi-stage transport chain.
+
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
 ### 10.2 Industrial geography
