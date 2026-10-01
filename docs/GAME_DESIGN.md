@@ -3714,7 +3714,7 @@ The order screen should show:
 - total reservation fee,
 - expected per-use charges,
 - owners involved,
-- any missing connection/access agreement,
+- any missing infrastructure connection/access agreement,
 - any incompatible infrastructure,
 - any time window that cannot be supplied,
 - expected congestion/tolerance risk.
@@ -5519,11 +5519,11 @@ Facility-access agreements use the relevant underlying capacity system. For exam
 
 The game should reuse the same access-agreement concept across planners rather than create separate unrelated rental systems for every facility type.
 
-### 19.4 Connection agreements
+### 19.4 Infrastructure connection agreements
 
 The player cannot simply place a switch into someone else's track.
 
-Connecting to foreign infrastructure requires a connection agreement/permit.
+Connecting to foreign infrastructure requires an **infrastructure connection agreement/permit**.
 
 Terms can include:
 
@@ -6274,7 +6274,7 @@ A submitted proposal can be accepted, rejected or countered by the other company
 
 For V1 passenger cooperation, **partner-capacity sales** is defined here and allows either or both parties to sell eligible capacity operated by the other party as part of one through ticket.
 
-**Connection-agreement mechanics are intentionally reset and not specified here.** They remain required V1 design work and will be redesigned from scratch in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md). Do not infer their lifecycle, timetable coordination, frequency, protection, activation or termination rules from prior drafts.
+**Passenger connection-agreement mechanics are intentionally reset and not specified here.** They remain required V1 design work and will be redesigned from scratch in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md). Do not infer their lifecycle, timetable coordination, frequency, protection, activation or termination rules from prior drafts.
 
 A through journey can use multiple operators under one itinerary/ticket when the required partner-capacity sales right exists.
 
@@ -6364,7 +6364,7 @@ The capacity-sales clause also does **not** coordinate timetables, impose hold r
 
 An agreement amendment, expiry or termination cannot silently erase a through ticket already sold while the right was valid. Existing sold tickets are honoured where legally/physically possible; otherwise the seller must use the normal passenger replacement/refund/recovery workflow. New sales require the cooperation right to be valid for the intended travel and the relevant Lines at sale time.
 
-Connection agreements, once redefined, remain conceptually separate from partner-capacity sales.
+Passenger connection agreements, once redefined, remain conceptually separate from partner-capacity sales.
 
 Missed connections and reliability influence passenger attractiveness.
 
