@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "scope": "1901–1919 equipment groups",
+  "groups": [
+    {
+      "id": "lk_e_cargo_body_1908",
+      "name": "Lorin & Klement E cargo body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "lk_e_van_1908",
+          "name": "Closed van",
+          "introduced_year": 1908,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 0.9,
+          "cargo_volume_m3_override": 4.8,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "lk_e_flatbed_1908",
+          "name": "Flatbed",
+          "introduced_year": 1908,
+          "mass_delta_t": -0.1,
+          "cost_index_delta": -3,
+          "payload_t_override": 0.9,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "lk_e_bus_body_1908",
+      "name": "Lorin & Klement E omnibus body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "lk_e_postal_bus_1908",
+          "name": "Postal omnibus",
+          "introduced_year": 1908,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 5,
+          "cargo_volume_m3_override": 1.3,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "lk_e_summer_bus_1908",
+          "name": "Summer omnibus",
+          "introduced_year": 1908,
+          "mass_delta_t": -0.1,
+          "cost_index_delta": -2,
+          "seats_override": 12,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "pragov_n_factory_body_1915",
+      "name": "Pragov N factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "pragov_n_flatbed_1915",
+          "name": "Flatbed",
+          "introduced_year": 1915,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 5,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_n_tipper_1915",
+          "name": "Tipper",
+          "introduced_year": 1915,
+          "mass_delta_t": 0.35,
+          "cost_index_delta": 10,
+          "payload_t_override": 4.7,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_n_tank_1915",
+          "name": "Tank body",
+          "introduced_year": 1915,
+          "mass_delta_t": 0.5,
+          "cost_index_delta": 14,
+          "payload_t_override": 4.5,
+          "retrofit_allowed": false
+        }
+      ]
+    }
+  ]
+}
