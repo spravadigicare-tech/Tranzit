@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "tiers": {
+    "home": {
+      "dealer_stock_weight": 1,
+      "quote_friction": "lowest",
+      "parts_support": "strongest",
+      "used_market": "high"
+    },
+    "core_export": {
+      "dealer_stock_weight": 0.65,
+      "quote_friction": "low",
+      "parts_support": "strong_medium",
+      "used_market": "medium_high"
+    },
+    "secondary_export": {
+      "dealer_stock_weight": 0.3,
+      "quote_friction": "medium",
+      "parts_support": "medium_low",
+      "used_market": "medium"
+    },
+    "rare_import": {
+      "dealer_stock_weight": 0.08,
+      "quote_friction": "high",
+      "parts_support": "weak",
+      "used_market": "low"
+    },
+    "no_ordinary_presence": {
+      "dealer_stock_weight": 0,
+      "quote_friction": "highest",
+      "parts_support": "external_specialist_only",
+      "used_market": "near_zero"
+    }
+  },
+  "profiles": [
+    {
+      "id": "market_cz_domestic_1900",
+      "rules": [
+        {
+          "region": "cz",
+          "tier": "home"
+        },
+        {
+          "region": "at",
+          "tier": "core_export"
+        },
+        {
+          "region": "de",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "pl",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "sk",
+          "tier": "home"
+        },
+        {
+          "region": "other_europe",
+          "tier": "rare_import"
+        }
+      ]
+    },
+    {
+      "id": "market_german_early_motor_cz",
+      "rules": [
+        {
+          "region": "de",
+          "tier": "home"
+        },
+        {
+          "region": "cz",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "at",
+          "tier": "core_export"
+        },
+        {
+          "region": "other_europe",
+          "tier": "secondary_export"
+        }
+      ]
+    },
+    {
+      "id": "market_british_early_special_cz",
+      "rules": [
+        {
+          "region": "gb",
+          "tier": "home"
+        },
+        {
+          "region": "cz",
+          "tier": "rare_import"
+        },
+        {
+          "region": "de",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "at",
+          "tier": "rare_import"
+        }
+      ]
+    },
+    {
+      "id": "market_local_builder",
+      "rules": [
+        {
+          "region": "local",
+          "tier": "home"
+        }
+      ]
+    },
+    {
+      "id": "market_cz_domestic_general",
+      "rules": [
+        {
+          "region": "cz",
+          "tier": "home"
+        },
+        {
+          "region": "sk",
+          "tier": "home"
+        },
+        {
+          "region": "de",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "at",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "pl",
+          "tier": "secondary_export"
+        },
+        {
+          "region": "hu",
+          "tier": "secondary_export"
+        }
+      ]
+    },
+    {
+      "id": "market_modern_eu_common",
+      "rules": [
+        {
+          "region": "eu",
+          "tier": "core_export"
+        },
+        {
+          "region": "home",
+          "tier": "home"
+        }
+      ]
+    },
+    {
+      "id": "market_socialist_core_export",
+      "rules": [
+        {
+          "region": "cz",
+          "tier": "core_export"
+        },
+        {
+          "region": "sk",
+          "tier": "core_export"
+        },
+        {
+          "region": "hu",
+          "tier": "home"
+        },
+        {
+          "region": "pl",
+          "tier": "core_export"
+        },
+        {
+          "region": "east_europe",
+          "tier": "core_export"
+        },
+        {
+          "region": "west_europe",
+          "tier": "rare_import"
+        }
+      ]
+    }
+  ]
+}
