@@ -1,26 +1,26 @@
 # Tranzit — Implementation status
 
-Last reviewed: 2026-09-30, during the repository-wide documentation consistency audit.
+Last reviewed: 2026-10-01, during the expanded repository consistency pass.
 
 ## Current evidence
 
-Audited baseline: main commit `a2b45f570bd91730f8c76d2f6a74058e28853c60`. All ten tracked files were documentation. This audit corrects specifications and adds documentation validation tooling, not a Unity game. Review scope and limitations are in [CONSISTENCY_AUDIT.md](CONSISTENCY_AUDIT.md).
+Current repository review (2026-10-01): the tree now contains the expanded design/UI documentation set, versioned vehicle-authoring JSON under `content/vehicles/`, documentation/content validators and CI. It still contains **no Unity project directories (`Assets/`, `Packages/`, `ProjectSettings/`), gameplay source, standalone build or runtime game-test evidence**. Review scope and historical audit context are in [CONSISTENCY_AUDIT.md](CONSISTENCY_AUDIT.md).
 
-- Design/implementation handoff: prepared; cross-system documentation audit completed.
+- Design/implementation handoff: prepared and materially expanded; cross-system documentation passes and vehicle-content authoring have continued through 2026-10-01.
 - Documentation lint and validator unit tests: see the audit report and actual CI/local run evidence. These do not pass any game acceptance gate.
-- Unity project and game implementation: not present in the inspected baseline; not created by this handoff.
+- Unity project and game implementation: not present in the current reviewed repository tree.
 - Windows build: not produced.
 - Game compilation, automated tests, player walkthroughs and benchmarks: NOT RUN.
-- Historical geodata and game assets: not supplied by this handoff.
+- Historical geodata and runtime game assets: not present as a completed authored-world/game-asset deliverable. Vehicle catalogue data is authoring content, not finished Unity assets.
 - The user's local Unity/toolchain installation has not been inspected by this handoff. Do not infer that it is installed or missing.
 
-Reinspect the current working tree before using these statements as current status. Replace them with actual implementation evidence as work proceeds. Remaining/open/deferred work is tracked separately in [TODO.md](TODO.md); this file must not be used as a speculative backlog, and TODO completion must not be treated as implementation/test evidence.
+Reinspect the working tree again when implementation begins and replace these statements with actual implementation evidence as work proceeds. Remaining/open/deferred work is tracked separately in [TODO.md](TODO.md); this file must not be used as a speculative backlog, and TODO completion must not be treated as implementation/test evidence.
 
 ## Milestones
 
 | Milestone | Initial state | Evidence |
 |---|---|---|
-| M0 Reproducible foundation | NOT IMPLEMENTED | No Unity project at inspected baseline |
+| M0 Reproducible foundation | NOT IMPLEMENTED | No Unity project in current reviewed tree |
 | M1 Visible world and road business | NOT IMPLEMENTED | None |
 | M2 Rail and construction | NOT IMPLEMENTED | None |
 | M3 Shared network logistics | NOT IMPLEMENTED | None |
