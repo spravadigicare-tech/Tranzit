@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "scope": "1900 opening equipment groups",
+  "rules": {
+    "fixed_platform": true,
+    "body_shell_change_by_retrofit": false,
+    "player_defined_templates": true,
+    "incompatible_combinations_blocked": true
+  },
+  "groups": [
+    {
+      "id": "coach_layout_1900",
+      "name": "Passenger layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "coach_layout_economy_1900",
+          "name": "Economy",
+          "introduced_year": 1880,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seat_capacity_factor": 1,
+          "comfort_band": "basic",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_layout_mixed_1900",
+          "name": "Economy + Business",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 12,
+          "seat_capacity_factor": 0.88,
+          "comfort_band": "mixed",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_layout_business_1900",
+          "name": "Business",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.4,
+          "cost_index_delta": 25,
+          "seat_capacity_factor": 0.72,
+          "comfort_band": "high",
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "coach_premium_layout_1900",
+      "name": "Premium service layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "coach_layout_sleeper_1900",
+          "name": "Sleeper",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.5,
+          "cost_index_delta": 30,
+          "capacity_override": {
+            "berths": 22,
+            "seats": 0
+          },
+          "service_tags": [
+            "sleeping"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_layout_dining_1900",
+          "name": "Dining",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.8,
+          "cost_index_delta": 35,
+          "capacity_override": {
+            "seats": 28,
+            "berths": 0
+          },
+          "service_tags": [
+            "dining"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "coach_heat_light_1900",
+      "name": "Heating and lighting",
+      "selection": "one_or_more",
+      "options": [
+        {
+          "id": "coach_basic_lighting_1900",
+          "name": "Basic period lighting",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.05,
+          "cost_index_delta": 2,
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_steam_heat_1900",
+          "name": "Steam heating",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 6,
+          "requires_vehicle_supply": [
+            "steam_heat"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_improved_lighting_1900",
+          "name": "Improved lighting package",
+          "introduced_year": 1895,
+          "mass_delta_t": 0.1,
+          "cost_index_delta": 7,
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "coach_brake_1900",
+      "name": "Brake package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "coach_brake_basic_1900",
+          "name": "Basic brake package",
+          "introduced_year": 1880,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "certified_speed_delta_kph": 0,
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_brake_continuous_1900",
+          "name": "Continuous-train brake package",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 8,
+          "certified_speed_effect": "may_raise_to_platform_limit_when_consist_compatible",
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "coach_service_1900",
+      "name": "Passenger service equipment",
+      "selection": "zero_or_more",
+      "options": [
+        {
+          "id": "coach_service_linen_1900",
+          "name": "Sleeper linen/service storage",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 5,
+          "service_tags": [
+            "sleeper_service"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_service_catering_1900",
+          "name": "Catering equipment",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.4,
+          "cost_index_delta": 15,
+          "service_tags": [
+            "catering"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "service_coach_layout_1900",
+      "name": "Service coach layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "service_coach_baggage_1900",
+          "name": "Baggage",
+          "introduced_year": 1880,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "cargo_volume_factor": 1,
+          "roles": [
+            "baggage"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "service_coach_post_baggage_1900",
+          "name": "Post + baggage",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 10,
+          "cargo_volume_factor": 0.8,
+          "roles": [
+            "mail",
+            "baggage"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "freight_wagon_brake_1900",
+      "name": "Freight wagon brake package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "wagon_brake_basic_1900",
+          "name": "Basic period brake",
+          "introduced_year": 1880,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "retrofit_allowed": true
+        },
+        {
+          "id": "wagon_brake_continuous_1900",
+          "name": "Continuous-train brake",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 6,
+          "certified_speed_effect": "supports_higher_consist_speed_up_to_platform_limit",
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "tank_wagon_service_1900",
+      "name": "Tank service package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "tank_general_oil_1900",
+          "name": "General industrial liquid",
+          "introduced_year": 1890,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "cargo_tags": [
+            "industrial_liquid"
+          ],
+          "retrofit_allowed": false
+        },
+        {
+          "id": "tank_restricted_chemical_1900",
+          "name": "Restricted chemical service",
+          "introduced_year": 1890,
+          "mass_delta_t": 0.25,
+          "cost_index_delta": 12,
+          "cargo_tags": [
+            "restricted_liquid"
+          ],
+          "inspection_family": "tank_restricted",
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "ice_van_cooling_1900",
+      "name": "Ice cooling package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "ice_van_passive_1900",
+          "name": "Insulated only",
+          "introduced_year": 1890,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "cooling_multiplier": 0.65,
+          "retrofit_allowed": true
+        },
+        {
+          "id": "ice_van_iceboxes_1900",
+          "name": "Ice-cooled",
+          "introduced_year": 1890,
+          "mass_delta_t": 0.35,
+          "cost_index_delta": 12,
+          "cooling_multiplier": 0.35,
+          "consumes": [
+            "ice"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "heavy_load_restraint_1900",
+      "name": "Heavy-load restraint",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "heavy_load_standard_1900",
+          "name": "Standard restraint",
+          "introduced_year": 1880,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "retrofit_allowed": true
+        },
+        {
+          "id": "heavy_load_reinforced_1900",
+          "name": "Reinforced machinery restraint",
+          "introduced_year": 1880,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 10,
+          "handling_tags": [
+            "heavy_machinery"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "rail_steam_safety_1900",
+      "name": "Steam locomotive operating package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "steam_operating_standard_1900",
+          "name": "Standard 1900 operating package",
+          "introduced_year": 1870,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "horse_freight_body_1900",
+      "name": "Horse freight factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "horse_body_flatbed_1900",
+          "name": "Flatbed",
+          "introduced_year": 1800,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "cargo_tags": [
+            "general",
+            "timber",
+            "crated"
+          ],
+          "retrofit_allowed": false
+        },
+        {
+          "id": "horse_body_covered_1900",
+          "name": "Covered",
+          "introduced_year": 1800,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 6,
+          "payload_factor": 0.95,
+          "cargo_tags": [
+            "weather_sensitive"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "horse_bus_layout_1900",
+      "name": "Horse omnibus layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "horse_bus_basic_12_1900",
+          "name": "12-seat basic",
+          "introduced_year": 1800,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 12,
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "early_truck_factory_body_1896",
+      "name": "Early truck factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "daimlar_flatbed_1896",
+          "name": "Flatbed",
+          "introduced_year": 1896,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 1.5,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "early_steam_road_body_1896",
+      "name": "Steam road factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "thornycroft_platform_1896",
+          "name": "Platform wagon",
+          "introduced_year": 1896,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 1,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "early_bus_layout_1895",
+      "name": "Early motor omnibus layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "benc_landauer_1895",
+          "name": "Landauer",
+          "introduced_year": 1895,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 7,
+          "retrofit_allowed": false
+        }
+      ]
+    }
+  ]
+}
