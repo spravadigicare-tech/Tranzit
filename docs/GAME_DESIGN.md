@@ -1838,6 +1838,8 @@ For textiles, the baseline game uses one aggregated **textile raw materials** co
 
 Industrial recipes can **evolve historically** as new materials and processes become available. For example, later textile production may begin requiring dyes, industrial chemicals or synthetic inputs. The same principle applies to other industries: newly introduced technologies can add or replace real recipe inputs and create new supplier/transport relationships. Do not treat this as a free global stat upgrade; a firm must actually obtain the newly required physical inputs, or continue an older viable process where the design/content allows it.
 
+The energy/chemical economy distinguishes **crude oil**, **natural gas**, and **refined fuels**. Crude oil and natural gas are separate primary resources; refined fuels are downstream products of processing crude oil. Their extraction, storage, transport compatibility, industrial use and historical adoption remain distinct. Demand for oil/gas/fuels should emerge and grow with the relevant technologies and industries rather than being globally modern from the 1900 start.
+
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
 ### 10.2 Industrial geography
