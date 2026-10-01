@@ -37,7 +37,9 @@ The game uses a 3D top-down strategy camera with:
 
 The camera should support both strategic overview and attractive close observation. Close assets therefore need to remain convincing from above and at an oblique angle, but do not need FPS-grade surface detail.
 
-Use **slight visual scale exaggeration where necessary for readability**. Vehicles, tracks, road furniture and other operationally important forms may be subtly enlarged or their characteristic features strengthened relative to the landscape. Avoid obvious toy proportions or a heavily compressed theme-park world.
+Use **slight visual scale exaggeration only where necessary for readability**. Vehicles, tracks, road furniture and other operationally important forms may be subtly enlarged or their characteristic features strengthened relative to the landscape.
+
+The miniature/model-world feeling must come primarily from the elevated oblique camera, composition, lighting and the ability to observe a whole functioning scene at once. **Do not push proportions, depth of field, material treatment or asset simplification into an overt toy/model-railway aesthetic.** The intended world remains substantially realistic in scale and appearance.
 
 Roofs and upper silhouettes are especially important because they remain visible in the closest normal camera.
 
@@ -341,14 +343,99 @@ When time, performance or asset budget forces a choice, prefer in this order:
 
 This is not permission to use debug primitives as final art. It is a rule for spending detail where the supported camera actually benefits.
 
-## 12. Still to define
+## 12. Terrain and rural landscape
+
+### 12.1 Landscape structure
+
+The countryside should not read as a generic green terrain surface with isolated objects placed on top.
+
+Roads, tracks, paths, watercourses, settlement edges, forest boundaries and other durable physical features divide the landscape into **irregular land-use polygons**. Those polygons can become fields, meadows, pasture, orchards, vineyards, woodland, gardens, wetlands, bare/working ground or other regionally and historically appropriate uses.
+
+Use the same spatial principle as urban blocks:
+
+> physical boundaries → irregular land polygon → land use → visual treatment
+
+Avoid arbitrary rectangular field decals or a visible global placement grid.
+
+### 12.2 Fields and rural parcels
+
+Fields follow their actual polygon shape. Cultivation direction, crop rows, mowing/orchard pattern and other surface cues should respond to the parcel geometry rather than ignoring it.
+
+Do not model every plant. Field identity should come mainly from:
+
+- polygon shape;
+- crop/ground colour;
+- cultivation direction;
+- surface/height variation;
+- edge treatment;
+- vehicle/work traces;
+- seasonal state.
+
+At close zoom, inexpensive spatial vegetation/detail layers may prevent fields from looking completely flat.
+
+Use **hedges, field margins, ditches, tree lines, remnant vegetation, fences and farm tracks** where appropriate. These edge elements are important to the Central-European landscape identity and should not be replaced by perfectly clean parcel seams.
+
+### 12.3 Historical evolution of land structure
+
+Rural land structure may change over decades as the simulated economy, settlement and historical development change.
+
+The visual/world system must be able to support:
+
+- parcel subdivision or consolidation;
+- removal or creation of some field boundaries;
+- changing farm tracks;
+- orchards or other land uses appearing/disappearing;
+- urban expansion consuming rural parcels;
+- changes in field scale and landscape openness between eras/regions.
+
+This should make a 1900 landscape visibly capable of becoming different by the late twentieth/early twenty-first century. Do not implement it as one global year-triggered cosmetic swap; it should follow the actual authored/simulated land development rules.
+
+### 12.4 Forests
+
+Vegetation placement should be realistic in density while individual tree assets remain simplified/stylized enough for performance and the supported camera.
+
+Forests should have:
+
+- irregular edges;
+- varied height and density;
+- species/age variation where useful;
+- occasional clearings;
+- transitional edge vegetation;
+- no visible placement grid.
+
+Do not normally cut forest against open ground with one perfectly sharp line. Use scattered trees, scrub, margins or other transition where the geography and land use support it.
+
+### 12.5 Terrain relief
+
+The world uses real geography. Preserve believable real relief rather than globally exaggerating mountain/valley height for spectacle.
+
+Terrain source data may be cleaned/smoothed to remove inappropriate noise and modern surface artefacts, but major and medium-scale geographic forms must remain recognizable. Use lighting, atmosphere and material variation to emphasize relief instead of distorting it.
+
+### 12.6 Rivers and water
+
+Rivers are physical landscape features, not blue spline lines.
+
+They should support:
+
+- believable varying width;
+- irregular banks;
+- bank vegetation;
+- shallower edge treatment;
+- sky/light reflection;
+- subtle flow cues;
+- gravel/sand/working banks where appropriate;
+- floodplain, side-arm or wetland character where geographically justified.
+
+Water rendering should prioritize visual quality and readability over expensive fluid simulation. A river should visibly shape the surrounding landscape rather than appear cut into an otherwise unchanged ground material.
+
+## 13. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
-- terrain surface language and terrain-detail density;
-- fields, hedges and rural parcel/edge treatment;
-- forest composition by region and era;
-- rivers, streams, banks, lakes/floodplains and water rendering;
+- regional rural landscape identities and exact field/crop palette;
+- roads, paths and roadside treatment;
+- railway permanent-way visual detail and trackside equipment;
+- bridges, tunnels, earthworks and construction-state presentation;
 - roads, paths and roadside treatment;
 - railway permanent-way visual detail and trackside equipment;
 - bridges, tunnels, earthworks and construction-state presentation;
