@@ -80,7 +80,7 @@ For passenger cooperation, the currently defined clause is:
 
 - **Sell partner capacity on through tickets**, independently enabled in each direction.
 
-Connection-agreement clauses are intentionally unspecified until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned from scratch.
+Passenger connection-agreement clauses are intentionally unspecified until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned from scratch.
 
 When capacity resale is enabled, configure each party independently in its own column.
 
