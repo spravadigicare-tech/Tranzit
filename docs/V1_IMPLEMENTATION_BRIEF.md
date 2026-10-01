@@ -1,8 +1,8 @@
 # Tranzit — First playable implementation brief for OpenCode
 
-Prepared: 2026-09-30.
+Originally prepared: 2026-09-30. Refreshed against the expanded repository on 2026-10-01.
 Status: implementation handoff, not implemented software or a passing test report.
-Baseline inspected: `spravadigicare-tech/Tranzit`, main commit `0ff59b98d8b9bdcbe3fec32299086bdcdb306c44`. That baseline contains AGENTS.md, README.md and two design documents; it has no Unity project, scenes, game code or production assets. Reinspect the actual working tree before starting because it may have advanced since this handoff.
+Current reviewed repository state contains the full design/UI handoff, versioned vehicle-authoring data and validation tooling, but **no Unity project, scenes, gameplay source or standalone build**. Reinspect the actual working tree/toolchain before starting and preserve any implementation that may appear after this review.
 
 ## 1. Delivery objective
 
@@ -43,7 +43,7 @@ Expected deliverables:
 | Developer documentation | Architecture decisions, data schema, save format, asset pipeline, build/run instructions |
 | Progress ledger | Requirement IDs mapped to implementation files, tests, evidence and remaining defects |
 
-Recommended document paths to create during implementation: `docs/IMPLEMENTATION_STATUS.md`, `docs/ARCHITECTURE.md`, `docs/BUILD_AND_RUN.md`, `docs/SAVE_FORMAT.md`, `docs/DATA_PIPELINE.md`, `docs/KNOWN_ISSUES.md`, `docs/TEST_RESULTS.md` and `docs/PERFORMANCE.md`. Do not populate results with invented successful runs.
+Maintain the existing `docs/IMPLEMENTATION_STATUS.md` and `docs/DATA_PIPELINE.md`. Create the still-missing implementation evidence/engineering documents when they become relevant, including `docs/ARCHITECTURE.md`, `docs/BUILD_AND_RUN.md`, `docs/SAVE_FORMAT.md`, `docs/KNOWN_ISSUES.md`, `docs/TEST_RESULTS.md` and `docs/PERFORMANCE.md`. Do not populate results with invented successful runs.
 
 ## 4. Technical baseline
 
