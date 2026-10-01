@@ -253,9 +253,13 @@ For each leg show:
 - required/allocated capacity;
 - timing/transfer state;
 - relevant endpoint/access dependency;
+- contractual handover point and whether responsibility continues beyond a public terminal to the final firm;
+- for a customer-provided leg, the known usable basis: own local vehicle capacity, private siding/loading facility or procured external carrier;
 - current problem when material.
 
 Each specific Line, Pattern, Trip, terminal, external order and other inspectable object is directly clickable. A plan leg does not pretend that cargo has physically moved. Reservation, readiness, loading and in-transit states remain distinct.
+
+When the counterparty offers terminal pickup/delivery or a private industrial siding, present it as a concrete operating option in the proposal—not as an invisible simplification. Show whether the customer capability is currently available/adequate for the proposed quantity and time window where that information is contractually known.
 
 Where an existing Line is used, expose compatible available/committed capacity using the canonical ledgers. Do not show only nominal tonnes/seats if the relevant cargo/passengers cannot use that capacity. A contract allocation is not duplicated because it appears in both commercial and Line windows.
 
