@@ -168,7 +168,7 @@ This already gives four different 1900 freight choices without introducing an an
 
 | ID / fictional model | Intro | Real basis | Format / payload | Power | Max speed | Best use | Production/source |
 |---|---:|---|---|---:|---:|---|---|
-| **Lorin & Klement E Cargo** | 1908 | L&K Type E commercial / Montenegro utility family | rigid/van, ~1.5 t class or ~4.8 m³ body | period petrol four-cylinder | ~30 km/h authoring target | local deliveries / parcels | Mladá Boleslav |
+| **Lorin & Klement E Cargo** | 1908 | L&K Type E commercial / Montenegro utility family | van/flatbed, 0.9 t payload in documented export van; trailer option up to 1.5 t | 21–25.7 kW petrol four-cylinder by documented Type E configuration | 20–30 km/h practical | local deliveries / parcels | Mladá Boleslav |
 | **Pragov N** | 1915 | early Praga N truck family | rigid, ~3 t | ~30 kW | ~35 km/h | general freight | Praha |
 | **Fatra 13** | 1924 | Tatra 13 | light rigid, 1.0 t payload | 8.8 kW | 45 km/h | city/local light freight | Kopřivnice |
 | **Pragov RN** | 1933 | Praga RN | medium rigid, ~2–3 t | ~38–50 kW | ~60 km/h | versatile medium freight | Praha |
@@ -302,6 +302,43 @@ If an era genuinely lacks three technically distinct new products for a niche ro
 
 A release/content audit should flag any continuous period longer than roughly one decade in which a core role has only one credible acquisition strategy despite historically available alternatives.
 
+## 8.2 1900 opening-market seeding
+
+The 1900 new-game market must be viable without spawning free vehicles or forcing one scripted starter fleet.
+
+At world initialization:
+
+- period-appropriate factories already exist with dated capabilities, existing commercial backlog and material constraints;
+- dealers own finite physical stock that they previously ordered for their normal market;
+- railway companies, industries, municipalities and private operators own period-appropriate fleets;
+- a bounded share of older assets is legitimately offered on the used market;
+- off-map manufacturers expose order capability and historically plausible export terms;
+- lease/rental exists only from providers that actually own suitable assets or have a manufacturer-backed committed delivery.
+
+The opening state should normally expose several feasible entry paths in each selectable starting area:
+
+### Small road opening
+
+The player should be able to compare at least:
+
+- cheap horse-drawn used/new local equipment;
+- a scarce, expensive early motor vehicle;
+- an imported motor/steam alternative where logistics make sense;
+- later, the first domestic motor-commercial orders as their historical dates arrive.
+
+### Rail opening
+
+The player should be able to compare at least:
+
+- used/light branch locomotives;
+- a more capable current steam locomotive order;
+- used locomotives from an existing railway/operator where actually listed;
+- domestic versus regional/off-map new production when compatible.
+
+No starting dealer is required to have every type in stock. The authoring fixture must instead guarantee enough **actual world supply paths** that a reasonable starting region/loan combination does not deadlock solely because the simulation happened to seed zero purchasable transport assets.
+
+Seeded used vehicles receive real previous manufacture dates, owners, mileage/hours, condition and physical locations.
+
 ## 9. Acquisition, manufacture and import implementation
 
 ### 9.1 Active-map production
@@ -325,6 +362,22 @@ Suggested major inputs, aggregated enough for game performance:
 - batteries for modern EVs: battery-pack component as a high-value industrial input rather than free embedded energy storage.
 
 Do not require the player to source these inputs for a third-party manufacturer unless the contract specifically transfers that responsibility. The manufacturer's own procurement AI normally handles them.
+
+### 9.1.1 Offer discovery and historical information access
+
+The player's ability to **buy abroad** is not gated by having a branch abroad, but the way offers are discovered should still fit the era.
+
+The Vehicle Marketplace represents the company's available commercial information sources:
+
+- manufacturer/dealer catalogues and agents;
+- trade press and exhibitions;
+- correspondence/telegraph/telephone;
+- brokers/importers;
+- later electronic databases and online sales channels.
+
+Early-era information can therefore have longer quote turnaround, fewer immediately comparable foreign offers and more broker/importer involvement without hiding an artificial unlock behind foreign expansion.
+
+The player can deliberately request a quote from a known distant manufacturer even when no current dealer listing exists. Requesting a quote does not create stock or reserve production capacity.
 
 ### 9.2 Off-map manufacture
 
@@ -576,6 +629,52 @@ Templates should use clear player-facing names such as `Economy`, `Business`, `E
 
 The player may create arbitrary **supported combinations of equipment** inside the platform's authored compatibility rules. The editor automatically blocks mutually incompatible combinations and explains the blocker rather than allowing impossible builds.
 
+### Equipment-package authoring rules
+
+The template editor uses a small number of **equipment groups**, not a raw parts catalogue. Each model family exposes only groups that physically make sense for that platform.
+
+Each equipment option stores:
+
+- stable option ID;
+- supported model/platform IDs;
+- introduction/prerequisite date or technology;
+- mass change;
+- purchase/retrofit material cost;
+- labour requirement;
+- capacity/space consequence;
+- energy/consumption consequence where relevant;
+- maintenance/support family;
+- compatibility dependencies;
+- mutually exclusive options;
+- certification/inspection consequence;
+- visible passenger/cargo/service effect.
+
+Typical passenger-vehicle groups are:
+
+1. **layout/class package** — seat density, class zones, sleeper/dining/service space;
+2. **comfort package** — seat type, insulation, HVAC/heating, lighting, later power/Wi-Fi where historically available;
+3. **accessibility/flexible-space package** — luggage, bikes, prams, wheelchair spaces/lifts/low-floor equipment where the platform supports it;
+4. **service package** — catering, toilet, luggage/service equipment;
+5. **technical package** — brakes, train heating/control, safety/train-protection, approved speed package.
+
+Typical road-freight groups are:
+
+1. fixed factory body/platform variant;
+2. cargo-handling equipment;
+3. refrigeration/tank/special handling equipment;
+4. driveline/final-drive package when historically offered;
+5. cab/safety/comfort equipment.
+
+Typical locomotive groups are intentionally narrower:
+
+1. country/train-protection package;
+2. train heating/control package;
+3. approved engine/traction rebuild package;
+4. braking/speed package;
+5. communication/safety package.
+
+A player-defined template may mix supported options across these groups, but the editor automatically resolves hard dependencies and blocks impossible combinations with explicit reasons.
+
 ### Template pricing and retrofit costing
 
 ### Template-dependent operating limits
@@ -700,6 +799,33 @@ Until the economy is balanced in the single game unit `money`, use a **same-era 
 - 200+ = exceptional high-performance trainset/special equipment.
 
 The index is not shown to the player and is not a hidden gameplay modifier. It is an authoring tool that must later be converted into explicit visible purchase prices using the era economy.
+
+## 10.0 Operating-consumption authoring
+
+Operating costs come from explicit physical consumption rather than a generic per-kilometre era multiplier.
+
+Vehicle definitions use the appropriate measurable basis:
+
+- steam locomotives: coal/fuel + water as a function of work, duty and servicing state;
+- diesel road/rail: fuel consumption as a function of distance, load, speed/duty and idling where material;
+- electric rail: traction energy based on movement/work, auxiliaries and regenerative capability where supported;
+- battery road vehicles: electrical energy, usable battery capacity and charging losses/time;
+- horse traction: aggregate feed/water/rest/service supply rather than fuel litres;
+- refrigeration/service equipment: additional fuel/electric/ice/consumable demand where applicable.
+
+Authoring may use calibrated curves or operating bands rather than component-level thermodynamic simulation. The important requirement is that two configurations differ for understandable physical reasons and equivalent completed work is accounted consistently.
+
+A template can change consumption through real configuration effects such as:
+
+- mass;
+- aerodynamics/body form where the factory platform differs;
+- engine/traction package;
+- gearing;
+- HVAC/refrigeration/service loads;
+- regenerative braking;
+- passenger/cargo load.
+
+Calendar age alone never increases consumption. Degraded condition may increase consumption only where the actual condition/fault model justifies it.
 
 ## 10.1 Reliability, defects and maintainability
 
