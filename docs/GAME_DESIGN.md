@@ -35,7 +35,7 @@ Examples:
 
 > Line attractiveness decreased  
 > - average delay increased from 3.1 to 7.4 min  
-> - 6.2% of protected connections were missed  
+> - 6.2% of planned transfers were missed  
 > - passenger comfort fell because Standard cleaning was skipped on 18% of recent Trips
 
 > Contract bid ranked poorly  
@@ -451,7 +451,7 @@ Core factors include:
 - **Reliability** — derived from real operating history under Section 9.2.
 - **Travel time** — based on the actual published itinerary, including running time, dwell and expected transfer time.
 - **Frequency / availability** — how often a usable service is offered for the passenger's intended journey/time window.
-- **Transfer quality** — number of transfers, walking time, connection reliability, protected-connection status and interchange quality.
+- **Transfer quality** — number of transfers, walking time, timetable fit/reliability and interchange quality.
 - **Price** — the actual fare applicable to the intended itinerary/product.
 - **Operator/service reputation** — where relevant, based on visible historical outcomes rather than a hidden arbitrary preference.
 
@@ -477,7 +477,7 @@ Example Line detail:
 > Reliability  
 > - 91% within +5 min over last 30 Trips  
 > - 1 cancellation  
-> - 2 protected connections missed
+> - 2 planned transfers missed
 
 > Crowding  
 > - average peak load: 94% seated capacity  
@@ -1802,7 +1802,7 @@ Line and Service Pattern analytics can expose measures such as:
 - on-time performance;
 - cancellation rate;
 - short-formation/reduced-capacity rate;
-- protected connections missed;
+- planned passenger transfers missed;
 - passengers rebooked because of operator disruption;
 - contractual/SLA service failures where relevant.
 
@@ -1828,7 +1828,7 @@ For longer-distance services, the UI can emphasize:
 
 - final-destination punctuality;
 - major interchange punctuality;
-- protected-connection success;
+- successful planned-transfer rate;
 
 rather than treating every minor intermediate variation as equally important.
 
@@ -1849,7 +1849,7 @@ Example:
 > Passenger reliability perception: Below average  
 > - last 30 relevant Trips: 84% within +5 min  
 > - 3 cancellations  
-> - 7 protected missed connections  
+> - 7 planned transfers missed  
 > - improving over the last 10 Trips
 
 Do not apply an invisible random reliability modifier on top of the observed operating record unless a separate real causal factor exists and is shown.
@@ -6057,7 +6057,7 @@ The capability controls **when passenger decisions may react to known disruption
 
 - with Timetable only, passengers primarily choose from the published timetable;
 - with Operational updates, passengers can react once current information reaches the station/terminal;
-- with Realtime information, passengers can react before reaching the station or during the journey, and protected itineraries can be rebooked earlier.
+- with Realtime information, passengers can react before reaching the station or during the journey, and affected booked itineraries can be rerouted/rebooked earlier.
 
 Information technology never changes the real vehicle position, delay or capacity. It only changes what passengers can know and when recovery can begin.
 
@@ -6071,7 +6071,7 @@ The UI should show concrete consequences such as:
 - delay/cancellation communicated at station;
 - platform change communicated;
 - alternative selected before departure;
-- protected connection rebooked earlier.
+- alternative itinerary selected earlier.
 
 The pre-1900 progression belongs mainly to Early Ages, while the same technology definitions can remain relevant to inherited infrastructure in later starts.
 
@@ -6274,7 +6274,7 @@ A submitted proposal can be accepted, rejected or countered by the other company
 
 For V1 passenger cooperation, **partner-capacity sales** is defined here and allows either or both parties to sell eligible capacity operated by the other party as part of one through ticket.
 
-**Passenger connection-agreement mechanics are intentionally reset and not specified here.** They remain required V1 design work and will be redesigned from scratch in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md). Do not infer their lifecycle, timetable coordination, frequency, protection, activation or termination rules from prior drafts.
+The current design has **no separate passenger connection-agreement mechanic**. Passenger transfers arise from ordinary itinerary construction and published services. The only defined bilateral passenger-cooperation mechanism is partner-capacity sales below; it does not coordinate timetables, make a transfer guaranteed or create a special hold/recovery right.
 
 A through journey can use multiple operators under one itinerary/ticket when the required partner-capacity sales right exists.
 
@@ -6360,13 +6360,11 @@ Passenger refund/change handling keeps the segment terms that were actually sold
 
 Partner-capacity rights do **not** create physical capacity. For reservation-required capacity, the seller must obtain a real compatible reservation through a period-appropriate supported partner booking channel before confirming that Trip. Optional reservation and open boarding retain their normal capacity rules. A paper/agent-era interline sale can exist where administration and validation support it; the agreement does not imply modern live inventory or communications.
 
-The capacity-sales clause also does **not** coordinate timetables, impose hold rules or create a protected connection. It only allows the commercial through-ticket sale. A transfer is protected/rebookable across companies only when the separately defined connection/recovery rights support that protection. Until CONNECTION_AGREEMENTS.md is redesigned, capacity-sale-only itineraries are explicitly **unprotected transfers** for Section 32.4 purposes.
+The capacity-sales clause does **not** coordinate timetables, impose hold rules or guarantee a transfer. It only allows the commercial through-ticket sale. The transfer is evaluated like any other ordinary timetable transfer.
 
-An agreement amendment, expiry or termination cannot silently erase a through ticket already sold while the right was valid. Existing sold tickets are honoured where legally/physically possible; otherwise the seller must use the normal passenger replacement/refund/recovery workflow. New sales require the cooperation right to be valid for the intended travel and the relevant Lines at sale time.
+An agreement amendment, expiry or termination cannot silently erase a through ticket already sold while the right was valid. Existing sold tickets are honoured where legally/physically possible; otherwise the seller must use the normal passenger replacement/refund/recovery workflow for the sold transport obligation. New sales require the cooperation right to be valid for the intended travel and the relevant Lines at sale time.
 
-Passenger connection agreements, once redefined, remain conceptually separate from partner-capacity sales.
-
-Missed connections and reliability influence passenger attractiveness.
+Missed transfers and service reliability influence passenger attractiveness.
 
 ## 31. Pricing, integrated tariff systems and passenger tickets
 
@@ -6378,7 +6376,7 @@ Keep three concepts separate:
 2. **Integrated tariff system** — a named commercial network containing selected Lines/Service Patterns that share a tariff and accept defined ticket products.
 3. **Ticket product** — what the passenger actually purchases, such as a single journey, weekly network ticket or monthly network ticket.
 
-An integrated tariff system is not a Line, Service Pattern, Trip, infrastructure owner, region or capacity pool. Membership does not create vehicles, slots, stations, passenger demand or protected connections.
+An integrated tariff system is not a Line, Service Pattern, Trip, infrastructure owner, region or capacity pool. Membership does not create vehicles, slots, stations, passenger demand or guaranteed transfers.
 
 ### 31.1 Tariff hierarchy and inheritance
 
@@ -6463,7 +6461,7 @@ Example:
 
 This example is illustrative balancing only.
 
-An integrated fare does **not** automatically create a protected connection. Protected itinerary/rebooking rights remain governed by Section 32.4 and require the relevant through-ticket/connection policy.
+An integrated fare does **not** guarantee a transfer or make another Trip wait. Multi-leg journeys use the ordinary transfer and sold-ticket rules in Section 32.4.
 
 ### 31.4 Ticket products
 
@@ -6836,10 +6834,10 @@ The impact check includes:
 - depot/parking/maintenance capacity;
 - commercial coverage/local presence;
 - passenger ticketing/sales availability;
-- passenger reservations and protected itineraries;
+- passenger reservations and sold multi-leg itineraries;
 - freight contract allocations;
 - passenger/group contracts;
-- feeder/connection relationships;
+- transfer feasibility between affected passenger services;
 - tariff/reservation-policy compatibility where relevant.
 
 The UI should summarize concrete impacts, for example:
@@ -6880,10 +6878,10 @@ For each affected booking, the system first attempts automatic migration/rebooki
 
 Examples:
 
-- departure moved by 4 minutes but the same protected itinerary remains valid → migrate automatically;
+- departure moved by 4 minutes but the same sold itinerary remains feasible → migrate automatically;
 - one stop removed → affected passengers require rebooking or refund;
 - First Class capacity reduced below already sold reservations → unresolved capacity conflict requiring re-accommodation or refund;
-- connection window becomes invalid → itinerary must be reprotected/rebooked or refunded.
+- a timetable change makes a sold multi-leg itinerary infeasible → rebook or refund it according to the sold ticket terms.
 
 If no acceptable replacement itinerary exists, the operator can **refund the affected ticket/reservation**.
 
@@ -6966,14 +6964,14 @@ Suspension uses the same dependency/impact philosophy as Pattern versioning.
 Before confirmation, the UI shows the effect on:
 
 - future passenger reservations;
-- protected itineraries/connections;
+- sold multi-leg passenger itineraries and affected transfers;
 - passenger/group contracts;
 - freight contract allocations;
 - municipal/public-service obligations;
 - rail/station capacity agreements;
 - vehicle/fleet utilization;
 - crew/staff demand;
-- feeder/connection Lines;
+- connecting passenger services used by affected sold itineraries;
 - depot/parking demand;
 - expected refunds/compensation;
 - reputation/customer impact where relevant.
@@ -7101,11 +7099,11 @@ Passenger sales are aggregated but capacity-accurate by:
 - origin-destination leg;
 - passenger class/capacity zone;
 - reservation policy;
-- protected multi-leg itinerary where one is sold.
+- confirmed multi-leg booking where one is sold.
 
 A passenger place sold Praha→Brno does not block the same place Brno→Vídeň.
 
-When a ticket covers several connecting Trips, the system can reserve compatible capacity on each required leg and mark the journey as a protected itinerary under Section 32.4.
+When a ticket covers several connecting Trips, the system can reserve compatible capacity on each required leg. This does not create a separate protected-connection object or make a connecting Trip wait.
 
 ##### Open boarding
 
@@ -7361,7 +7359,7 @@ Line/Pattern defaults can be overridden for important stops where a deliberately
 
 - major interchange;
 - crew change;
-- scheduled connection protection;
+- intentionally longer interchange dwell where useful;
 - baggage/service work;
 - terminal preparation.
 
@@ -7517,54 +7515,20 @@ A Service Pattern can also define a simple **operational priority** that express
 
 Keep the setting simple:
 
-- **Low** — service can absorb more waiting/recovery delay where useful;
+- **Low** — service can absorb more recovery delay where useful;
 - **Normal** — balanced default;
-- **High** — protect departure/on-time running strongly and avoid holding it for lower-priority connections unless explicitly configured.
+- **High** — protect departure/on-time running strongly.
 
 This is a **company operating policy**, not a replacement for contractual infrastructure priority.
 
 It can influence:
 
-- how long the Trip is willing to wait for connecting passengers;
-- which of the company's own services should absorb delay when two recoveries conflict;
+- which of the company's own services should absorb delay when operational recoveries conflict;
 - whether a reserve vehicle/crew should preferentially protect one service;
 - which duty is reworked first during disruption;
 - how aggressively available running-time/turnaround margin is used to restore punctuality.
 
-A typical network can therefore use:
-
-> **Express / intercity** — High operational priority  
-> short connection-hold limit  
-> protect planned departure and downstream slots
-
-> **Regional feeder** — Low/Normal operational priority  
-> longer connection-hold limit for protected passengers arriving from the Express  
-> allowed to absorb more delay when doing so preserves the connection
-
-This creates intentionally asymmetric connections.
-
-Example:
-
-> Express arrives 6 min late into hub  
-> Regional feeder is configured to wait up to 10 min for that protected connection  
-> → Regional waits and departs +6 min
-
-On the reverse connection:
-
-> Regional arrives 6 min late toward the Express  
-> Express hold limit is 2 min  
-> → Express departs on time/near schedule and affected protected passengers are rebooked if the connection is missed
-
-The exact outcome still depends on:
-
-- available slot tolerance;
-- platform/track capacity;
-- vehicle/crew duty consequences;
-- downstream connections;
-- legal/public-service requirements;
-- configured connection-hold limits.
-
-A high-priority service is therefore **not guaranteed to be on time**. The setting tells the dispatcher which service should normally be protected when several valid recovery choices exist.
+A high-priority service is therefore **not guaranteed to be on time**. The setting tells the dispatcher which service the company normally prefers to stabilize when several otherwise-valid operational recovery choices exist. It does not create passenger-connection holds.
 
 ###### Relationship to infrastructure access priority
 
@@ -7582,20 +7546,6 @@ If a High-priority Express has only a flexible/out-of-slot movement while anothe
 Operational priority may resolve a choice between the same company's services with equivalent contractual rights. It is not a player-controlled tie-break against another operator. Equal-rights inter-operator conflicts use the infrastructure owner's published neutral dispatch rule with stable ordering, subject to safety and contractual recovery; ownership and a private High setting confer no extra rights.
 
 The Capacity Order UI can recommend a stronger access product for a High-priority service, but changing operational priority does not automatically purchase or upgrade infrastructure rights.
-
-###### Connection-priority interaction
-
-Operational priority works together with the existing per-connection **maximum hold policy** rather than replacing it.
-
-The priority provides a useful default/recommendation:
-
-- lower-priority feeder → longer suggested hold for higher-priority incoming service;
-- higher-priority trunk/express → shorter suggested hold;
-- equal-priority services → balanced hold based on passenger count and downstream impact.
-
-The player can override the suggested hold for an individual connection.
-
-This keeps the model understandable: **priority says which service the company prefers to protect; hold time says exactly how long a specific connection may wait.**
 
 ##### Slot-window width and planned midpoint
 
@@ -7832,21 +7782,31 @@ The player can inspect the nominal route and any active diversion.
 
 Service metrics distinguish planned running time from disruption/diversion effects.
 
-### 32.4 Passenger connection relationships — intentionally unspecified
+### 32.4 Ordinary passenger transfers and interchange
 
-The previous feeder/connection-protection design for passenger services has been **withdrawn from the canonical specification**.
+Passenger transfers are an **ordinary itinerary property**, not a separate agreement or protected-connection object.
 
-Passenger connection-agreement mechanics remain required V1 design work, but their lifecycle, timetable coordination, connection protection, hold behaviour, recovery/rebooking rights, responsibility rules and any connection-specific compensation are **not currently defined**. [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) will own that focused specification once it is redesigned and approved.
+A candidate passenger journey may use several Trips when:
 
-Until that specification exists:
+- the arrival and departure stops/stations are physically connected by a valid interchange path;
+- the scheduled times provide at least the applicable minimum walking/interchange time;
+- each leg is commercially available to the passenger under its real ticket/sales rules;
+- any reservation-required leg has real compatible capacity confirmed before sale where required;
+- the resulting itinerary remains attractive enough under the passenger-choice rules.
 
-- an ordinary passenger itinerary may contain a transfer when the routing, timetable, ticketing and physical-capacity rules otherwise permit it;
-- the partner-capacity-sales clause in Section 30.3 can create the defined two-operator through ticket, but it does **not** by itself create timetable coordination, a guaranteed/protected transfer, a hold policy or automatic partner rebooking;
-- no implementation, UI, AI rule or acceptance test may resurrect the removed connection draft by inference;
-- generic Trip cancellation, passenger-capacity, refund and disruption rules continue to apply only to the extent they are defined independently of a passenger connection agreement;
-- connection-specific implementation and release evidence remain pending the dedicated specification.
+Transfers can occur between the player's own services or between operators where the passenger has the necessary ticket entitlement. The partner-capacity-sales mechanism in Section 30.3 can sell one two-operator through ticket, but it changes only commercial entitlement/settlement and the ability to sell the partner leg.
 
-This section deliberately records the boundary rather than a substitute mechanic. Do not treat the absence of a connection guarantee as permission to invent a hidden one.
+The current design deliberately has **no dedicated passenger connection agreement, guaranteed/protected-transfer status, connection-specific hold policy or connection-specific partner-rebooking right**.
+
+Therefore:
+
+- a connecting Trip does not wait merely because passengers are expected to transfer to it;
+- a timetable or integrated fare does not create a guarantee;
+- a missed transfer contributes to actual journey time, reliability and attractiveness like any other service failure;
+- if an operator changes/cancels a service or loses capacity affecting an already sold multi-leg journey, the ordinary sold-ticket/reservation rebooking-or-refund rules apply because the promised transport changed, not because a special connection guarantee exists;
+- two independently usable services may form a practical transfer whenever their actual schedule and interchange permit it, without creating another persistent gameplay object.
+
+Timetable planning may still show whether ordinary transfers become better or worse when times change. That is planning information only and does not create contractual rights, hold behaviour or a new bilateral agreement.
 
 ### 32.5 Line-level stop service modes
 
@@ -8671,7 +8631,7 @@ After the final operating consist and departure decision are known, the system c
 
 - protected passenger-contract allocations;
 - confirmed individual reservations;
-- protected multi-leg itineraries;
+- confirmed multi-leg bookings;
 - open/walk-up demand.
 
 If all confirmed commitments still fit, the Trip can run with lower spare capacity and no confirmed passenger must be displaced.
@@ -8704,7 +8664,7 @@ versus:
 > **Wait for replacement coach**  
 > Expected departure delay: +14 min  
 > All reservations preserved  
-> 1 protected connection at risk  
+> 1 sold multi-leg itinerary at risk  
 > Estimated delay-compensation exposure: X
 
 The dispatcher can use these consequences when choosing among equally permitted recovery options, but it must obey the player's configured priority/maximum-delay policy and cannot silently optimize only for profit.
@@ -8842,7 +8802,7 @@ If optional onboard staffing is reduced, the actual consequences are applied. Th
 If waiting for crew delays the Trip, that delay flows through the normal operating systems:
 
 - rail/station slot tolerance;
-- protected passenger connections;
+- downstream passenger transfers;
 - freight/customer SLA;
 - subsequent vehicle/crew duties;
 - rebooking;
