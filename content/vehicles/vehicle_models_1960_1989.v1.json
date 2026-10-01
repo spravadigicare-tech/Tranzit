@@ -1,0 +1,1604 @@
+{
+  "schema_version": 1,
+  "scope": "1960-1989 vehicle models",
+  "models": [
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "neskoda_e670_sestikolo_1961",
+      "display_name": "Neškoda E670 „Šestikolo“",
+      "real_prototype": "ČSD E 669.1 / class 181",
+      "introduction_year": 1961,
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "heavy_freight",
+        "electric"
+      ],
+      "support_family_id": "rail_electric_skoda_legacy_dc",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "service_mass_t": 124,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 90,
+        "power_kw": 2790,
+        "starting_tractive_effort_kn": 340,
+        "axle_count": 6,
+        "axle_load_t": 20.7,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 42,
+        "special_build_days": 60,
+        "base_cost_index": 135,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "electric_legacy_dc"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "neskoda_e670_freight"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Lokomotiva_181"
+        ],
+        "notes": "Representative class 181 authoring values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "cmd_d669_cmelda_1963",
+      "display_name": "ČMD D669 „Čmelda“",
+      "real_prototype": "ČSD T 669.0 / class 770",
+      "introduction_year": 1963,
+      "manufacturer_id": "cmd_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "heavy_shunting",
+        "freight"
+      ],
+      "support_family_id": "rail_diesel_electric_ckd",
+      "regional_market_profile_id": "market_socialist_core_export",
+      "platform": {
+        "length_m": 17.24,
+        "service_mass_t": 114.6,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 90,
+        "power_kw": 993,
+        "starting_tractive_effort_kn": 280,
+        "axle_count": 6,
+        "axle_load_t": 19.1,
+        "minimum_curve_m": 80,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_cmd_praha"
+        ],
+        "series_build_days": 36,
+        "special_build_days": 52,
+        "base_cost_index": 115,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ckd_diesel_electric"
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "cmd_d669_heavy"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://web.kurzy.cz/wiki/Lokomotiva_770"
+        ],
+        "notes": "993 kW, 280 kN, 90 km/h, 114.6 t and 80 m curve documented.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "cmd_d478_barda_1964",
+      "display_name": "ČMD D478 „Barda“",
+      "real_prototype": "ČSD T 478.1 / classes 749/751",
+      "introduction_year": 1964,
+      "manufacturer_id": "cmd_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "mainline_diesel",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_diesel_electric_ckd",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 16.5,
+        "service_mass_t": 75,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "power_kw": 1103,
+        "starting_tractive_effort_kn": 215,
+        "axle_count": 4,
+        "axle_load_t": 18.75,
+        "minimum_curve_m": 100,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_cmd_praha"
+        ],
+        "series_build_days": 34,
+        "special_build_days": 50,
+        "base_cost_index": 115,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ckd_diesel_electric"
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "cmd_d478_universal"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://de.wikipedia.org/wiki/%C4%8CSD-Baureihe_T_478.1"
+        ],
+        "notes": "1103 kW, 215 kN, 100 km/h and 75 t documented.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "neskoda_a489_laminat_1966",
+      "display_name": "Neškoda A489 „Laminát“",
+      "real_prototype": "ČSD S 489.0 / class 230",
+      "introduction_year": 1966,
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "electric",
+        "freight",
+        "passenger"
+      ],
+      "support_family_id": "rail_electric_skoda_legacy_ac",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 16.44,
+        "service_mass_t": 85,
+        "max_speed_kph": 110,
+        "structural_speed_limit_kph": 110,
+        "power_kw": 3080,
+        "starting_tractive_effort_kn": 320,
+        "axle_count": 4,
+        "axle_load_t": 21.25,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_25kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 38,
+        "special_build_days": 56,
+        "base_cost_index": 130,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "electric_legacy_ac"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "neskoda_a489_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://web.kurzy.cz/wiki/%C5%98ada_230"
+        ],
+        "notes": "3080 kW, 320 kN, 110 km/h and 85 t documented.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "cmd_d753_brylovec_1970",
+      "display_name": "ČMD D753 „Brýlovec“",
+      "real_prototype": "ČSD T 478.3 / class 753",
+      "introduction_year": 1970,
+      "manufacturer_id": "cmd_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "mainline_diesel",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_diesel_electric_ckd",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 16.54,
+        "service_mass_t": 76.8,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "power_kw": 1325,
+        "starting_tractive_effort_kn": 215,
+        "axle_count": 4,
+        "axle_load_t": 19.2,
+        "minimum_curve_m": 100,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_cmd_praha"
+        ],
+        "series_build_days": 34,
+        "special_build_days": 50,
+        "base_cost_index": 120,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ckd_diesel_electric"
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "cmd_d753_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://web.kurzy.cz/wiki/Lokomotiva_753"
+        ],
+        "notes": "1325 kW, 215 kN, 100 km/h, 76.8 t and 100 m curve documented.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "cmd_d742_kocour_1977",
+      "display_name": "ČMD D742 „Kocour“",
+      "real_prototype": "ČSD T 466.2 / class 742",
+      "introduction_year": 1977,
+      "manufacturer_id": "cmd_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "shunting",
+        "medium_freight"
+      ],
+      "support_family_id": "rail_diesel_electric_ckd",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 13.6,
+        "service_mass_t": 64,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 90,
+        "power_kw": 883,
+        "starting_tractive_effort_kn": 192,
+        "axle_count": 4,
+        "axle_load_t": 16,
+        "minimum_curve_m": 80,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_cmd_praha"
+        ],
+        "series_build_days": 30,
+        "special_build_days": 45,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ckd_diesel_electric"
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "cmd_d742_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://web.kurzy.cz/wiki/Lokomotiva_742"
+        ],
+        "notes": "883 kW, 192 kN, 90 km/h, 64 t and 80 m curve documented.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "neskoda_es500_eso_1980",
+      "display_name": "Neškoda ES500 „Eso“",
+      "real_prototype": "ČSD ES 499.1 / class 363",
+      "introduction_year": 1980,
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "dual_system",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_electric_skoda_dual_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "service_mass_t": 87,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "power_kw": 3480,
+        "axle_count": 4,
+        "axle_load_t": 21.75,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc",
+          "electric_25kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 38,
+        "special_build_days": 56,
+        "base_cost_index": 145,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "electric_dual_legacy"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "neskoda_es500_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://spz.logout.cz/vozidla/363/data363.html"
+        ],
+        "notes": "Representative class 363 values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "neskoda_e162_pershing_1984",
+      "display_name": "Neškoda E162 „Pershing“",
+      "real_prototype": "ČSD/ČD classes 162/163",
+      "introduction_year": 1984,
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "fast_electric",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_electric_skoda_dual_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "service_mass_t": 85,
+        "max_speed_kph": 140,
+        "structural_speed_limit_kph": 140,
+        "power_kw": 3480,
+        "starting_tractive_effort_kn": 285,
+        "axle_count": 4,
+        "axle_load_t": 21.25,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 36,
+        "special_build_days": 54,
+        "base_cost_index": 140,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "electric_dual_legacy"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "neskoda_e162_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Lokomotiva_163"
+        ],
+        "notes": "Representative class 162/163 family values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "ringhauer_y64_1964",
+      "display_name": "Ringhauer Y64",
+      "real_prototype": "UIC-Y coach family",
+      "introduction_year": 1964,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "roles": [
+        "mainline_passenger",
+        "regional",
+        "long_distance"
+      ],
+      "support_family_id": "rail_coach_mainline_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 24.5,
+        "service_mass_t": 40,
+        "max_speed_kph": 140,
+        "structural_speed_limit_kph": 140,
+        "seats": 80,
+        "standing": 0,
+        "axle_count": 4,
+        "axle_load_t": 10,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "train_heat"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 18,
+        "special_build_days": 28,
+        "base_cost_index": 85,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "coach_mainline_legacy"
+      },
+      "consumption_profile": {
+        "type": "hauled_auxiliary"
+      },
+      "equipment_group_ids": [
+        "coach_layout_1964"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_y64_economy",
+        "ringhauer_y64_business"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/UIC-Y_coach"
+        ],
+        "notes": "Functional UIC-Y authoring family; exact domestic subseries vary.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "studena_m152_orchestrion_1975",
+      "display_name": "Studena M152 „Orchestrion“",
+      "real_prototype": "ČSD M 152.0 / class 810",
+      "introduction_year": 1975,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "railcar",
+      "roles": [
+        "branch_passenger",
+        "local"
+      ],
+      "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 13.97,
+        "service_mass_t": 20,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 80,
+        "power_kw": 155,
+        "starting_tractive_effort_kn": 29,
+        "seats": 55,
+        "standing": 40,
+        "axle_count": 2,
+        "axle_load_t": 10,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 18,
+        "special_build_days": 28,
+        "base_cost_index": 78,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "regional_railcar"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "studena_m152_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/%C4%8CSD_Class_M_152.0"
+        ],
+        "notes": "55 seats, 40 standing, 80 km/h, 20 t and ~155 kW documented.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "ringhauer_z80_1980",
+      "display_name": "Ringhauer Z80",
+      "real_prototype": "UIC-Z / Bmz-type coach family",
+      "introduction_year": 1980,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "roles": [
+        "fast_passenger",
+        "long_distance"
+      ],
+      "support_family_id": "rail_coach_mainline_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 26.4,
+        "service_mass_t": 45,
+        "max_speed_kph": 160,
+        "structural_speed_limit_kph": 160,
+        "seats": 72,
+        "standing": 0,
+        "axle_count": 4,
+        "axle_load_t": 11.25,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "train_electric_supply"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 30,
+        "base_cost_index": 105,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "coach_mainline_legacy"
+      },
+      "consumption_profile": {
+        "type": "hauled_auxiliary"
+      },
+      "equipment_group_ids": [
+        "coach_layout_1980"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_z80_economy",
+        "ringhauer_z80_business"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/UIC-Z_coach"
+        ],
+        "notes": "Functional UIC-Z/Bmz authoring family.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "studena_842_rakvicka_1988",
+      "display_name": "Studena 842 „Rakvička“",
+      "real_prototype": "ČD/ČSD class 842",
+      "introduction_year": 1988,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "railcar",
+      "roles": [
+        "regional_passenger"
+      ],
+      "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "service_mass_t": 47,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "power_kw": 484,
+        "seats": 64,
+        "axle_count": 4,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 24,
+        "special_build_days": 36,
+        "base_cost_index": 105,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "regional_railcar"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "studena_842_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.atlasvozu.cz/rada/cd/218-842.html"
+        ],
+        "notes": "Representative class 842 authoring values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "f50_hopper_1960",
+      "display_name": "F50 Hopper",
+      "real_prototype": "Representative bogie self-discharging hopper",
+      "introduction_year": 1960,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "bulk",
+        "coal",
+        "ore",
+        "aggregate"
+      ],
+      "support_family_id": "rail_wagon_modern_bogie",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "empty_mass_t": 23,
+        "service_mass_t": 75,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 52,
+        "axle_count": 4,
+        "axle_load_t": 18.75,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 15,
+        "base_cost_index": 85,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_modern_bogie"
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "f50_hopper_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Functional modern hopper family; exact dimensions are authoring estimates.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "z55_tank_1960",
+      "display_name": "Z55 Tank",
+      "real_prototype": "Representative bogie tank wagon",
+      "introduction_year": 1960,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "liquid",
+        "fuel",
+        "chemical"
+      ],
+      "support_family_id": "rail_wagon_special",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "empty_mass_t": 24,
+        "service_mass_t": 79,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 55,
+        "cargo_volume_m3": 65,
+        "axle_count": 4,
+        "axle_load_t": 19.75,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 18,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_special"
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "z55_tank_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Functional bogie tank-wagon family.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "r55_flat_1965",
+      "display_name": "R55 Flat",
+      "real_prototype": "Representative R-family bogie flat wagon",
+      "introduction_year": 1965,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "timber",
+        "steel",
+        "machinery",
+        "vehicles"
+      ],
+      "support_family_id": "rail_wagon_modern_bogie",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "empty_mass_t": 22,
+        "service_mass_t": 79,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 57,
+        "axle_count": 4,
+        "axle_load_t": 19.75,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 15,
+        "base_cost_index": 85,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_modern_bogie"
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "r55_flat_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Functional bogie flat-wagon family.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "s60_container_1970",
+      "display_name": "S60 Container",
+      "real_prototype": "Early ISO container flat family",
+      "introduction_year": 1970,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "container",
+        "intermodal"
+      ],
+      "support_family_id": "rail_wagon_modern_bogie",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "empty_mass_t": 20,
+        "service_mass_t": 80,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 60,
+        "axle_count": 4,
+        "axle_load_t": 20,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 15,
+        "base_cost_index": 90,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_modern_bogie"
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900",
+        "container_flat_equipment_1970"
+      ],
+      "built_in_template_ids": [
+        "s60_container_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Intermodal_container"
+        ],
+        "notes": "Container flat unlock is tied to authored container/terminal technology.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "i45_reefer_1970",
+      "display_name": "I45 Reefer",
+      "real_prototype": "Representative mechanical refrigerated wagon",
+      "introduction_year": 1970,
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "refrigerated",
+        "perishable"
+      ],
+      "support_family_id": "rail_wagon_special",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "empty_mass_t": 25,
+        "service_mass_t": 70,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 45,
+        "axle_count": 4,
+        "axle_load_t": 17.5,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "refrigeration_aux"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 18,
+        "base_cost_index": 110,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_special"
+      },
+      "consumption_profile": {
+        "type": "reefer_auxiliary"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900",
+        "reefer_equipment_1970"
+      ],
+      "built_in_template_ids": [
+        "i45_reefer_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Refrigerator_car"
+        ],
+        "notes": "Functional mechanical reefer family.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "aviat_a30_1970",
+      "display_name": "Aviat A30",
+      "real_prototype": "Avia A30",
+      "introduction_year": 1970,
+      "manufacturer_id": "aviat_letnany",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "urban_delivery",
+        "medium_freight"
+      ],
+      "support_family_id": "road_cz_avio_light",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "service_mass_t": 6,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 85,
+        "payload_t": 3,
+        "power_kw": 59,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_aviat_letnany"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 18,
+        "base_cost_index": 80,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "avia_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "aviat_a30_body_1970"
+      ],
+      "built_in_template_ids": [
+        "aviat_a30_flatbed",
+        "aviat_a30_box"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Avia_A30"
+        ],
+        "notes": "Representative A30 authoring values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "fatra148_1972",
+      "display_name": "Fatra 148",
+      "real_prototype": "Tatra 148",
+      "introduction_year": 1972,
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "heavy_freight",
+        "construction",
+        "rough_road"
+      ],
+      "support_family_id": "road_cz_heavy_aircooled",
+      "regional_market_profile_id": "market_socialist_core_export",
+      "platform": {
+        "service_mass_t": 20,
+        "max_speed_kph": 70,
+        "structural_speed_limit_kph": 75,
+        "payload_t": 12,
+        "power_kw": 149,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 16,
+        "special_build_days": 24,
+        "base_cost_index": 110,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "tatra_aircooled_heavy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "fatra148_body_1972"
+      ],
+      "built_in_template_ids": [
+        "fatra148_flatbed",
+        "fatra148_tipper"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Tatra_148"
+        ],
+        "notes": "Representative Tatra 148 values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "viaz100_1974",
+      "display_name": "VIAZ 100",
+      "real_prototype": "LIAZ 100 series",
+      "introduction_year": 1974,
+      "manufacturer_id": "viaz",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "general_freight",
+        "tractor",
+        "long_haul"
+      ],
+      "support_family_id": "road_cz_liaz_legacy",
+      "regional_market_profile_id": "market_socialist_core_export",
+      "platform": {
+        "service_mass_t": 16,
+        "max_speed_kph": 85,
+        "structural_speed_limit_kph": 90,
+        "payload_t": 9,
+        "power_kw": 210,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_viaz_mnichovo_hradiste"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "liaz_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "viaz100_body_1974"
+      ],
+      "built_in_template_ids": [
+        "viaz100_rigid",
+        "viaz100_tractor"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.liaz.cz/historie.php"
+        ],
+        "notes": "100-series introduced 1974-1975; platform values are representative.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "fatra815_1983",
+      "display_name": "Fatra 815",
+      "real_prototype": "Tatra 815",
+      "introduction_year": 1983,
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "heavy_freight",
+        "rough_road",
+        "heavy_haul"
+      ],
+      "support_family_id": "road_cz_heavy_aircooled",
+      "regional_market_profile_id": "market_socialist_core_export",
+      "platform": {
+        "service_mass_t": 20.7,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 85,
+        "payload_t": 8,
+        "power_kw": 235,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 16,
+        "special_build_days": 24,
+        "base_cost_index": 120,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "tatra_aircooled_heavy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": 38.4
+      },
+      "equipment_group_ids": [
+        "fatra815_body_1983"
+      ],
+      "built_in_template_ids": [
+        "fatra815_6x6",
+        "fatra815_8x8"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://72mpr.mo.gov.cz/tatra-815"
+        ],
+        "notes": "6x6 source anchors 8 t payload, 235 kW, 80 km/h and 38.4 l/100 km; 8x8 template represents a heavier factory configuration.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "karusa_sm11_1965",
+      "display_name": "Karusa ŠM 11",
+      "real_prototype": "Karosa ŠM 11",
+      "introduction_year": 1965,
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 11.135,
+        "width_m": 2.5,
+        "height_m": 3.12,
+        "empty_mass_t": 7.8,
+        "max_speed_kph": 65,
+        "structural_speed_limit_kph": 65,
+        "seats": 31,
+        "standing": 59,
+        "power_kw": 132,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 90,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": 32
+      },
+      "equipment_group_ids": [
+        "karusa_sm11_variant_1965"
+      ],
+      "built_in_template_ids": [
+        "karusa_sm11_city",
+        "karusa_sm11_highcap"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.karosa-club.com/clanek/karosa-sm-11-1630-moc-11"
+        ],
+        "notes": "Dimensions, capacity, 154.4 kW later engine, 65 km/h and 32 l/100 km documented; base template uses earlier 132 kW family configuration.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "karusa_sl11_1965",
+      "display_name": "Karusa ŠL 11",
+      "real_prototype": "Karosa ŠL 11",
+      "introduction_year": 1965,
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "regional_bus",
+        "coach"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 11.1,
+        "width_m": 2.5,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "seats": 45,
+        "standing": 30,
+        "power_kw": 147,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "karusa_sl11_variant_1965"
+      ],
+      "built_in_template_ids": [
+        "karusa_sl11_regional",
+        "karusa_sl11_coach"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ivecocr.cz/clanek/historie-spolecnosti"
+        ],
+        "notes": "Š 11 family production from 1965 is officially documented; exact regional capacity is representative.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "ikarusz280_1973",
+      "display_name": "Ikarusz 280 „Harmonika“",
+      "real_prototype": "Ikarus 280",
+      "introduction_year": 1973,
+      "manufacturer_id": "ikarusz",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "articulated_city_bus",
+        "high_capacity"
+      ],
+      "support_family_id": "road_bus_ikarus_legacy",
+      "regional_market_profile_id": "market_socialist_core_export",
+      "platform": {
+        "length_m": 16.5,
+        "width_m": 2.5,
+        "max_speed_kph": 70,
+        "structural_speed_limit_kph": 75,
+        "seats": 37,
+        "standing": 103,
+        "power_kw": 141,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_hu_ikarusz"
+        ],
+        "series_build_days": 16,
+        "special_build_days": 25,
+        "base_cost_index": 110,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ikarus_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "ikarusz280_variant_1973"
+      ],
+      "built_in_template_ids": [
+        "ikarusz280_city"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ikarusy.net/o_ikarusu.html"
+        ],
+        "notes": "Representative common city configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "mercator_o303_1974",
+      "display_name": "Mercator O303",
+      "real_prototype": "Mercedes-Benz O303",
+      "introduction_year": 1974,
+      "manufacturer_id": "mercator_benz",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "intercity_bus",
+        "coach",
+        "premium"
+      ],
+      "support_family_id": "road_bus_eu_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 12,
+        "width_m": 2.5,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 110,
+        "seats": 51,
+        "standing": 0,
+        "power_kw": 176,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_mercator"
+        ],
+        "series_build_days": 16,
+        "special_build_days": 25,
+        "base_cost_index": 130,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "eu_bus_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "mercator_o303_variant_1974"
+      ],
+      "built_in_template_ids": [
+        "mercator_o303_intercity",
+        "mercator_o303_coach"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://archive.commercialmotor.com/article/13th-december-1974/18/0303-complex-coach-range-from-mercedes"
+        ],
+        "notes": "O303 family introduced 1974; configuration values are representative.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "karusa_c734_1982",
+      "display_name": "Karusa C734",
+      "real_prototype": "Karosa C 734",
+      "introduction_year": 1982,
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "regional_bus",
+        "intercity"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "seats": 45,
+        "standing": 27,
+        "power_kw": 149,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 20,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "karusa_c734_variant_1982"
+      ],
+      "built_in_template_ids": [
+        "karusa_c734_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://avtoexport.cz/katalog/p/c734"
+        ],
+        "notes": "45 seats, 100 km/h and 202 hp (~149 kW) documented for early C734.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "date_precision": "year",
+      "id": "karusa_b731_1982",
+      "display_name": "Karusa B731",
+      "real_prototype": "Karosa B 731",
+      "introduction_year": 1982,
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 11.055,
+        "width_m": 2.5,
+        "height_m": 3.165,
+        "empty_mass_t": 9.5,
+        "max_speed_kph": 70,
+        "structural_speed_limit_kph": 75,
+        "seats": 31,
+        "standing": 59,
+        "power_kw": 148,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 20,
+        "base_cost_index": 92,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "karusa_b731_variant_1982"
+      ],
+      "built_in_template_ids": [
+        "karusa_b731_city"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Karosa_B_731"
+        ],
+        "notes": "Dimensions and 148 kW early engine documented; passenger capacity is representative.",
+        "confidence": "medium_high"
+      }
+    }
+  ]
+}
