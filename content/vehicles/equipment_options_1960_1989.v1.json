@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "scope": "1960-1989 equipment groups",
+  "groups": [
+    {
+      "id": "coach_layout_1964",
+      "name": "1960s mainline coach layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "coach_y64_economy_1964",
+          "name": "Economy",
+          "introduced_year": 1964,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seat_capacity_factor": 1,
+          "comfort_band": "standard",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_y64_mixed_1964",
+          "name": "Economy + Business",
+          "introduced_year": 1964,
+          "mass_delta_t": 0.4,
+          "cost_index_delta": 14,
+          "seat_capacity_factor": 0.88,
+          "comfort_band": "mixed",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_y64_business_1964",
+          "name": "Business",
+          "introduced_year": 1964,
+          "mass_delta_t": 0.7,
+          "cost_index_delta": 24,
+          "seat_capacity_factor": 0.72,
+          "comfort_band": "high",
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "coach_layout_1980",
+      "name": "1980s fast coach layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "coach_z80_economy_1980",
+          "name": "Economy",
+          "introduced_year": 1980,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seat_capacity_factor": 1,
+          "comfort_band": "standard",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_z80_business_1980",
+          "name": "Business",
+          "introduced_year": 1980,
+          "mass_delta_t": 0.6,
+          "cost_index_delta": 28,
+          "seat_capacity_factor": 0.7,
+          "comfort_band": "high",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "coach_z80_neo_1985",
+          "name": "Neo",
+          "introduced_year": 1985,
+          "mass_delta_t": 0.8,
+          "cost_index_delta": 38,
+          "seat_capacity_factor": 0.9,
+          "comfort_band": "high",
+          "service_tags": [
+            "improved_hvac",
+            "improved_lighting"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "container_flat_equipment_1970",
+      "name": "Container/intermodal equipment",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "container_twistlocks_1970",
+          "name": "ISO container twistlocks",
+          "introduced_year": 1970,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 12,
+          "service_tags": [
+            "iso_container"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "reefer_equipment_1970",
+      "name": "Mechanical refrigeration equipment",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "reefer_mechanical_unit_1970",
+          "name": "Mechanical refrigeration",
+          "introduced_year": 1970,
+          "mass_delta_t": 1.2,
+          "cost_index_delta": 30,
+          "service_tags": [
+            "active_refrigeration"
+          ],
+          "requires_vehicle_supply": "diesel_or_electric_aux",
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "aviat_a30_body_1970",
+      "name": "Aviat A30 factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "aviat_a30_flatbed_1970",
+          "name": "Flatbed",
+          "introduced_year": 1970,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "aviat_a30_box_1970",
+          "name": "Box",
+          "introduced_year": 1970,
+          "mass_delta_t": 0.25,
+          "payload_delta_t": -0.25,
+          "cost_index_delta": 7,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "fatra148_body_1972",
+      "name": "Fatra 148 factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fatra148_flatbed_1972",
+          "name": "Flatbed",
+          "introduced_year": 1972,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra148_tipper_1972",
+          "name": "Tipper",
+          "introduced_year": 1972,
+          "mass_delta_t": 0.7,
+          "payload_delta_t": -0.5,
+          "cost_index_delta": 12,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "viaz100_body_1974",
+      "name": "VIAZ 100 factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "viaz100_rigid_1974",
+          "name": "Rigid",
+          "introduced_year": 1974,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "viaz100_tractor_1974",
+          "name": "Tractor",
+          "introduced_year": 1974,
+          "mass_delta_t": -1.2,
+          "payload_delta_t": -8,
+          "cost_index_delta": 8,
+          "service_tags": [
+            "semi_trailer"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "fatra815_body_1983",
+      "name": "Fatra 815 factory configuration",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fatra815_6x6_flatbed_1983",
+          "name": "6x6 Flatbed",
+          "introduced_year": 1983,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra815_8x8_heavy_1983",
+          "name": "8x8 Heavy",
+          "introduced_year": 1983,
+          "mass_delta_t": 2.4,
+          "payload_delta_t": 4,
+          "cost_index_delta": 18,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "karusa_sm11_variant_1965",
+      "name": "Karusa ŠM 11 factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "karusa_sm11_city_1965",
+          "name": "City",
+          "introduced_year": 1965,
+          "capacity_override": {
+            "seats": 31,
+            "standing": 59
+          },
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "karusa_sm11_highcap_1970",
+          "name": "High-capacity city",
+          "introduced_year": 1970,
+          "capacity_override": {
+            "seats": 29,
+            "standing": 65
+          },
+          "mass_delta_t": 1.2,
+          "cost_index_delta": 8,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "karusa_sl11_variant_1965",
+      "name": "Karusa ŠL 11 factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "karusa_sl11_regional_1965",
+          "name": "Regional",
+          "introduced_year": 1965,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "karusa_sl11_coach_1969",
+          "name": "Coach",
+          "introduced_year": 1969,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 14,
+          "comfort_band": "high",
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "ikarusz280_variant_1973",
+      "name": "Ikarusz 280 factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "ikarusz280_city_1973",
+          "name": "City",
+          "introduced_year": 1973,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "mercator_o303_variant_1974",
+      "name": "Mercator O303 factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "mercator_o303_intercity_1974",
+          "name": "Intercity",
+          "introduced_year": 1974,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "mercator_o303_coach_1974",
+          "name": "Coach",
+          "introduced_year": 1974,
+          "mass_delta_t": 0.4,
+          "cost_index_delta": 22,
+          "comfort_band": "premium",
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "karusa_c734_variant_1982",
+      "name": "Karusa C734 factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "karusa_c734_regional_1982",
+          "name": "Regional",
+          "introduced_year": 1982,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "karusa_b731_variant_1982",
+      "name": "Karusa B731 factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "karusa_b731_city_1982",
+          "name": "City",
+          "introduced_year": 1982,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        }
+      ]
+    }
+  ]
+}
