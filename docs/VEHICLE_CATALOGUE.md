@@ -83,9 +83,9 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | ID / fictional model | Intro | Real prototype basis | Primary role | Power / starting TE | Max speed | Service mass | Key route limits | Production/source |
 |---|---:|---|---|---:|---:|---:|---|---|
 | **ČMS 97 “Mravenec”** | 1878 | kkStB 97 / later ČSD 310.0 | yard, industrial, tiny local trains | 230 kW / ~45 kN | 40 km/h | 29 t | 3 coupled axles, ~9.7 t/axle, 90 m curves | Praha factory or seeded used stock in 1900 |
-| **ČMS 99 “Lokálka”** | 1897 | kkStB 99 / ČSD 320.0 | local mixed traffic | ~300 kW / ~70 kN | 50 km/h | 39 t | light branch-line locomotive; low coal/water endurance | Praha factory; used stock common in 1900 |
-| **ČMS 170 “Horal”** | 1897 | kkStB 170 / ČSD 434.0 | heavy freight, gradients | ~900 kW / ~125 kN | 60 km/h | 69 t loco + tender | ~14 t axle load; tender requires turning/run-around planning | multiple Austro-Hungarian plants; Praha build or regional import |
-| **ČMS 6 “Rychlík”** | 1894 | kkStB 6 / contemporary express 2'B engines | passenger / express | ~700 kW / ~70 kN | 80 km/h | ~55 t + tender | less adhesion than freight engines; needs better track | active-map or Austrian off-map supply |
+| **ČMS 99 “Lokálka”** | 1897 | kkStB 99 / ČSD 320.0 | local mixed traffic | ~221 kW continuous / ~294 kW peak | 50 km/h | 39.3 t | light branch-line locomotive; low coal/water endurance | Praha/BMMF + Austrian plants; used stock common in 1900 |
+| **ČMS 170 “Horal”** | 1897 | kkStB 170 / ČSD 434.0 | heavy freight, gradients | ~690 kW continuous / ~880 kW peak | 60 km/h | ~69 t locomotive | heavy adhesion locomotive; tender requires turning/run-around planning | multiple Austro-Hungarian plants; Praha build or regional import |
+| **ČMS 6 “Rychlík”** | 1894 | kkStB 6 / ČSD 264.0 | passenger / express | ~588 kW continuous / ~736 kW peak | 90 km/h | 56.1 t locomotive | high-speed passenger gearing and relatively low adhesion mass; production ended before 1900 so opening supply is used stock | Austrian off-map used stock / existing world assets |
 | **Neškoda N534 “Dříč”** | 1923 | ČSD 534.0 | heavy general freight | ~1,000 kW class / high adhesion | 60 km/h | 81–86 t loco | five coupled axles; freight-biased; stronger track than local engines | Plzeň/Praha active-map manufacture |
 | **Neškoda N387 “Mikádo”** | 1926 | ČSD 387.0 | premier express | 1,546 kW / 109 kN | 110 km/h | 92.8 t loco | 150 m curves, high coal/water use, good track required | **Plzeň factory**, active-map manufacture |
 | **Neškoda N475 “Šlechtična”** | 1947 | ČSD 475.1 | universal passenger / fast mixed | 1,480 kW / ~150 kN | 100 km/h | 102.7 t loco | 150 m curves; stronger track and depot facilities | **Plzeň factory** |
@@ -179,7 +179,7 @@ These are physical wagons, not abstract cargo-capacity tokens. The exact 1900 de
 |---|---:|---|---:|---:|---:|---|---|
 | **Městský valník H2** | pre-1900 | 2-horse urban dray | 2.0 t | animal traction | 8 km/h practical | driver | local coachbuilder + horse/stable supply |
 | **Těžký povoz H4** | pre-1900 | 4-horse heavy wagon | 4.0 t | animal traction | 6 km/h practical | driver/handler | local coachbuilder |
-| **Daimlar Lastwagen 5** | 1896 | Daimler Motor-Lastwagen | selectable 1.2–5.0 t; game base 3.0 t | 4.4–7.4 kW | 12 km/h | driver | off-map German import |
+| **Daimlar Lastwagen 1896** | 1896 | Daimler Motor-Lastwagen | 1.5 t representative first-truck configuration | 2.9 kW (4 hp) | 12 km/h | driver | off-map German import |
 | **Thornycroft Steam 1T “Konvice”** | 1896 | Thornycroft steam carriage/wagon | ~1.0 t | compound steam | ~12–16 km/h | driver/fireman on heavier duty | off-map British import; rare dealer/special order |
 
 This already gives four different 1900 freight choices without introducing an anachronistic modern truck: cheap horses, heavy horse haulage, scarce petrol trucks and a specialist steam vehicle.
@@ -226,7 +226,7 @@ Body changes alter tare mass, payload, cargo compatibility, price, loading metho
 | ID / fictional model | Intro | Real basis | Seats / total capacity | Power | Max speed | Role | Production/source |
 |---|---:|---|---|---:|---:|---|---|
 | **Koňský omnibus O12** | pre-1900 | horse omnibus | 12 seated | animal | 8 km/h practical | city/local | local coachbuilder |
-| **Benc Omnibus 1895** | 1895 | Benz Omnibus | 7 passengers + driver | 3.7 kW | ~15 km/h practical | tiny pioneering motor service | off-map import |
+| **Benc Omnibus 1895** | 1895 | Benz Omnibus | 7 passengers + driver | 3.7 kW | 20 km/h technical max; ~15 km/h practical average | tiny pioneering motor service | off-map used/import stock; production ended 1898 |
 | **Lorin & Klement H-Bus** | 1908 | L&K Type H omnibus | ~12 seats authoring configuration | ~23.5 kW (32 hp) | ~30 km/h authoring target | local/interurban | Mladá Boleslav |
 | **Pragov NO** | 1930 | Praga NO bus family | ~30–40 seats | ~60–75 kW | ~60 km/h | interurban/city | Praha |
 | **Neškoda 706 RO** | 1947 | Škoda 706 RO | ~35–40 seated, ~60 total | ~100 kW | ~65 km/h | first post-war mass bus | domestic build |
