@@ -4172,6 +4172,24 @@ The player should see:
 
 A fleet order never spawns the complete quantity at contract signing. Ownership/readiness follows actual production and physical delivery for each completed unit or batch.
 
+### 15.2.2 No player-funded new vehicle design
+
+The player cannot commission a manufacturer to invent a new vehicle platform, body shell, chassis, locomotive design or otherwise create a historically nonexistent model.
+
+Manufacturer orders are limited to:
+
+- authored historical model families;
+- authored factory-produced variants;
+- supported equipment combinations/templates;
+- supported destination-market adaptations;
+- supported retrofit/rebuild paths.
+
+A large fleet order can influence price, batch schedule, production-line utilization and manufacturer capacity investment, but it does not unlock bespoke engineering of a new platform for the player.
+
+If no existing authored model or supported variant satisfies a requirement, the player must solve it operationally through a different vehicle, consist, frequency, infrastructure, import, lease, used market or later historically introduced technology.
+
+This keeps Tranzit focused on transport/business operation and preserves the historical vehicle catalogue rather than turning procurement into a vehicle-design game.
+
 ### 15.3 Dealers and immediately available new stock
 
 Vehicle dealers/distributors are commercial entities that can purchase new vehicles from manufacturers and hold a limited number as **physical dealer stock**.
