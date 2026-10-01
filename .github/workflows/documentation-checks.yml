@@ -17,7 +17,9 @@ jobs:
           fetch-depth: 2
       - name: Validate documentation
         run: python3 Tools/check_docs.py
-      - name: Test documentation validator
+      - name: Validate vehicle content
+        run: python3 Tools/check_vehicle_content.py
+      - name: Test documentation and content validators
         run: python3 -m unittest discover -s Tools/tests -v
       - name: Check changed whitespace
         run: git diff --check HEAD^ HEAD
