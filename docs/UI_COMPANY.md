@@ -126,4 +126,4 @@ These checks describe evidence required when implemented, not passing game tests
 |---|---|---|
 | UI-D20 | Company overview with Branches, Workforce, Management and authority, Licences and permissions, and Company systems; direct Finance access; branch details, profession-based staffing and named-manager scope/policy/history | CONFIRMED on 2026-09-30 |
 
-This decision complements the existing UI specifications. It does not approve the separate map-overlay proposal, add staffing/HR mechanics or change branch coverage, salaries, recruitment, licensing or technology progression.
+This decision complements the existing UI specifications. It does not override the confirmed map-layer/opportunity specification in [UI_MAP_LAYERS.md](UI_MAP_LAYERS.md), add staffing/HR mechanics or change branch coverage, salaries, recruitment, licensing or technology progression.
