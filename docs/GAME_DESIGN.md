@@ -1971,6 +1971,10 @@ Local price changes are event/coarse-tick driven and aggregated. The **normal ma
 
 On an ordinary daily market update, the local reference price may move by at most **±2% of its previous reference price**. This is a cap, not a target movement: a near-balanced market can move only fractionally, while a severe sustained imbalance can hit the cap across several successive days. The model therefore responds visibly without allowing one ordinary delivery or one routine day to create a large price spike.
 
+For performance and predictability, each **market-area × commodity** pair performs at most one ordinary market calculation per game day. Multiple deliveries, production events and consumption events during that day update the authoritative inventories/flows immediately but are aggregated into the next daily market calculation rather than causing repeated repricing. This is the default even at higher simulation speeds; time acceleration changes how quickly game days pass, not the number of market calculations per simulated day.
+
+One of the main pressure inputs is **stock coverage measured in days of normal consumption**. A short-lived deficit with deep inventories should exert little immediate price pressure, while the same deficit with only a small stock buffer should exert much stronger upward pressure. Confirmed inbound supply, alternative-market accessibility, transport availability/cost and persistence of the imbalance remain additional inputs.
+
 Material exceptional events such as a major mine/factory closure, severe disruption or abrupt market-access change may trigger an explicit early recalculation and can use a separately authored exceptional-shock response. The exact exceptional cap remains a balancing parameter; do not silently reuse the ordinary ±2% cap if the event is explicitly classified as a major shock. Do not continuously solve every firm-to-firm market pair every frame.
 
 ### 10.6 Market intelligence for transport opportunities
