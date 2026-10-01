@@ -1,0 +1,1591 @@
+{
+  "schema_version": 1,
+  "scope": "1990-2026 vehicle models",
+  "models": [
+    {
+      "schema_version": 1,
+      "id": "studena_471_mamut_1997",
+      "display_name": "Studena 471 „Mamut“",
+      "real_prototype": "ČD class 471 CityElefant",
+      "introduction_year": 1997,
+      "date_precision": "year",
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "emu",
+      "roles": [
+        "suburban",
+        "regional",
+        "high_capacity"
+      ],
+      "support_family_id": "rail_emu_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 79.2,
+        "width_m": 2.82,
+        "height_m": 4.635,
+        "service_mass_t": 155.4,
+        "max_speed_kph": 140,
+        "structural_speed_limit_kph": 140,
+        "power_kw": 2000,
+        "seats": 310,
+        "standing": 333,
+        "axle_count": 12,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena",
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 60,
+        "special_build_days": 85,
+        "base_cost_index": 180,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_emu"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "regenerative_braking": true
+      },
+      "equipment_group_ids": [
+        "modern_regional_layout_1997",
+        "modern_passenger_comfort_1997"
+      ],
+      "built_in_template_ids": [
+        "studena_471_suburban",
+        "studena_471_mixed"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skodagroup.com/cs/reference/elektricka-jednotka-rady-471-cityelefant"
+        ],
+        "notes": "Official Škoda data: 79.2 m, 310 seats, max 643 passengers, 2,000 kW and 140 km/h.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "simens_er20_eurobezek_2002",
+      "display_name": "Símens ER20 „Euroběžec“",
+      "real_prototype": "Siemens ER20 Eurorunner",
+      "introduction_year": 2002,
+      "date_precision": "year",
+      "manufacturer_id": "simens_mobility",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "modern_diesel",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_diesel_electric_modern_import",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 19.275,
+        "service_mass_t": 80,
+        "max_speed_kph": 140,
+        "structural_speed_limit_kph": 140,
+        "power_kw": 2000,
+        "starting_tractive_effort_kn": 235,
+        "axle_count": 4,
+        "axle_load_t": 20,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_simens"
+        ],
+        "series_build_days": 42,
+        "special_build_days": 60,
+        "base_cost_index": 145,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_import_diesel"
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve"
+      },
+      "equipment_group_ids": [
+        "modern_loco_country_package_2000"
+      ],
+      "built_in_template_ids": [
+        "simens_er20_czsk"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Siemens_ER20"
+        ],
+        "notes": "Representative ER20 values; country packages are separate template equipment.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "alstrom_680_naklanec_2003",
+      "display_name": "Alstrom 680 „Nakláněč“",
+      "real_prototype": "ČD class 680 Pendolino",
+      "introduction_year": 2003,
+      "date_precision": "year",
+      "manufacturer_id": "alstrom_ferroviaria",
+      "mode": "rail",
+      "vehicle_kind": "emu",
+      "roles": [
+        "premium_intercity",
+        "tilting",
+        "multisystem"
+      ],
+      "support_family_id": "rail_high_speed_trainset",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 185,
+        "max_speed_kph": 200,
+        "structural_speed_limit_kph": 230,
+        "power_kw": 3920,
+        "service_mass_t": 385,
+        "seats": 331,
+        "axle_count": 28,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc",
+          "electric_25kv_ac",
+          "electric_15kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_itfr_alstrom"
+        ],
+        "series_build_days": 120,
+        "special_build_days": 160,
+        "base_cost_index": 245,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "high_speed_trainset"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "tilting_auxiliary": true,
+        "regenerative_braking": true
+      },
+      "equipment_group_ids": [
+        "modern_loco_country_package_2000",
+        "modern_passenger_comfort_1997"
+      ],
+      "built_in_template_ids": [
+        "alstrom_680_international"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.cd.cz/nase-vlaky/pendolino/-27275/"
+        ],
+        "notes": "Representative seven-car class 680 game configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "bombardir_trax_ms_2006",
+      "display_name": "Bombardír TRAX MS",
+      "real_prototype": "Bombardier TRAXX F140 MS2",
+      "introduction_year": 2006,
+      "date_precision": "year",
+      "manufacturer_id": "bombardir_transport",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "electric",
+        "international_freight",
+        "multisystem"
+      ],
+      "support_family_id": "rail_electric_pan_european_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 18.9,
+        "service_mass_t": 85,
+        "max_speed_kph": 140,
+        "structural_speed_limit_kph": 140,
+        "power_kw": 5600,
+        "starting_tractive_effort_kn": 300,
+        "axle_count": 4,
+        "axle_load_t": 21.25,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc",
+          "electric_15kv_ac",
+          "electric_25kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_bombardir"
+        ],
+        "series_build_days": 45,
+        "special_build_days": 65,
+        "base_cost_index": 165,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_pan_eu_electric"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "regenerative_braking": true
+      },
+      "equipment_group_ids": [
+        "modern_loco_country_package_2000"
+      ],
+      "built_in_template_ids": [
+        "bombardir_trax_ms_central"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Bombardier_TRAXX"
+        ],
+        "notes": "Representative F140 MS2 freight configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_109x_zatopek_2008",
+      "display_name": "Neškoda 109X „Zátopek“",
+      "real_prototype": "Škoda 109E / class 380",
+      "introduction_year": 2008,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "premium_electric",
+        "international",
+        "multisystem",
+        "passenger"
+      ],
+      "support_family_id": "rail_electric_skoda_dual_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 18,
+        "service_mass_t": 88,
+        "max_speed_kph": 200,
+        "structural_speed_limit_kph": 200,
+        "power_kw": 6400,
+        "starting_tractive_effort_kn": 275,
+        "axle_count": 4,
+        "axle_load_t": 22,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc",
+          "electric_25kv_ac",
+          "electric_15kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 48,
+        "special_build_days": 68,
+        "base_cost_index": 220,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_multisystem_electric"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "regenerative_braking": true
+      },
+      "equipment_group_ids": [
+        "modern_loco_country_package_2000"
+      ],
+      "built_in_template_ids": [
+        "neskoda_109x_international"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skodagroup.com/cs/produkty-a-sluzby/rychlikove-lokomotivy"
+        ],
+        "notes": "Official data: 6,400 kW, 275 kN, 88 t, 200 km/h, three supply systems.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "simens_vekton_ms_2010",
+      "display_name": "Símens Vektron MS",
+      "real_prototype": "Siemens Vectron MS",
+      "introduction_year": 2010,
+      "date_precision": "year",
+      "manufacturer_id": "simens_mobility",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "international",
+        "multisystem",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_electric_pan_european_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 18.98,
+        "service_mass_t": 90,
+        "max_speed_kph": 200,
+        "structural_speed_limit_kph": 200,
+        "power_kw": 6400,
+        "starting_tractive_effort_kn": 300,
+        "axle_count": 4,
+        "axle_load_t": 22.5,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc",
+          "electric_15kv_ac",
+          "electric_25kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_simens"
+        ],
+        "series_build_days": 42,
+        "special_build_days": 62,
+        "base_cost_index": 215,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_pan_eu_electric"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "regenerative_braking": true
+      },
+      "equipment_group_ids": [
+        "modern_loco_country_package_2000"
+      ],
+      "built_in_template_ids": [
+        "simens_vekton_ms_international"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.mobility.siemens.com/global/en/portfolio/rail/rolling-stock/locomotives/vectron.html"
+        ],
+        "notes": "Representative Vectron MS authoring configuration.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "peska_844_regiorys_2011",
+      "display_name": "PESKA 844 „RegioRys“",
+      "real_prototype": "PESA Link II / class 844",
+      "introduction_year": 2011,
+      "date_precision": "year",
+      "manufacturer_id": "peska_bydgoszcz",
+      "mode": "rail",
+      "vehicle_kind": "dmu",
+      "roles": [
+        "regional_passenger",
+        "low_entry"
+      ],
+      "support_family_id": "rail_dmu_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 43.73,
+        "service_mass_t": 84.4,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "power_kw": 780,
+        "seats": 120,
+        "standing": 120,
+        "axle_count": 6,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_pl_peska"
+        ],
+        "series_build_days": 58,
+        "special_build_days": 78,
+        "base_cost_index": 160,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_dmu"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_regional_layout_1997",
+        "modern_passenger_comfort_1997"
+      ],
+      "built_in_template_ids": [
+        "peska_844_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.pshzd.cz/m844.html"
+        ],
+        "notes": "Representative class 844 data.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_640_panter_2012",
+      "display_name": "Neškoda 640 „Panter“",
+      "real_prototype": "Škoda RegioPanter class 640",
+      "introduction_year": 2012,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "emu",
+      "roles": [
+        "regional_passenger",
+        "low_floor",
+        "fast_acceleration"
+      ],
+      "support_family_id": "rail_emu_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 79.4,
+        "service_mass_t": 151.5,
+        "max_speed_kph": 160,
+        "structural_speed_limit_kph": 160,
+        "power_kw": 2040,
+        "seats": 234,
+        "axle_count": 12,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc",
+          "electric_25kv_ac"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen",
+          "plant_studena"
+        ],
+        "series_build_days": 58,
+        "special_build_days": 78,
+        "base_cost_index": 175,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_emu"
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "regenerative_braking": true
+      },
+      "equipment_group_ids": [
+        "modern_regional_layout_1997",
+        "modern_passenger_comfort_1997"
+      ],
+      "built_in_template_ids": [
+        "neskoda_640_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skodagroup.com/cs/reference/regiopanter-cesko"
+        ],
+        "notes": "Representative three-car RegioPanter authoring values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "czloka_effishunter1000_2017",
+      "display_name": "CZ LOKA EffiShunter 1000",
+      "real_prototype": "CZ LOKO EffiShunter 1000",
+      "introduction_year": 2017,
+      "date_precision": "year",
+      "manufacturer_id": "cz_loka",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "shunting",
+        "local_freight",
+        "modern_diesel"
+      ],
+      "support_family_id": "rail_diesel_electric_modern_import",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "service_mass_t": 80,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "power_kw": 895,
+        "starting_tractive_effort_kn": 262,
+        "axle_count": 4,
+        "axle_load_t": 20,
+        "minimum_curve_m": 80,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_czloko_ceska_trebova"
+        ],
+        "series_build_days": 38,
+        "special_build_days": 55,
+        "base_cost_index": 125,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_import_diesel"
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve"
+      },
+      "equipment_group_ids": [
+        "modern_loco_country_package_2000"
+      ],
+      "built_in_template_ids": [
+        "czloka_effishunter1000_czsk"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.czloko.com/products/lokomotivy-1/effishunter-1000-2.htm"
+        ],
+        "notes": "Official current data: 895 kW, 262 kN, 100 km/h, 80 t and 80 m minimum curve.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "peska_847_regiolisska_2023",
+      "display_name": "PESKA 847 „RegioLiška“",
+      "real_prototype": "PESA RegioFox / class 847",
+      "introduction_year": 2023,
+      "date_precision": "year",
+      "manufacturer_id": "peska_bydgoszcz",
+      "mode": "rail",
+      "vehicle_kind": "dmu",
+      "roles": [
+        "regional_passenger",
+        "low_entry",
+        "modern_diesel"
+      ],
+      "support_family_id": "rail_dmu_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 44.4,
+        "service_mass_t": 83,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "power_kw": 750,
+        "seats": 115,
+        "axle_count": 6,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel",
+          "hvo_compatible"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_pl_peska"
+        ],
+        "series_build_days": 55,
+        "special_build_days": 75,
+        "base_cost_index": 165,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_dmu"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_regional_layout_1997",
+        "modern_passenger_comfort_1997"
+      ],
+      "built_in_template_ids": [
+        "peska_847_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.cd.cz/nase-vlaky/regiofox/-39740/"
+        ],
+        "notes": "Representative class 847 data: 115 seats, 120 km/h, modern low-entry regional DMU.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_comfort9_2025",
+      "display_name": "Neškoda Comfort 9",
+      "real_prototype": "ComfortJet / Siemens Viaggio platform",
+      "introduction_year": 2025,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "passenger_coach_set",
+      "roles": [
+        "premium_intercity",
+        "international",
+        "push_pull"
+      ],
+      "support_family_id": "rail_coach_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 237,
+        "max_speed_kph": 230,
+        "structural_speed_limit_kph": 230,
+        "seats": 555,
+        "axle_count": 36,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "head_end_electric"
+        ]
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_neskoda_plzen",
+          "macro_de_simens"
+        ],
+        "series_build_days": 150,
+        "special_build_days": 190,
+        "base_cost_index": 250,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_coach_set"
+      },
+      "consumption_profile": {
+        "type": "hauled_auxiliary"
+      },
+      "equipment_group_ids": [
+        "comfortjet_service_2025"
+      ],
+      "built_in_template_ids": [
+        "neskoda_comfort9_international"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://ceskedrahy.cz/en/press-center/press-releases/first-nine-car-comfortjet-trainsets-track"
+        ],
+        "notes": "Official ČD data: nine cars, 555 seats incl. 99 first class + 18 restaurant seats, ~237 m, 230 km/h design.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "s70_intermodal_1995",
+      "display_name": "S70 Intermodal",
+      "real_prototype": "Modern Sgnss/Sdggmrs intermodal family",
+      "introduction_year": 1995,
+      "date_precision": "year",
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "intermodal",
+        "container",
+        "swap_body",
+        "semitrailer"
+      ],
+      "support_family_id": "rail_wagon_modern_bogie",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "empty_mass_t": 24,
+        "service_mass_t": 90,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "payload_t": 66,
+        "axle_count": 4,
+        "axle_load_t": 22.5,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 16,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_modern_bogie"
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900",
+        "modern_intermodal_equipment_1995"
+      ],
+      "built_in_template_ids": [
+        "s70_intermodal_container",
+        "s70_intermodal_semitrailer"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Intermodal_freight_transport"
+        ],
+        "notes": "Representative modern intermodal wagon family; exact subtype values vary.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "f68_megahopper_2000",
+      "display_name": "F68 MegaHopper",
+      "real_prototype": "Modern high-capacity bogie hopper family",
+      "introduction_year": 2000,
+      "date_precision": "year",
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "bulk",
+        "rapid_discharge"
+      ],
+      "support_family_id": "rail_wagon_modern_bogie",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "empty_mass_t": 22,
+        "service_mass_t": 90,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "payload_t": 68,
+        "axle_count": 4,
+        "axle_load_t": 22.5,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 16,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_modern_bogie"
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "f68_megahopper_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Hopper_car"
+        ],
+        "notes": "Representative modern hopper authoring values.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "mercator_actros1_1996",
+      "display_name": "Mercator Actros I",
+      "real_prototype": "Mercedes-Benz Actros first generation",
+      "introduction_year": 1996,
+      "date_precision": "year",
+      "manufacturer_id": "mercator_benz",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "long_haul",
+        "tractor",
+        "general_freight"
+      ],
+      "support_family_id": "road_eu_heavy_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "service_mass_t": 7.5,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 110,
+        "power_kw": 315,
+        "axle_count": 2,
+        "gcwr_t": 40,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_mercator"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 18,
+        "base_cost_index": 115,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "eu_heavy_modern"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_truck_cab_package_1996"
+      ],
+      "built_in_template_ids": [
+        "mercator_actros_day",
+        "mercator_actros_longhaul"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Mercedes-Benz_Actros"
+        ],
+        "notes": "Representative first-generation 40 t tractor configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "mann_tgx_2007",
+      "display_name": "MANN TGX",
+      "real_prototype": "MAN TGX",
+      "introduction_year": 2007,
+      "date_precision": "year",
+      "manufacturer_id": "mann",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "long_haul",
+        "tractor"
+      ],
+      "support_family_id": "road_eu_heavy_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "service_mass_t": 7.7,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 110,
+        "power_kw": 324,
+        "axle_count": 2,
+        "gcwr_t": 40,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_mann"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 18,
+        "base_cost_index": 118,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "eu_heavy_modern"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_truck_cab_package_1996"
+      ],
+      "built_in_template_ids": [
+        "mann_tgx_longhaul"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.man.eu/cz/cz/nakladni-vozidla/man-tgx/prehled/man-tgx.html"
+        ],
+        "notes": "Representative TGX tractor; exact engine options remain template/factory data.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "fatra_fenix_2011",
+      "display_name": "Fatra Fénix",
+      "real_prototype": "Tatra Phoenix",
+      "introduction_year": 2011,
+      "date_precision": "year",
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "heavy_freight",
+        "construction",
+        "rough_road"
+      ],
+      "support_family_id": "road_tatra_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "service_mass_t": 18,
+        "max_speed_kph": 85,
+        "structural_speed_limit_kph": 90,
+        "payload_t": 15,
+        "power_kw": 340,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 21,
+        "base_cost_index": 145,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "tatra_modern"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "fatra_fenix_factory_config_2011"
+      ],
+      "built_in_template_ids": [
+        "fatra_fenix_6x6",
+        "fatra_fenix_8x8"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.tatra.cz/tatra-phoenix/"
+        ],
+        "notes": "Representative Phoenix heavy-road configuration; factory axle/engine choices vary.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "mann_tge_cargo_2017",
+      "display_name": "MANN TGE Cargo",
+      "real_prototype": "MAN TGE",
+      "introduction_year": 2017,
+      "date_precision": "year",
+      "manufacturer_id": "mann",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "van",
+        "light_freight",
+        "urban_delivery"
+      ],
+      "support_family_id": "road_modern_van",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "service_mass_t": 3.5,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 130,
+        "payload_t": 1.5,
+        "power_kw": 130,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_mann"
+        ],
+        "series_build_days": 8,
+        "special_build_days": 12,
+        "base_cost_index": 85,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_van"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "tge_cargo_body_2017"
+      ],
+      "built_in_template_ids": [
+        "mann_tge_van",
+        "mann_tge_box"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.man.eu/cz/cz/dodavka/man-tge/prehled/man-tge.html"
+        ],
+        "notes": "Representative large-van authoring configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "mercator_eactros600_2024",
+      "display_name": "Mercator eActros 600",
+      "real_prototype": "Mercedes-Benz eActros 600",
+      "introduction_year": 2024,
+      "date_precision": "year",
+      "manufacturer_id": "mercator_benz",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "electric_truck",
+        "long_haul",
+        "tractor"
+      ],
+      "support_family_id": "road_ev_heavy",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "service_mass_t": 11.5,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 100,
+        "power_kw": 400,
+        "peak_power_kw": 600,
+        "axle_count": 2,
+        "gcwr_t": 44,
+        "battery_usable_kwh": 600,
+        "fuel_energy": [
+          "electric_battery"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_mercator"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 180,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "heavy_ev"
+      },
+      "consumption_profile": {
+        "type": "battery_distance_load"
+      },
+      "equipment_group_ids": [
+        "eactros_battery_2024",
+        "modern_truck_cab_package_1996"
+      ],
+      "built_in_template_ids": [
+        "mercator_eactros600_longhaul"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.mercedes-benz-trucks.com/cz/cs/trucks/eactros-600.html"
+        ],
+        "notes": "Representative eActros 600: 44 t combination class, 600 kWh usable battery and 400/600 kW drive figures.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "karusa_c934_1996",
+      "display_name": "Karusa C934",
+      "real_prototype": "Karosa C 934",
+      "introduction_year": 1996,
+      "date_precision": "year",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "regional_bus",
+        "intercity"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "seats": 45,
+        "standing": 25,
+        "power_kw": 190,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 20,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996"
+      ],
+      "built_in_template_ids": [
+        "karusa_c934_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Karosa_C_934"
+        ],
+        "notes": "Representative C934 regional configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "solaris_urbino12_1999",
+      "display_name": "Soláris Urbino 12",
+      "real_prototype": "Solaris Urbino 12",
+      "introduction_year": 1999,
+      "date_precision": "year",
+      "manufacturer_id": "solaris_bus",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus",
+        "low_floor"
+      ],
+      "support_family_id": "road_bus_eu_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 12,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 90,
+        "seats": 32,
+        "standing": 73,
+        "power_kw": 184,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_pl_solaris"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 20,
+        "base_cost_index": 110,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_bus_diesel"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999"
+      ],
+      "built_in_template_ids": [
+        "solaris_urbino12_city"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Solaris_Urbino_12"
+        ],
+        "notes": "Production from 1999, 12 m low-floor city family; representative early diesel configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "karusa_c954_2002",
+      "display_name": "Karusa C954",
+      "real_prototype": "Karosa C 954",
+      "introduction_year": 2002,
+      "date_precision": "year",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "regional_bus",
+        "intercity"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "max_speed_kph": 105,
+        "structural_speed_limit_kph": 105,
+        "seats": 49,
+        "standing": 35,
+        "power_kw": 228,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 20,
+        "base_cost_index": 108,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999"
+      ],
+      "built_in_template_ids": [
+        "karusa_c954_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Karosa_C_954"
+        ],
+        "notes": "49-seat representative regional version, 228 kW, 105 km/h.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "mann_lioncity12_2004",
+      "display_name": "MANN Lion City 12",
+      "real_prototype": "MAN Lion's City 12",
+      "introduction_year": 2004,
+      "date_precision": "year",
+      "manufacturer_id": "mann",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus",
+        "low_floor"
+      ],
+      "support_family_id": "road_bus_eu_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 12.2,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 90,
+        "seats": 37,
+        "standing": 55,
+        "power_kw": 206,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_mann"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 20,
+        "base_cost_index": 115,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_bus_diesel"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999"
+      ],
+      "built_in_template_ids": [
+        "mann_lioncity12_city"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.man.eu/cz/cs/autobus/man-lion_s-city/technika-a-specifikace/vsechny-modely-a-specifikace.html"
+        ],
+        "notes": "12.2 m family; representative diesel city configuration.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "sora_cn12_2004",
+      "display_name": "SORA CN12",
+      "real_prototype": "SOR CN 12",
+      "introduction_year": 2004,
+      "date_precision": "year",
+      "manufacturer_id": "sora_libchavy",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "regional_bus",
+        "low_entry"
+      ],
+      "support_family_id": "road_bus_eu_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 12,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "seats": 43,
+        "standing": 35,
+        "power_kw": 194,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_sora_libchavy"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 19,
+        "base_cost_index": 105,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_bus_diesel"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999"
+      ],
+      "built_in_template_ids": [
+        "sora_cn12_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.sor.cz/produkty/autobusy-mezimestske/cn-12/"
+        ],
+        "notes": "Representative CN12 regional authoring configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ivego_crossway12_2006",
+      "display_name": "Ivego Crossway 12",
+      "real_prototype": "Irisbus/Iveco Crossway 12",
+      "introduction_year": 2006,
+      "date_precision": "year",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "regional_bus",
+        "intercity",
+        "coach"
+      ],
+      "support_family_id": "road_bus_eu_modern",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 12,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 105,
+        "seats": 51,
+        "standing": 25,
+        "power_kw": 243,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 19,
+        "base_cost_index": 112,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "modern_bus_diesel"
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999"
+      ],
+      "built_in_template_ids": [
+        "ivego_crossway12_regional",
+        "ivego_crossway12_coach"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ivecobus.com/crossway"
+        ],
+        "notes": "Representative Crossway 12 m family; Vysoké Mýto production lineage.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "sora_ns12e_2017",
+      "display_name": "SORA NS12E",
+      "real_prototype": "SOR NS 12 electric",
+      "introduction_year": 2017,
+      "date_precision": "year",
+      "manufacturer_id": "sora_libchavy",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "electric_bus",
+        "city_bus",
+        "low_floor"
+      ],
+      "support_family_id": "road_ev_bus",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 12,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 80,
+        "seats": 32,
+        "standing": 48,
+        "power_kw": 160,
+        "axle_count": 2,
+        "battery_kwh": 242,
+        "fuel_energy": [
+          "electric_battery"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_sora_libchavy"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 150,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ev_bus"
+      },
+      "consumption_profile": {
+        "type": "battery_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999",
+        "bus_ev_battery_2017"
+      ],
+      "built_in_template_ids": [
+        "sora_ns12e_city",
+        "sora_ns12e_extended"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.sor.cz/wp-content/uploads/2019/11/NS_12_electric_ANG_NEW_LoRes_23.10.2019.pdf"
+        ],
+        "notes": "Official technical sheet anchors 160 kW, 80 km/h and 242/388 kWh battery variants.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ivego_crossway_le_elec_2025",
+      "display_name": "Ivego Crossway LE Elec",
+      "real_prototype": "Iveco Crossway LE Electric",
+      "introduction_year": 2025,
+      "date_precision": "year",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "electric_bus",
+        "regional_bus",
+        "low_entry"
+      ],
+      "support_family_id": "road_ev_bus",
+      "regional_market_profile_id": "market_modern_eu_common",
+      "platform": {
+        "length_m": 12,
+        "max_speed_kph": 85,
+        "structural_speed_limit_kph": 85,
+        "seats": 43,
+        "standing": 37,
+        "power_kw": 290,
+        "peak_power_kw": 310,
+        "axle_count": 2,
+        "fuel_energy": [
+          "electric_battery"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 165,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ev_bus"
+      },
+      "consumption_profile": {
+        "type": "battery_distance_load"
+      },
+      "equipment_group_ids": [
+        "modern_bus_layout_1996",
+        "modern_bus_comfort_1999",
+        "bus_ev_battery_2017"
+      ],
+      "built_in_template_ids": [
+        "ivego_crossway_le_elec_regional"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ivecobus.com/crossway-le-electric"
+        ],
+        "notes": "Representative 12 m electric regional configuration; 290 kW rated / 310 kW max drive basis.",
+        "confidence": "medium_high"
+      }
+    }
+  ]
+}
