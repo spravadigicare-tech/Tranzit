@@ -120,6 +120,10 @@ Do not split consumer goods down to individual retail SKUs. The purpose of the e
 
 The catalogue must exercise bulk mass, volume-limited goods, indivisible units, perishable/temperature-sensitive cargo and a restricted/hazardous handling case. Standardized modern container/pallet systems must not appear in 1900 merely because the generic allocation engine supports them; introduce them with the appropriate later content.
 
+Perishable commodity data must use the shared GAME_DESIGN Section 11.11 quality-exposure model. Initial V1 defaults are: meat/dairy approximately 2 ambient game days, fruit/vegetables approximately 4, and fresh flour/bakery output approximately 3, with period-appropriate cold-chain equipment reducing the applicable decay rate rather than resetting age. Content definitions store the base exposure/quality curve, accepted-quality threshold, supported condition multipliers and required handling capability.
+
+For storage-policy defaults, author fresh/perishable consumers around 2–4 days of coverage **only when compatible cold storage supports it**; without cold storage, target approximately 1–2 days or less when the remaining quality window requires it. Ordinary goods target 5–10 days, industrial materials 7–14 and strategic/operating supplies 10–20. These are initial policy bands, not hard inventory minima.
+
 At least four complete linked economic chains must operate, including extraction/agriculture, processing and a real **final-use sink**. No authored chain may terminate at a producer/intermediate commodity with no downstream use.
 
 The ultimate sink of every chain must be part of the city/urban economy, directly or indirectly: household-facing retail/services, construction/buildings, utilities, public institutions, transport/operating consumption, or another final-use activity that ultimately supports city population, employment, services or development. Intermediate industrial firms can of course consume each other's outputs, but every chain must eventually reach one of these final-use sinks.
