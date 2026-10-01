@@ -5645,10 +5645,9 @@ This is a structured clause builder, not free-form legal text. Every clause maps
 
 A submitted proposal can be accepted, rejected or countered by the other company. A counterproposal changes explicit clause values; it does not invent hidden terms.
 
-For V1 passenger cooperation, the useful clause families are intentionally small:
+For V1 passenger cooperation, **partner-capacity sales** is defined here and allows either or both parties to sell eligible capacity operated by the other party as part of one through ticket.
 
-1. **Connection coordination** — coordinates transfers at a defined station/terminal. The agreement can state which other place/destination each side is intended to connect through that node, so the system can match suitable services without requiring the player to pair every dated Trip manually.
-2. **Partner-capacity sales** — allows either or both parties to sell eligible capacity operated by the other party as part of one through ticket.
+**Connection-agreement mechanics are intentionally reset and not specified here.** They remain required V1 design work and will be redesigned from scratch in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md). Do not infer their lifecycle, timetable coordination, frequency, protection, activation or termination rules from prior drafts.
 
 A through journey can use multiple operators under one itinerary/ticket when the required partner-capacity sales right exists.
 
@@ -5701,7 +5700,7 @@ Do not turn this into a separate revenue-management or negotiation minigame.
 
 Partner settlement creates a real inter-company payable/receivable and must post exactly once. Settlement/accounting timing follows the normal agreement/finance rules; do not create a second hidden passenger ledger.
 
-A connection agreement and a partner-capacity sales agreement are independent. One can exist without the other.
+Connection agreements, once redefined, remain conceptually separate from partner-capacity sales.
 
 Missed connections and reliability influence passenger attractiveness.
 
