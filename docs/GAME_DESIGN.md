@@ -9310,6 +9310,36 @@ A model may therefore exist historically from its fixed introduction year while 
 
 Do not use randomized technology-release years to create replayability. Replayability comes from real economic capacity, offers, used stock, contracts, trade conditions and competing demand.
 
+
+### 40.2 Regional manufacturer presence without hard locks
+
+Manufacturers have historically grounded **home and regional market strength**, but models are not hard-locked to those markets.
+
+A manufacturer's home/nearby markets normally have:
+
+- denser dealer/distributor coverage;
+- more finite dealer stock;
+- shorter quote and delivery chains;
+- better spare-parts availability;
+- more authorized/experienced workshops;
+- more used-market supply;
+- lower support/logistics friction.
+
+More distant markets can still buy the model through direct order, importer, broker, dealer network or off-map procurement when a legal/logistical path exists.
+
+Historically export-successful models may gain ordinary dealer/service presence in additional countries over time. Models that were rarely exported can remain uncommon abroad without becoming artificially forbidden.
+
+Regional availability therefore affects:
+
+- stock probability;
+- delivery lead time/cost;
+- support and parts access;
+- workshop familiarity;
+- used-market depth;
+- certification burden where relevant.
+
+It does **not** create a permanent geographic unlock or require the player to operate a branch in the manufacturer's country.
+
 Manufacturers are economically present enough to make supply, capacity and backlog meaningful, without becoming a separate deep management game.
 
 ## 41. Performance non-negotiables
