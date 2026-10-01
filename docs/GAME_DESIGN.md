@@ -1979,7 +1979,7 @@ The ordinary price-movement cap remains **±5% per full game day in aggregate**,
 
 One of the main pressure inputs is **stock coverage measured in days of normal consumption**. A short-lived deficit with deep inventories should exert little immediate price pressure, while the same deficit with only a small stock buffer should exert much stronger upward pressure. Confirmed inbound supply, alternative-market accessibility, transport availability/cost and persistence of the imbalance remain additional inputs.
 
-Material exceptional events such as a major mine/factory closure, severe disruption or abrupt market-access change may trigger an explicit early recalculation and can use a separately authored exceptional-shock response. The exact exceptional cap remains a balancing parameter; do not silently reuse the ordinary ±5% cap if the event is explicitly classified as a major shock. Do not continuously solve every firm-to-firm market pair every frame.
+Material exceptional events such as a major mine/factory closure, severe disruption, sudden loss of a dominant supplier or abrupt market-access change may trigger an explicit early recalculation and use the exceptional-shock response. A genuinely exceptional shock may move the local reference price by at most **±15% over one full game day**. This is still a cap, not an automatic jump. Ordinary shortages, one late delivery or routine production variation remain under the normal ±5% daily cap. Do not continuously solve every firm-to-firm market pair every frame.
 
 ### 10.6 Market intelligence for transport opportunities
 
