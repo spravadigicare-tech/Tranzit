@@ -1826,6 +1826,8 @@ Representative shops, distributors, hospitality/services, institutions and simil
 
 For the 1900 economy, food consumption is not one generic commodity. Use a limited set of meaningful categories such as grain, flour/bakery products, meat, dairy products and fruit/vegetables, with appropriate production/processing/storage and perishability differences. Keep the level above individual retail products so the system remains legible and scalable.
 
+Construction demand likewise uses distinct physical commodities rather than one generic building-material item. Baseline 1900 coverage includes stone/gravel, bricks, cement, processed timber and steel products where historically/regionally appropriate. Their different sources, storage/handling requirements and compatible vehicles should create materially different logistics without splitting into unnecessary retail-level variants.
+
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
 ### 10.2 Industrial geography
