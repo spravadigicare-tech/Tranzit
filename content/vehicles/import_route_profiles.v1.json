@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "import_continental_direct",
+      "origin_macro_regions": [
+        "de",
+        "at",
+        "pl",
+        "hu",
+        "sk",
+        "nearby_europe"
+      ],
+      "modes": [
+        "rail",
+        "road"
+      ],
+      "buyer_pays_inbound": true,
+      "finite_carrier_capacity": true,
+      "render_outside_active_world": false,
+      "entry_rule": "nearest legal technically usable active-world gateway",
+      "transshipments_default": 0,
+      "disruption_tags": [
+        "border_closed",
+        "trade_restriction",
+        "rail_route_unavailable",
+        "road_route_unavailable",
+        "carrier_capacity"
+      ]
+    },
+    {
+      "id": "import_britain_via_continent",
+      "origin_macro_regions": [
+        "gb"
+      ],
+      "modes": [
+        "sea",
+        "rail",
+        "road"
+      ],
+      "buyer_pays_inbound": true,
+      "finite_carrier_capacity": true,
+      "render_outside_active_world": false,
+      "entry_rule": "off-map British collection + sea/ferry leg + continental onward transport to legal active-world gateway",
+      "transshipments_default": 2,
+      "disruption_tags": [
+        "port_unavailable",
+        "shipping_capacity",
+        "border_closed",
+        "trade_restriction",
+        "carrier_capacity"
+      ]
+    },
+    {
+      "id": "import_distant_europe",
+      "origin_macro_regions": [
+        "fr",
+        "it",
+        "es",
+        "ch",
+        "benelux",
+        "scandinavia",
+        "other_europe"
+      ],
+      "modes": [
+        "rail",
+        "road",
+        "sea_optional"
+      ],
+      "buyer_pays_inbound": true,
+      "finite_carrier_capacity": true,
+      "render_outside_active_world": false,
+      "entry_rule": "authored macro corridor to legal active-world gateway",
+      "transshipments_default": 1,
+      "disruption_tags": [
+        "border_closed",
+        "trade_restriction",
+        "carrier_capacity",
+        "route_incompatibility"
+      ]
+    },
+    {
+      "id": "import_overseas_sea_continent",
+      "origin_macro_regions": [
+        "us",
+        "ca",
+        "jp",
+        "other_overseas"
+      ],
+      "modes": [
+        "sea",
+        "rail",
+        "road"
+      ],
+      "buyer_pays_inbound": true,
+      "finite_carrier_capacity": true,
+      "render_outside_active_world": false,
+      "entry_rule": "origin inland transport + seaport + sea leg + continental gateway + onward delivery",
+      "transshipments_default": 3,
+      "disruption_tags": [
+        "shipping_capacity",
+        "port_unavailable",
+        "trade_restriction",
+        "payment_restriction",
+        "carrier_capacity"
+      ]
+    },
+    {
+      "id": "export_buyer_collects",
+      "origin_macro_regions": [
+        "active_world"
+      ],
+      "modes": [
+        "buyer_arranged"
+      ],
+      "buyer_pays_inbound": false,
+      "finite_carrier_capacity": false,
+      "render_outside_active_world": false,
+      "entry_rule": "buyer collects from vehicle's current physically accessible handover location; player's logistics responsibility ends at custody transfer",
+      "transshipments_default": 0,
+      "disruption_tags": [
+        "collection_location_inaccessible",
+        "trade_restriction"
+      ]
+    }
+  ]
+}
