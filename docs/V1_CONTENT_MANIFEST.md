@@ -199,7 +199,7 @@ These are **gameplay seed defaults**, not claims about the exact historical outp
 | Coal mine | 250 | 700 | 1,800 | t/week |
 | Iron-ore mine | 150 | 450 | 1,100 | t/week |
 | Stone/gravel quarry | 250 | 650 | 1,500 | t/week |
-| Forestry operation | 90 | 250 | 600 | t/week timber |
+| Forestry operation | 100 | 300 | 750 | t/week timber |
 | Sawmill / wood processing | 70 | 200 | 500 | t/week processed wood |
 | Furniture works | 15 | 50 | 120 | t/week |
 | Paper works | 20 | 70 | 180 | t/week |
@@ -253,7 +253,9 @@ Coefficients are physical input tonnes required for **1.00 t of player-facing ou
 | Lubricants / technical fluids | 1.15 t refined fuels or an authored later chemical-feedstock recipe |
 | Consumer goods | 0.35 t processed wood + 0.25 t textiles/fabric + 0.35 t metal products + 0.15 t paper products |
 
-Coal-gas works, electricity generation and other utility conversions use explicit energy/utility coefficients in their facility definitions because the downstream product is not ordinary freight mass. Construction projects keep their own bill of materials by project type/era rather than using one generic tonnes-in/tonnes-out factory recipe.
+Coal-gas works, electricity generation and other utility conversions use explicit energy/utility coefficients in their facility definitions because the downstream product is not ordinary freight mass. For V1 balancing, store both electricity and distribution-gas flow in fixed-precision **MWh-equivalent** utility units. Initial 1900 conversion defaults are **0.45 t coal per 1 MWh-equivalent distribution gas** at a coal gasworks and **1.00 t coal per 1 MWh electricity** at an early coal-fired generating plant. These are gameplay balancing defaults rather than claims about a named historical installation; facility-specific sourced content can override them. Grid/gas-network losses, plant own-use and non-player-facing by-products are represented inside the authored conversion coefficient instead of creating or destroying freight inventory elsewhere.
+
+Construction projects keep their own bill of materials by project type/era rather than using one generic tonnes-in/tonnes-out factory recipe.
 
 For initial 1900 construction balancing, scale each real project from its geometry/size/civil-work estimate, then distribute the resulting physical material requirement with an authored project-family mix. The values below are reference mixes per **100 t of represented physical construction material**; they are not a universal 100 t project size and may be overridden for a concrete bridge, tunnel, building or corridor when its design requires it.
 
@@ -274,7 +276,7 @@ The mix defines commodity composition only. Track length, building footprint, ea
 - Final consumers/services start near the commodity-specific stock-policy target already defined above, never with an arbitrary infinite buffer.
 - Strategic operating inputs such as coal, basic spare parts and construction/maintenance supplies at major facilities normally start around **10–15 days** where storage is physically available.
 - Seeded inventory is created only at world initialization and is fully owned/accounted physical stock. There is no periodic free refill.
-- Initial authored supply should cover approximately **90–110% of ordinary world demand by commodity at the full-world level**, while deliberate geographic concentration creates real surplus and deficit markets. A commodity can be regionally scarce; the world generator/content pass must not make an essential chain globally impossible.
+- Initial authored supply should cover approximately **90–110% of ordinary recurrent world demand by commodity at the full-world level**, while deliberate geographic concentration creates real surplus and deficit markets. One-off construction surges, temporary events and deliberate strategic stock-building are outside this ordinary balance target. A commodity can be regionally scarce; the world generator/content pass must not make an essential chain globally impossible.
 - Resource/heavy-industry chains should create substantial intercity movement by geography rather than local self-sufficiency. In each tested starting area, author at least **two recurring rail-suitable freight flows at 150 t/week or more**, **two road-suitable recurring flows in the 10–60 t/week range**, and **one time-sensitive/perishable flow** whose endpoints are physically reachable.
 - Do not satisfy those fixture requirements with anonymous cargo generators. Every seeded flow must originate in real production/inventory and terminate in a real recipe, final-use sink, project or operating-consumption demand.
 - When initial contracts/carrier commitments already cover part of a seeded flow, reserve only that real committed share. Unserved/contestable demand remains available through the normal opportunity/proposal/open-carriage rules rather than being duplicated.
