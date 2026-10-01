@@ -65,7 +65,7 @@ Example, illustrative only:
 >
 > Distance fare: 10 money, before any explicitly configured base fare or supplement
 
-An integrated fare is not automatically a guaranteed connection. Connection-protection and connection-specific rebooking rights are intentionally undefined until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned and approved; do not infer them from tariff integration.
+An integrated fare does not guarantee a transfer or make a connecting Trip wait. The current design has no separate passenger connection-protection mechanic.
 
 ## 5. Ticket products
 
@@ -133,15 +133,13 @@ A sale creates one payment under the financial rules. A pass-covered boarding mu
 
 ### Changes and expiry
 
-Store the purchased product/version and its actual price and validity. New rates affect new eligible sales from an explicit effective time, not existing paid tickets. Removing a Line or partner, shortening validity or changing classes must not silently revoke sold rights. Before publication, expose affected holders, outstanding reservations and any required honouring, replacement or refund plan. Already sold products retain their purchased version, price, scope and validity. Service/product changes default to honouring sold period-ticket rights until individual expiry where the promised travel remains physically/legal operable; otherwise apply only passenger cancellation/refund/recovery rules that are defined independently of the still-open connection-agreement design. The infrastructure cancellation formula must not be applied to passengers.
+Store the purchased product/version and its actual price and validity. New rates affect new eligible sales from an explicit effective time, not existing paid tickets. Removing a Line or partner, shortening validity or changing classes must not silently revoke sold rights. Before publication, expose affected holders, outstanding reservations and any required honouring, replacement or refund plan. Already sold products retain their purchased version, price, scope and validity. Service/product changes default to honouring sold period-ticket rights until individual expiry where the promised travel remains physically/legal operable; otherwise apply the ordinary passenger cancellation/refund/recovery rules for the sold transport entitlement. The infrastructure cancellation formula must not be applied to passengers.
 
 ### Other operators
 
 An own-company tariff/integrated system is possible without another carrier.
 
 For V1, the currently defined multi-operator passenger-ticket mechanism is the **partner-capacity sales agreement** for one through ticket across operators.
-
-Connection-agreement mechanics are intentionally unspecified pending a separate redesign in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md).
 
 The bilateral agreement configures capacity resale **per party/direction**. Each direction has its own enabled state, explicit covered Line set and partner rate in money/km. The two Line sets and rates may differ, and one direction may be disabled entirely. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the applicable directional partner rate. The difference is the seller's margin and may be positive or negative.
 
@@ -163,7 +161,7 @@ A through-ticket sale has one retailing carrier and one partner carrier in V1. T
 
 In the ticket quote/detail show the passenger-facing breakdown by operator/segment, applied tariff/product, class/supplement and total. In the player's commercial detail additionally show the captured partner rate, tariff distance, settlement and resulting margin. Later changes to tariffs or the bilateral agreement do not rewrite those stored values for an already sold ticket.
 
-The defined capacity-sales agreement alone does not promise a protected transfer. With the currently approved clause, label the transfer **Unprotected transfer**. Any future protected status must come from an approved [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md); do not imply timetable holds or automatic partner rebooking from capacity resale alone. Reservation-required partner legs can be sold only after a real compatible reservation is confirmed through an available period-appropriate partner sales/booking channel.
+The defined capacity-sales agreement does not coordinate timetables, guarantee a transfer, make a partner Trip wait or create automatic partner rebooking. Reservation-required partner legs can be sold only after a real compatible reservation is confirmed through an available period-appropriate partner sales/booking channel.
 
 ## 8. Consistency rules
 
@@ -171,7 +169,7 @@ Implementation must remain consistent with the owning mechanics and dependent pr
 
 - GAME_DESIGN Section 31 owns global/system/Line hierarchy, integrated fares, product validity/coverage and change protection;
 - Sections 6.2 and 32.2 govern aggregate passenger choice, paid entitlement, real sales channels and specific-Trip reservations;
-- GAME_DESIGN Section 32.4 records that passenger connection protection/coordination/recovery is intentionally unspecified, with [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) reserved as its future owner;
+- GAME_DESIGN Section 32.4 defines ordinary passenger transfers and explicitly excludes a separate connection-agreement/protected-transfer subsystem;
 - Section 30.3 governs multi-operator cooperation; another operator can participate only through a real agreement;
 - Section 38 and UI_FINANCE: one payment, pass-related reporting and no duplicate revenue;
 - UI_UX_DESIGN, Line/Trip/station/firm screens and relevant acceptance/save contracts: shared identities, readiness and exact-object navigation.
@@ -185,7 +183,7 @@ These scenarios define evidence to collect when implemented; they are not claims
 | ID | Scenario |
 |---|---|
 | TARUI-A01 | Several Lines inherit one global tariff; some join a system with a shared km rate. Change an inherited and an overridden parameter; affected scope is explained and unrelated fares are unchanged. |
-| TARUI-A02 | Use a rail-to-bus integrated journey. Covered transfers do not trigger duplicate base fares; outside-network travel and supplements are explained. Fare integration alone does not promise a protected connection. |
+| TARUI-A02 | Use a rail-to-bus integrated journey. Covered transfers do not trigger duplicate base fares; outside-network travel and supplements are explained. Fare integration alone does not guarantee the transfer or make a connecting service wait. |
 | TARUI-A03 | Compare singles with weekly/monthly tickets for occasional and regular travellers. Show the route-specific cost comparison without fake demand or guaranteed savings. |
 | TARUI-A04 | Test 7/14-game-day validity across month/year boundaries at different speeds, in pause and after save/load. Expiry follows only the common game clock. |
 | TARUI-A05 | Use a pass in open, optional-reservation and mandatory-reservation zones. Paid entitlement is not a seat guarantee; confirmed bookings are preserved and full services do not admit extra passengers. |
