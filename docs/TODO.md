@@ -41,7 +41,7 @@ The market/economy/public-tender, V1 multi-operator passenger-ticket and final U
 
 ## Open decisions
 
-- [ ] **[DESIGN] Complete focused art-direction specification** — [ART_DIRECTION.md](ART_DIRECTION.md) now records the confirmed atmospheric simple-realism foundation, realistic-not-toy miniature presentation, close camera/scale, building detail rule, economic-centre/city-block visual relationship, historical vehicle treatment, lighting/day-night, transformative weather/seasons, vegetation/props/visible life, organic rural land polygons, historical parcel evolution, forests, terrain relief and water. Continue with final UI visual tokens and rendering/LOD budgets; reconcile finished decisions into the same focused spec instead of scattering them across chat history.
+- [ ] **[DESIGN] Complete focused art-direction specification** — [ART_DIRECTION.md](ART_DIRECTION.md) now records the confirmed atmospheric simple-realism foundation, realistic-not-toy miniature presentation, close camera/scale, building detail rule, economic-centre/city-block visual relationship, historical vehicle treatment, lighting/day-night, transformative weather/seasons, vegetation/props/visible life, organic rural land polygons, historical parcel evolution, forests, terrain relief and water. Continue with rendering/LOD budgets and final UI token validation; reconcile finished decisions into the same focused spec instead of scattering them across chat history.
 - [ ] **[DESIGN] Connection agreements — redesign from scratch in separate thread** — still required for V1. The dedicated [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is intentionally blank; do not carry forward prior draft mechanics unless explicitly re-approved there.
 
 ## Next
