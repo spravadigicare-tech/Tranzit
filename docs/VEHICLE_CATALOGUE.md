@@ -22,6 +22,25 @@
 8. **Introduction dates are fixed historical content.** A model/variant family appears on its authored historical date derived from the real prototype. Availability to the player can still be delayed by capacity, stock, approval, trade or delivery.
 9. **The map begins in 1900 but the world does not.** Period-appropriate older vehicles already exist in 1900 as used stock. Their manufacture date, condition and owner are seeded rather than replaying pre-1900 production.
 
+## 1.1 Regional market strength
+
+Every manufacturer/model family can define a regional-market profile rather than one global availability weight.
+
+Typical authored fields include:
+
+- home market;
+- nearby/core export markets;
+- secondary export markets;
+- rare/special-order markets;
+- dealer-density weights by era/region;
+- parts/support availability by era/region;
+- used-market prevalence;
+- certification/export-package availability.
+
+A weak regional presence never means `cannot buy here` by itself. It means the player is more likely to rely on direct factory order, importer/broker, longer delivery, first-type approval and external parts/service support.
+
+A strong home market should feel materially different through faster/more common supply, not through an invisible purchase bonus.
+
 ## 2. Fictional manufacturer lineages
 
 The names should feel recognisable enough to be a historical wink without using the real marque unchanged.
