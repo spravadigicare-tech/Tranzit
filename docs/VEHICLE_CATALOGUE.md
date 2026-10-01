@@ -529,14 +529,14 @@ This can make an older vehicle unattractive domestically but still commercially 
 For ordinary off-map resale, **the buyer collects**:
 
 1. the vehicle remains in the player's ownership and physical custody until the agreed handover;
-2. the player must place it at a reachable agreed collection point;
-3. the external buyer or its carrier arrives and takes custody;
+2. the vehicle only needs to be at a physically accessible depot, yard, parking site, workshop or other legitimate handover location; no special export repositioning is required;
+3. the external buyer or its carrier travels to that location and takes custody;
 4. all onward transport beyond the handover is the buyer's responsibility and cost;
 5. after physical handover, the asset leaves detailed active-world simulation and is retained only in ownership/history records.
 
 The player does not manage the buyer's long-distance export route, shipping or border logistics after handover. This is intentionally simpler than inbound imports, because the player's operational responsibility ends at collection.
 
-A sale is not completed merely because the player clicked Accept. If the vehicle cannot reach the handover point or is not in the agreed condition/configuration, settlement waits or the sale fails under the contract terms.
+A sale is not completed merely because the player clicked Accept. If the vehicle is not physically accessible for collection or is not in the agreed condition/configuration, settlement waits or the sale fails under the contract terms.
 
 ### 9.5 Historical production changes
 
