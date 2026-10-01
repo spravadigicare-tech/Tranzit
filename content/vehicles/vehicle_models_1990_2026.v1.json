@@ -153,9 +153,9 @@
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
         "length_m": 185,
-        "max_speed_kph": 200,
+        "max_speed_kph": 230,
         "structural_speed_limit_kph": 230,
-        "power_kw": 3920,
+        "power_kw": 4000,
         "service_mass_t": 385,
         "seats": 331,
         "axle_count": 28,
@@ -195,10 +195,10 @@
       ],
       "provenance": {
         "source_urls": [
-          "https://www.cd.cz/nase-vlaky/pendolino/-27275/"
+          "https://zeleznicar.cd.cz/assets/zeleznicar/zeleznicar_06_2023.pdf"
         ],
-        "notes": "Representative seven-car class 680 game configuration.",
-        "confidence": "medium"
+        "notes": "ČD technical table: 230 km/h maximum speed, 4,000 kW continuous power, 331 seats and 3 kV DC / 25 kV 50 Hz / 15 kV 16⅔ Hz operation. Route signalling/infrastructure can impose a lower actual service speed.",
+        "confidence": "high"
       }
     },
     {
