@@ -107,7 +107,7 @@
           "introduced_year": 1953,
           "mass_delta_t": 0,
           "cost_index_delta": 0,
-          "payload_t_override": 3.3,
+          "payload_t_override": 5,
           "retrofit_allowed": false
         },
         {
@@ -116,7 +116,7 @@
           "introduced_year": 1953,
           "mass_delta_t": 0.35,
           "cost_index_delta": 8,
-          "payload_t_override": 3,
+          "payload_t_override": 4.5,
           "retrofit_allowed": false
         },
         {
