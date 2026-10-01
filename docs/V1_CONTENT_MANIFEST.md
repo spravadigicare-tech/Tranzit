@@ -153,12 +153,15 @@ The first-playable 1900 economy uses the following **canonical chain families**.
 | Electricity | coal/other historically available generation input → electricity | city, industry and later electric transport; utility-network delivery |
 | Oil products | crude oil → refined fuels | transport, industry and selected city/utility use; low/region-specific importance in 1900, growing later |
 | General manufactured goods | metal products + textiles/wood/other relevant inputs → consumer goods | retail / city consumption |
-| Spare parts and maintenance supplies | iron/steel + metal products + machinery/industrial chemicals where relevant → spare parts | workshops, factories, depots, utilities and infrastructure maintenance |
+| Basic spare parts | iron/steel + metal products + machinery-sector inputs → basic spare parts | older vehicles, workshops, factories, utilities and infrastructure maintenance |
+| Modern spare parts (later) | metal products + plastics + industrial chemicals + electronics/chips where relevant → modern spare parts | newer vehicles, advanced machinery, modern facilities and systems |
 | Lubricants and technical fluids | refined fuels / chemical processing → lubricants/technical fluids | vehicles, workshops and industrial machinery |
 
 **Furniture is a distinct final commodity.** Later furniture recipes may add industrial chemicals, plastics, textiles or other materials, but processed wood remains a meaningful core input.
 
-**Spare parts are a distinct transportable commodity family.** Heavy industry and machinery production do not end when a machine is sold: vehicles, factories, workshops, utilities and infrastructure consume replacement parts throughout their operating lives. Early spare parts can be dominated by iron/steel and mechanical components; later recipes may add rubber, industrial chemicals, plastics, electronics and semiconductor components. This creates recurring secondary freight demand tied to the installed asset base rather than only to new construction.
+**Spare parts use two player-facing generations.** **Basic spare parts** cover older mechanical equipment, vehicles, factories, workshops, utilities and infrastructure and are produced mainly from iron/steel, metal products and machinery-sector inputs. Later, **modern spare parts** become a separate commodity for newer equipment and systems and can require plastics, industrial chemicals, electronics and semiconductor components.
+
+Do not globally convert basic spare-parts demand into modern spare-parts demand when the latter appears. Each asset/facility technology declares which generation it requires. Older equipment can therefore continue creating demand for basic spare parts while newer fleets/factories create increasing demand for modern spare parts. This creates recurring secondary freight tied to the installed asset base rather than only to new construction.
 
 Routine consumables can likewise evolve. Coal-fired/steam equipment consumes coal and water; later combustion equipment increasingly consumes refined fuels plus lubricants/technical fluids; electric equipment shifts operating demand toward electricity while still needing physical spare parts and maintenance supplies.
 
