@@ -373,7 +373,7 @@ Do not force every track/platform to be selected. Preserve automatic compatible 
 
 ### 6.2 Confirmed commercial and Shipment presentation — UI-D17 / UI-D23
 
-The detailed commercial workspace is owned by [UI_COMMERCIAL.md](UI_COMMERCIAL.md) under UI-D17. It keeps Opportunities, Offers and Contracts distinct, uses persistent non-linear offer drafts and links accepted commercial obligations to real Transport Plans, Lines, Trips, facilities and Shipments.
+The detailed commercial workspace is owned by [UI_COMMERCIAL.md](UI_COMMERCIAL.md) under UI-D17. It keeps Market, Opportunities, Offers and Contracts distinct; Market can automatically project a selected commodity's local surplus/deficit and reference prices onto the main map; public tenders use concrete compliant service proposals with sealed rival bids and transparent published scoring; persistent non-linear drafts remain separate from submission; and accepted commercial obligations link to real Transport Plans, Lines, Trips, facilities and Shipments.
 
 The detailed Shipment view is owned by [UI_SHIPMENTS.md](UI_SHIPMENTS.md) under UI-D23. One Shipment remains one commercial consignment while its CargoLots can have different physical locations, handling states and future allocations. The directly accessible parts list distinguishes physical custody from reservations, and replanning one portion cannot rewrite completed handling or unrelated portions.
 
@@ -662,7 +662,7 @@ No Unity UI has been implemented or visually tested as part of this document. St
 | UI-D14 | Station and terminal UI | Overview/cards, separate station-style arrivals/departures window and serving-Line information; embedded track/platform/stand schematic deferred, as owned by UI_STATIONS.md | CONFIRMED on 2026-09-30 |
 | UI-D15 | Global minimalist and consistent UI | Clear concise overviews, supporting information in hover/focus tooltips and opened details, intuitive task grouping and shared visual/interaction components throughout the game; preserve visible critical information under Section 2.1 | CONFIRMED on 2026-09-30 |
 | UI-D16 | Depot/garage/workshop UI | Operational facility overview, on-site/expected/linked vehicle lists, task cards and supported Lines; detailed rules in UI_DEPOTS.md | CONFIRMED on 2026-09-30 |
-| UI-D17 | Commercial UI | Opportunities, Offers and Contracts, persistent offer drafts and direct linkage from commitments to real execution; detailed rules in UI_COMMERCIAL.md | CONFIRMED on 2026-09-30 |
+| UI-D17 | Commercial UI | Market, Opportunities, Offers and Contracts; spatial commodity intelligence, producer/buyer transport proposals, transparent public tenders with concrete service plans, persistent drafts and direct linkage from commitments to real execution; detailed rules in UI_COMMERCIAL.md | CONFIRMED on 2026-09-30; refined on 2026-10-01 |
 | UI-D18 | Construction UI | Map-first ghost planning, persistent project cards, explicit launch and physical progress; detailed rules in UI_CONSTRUCTION.md | CONFIRMED on 2026-09-30 |
 | UI-D19 | Finance UI | Cash/result/commitment overview, source-linked breakdowns, consistent periods and plans separated from binding/posted money; detailed rules in UI_FINANCE.md | CONFIRMED on 2026-09-30 |
 | UI-D20 | Company/branches/workforce UI | Company overview, branch coverage/capacity, aggregate professions, named-manager authority, licences and company systems; detailed rules in UI_COMPANY.md | CONFIRMED on 2026-09-30 |
