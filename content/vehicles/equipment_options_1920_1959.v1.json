@@ -39,7 +39,7 @@
           "introduced_year": 1933,
           "mass_delta_t": 0,
           "cost_index_delta": 0,
-          "payload_t_override": 2.5,
+          "payload_t_override": 2,
           "retrofit_allowed": false
         },
         {
@@ -48,7 +48,7 @@
           "introduced_year": 1933,
           "mass_delta_t": 0.25,
           "cost_index_delta": 8,
-          "payload_t_override": 2.25,
+          "payload_t_override": 1.8,
           "retrofit_allowed": false
         },
         {
@@ -57,7 +57,7 @@
           "introduced_year": 1933,
           "mass_delta_t": 0.3,
           "cost_index_delta": 10,
-          "payload_t_override": 2.2,
+          "payload_t_override": 1.8,
           "retrofit_allowed": false
         }
       ]
@@ -107,7 +107,7 @@
           "introduced_year": 1953,
           "mass_delta_t": 0,
           "cost_index_delta": 0,
-          "payload_t_override": 5,
+          "payload_t_override": 5.5,
           "retrofit_allowed": false
         },
         {
@@ -116,7 +116,7 @@
           "introduced_year": 1953,
           "mass_delta_t": 0.35,
           "cost_index_delta": 8,
-          "payload_t_override": 4.5,
+          "payload_t_override": 5,
           "retrofit_allowed": false
         },
         {
@@ -145,7 +145,7 @@
           "introduced_year": 1957,
           "mass_delta_t": 0,
           "cost_index_delta": 0,
-          "payload_t_override": 7.95,
+          "payload_t_override": 8.6,
           "retrofit_allowed": false
         },
         {
@@ -154,7 +154,7 @@
           "introduced_year": 1957,
           "mass_delta_t": 0.4,
           "cost_index_delta": 10,
-          "payload_t_override": 7.4,
+          "payload_t_override": 8,
           "retrofit_allowed": false
         },
         {
@@ -291,6 +291,89 @@
           "seats_override": 39,
           "standing_override": 0,
           "certified_speed_kph_override": 85,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "pragov_rn_series_package",
+      "name": "Pragov RN technical series",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "pragov_rn_1933_52hp",
+          "name": "1933 series",
+          "introduced_year": 1933,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "power_kw_override": 38,
+          "payload_limit_t": 2,
+          "certified_speed_kph_override": 80,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_rn_1936_68hp",
+          "name": "1936 improved series",
+          "introduced_year": 1936,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 9,
+          "power_kw_override": 50,
+          "payload_limit_t": 2.5,
+          "certified_speed_kph_override": 80,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_rn_1937_72hp",
+          "name": "1937 improved series",
+          "introduced_year": 1937,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 12,
+          "power_kw_override": 53,
+          "payload_limit_t": 2.5,
+          "certified_speed_kph_override": 80,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "fatra111_series_package",
+      "name": "Fatra 111 technical series",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fatra111_early_1942",
+          "name": "Early high-output series",
+          "introduced_year": 1942,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "power_kw_override": 154,
+          "payload_limit_t": 8,
+          "certified_speed_kph_override": 75,
+          "maintenance_severity": "high",
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra111_reliable_1949",
+          "name": "Post-war reliability series",
+          "introduced_year": 1949,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 4,
+          "power_kw_override": 129,
+          "payload_limit_t": 10,
+          "certified_speed_kph_override": 60,
+          "maintenance_severity": "normal",
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra111_r_1953",
+          "name": "111 R mature series",
+          "introduced_year": 1953,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 7,
+          "power_kw_override": 132,
+          "payload_limit_t": 10.24,
+          "certified_speed_kph_override": 62,
+          "maintenance_severity": "normal",
           "retrofit_allowed": false
         }
       ]
