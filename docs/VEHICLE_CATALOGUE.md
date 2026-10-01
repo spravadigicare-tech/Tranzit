@@ -652,6 +652,47 @@ Until the economy is balanced in the single game unit `money`, use a **same-era 
 
 The index is not shown to the player and is not a hidden gameplay modifier. It is an authoring tool that must later be converted into explicit visible purchase prices using the era economy.
 
+## 10.1 Reliability, defects and maintainability
+
+Vehicle reliability is not represented by one opaque universal score.
+
+Every model family defines explicit engineering/maintenance characteristics such as:
+
+- design complexity;
+- tolerance for deferred maintenance;
+- service interval structure;
+- parts availability;
+- repair difficulty;
+- workshop/tooling requirements;
+- specialist-skill requirements;
+- known weak points or failure-prone systems where historically justified;
+- environmental/operating sensitivities;
+- expected condition degradation under different duty severity.
+
+A concrete vehicle's actual failure risk is then derived from its real state and use, including:
+
+- model/platform characteristics;
+- manufacture age;
+- lifetime mileage/hours;
+- current subsystem condition;
+- maintenance quality/timeliness;
+- recent workload and operating severity;
+- unresolved defects;
+- retrofit/template configuration;
+- parts/support quality and workshop competence.
+
+The player-facing UI should describe the causes rather than show only a hidden percentage. Examples:
+
+- **Simple design, easy field repair**
+- **Long service intervals, specialist electrical diagnostics required**
+- **Sensitive to overheating under sustained heavy load**
+- **Excellent parts availability in this region**
+- **Rare transmission parts; long external lead time**
+
+A summary reliability indicator may exist for readability, but it must drill down into these contributing factors and must not become the authoritative simulation input by itself.
+
+Known historical model-specific weaknesses are allowed only when they are grounded in documented prototype behaviour and translated into understandable gameplay consequences. Do not invent arbitrary model penalties merely to make two vehicles different.
+
 ## 11. Initial gameplay cost/maintenance positioning
 
 | Family example | Cost index | Maintenance burden | Consumption burden | Intended reason to buy |
