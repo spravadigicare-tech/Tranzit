@@ -175,6 +175,16 @@
       "id": "road_modern_van",
       "name": "Road modern van",
       "description": "Modern light commercial van"
+    },
+    {
+      "id": "rail_petrol_mechanical_light",
+      "name": "Rail petrol mechanical light",
+      "description": "Early petrol railcars with mechanical transmission"
+    },
+    {
+      "id": "rail_diesel_electric_regional_legacy",
+      "name": "Rail diesel-electric regional legacy",
+      "description": "Mid-century diesel-electric railcars and regional motor cars"
     }
   ]
 }
