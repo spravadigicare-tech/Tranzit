@@ -45,6 +45,26 @@ Use independently openable cards:
 
 Hide cards/subsections that truly have no relevance, but do not hide a material missing licence, municipal requirement or active agreement.
 
+### 2.1 Internal economic centres
+
+A city can contain several evolving **economic centres/neighbourhoods**. These are spatial concentrations of population, jobs, firms, services or logistics inside the city's single commodity market.
+
+The City detail and map can expose centres such as:
+
+- historic/commercial centre;
+- residential district;
+- industrial zone;
+- rail/freight district;
+- suburban or newly developed centre.
+
+For each known centre, show only useful aggregate context: population/jobs, major activity type, important firms/facilities, passenger origin/destination pressure, freight generators/consumers and relevant transport access.
+
+Economic centres can appear, grow, decline or change role as the physical city develops. They do **not** become separate commodity markets and do not receive their own reference commodity price.
+
+Intra-city passenger demand should use these centres as major origin/destination nodes. Urban public transport connecting homes, jobs, services and transport hubs can improve actual accessibility and influence later urban growth. The UI should therefore make it easy to inspect centre-to-centre passenger flows and existing services without pretending that every individual resident is simulated.
+
+A branch elsewhere in the same city market is sufficient for ordinary city-level commercial presence under the current coverage rules; the player does not need a separate office for every internal centre.
+
 ## 3. Demand is directional and time-scoped
 
 Do not present only a generic city-level “Demand: High” score.
