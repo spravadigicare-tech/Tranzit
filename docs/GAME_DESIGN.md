@@ -1923,7 +1923,7 @@ Rules:
 
 - ordinary small and medium non-transport firms do not build general intercity fleets as a default response to transport cost;
 - eligible large/specialized firms may internalize only a **limited share/capacity** of selected own intercity flows where the mode permits it;
-- the internalized share is determined by authored economics, fleet/facility capacity and utilization, not by a universal hidden percentage;
+- the actual internalized share is determined by authored economics, fleet/facility capacity and utilization rather than a hidden fixed percentage; V1 balancing may impose an explicit configurable hard ceiling below 100% to preserve external carrier demand;
 - owning captive intercity capacity does not imply capability across every destination, commodity, mode or time window;
 - overflow, peak demand, new destinations, disruptions and flows outside the captive specialization continue to create external-carrier demand;
 - **rail is stricter:** an industrial/non-transport firm may own its private siding, loading tracks, internal shunting equipment and, where appropriate, its own freight wagons, but it does **not** operate its own intercity mainline train as ordinary captive transport;
