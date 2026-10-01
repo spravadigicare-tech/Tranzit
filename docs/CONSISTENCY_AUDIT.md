@@ -56,3 +56,24 @@ The validator checks numbered-heading uniqueness, core section references, local
 The exact world clipping polygon, sourced historical content, complete catalogues, balancing, package pins and runtime scheduler phases still need actual implementation/authoring and evidence. These are already delegated engineering/content choices, not reasons to reopen approved product decisions. This audit found no further blocking product question requiring an invented change or an additional user decision.
 
 The next game-development task remains M0 in [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md), not another rewrite of the high-level plan. Follow the documented source ownership when a future real design decision changes, and update dependent tests at the same time.
+## 5. Expanded follow-up audit — 2026-10-01
+
+A second repository-wide consistency pass reviewed the expanded main tree after the original 2026-09-30 baseline audit. At this point the repository contains **45 Markdown files, 23 JSON files and 74 tracked blobs**, including focused UI specifications, vehicle-authoring content and validation tooling. There is still **no Unity project (`Assets/`, `Packages/`, `ProjectSettings/`), gameplay source or standalone build** in the reviewed tree.
+
+This follow-up specifically checked the current source-of-truth hierarchy, V1 scope, shared calendar/time constants, money unit, final HUD/navigation, economic-centre/station-access rules, freight handover/firm-owned logistics, vehicle availability/content naming, passenger cooperation, implementation-status wording and explicit open-decision markers.
+
+Additional resolved findings:
+
+| ID | Conflict or implementation risk | Resolution |
+|---|---|---|
+| A-23 | Company UI still referenced Finance through the superseded bottom-bar cash location | UI_COMPANY now points to the final UI-D41 upper-left HUD finance entry |
+| A-24 | The core still contained the withdrawn passenger protected-connection/hold/rebooking design even though passenger connection agreements had been reset | Removed the superseded connection subsystem from core/UI/tests. After a subsequent product decision, passenger connection agreements were removed entirely from the current design; ordinary transfers remain itinerary properties and **partner-capacity sales is the only bilateral passenger-cooperation mechanic** |
+| A-25 | V1 brief/status still described the very early 2026-09-30 repository snapshot as if it were current | IMPLEMENTATION_STATUS and V1_IMPLEMENTATION_BRIEF now describe the expanded docs/content/tooling tree while still truthfully recording no Unity/runtime implementation |
+| A-26 | Several implementation-level UI/art choices were worded as unresolved product decisions | Contextual construction/planner tools now use the shared floating-tool-window pattern; exact visual/character budgets are explicitly implementation tuning rather than blockers |
+| A-27 | Founding-loan balancing used a noncommittal “possible convention” despite the rest of V1 needing a concrete initial preset | V1_CONTENT_MANIFEST now sets the configurable initial preset to 2% nominal annual interest over 20 game years with monthly amortization |
+| A-28 | One player-facing vehicle brand retained the real Thornycroft name | Player-facing manufacturer/model renamed to **Thorncroft** while stable IDs and real provenance remain unchanged |
+
+The follow-up also removed the now-obsolete blank `docs/CONNECTION_AGREEMENTS.md` file and added a documentation-validator regression guard against restoring the withdrawn passenger-connection mechanic by stale wording/specification.
+
+No new blocking product decision was found in this pass. Remaining open work in TODO is implementation, validation, vehicle-content completion and asset/balancing work rather than an unresolved core gameplay choice.
+
