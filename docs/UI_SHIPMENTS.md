@@ -45,6 +45,8 @@ For perishable/quality-sensitive cargo, also show **current quality/freshness**,
 
 A cold-chain icon/status never means “fresh forever”. Tooltip/detail should expose that compatible refrigerated vehicles/storage reduce the decay rate while any ambient handling gap consumes quality faster.
 
+Quality state is live simulation state, not calculated only because the Shipment window is open. If a waiting lot crosses a quality threshold while untouched in storage, the Shipment/Inventory state updates from the scheduled simulation event and any warning/status appears on the next UI refresh.
+
 ## 2. Compact transport chain
 
 Show the current versioned Transport Plan as a compact ordered chain, for example:
