@@ -428,3 +428,28 @@ Before accepting a vehicle family:
 - imports/exports obey trade state;
 - off-map buyer pickup rule is preserved;
 - no player-funded fictional vehicle design is introduced.
+
+## 19. Current machine-readable authoring status
+
+The current repository now contains:
+
+- `docs/data/vehicle-content.schema.json` — the initial structural contract for manufacturers, factories, support families, model families, variants, equipment and retrofit paths;
+- `docs/data/vehicle-seed-1900.v1.json` — **21 opening model families**, covering the full approved 1900 minimum role set at model/role level;
+- `docs/data/vehicle-market-1900.v1.json` — opening dealer archetypes, physical stock ranges, used-market seeding, direct import quote paths and start-viability checks.
+
+Reference integrity has been checked between the 1900 market file and the model/factory IDs in the 1900 seed.
+
+This does **not** mean the 1900 content is implementation-complete. Still missing or intentionally incomplete:
+
+- exact `money` prices;
+- validated per-model consumption curves;
+- exact maintenance/inspection triggers;
+- complete equipment-option matrices and default templates;
+- all dated national approval/export-market changes;
+- production material recipes/work-unit calibration;
+- physical prefabs/LODs/sounds/animations;
+- runtime loading, simulation and save support;
+- actual build/playtest/acceptance evidence.
+
+Unknown historical values must stay explicit/empty until researched; do not fill them with invented precision merely to make every JSON field non-null.
+
