@@ -1967,7 +1967,11 @@ Prices must be explainable. The UI should be able to show why a market is expens
 
 Do not expose perfect information the player's company could not plausibly know. Market visibility follows the same branch/communications/information rules as other commercial intelligence; unknown or stale information should be labelled accordingly.
 
-Local price changes are event/coarse-tick driven and aggregated. The **normal market-price update cadence is once per game day**. Physical deliveries, production, consumption and inventories still update when they actually occur, but the local reference price reacts on the next daily market update rather than after every wagon or truck movement. Material exceptional events such as a major mine/factory closure, severe disruption or abrupt market-access change may trigger an explicit early recalculation. Do not continuously solve every firm-to-firm market pair every frame.
+Local price changes are event/coarse-tick driven and aggregated. The **normal market-price update cadence is once per game day**. Physical deliveries, production, consumption and inventories still update when they actually occur, but the local reference price reacts on the next daily market update rather than after every wagon or truck movement.
+
+On an ordinary daily market update, the local reference price may move by at most **±2% of its previous reference price**. This is a cap, not a target movement: a near-balanced market can move only fractionally, while a severe sustained imbalance can hit the cap across several successive days. The model therefore responds visibly without allowing one ordinary delivery or one routine day to create a large price spike.
+
+Material exceptional events such as a major mine/factory closure, severe disruption or abrupt market-access change may trigger an explicit early recalculation and can use a separately authored exceptional-shock response. The exact exceptional cap remains a balancing parameter; do not silently reuse the ordinary ±2% cap if the event is explicitly classified as a major shock. Do not continuously solve every firm-to-firm market pair every frame.
 
 ### 10.6 Market intelligence for transport opportunities
 
