@@ -308,6 +308,30 @@
         "fatra111_flatbed_1942",
         "fatra111_r_1953"
       ]
+    },
+    {
+      "id": "fatra138_flatbed",
+      "model_id": "fatra138_1959",
+      "name": "Heavy flatbed",
+      "equipment_option_ids": [
+        "fatra138_flatbed_1959"
+      ]
+    },
+    {
+      "id": "fatra138_tipper",
+      "model_id": "fatra138_1959",
+      "name": "Tipper",
+      "equipment_option_ids": [
+        "fatra138_tipper_1959"
+      ]
+    },
+    {
+      "id": "fatra138_tank",
+      "model_id": "fatra138_1959",
+      "name": "Tank",
+      "equipment_option_ids": [
+        "fatra138_tank_1960"
+      ]
     }
   ]
 }
