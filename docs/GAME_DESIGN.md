@@ -1915,6 +1915,19 @@ To avoid convergence toward universal self-haulage, AI investment requires a rea
 
 Conversely, the simulation must not artificially force outsourcing when own-account transport is clearly economical. The goal is a mixed market in which some legs are customer-provided and many others remain available to transport companies because specialization, scale, distance, mode access and demand variability make external carriage competitive.
 
+**Own-account intercity transport is exceptional.** Only sufficiently large firms or firms with a strongly specialized, recurring captive flow can justify operating their own intercity transport capacity. Typical examples are a very large industrial complex moving one or two dominant commodities between fixed sites, or a specialized producer whose equipment/handling requirements make captive transport unusually valuable.
+
+Rules:
+
+- ordinary small and medium non-transport firms do not build general intercity fleets as a default response to transport cost;
+- eligible large/specialized firms may internalize only a **limited share/capacity** of their own recurring flow;
+- the internalized share is determined by authored economics, fleet/facility capacity and utilization, not by a universal hidden percentage;
+- owning captive intercity capacity does not imply capability across every destination, commodity, mode or time window;
+- overflow, peak demand, new destinations, disruptions and flows outside the captive specialization continue to create external-carrier demand;
+- a non-transport firm cannot sell spare intercity capacity to unrelated customers unless it separately becomes a legitimate licensed transport operator/subsidiary under the normal transport-company rules.
+
+Captive intercity capacity should normally be sized around stable base-load economics rather than total theoretical production. It must therefore remain plausible for even very large firms to outsource a substantial part of their transport.
+
 Firms, operating facilities and physical buildings are separate identities. A firm can close a plant, fail or be acquired without deleting the building. A vacated industrial property can remain idle, be purchased and adapted by another firm, or be converted over time to another plausible use such as warehousing, offices or housing. New industries may therefore reuse older industrial sites rather than always building on untouched land.
 
 The economy supports three broad physical-goods roles without forcing every firm to have a transportable output:
