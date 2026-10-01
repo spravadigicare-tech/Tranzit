@@ -1548,6 +1548,78 @@
         "notes": "Karosa history anchors the RTO programme in the later 1950s; technical values are representative.",
         "confidence": "medium_high"
       }
+    },
+    {
+      "schema_version": 1,
+      "id": "fatra138_1959",
+      "display_name": "Fatra 138",
+      "real_prototype": "Tatra 138",
+      "introduction_year": 1959,
+      "date_precision": "year",
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "heavy_freight",
+        "rough_road",
+        "construction"
+      ],
+      "support_family_id": "road_cz_heavy_aircooled",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 8.5,
+        "width_m": 2.44,
+        "height_m": 3.2,
+        "empty_mass_t": 10.3,
+        "service_mass_t": 22.3,
+        "max_speed_kph": 72,
+        "structural_speed_limit_kph": 72,
+        "payload_t": 12,
+        "offroad_payload_t": 8,
+        "power_kw": 132.5,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ],
+        "drive_layout": "6x6"
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 13,
+        "special_build_days": 23,
+        "base_cost_index": 145,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "heavy_aircooled_legacy",
+        "light_service_km": 3000,
+        "scheduled_service_km": 11000,
+        "major_service_km": 55000,
+        "engine_overhaul_km": 220000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": 36
+      },
+      "equipment_group_ids": [
+        "fatra138_body_1959"
+      ],
+      "built_in_template_ids": [
+        "fatra138_flatbed",
+        "fatra138_tipper",
+        "fatra138_tank"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.csla.cz/technika/automobily/tatra138vnv.htm",
+          "https://www.automobilrevue.cz/rubriky/clanky/historie/tatra-sraz-v-libodricich_38677.html"
+        ],
+        "notes": "1959 introduction; 12 t road / 8 t terrain payload, 132.5 kW, 72 km/h. Game base uses VNV dimensions; civilian bodies vary.",
+        "confidence": "high"
+      }
     }
   ]
 }
