@@ -4839,7 +4839,7 @@ Supported baseline schedule forms are:
 
 Each scheduled occurrence is one contractual delivery with its own physical fulfilment state.
 
-The baseline commercial price for this recurring-supply model is **price per delivery**. Do not silently reinterpret it as price per tonne/unit or a monthly subscription. If one scheduled delivery costs 1,600 money, each fulfilled scheduled occurrence creates that 1,600-money commercial charge exactly once.
+Recurring-supply pricing may use an explicit commercial basis such as **price per delivery** or **price per physical unit** (for example money/t). Whatever basis is negotiated, the UI must always calculate and show the **total expected price of one scheduled delivery** from the agreed quantity and price rule. Example: 20 money/t × 60 t = 1,200 money for that delivery. Each fulfilled scheduled occurrence creates its resulting commercial charge exactly once.
 
 Quantity, item, handover location and transport responsibility remain explicit contract terms. A scheduled delivery still requires actual supplier stock/production, storage capacity and physical transport; reaching the scheduled weekday does not teleport inventory.
 
