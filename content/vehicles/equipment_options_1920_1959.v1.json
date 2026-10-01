@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "scope": "1920–1959 equipment and fixed factory-variant groups",
+  "groups": [
+    {
+      "id": "fatra13_body_1924",
+      "name": "Fatra 13 factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fatra13_flatbed_1924",
+          "name": "Flatbed",
+          "introduced_year": 1924,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 1,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra13_box_1924",
+          "name": "Closed van",
+          "introduced_year": 1924,
+          "mass_delta_t": 0.12,
+          "cost_index_delta": 7,
+          "payload_t_override": 0.85,
+          "cargo_volume_m3_override": 5,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "pragov_rn_body_1933",
+      "name": "Pragov RN factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "pragov_rn_flatbed_1933",
+          "name": "Flatbed",
+          "introduced_year": 1933,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 2.5,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_rn_box_1933",
+          "name": "Box",
+          "introduced_year": 1933,
+          "mass_delta_t": 0.25,
+          "cost_index_delta": 8,
+          "payload_t_override": 2.25,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_rn_tipper_1933",
+          "name": "Tipper",
+          "introduced_year": 1933,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 10,
+          "payload_t_override": 2.2,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "fatra111_body_1942",
+      "name": "Fatra 111 factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fatra111_flatbed_1942",
+          "name": "Heavy flatbed",
+          "introduced_year": 1942,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 10,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra111_tipper_1946",
+          "name": "Tipper",
+          "introduced_year": 1946,
+          "mass_delta_t": 0.65,
+          "cost_index_delta": 12,
+          "payload_t_override": 10,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fatra111_tractor_1947",
+          "name": "Heavy tractor",
+          "introduced_year": 1947,
+          "mass_delta_t": -0.3,
+          "cost_index_delta": 15,
+          "gcw_t_override": 40,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "pragov_v3s_body_1953",
+      "name": "Pragov V3S factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "pragov_v3s_flatbed_1953",
+          "name": "Flatbed",
+          "introduced_year": 1953,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 3.3,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_v3s_tipper_1953",
+          "name": "Tipper",
+          "introduced_year": 1953,
+          "mass_delta_t": 0.35,
+          "cost_index_delta": 8,
+          "payload_t_override": 3,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_v3s_recovery_1954",
+          "name": "Recovery",
+          "introduced_year": 1954,
+          "mass_delta_t": 0.8,
+          "cost_index_delta": 20,
+          "payload_t_override": null,
+          "roles": [
+            "recovery",
+            "tow"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "neskoda706rt_body_1957",
+      "name": "Neškoda 706 RT factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "neskoda706rt_flatbed_1957",
+          "name": "Flatbed",
+          "introduced_year": 1957,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 7.95,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "neskoda706rt_box_1957",
+          "name": "Box",
+          "introduced_year": 1957,
+          "mass_delta_t": 0.4,
+          "cost_index_delta": 10,
+          "payload_t_override": 7.4,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "neskoda706rt_tractor_1957",
+          "name": "Tractor",
+          "introduced_year": 1957,
+          "mass_delta_t": -0.4,
+          "cost_index_delta": 12,
+          "gcw_t_override": 24,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "pragov_no_factory_variant_1925",
+      "name": "Pragov NO factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "pragov_no_city_1925",
+          "name": "City",
+          "introduced_year": 1925,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 20,
+          "standing_override": 20,
+          "body_length_m_override": 7.7,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "pragov_ndo_factory_variant_1939",
+      "name": "Pragov NDO factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "pragov_ndo_city_1947",
+          "name": "City",
+          "introduced_year": 1947,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 30,
+          "standing_override": 35,
+          "body_length_m_override": 8.35,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "pragov_ndo_coach_1948",
+          "name": "Coach",
+          "introduced_year": 1948,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 12,
+          "seats_override": 36,
+          "standing_override": 0,
+          "body_length_m_override": 10.55,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "neskoda706ro_factory_variant_1947",
+      "name": "Neškoda 706 RO factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "neskoda706ro_city_1947",
+          "name": "City",
+          "introduced_year": 1947,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 24,
+          "standing_override": 56,
+          "certified_speed_kph_override": 65,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "neskoda706ro_regional_1947",
+          "name": "Regional",
+          "introduced_year": 1947,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 8,
+          "seats_override": 41,
+          "standing_override": 31,
+          "certified_speed_kph_override": 68,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "neskoda706ro_coach_1947",
+          "name": "Coach",
+          "introduced_year": 1947,
+          "mass_delta_t": 0.35,
+          "cost_index_delta": 20,
+          "seats_override": 38,
+          "standing_override": 0,
+          "certified_speed_kph_override": 86,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "neskoda706rto_factory_variant_1958",
+      "name": "Neškoda 706 RTO factory variant",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "neskoda706rto_mtz_1958",
+          "name": "MTZ City",
+          "introduced_year": 1958,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seats_override": 29,
+          "standing_override": 41,
+          "certified_speed_kph_override": 65,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "neskoda706rto_car_1958",
+          "name": "CAR Regional",
+          "introduced_year": 1958,
+          "mass_delta_t": 0.1,
+          "cost_index_delta": 8,
+          "seats_override": 41,
+          "standing_override": 20,
+          "certified_speed_kph_override": 75,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "neskoda706rto_lux_1958",
+          "name": "LUX Coach",
+          "introduced_year": 1958,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 25,
+          "seats_override": 39,
+          "standing_override": 0,
+          "certified_speed_kph_override": 85,
+          "retrofit_allowed": false
+        }
+      ]
+    }
+  ]
+}
