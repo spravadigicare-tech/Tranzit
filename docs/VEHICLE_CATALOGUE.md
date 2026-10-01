@@ -529,6 +529,31 @@ The player may create arbitrary **supported combinations of equipment** inside t
 
 ### Template pricing and retrofit costing
 
+### Template-dependent operating limits
+
+The underlying vehicle platform defines hard structural/design ceilings such as its maximum supported speed, axle geometry, loading gauge/body envelope and other non-negotiable physical limits.
+
+A specific template can impose a **lower certified operating limit** than the platform maximum because of its actual equipment and configuration. Relevant causes can include:
+
+- braking equipment;
+- bogie/suspension package;
+- wheelsets/tyres;
+- control/train-protection equipment;
+- heating/electrical package;
+- body/interior mass distribution;
+- cargo/passenger configuration;
+- national approval/certification;
+- other explicitly authored safety or compatibility constraints.
+
+A retrofit may increase the permitted operating speed only when:
+
+1. the platform itself supports the higher speed;
+2. the required technical package exists for that model;
+3. the conversion is physically completed by a compatible provider;
+4. any required certification/inspection is passed.
+
+No template or retrofit may exceed the underlying platform's authored structural/design limit.
+
 A vehicle template does **not** have an independently hand-authored total price. Its commercial price is derived from explicit components:
 
 - base physical platform/chassis/vehicle price;
