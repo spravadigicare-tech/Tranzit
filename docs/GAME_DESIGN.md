@@ -1814,6 +1814,18 @@ Industrial and commercial firms are economic entities with simplified but real s
 
 They do not run expensive continuous AI.
 
+Firms, operating facilities and physical buildings are separate identities. A firm can close a plant, fail or be acquired without deleting the building. A vacated industrial property can remain idle, be purchased and adapted by another firm, or be converted over time to another plausible use such as warehousing, offices or housing. New industries may therefore reuse older industrial sites rather than always building on untouched land.
+
+The economy supports three broad physical-goods roles without forcing every firm to have a transportable output:
+
+1. **Primary producers** create extractive/agricultural inputs from plausible resources or productive land.
+2. **Processors/manufacturers** consume physical inputs and create other physical commodities.
+3. **Final consumers/services** consume physical commodities but can produce a non-transportable economic effect instead of another cargo item.
+
+Representative shops, distributors, hospitality/services, institutions and similar entities can stand in for household-facing consumption. Do not simulate every household or every small shop individually. Their physical inputs still have real inventories and delivery needs; their non-cargo output can contribute to local commercial activity, service availability and city development.
+
+Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
+
 ### 10.2 Industrial geography
 
 Industry is dynamic but geographically grounded.
@@ -1824,11 +1836,15 @@ Large deposits may effectively last the full campaign; smaller deposits can depl
 
 Processing/manufacturing industries are more flexible and can choose locations based on labour, transport, markets and inputs.
 
-New firms and facilities may emerge over time. Existing firms can expand, open new plants, acquire other firms or decline.
+New firms and facilities may emerge over time in response to technology, demand, labour, capital, inputs, transport accessibility and suitable sites. Existing firms can expand, open or close individual plants, acquire other firms or properties, be acquired, decline or fail.
+
+A new industry can buy and adapt a suitable existing property when plausible. Industrial decline can therefore leave brownfields that later return to productive use or are converted as the surrounding city changes.
 
 ### 10.3 Historical and seasonal demand
 
-Commodity importance changes over time.
+Commodity importance and the available commodity catalogue change over time. New technologies and industries can introduce new physical commodities and supply chains, for example later petroleum products, plastics, electronics and semiconductor products. These are world/economic developments, not player-level unlock rewards.
+
+Older commodities do not disappear on a hard global end date. Their demand can decline, relocate or survive for decades according to actual industries, technologies, prices and regional conditions. Existing viable firms and flows continue until real economic causes change them.
 
 Examples:
 
@@ -1853,9 +1869,13 @@ Better infrastructure can open previously uneconomic markets.
 
 ### 10.5 Local commodity markets and prices
 
-Physical commodities have **real local market prices** that can differ between cities/market areas.
+Physical commodities have **real local market prices** that can differ between market areas, including several distinct market areas inside one large city.
 
-Local price formation is driven by the simulated economy rather than a fixed global commodity table. Relevant inputs include:
+The hierarchy is **firm/facility → market area → city/region aggregation**. A market area is a local economic catchment, not a teleportation zone. Two firms in the same market area still require real physical transport between their actual endpoints. Small settlements may have one market area; large cities can have several, such as a centre, industrial district, port/rail district or peripheral production zone.
+
+Market-area boundaries can evolve gradually as cities expand, industrial concentrations move and transport accessibility changes. Do not redraw them every tick; changes are coarse/event-driven and preserve stable identities/history where possible.
+
+Each commodity has a historically evolving **base/reference value** appropriate to the era. Local price formation is anchored around that value but driven by the simulated local economy rather than a fixed global commodity table. Relevant inputs include:
 
 - local production and available seller inventory;
 - local consumption and buyer demand;
@@ -1866,7 +1886,11 @@ Local price formation is driven by the simulated economy rather than a fixed glo
 - seasonal and historical changes in production/consumption;
 - disruptions or shortages that materially affect availability.
 
-A local price is an economic signal, not a guaranteed trade. A high price in Brno and a low price in Jihlava can create an incentive for firms to buy/sell across those markets, but actual trade still requires willing firms, compatible quantities, transport, facilities, licences and contractual terms.
+A local reference price is an economic signal, not an automatic transaction price or guaranteed trade. A high reference price in Brno and a low one in Jihlava can create an incentive for firms to buy/sell across those markets, but actual trade still requires willing firms, compatible quantities, transport, facilities, licences and contractual terms.
+
+Concrete purchase/sale terms are negotiated with the actual firm. Commercial UI should show the relevant local reference price beside the concrete quoted/negotiated price, quantity, contract duration and transport responsibility so the player can understand the comparison without exposing a counterparty's private reservation price or internal margin.
+
+The player's transport company is not a general commodity-speculation business. It normally transports cargo owned by real sellers/buyers. The player can still buy physical commodities genuinely consumed by its own operations or projects, such as coal, fuel, electricity, parts or construction supplies, through the canonical procurement/supplier systems.
 
 Transport can **change the local markets themselves**. When sustained flows move a commodity from a surplus/cheap market into a deficit/expensive market:
 
@@ -1915,6 +1939,16 @@ This market-intelligence layer is distinct from the Opportunity Board:
 - **Opportunity Board** lists concrete discoverable jobs/tenders/offers from real counterparties.
 
 The two systems can link to each other, but one does not fabricate the other.
+
+The Market supports three legitimate ways to turn intelligence into business:
+
+1. **React to an Opportunity** already created by a real customer/authority.
+2. **Propose a commercial connection** between a legitimately known producer and buyer whose real supply/demand can support the trade, while offering the transport service. The player does not buy/resell the commodity; both counterparties independently evaluate the resulting sale/purchase and transport economics.
+3. **Build or extend a transport corridor/service strategically** and let firms discover/use the resulting real transport option when it is competitive.
+
+The second and third paths must not manufacture demand, inventory or counterparties. If the player knows only an aggregate deficit but not a concrete buyer, the UI may show that the company lacks sufficient commercial intelligence rather than revealing hidden firms.
+
+Opening a specific commodity in Market automatically activates its corresponding market analysis on the main map while keeping the Market window available. The spatial view exposes both local surplus/deficit and local reference price together; exact visual encoding is UI implementation work.
 
 ## 11. Contracts and cargo
 
@@ -2105,6 +2139,14 @@ No leg handoff teleports cargo between vehicles, terminals or operators.
 ##### Existing regular lines as shared capacity
 
 A regular freight Line/Service Pattern can carry demand from **multiple contracts and non-contract cargo at the same time**.
+
+Recurring freight business is primarily contract-driven. A freight Line can additionally publish **open/spot carriage** for compatible spare capacity, but this is deliberately supplementary rather than the normal way a large stable industrial flow is moved.
+
+Open freight uses a public tariff by handling/cargo category (for example ordinary/general goods, bulk, liquids, refrigerated/perishable, hazardous and special/oversized categories), with optional commodity-specific overrides. Contract freight uses its separately negotiated transport price.
+
+A firm can send only a bounded **percentage of its relevant uncontracted flow** through open carriage. This prevents a huge stable producer-consumer flow from silently becoming unlimited anonymous spot cargo. The exact percentage policy/balancing can vary by authored firm/flow characteristics but must be inspectable and must never exceed the real available uncontracted quantity. Stable material flows should create an incentive for the parties/carrier to negotiate a recurring contract.
+
+Open carriage still requires a real origin, destination, compatible handling, available Trip capacity and physical loading/unloading. It never creates cargo merely because a timetable has spare space.
 
 Example:
 
@@ -2593,6 +2635,23 @@ Contract types include:
 - reserved passenger-capacity agreement on an existing Line.
 
 Contract awards should consider transparent factors such as price, capacity, reliability, relevant reputation and customer-specific relationship history. The player must be able to inspect the important decision factors before or after bidding.
+
+For **public/state/municipal service tenders**, use an explicit two-stage rule:
+
+1. every submitted proposal must satisfy all mandatory tender requirements; an invalid proposal cannot be submitted as a compliant bid;
+2. compliant bids are scored using the authority's published criteria and weights.
+
+Price/requested operating subsidy is normally the highest-weight factor, but an authority can also publish weights for relevant-mode operating reliability, company commercial reliability, comfort/service quality where applicable, and company reputation. Do not use hidden preference weights. The UI shows the formula/weights and the player's currently knowable inputs before submission.
+
+Relevant-mode reliability is derived from real history for the mode being tendered, such as rail versus road. Commercial reliability is separate and reflects fulfilment of contracts, promised launch dates, payments/fees and other business obligations. General reputation remains a separate criterion so the same history is not counted twice. New carriers/new modes start from a mildly positive neutral baseline rather than zero or a strong bonus; real history progressively replaces that prior. Ordinary isolated failures have small effects, repeated failures create a trend, and serious material breaches can cause a larger change.
+
+A public-tender bid contains a **concrete service proposal**, not only a subsidy number. It can extend an existing Line, alter a future Line version or propose a new Line/Pattern, provided the proposal meets the tender's required served points/corridor, minimum frequency, capacity, timing/travel-time and quality constraints. The bidder can choose how to meet those outcomes. A proposal may depend on feasible future purchases/access that can genuinely be secured by the promised start date, but it cannot rely on impossible or fabricated capacity.
+
+Competitors' submitted bid terms remain sealed until the tender closes. The player can see the published evaluation method and evaluate their own proposal, but cannot simply undercut a visible rival by one money unit. After award, the result exposes the material scoring breakdown for all legitimately public bids so the outcome is explainable.
+
+Winning binds the **service outcomes promised by the award**, not every internal operating detail forever. The operator may later change vehicles, exact timetable or internal resource allocation without a new award if the service continues to meet all binding route/coverage, frequency, capacity, journey-time, comfort/quality and reliability conditions. Material changes outside those bounds require the applicable amendment/authority process.
+
+Public-service failure is progressive: minor isolated failures affect measured reliability; repeated/material failure can reduce the corresponding subsidy/payment, trigger contract penalties and a cure period; persistent or serious breach can allow termination and a new tender. The operator can also terminate under the contract's notice/settlement rules. Public-service contracts may be fixed-term or, where explicitly offered, indefinite with notice/termination rules. Strategic indefinite awards may require published minimum history/qualification thresholds; other tenders may remain open to new entrants.
 
 Large customers may reserve their most important contracts for carriers with proven history, while still exposing smaller trial jobs that let new entrants build trust.
 
