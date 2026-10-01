@@ -9292,6 +9292,24 @@ Real-world trademarks/brands are avoided.
 
 Vehicles and manufacturers are fictional but historically plausible in appearance, parameters and availability.
 
+### 40.1 Fixed historical introduction dates
+
+Every authored vehicle model/variant family has a **fixed historical introduction date** derived from its real prototype basis. The model does not randomly appear several years early or late between campaigns.
+
+Keep separate:
+
+1. **model existence/introduction** — fixed authored historical date;
+2. **manufacturer production capability** — whether a factory can currently build it;
+3. **dealer stock** — whether a physical unit is already available;
+4. **used-market supply** — whether an existing unit is for sale;
+5. **country/type approval** — whether the configuration can enter normal service in that jurisdiction;
+6. **trade/import access** — whether a legal and physical purchase path currently exists;
+7. **delivery lead time** — whether the player can receive a unit in time for the intended operation.
+
+A model may therefore exist historically from its fixed introduction year while still being temporarily unavailable to the player because the factory is full, the first batch is committed elsewhere, no dealer has stock, national approval is missing or trade/import conditions block delivery.
+
+Do not use randomized technology-release years to create replayability. Replayability comes from real economic capacity, offers, used stock, contracts, trade conditions and competing demand.
+
 Manufacturers are economically present enough to make supply, capacity and backlog meaningful, without becoming a separate deep management game.
 
 ## 41. Performance non-negotiables
