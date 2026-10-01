@@ -41,7 +41,7 @@ Continue the current market/economy/public-tender design pass and reconcile each
 
 ## Open decisions
 
-- [ ] **[DESIGN/CONTENT] Market-area and commodity balancing parameters** — mechanics are confirmed: sub-city market areas, gradual boundary evolution, historically evolving base/reference values and local supply/demand/access adjustments. Define authorable update thresholds/ranges and the initial 1900 commodity/final-consumer catalogue without turning them into hidden mechanics.
+- [ ] **[DESIGN/CONTENT] Market-area and commodity balancing parameters** — mechanics and the canonical 1900 commodity/final-consumer chain catalogue are confirmed. Define authorable market update thresholds/ranges, local price-response bounds, market-area split/merge criteria and initial recipe quantities/capacities without turning them into hidden mechanics.
 - [ ] **[DESIGN] Connection agreements — redesign from scratch in separate thread** — still required for V1. The dedicated [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is intentionally blank; do not carry forward prior draft mechanics unless explicitly re-approved there.
 - [ ] **[DESIGN] Remaining multi-operator passenger ticket cooperation details for V1** — retain the already agreed capacity-sales clause, two directional partner rates and public-tariff-versus-partner-rate margin model, including negative margins. Complete remaining ticket cooperation and product-scope details without reopening those choices. Shared multi-company weekly/monthly products and tariff governance remain a separate unresolved scope question. Connection coordination and partner-capacity sales remain independent; pausing the connection discussion does not remove or finalize the capacity-sales workflow.
 
@@ -49,7 +49,6 @@ Continue the current market/economy/public-tender design pass and reconcile each
 
 ### After the remaining UI decisions
 
-- [ ] **[CONTENT] Author the first 1900 commodity/industry/final-consumer set** and the historical introduction/decline metadata for later commodity families; preserve organic decline rather than hard end dates.
 - [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording only where a decision has actually been confirmed, verify cross-links, decision table and acceptance scenarios. UI-D41 navigation/search and UI-D08 focus/notification behaviour are already confirmed. Keep connection-agreement details open until the separate-thread decisions are reconciled; do not report all V1 design decisions as closed in the meantime.
 - [ ] **[DOC] Reconcile final navigation with README, UI_UX_DESIGN and V1_IMPLEMENTATION_BRIEF**.
 
@@ -100,5 +99,6 @@ These are completed design/documentation tasks, not implemented game features. R
 - [x] UI-D40 — simple World News/history feed with significant world changes, known player impact and strict separation from UI-D24 incidents.
 - [x] UI-D41 — final HUD/navigation and global search, with company/finance top-left, Search/Layers top-right and grouped bottom navigation.
 - [x] **[DESIGN/DOC] Market/economy refinement (2026-10-01)** — confirmed sub-city evolving market areas, final-consumer sinks, historical commodity evolution, reference-versus-negotiated prices, active producer/buyer transport proposals, contract-first freight with transparently flow-dependent bounded open carriage, transparent concrete-plan public-service tenders, and all three public infrastructure/concession models in V1; owning design/UI/test documents updated. Remaining market-area/commodity balancing work stays open above.
+- [x] **[DESIGN/CONTENT] Canonical commodity chains (2026-10-01)** — finalized the 1900 chain families and final sinks, including furniture as a distinct product, separate iron/steel, aggregated textile raw materials, food categories, construction materials, utility energy chains and historically staged later chemicals/plastics/gas/electronics/chips expansion.
 - [x] **[DESIGN/DOC] UI-D37 — External Company & Competitor Detail** — expanded [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md) around preserved UI-D27 agreements, registered the decision/acceptance scenarios in [UI_UX_DESIGN.md](UI_UX_DESIGN.md), and reconciled README and obsolete company-layout-open wording. Six adaptive cards, source/time/permission limits, canonical offer routing and retained company history are confirmed.
 - [x] Documentation checks cover structural validation and validator tests; they are **not** gameplay implementation evidence.
