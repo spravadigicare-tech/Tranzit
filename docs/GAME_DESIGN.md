@@ -4985,9 +4985,15 @@ Infrastructure can be:
 
 A state may commission construction and retain ownership.
 
-Publicly supported corridor/infrastructure projects use a **small enumerated set of contract/ownership models**, not arbitrary mixes of funding, ownership and operating rights assembled per tender. Each model must make the following explicit before bidding: who finances construction, who owns the completed asset, who operates/manages it, what access obligations apply, how long the arrangement lasts and what happens at expiry/termination.
+Publicly supported corridor/infrastructure projects use a **small enumerated set of contract/ownership models**, not arbitrary mixes of funding, ownership and operating rights assembled per tender. Each model must make the following explicit before bidding: who finances construction, who owns the completed asset, who operates it, what access obligations apply, how long the arrangement lasts and what happens at expiry/termination.
 
-The exact supported model set is defined separately; do not create a free-form legal/PPP contract builder merely because real-world arrangements can be more complex.
+Supported models:
+
+1. **State-owned infrastructure with operating right** — the public authority finances/owns the infrastructure while the player can win the right/obligation to operate transport services over it. The player is not the infrastructure manager merely because it operates services there.
+2. **Build–Operate–Transfer concession** — the player finances/builds the specified infrastructure, operates it for the agreed concession period under published conditions, then transfers the asset to the public authority at the defined handover point.
+3. **Publicly co-funded private infrastructure** — the authority contributes to construction while ownership remains private/player-side, subject to explicit funding conditions such as access obligations, fee constraints, minimum service/capacity commitments or a required operating period.
+
+Do **not** add a separate model where state-owned infrastructure is simply entrusted to the player for infrastructure management/administration. Do not create a free-form legal/PPP contract builder merely because real-world arrangements can be more complex.
 
 The state can later tender transport services over the infrastructure.
 
