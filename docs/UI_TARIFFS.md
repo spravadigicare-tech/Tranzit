@@ -193,11 +193,12 @@ These scenarios define evidence to collect when implemented; they are not claims
 | TARUI-A07 | Change a system rate or remove a participating Line after passes were sold. Historical terms and reservations remain traceable; no silent revocation or retrospective surcharge occurs. |
 | TARUI-A08 | Test overlapping eligible products, invalid class, missing sales/checking capability, delayed travel near expiry, pending partner agreement and incomplete drafts. Each state follows the canonical eligibility/agreement rules without duplicate fare charging. |
 | TARUI-A09 | Sell a partner-operated segment under partner rates below, equal to and above the carrier's public retail rate. Passenger price follows the public tariff; partner payable follows the negotiated money/km rate; positive/zero/negative seller margin is shown and posted exactly once. |
+| TARUI-A10 | Build a V1 two-operator through ticket with one seller leg and one partner leg. Show operator/segment fare breakdown and unprotected-transfer status; a seller period pass covers only its eligible own leg. Partner-only resale, recursive third-carrier resale and shared multi-company weekly/monthly products are unavailable. Removing/amending the partner scope after sale does not rewrite the sold ticket; reservation-required partner travel cannot be confirmed without a real reservation. |
 
 ## 10. Decision record
 
 | ID | Scope | Status |
 |---|---|---|
-| UI-D29 | Integrated groups of Lines with common kilometre/zone rates, coexisting global tariffs, shared ticket products and weekly/monthly period tickets with versioned effective changes and capacity-safe reservation behaviour | CONFIRMED on 2026-09-30 |
+| UI-D29 | Integrated groups of one carrier's Lines with common kilometre/zone rates, coexisting global tariffs, shared ticket products and weekly/monthly period tickets with versioned effective changes and capacity-safe reservation behaviour; V1 multi-operator extension is limited to bilateral single-journey through tickets | CONFIRMED on 2026-09-30; V1 partner-ticket boundary finalized 2026-10-01 |
 
-UI-D29 complements UI-D01–UI-D28. GAME_DESIGN Section 31 owns the mechanics; this document owns their UI. Multi-operator participation still requires an actual cooperation/authority agreement and does not arise from unilateral membership selection.
+UI-D29 complements UI-D01–UI-D28. GAME_DESIGN Section 31 owns the tariff/product mechanics and Section 30.3 owns the V1 partner through-ticket extension; this document owns their UI. Multi-operator participation requires an actual bilateral cooperation right and does not arise from unilateral membership selection. Shared multi-company weekly/monthly products are not required in V1.
