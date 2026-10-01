@@ -485,6 +485,79 @@ The expanded catalogue should use these researched values where present:
 
 These anchors do not imply every historical subseries shares one identical configuration.
 
+## 17.1 Initial manufacturer/factory capability timeline
+
+These are authoring anchors for capability state transitions. They are intentionally capability-level rather than exact annual output schedules.
+
+| Fictional manufacturer / plant | Capability timeline |
+|---|---|
+| **Ringhauer Smíchov** | Railway-car/wagon production active before the 1900 start; broad passenger/freight body capability at opening. In 1936 the historical lineage consolidates into a larger wagon-building concern. The game can preserve the original plant/company identity or record the merger while keeping existing assets unchanged. |
+| **Neškoda Plzeň** | Heavy engineering exists in 1900, but complete own locomotive production starts after WWI; first own locomotive capability from 1920. Steam locomotive capability expands through the interwar/post-war period; electric locomotive capability begins in the late 1920s and later becomes a core line. |
+| **ČMS / ČMD Praha** | Opening-era railway machinery/locomotive capability reflects the Bohemian-Moravian engineering lineage. Later capability shifts increasingly toward diesel/electric locomotive production and overhaul. |
+| **Studena Vagónka** | Railway-car/wagon production is active through the 20th century; later becomes a major railcar/EMU production source. |
+| **Lorin & Klement, Mladá Boleslav** | Early road-vehicle capability active before/around the 1900 start for bicycles/motor vehicles, with commercial-vehicle/bus variants becoming available only on their fixed historical dates. |
+| **Fatra Kopřivnice** | Road/commercial vehicle capability active before the 1900 start through the Nesselsdorf/Tatra lineage; authored truck families begin on their fixed historical introduction dates. |
+| **Pragov Praha** | Road-vehicle capability appears when the historical Praga lineage supports the relevant authored model families; no pre-introduction generic truck spawning. |
+| **VIAZ** | Truck production capability begins from the early 1950s industrial lineage; the modern 100-series capability begins from 1974/1975. |
+| **Karusa Vysoké Mýto** | Bus-body production lineage is active by 1947; Karosa state-enterprise identity from 1948. 706 RO-family production from 1947, RTO-family from the later 1950s and Š 11 family from 1965. |
+| **Aviat Letňany** | Medium commercial-vehicle production capability appears with the Avia/Saviem-derived programme; A30-family availability follows its historical introduction rather than being backfilled earlier. |
+| **SORA Libchavy** | Company formation in 1991; bus development starts in 1992 and first prototype appears in 1993. No SOR-badged bus production before that. |
+| **CZ LOKA** | Modern locomotive rebuild/new-build capability follows the historical successor/rebuild specialist timeline; do not project modern EffiShunter capability backwards. |
+
+### Authoring rule for mergers and successor firms
+
+A merger, nationalization, privatization or company-name change can alter:
+
+- factory owner;
+- active brand/manufacturer identity for new orders;
+- support network;
+- export network;
+- capability investment.
+
+It never rewrites the original manufacturer field of an existing physical vehicle.
+
+### Source anchors
+
+- Ringhoffer/VÚKV history: railway-vehicle design/manufacture at Smíchov from the 19th century; 1936 merger into Ringhoffer-Tatra.
+- Škoda Group history: first complete Škoda locomotive delivered in 1920; first electric locomotive programme in the 1920s; substantial interwar export activity.
+- LIAZ history: vehicle production in the Liberec/Mnichovo Hradiště/Rýnovice network from 1951; 100-series introduced in 1974–1975.
+- Iveco Bus/Karosa history: 706 RO production from 1947, Karosa state enterprise from 1948, RTO programme in the later 1950s, Š 11 production from 1965.
+- SOR official history: company established in 1991, development from 1992, first prototype in 1993.
+
+## 17.2 Initial regional market/export profiles
+
+These defaults should be refined per model, but are sufficient to prevent every manufacturer from having identical worldwide availability.
+
+| Manufacturer family | 1900–1945 profile | 1946–1989 profile | 1990+ profile |
+|---|---|---|---|
+| Ringhauer / domestic wagon works | home CZ/Bohemian-Austrian sphere; core regional Central Europe | home/Central Europe; successor-network supply | mainly legacy/used/support, successor products handled by later works |
+| Neškoda | before 1920 heavy components rather than complete own locomotives; from 1920 strong domestic + active exports | strong domestic/Central/Eastern Europe plus selected exports | strong domestic/EU rail market, broader exports by model |
+| ČMS/ČMD | home Central Europe, selected regional exports | strong domestic/Eastern-bloc + export programmes | legacy/rebuild/used ecosystem, successor specialists |
+| Fatra | home Czech/Slovak/Central Europe | strong Central/Eastern Europe and selected global specialist exports | specialist heavy-road exports remain broad |
+| Pragov | home/regional Central Europe | strong domestic/regional | used/legacy support dominates later |
+| VIAZ | n/a before capability | home + Eastern/Central Europe, selected exports | used/legacy market; later successor availability is separate |
+| Karusa | n/a before bus lineage | strong home + significant export share | home/core Central Europe then Ivego-successor network |
+| SORA | n/a | n/a until 1991 | home Czech/Slovak, core Central/Eastern Europe, selected EU exports |
+| German manufacturers | Germany home; Central/Western Europe core | strong European export | broad EU/global |
+| Ikarusz | Hungary home | very strong Eastern-bloc/Central Europe export | used/support-heavy after classic production era |
+| PESKA/Soláris | n/a/limited before modern period | domestic Polish capability by relevant model era | Poland home, Central/Eastern Europe core, broader EU exports |
+
+## 17.3 Initial factory-capacity balancing bands
+
+These are **game balancing bands**, not claims of historical monthly output.
+
+Use them to initialize the economic simulation before plant-specific calibration:
+
+| Factory scale | Road vehicles / game month | Railcars/locomotives / game month | Coaches/wagons / game month |
+|---|---:|---:|---:|
+| small/specialist | 2–8 | 0.5–2 | 2–10 |
+| medium | 8–30 | 1–5 | 10–40 |
+| large/mass-production | 30–120+ | 3–12 | 30–120+ |
+
+The 14-day game month is the accounting unit here. A fractional rail rate means one unit may take several game months.
+
+Actual output is constrained by labour, material supply, plant-hours, setup/changeover and backlog. Do not turn these bands into guaranteed free output.
+
 ## 18. Completion gate for one vehicle family
 
 A model family is content-complete only when all of the following exist:
