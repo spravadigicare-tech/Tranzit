@@ -343,17 +343,13 @@ Examples:
   - revised heating/control package;
   - major engine/traction rebuild;
 - road vehicle family:
-  - flatbed;
-  - box body;
-  - refrigerated body;
-  - tanker;
-  - recovery body;
-  - later upgraded driveline/interior/safety package.
+  - factory-produced body/configuration variants are separate templates where historically offered;
+  - later upgraded driveline/interior/safety packages remain within that fixed physical body/platform.
 
 A template is not only a cosmetic skin. It defines the actual configuration that matters to simulation, such as:
 
 - passenger classes/zones and seat count;
-- cargo/body compatibility and payload;
+- cargo/body compatibility and payload within the fixed factory body/platform;
 - installed equipment;
 - power/traction package;
 - braking/control systems;
@@ -367,7 +363,12 @@ A template is not only a cosmetic skin. It defines the actual configuration that
 
 A concrete physical vehicle instance always references exactly one active template.
 
-Changing configuration does **not** mutate statistics instantly. A conversion creates a real workshop/manufacturer job that:
+A template never changes the vehicle's fundamental body shell, frame geometry or visual platform. If a historically different body existed, it is authored as a separate factory-produced variant/model template rather than created later by a workshop reshape. A coach does not become a different coachbody, and a rigid truck does not become an unrelated tanker chassis through retrofit.
+
+
+Changing configuration does **not** mutate statistics instantly. The player orders a **retrofit to an existing target template**. The job can be performed by the player's own compatible workshop or by an external qualified provider; the player does not manually edit individual parts on the vehicle.
+
+A retrofit creates a real workshop/manufacturer job that:
 
 1. reserves the physical vehicle;
 2. requires a compatible workshop/provider and skills;
@@ -418,9 +419,9 @@ For a passenger coach, the editor may expose groups such as:
 For a truck:
 
 - chassis-cab family;
-- body type;
-- cargo equipment;
-- refrigeration/tank/specialist package;
+- the existing factory body/platform is fixed and cannot be reshaped by retrofit;
+- cargo equipment supported by that body;
+- refrigeration/tank/specialist equipment only where the original body/platform was designed to accept it;
 - engine/driveline option when genuinely offered;
 - safety/comfort package.
 
