@@ -67,8 +67,10 @@
       "enum": [
         "locomotive",
         "railcar",
-        "multiple_unit",
+        "emu",
+        "dmu",
         "passenger_coach",
+        "passenger_coach_set",
         "service_coach",
         "freight_wagon",
         "truck",
