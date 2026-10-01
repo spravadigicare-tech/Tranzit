@@ -271,6 +271,7 @@ A vehicle model remains in the historical catalogue indefinitely, but the manufa
 
 A model can move through these stages:
 
+0. **Prototype / pre-series** — the model physically exists and can appear in history/news/tests, but no ordinary commercial new-build offer exists yet. Prototype assets belong to their actual owner and are not generic marketplace stock.
 1. **Series production** — ordinary catalogue production with normal tooling, suppliers and workforce.
 2. **Low-rate / special-order production** — no longer mass-produced, but the manufacturer can still build occasional new units at higher cost and longer lead time.
 3. **Parts and overhaul support only** — the manufacturer or successor can still supply parts, documentation, rebuilds or selected retrofit packages, but cannot build a complete new vehicle.
