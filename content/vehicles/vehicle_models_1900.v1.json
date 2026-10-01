@@ -1,0 +1,1402 @@
+{
+  "schema_version": 1,
+  "scope": "1900 opening vehicle families",
+  "notes": [
+    "Rail and road values sourced from exact prototypes where possible. Generic Ringhauer wagon/coach families are representative Central-European authoring families and are marked medium confidence.",
+    "Production build times and cost indices are game balancing defaults from docs/VEHICLE_CONTENT_AUTHORING.md, not historical purchase prices.",
+    "No row contains an available_until gate."
+  ],
+  "models": [
+    {
+      "schema_version": 1,
+      "id": "cms_97_mravenec",
+      "display_name": "ČMS 97 „Mravenec“",
+      "real_prototype": "kkStB 97 / ČSD 310.0",
+      "introduction_year": 1878,
+      "date_precision": "year",
+      "manufacturer_id": "cms_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "yard",
+        "industrial",
+        "local_freight",
+        "local_passenger"
+      ],
+      "support_family_id": "rail_steam_light",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 7.927,
+        "height_m": 4.034,
+        "empty_mass_t": 22.1,
+        "service_mass_t": 29,
+        "max_speed_kph": 40,
+        "structural_speed_limit_kph": 40,
+        "power_kw": 230,
+        "starting_tractive_effort_kn": null,
+        "axle_count": 3,
+        "axle_load_t": 9.7,
+        "minimum_curve_m": 90,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ],
+        "coal_capacity_t": 1,
+        "water_capacity_m3": 3
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_cms_praha"
+        ],
+        "series_build_days": 24,
+        "special_build_days": 42,
+        "base_cost_index": 80,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_light",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2000,
+        "workshop_exam_km": 9000,
+        "heavy_overhaul_km": 70000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.05,
+        "relative_water_per_useful_work": 1
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "cms_97_standard_1900"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://de.wikipedia.org/wiki/KkStB_97"
+        ],
+        "notes": "Exact representative dimensions/mass/speed/power from kkStB 97 technical data; capacity values use lower documented supply values.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "cms_99_lokalka",
+      "display_name": "ČMS 99 „Lokálka“",
+      "real_prototype": "kkStB 99 / ČSD 320.0",
+      "introduction_year": 1897,
+      "date_precision": "year",
+      "manufacturer_id": "cms_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "local_mixed",
+        "branch_passenger",
+        "branch_freight"
+      ],
+      "support_family_id": "rail_steam_light",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 8.866,
+        "height_m": 4.4,
+        "empty_mass_t": null,
+        "service_mass_t": 39.3,
+        "max_speed_kph": 50,
+        "structural_speed_limit_kph": 50,
+        "power_kw": 221,
+        "peak_power_kw": 294,
+        "starting_tractive_effort_kn": null,
+        "axle_count": 4,
+        "axle_load_t": null,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_cms_praha",
+          "macro_at_krauss",
+          "macro_at_floridsdorf"
+        ],
+        "series_build_days": 30,
+        "special_build_days": 48,
+        "base_cost_index": 90,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_light",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2200,
+        "workshop_exam_km": 10000,
+        "heavy_overhaul_km": 75000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1,
+        "relative_water_per_useful_work": 1
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "cms_99_standard_1900"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://de.wikipedia.org/wiki/KkStB_99"
+        ],
+        "notes": "39.3 t service mass, 50 km/h and 300 PS required/400 PS on good coal are documented for class 99. Game power uses 300 PS≈221 kW continuous authoring value and 400 PS≈294 kW peak.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "cms_170_horal",
+      "display_name": "ČMS 170 „Horal“",
+      "real_prototype": "kkStB 170 / ČSD 434.0",
+      "introduction_year": 1897,
+      "date_precision": "year",
+      "manufacturer_id": "cms_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "heavy_freight",
+        "mountain_freight",
+        "mixed"
+      ],
+      "support_family_id": "rail_steam_mainline",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 17.428,
+        "width_m": 3.036,
+        "height_m": 4.57,
+        "empty_mass_t": 61,
+        "service_mass_t": 69,
+        "max_speed_kph": 60,
+        "structural_speed_limit_kph": 60,
+        "power_kw": 690,
+        "peak_power_kw": 880,
+        "starting_tractive_effort_kn": 77,
+        "axle_count": 5,
+        "axle_load_t": 14,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_cms_praha",
+          "macro_at_floridsdorf",
+          "macro_at_wiener_neustadt"
+        ],
+        "series_build_days": 42,
+        "special_build_days": 63,
+        "base_cost_index": 115,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_mainline",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2200,
+        "workshop_exam_km": 10000,
+        "heavy_overhaul_km": 80000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.12,
+        "relative_water_per_useful_work": 1.08
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "cms_170_freight_1900"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://de.wikipedia.org/wiki/KkStB_170"
+        ],
+        "notes": "Dimensions and mass/speed from kkStB 170 data. Continuous/peak power and ~77 kN starting effort cross-checked against technical summaries; use representative early class authoring values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "cms_6_rychlik",
+      "display_name": "ČMS 6 „Rychlík“",
+      "real_prototype": "kkStB 6 / ČSD 264.0",
+      "introduction_year": 1894,
+      "date_precision": "year",
+      "manufacturer_id": "cms_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "express_passenger",
+        "fast_passenger"
+      ],
+      "support_family_id": "rail_steam_mainline",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 10.007,
+        "empty_mass_t": 50.1,
+        "service_mass_t": 56.1,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 90,
+        "power_kw": 588,
+        "peak_power_kw": 736,
+        "starting_tractive_effort_kn": null,
+        "axle_count": 4,
+        "axle_load_t": null,
+        "minimum_curve_m": null,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_at_floridsdorf",
+          "macro_at_wiener_neustadt"
+        ],
+        "series_build_days": null,
+        "special_build_days": null,
+        "base_cost_index": 130,
+        "initial_capability_state": "used_market_only"
+      },
+      "maintenance_profile": {
+        "family": "steam_mainline",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 1800,
+        "workshop_exam_km": 8500,
+        "heavy_overhaul_km": 65000,
+        "heavy_overhaul_years": 2
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.2,
+        "relative_water_per_useful_work": 1.12
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "cms_6_express_1900"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://de.wikipedia.org/wiki/KkStB_6"
+        ],
+        "notes": "Production ended 1898, therefore 1900 world supply is existing/used stock rather than new series production. Documented continuous 800 PS and peak 1000 PS are stored as ~588/736 kW.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_o10",
+      "display_name": "Ringhauer O10",
+      "real_prototype": "Representative Central-European 2-axle open goods wagon",
+      "introduction_year": 1880,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "open_bulk",
+        "coal",
+        "ore",
+        "timber"
+      ],
+      "support_family_id": "rail_wagon_basic",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 7,
+        "width_m": 2.7,
+        "height_m": 2.7,
+        "empty_mass_t": 8,
+        "service_mass_t": 18,
+        "max_speed_kph": 45,
+        "structural_speed_limit_kph": 45,
+        "payload_t": 10,
+        "cargo_volume_m3": 22,
+        "axle_count": 2,
+        "axle_load_t": 9,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 6,
+        "special_build_days": 12,
+        "base_cost_index": 40,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_basic",
+        "running_exam_km": 7000,
+        "workshop_service_km": 35000,
+        "heavy_work_km": 180000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_o10_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative authoring family, not one exact prototype. Ringhoffer was the monarchy's largest wagon factory; dimensions/payload are balancing targets for a typical period 10 t open wagon.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_g10",
+      "display_name": "Ringhauer G10",
+      "real_prototype": "Representative Central-European 2-axle covered goods wagon",
+      "introduction_year": 1880,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "covered_general",
+        "bagged_goods"
+      ],
+      "support_family_id": "rail_wagon_basic",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 7.5,
+        "width_m": 2.7,
+        "height_m": 3.3,
+        "empty_mass_t": 9,
+        "service_mass_t": 19,
+        "max_speed_kph": 55,
+        "structural_speed_limit_kph": 55,
+        "payload_t": 10,
+        "cargo_volume_m3": 35,
+        "axle_count": 2,
+        "axle_load_t": 9.5,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 7,
+        "special_build_days": 13,
+        "base_cost_index": 45,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_basic",
+        "running_exam_km": 7000,
+        "workshop_service_km": 35000,
+        "heavy_work_km": 180000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_g10_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative period family; payload/volume are game authoring targets.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_p12",
+      "display_name": "Ringhauer P12",
+      "real_prototype": "Representative 2-axle flat/bolster wagon",
+      "introduction_year": 1885,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "flat",
+        "timber",
+        "machinery",
+        "long_load"
+      ],
+      "support_family_id": "rail_wagon_basic",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 8.5,
+        "width_m": 2.8,
+        "height_m": 1.3,
+        "empty_mass_t": 7,
+        "service_mass_t": 19,
+        "max_speed_kph": 50,
+        "structural_speed_limit_kph": 50,
+        "payload_t": 12,
+        "cargo_volume_m3": null,
+        "axle_count": 2,
+        "axle_load_t": 9.5,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 6,
+        "special_build_days": 12,
+        "base_cost_index": 45,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_basic",
+        "running_exam_km": 7000,
+        "workshop_service_km": 35000,
+        "heavy_work_km": 180000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_p12_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative period flat-wagon family.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_z10",
+      "display_name": "Ringhauer Z10",
+      "real_prototype": "Representative early riveted tank wagon",
+      "introduction_year": 1890,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "liquid_tank",
+        "restricted_liquid"
+      ],
+      "support_family_id": "rail_wagon_special",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 7.2,
+        "width_m": 2.6,
+        "height_m": 3.4,
+        "empty_mass_t": 8,
+        "service_mass_t": 18,
+        "max_speed_kph": 45,
+        "structural_speed_limit_kph": 45,
+        "payload_t": 10,
+        "cargo_volume_m3": 12,
+        "axle_count": 2,
+        "axle_load_t": 9,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 9,
+        "special_build_days": 16,
+        "base_cost_index": 70,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_special",
+        "running_exam_km": 6000,
+        "workshop_service_km": 28000,
+        "heavy_work_km": 120000,
+        "pressure_tank_inspection_years": 2
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900",
+        "tank_wagon_service_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_z10_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative specialist tank-wagon authoring family; exact tank construction varied widely.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_i8_lednice",
+      "display_name": "Ringhauer I8 „Lednice“",
+      "real_prototype": "Representative ice-insulated/refrigerated goods van",
+      "introduction_year": 1895,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "perishable",
+        "ice_refrigerated"
+      ],
+      "support_family_id": "rail_wagon_special",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 8,
+        "width_m": 2.7,
+        "height_m": 3.5,
+        "empty_mass_t": 10,
+        "service_mass_t": 18,
+        "max_speed_kph": 55,
+        "structural_speed_limit_kph": 55,
+        "payload_t": 8,
+        "cargo_volume_m3": 28,
+        "axle_count": 2,
+        "axle_load_t": 9,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "ice"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 18,
+        "base_cost_index": 80,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_special",
+        "running_exam_km": 6000,
+        "workshop_service_km": 25000,
+        "heavy_work_km": 110000,
+        "insulation_service_months": 6
+      },
+      "consumption_profile": {
+        "type": "ice_cold_chain",
+        "ice_use_relative": 1
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900",
+        "ice_van_cooling_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_i8_ice"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative period insulated/ice-cooled van; game figures are authoring targets.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_h15",
+      "display_name": "Ringhauer H15",
+      "real_prototype": "Representative heavy machinery / well wagon family",
+      "introduction_year": 1890,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "heavy_load",
+        "indivisible_machinery"
+      ],
+      "support_family_id": "rail_wagon_special",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 10,
+        "width_m": 2.8,
+        "height_m": 1.5,
+        "empty_mass_t": 10,
+        "service_mass_t": 25,
+        "max_speed_kph": 40,
+        "structural_speed_limit_kph": 40,
+        "payload_t": 15,
+        "cargo_volume_m3": null,
+        "axle_count": 4,
+        "axle_load_t": 6.25,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 20,
+        "base_cost_index": 90,
+        "initial_capability_state": "low_rate_special_order"
+      },
+      "maintenance_profile": {
+        "family": "wagon_special",
+        "running_exam_km": 5000,
+        "workshop_service_km": 24000,
+        "heavy_work_km": 100000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "freight_wagon_brake_1900",
+        "heavy_load_restraint_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_h15_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative specialist family. Four-axle balancing configuration chosen to keep axle load plausible for a 15 t indivisible payload.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_l2",
+      "display_name": "Ringhauer L2",
+      "real_prototype": "Representative Central-European 2-axle wooden local coach",
+      "introduction_year": 1885,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "roles": [
+        "local_passenger",
+        "economy"
+      ],
+      "support_family_id": "rail_coach_wood_legacy",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 9,
+        "width_m": 2.8,
+        "height_m": 3.6,
+        "empty_mass_t": 11,
+        "service_mass_t": 14,
+        "max_speed_kph": 50,
+        "structural_speed_limit_kph": 50,
+        "seats": 42,
+        "standing": 0,
+        "axle_count": 2,
+        "axle_load_t": 7,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "steam_heat_optional"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 10,
+        "special_build_days": 18,
+        "base_cost_index": 70,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "coach_wood_legacy",
+        "running_exam_km": 6000,
+        "workshop_service_km": 30000,
+        "heavy_work_km": 140000,
+        "body_exam_years": 2
+      },
+      "consumption_profile": {
+        "type": "hauled_auxiliary",
+        "heating_relative": 0.4
+      },
+      "equipment_group_ids": [
+        "coach_layout_1900",
+        "coach_heat_light_1900",
+        "coach_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_l2_economy"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative local-coach family; exact dimensions/capacity are authoring targets based on period 2-axle stock.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_b4_corridor",
+      "display_name": "Ringhauer B4 Corridor",
+      "real_prototype": "Representative 4-axle bogie corridor coach",
+      "introduction_year": 1895,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "roles": [
+        "mainline_passenger",
+        "economy",
+        "business"
+      ],
+      "support_family_id": "rail_coach_wood_legacy",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 16.5,
+        "width_m": 2.9,
+        "height_m": 3.9,
+        "empty_mass_t": 28,
+        "service_mass_t": 33,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 80,
+        "seats": 56,
+        "standing": 0,
+        "axle_count": 4,
+        "axle_load_t": 8.25,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "steam_heat_optional"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 16,
+        "special_build_days": 28,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "coach_wood_legacy",
+        "running_exam_km": 7000,
+        "workshop_service_km": 35000,
+        "heavy_work_km": 160000,
+        "body_exam_years": 2
+      },
+      "consumption_profile": {
+        "type": "hauled_auxiliary",
+        "heating_relative": 0.6
+      },
+      "equipment_group_ids": [
+        "coach_layout_1900",
+        "coach_heat_light_1900",
+        "coach_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_b4_economy",
+        "ringhauer_b4_business"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative mainline bogie coach; Ringhoffer passenger stock and 1900-era 2/4-axle stock are documented, but exact game family dimensions/capacity are authoring targets.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_luxus_schlaf",
+      "display_name": "Ringhauer Luxus Schlaf",
+      "real_prototype": "Representative late-19th-century sleeping/dining coach",
+      "introduction_year": 1898,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "passenger_coach",
+      "roles": [
+        "sleeper",
+        "premium",
+        "dining"
+      ],
+      "support_family_id": "rail_coach_wood_legacy",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 17,
+        "width_m": 2.9,
+        "height_m": 4,
+        "empty_mass_t": 30,
+        "service_mass_t": 35,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 80,
+        "seats": null,
+        "standing": 0,
+        "berths": 22,
+        "axle_count": 4,
+        "axle_load_t": 8.75,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "steam_heat",
+          "service_supplies"
+        ]
+      },
+      "production": {
+        "source_kind": "mixed",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 22,
+        "special_build_days": 35,
+        "base_cost_index": 145,
+        "initial_capability_state": "low_rate_special_order"
+      },
+      "maintenance_profile": {
+        "family": "coach_wood_legacy",
+        "running_exam_km": 6000,
+        "workshop_service_km": 28000,
+        "heavy_work_km": 130000,
+        "interior_service_months": 3
+      },
+      "consumption_profile": {
+        "type": "hauled_service_coach",
+        "heating_relative": 0.8,
+        "service_supply_relative": 1
+      },
+      "equipment_group_ids": [
+        "coach_premium_layout_1900",
+        "coach_heat_light_1900",
+        "coach_brake_1900",
+        "coach_service_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_luxus_sleeper",
+        "ringhauer_luxus_dining"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Period luxury/salon/dining stock is documented in Ringhoffer production. Exact berth/dining layouts are representative game templates.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "ringhauer_post_gepack",
+      "display_name": "Ringhauer Post/Gepäck",
+      "real_prototype": "Representative baggage/post/service coach",
+      "introduction_year": 1885,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "service_coach",
+      "roles": [
+        "baggage",
+        "mail",
+        "guard_service"
+      ],
+      "support_family_id": "rail_coach_wood_legacy",
+      "regional_market_profile_id": "market_cz_domestic_1900",
+      "platform": {
+        "length_m": 10.5,
+        "width_m": 2.8,
+        "height_m": 3.7,
+        "empty_mass_t": 14,
+        "service_mass_t": 20,
+        "max_speed_kph": 65,
+        "structural_speed_limit_kph": 65,
+        "payload_t": 6,
+        "cargo_volume_m3": 30,
+        "seats": 0,
+        "standing": 0,
+        "axle_count": 2,
+        "axle_load_t": 10,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "steam_heat_optional"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 12,
+        "special_build_days": 20,
+        "base_cost_index": 80,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "coach_wood_legacy",
+        "running_exam_km": 6000,
+        "workshop_service_km": 30000,
+        "heavy_work_km": 140000
+      },
+      "consumption_profile": {
+        "type": "hauled_auxiliary",
+        "heating_relative": 0.2
+      },
+      "equipment_group_ids": [
+        "service_coach_layout_1900",
+        "coach_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "ringhauer_post_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative service/post coach; NTM confirms period service/post/passenger stock categories in Ringhoffer-heavy collections.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "road_h2_city_dray",
+      "display_name": "Městský valník H2",
+      "real_prototype": "Representative 2-horse urban dray",
+      "introduction_year": 1850,
+      "date_precision": "year",
+      "manufacturer_id": "local_coachbuilder",
+      "mode": "road",
+      "vehicle_kind": "horse_freight",
+      "roles": [
+        "local_freight",
+        "urban_delivery"
+      ],
+      "support_family_id": "road_horse_vehicle",
+      "regional_market_profile_id": "market_local_builder",
+      "platform": {
+        "length_m": 4,
+        "width_m": 1.8,
+        "height_m": 1.8,
+        "empty_mass_t": 0.7,
+        "service_mass_t": 2.7,
+        "max_speed_kph": 8,
+        "structural_speed_limit_kph": 10,
+        "payload_t": 2,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "feed",
+          "water",
+          "rest"
+        ]
+      },
+      "production": {
+        "source_kind": "local_builder",
+        "factory_ids": [],
+        "series_build_days": 6,
+        "special_build_days": 10,
+        "base_cost_index": 45,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "horse_vehicle",
+        "vehicle_service_days": 14,
+        "harness_service_days": 7,
+        "stable_support_required": true
+      },
+      "consumption_profile": {
+        "type": "animal_traction",
+        "feed_relative": 1,
+        "water_relative": 1,
+        "rest_requirement": 1
+      },
+      "equipment_group_ids": [
+        "horse_freight_body_1900"
+      ],
+      "built_in_template_ids": [
+        "road_h2_flatbed"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.tatra.cz/o-spolecnosti/?lang=en"
+        ],
+        "notes": "Representative pre-motor local freight vehicle. Dimensions/payload are game authoring values rather than one named prototype; local coachbuilding was widespread and Tatra's precursor began carriage production in 1850.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "road_h4_heavy_wagon",
+      "display_name": "Těžký povoz H4",
+      "real_prototype": "Representative 4-horse heavy freight wagon",
+      "introduction_year": 1850,
+      "date_precision": "year",
+      "manufacturer_id": "local_coachbuilder",
+      "mode": "road",
+      "vehicle_kind": "horse_freight",
+      "roles": [
+        "heavy_local_freight",
+        "construction",
+        "bulk_local"
+      ],
+      "support_family_id": "road_horse_vehicle",
+      "regional_market_profile_id": "market_local_builder",
+      "platform": {
+        "length_m": 5.5,
+        "width_m": 2,
+        "height_m": 2,
+        "empty_mass_t": 1.2,
+        "service_mass_t": 5.2,
+        "max_speed_kph": 6,
+        "structural_speed_limit_kph": 8,
+        "payload_t": 4,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "feed",
+          "water",
+          "rest"
+        ]
+      },
+      "production": {
+        "source_kind": "local_builder",
+        "factory_ids": [],
+        "series_build_days": 8,
+        "special_build_days": 14,
+        "base_cost_index": 60,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "horse_vehicle",
+        "vehicle_service_days": 14,
+        "harness_service_days": 7,
+        "stable_support_required": true
+      },
+      "consumption_profile": {
+        "type": "animal_traction",
+        "feed_relative": 1.8,
+        "water_relative": 1.8,
+        "rest_requirement": 1.3
+      },
+      "equipment_group_ids": [
+        "horse_freight_body_1900"
+      ],
+      "built_in_template_ids": [
+        "road_h4_heavy_flatbed"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.tatra.cz/o-spolecnosti/?lang=en"
+        ],
+        "notes": "Representative heavy horse wagon; game values are balancing targets.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "daimlar_lastwagen_1896",
+      "display_name": "Daimlar Lastwagen 1896",
+      "real_prototype": "Daimler Motor-Lastwagen 1896",
+      "introduction_year": 1896,
+      "date_precision": "year",
+      "manufacturer_id": "daimlar_motoren",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "early_motor_freight",
+        "local_freight"
+      ],
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "market_german_early_motor_cz",
+      "platform": {
+        "length_m": 4.5,
+        "width_m": 1.5,
+        "height_m": null,
+        "empty_mass_t": 1.5,
+        "service_mass_t": 3,
+        "max_speed_kph": 12,
+        "structural_speed_limit_kph": 12,
+        "payload_t": 1.5,
+        "power_kw": 2.9,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_daimlar"
+        ],
+        "series_build_days": 18,
+        "special_build_days": 28,
+        "base_cost_index": 145,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "early_petrol",
+        "light_service_km": 700,
+        "workshop_service_km": 3500,
+        "major_overhaul_km": 25000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": 6,
+        "reference_load_factor": 0.5
+      },
+      "equipment_group_ids": [
+        "early_truck_factory_body_1896"
+      ],
+      "built_in_template_ids": [
+        "daimlar_1896_flatbed"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.daimlertruck.com/en/newsroom/pressrelease/the-first-truck-in-the-world-was-built-by-gottlieb-daimler-in-1896-49433712",
+          "https://mercedes-benz-trucks.co.za/celebrate-with-us/130-years-of-trucking/"
+        ],
+        "notes": "Official Daimler/Mercedes history: 4 hp (~2.9 kW), 1.5 t payload, 12 km/h. 6 L/100 km is reported for the first truck in Daimler history material and is used as a reference consumption value.",
+        "confidence": "high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "thornycroft_steam_1t",
+      "display_name": "Thornycroft Steam 1T „Konvice“",
+      "real_prototype": "Thornycroft steam motor-carriage 1896",
+      "introduction_year": 1896,
+      "date_precision": "year",
+      "manufacturer_id": "thornycroft_import",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "steam_freight",
+        "special_import"
+      ],
+      "support_family_id": "road_early_steam",
+      "regional_market_profile_id": "market_british_early_special_cz",
+      "platform": {
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "empty_mass_t": 1.78,
+        "service_mass_t": 2.78,
+        "max_speed_kph": 12,
+        "structural_speed_limit_kph": 16,
+        "payload_t": 1,
+        "power_kw": null,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "coke",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_gb_thornycroft"
+        ],
+        "series_build_days": 24,
+        "special_build_days": 38,
+        "base_cost_index": 160,
+        "initial_capability_state": "low_rate_special_order"
+      },
+      "maintenance_profile": {
+        "family": "early_steam_road",
+        "service_preparation": "each_operating_day",
+        "light_service_km": 400,
+        "workshop_service_km": 2000,
+        "boiler_exam_months": 3
+      },
+      "consumption_profile": {
+        "type": "steam_road_work_curve",
+        "relative_fuel_per_work": 1.3,
+        "relative_water_per_work": 1.4
+      },
+      "equipment_group_ids": [
+        "early_steam_road_body_1896"
+      ],
+      "built_in_template_ids": [
+        "thornycroft_1t_platform"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.carsandracingstuff.com/library/articles/22063.php"
+        ],
+        "notes": "1896 period source describes one-ton payload and ~35 cwt full working weight with coke/driver/water for 20 miles. Max-speed value is a conservative game authoring target pending stronger exact source.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "horse_omnibus_o12",
+      "display_name": "Koňský omnibus O12",
+      "real_prototype": "Representative horse omnibus",
+      "introduction_year": 1850,
+      "date_precision": "year",
+      "manufacturer_id": "local_coachbuilder",
+      "mode": "road",
+      "vehicle_kind": "horse_bus",
+      "roles": [
+        "local_passenger",
+        "city_passenger"
+      ],
+      "support_family_id": "road_horse_vehicle",
+      "regional_market_profile_id": "market_local_builder",
+      "platform": {
+        "length_m": 4.8,
+        "width_m": 2,
+        "height_m": 2.7,
+        "empty_mass_t": 1.4,
+        "service_mass_t": 2.5,
+        "max_speed_kph": 8,
+        "structural_speed_limit_kph": 10,
+        "seats": 12,
+        "standing": 0,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "feed",
+          "water",
+          "rest"
+        ]
+      },
+      "production": {
+        "source_kind": "local_builder",
+        "factory_ids": [],
+        "series_build_days": 8,
+        "special_build_days": 14,
+        "base_cost_index": 50,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "horse_vehicle",
+        "vehicle_service_days": 14,
+        "harness_service_days": 7,
+        "stable_support_required": true
+      },
+      "consumption_profile": {
+        "type": "animal_traction",
+        "feed_relative": 1.2,
+        "water_relative": 1.2,
+        "rest_requirement": 1.1
+      },
+      "equipment_group_ids": [
+        "horse_bus_layout_1900"
+      ],
+      "built_in_template_ids": [
+        "horse_omnibus_12_basic"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.tatra.cz/o-spolecnosti/?lang=en"
+        ],
+        "notes": "Representative horse omnibus; dimensions/capacity are game authoring targets, not a single named prototype.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "benc_omnibus_1895",
+      "display_name": "Benc Omnibus 1895",
+      "real_prototype": "Benz Omnibus 1895",
+      "introduction_year": 1895,
+      "date_precision": "year",
+      "manufacturer_id": "benc_cie",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "early_motor_passenger",
+        "local_passenger"
+      ],
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "market_german_early_motor_cz",
+      "platform": {
+        "length_m": 3.4,
+        "width_m": 1.8,
+        "height_m": 2.5,
+        "empty_mass_t": 1.2,
+        "service_mass_t": null,
+        "max_speed_kph": 20,
+        "structural_speed_limit_kph": 20,
+        "seats": 7,
+        "standing": 0,
+        "power_kw": 3.7,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_benc"
+        ],
+        "series_build_days": null,
+        "special_build_days": null,
+        "base_cost_index": 150,
+        "initial_capability_state": "used_market_only"
+      },
+      "maintenance_profile": {
+        "family": "early_petrol",
+        "light_service_km": 500,
+        "workshop_service_km": 2500,
+        "major_overhaul_km": 18000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "early_bus_layout_1895"
+      ],
+      "built_in_template_ids": [
+        "benc_1895_landauer"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://media.mercedes-benz.pl/asset/6d549b11-5c43-42d3-99e9-8f5fcd4d340f/25c0008-006",
+          "https://de.wikipedia.org/wiki/Benz_Omnibus_%281895%29"
+        ],
+        "notes": "3.7 kW, 1895 and eight total seats including driver are documented; game passenger capacity is seven plus driver. Production ended 1898, so 1900 supply is used/existing stock only.",
+        "confidence": "high"
+      }
+    }
+  ]
+}
