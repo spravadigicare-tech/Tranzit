@@ -1967,7 +1967,7 @@ Prices must be explainable. The UI should be able to show why a market is expens
 
 Do not expose perfect information the player's company could not plausibly know. Market visibility follows the same branch/communications/information rules as other commercial intelligence; unknown or stale information should be labelled accordingly.
 
-Local price changes are event/coarse-tick driven and aggregated. Do not continuously solve every firm-to-firm market pair every frame.
+Local price changes are event/coarse-tick driven and aggregated. The **normal market-price update cadence is once per game day**. Physical deliveries, production, consumption and inventories still update when they actually occur, but the local reference price reacts on the next daily market update rather than after every wagon or truck movement. Material exceptional events such as a major mine/factory closure, severe disruption or abrupt market-access change may trigger an explicit early recalculation. Do not continuously solve every firm-to-firm market pair every frame.
 
 ### 10.6 Market intelligence for transport opportunities
 
