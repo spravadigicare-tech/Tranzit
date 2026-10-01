@@ -60,9 +60,9 @@ Transport one 100 t shipment using road collection, rail trunk and road delivery
 
 Pass: exactly 100 t is accounted for unless a separately recorded loss is injected; parts recover independently; no duplicated reservation or virtual transfer; final payment/completion follows actual accepted delivery.
 
-### G-05 — Passenger revenue, integrated tickets and the unprotected-transfer boundary
+### G-05 — Passenger revenue, integrated tickets and the ordinary-transfer boundary
 
-Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Define a company/default tariff and an integrated rail/bus tariff system with one single-journey product plus weekly and monthly passes. Use open/optional/required reservations where supported and at least two capacity zones/products. Sell a period pass, use it across a covered transfer, observe actual queues/crowding and verify that pass ownership does not create capacity. Also sell the currently defined two-operator through ticket under the partner-capacity-sales clause, then delay the inbound leg and reduce onward capacity without adding any connection-protection clause.
+Operate a local bus feeder, rail service and intercity/local onward service with actual walking links and appropriate ticket channels. Define a company/default tariff and an integrated rail/bus tariff system with one single-journey product plus weekly and monthly passes. Use open/optional/required reservations where supported and at least two capacity zones/products. Sell a period pass, use it across a covered transfer, observe actual queues/crowding and verify that pass ownership does not create capacity. Also sell the currently defined two-operator through ticket under the partner-capacity-sales clause, then delay the inbound leg and reduce onward capacity.
 
 Pass: one integrated covered journey does not charge duplicate base fares at each transfer; weekly/monthly validity uses 7/14 game days; a pass sale posts revenue once while covered boardings do not duplicate cash; mandatory reservations still use real segment capacity; sold product terms survive later tariff changes; the partner segment settles exactly once under its captured agreement version. The transfer creates no special timetable hold, guarantee or automatic partner rebooking.
 
