@@ -69,6 +69,8 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
         "support_families.v1.json",
         "regional_market_profiles.v1.json",
         "production_input_groups.v1.json",
+        "factory_capability_policies.v1.json",
+        "import_route_profiles.v1.json",
         "equipment_options_1900.v1.json",
         "built_in_templates_1900.v1.json",
         "vehicle_models_1900.v1.json",
@@ -134,6 +136,27 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
     for duplicate in sorted(_duplicates(production_recipe_ids)):
         errors.append(f"production_input_groups.v1.json: duplicate recipe id {duplicate}")
     production_recipe_set = set(production_recipe_ids)
+
+    capability_doc = docs.get("factory_capability_policies.v1.json", {})
+    capability_policies = capability_doc.get("policies", []) if isinstance(capability_doc, dict) else []
+    capability_policy_ids = [
+        x.get("id")
+        for x in capability_policies
+        if isinstance(x, dict) and isinstance(x.get("id"), str)
+    ]
+    for duplicate in sorted(_duplicates(capability_policy_ids)):
+        errors.append(f"factory_capability_policies.v1.json: duplicate policy id {duplicate}")
+    capability_policy_set = set(capability_policy_ids)
+
+    import_routes_doc = docs.get("import_route_profiles.v1.json", {})
+    import_routes = import_routes_doc.get("profiles", []) if isinstance(import_routes_doc, dict) else []
+    import_route_ids = [
+        x.get("id")
+        for x in import_routes
+        if isinstance(x, dict) and isinstance(x.get("id"), str)
+    ]
+    for duplicate in sorted(_duplicates(import_route_ids)):
+        errors.append(f"import_route_profiles.v1.json: duplicate route profile id {duplicate}")
 
     equipment_sources: list[tuple[str, dict[str, Any]]] = []
     for name, document in docs.items():
@@ -247,6 +270,9 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
             material_recipe_id = production.get("material_recipe_id")
             if material_recipe_id not in production_recipe_set:
                 errors.append(f"{location}: unknown or missing material_recipe_id {material_recipe_id}")
+            capability_policy_id = production.get("capability_policy_id")
+            if capability_policy_id not in capability_policy_set:
+                errors.append(f"{location}: unknown or missing capability_policy_id {capability_policy_id}")
         else:
             errors.append(f"{location}: missing production object")
 
