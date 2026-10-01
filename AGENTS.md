@@ -12,19 +12,21 @@ Before implementing or proposing gameplay/system changes, read:
 
 For implementation work also read:
 
+- `docs/CODEX_V1_MASTER_PROMPT.md` — persistent autonomous implementation assignment and M0–M8 execution contract;
+- `docs/ENGINEERING_STANDARDS.md` — mandatory engineering conventions, architecture boundaries, optimization/performance rules and quality practices;
 - `docs/V1_IMPLEMENTATION_BRIEF.md` — architecture guidance, subsystem coverage and milestone order;
 - `docs/V1_CONTENT_MANIFEST.md` — configurable initial content/balancing targets;
 - `docs/V1_ACCEPTANCE_TESTS.md` — required test scenarios and release evidence;
 - `docs/TODO.md` — the living backlog of remaining/open/deferred work; read it before substantial work and keep it current when discovering, completing or deferring real tasks;
 - `docs/IMPLEMENTATION_STATUS.md` — actual implementation progress, test/build results and evidence; never use TODO completion as implementation evidence;
-- `docs/OPENCODE_START.md` — concise execution prompt.
+- `docs/OPENCODE_START.md` — concise entry point that delegates execution to the persistent Codex assignment.
 
 Document responsibility is explicit:
 
 - `GAME_DESIGN.md` owns shared game mechanics, including the calendar (3), cargo identities/invariants (11.9) and enduring vehicle availability (15.11).
 - `V1_SCOPE.md` owns the first-release inclusion/exclusion boundary. Its summaries link to the shared mechanics rather than redefine them.
 - `CONTRACT_CANCELLATION.md` owns the focused ordinary-cancellation calculation and settlement rules.
-- The brief and content manifest own engineering guidance and adjustable defaults, not silent product overrides. `DATA_PIPELINE.md` owns documented import conventions.
+- `CODEX_V1_MASTER_PROMPT.md` owns the autonomous implementation workflow; `ENGINEERING_STANDARDS.md` owns engineering conventions/performance practices. Neither may override gameplay. The brief and content manifest own engineering guidance and adjustable defaults, not silent product overrides. `DATA_PIPELINE.md` owns documented import conventions.
 - Acceptance scenarios define required evidence; `IMPLEMENTATION_STATUS.md` records only observed progress/results. Neither creates a gameplay exception.
 
 There is no universal "last paragraph wins" rule. A genuine mechanics conflict still requires correcting the owning section and its dependent summaries/tests; do not treat a release-scope document or example as blanket permission to override it.
