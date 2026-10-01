@@ -31,6 +31,12 @@ class VehicleContentValidatorTests(unittest.TestCase):
             "production_input_groups.v1.json": {
                 "recipes": [{"id": "recipe"}]
             },
+            "factory_capability_policies.v1.json": {
+                "policies": [{"id": "cap"}]
+            },
+            "import_route_profiles.v1.json": {
+                "profiles": [{"id": "route"}]
+            },
             "equipment_options_1900.v1.json": {
                 "groups": [{"id": "g", "options": [{"id": "o"}]}]
             },
@@ -48,7 +54,7 @@ class VehicleContentValidatorTests(unittest.TestCase):
                     "equipment_group_ids": ["g"],
                     "built_in_template_ids": ["t"],
                     "platform": {"max_speed_kph": 10, "structural_speed_limit_kph": 10},
-                    "production": {"factory_ids": ["p"], "material_recipe_id": "recipe"},
+                    "production": {"factory_ids": ["p"], "material_recipe_id": "recipe", "capability_policy_id": "cap"},
                     "provenance": {"source_urls": ["https://example.invalid"]}
                 }]
             },
@@ -119,6 +125,15 @@ class VehicleContentValidatorTests(unittest.TestCase):
             del data["models"][0]["production"]["material_recipe_id"]
             path.write_text(json.dumps(data), encoding="utf-8")
             self.assertTrue(any("material_recipe_id" in x for x in check_vehicle_content(root).errors))
+
+    def test_capability_policy_required(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            del data["models"][0]["production"]["capability_policy_id"]
+            path.write_text(json.dumps(data), encoding="utf-8")
+            self.assertTrue(any("capability_policy_id" in x for x in check_vehicle_content(root).errors))
 
     def test_condition_distribution_must_sum_to_one(self):
         directory, root, base = self.fixture()
