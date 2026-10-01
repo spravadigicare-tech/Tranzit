@@ -1838,7 +1838,13 @@ For textiles, the baseline game uses one aggregated **textile raw materials** co
 
 Industrial recipes can **evolve historically** as new materials and processes become available. For example, later textile production may begin requiring dyes, industrial chemicals or synthetic inputs. The same principle applies to other industries: newly introduced technologies can add or replace real recipe inputs and create new supplier/transport relationships. Do not treat this as a free global stat upgrade; a firm must actually obtain the newly required physical inputs, or continue an older viable process where the design/content allows it.
 
-The energy/chemical economy distinguishes **crude oil**, **natural gas**, and **refined fuels**. Crude oil and natural gas are separate primary resources; refined fuels are downstream products of processing crude oil. Their extraction, storage, transport compatibility, industrial use and historical adoption remain distinct. Demand for oil/gas/fuels should emerge and grow with the relevant technologies and industries rather than being globally modern from the 1900 start.
+The energy/chemical economy distinguishes **crude oil**, **raw natural gas**, **processed/distribution gas**, and **refined fuels**. Crude oil and raw natural gas are separate primary resources. Refined fuels are downstream products of crude-oil processing. Raw natural gas requires real treatment/processing before becoming distribution-quality gas for city and industrial consumption.
+
+City/industrial gas supply can use different historically valid production routes. Around the 1900 start, coal-based gasworks can produce town/distribution gas; later, processed natural gas can increasingly replace that route as extraction, treatment and gas-network technology develops. Existing coal-gas plants do not disappear automatically when natural gas becomes available.
+
+Distribution gas is a fixed-network utility product, analogous to electricity in that it is delivered through real gas-network connections/capacity rather than teleported or treated as generic wagon/truck cargo. Player-facing pipeline construction/operation is not implied unless separately included in scope. A later transportable gas-derived product such as LPG may be authored as its own physical cargo with appropriate tank/storage compatibility.
+
+Demand for oil/gas/fuels should emerge and grow with the relevant technologies and industries rather than being globally modern from the 1900 start.
 
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
