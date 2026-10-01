@@ -332,6 +332,58 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
         if count == 0:
             errors.append(f"vehicle model {model_id}: no built-in template")
 
+    opening_models_doc = docs.get("vehicle_models_1900.v1.json", {})
+    if isinstance(opening_models_doc, dict) and opening_models_doc.get("scope") == "1900 opening vehicle families":
+        opening_models = [x for x in opening_models_doc.get("models", []) if isinstance(x, dict)]
+
+        def _opening_count(predicate) -> int:
+            return sum(1 for model in opening_models if predicate(model))
+
+        opening_requirements = [
+            (
+                "steam locomotives",
+                4,
+                _opening_count(
+                    lambda model: model.get("vehicle_kind") == "locomotive"
+                    and str(model.get("support_family_id", "")).startswith("rail_steam")
+                ),
+            ),
+            (
+                "freight rolling stock",
+                6,
+                _opening_count(lambda model: model.get("vehicle_kind") == "freight_wagon"),
+            ),
+            (
+                "passenger/service rolling stock",
+                4,
+                _opening_count(
+                    lambda model: model.get("vehicle_kind") in {"passenger_coach", "service_coach"}
+                ),
+            ),
+            (
+                "road freight",
+                4,
+                _opening_count(
+                    lambda model: model.get("mode") == "road"
+                    and model.get("vehicle_kind") in {"horse_freight", "truck"}
+                ),
+            ),
+            (
+                "road passenger",
+                2,
+                _opening_count(
+                    lambda model: model.get("mode") == "road"
+                    and model.get("vehicle_kind") in {"horse_bus", "bus"}
+                ),
+            ),
+        ]
+        for label, minimum, actual in opening_requirements:
+            if actual < minimum:
+                errors.append(
+                    f"vehicle_models_1900.v1.json: opening {label} coverage {actual} "
+                    f"is below required minimum {minimum}"
+                )
+
     seed_doc = docs.get("opening_market_1900.v1.json", {})
     if isinstance(seed_doc, dict):
         for index, event in enumerate(seed_doc.get("factory_capability_events", [])):
