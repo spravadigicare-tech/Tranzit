@@ -195,20 +195,19 @@ The current/next duty relationship can explain downstream consequences:
 
 Do not treat the next Trip as already delayed unless the scheduling/recovery system actually predicts that result.
 
-## 9. Passenger connections and freight transfers
+## 9. Passenger transfers and freight transfers
 
-Show protected passenger connections and material freight-transfer dependencies when they affect this Trip.
+Show material planned passenger transfers, sold multi-leg itinerary dependencies and freight-transfer dependencies when they affect this Trip.
 
-For protected passengers, the Trip can show:
+For passengers, the Trip can show:
 
 - connecting incoming/outgoing Trip;
-- number/capacity requirement;
-- planned/minimum transfer time;
-- hold-policy state;
-- current risk;
-- authorized passenger recovery action that is defined by the applicable approved passenger rules.
+- expected transferring demand or confirmed multi-leg bookings where known;
+- planned/minimum interchange time;
+- current risk based on actual/estimated timing and interchange path;
+- any ordinary ticket/reservation consequence if a sold itinerary can no longer be fulfilled.
 
-Passenger transfers do not create a special connection-hold rule. High company priority does not override another operator's stronger infrastructure rights.
+Passenger transfers do not create a special hold, guarantee or bilateral connection object. High company priority does not override another operator's stronger infrastructure rights.
 
 For freight, show cargo readiness cutoff, transfer readiness and responsibility when a protected CargoLot may miss the Trip. The Trip detail must not call carrier-delayed cargo a customer no-show.
 
@@ -285,7 +284,7 @@ Opening, filtering or inspecting the Trip does not pause/resume time or issue a 
 | TRIPUI-A04 | Inspect passenger capacity on several origin-destination segments with reservations, walk-up demand and denied boarding. Segment figures reconcile to the actual capacity ledger. |
 | TRIPUI-A05 | Inspect freight capacity with protected/one-off/spot allocations and actual unload/release across segments. Nominal incompatible capacity is not presented as free compatible capacity. |
 | TRIPUI-A06 | Test criteria-based assignment, concrete assignment, substitution, consist change and next-duty conflict. Assets and consists are not double-counted and original assignment history remains visible. |
-| TRIPUI-A07 | Test conditional stop, skipped call, diversion, protected passenger connection and freight cutoff. The Trip exposes the real reason and links to relevant Pattern, station, Shipment and event details. |
+| TRIPUI-A07 | Test conditional stop, skipped call, diversion, an at-risk ordinary passenger transfer and freight cutoff. The Trip exposes the real reason and links to relevant Pattern, station, Shipment and event details without inventing connection protection. |
 | TRIPUI-A08 | Cancel a Trip with affected reservations/cargo, then save/load. Cancellation reason, physical state, recovery history and stable links persist without teleportation or duplicate reservations. |
 | TRIPUI-A09 | Inspect another operator's public Trip from a station board. Public timing/status is visible but private fleet/cost/cargo/crew data and player commands are not leaked. |
 | TRIPUI-A10 | Verify CZ/EN, enlarged UI, paused/running use and live refresh. Opening/hovering/following links never changes speed, assignment or operational state. |
