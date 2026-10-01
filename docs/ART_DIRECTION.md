@@ -495,15 +495,107 @@ Major maintenance, renewal or reconstruction may visibly restore or replace affe
 
 Visual condition is an **orientation cue**, never the authoritative technical-state UI. The rendering must not imply a precise failure probability or maintenance threshold that the simulation has not actually reached.
 
-## 14. Still to define
+## 14. Bridges, tunnels, earthworks and construction presentation
+
+### 14.1 Earthworks
+
+Road and railway construction must visibly reshape the terrain where required instead of making the route simply follow every terrain undulation.
+
+Supported visual forms include:
+
+- cuttings;
+- embankments;
+- retaining walls;
+- drainage;
+- culverts;
+- exposed soil/rock;
+- reworked slopes;
+- access/service tracks where appropriate.
+
+Railways should generally show this more strongly than ordinary roads because route geometry and gradient constraints are stricter.
+
+Earthwork slopes should receive context-appropriate material and vegetation treatment rather than appearing as a bare terrain deformation with no visual transition.
+
+### 14.2 Bridges and viaducts
+
+Bridges should be assembled from a structural family appropriate to era, span, height, load and transport mode rather than stretching one universal prefab to any distance.
+
+A bridge/viaduct may visually compose:
+
+> abutment/portal → span → pier → span → … → abutment
+
+Representative families include:
+
+- masonry/stone arches;
+- steel trusses;
+- steel girder spans;
+- masonry viaducts;
+- later reinforced/prestressed concrete;
+- later modern steel/concrete forms.
+
+Small drainage or ditch crossings should use culverts/small structures rather than dramatic bridge assets.
+
+Important real historical bridges may be authored as unique landmark assets where appropriate. Player-built infrastructure normally uses modular families that still produce different results through span count, pier height, terrain and alignment.
+
+### 14.3 Tunnels
+
+A tunnel remains a real physical route segment.
+
+Vehicles enter through a portal, continue along the actual underground alignment with its real length/curve/gradient, and leave through another portal. It is never a teleport shortcut.
+
+Surface presentation may include:
+
+- portal;
+- approach cutting;
+- retaining structures;
+- drainage;
+- service/technical structures;
+- construction access;
+- spoil/working areas where relevant.
+
+Tunnel interiors do not need FPS-grade detail for the normal camera.
+
+### 14.4 Visible construction progression
+
+Major construction should progress through visible physical stages rather than changing from ghost to finished asset after a timer.
+
+Representative rail/road stages include:
+
+1. **preparation** — cleared/marked corridor, temporary access and material staging;
+2. **earthworks** — excavation, fills, cuttings and embankments;
+3. **substructure** — drainage, retaining works, bridge foundations/piers and prepared formation;
+4. **track/road structure** — sleepers/rails/ballast or road layers/surface;
+5. **completion** — signalling, fencing, roadside/lineside equipment, final landscape treatment.
+
+Different sections of one project may visibly sit at different stages so construction reads as physically progressing through the world.
+
+Bridges should likewise expose a small number of readable phases such as foundations → piers/arches/supports → main structure/deck → completed route. Tunnel construction should visibly affect portal/work areas and associated spoil/access even if every metre of underground excavation is not rendered.
+
+Use approximately **3–6 visually distinct stages** per major construction family where practical. The goal is readable progress, not construction-worker micromanagement.
+
+### 14.5 Underground / cutaway view
+
+The normal world view keeps terrain opaque. Vehicles entering a tunnel disappear below ground in the ordinary presentation, though a selected/followed underground vehicle may retain a restrained selection cue.
+
+Provide a dedicated **underground/cutaway analysis mode** for tunnel and later underground-transit operation.
+
+In that mode, relevant terrain becomes transparent, faded or sectioned enough to reveal:
+
+- underground route geometry;
+- vehicles;
+- tunnel intersections;
+- underground stations where applicable;
+- construction state;
+- other relevant subterranean infrastructure.
+
+The cutaway is an analysis/presentation mode only. It does not alter the physical route, simulation, travel time or visibility/knowledge rules.
+
+## 15. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
 - regional rural landscape identities and exact field/crop palette;
-- bridges, tunnels, earthworks and construction-state presentation;
-- roads, paths and roadside treatment;
-- railway permanent-way visual detail and trackside equipment;
-- bridges, tunnels, earthworks and construction-state presentation;
+- regional/country architectural identity and historical urban-era kits;
 - exact pedestrian/character style and animation density;
 - detailed VFX language for smoke, steam, dust, mud and construction;
 - final UI colour/type/icon tokens;
