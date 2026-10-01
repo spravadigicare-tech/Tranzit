@@ -19,6 +19,7 @@
       "support_family_id": "rail_electric_skoda_legacy_dc",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 124,
         "max_speed_kph": 90,
         "structural_speed_limit_kph": 90,
@@ -78,6 +79,7 @@
       "support_family_id": "rail_diesel_electric_ckd",
       "regional_market_profile_id": "market_socialist_core_export",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 17.24,
         "service_mass_t": 114.6,
         "max_speed_kph": 90,
@@ -140,6 +142,7 @@
       "support_family_id": "rail_diesel_electric_ckd",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 16.5,
         "service_mass_t": 75,
         "max_speed_kph": 100,
@@ -202,6 +205,7 @@
       "support_family_id": "rail_electric_skoda_legacy_ac",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 16.44,
         "service_mass_t": 85,
         "max_speed_kph": 110,
@@ -263,6 +267,7 @@
       "support_family_id": "rail_diesel_electric_ckd",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 16.54,
         "service_mass_t": 76.8,
         "max_speed_kph": 100,
@@ -324,6 +329,7 @@
       "support_family_id": "rail_diesel_electric_ckd",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 13.6,
         "service_mass_t": 64,
         "max_speed_kph": 90,
@@ -386,6 +392,7 @@
       "support_family_id": "rail_electric_skoda_dual_modern",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 87,
         "max_speed_kph": 120,
         "structural_speed_limit_kph": 120,
@@ -446,6 +453,7 @@
       "support_family_id": "rail_electric_skoda_dual_modern",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 85,
         "max_speed_kph": 140,
         "structural_speed_limit_kph": 140,
@@ -506,6 +514,7 @@
       "support_family_id": "rail_coach_mainline_legacy",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 24.5,
         "service_mass_t": 40,
         "max_speed_kph": 140,
@@ -569,6 +578,7 @@
       "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 13.97,
         "service_mass_t": 20,
         "max_speed_kph": 80,
@@ -631,6 +641,7 @@
       "support_family_id": "rail_coach_mainline_legacy",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 26.4,
         "service_mass_t": 45,
         "max_speed_kph": 160,
@@ -693,6 +704,7 @@
       "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 47,
         "max_speed_kph": 100,
         "structural_speed_limit_kph": 100,
@@ -1056,6 +1068,7 @@
       "support_family_id": "road_cz_avio_light",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 6,
         "max_speed_kph": 80,
         "structural_speed_limit_kph": 85,
@@ -1117,6 +1130,7 @@
       "support_family_id": "road_cz_heavy_aircooled",
       "regional_market_profile_id": "market_socialist_core_export",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 20,
         "max_speed_kph": 70,
         "structural_speed_limit_kph": 75,
@@ -1178,6 +1192,7 @@
       "support_family_id": "road_cz_liaz_legacy",
       "regional_market_profile_id": "market_socialist_core_export",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 16,
         "max_speed_kph": 85,
         "structural_speed_limit_kph": 90,
@@ -1239,6 +1254,7 @@
       "support_family_id": "road_cz_heavy_aircooled",
       "regional_market_profile_id": "market_socialist_core_export",
       "platform": {
+        "empty_mass_t": null,
         "service_mass_t": 20.7,
         "max_speed_kph": 80,
         "structural_speed_limit_kph": 85,
@@ -1364,6 +1380,7 @@
       "support_family_id": "road_bus_karosa_legacy",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 11.1,
         "width_m": 2.5,
         "max_speed_kph": 100,
@@ -1490,6 +1507,7 @@
       "support_family_id": "road_bus_eu_modern",
       "regional_market_profile_id": "market_modern_eu_common",
       "platform": {
+        "empty_mass_t": null,
         "length_m": 12,
         "width_m": 2.5,
         "max_speed_kph": 100,
@@ -1552,6 +1570,7 @@
       "support_family_id": "road_bus_karosa_legacy",
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
+        "empty_mass_t": null,
         "max_speed_kph": 100,
         "structural_speed_limit_kph": 100,
         "seats": 45,
