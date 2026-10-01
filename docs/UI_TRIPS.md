@@ -208,7 +208,7 @@ For protected passengers, the Trip can show:
 - current risk;
 - authorized passenger recovery action that is defined by the applicable approved passenger rules.
 
-If a future approved passenger connection-agreement specification permits connection holds, those holds must still respect slot, duty and downstream constraints. High company priority does not override another operator's stronger infrastructure rights.
+Passenger transfers do not create a special connection-hold rule. High company priority does not override another operator's stronger infrastructure rights.
 
 For freight, show cargo readiness cutoff, transfer readiness and responsibility when a protected CargoLot may miss the Trip. The Trip detail must not call carrier-delayed cargo a customer no-show.
 
