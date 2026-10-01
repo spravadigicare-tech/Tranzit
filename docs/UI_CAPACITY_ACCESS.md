@@ -78,7 +78,7 @@ Use independently openable groups, not a wizard:
 
 | Card | Content |
 |---|---|
-| Route and owners / Trasa a vlastníci | Required corridor/sections, infrastructure owners, physical/access compatibility, missing connection agreements and any owner refusal |
+| Route and owners / Trasa a vlastníci | Required corridor/sections, infrastructure owners, physical/access compatibility, missing infrastructure connection agreements and any owner refusal |
 | Time capacity / Časová kapacita | Requested frequency/windows, offered/accepted arrival/departure windows, tolerance and resulting planned midpoint times |
 | Stations and terminals / Stanice a terminály | Required station-call capacity, validity and compatibility; no default dedicated numbered platform promise |
 | Price and terms / Cena a podmínky | Reservation fees, expected per-use charges, access class/priority, important restrictions and per-owner breakdown |
