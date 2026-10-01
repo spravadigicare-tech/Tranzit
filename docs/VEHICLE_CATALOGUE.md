@@ -182,7 +182,7 @@ These are physical wagons, not abstract cargo-capacity tokens. The exact 1900 de
 | **Těžký povoz H4** | pre-1900 | 4-horse heavy wagon | 4.0 t | animal traction | 6 km/h practical | driver/handler | local coachbuilder |
 | **Benc Lieferwagen 300** | 1896 | Benz Lieferungswagen / Combinations-Lieferungswagen | 0.3 t + driver | 2.0–4.4 kW | 15–20 km/h | driver | off-map Mannheim import; compact urban motor delivery |
 | **Daimlar Lastwagen 1896** | 1896 | Daimler Motor-Lastwagen | 1.5 t representative first-truck configuration | 2.9 kW (4 hp) | 12 km/h | driver | off-map German import |
-| **Thornycroft Steam 1T “Konvice”** | 1896 | Thornycroft steam carriage/wagon | ~1.0 t | compound steam | ~12–16 km/h | driver/fireman on heavier duty | off-map British import; rare dealer/special order |
+| **Thorncroft Steam 1T “Konvice”** | 1896 | Thornycroft steam carriage/wagon | ~1.0 t | compound steam | ~12–16 km/h | driver/fireman on heavier duty | off-map British import; rare dealer/special order |
 
 This gives five distinct 1900 freight choices without introducing an anachronistic modern truck: light/heavy horse haulage, compact petrol delivery, a heavier pioneering motor truck and a specialist steam vehicle.
 
