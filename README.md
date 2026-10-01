@@ -54,6 +54,8 @@ Read [OpenCode Start](docs/OPENCODE_START.md), then the linked specifications:
 | [New Game and Company Founding UI](docs/UI_NEW_GAME.md) | Confirmed UI-D35: short campaign setup, real first branch/company founding and opening-only Full/Basics/Off tutorial |
 | [Main Menu, Save/Load, Pause and Settings UI](docs/UI_SYSTEM_MENU.md) | Confirmed UI-D36: main menu, campaign-organized saves, atomic save safety, pause-menu lifecycle, Esc priority and settings |
 | [Fleet, Vehicle Market and Delivery UI](docs/UI_FLEET.md) | Confirmed UI-D22: one Fleet / Vehicle Market / Orders workspace, model-to-offer comparison, contextual acquisition and physical delivery/readiness tracking |
+| [Codex V1 Master Prompt](docs/CODEX_V1_MASTER_PROMPT.md) | Persistent autonomous M0–M8 implementation assignment, blocker policy and V1 completion contract |
+| [Engineering Standards](docs/ENGINEERING_STANDARDS.md) | Persistent architecture, code conventions, save/persistence, performance and optimization practices |
 | [Content Manifest](docs/V1_CONTENT_MANIFEST.md) | Initial authoring and balancing targets, world/assets/catalogues and benchmark fixtures |
 | [Acceptance Tests](docs/V1_ACCEPTANCE_TESTS.md) | End-to-end player journeys, failure/regression cases and evidence-based release gates |
 | [TODO](docs/TODO.md) | Living backlog of remaining/open/deferred design, documentation, implementation and test work; not implementation evidence |
