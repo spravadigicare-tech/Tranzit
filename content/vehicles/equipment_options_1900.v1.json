@@ -420,6 +420,27 @@
           "retrofit_allowed": false
         }
       ]
+    },
+    {
+      "id": "early_delivery_body_1896",
+      "name": "Early delivery factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "benc_delivery_box_1896",
+          "name": "Delivery box",
+          "introduced_year": 1896,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "payload_t_override": 0.3,
+          "cargo_tags": [
+            "general",
+            "parcels",
+            "weather_sensitive"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
     }
   ]
 }
