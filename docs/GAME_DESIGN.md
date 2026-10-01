@@ -385,38 +385,35 @@ Passenger choice depends on factors such as:
 
 A passenger station or stop does **not** automatically draw demand from the entire city/locality commodity market.
 
-Passenger access is spatial and itinerary-based:
+For passenger-access simulation, an **economic centre is the atomic walk-access unit**. Economic centres are intentionally authored/generated small enough that walking across one centre is a reasonable abstraction.
 
-- a station directly serves population/jobs/services that can reach one of its public entrances by a plausible walking route within the authored walking-time threshold;
-- the economic centre/neighbourhood containing the station usually contributes substantial direct walk demand, but only the physically walk-accessible portion is treated as directly covered;
-- a nearby adjacent economic centre can also contribute direct walk demand when its actual pedestrian access to the station is short enough;
-- a distant centre in the same city does not become station demand merely because it shares the same commodity market.
+A passenger station/stop belongs to one economic centre. Its direct walking catchment is therefore the **whole economic centre containing that station/stop**. Do not calculate per-household walking polygons or partial-centre percentages in normal simulation.
 
-Economic centres are aggregate passenger origin/destination nodes, but station access uses their physical location/footprint and the pedestrian network. UI may summarize this as the share of an economic centre directly walk-accessible from the station. Exact walking-time thresholds are balancing/content data, not a hardcoded city-wide radius.
+A different economic centre in the same city is **not** directly served merely because it is geographically close or shares the same commodity market. Reaching the station from another centre requires a real feasible connection between centres, normally urban public transport once the city has grown enough to need it.
 
-Demand outside the direct walk catchment can reach the station only through a **real feasible access itinerary**, for example:
+Example:
 
-> home/economic centre → walk → bus/tram/trolleybus/metro → walk/interchange → rail station → train
+> residential centre → local bus/tram → station centre → rail station → train
 
 In first-playable V1, bus is the required urban feeder mode; later wider-base modes use the same rule.
 
 A feeder extends effective station reach only through its actual:
 
-- stops and walking access to them;
+- stops/served economic centres;
 - published frequency/timetable;
 - travel time;
 - vehicle capacity and crowding;
 - reliability;
-- transfer walking time and interchange quality;
+- transfer/interchange quality;
 - fare/ticket compatibility where relevant.
 
 Building or scheduling a feeder therefore does not grant a hidden catchment bonus. Passengers must have a usable itinerary and can choose another station, mode or no public-transport trip when the combined journey is unattractive.
 
-If two stations' direct/feeder catchments overlap, passengers are not assigned by territory ownership. They choose between feasible itineraries using the normal passenger-choice factors.
+If several stations lie in the same economic centre, they share access to that centre's passenger origins but still compete through the normal passenger-choice factors. A station in another centre requires an inter-centre itinerary.
 
 A station queue contains passengers who have actually reached that station/stop in the aggregate simulation. City-level demand must not be spawned directly onto a station platform merely because the city has demand.
 
-This makes urban transport strategically useful: a rail station placed near only one centre can serve that local catchment directly, while buses and later tram/trolleybus/metro networks can connect additional residential, employment and commercial centres to it.
+This makes urban transport strategically useful by construction: a young/small city may have one centre and need little feeder transport; as it grows into several smaller centres, buses and later tram/trolleybus/metro networks become necessary to connect residential, employment, commercial and station centres.
 
 Journey purposes include work, business, school, tourism/leisure, family/social visits and other meaningful categories.
 
@@ -2474,6 +2471,8 @@ If the existing Pattern cannot cover the requirement, the planner can propose:
 
 A local pickup/delivery leg does not automatically need its own Line.
 
+**Freight is delivered to the contractual handover endpoint, not merely to the destination city, market or nearest terminal.** For ordinary door-to-door freight, the destination endpoint is the receiving firm's actual physical facility. A rail terminal, warehouse or freight station is only an intermediate transfer point unless the contract explicitly names it as the handover point.
+
 For example, a factory-to-terminal road collection can be a demand-driven contract leg:
 
 > when an eligible shipment batch is ready  
@@ -2481,7 +2480,22 @@ For example, a factory-to-terminal road collection can be a demand-driven contra
 > → collect from customer endpoint  
 > → deliver to terminal before the booked trunk departure.
 
-If repeated volume grows enough, the player can later convert such work into a regular freight Line/Pattern and use it for several contracts.
+A typical intercity contract can therefore be:
+
+> supplier factory → local truck → origin terminal → rail trunk → destination terminal → local truck/van → buyer facility.
+
+The contract explicitly defines **transport responsibility at origin and destination**. Supported patterns include:
+
+1. **Carrier-arranged door-to-door** — the player's Transport Plan must physically cover collection from the seller and/or final delivery to the buyer facility.
+2. **Customer pickup at terminal** — the carrier's obligation ends only after accepted handover at the named terminal; the receiving firm is responsible for the physical last-mile leg.
+3. **Customer delivery to terminal** — the shipper is responsible for getting the cargo to the named origin terminal before the contractual cutoff.
+4. **External last mile** — the player purchases a real third-party delivery leg through the external transport system.
+
+A customer-provided pickup/delivery leg is still a **real physical movement**. The responsible firm must have or procure suitable road-transport capability—such as its own van/truck capacity or an external carrier—and the movement consumes real time, vehicle capacity and loading/unloading capacity. The game must not teleport cargo from a terminal into a factory inventory merely because the contract says "customer pickup".
+
+Until the handover conditions are actually completed, cargo remains at its authoritative physical location and occupies storage/vehicle capacity. Contract completion and responsibility use the agreed handover point; the UI must make clear whether the player's obligation ends at the terminal or at the final firm.
+
+If repeated volume grows enough, the player can later convert such local work into a regular freight Line/Pattern and use it for several contracts.
 
 ##### Contract versus Line lifecycle
 
@@ -3327,6 +3341,8 @@ A required endpoint can be supplied in one of three main ways:
 3. **Third-party access** — the player leases/rents/buys access to an existing compatible facility owned by another company, municipality, state or infrastructure owner.
 
 The contract must make clear which endpoints are included and which are the carrier's responsibility.
+
+For freight, the endpoint named in the commercial obligation is also the **handover boundary** for responsibility. A city market, economic centre or generic station is never an implicit delivery endpoint. If the buyer's factory is the destination, cargo is not delivered until it physically reaches that facility. If the buyer accepts terminal pickup, the named terminal can be the commercial handover point, after which a separately real customer-provided last-mile movement carries the goods onward.
 
 Customer-provided infrastructure is not free abstract capacity. It is a real physical facility with:
 
