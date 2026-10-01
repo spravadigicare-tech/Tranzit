@@ -3062,7 +3062,7 @@ Example:
 
 farm → wagon → local terminal → warehouse → regional train → hub → long-distance train → local truck → customer.
 
-### 11.11 Perishability and special requirements
+### 11.11 Perishability, storage life and cold chain
 
 Cargo can have properties such as:
 
@@ -3072,7 +3072,94 @@ Cargo can have properties such as:
 - hazard class,
 - handling requirements.
 
-Perishable goods lose value or become unusable if delivered too slowly or without appropriate cold-chain capability.
+Perishability uses one shared **quality-exposure model** across production, storage, handling and transport. Do not implement a separate hidden "transport deadline", warehouse spoilage timer and refrigeration bonus that can disagree with each other.
+
+Each perishable commodity definition declares:
+
+- a base usable exposure / quality-loss curve under ordinary ambient conditions;
+- any temperature/handling requirement;
+- a minimum quality accepted by normal consumers/contracts, with stricter contract thresholds allowed;
+- condition multipliers for compatible storage/vehicles;
+- whether value declines progressively before the cargo becomes commercially unusable.
+
+A CargoLot preserves its accumulated **spoilage exposure and quality** for its entire physical life. Splitting, merging, transshipment, save/load, rebooking or moving into a refrigerated vehicle never resets age/exposure.
+
+#### Condition-dependent decay
+
+Quality loss accumulates from simulated elapsed time multiplied by the current physical condition.
+
+Baseline authoring bands:
+
+| Physical condition | Typical spoilage-rate multiplier |
+|---|---:|
+| unsuitable/warm/exposed conditions | 1.25–1.75× |
+| ordinary ambient compatible handling/storage | 1.00× |
+| insulated/cool handling without active cooling | ~0.70× |
+| 1900-era compatible ice-cooled/refrigerated vehicle or cold store | ~0.33× |
+| later efficient mechanical refrigeration | ~0.20× |
+
+These are authorable balancing bands, not universal chemistry. A commodity can ignore a cooling tier that is irrelevant to it.
+
+Refrigeration **reduces the rate of quality loss; it never stops or reverses ageing**. A short non-refrigerated transfer therefore consumes the ambient-rate portion of the remaining quality budget even when both adjacent legs are refrigerated.
+
+For performance, spoilage is not updated every frame or every game minute. Each CargoLot stores the last evaluated simulation timestamp, accumulated exposure and current physical condition. On a relevant event—condition/location change, handling completion, allocation/feasibility check, market/inventory evaluation, UI inspection or save boundary—the simulation integrates the elapsed game time analytically and updates exposure exactly once. Remote/macro simulation uses the same elapsed-time result.
+
+#### Initial V1 perishability profiles
+
+Use these as initial balancing defaults, adjustable through content data:
+
+| Profile | Example V1 goods | Ambient usable window | Typical compatible cold-chain effect |
+|---|---|---:|---:|
+| Short-life fresh | meat, dairy products | ~2 game days | ~6 days effective at 0.33× decay |
+| Medium fresh | fruit/vegetables | ~4 game days | ~8 days effective at 0.50× decay |
+| Processed fresh | flour/bakery products where represented as fresh finished food | ~3 game days | ~6 days effective at 0.50× decay |
+| Stable | grain, coal, ore, metals, machinery, furniture, most parts | no meaningful ordinary spoilage timer | storage condition may still matter for damage/compatibility, not freshness |
+
+Exact commodity data can vary where historically justified. Do not give all food one identical timer simply because it shares a retail sink.
+
+#### Transport feasibility and time available
+
+The Contract/Transport Planner calculates a **quality-feasible latest arrival** from:
+
+- current CargoLot exposure/quality;
+- planned loading and handling time;
+- travel time on every leg;
+- expected transfer/storage waiting;
+- the condition multiplier of each vehicle/facility segment;
+- contractual minimum accepted quality.
+
+For perishable cargo, the effective delivery limit is the earlier of:
+
+1. the commercial/SLA delivery deadline;
+2. the latest arrival that still meets the required cargo quality.
+
+A route that cannot meet that limit is not presented as safely feasible. The planner must explain whether the fix is a faster route, shorter transfer, refrigerated wagon/truck, compatible cold storage, more frequent service or a different customer/contract.
+
+Period-appropriate cold-chain equipment is deliberately capable of making useful regional/intercity perishable freight viable in 1900. A normal fresh-food contract must not require impossible same-hour delivery across the map merely because perishability exists.
+
+#### Storage targets and stock rotation
+
+Target stock is measured in **days of expected consumption**, but perishability constrains how much it is rational to hold.
+
+Initial policy ranges:
+
+| Stock class | Typical target coverage |
+|---|---:|
+| Fresh/perishable with suitable cold storage | 2–4 game days |
+| Fresh/perishable without suitable cold storage | lower of 1–2 days or the amount expected to remain acceptable before consumption |
+| Ordinary consumer/manufacturing goods | 5–10 game days |
+| Industrial raw materials | 7–14 game days |
+| Strategic/operating supplies such as coal, fuel and spare parts | 10–20 game days |
+
+These are procurement/AI policy ranges, not magic warehouse capacity. Actual target can vary with storage cost/capacity, supplier reliability, delivery lead time, consumption volatility and contract obligations.
+
+A perishable stock target must never intentionally exceed the amount expected to remain usable through its consumption horizon under the facility's real storage conditions. Cold storage therefore makes a larger safe buffer possible; it does not create inventory.
+
+Warehouses/consumers use **first-expiring / highest-quality-risk first** within otherwise compatible stock and contractual obligations. Rotation cannot override a protected contract or incompatible lot, but it should avoid leaving older equivalent stock to spoil while newer stock is consumed first.
+
+For market stock coverage and procurement shortage calculations, count only inventory expected to remain commercially usable when consumed. Ten tonnes that will spoil before likely use must not provide the same effective stock cover as ten tonnes of stable fresh inventory.
+
+Spoilage can reduce value before complete rejection. Once below the applicable acceptance threshold, a lot cannot satisfy that consumer/contract and must be rerouted, reclassified, returned or disposed of through a real physical flow where such an option exists. Recording spoilage never deletes the physical load from a vehicle or warehouse.
 
 ### 11.12 Optional automatic renewal of recurring contracts
 
