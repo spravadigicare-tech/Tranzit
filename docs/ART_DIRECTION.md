@@ -759,11 +759,115 @@ Period- and place-appropriate examples may include:
 
 Animal presence should decline/change where the historical transport/economic context changes, such as horse transport giving way to motor vehicles.
 
-## 17. Still to define
+## 17. VFX and atmospheric activity
+
+### 17.1 General rule
+
+Effects should reinforce the real physical/simulation state rather than run as decorative loops.
+
+Keep effects readable from the supported camera but proportionate and restrained. Avoid oversized cartoon smoke, excessive bloom or constant particle noise.
+
+### 17.2 Steam and exhaust
+
+Steam traction should visually distinguish:
+
+- darker combustion smoke;
+- white steam;
+- short pressure/release puffs.
+
+Effect intensity should react approximately to operating state, such as:
+
+- heavy acceleration/load;
+- steady running;
+- idling/stationary state;
+- speed;
+- wind;
+- weather.
+
+A hard-working steam locomotive should visibly differ from one coasting or waiting, without requiring detailed thermodynamic simulation.
+
+Later combustion vehicles and machinery may use subtler exhaust appropriate to their technology and condition.
+
+### 17.3 Industrial effects
+
+Factories and industrial facilities should emit effects only when their real activity and technology justify them.
+
+Possible effects include:
+
+- smoke;
+- steam;
+- dust;
+- localized material handling;
+- process-specific emissions.
+
+Modernized production should generally appear cleaner than older heavy industry where historically and technically appropriate.
+
+### 17.4 Dust, mud and working ground
+
+Dry unpaved roads, construction sites and bulk handling may produce localized dust.
+
+Wet weather should suppress dust and instead emphasize:
+
+- darker wet surfaces;
+- mud;
+- localized track/vehicle marks;
+- puddles/standing water where appropriate.
+
+Keep these effects contextual and physically plausible rather than applying one universal dirt layer.
+
+### 17.5 Weather interaction
+
+Rain and snow should affect both particles and world materials.
+
+Rain may alter:
+
+- roof/road/ground wetness;
+- rail highlights;
+- visibility and haze;
+- puddles;
+- surface darkness.
+
+Snow may alter:
+
+- ground/roof coverage;
+- road/track visibility;
+- cleared or travelled surfaces;
+- melting/transitional wet states.
+
+### 17.6 Wind coherence
+
+Wind direction should be visually coherent across major effects.
+
+Where practical, the same local wind field should influence:
+
+- smoke/steam;
+- rain/snow direction;
+- dust;
+- tree/grass motion.
+
+This is primarily a presentation-coherence rule, not a requirement for full fluid or vegetation physics.
+
+### 17.7 Pollution and smog
+
+Historical industrial pollution is present but **subtle, local and source-driven**.
+
+Older heavy industrial districts may show:
+
+- slightly dirtier local air;
+- thin smoke haze;
+- mild smog under suitable weather conditions;
+- localized soot/patina on nearby structures.
+
+Do not apply a strong global grey filter to an industrial city. The effect should remain visually attractive and operationally readable.
+
+Pollution intensity should depend on real nearby sources, technology, weather and era where that information is available. Modernization and cleaner technology can visibly reduce the effect over time.
+
+The purpose is to make industrial history and technological progress perceptible in the atmosphere, not to turn pollution into an exaggerated visual gimmick.
+
+## 18. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
 - regional rural landscape identities and exact field/crop palette;
-- detailed VFX language for smoke, steam, dust, mud and construction;
 - final UI colour/type/icon tokens;
 - LOD/asset technical budgets after the Unity rendering baseline is selected.
