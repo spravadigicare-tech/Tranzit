@@ -142,6 +142,7 @@ Unless marked manual, implement deterministic integration/unit tests as appropri
 | C-23 | Same fresh cargo spends equal simulated time in ambient, ice/refrigerated and later mechanical-cold conditions | Quality/exposure decreases according to the authored condition multiplier; refrigeration slows but never resets/reverses age; save/load and speed changes give the same result for equal simulated elapsed time |
 | C-24 | Perishable multi-leg route with handling/storage gaps | Planner includes loading, travel, transfer and storage time in the quality-feasible arrival. A refrigerated trunk leg cannot hide an overlong ambient transfer; upgrading the vehicle/store or shortening the route can make the same shipment feasible |
 | C-25 | Perishable stock rotation and market coverage | Equivalent stock is consumed/dispatched by earliest expiry/highest quality risk subject to contractual compatibility. Inventory expected to spoil before use does not count as full usable stock cover or suppress shortage/price pressure like sound stock |
+| C-26 | Perishable cargo left untouched in storage | Put fresh cargo into ambient and refrigerated storage, perform no manipulation/UI inspection until after its next quality threshold, and advance simulation time. Scheduled spoilage/quality events fire at the correct game timestamps; ambient cargo degrades/spoils sooner, refrigerated cargo later, and spoiled cargo remains physical inventory occupying capacity until real disposition |
 
 ### 4.3 Rail/road topology and resource protection
 
