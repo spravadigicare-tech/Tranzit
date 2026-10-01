@@ -398,11 +398,11 @@ The player-facing editor must remain intentionally simple and understandable.
 The normal workflow is:
 
 1. choose the **vehicle model family**;
-2. choose or duplicate an existing **template**;
-3. edit only the small set of meaningful configuration groups supported by that family;
-4. see the resulting capacity, compatibility, weight, cost and maintenance consequences immediately;
-5. save the template under a player-facing name;
-6. apply it to a new manufacturer order or create a conversion job for existing vehicles.
+2. start from a factory/default template or create a new configuration from the supported equipment groups;
+3. combine only equipment/packages that the selected physical platform actually supports;
+4. see the resulting capacity, compatibility, weight, cost, consumption and maintenance consequences immediately;
+5. save the combination as a reusable player-defined template under a player-facing name;
+6. apply it to a new manufacturer order or order a retrofit of existing compatible vehicles to that template.
 
 Do not expose engineering-level component trees, hundreds of individual part numbers or free-form stat editing.
 
@@ -433,9 +433,11 @@ For a locomotive:
 - approved traction/engine rebuilds;
 - country equipment packages.
 
-Templates should use clear player-facing names such as `Economy`, `Business`, `Economy Neo` or a custom player name. Internally they retain stable IDs and structured component/configuration references.
+Templates should use clear player-facing names such as `Economy`, `Business`, `Economy Neo`, `Business Neo` or a custom player name. The built-in examples are convenience presets, not the only valid configurations. Internally every template retains stable IDs and structured equipment/configuration references.
 
-The editor must never imply that the player designs a vehicle from first principles. It configures or converts within real supported options for that model family.
+The player may create arbitrary **supported combinations of equipment** inside the platform's authored compatibility rules. The editor automatically blocks mutually incompatible combinations and explains the blocker rather than allowing impossible builds.
+
+The editor must never imply that the player designs a vehicle from first principles. It combines real supported equipment, interior and technical packages within the fixed physical platform of that model family.
 
 ## 10. Core specification schema for every authored vehicle
 
