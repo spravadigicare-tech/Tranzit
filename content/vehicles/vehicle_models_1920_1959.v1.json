@@ -1088,7 +1088,8 @@
       "built_in_template_ids": [
         "pragov_rn_flatbed",
         "pragov_rn_box",
-        "pragov_rn_tipper"
+        "pragov_rn_tipper",
+        "pragov_rn_flatbed_1937"
       ],
       "provenance": {
         "source_urls": [
@@ -1161,7 +1162,8 @@
       "built_in_template_ids": [
         "fatra111_flatbed",
         "fatra111_tipper",
-        "fatra111_tractor"
+        "fatra111_tractor",
+        "fatra111_flatbed_r_1953"
       ],
       "provenance": {
         "source_urls": [
