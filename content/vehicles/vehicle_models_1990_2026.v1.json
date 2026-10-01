@@ -45,7 +45,8 @@
         "special_build_days": 85,
         "base_cost_index": 180,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_emu_modern"
+        "material_recipe_id": "prod_emu_modern",
+        "capability_policy_id": "cap_fixed_programme"
       },
       "maintenance_profile": {
         "family": "modern_emu"
@@ -110,7 +111,8 @@
         "special_build_days": 60,
         "base_cost_index": 145,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_diesel_locomotive_modern"
+        "material_recipe_id": "prod_diesel_locomotive_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_import_diesel"
@@ -173,7 +175,8 @@
         "special_build_days": 160,
         "base_cost_index": 245,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_highspeed_trainset"
+        "material_recipe_id": "prod_highspeed_trainset",
+        "capability_policy_id": "cap_fixed_programme"
       },
       "maintenance_profile": {
         "family": "high_speed_trainset"
@@ -240,7 +243,8 @@
         "special_build_days": 65,
         "base_cost_index": 165,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_electric_locomotive_modern"
+        "material_recipe_id": "prod_electric_locomotive_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_pan_eu_electric"
@@ -306,7 +310,8 @@
         "special_build_days": 68,
         "base_cost_index": 220,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_electric_locomotive_modern"
+        "material_recipe_id": "prod_electric_locomotive_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_multisystem_electric"
@@ -372,7 +377,8 @@
         "special_build_days": 62,
         "base_cost_index": 215,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_electric_locomotive_modern"
+        "material_recipe_id": "prod_electric_locomotive_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_pan_eu_electric"
@@ -434,7 +440,8 @@
         "special_build_days": 78,
         "base_cost_index": 160,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_dmu_modern"
+        "material_recipe_id": "prod_dmu_modern",
+        "capability_policy_id": "cap_fixed_programme"
       },
       "maintenance_profile": {
         "family": "modern_dmu"
@@ -498,7 +505,8 @@
         "special_build_days": 78,
         "base_cost_index": 175,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_emu_modern"
+        "material_recipe_id": "prod_emu_modern",
+        "capability_policy_id": "cap_fixed_programme"
       },
       "maintenance_profile": {
         "family": "modern_emu"
@@ -562,7 +570,8 @@
         "special_build_days": 55,
         "base_cost_index": 125,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_diesel_locomotive_modern"
+        "material_recipe_id": "prod_diesel_locomotive_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_import_diesel"
@@ -624,7 +633,8 @@
         "special_build_days": 75,
         "base_cost_index": 165,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_dmu_modern"
+        "material_recipe_id": "prod_dmu_modern",
+        "capability_policy_id": "cap_fixed_programme"
       },
       "maintenance_profile": {
         "family": "modern_dmu"
@@ -685,7 +695,8 @@
         "special_build_days": 190,
         "base_cost_index": 250,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_passenger_coach_modern"
+        "material_recipe_id": "prod_passenger_coach_modern",
+        "capability_policy_id": "cap_fixed_programme"
       },
       "maintenance_profile": {
         "family": "modern_coach_set"
@@ -745,7 +756,8 @@
         "special_build_days": 16,
         "base_cost_index": 100,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_modern"
+        "material_recipe_id": "prod_freight_wagon_modern",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_modern_bogie"
@@ -805,7 +817,8 @@
         "special_build_days": 16,
         "base_cost_index": 95,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_freight_wagon_modern"
+        "material_recipe_id": "prod_freight_wagon_modern",
+        "capability_policy_id": "cap_long_lived_utility"
       },
       "maintenance_profile": {
         "family": "wagon_modern_bogie"
@@ -864,7 +877,8 @@
         "special_build_days": 18,
         "base_cost_index": 115,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_modern"
+        "material_recipe_id": "prod_road_diesel_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "eu_heavy_modern"
@@ -923,7 +937,8 @@
         "special_build_days": 18,
         "base_cost_index": 118,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_modern"
+        "material_recipe_id": "prod_road_diesel_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "eu_heavy_modern"
@@ -982,7 +997,8 @@
         "special_build_days": 21,
         "base_cost_index": 145,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_modern"
+        "material_recipe_id": "prod_road_diesel_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "tatra_modern"
@@ -1042,7 +1058,8 @@
         "special_build_days": 12,
         "base_cost_index": 85,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_diesel_modern"
+        "material_recipe_id": "prod_road_diesel_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_van"
@@ -1104,7 +1121,8 @@
         "special_build_days": 22,
         "base_cost_index": 180,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_road_bev_heavy"
+        "material_recipe_id": "prod_road_bev_heavy",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "heavy_ev"
@@ -1163,7 +1181,8 @@
         "special_build_days": 20,
         "base_cost_index": 100,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_modern"
+        "material_recipe_id": "prod_bus_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "karosa_legacy"
@@ -1222,7 +1241,8 @@
         "special_build_days": 20,
         "base_cost_index": 110,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_modern"
+        "material_recipe_id": "prod_bus_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_bus_diesel"
@@ -1281,7 +1301,8 @@
         "special_build_days": 20,
         "base_cost_index": 108,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_modern"
+        "material_recipe_id": "prod_bus_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "karosa_legacy"
@@ -1341,7 +1362,8 @@
         "special_build_days": 20,
         "base_cost_index": 115,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_modern"
+        "material_recipe_id": "prod_bus_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_bus_diesel"
@@ -1401,7 +1423,8 @@
         "special_build_days": 19,
         "base_cost_index": 105,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_modern"
+        "material_recipe_id": "prod_bus_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_bus_diesel"
@@ -1462,7 +1485,8 @@
         "special_build_days": 19,
         "base_cost_index": 112,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_modern"
+        "material_recipe_id": "prod_bus_modern",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "modern_bus_diesel"
@@ -1525,7 +1549,8 @@
         "special_build_days": 22,
         "base_cost_index": 150,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_bev"
+        "material_recipe_id": "prod_bus_bev",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "ev_bus"
@@ -1589,7 +1614,8 @@
         "special_build_days": 22,
         "base_cost_index": 165,
         "initial_capability_state": "series_production",
-        "material_recipe_id": "prod_bus_bev"
+        "material_recipe_id": "prod_bus_bev",
+        "capability_policy_id": "cap_standard_series"
       },
       "maintenance_profile": {
         "family": "ev_bus"
