@@ -37,12 +37,11 @@ Rules:
 
 ## Now
 
-The current market/economy/public-tender design pass is complete and reconciled. Keep connection-agreement design in its separate thread. The next unresolved product-design work in this thread is the remaining multi-operator passenger ticket-cooperation detail; implementation can meanwhile proceed from the existing V1 handoff without treating open cooperation details as already decided.
+The current market/economy/public-tender and V1 multi-operator passenger-ticket design passes are complete and reconciled. Keep connection-agreement design in its separate thread. Continue with the final documentation/UI consistency audit and implementation handoff work below without treating the still-blank connection-agreement specification as decided.
 
 ## Open decisions
 
 - [ ] **[DESIGN] Connection agreements — redesign from scratch in separate thread** — still required for V1. The dedicated [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is intentionally blank; do not carry forward prior draft mechanics unless explicitly re-approved there.
-- [ ] **[DESIGN] Remaining multi-operator passenger ticket cooperation details for V1** — retain the already agreed capacity-sales clause, two directional partner rates and public-tariff-versus-partner-rate margin model, including negative margins. Complete remaining ticket cooperation and product-scope details without reopening those choices. Shared multi-company weekly/monthly products and tariff governance remain a separate unresolved scope question. Connection coordination and partner-capacity sales remain independent; pausing the connection discussion does not remove or finalize the capacity-sales workflow.
 
 ## Next
 
@@ -55,7 +54,7 @@ The current market/economy/public-tender design pass is complete and reconciled.
 
 - [ ] **[IMPL] Reinspect the current repository/toolchain and begin M0** according to [OPENCODE_START.md](OPENCODE_START.md) and [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md).
 - [ ] **[IMPL] Maintain [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)** as code/tests/evidence appear; do not infer implementation from the completed design backlog.
-- [ ] **[TEST] Execute acceptance/build evidence progressively** rather than waiting until the end; formal release gates remain in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md). UI-D37's EXTCO-A01–EXTCO-A14 are evidence requirements, not executed gameplay tests.
+- [ ] **[TEST] Execute acceptance/build evidence progressively** rather than waiting until the end; formal release gates remain in [V1_ACCEPTANCE_TESTS.md](V1_ACCEPTANCE_TESTS.md). UI-D37's EXTCO-A01–EXTCO-A16 are evidence requirements, not executed gameplay tests.
 
 ## Blocked
 
@@ -97,6 +96,7 @@ These are completed design/documentation tasks, not implemented game features. R
 - [x] UI-D39 — ownership/acquisitions/infrastructure market; controlled subsidiaries remain AI-managed, with a small owner-action set and separate company economies.
 - [x] UI-D40 — simple World News/history feed with significant world changes, known player impact and strict separation from UI-D24 incidents.
 - [x] UI-D41 — final HUD/navigation and global search, with company/finance top-left, Search/Layers top-right and grouped bottom navigation.
+- [x] **[DESIGN/DOC] V1 multi-operator passenger ticket cooperation (2026-10-01)** — retained asymmetric Line-scoped partner-capacity sales and two directional money/km rates with public-fare-versus-settlement margin including negative margins. V1 is explicitly limited to a two-operator single-journey through ticket containing a seller leg and partner leg; no pure/recursive resale or shared multi-company weekly/monthly pass. Sold tickets capture fare/agreement versions, real reservation rules still apply, and capacity resale alone creates no timetable coordination or protected connection.
 - [x] **[DESIGN/DOC] Market/economy refinement (2026-10-01)** — confirmed stable city/locality commodity markets with evolving internal economic centres, final-consumer sinks, historical commodity evolution, reference-versus-negotiated prices, active producer/buyer transport proposals, contract-first freight with transparently flow-dependent bounded open carriage, transparent concrete-plan public-service tenders, and all three public infrastructure/concession models in V1; owning design/UI/test documents updated. Remaining market/commodity balancing work stays open above.
 - [x] **[DESIGN/CONTENT] Economic-centre and firm-logistics balancing defaults (2026-10-01)** — set monthly centre-development evaluation, 800 m target/1,000 m split review, explicit resident/job/anchor formation gates, persistence/decline rules, and no hard centre-count cap. Firm logistics now uses explicit local make-or-buy defaults; exceptional captive intercity road capacity requires sustained large/specialist lane utilization, targets 25–35% of stable base load and is hard-capped at 40%, while non-transport captive mainline rail haulage remains 0%. Core design, content manifest, implementation brief and acceptance scenarios are reconciled.
 - [x] **[DESIGN/CONTENT] Commodity reference-price response curve (2026-10-01)** — defined an explainable stock-coverage + 7-day flow + alternative-access target model, explicit piecewise contributions, 50% target smoothing, 0.5% deadband, ordinary 0.50×–2.00× target range with ±5% daily movement, and exceptional 0.35×–3.00× target range with ±15% daily movement. Implementation brief and acceptance coverage are reconciled.
