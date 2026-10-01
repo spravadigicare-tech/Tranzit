@@ -157,6 +157,18 @@ def check_repository(root: Path, *, enforce_contract: bool = True) -> Result:
         for phrase in ('CargoBatch', 'The exact real-date-to-game-date mapping is still to be specified', 'The volume of onboard ticket sales itself does not add station dwell time'):
             if phrase in core:
                 errors.append(f'Known obsolete core wording returned: {phrase}')
+        for phrase in (
+            'CONNECTION_AGREEMENTS.md',
+            'protected connections missed',
+            'protected-connection success',
+            'connection-hold limit',
+            'protected itinerary under Section 32.4',
+            'Passenger connection-agreement mechanics remain required V1 design work',
+        ):
+            if phrase in core:
+                errors.append(f'Removed passenger-connection mechanic returned: {phrase}')
+        if (root / 'docs/CONNECTION_AGREEMENTS.md').exists():
+            errors.append('Removed passenger connection-agreement specification returned')
         if 'Only 1900 is implemented' in readme:
             errors.append('README falsely describes the design-only preset as implemented')
         for anchor in ('#119-shipments-and-physical-cargo-lots', '#1511-enduring-historical-vehicle-availability'):
