@@ -2,7 +2,7 @@
 
 > **Status:** content-design audit companion to [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md).
 >
-> This file checks whether the authored roster provides meaningful choices through the historical progression. It does not claim that every listed vehicle has a prefab, machine-readable definition or implementation.
+> This file checks whether the authored roster provides meaningful choices through the historical progression. Canonical machine-readable definitions now live in `content/vehicles/`; this audit does not claim that the roster has release-complete prefabs, balancing or runtime implementation.
 
 ## 1. Audit rule
 
@@ -98,24 +98,23 @@ Future art/content work should prefer meaningful body/handling differences over 
 
 These are not unresolved gameplay decisions.
 
-1. **Exact per-template values** — seats, payload, axle load, dimensions, consumption curves and maintenance intervals still need machine-readable authored values and prototype validation.
-2. **Factory capability timelines** — exact series-production, special-order, parts-support and lost-capability dates remain data work.
-3. **Regional market weights** — dealer/import/used-market likelihoods must be authored by era and region.
-4. **Explicit prices in `money`** — require economy balancing; current cost indices are only authoring guidance.
-5. **Visual assets** — every counted functional model still needs appropriate meshes/LODs/materials/sounds and supported template visual changes.
-6. **Equipment option matrices** — each model family needs its supported equipment groups, dependencies and exclusions.
-7. **Certification data** — exact country/type approval rules should be authored only where they create meaningful compatibility or import decisions.
-8. **Tests** — coverage, physical manufacture/import, delivery, retrofit and used-vehicle identity need automated/acceptance evidence.
+1. **Final prototype-value review** — machine-readable model/template/equipment values now exist, but rows explicitly marked as authoring estimates still need final prototype/source validation and balancing review.
+2. **Production/capability transitions** — the shared capability policies exist, but final model/factory transition authoring and calibration for series production, special order, parts/support and lost capability still need completion.
+3. **Explicit prices in `money`** — require economy balancing; current cost indices are only authoring guidance.
+4. **Consumption and maintenance calibration** — authored profiles exist, but release balancing still needs validation across eras and use cases.
+5. **Visual/localized assets** — every counted functional model still needs appropriate prefabs/meshes/LODs/materials/sounds, supported template visual changes and final localized player-facing text.
+6. **Certification data** — exact country/type approval content should be authored only where it creates meaningful compatibility or import decisions.
+7. **Tests** — coverage, physical manufacture/import, delivery, retrofit and used-vehicle identity need automated/acceptance evidence.
 
 ## 7.1 Canonical authored-data count
 
 Current `content/vehicles/` authoring coverage contains:
 
-- **100 vehicle model families** total;
-- **58 rail** and **42 road** model families;
-- **140 built-in templates**;
-- **57 equipment groups**;
-- **124 equipment options**.
+- **101 vehicle model families** total;
+- **58 rail** and **43 road** model families;
+- **141 built-in templates**;
+- **58 equipment groups**;
+- **125 equipment options**.
 
 Functional model-family breakdown:
 
@@ -125,7 +124,7 @@ Functional model-family breakdown:
 - 6 legacy/regional railcars;
 - 3 EMUs;
 - 2 DMUs;
-- 19 trucks;
+- 20 trucks;
 - 20 buses;
 - 3 horse-drawn opening families.
 
