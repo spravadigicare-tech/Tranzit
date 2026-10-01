@@ -1917,7 +1917,7 @@ To avoid convergence toward universal self-haulage, AI investment requires a rea
 
 Conversely, the simulation must not artificially force outsourcing when own-account transport is clearly economical. The goal is a mixed market in which some legs are customer-provided and many others remain available to transport companies because specialization, scale, distance, mode access and demand variability make external carriage competitive.
 
-**Own-account intercity transport is exceptional.** Only sufficiently large firms or firms with a strongly specialized, recurring captive flow can justify operating their own intercity transport capacity. Typical examples are a very large industrial complex moving one or two dominant commodities between fixed sites, or a specialized producer whose equipment/handling requirements make captive transport unusually valuable.
+**Own-account intercity transport is exceptional.** It is available only to genuinely large non-transport firms whose **actual recurring lane volume** can support the configured multi-vehicle utilization case, or to firms with a strongly specialized recurring captive flow that satisfies the separate specialist case. "Large" is therefore evidenced by the real stable flow and assets required to use them, not by an opaque company-size score. Typical examples are a very large industrial complex moving one or two dominant commodities between fixed sites, or a specialized producer whose equipment/handling requirements make captive transport unusually valuable.
 
 Rules:
 
