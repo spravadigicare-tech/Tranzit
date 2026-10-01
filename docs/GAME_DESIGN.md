@@ -1882,6 +1882,8 @@ The movement consumes real simulated time, capacity and endpoint handling. In ac
 
 A private rail siding/industrial freight station can eliminate a road first/last-mile leg only when it is physically connected to the usable rail network and supports the proposed service. Track/access rights, train/wagon compatibility, loading capacity, shunting, length/geometry and operating windows remain real constraints. A contract can grant the carrier access to that customer-owned siding without transferring ownership.
 
+A customer-owned industrial locomotive/shunter is confined to the private/industrial operating scope defined for that site and cannot be treated as free mainline traction. Customer-owned wagons can participate in the shipment only when a real railway carrier accepts/hauls them and they meet the applicable compatibility, condition and access rules.
+
 Firms can invest in, expand, replace or abandon these logistics capabilities when expected recurring logistics cost/benefit justifies it. The exact AI investment thresholds are balancing/content parameters.
 
 #### Preserve a real transport market
@@ -1920,10 +1922,13 @@ Conversely, the simulation must not artificially force outsourcing when own-acco
 Rules:
 
 - ordinary small and medium non-transport firms do not build general intercity fleets as a default response to transport cost;
-- eligible large/specialized firms may internalize only a **limited share/capacity** of their own recurring flow;
+- eligible large/specialized firms may internalize only a **limited share/capacity** of selected own intercity flows where the mode permits it;
 - the internalized share is determined by authored economics, fleet/facility capacity and utilization, not by a universal hidden percentage;
 - owning captive intercity capacity does not imply capability across every destination, commodity, mode or time window;
 - overflow, peak demand, new destinations, disruptions and flows outside the captive specialization continue to create external-carrier demand;
+- **rail is stricter:** an industrial/non-transport firm may own its private siding, loading tracks, internal shunting equipment and, where appropriate, its own freight wagons, but it does **not** operate its own intercity mainline train as ordinary captive transport;
+- mainline/intercity rail haulage between firms/markets requires a legitimate railway carrier with the normal licences, crews, traction, path/access rights and operating responsibilities;
+- customer-owned wagons may be hauled by that carrier and private industrial shunting may move them inside the works/siding, but the handover between private siding and mainline operation remains explicit;
 - a non-transport firm cannot sell spare intercity capacity to unrelated customers unless it separately becomes a legitimate licensed transport operator/subsidiary under the normal transport-company rules.
 
 Captive intercity capacity should normally be sized around stable base-load economics rather than total theoretical production. It must therefore remain plausible for even very large firms to outsource a substantial part of their transport.
