@@ -1850,9 +1850,39 @@ Industrial and commercial firms are economic entities with simplified but real s
 - suppliers/customers,
 - orders/contracts,
 - profitability,
-- ownership.
+- ownership,
+- physically available local logistics assets/capabilities where the firm owns them.
 
 They do not run expensive continuous AI.
+
+#### Firm-owned local logistics and private freight access
+
+A non-transport firm may own **real logistics capability for its own inputs and outputs**. This is not a free universal ability and not a public common-carrier service.
+
+Depending on era, industry, shipment profile, site and economics, a firm can own/use combinations such as:
+
+- horse-drawn carts/wagons or later vans/lorries/trucks for local collection/delivery;
+- loading yard/dock and handling equipment;
+- local storage/warehouse capacity;
+- a private industrial siding/loading track;
+- a private freight station/terminal or rail-served works entrance where scale justifies it.
+
+These assets/capabilities have real location, finite throughput/capacity, availability, operating cost and maintenance/support requirements. A firm cannot promise customer pickup simply because it exists in the same city.
+
+The firm's logistics structure emerges from economics rather than a hard size rule. A smaller firm with modest local flows may rationally own one suitable road vehicle and collect small shipments from a nearby terminal. A high-volume coal/steel/industrial consumer may instead justify a private siding, larger road fleet or contracted logistics. Another firm of the same size may outsource everything.
+
+Firm-owned road vehicles normally serve that firm's own supply/output flows. They do not become open public freight capacity unless the owner is also legitimately modeled as a transport provider offering such service.
+
+When a firm is responsible for a pickup/delivery leg, the simulation must use:
+
+1. suitable available firm-owned logistics capacity; or
+2. a real external carrier/procured service.
+
+The movement consumes real simulated time, capacity and endpoint handling. In active detailed simulation it follows the normal physical transport rules; macro/LOD execution can aggregate movement detail but must preserve origin, destination, elapsed time, capacity commitment and cargo continuity. No customer-owned vehicle capability permits teleportation.
+
+A private rail siding/industrial freight station can eliminate a road first/last-mile leg only when it is physically connected to the usable rail network and supports the proposed service. Track/access rights, train/wagon compatibility, loading capacity, shunting, length/geometry and operating windows remain real constraints. A contract can grant the carrier access to that customer-owned siding without transferring ownership.
+
+Firms can invest in, expand, replace or abandon these logistics capabilities when expected recurring logistics cost/benefit justifies it. The exact AI investment thresholds are balancing/content parameters.
 
 Firms, operating facilities and physical buildings are separate identities. A firm can close a plant, fail or be acquired without deleting the building. A vacated industrial property can remain idle, be purchased and adapted by another firm, or be converted over time to another plausible use such as warehousing, offices or housing. New industries may therefore reuse older industrial sites rather than always building on untouched land.
 
@@ -2487,9 +2517,10 @@ A typical intercity contract can therefore be:
 The contract explicitly defines **transport responsibility at origin and destination**. Supported patterns include:
 
 1. **Carrier-arranged door-to-door** — the player's Transport Plan must physically cover collection from the seller and/or final delivery to the buyer facility.
-2. **Customer pickup at terminal** — the carrier's obligation ends only after accepted handover at the named terminal; the receiving firm is responsible for the physical last-mile leg.
-3. **Customer delivery to terminal** — the shipper is responsible for getting the cargo to the named origin terminal before the contractual cutoff.
-4. **External last mile** — the player purchases a real third-party delivery leg through the external transport system.
+2. **Customer pickup at terminal** — the carrier's obligation ends only after accepted handover at the named terminal; the receiving firm uses suitable own logistics capacity or procures an external carrier for the physical last-mile leg.
+3. **Customer delivery to terminal** — the shipper uses suitable own logistics capacity or a procured carrier to get the cargo to the named origin terminal before the contractual cutoff.
+4. **Direct customer siding / private freight endpoint** — where the firm owns a compatible rail-served loading point, the player's rail movement can run directly to/from the industrial facility and hand over there, subject to real access/loading/shunting constraints.
+5. **External last mile** — the player purchases a real third-party delivery leg through the external transport system.
 
 A customer-provided pickup/delivery leg is still a **real physical movement**. The responsible firm must have or procure suitable road-transport capability—such as its own van/truck capacity or an external carrier—and the movement consumes real time, vehicle capacity and loading/unloading capacity. The game must not teleport cargo from a terminal into a factory inventory merely because the contract says "customer pickup".
 
@@ -3359,7 +3390,11 @@ A customer can therefore offer a contract such as:
 
 > Factory A provides its private loading siding and loader. Deliver to Municipal Terminal B, with station access included in the contract.
 
-In that case the player does not have to build those endpoints, but must still provide compatible vehicles, route/access between them and any other required resources.
+Or a buyer can offer:
+
+> Deliver by rail directly to Buyer Works Siding. Buyer provides siding access and unloading equipment.
+
+In those cases the player does not have to build the supplied endpoint, but must still provide compatible vehicles, route/access between endpoints and any other required resources. A private siding is not equivalent to unlimited terminal capacity.
 
 A different contract may provide only the cargo/customer and require the carrier to arrange both endpoints.
 
