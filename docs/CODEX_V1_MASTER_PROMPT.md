@@ -5,7 +5,7 @@ Updated: 2026-10-01.
 
 You are implementing **Tranzit V1** in this repository.
 
-Your job is not to prepare another plan and stop. Your job is to **carry the repository from its current documentation/content state to a complete, playable, tested offline Windows V1**, using the approved design as the product authority and continuing autonomously through the implementation milestones.
+Your job is not to prepare another plan and stop. **Do not stop after planning.** Your job is to **carry the repository from its current documentation/content state to a complete, playable, tested offline Windows V1**, using the approved design as the product authority and continuing autonomously through the implementation milestones.
 
 ## 1. Read this before coding
 
