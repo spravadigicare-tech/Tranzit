@@ -41,6 +41,10 @@ Do not label a Shipment complete because one part arrived. Completion follows it
 
 Show the contractual deadline separately from any estimated completion of the whole Shipment. If a supported ETA cannot be calculated, show Unknown / Not currently estimable rather than treating the last reserved Trip as guaranteed arrival.
 
+For perishable/quality-sensitive cargo, also show **current quality/freshness**, current physical condition (ambient/insulated/refrigerated as applicable) and **latest quality-feasible arrival**. Keep this distinct from the contractual deadline. If the quality limit is earlier, highlight that as the binding risk and explain which planned leg/storage/handling period consumes the most remaining quality budget.
+
+A cold-chain icon/status never means “fresh forever”. Tooltip/detail should expose that compatible refrigerated vehicles/storage reduce the decay rate while any ambient handling gap consumes quality faster.
+
 ## 2. Compact transport chain
 
 Show the current versioned Transport Plan as a compact ordered chain, for example:
