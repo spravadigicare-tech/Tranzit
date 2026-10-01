@@ -279,6 +279,7 @@ These scenarios describe evidence to collect when implemented, not a claim of pa
 | EXTCO-A12 | Inspect relationship history with good partner performance and competing services simultaneously. Measures retain time period/sample/scope; qualitative labels have real contributing causes rather than a new universal score. |
 | EXTCO-A13 | Inspect a minority shareholding, a subsidiary and a company acquired or dissolved in the recorded history. Ownership percentage does not grant invented control or private information; stable original identity, agreements and verified successor links remain. |
 | EXTCO-A14 | Save/load with an open pinned company, stale observations, current offers and historical events, including a macro-region company. Knowledge and permissions are revalidated without discovering hidden data, replaying events, activating regions or changing pause state. |
+| EXTCO-A15 | Inspect an industrial customer that owns a private siding and limited local pickup vehicle capacity. Show only legitimately known/contractually offered logistics capability. Use it in a freight proposal, then verify the physical customer-provided leg/endpoint uses finite real capacity and no hidden public-carrier service or teleportation appears. |
 
 ## 14. Decision record
 
@@ -337,6 +338,8 @@ Known-assets lists distinguish ownership, operation and leasing where known. A v
 An observation is timestamped. “At least 12 locomotives known in the displayed observation period” is not the company's current total or free capacity. Outdated sightings remain historical/last known and cannot indefinitely prove a live fleet lower bound after sales, transfers or scrapping. A last-known location is not a live tracking signal.
 
 Known infrastructure links lead to the actual station, depot, corridor or other permitted asset detail. Distinguish owned infrastructure from access rights and third-party facilities merely used by the company. Aggregation must not count the same asset once per role, Line or subsidiary relationship.
+
+For industrial/customer firms, Operation and network can also expose **legitimately known own-logistics capability** relevant to doing business with the player, such as a customer-owned loading siding, freight yard/dock, or a declared ability to collect/deliver from a named terminal with its own local road capacity. Do not infer or reveal the firm's complete private vehicle fleet from that capability. Contractually offered capability can be shown with the scope needed for the proposal (endpoint, cargo compatibility, quantity/throughput, time window) without exposing unrelated assets.
 
 ## 17. Products and services reuse the owning workflows
 
