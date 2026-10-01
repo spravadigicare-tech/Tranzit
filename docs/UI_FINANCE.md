@@ -119,4 +119,4 @@ These are required checks for this confirmed UI direction, not claims that an im
 |---|---|---|
 | UI-D19 | One company finance window with a compact cash/result/commitment summary, five task cards, source-linked figures and shared reporting periods; draft scenarios remain separate from accepted obligations and actual payments | CONFIRMED on 2026-09-30 |
 
-This supplements the confirmed UI directions and focused station, depot, commercial and construction specifications. General company, branch and personnel screen proposals are not approved by this finance decision.
+This supplements the confirmed UI directions and focused station, depot, commercial, construction and company specifications. Company, branch and personnel presentation remains owned by [UI_COMPANY.md](UI_COMPANY.md); this finance decision does not override it.
