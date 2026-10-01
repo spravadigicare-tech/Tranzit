@@ -139,10 +139,9 @@ Store the purchased product/version and its actual price and validity. New rates
 
 An own-company tariff/integrated system is possible without another carrier.
 
-For V1, multi-operator passenger cooperation uses the two simple agreement families in GAME_DESIGN Section 30.3:
+For V1, the currently defined multi-operator passenger-ticket mechanism is the **partner-capacity sales agreement** for one through ticket across operators.
 
-- connection agreement at a defined transfer node;
-- partner-capacity sales agreement for one through ticket across operators.
+Connection-agreement mechanics are intentionally unspecified pending a separate redesign in [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md).
 
 The bilateral agreement carries **two directional partner rates in money/km** when capacity resale is enabled both ways: one rate for what the partner owes when selling our capacity, and one rate for what we owe when selling theirs. Either direction can be disabled and the rates may differ. Passenger-facing pricing for the partner segment still follows the operating carrier's public tariff; the seller pays the applicable directional partner rate. The difference is the seller's margin and may be positive or negative.
 
