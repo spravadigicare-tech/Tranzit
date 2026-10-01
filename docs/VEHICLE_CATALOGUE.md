@@ -273,7 +273,7 @@ A player cannot order a factory-new obsolete model merely because it is visible 
 
 If a successor or specialist later restores a real production capability, the model may again receive new-build offers with explicit finite capacity, cost and lead time. This is a real world-state change, not an automatic "retro vehicle" toggle.
 
-### 8.1 Coverage acceptance rule
+### 8.2 Coverage acceptance rule
 
 The catalogue is balanced around **meaningful acquisition choices**, not a fixed number of brand-new models every calendar year.
 
@@ -302,7 +302,7 @@ If an era genuinely lacks three technically distinct new products for a niche ro
 
 A release/content audit should flag any continuous period longer than roughly one decade in which a core role has only one credible acquisition strategy despite historically available alternatives.
 
-## 8.2 1900 opening-market seeding
+## 8.3 1900 opening-market seeding
 
 The 1900 new-game market must be viable without spawning free vehicles or forcing one scripted starter fleet.
 
