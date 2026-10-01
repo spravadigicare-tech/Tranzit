@@ -4613,6 +4613,18 @@ A used vehicle is usually available for ownership transfer without factory produ
 
 Imports from inactive foreign regions enter through defined import points and are physically delivered into the active world.
 
+Exports to off-map buyers use the inverse commercial relationship but a deliberately simplified delivery responsibility: the **buyer collects**.
+
+For an off-map sale:
+
+- the sold vehicle remains a real physical asset until handover;
+- the player must make it available at an agreed physically reachable collection point inside the active world;
+- the buyer or its contracted carrier is responsible for collection and all onward transport beyond that handover;
+- the player does not plan or pay the off-map export transport unless a special sale contract explicitly says otherwise;
+- once the buyer has physically taken custody at the handover point, the vehicle can leave detailed simulation and continue only as a recorded historical ownership/export event.
+
+The game therefore does not require the player to simulate long-distance outbound delivery chains for ordinary off-map vehicle sales.
+
 At new-game initialization, period-appropriate used vehicles can already exist with manufacture dates before the chosen start. Their age and condition are initialized rather than manufactured by replaying earlier decades.
 
 ### 15.6 Leasing and rental
