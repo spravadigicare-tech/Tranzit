@@ -139,7 +139,7 @@ The handoff is documentation. It does **not** mean a Unity project, playable bui
 
 ## Wider base game and planned DLC
 
-The wider base-game design has selectable new-game starts in **1900, 1925, 1950 and 1975**. Only the 1900 preset is required for the first playable target; it is not yet implemented in the inspected documentation-only baseline. Later presets initialize an appropriate existing world while the player still starts with a small company.
+The wider base-game design has selectable new-game starts in **1900, 1925, 1950 and 1975**. Only the 1900 preset is required for the first playable target; it is not yet implemented in the current reviewed repository, which still has no Unity project/gameplay implementation. Later presets initialize an appropriate existing world while the player still starts with a small company.
 
 The earlier playable period, intended to begin around **1820**, is reserved for the first planned DLC, **Early Ages**. Historic buildings, steam operations, horse-drawn transport and suitable older vehicles can still be part of the base game where appropriate. The DLC release schedule is not specified.
 
