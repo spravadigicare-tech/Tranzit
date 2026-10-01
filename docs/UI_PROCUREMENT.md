@@ -172,33 +172,65 @@ The workspace supports the existing procurement choices:
 3. purchase at source with external transport;
 4. recurring supply agreement.
 
-A recurring agreement can expose actual terms such as:
+A recurring physical-supply agreement exposes a small, explicit set of terms:
 
-- supplier;
+- supplier and buyer;
 - item/specification;
+- quantity per scheduled delivery;
 - destination or pickup point;
-- recurring/fixed quantity where the agreement defines one;
-- price/price rule;
+- delivery schedule;
+- **price per delivery**;
 - validity;
 - Auto-renew;
-- minimum/maximum quantity where defined;
 - transport responsibility;
-- service/availability commitments;
+- service/availability commitments where applicable;
 - notice/termination terms.
+
+### 7.1 Delivery schedule
+
+Use the shared 14-day calendar directly. Do not ask the player to enter arbitrary numeric dates for ordinary recurring supply.
+
+The schedule control has two baseline modes:
+
+**Weekly**
+
+Select one or more weekdays:
+
+> Mon ☐ Tue ☑ Wed ☑ Thu ☑ Fri ☐ Sat ☐ Sun ☐
+
+The selected weekdays repeat in both weeks of every active month. Tuesday + Wednesday + Thursday means six scheduled deliveries per month.
+
+**Once per month**
+
+Select:
+
+- **Week 1** or **Week 2**;
+- then either one weekday in that week or **Any day in this week**.
 
 Example:
 
+> Once per month  
+> Week 1  
+> Any day in this week
+
+This creates exactly one contractual delivery during that window. The supplier can choose the actual valid day inside the window.
+
+Example agreement:
+
 > **Coal supply framework**
 >
+> Quantity per delivery: 60 t  
 > Destination: Brno depot  
-> Planned recurring delivery: 60 t every 7 days  
-> Price: 14 money/t  
+> Schedule: every Tuesday and Thursday  
+> Price: 1,600 money / delivery  
 > Transport: supplier  
 > Auto-renew: On
 
-The example does not create a universal mandatory contract form. Use only fields supported by the actual agreement.
+Price is shown and negotiated **per scheduled delivery** in this baseline model. Do not substitute a hidden per-tonne rate or monthly fee.
 
-Auto-renew extends the agreement; it does not physically deliver or refill anything by itself.
+Each occurrence becomes a real expected delivery/order state and is charged once when the agreement's payment rule says that delivery is due/accepted. Auto-renew extends the agreement; it does not physically deliver or refill anything by itself.
+
+The example does not create a universal mandatory contract form. Use only fields supported by the actual agreement.
 
 ## 8. Reorder rules
 
