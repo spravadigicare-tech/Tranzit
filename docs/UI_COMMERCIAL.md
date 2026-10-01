@@ -30,7 +30,7 @@ It presents known local commodity-market information derived from the simulated 
 Default rows can show:
 
 - commodity;
-- selected city/market area;
+- selected city/locality market;
 - local production;
 - local consumption;
 - surplus/deficit;
@@ -42,9 +42,11 @@ The view must distinguish real known values from estimates/stale information.
 
 ### 2.2 Commodity detail and map
 
-Opening a commodity automatically activates the corresponding commodity-market analysis on the **main map** while the Market window remains open. The map presents local **surplus/deficit and reference price together** for each visible/known market area; exact glyph, shading and label treatment remain visual implementation work.
+Opening a commodity automatically activates the corresponding commodity-market analysis on the **main map** while the Market window remains open. The map presents local **surplus/deficit and reference price together** for each visible/known city/locality market; exact glyph, shading and label treatment remain visual implementation work.
 
-A market area can be smaller than a city. Large cities may contain several evolving local areas while small settlements may use one. The view must not imply that a market-area boundary teleports cargo: firms/facilities remain real physical origins/destinations and deliveries inside one area or city still require physical transport.
+One city/locality normally corresponds to one commodity market and one local reference-price signal. Large cities may contain several evolving **economic centres/neighbourhoods**—for example centre, residential districts, industrial zones or freight clusters—but these are internal spatial/economic nodes, not separate price markets. Firms/facilities remain real physical origins/destinations and deliveries between two centres inside the same city still require physical transport.
+
+The Market detail may show the city's internal economic centres as context: where known producers, consumers, jobs, population and freight/passenger hubs are concentrated. Do not assign a second reference price to those centres or imply that a new district creates a new market.
 
 The same information can therefore be inspected spatially across the map.
 
@@ -317,7 +319,7 @@ These scenarios extend the UI evidence contract; they are not claims of implemen
 | COMUI-A06 | Trigger customer-side delay, carrier-side missed transfer and external recovery. Commercial obligations and SLA consequences stay traceable through replanning rather than disappearing when cargo is rebooked. |
 | COMUI-A07 | Exercise renewal/non-renewal and early termination. Show notice/effective dates, cancellation settlement and remaining operational dependencies; no unrelated Line, slot, cargo or asset is silently deleted. |
 | COMUI-A08 | Verify CZ/EN, enlarged UI, tooltips/focus access, running/manual-pause/critical-pause use and save/load. Opening commercial windows or hovering explanations never changes time or executes a commercial command. |
-| COMUI-A09 | Open timber in Market. The main map automatically shows known market areas with surplus/deficit and local reference prices together while the Market window remains usable. Inspect two areas in one city and verify their physical firms/endpoints remain distinct and cargo never teleports across the market boundary. |
+| COMUI-A09 | Open timber in Market. The main map automatically shows known city/locality markets with surplus/deficit and local reference prices together while the Market window remains usable. Inspect one large city with several economic centres: all centres share the city's market reference signal, their firms/endpoints remain physically distinct, and cargo never teleports between them. |
 | COMUI-A10 | From a real known producer with surplus, compare a known buyer in a deficit market, inspect reference versus concrete commercial terms and propose a transport connection. Both counterparties evaluate real supply/demand; no player commodity ownership, fabricated buyer or fabricated cargo is created. |
 | COMUI-A11 | Submit a public tender using a concrete extension/new-Line proposal. Invalid mandatory conditions block submission with exact reasons. Rival bids remain sealed before deadline; after award the published weighted price/reliability/commercial-reliability/comfort/reputation breakdown explains the outcome. |
 | COMUI-A12 | Operate an awarded public-service contract, change internal vehicle/timetable implementation while retaining all binding service outcomes, then trigger isolated and repeated failures. Verify progressive reliability/penalty/cure behaviour and eventual legitimate termination/re-tender without one minor incident instantly cancelling the contract. |
