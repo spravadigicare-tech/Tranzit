@@ -1854,6 +1854,10 @@ Demand for oil/gas/fuels should emerge and grow with the relevant technologies a
 
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
+Every authored commodity chain must ultimately terminate in a **real final-use sink tied to the city/urban economy**. Intermediate commodities may pass through many firms, but the chain must eventually be consumed by household-facing retail/services, construction/buildings, utilities, public institutions, transport/operating consumption, or another explicit final-use activity that supports city population, employment, services or development. Do not create commodity chains whose final product simply accumulates indefinitely at another producer with no economic consumer.
+
+The final sink does not have to be a literal municipal authority. A shop selling clothing, a furniture retailer, a construction project consuming cement/steel, a utility consuming fuel/gas, or a transport company consuming coal/fuel are all valid final-use endpoints because their output is service/activity rather than another transportable commodity.
+
 ### 10.2 Industrial geography
 
 Industry is dynamic but geographically grounded.
