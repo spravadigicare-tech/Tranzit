@@ -683,12 +683,87 @@ Typical elements may include:
 
 A village may expand, merge into a larger built-up area or eventually be absorbed by urban growth. The visual system must support that transition without requiring a bespoke hand-authored model for each settlement.
 
-## 16. Still to define
+## 16. People, animals and visible local life
+
+### 16.1 Character style
+
+Use **lightly stylized normal human proportions**.
+
+Characters should look like simplified real people rather than toy/model figures. Do not enlarge heads/bodies or use exaggerated miniature proportions merely to improve readability.
+
+At the closest supported camera, characters may expose:
+
+- basic clothing silhouette;
+- coat/shirt/workwear differences;
+- trousers/skirts where historically appropriate;
+- hats/caps/helmets where relevant;
+- simple carried objects/luggage;
+- clear body posture and activity.
+
+Do not spend detail on facial features, fingers or close-up character rendering that the supported camera cannot meaningfully show.
+
+### 16.2 Representative population
+
+Visible people are a **representative rendering layer**, not a one-character-per-simulated-person requirement.
+
+A station containing hundreds of simulated passengers may display a much smaller number of representative characters while still communicating crowding and activity. The same principle applies to streets, workplaces, terminals and public spaces.
+
+Representative rendering must not contradict the real simulation state. A visually empty station should not represent a large waiting crowd, and a visually busy facility should not imply active work when the simulation is idle.
+
+### 16.3 Animation priorities
+
+Prefer a broader set of simple readable activities over a small set of highly detailed animations.
+
+Useful activity families include:
+
+- walking;
+- waiting/standing;
+- boarding/alighting;
+- carrying luggage;
+- pushing or pulling carts;
+- loading/unloading;
+- working around yards/warehouses;
+- interacting with simple equipment;
+- sitting/resting where relevant.
+
+The goal is medium-to-high visible life at close zoom, not character-centric spectacle.
+
+### 16.4 Historical evolution of people and street life
+
+Visible population and street life should evolve with the period.
+
+Visual differences may include:
+
+- clothing silhouettes and materials;
+- uniforms/workwear;
+- luggage types;
+- bicycles and handcarts;
+- horse-drawn transport;
+- later motor traffic;
+- changing work equipment and protective clothing;
+- period-appropriate public-space furniture and street activity.
+
+This helps the world visibly age even when a building or street alignment remains unchanged.
+
+### 16.5 Animals
+
+Animals are a contextual environmental layer, not a livestock-management simulation.
+
+Period- and place-appropriate examples may include:
+
+- horses with carts/transport;
+- cattle on pasture;
+- sheep;
+- chickens around some farms;
+- other small rural animal activity where useful.
+
+Animal presence should decline/change where the historical transport/economic context changes, such as horse transport giving way to motor vehicles.
+
+## 17. Still to define
 
 The following visual areas remain to be specified in this art-direction thread:
 
 - regional rural landscape identities and exact field/crop palette;
-- exact pedestrian/character style and animation density;
 - detailed VFX language for smoke, steam, dust, mud and construction;
 - final UI colour/type/icon tokens;
 - LOD/asset technical budgets after the Unity rendering baseline is selected.
