@@ -718,7 +718,7 @@
       "regional_market_profile_id": "market_cz_domestic_general",
       "platform": {
         "length_m": 18.5,
-        "service_mass_t": null,
+        "service_mass_t": 31.6,
         "max_speed_kph": 70,
         "structural_speed_limit_kph": 70,
         "power_kw": 206,
@@ -731,7 +731,6 @@
         ],
         "width_m": 3.003,
         "height_m": 3.78,
-        "empty_mass_t": 31.6,
         "minimum_curve_m": 120
       },
       "production": {
@@ -762,10 +761,10 @@
       ],
       "provenance": {
         "source_urls": [
-          "https://please.untaint.us/?url=https%3A%2F%2Fcs.wikipedia.org%2Fwiki%2FMotorov%C3%BD_v%C5%AFz_820"
+          "https://www.zeleznicnipoklady.cz/produkt/m-240-0114-820-114-7/"
         ],
-        "notes": "1959 introduction, 56 seats + 46 standing, 18.5 m, 206 kW and 70 km/h. Mass sources vary; 31.6 t retained as representative authoring value pending batch-level review.",
-        "confidence": "medium"
+        "notes": "Preserved class 820/M240 data: 206 kW, hydrodynamic transmission, 70 km/h, 31.6 t equipped/service mass, 18.5×3.003×3.780 m. Seating/standing remain representative family authoring values pending a primary interior-capacity source.",
+        "confidence": "medium_high"
       }
     },
     {
