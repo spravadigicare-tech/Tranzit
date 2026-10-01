@@ -133,7 +133,7 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **Studena 842 “Rakvička”** | 1988 | ČD/ČSD class 842 | diesel railcar | 64 fixed + 16 folding seats | 100 km/h | ~2×242 kW class / ~47 t | faster regional diesel unit with more luggage/bike flexibility | Studénka factory |
 | **Ringhauer Z80** | 1980 | UIC-Z / Bmz-type coach | fast coach | ~60–80 seats | 160 km/h | ~42–48 t | faster, air-conditioned variants, higher comfort and electrical demand | domestic / off-map licensed builds |
 | **Studena 471 “Mamut”** | 1997 | ČD class 471 CityElefant | 3-car double-deck EMU | 310 seats / up to ~640 total | 140 km/h | 2,000 kW / ~155 t | very high suburban capacity, regenerative braking, 3 kV DC only | Studénka/Plzeň active-map production |
-| **Alstrom 680 “Nakláněč”** | 2003 | ČD class 680 Pendolino | 7-car EMU | 331 seats | 200 km/h | 3,920 kW / 385 t | tilting, multisystem, expensive dedicated fixed consist | off-map Italy → rail import |
+| **Alstrom 680 “Nakláněč”** | 2003 | ČD class 680 Pendolino | 7-car EMU | 331 seats | 230 km/h technical maximum | 4,000 kW / ~385 t | tilting, multisystem, expensive dedicated fixed consist; actual route speed can be lower | off-map Italy → rail import |
 | **PESKA 844 “RegioRys”** | 2011 | PESA Link II / class 844 | 2-car DMU | 120 seated + ~120 standing | 120 km/h | 2×390 kW / 84.4 t | low-entry regional diesel, 1st-class zone, bikes/WC | off-map Poland → rail import |
 | **Neškoda 640 “Panter”** | 2012 | RegioPanter | 3-car EMU | 234 seated | 160 km/h | 2,040 kW / ~151–152 t | fast acceleration, low-floor regional electric, dual-voltage | Plzeň/Studénka active-map manufacture |
 | **PESKA 847 “RegioLiška”** | 2023 | RegioFox / class 847 | 2-car DMU | 115 seated | 120 km/h | ~750 kW / ~83 t | modern non-electrified regional service, low-entry, HVO-compatible family | off-map Poland import |
@@ -236,7 +236,7 @@ Body changes alter tare mass, payload, cargo compatibility, price, loading metho
 | **Neškoda 706 RTO** | 1958 | Škoda 706 RTO | city 29+41; regional 41+20; coach 39 seats | 117.6 kW | 65–85 km/h by factory variant | city/regional/coach variants | Karusa + domestic chassis works |
 | **Karusa ŠM 11** | 1965 | Karosa ŠM 11 | 24–31 seated + 59–67 standing | 132–154 kW | 65 km/h | high-capacity city bus | Vysoké Mýto |
 | **Karusa ŠL 11** | 1965 | Karosa ŠL 11 | ~45 seated + ~30–40 standing | ~132–147 kW | 70–100 km/h by version | regional bus | Vysoké Mýto |
-| **Ikarusz 280 “Harmonika”** | 1973 | Ikarus 280 | 37 seated + ~103 standing in common city configuration | 141–184 kW | ~70 km/h authoring cap | articulated high-capacity city bus | off-map Hungary import |
+| **Ikarusz 280 “Harmonika”** | 1973 | Ikarus 280.08 | 37 seated + 103 standing | 141.2 kW representative 280.08; later batches varied | ~70 km/h authoring cap | articulated high-capacity city bus; 16.5 m, ~12.5 t empty | off-map Hungary import |
 | **Mercator O303** | 1974 | Mercedes-Benz O303 | ~41–55 seats by coach template | 141–235 kW early options | 100 km/h authoring cap | premium/intercity/coach; expensive but fast and comfortable | off-map Germany import |
 | **Karusa C734** | 1981 | Karosa C 734 | 45 seated + ~27–30 standing | 148–155 kW | 100 km/h | durable intercity/regional | Vysoké Mýto |
 | **Karusa B731** | 1981 | Karosa B 731 | ~31 seated, ~90 total | ~148–190 kW by batch | ~70 km/h | city bus, automatic | Vysoké Mýto |
