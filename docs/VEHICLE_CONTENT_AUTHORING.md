@@ -609,6 +609,49 @@ historical_trade_rules
 
 Stable IDs survive localization, corporate rename and save/load.
 
+## 15.1 Base cost index semantics and future `money` conversion
+
+`production.base_cost_index` is a **relative authoring index**, not a universal cross-mode price scale and never the player-facing currency.
+
+It is interpreted inside an era-appropriate **pricing class** derived from the vehicle family, for example:
+
+- horse/local road vehicle;
+- light commercial road vehicle;
+- heavy truck/tractor;
+- bus/coach;
+- freight wagon;
+- passenger/service coach;
+- railcar/DMU/EMU;
+- shunting/light locomotive;
+- mainline locomotive;
+- integrated premium trainset.
+
+Therefore an index of `80` on a locomotive does **not** mean that locomotive costs fewer `money` than a pioneering bus with index `150`. The locomotive pricing class has a much larger monetary base.
+
+When explicit player-facing prices are calibrated, use the conceptual form:
+
+```text
+configured_factory_price_money
+  = era_pricing_class_baseline_money
+  × model_base_cost_index / 100
+  + selected_equipment_money
+  + destination_adaptation_money
+  + current_factory_setup/scarcity effects
+```
+
+The resulting quote can then add separately visible delivery, broker/import, customs, certification, dealer-margin and financing costs.
+
+Rules:
+
+1. pricing-class baselines are economic balancing data tied to the shared `money` economy and the selected historical period;
+2. the same class baseline must be used consistently for comparable contemporary vehicles so their model indices preserve intended trade-offs;
+3. changing historical purchasing power belongs in the era/economy baseline, not by arbitrarily inflating an unchanged model index every year;
+4. used-vehicle price derives from the relevant configured replacement value plus real age/condition/support/scarcity/demand factors, not from a separate arbitrary used-price table;
+5. equipment option deltas remain explicit costs and must not be hidden inside a template-name premium;
+6. `base_cost_index` is not shown to the player once real `money` prices exist.
+
+Final `money` calibration must be tested against the founding-loan/setup baskets in V1 content balancing so a small 1900 road start and a credible larger rail start remain financially possible without making locomotives comparable in absolute price to road carts or buses.
+
 ## 16. Completion criteria for authored vehicle data
 
 A vehicle family is **content-data complete** only when it has:
