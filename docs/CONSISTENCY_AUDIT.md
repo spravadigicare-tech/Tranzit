@@ -77,3 +77,5 @@ The follow-up also removed the now-obsolete blank `docs/CONNECTION_AGREEMENTS.md
 
 No new blocking product decision was found in this pass. Remaining open work in TODO is implementation, validation, vehicle-content completion and asset/balancing work rather than an unresolved core gameplay choice.
 
+Current main verification after the follow-up reconciliations: GitHub Actions **Documentation checks** run `36908216525` completed successfully on commit `89b084ec006618e97425486273607316a9bb4af8`. This workflow runs `Tools/check_docs.py`, `Tools/check_vehicle_content.py`, validator unit tests and changed-whitespace checks. As throughout this document, that is documentation/content validation only, not Unity/gameplay evidence.
+
