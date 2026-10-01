@@ -9026,13 +9026,42 @@ Major events can alter:
 
 - borders,
 - licences,
-- cross-border access,
-- passenger demand,
-- commodity demand,
-- state contracts,
-- material availability,
-- prices,
-- industrial production.
+- cross-border access;
+- passenger demand;
+- commodity demand;
+- state contracts;
+- material availability;
+- prices;
+- industrial production;
+- international trade routes and customs conditions;
+- availability, lead time and cost of imported vehicles, parts and specialist services.
+
+### 35.1 International trade and vehicle-support disruption
+
+Historical politics affects trade through explicit commercial/legal/logistics state rather than an unexplained global penalty.
+
+For a cross-border purchase or support flow, keep separate:
+
+1. **legal trade permission** — whether the transaction/import is currently permitted;
+2. **customs/tariff burden** — duties, fees, inspections and other period-appropriate border costs;
+3. **payment/settlement constraint** — whether the buyer can actually settle the transaction under the current economic/legal framework;
+4. **transport corridor availability** — whether a physically usable rail/road/sea/transshipment route exists;
+5. **carrier capacity and risk** — finite providers, congestion, rerouting and disruption;
+6. **type approval/technical acceptance** — separate from trade permission under the vehicle-certification rules;
+7. **parts/support access** — new-vehicle purchase, spare-parts supply and specialist-service access can be affected differently.
+
+A historical event can therefore make an import:
+
+- normally available;
+- available but slower/more expensive;
+- available only through an alternative route/provider;
+- temporarily unavailable because no legal or physical trade path exists.
+
+Do not reduce this to a hidden "foreign vehicle penalty". The marketplace/maintenance UI must show the actual blocker or added cost, for example customs restriction, unavailable border route, supplier unable to export, payment restriction, lack of carrier capacity or missing national approval.
+
+Vehicle ownership and serviceability remain distinct from current trade access. Closing an import route does not delete already-owned vehicles. It can, however, make new units, genuine spare parts or factory support harder or impossible to obtain until another legitimate source/corridor becomes available.
+
+Independent/local workshops may continue to support an imported model using existing stock, locally manufactured substitute parts or retained know-how where technically plausible. That support has real cost, capacity and compatibility rather than bypassing the disruption for free.
 
 Wars/conflicts should be represented mainly through economic/regulatory consequences, not combat visuals.
 
