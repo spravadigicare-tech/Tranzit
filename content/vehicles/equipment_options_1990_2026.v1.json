@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "scope": "1990-2026 equipment groups",
+  "groups": [
+    {
+      "id": "modern_loco_country_package_2000",
+      "name": "Country and train-protection package",
+      "selection": "one_or_more",
+      "options": [
+        {
+          "id": "country_cz_sk_2000",
+          "name": "CZ/SK package",
+          "introduced_year": 2000,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 8,
+          "service_tags": [
+            "cz_sk_approval"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "country_de_at_2000",
+          "name": "DE/AT package",
+          "introduced_year": 2000,
+          "mass_delta_t": 0.25,
+          "cost_index_delta": 12,
+          "service_tags": [
+            "de_at_approval"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "country_pl_2000",
+          "name": "PL package",
+          "introduced_year": 2000,
+          "mass_delta_t": 0.15,
+          "cost_index_delta": 8,
+          "service_tags": [
+            "pl_approval"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "etcs_package_2005",
+          "name": "ETCS package",
+          "introduced_year": 2005,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 18,
+          "service_tags": [
+            "etcs"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "modern_regional_layout_1997",
+      "name": "Modern regional passenger layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "regional_economy_1997",
+          "name": "Economy",
+          "introduced_year": 1997,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "seat_capacity_factor": 1,
+          "comfort_band": "standard",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "regional_mixed_1997",
+          "name": "Economy + Business",
+          "introduced_year": 1997,
+          "mass_delta_t": 0.3,
+          "cost_index_delta": 16,
+          "seat_capacity_factor": 0.92,
+          "comfort_band": "mixed",
+          "retrofit_allowed": true
+        },
+        {
+          "id": "regional_flex_2005",
+          "name": "Economy + Flex",
+          "introduced_year": 2005,
+          "mass_delta_t": 0.25,
+          "cost_index_delta": 12,
+          "seat_capacity_factor": 0.93,
+          "service_tags": [
+            "bikes",
+            "prams",
+            "wheelchairs"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "modern_passenger_comfort_1997",
+      "name": "Modern passenger comfort",
+      "selection": "one_or_more",
+      "options": [
+        {
+          "id": "comfort_hvac_1997",
+          "name": "HVAC",
+          "introduced_year": 1997,
+          "mass_delta_t": 0.35,
+          "cost_index_delta": 12,
+          "service_tags": [
+            "air_conditioning"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "comfort_power_2005",
+          "name": "Passenger power",
+          "introduced_year": 2005,
+          "mass_delta_t": 0.08,
+          "cost_index_delta": 5,
+          "service_tags": [
+            "power_outlets"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "comfort_wifi_2010",
+          "name": "Wi-Fi",
+          "introduced_year": 2010,
+          "mass_delta_t": 0.03,
+          "cost_index_delta": 4,
+          "service_tags": [
+            "wifi"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "comfortjet_service_2025",
+      "name": "Comfort 9 service package",
+      "selection": "one_or_more",
+      "options": [
+        {
+          "id": "comfortjet_dining_2025",
+          "name": "Dining service",
+          "introduced_year": 2025,
+          "mass_delta_t": 0,
+          "cost_index_delta": 20,
+          "service_tags": [
+            "dining",
+            "catering"
+          ],
+          "retrofit_allowed": false
+        },
+        {
+          "id": "comfortjet_accessibility_2025",
+          "name": "Accessibility and family spaces",
+          "introduced_year": 2025,
+          "mass_delta_t": 0,
+          "cost_index_delta": 8,
+          "service_tags": [
+            "wheelchair",
+            "family",
+            "pram",
+            "bike"
+          ],
+          "retrofit_allowed": false
+        },
+        {
+          "id": "comfortjet_connectivity_2025",
+          "name": "Connectivity",
+          "introduced_year": 2025,
+          "mass_delta_t": 0,
+          "cost_index_delta": 7,
+          "service_tags": [
+            "wifi",
+            "power_outlets",
+            "usb"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "modern_intermodal_equipment_1995",
+      "name": "Modern intermodal equipment",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "intermodal_container_1995",
+          "name": "Containers / swap bodies",
+          "introduced_year": 1995,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 8,
+          "service_tags": [
+            "container",
+            "swap_body"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "intermodal_semitrailer_2000",
+          "name": "Semi-trailer capable",
+          "introduced_year": 2000,
+          "mass_delta_t": 1,
+          "payload_delta_t": -1,
+          "cost_index_delta": 18,
+          "service_tags": [
+            "semitrailer"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "modern_truck_cab_package_1996",
+      "name": "Modern truck cab package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "truck_daycab_1996",
+          "name": "Day cab",
+          "introduced_year": 1996,
+          "mass_delta_t": 0,
+          "cost_index_delta": 0,
+          "retrofit_allowed": true
+        },
+        {
+          "id": "truck_longhaul_1996",
+          "name": "Long-haul sleeper",
+          "introduced_year": 1996,
+          "mass_delta_t": 0.25,
+          "payload_delta_t": -0.25,
+          "cost_index_delta": 10,
+          "service_tags": [
+            "sleeper_cab"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "truck_longhaul_neo_2012",
+          "name": "Long-haul Neo",
+          "introduced_year": 2012,
+          "mass_delta_t": 0.35,
+          "payload_delta_t": -0.35,
+          "cost_index_delta": 16,
+          "service_tags": [
+            "sleeper_cab",
+            "advanced_hvac",
+            "driver_assistance"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "fatra_fenix_factory_config_2011",
+      "name": "Fatra Fénix factory configuration",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "fenix_6x6_2011",
+          "name": "6x6",
+          "introduced_year": 2011,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "fenix_8x8_2011",
+          "name": "8x8",
+          "introduced_year": 2011,
+          "mass_delta_t": 2,
+          "payload_delta_t": 3.5,
+          "cost_index_delta": 18,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "tge_cargo_body_2017",
+      "name": "MANN TGE factory body",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "tge_van_2017",
+          "name": "Panel van",
+          "introduced_year": 2017,
+          "cost_index_delta": 0,
+          "retrofit_allowed": false
+        },
+        {
+          "id": "tge_chassis_box_2017",
+          "name": "Chassis + box",
+          "introduced_year": 2017,
+          "mass_delta_t": 0.3,
+          "payload_delta_t": -0.2,
+          "cost_index_delta": 8,
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "eactros_battery_2024",
+      "name": "eActros battery/charging package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "eactros_600_2024",
+          "name": "600 kWh long-haul",
+          "introduced_year": 2024,
+          "cost_index_delta": 0,
+          "service_tags": [
+            "battery_600kwh",
+            "megawatt_charging_ready"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
+    },
+    {
+      "id": "modern_bus_layout_1996",
+      "name": "Modern bus passenger layout",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "bus_city_dense_1996",
+          "name": "City",
+          "introduced_year": 1996,
+          "seat_capacity_factor": 0.72,
+          "cost_index_delta": 0,
+          "service_tags": [
+            "high_standing_capacity"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "bus_regional_1996",
+          "name": "Regional",
+          "introduced_year": 1996,
+          "seat_capacity_factor": 1,
+          "cost_index_delta": 5,
+          "service_tags": [
+            "regional_seating"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "bus_coach_1996",
+          "name": "Coach",
+          "introduced_year": 1996,
+          "seat_capacity_factor": 0.9,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 18,
+          "comfort_band": "high",
+          "service_tags": [
+            "luggage_bays"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "modern_bus_comfort_1999",
+      "name": "Modern bus comfort/accessibility",
+      "selection": "one_or_more",
+      "options": [
+        {
+          "id": "bus_hvac_1999",
+          "name": "HVAC",
+          "introduced_year": 1999,
+          "mass_delta_t": 0.2,
+          "cost_index_delta": 8,
+          "service_tags": [
+            "air_conditioning"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "bus_low_entry_flex_2004",
+          "name": "Low-entry flex space",
+          "introduced_year": 2004,
+          "mass_delta_t": 0.1,
+          "cost_index_delta": 7,
+          "seat_capacity_factor": 0.94,
+          "service_tags": [
+            "wheelchair",
+            "pram"
+          ],
+          "retrofit_allowed": true
+        },
+        {
+          "id": "bus_usb_wifi_2015",
+          "name": "USB + Wi-Fi",
+          "introduced_year": 2015,
+          "mass_delta_t": 0.03,
+          "cost_index_delta": 4,
+          "service_tags": [
+            "usb",
+            "wifi"
+          ],
+          "retrofit_allowed": true
+        }
+      ]
+    },
+    {
+      "id": "bus_ev_battery_2017",
+      "name": "Battery-electric bus package",
+      "selection": "exactly_one",
+      "options": [
+        {
+          "id": "bus_ev_standard_2017",
+          "name": "Standard battery",
+          "introduced_year": 2017,
+          "cost_index_delta": 0,
+          "service_tags": [
+            "battery_electric"
+          ],
+          "retrofit_allowed": false
+        },
+        {
+          "id": "bus_ev_extended_2019",
+          "name": "Extended battery",
+          "introduced_year": 2019,
+          "mass_delta_t": 0.8,
+          "seat_capacity_factor": 0.97,
+          "cost_index_delta": 16,
+          "service_tags": [
+            "battery_electric",
+            "extended_range"
+          ],
+          "retrofit_allowed": false
+        }
+      ]
+    }
+  ]
+}
