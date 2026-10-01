@@ -68,6 +68,7 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
         "manufacturers.v1.json",
         "support_families.v1.json",
         "regional_market_profiles.v1.json",
+        "production_input_groups.v1.json",
         "equipment_options_1900.v1.json",
         "built_in_templates_1900.v1.json",
         "vehicle_models_1900.v1.json",
@@ -122,6 +123,17 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
     for duplicate in sorted(_duplicates(profile_ids)):
         errors.append(f"regional_market_profiles.v1.json: duplicate profile id {duplicate}")
     profile_set = set(profile_ids)
+
+    production_input_doc = docs.get("production_input_groups.v1.json", {})
+    production_recipes = production_input_doc.get("recipes", []) if isinstance(production_input_doc, dict) else []
+    production_recipe_ids = [
+        x.get("id")
+        for x in production_recipes
+        if isinstance(x, dict) and isinstance(x.get("id"), str)
+    ]
+    for duplicate in sorted(_duplicates(production_recipe_ids)):
+        errors.append(f"production_input_groups.v1.json: duplicate recipe id {duplicate}")
+    production_recipe_set = set(production_recipe_ids)
 
     equipment_sources: list[tuple[str, dict[str, Any]]] = []
     for name, document in docs.items():
@@ -232,6 +244,11 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
             for plant_id in production.get("factory_ids", []):
                 if plant_id not in plant_ids:
                     errors.append(f"{location}: unknown factory/plant id {plant_id}")
+            material_recipe_id = production.get("material_recipe_id")
+            if material_recipe_id not in production_recipe_set:
+                errors.append(f"{location}: unknown or missing material_recipe_id {material_recipe_id}")
+        else:
+            errors.append(f"{location}: missing production object")
 
         year = model.get("introduction_year")
         if not isinstance(year, int) or not (1800 <= year <= 2100):
