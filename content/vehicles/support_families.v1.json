@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "support_families": [
+    {
+      "id": "rail_steam_light",
+      "name": "Rail steam light",
+      "description": "Small/medium steam, basic boiler/running gear"
+    },
+    {
+      "id": "rail_steam_mainline",
+      "name": "Rail steam mainline",
+      "description": "Tender locomotives and larger boiler/running gear"
+    },
+    {
+      "id": "rail_steam_heavy_modern",
+      "name": "Rail steam heavy modern",
+      "description": "Late high-output steam and auxiliaries"
+    },
+    {
+      "id": "rail_diesel_mechanical_light",
+      "name": "Rail diesel mechanical light",
+      "description": "Early/light railcars"
+    },
+    {
+      "id": "rail_diesel_hydraulic_mechanical_regional",
+      "name": "Rail regional diesel legacy",
+      "description": "Mid-century motor cars"
+    },
+    {
+      "id": "rail_diesel_electric_ckd",
+      "name": "Rail diesel-electric ČMD",
+      "description": "ČKD-style diesel-electric families"
+    },
+    {
+      "id": "rail_electric_skoda_legacy_dc",
+      "name": "Rail electric legacy DC",
+      "description": "Early DC electric locomotives"
+    },
+    {
+      "id": "rail_electric_skoda_legacy_ac",
+      "name": "Rail electric legacy AC",
+      "description": "Early AC electric locomotives"
+    },
+    {
+      "id": "rail_electric_skoda_dual_modern",
+      "name": "Rail electric modern Škoda",
+      "description": "Dual/multisystem Škoda lineage"
+    },
+    {
+      "id": "rail_electric_pan_european_modern",
+      "name": "Rail electric pan-European",
+      "description": "TRAXX/Vectron-like modular modern locomotives"
+    },
+    {
+      "id": "rail_dmu_modern",
+      "name": "Rail DMU modern",
+      "description": "Modern electronic DMU"
+    },
+    {
+      "id": "rail_emu_modern",
+      "name": "Rail EMU modern",
+      "description": "Modern EMU traction/control/HVAC"
+    },
+    {
+      "id": "rail_high_speed_trainset",
+      "name": "Rail high-speed trainset",
+      "description": "Integrated high-speed/tilting trainsets"
+    },
+    {
+      "id": "rail_coach_wood_legacy",
+      "name": "Rail coach wood legacy",
+      "description": "Wood/early steel coach body and running gear"
+    },
+    {
+      "id": "rail_coach_mainline_legacy",
+      "name": "Rail coach mainline legacy",
+      "description": "Conventional bogie mainline coaches"
+    },
+    {
+      "id": "rail_coach_modern",
+      "name": "Rail coach modern",
+      "description": "High-speed HVAC/electrical coaches"
+    },
+    {
+      "id": "rail_wagon_basic",
+      "name": "Rail wagon basic",
+      "description": "Open/covered/flat conventional freight wagons"
+    },
+    {
+      "id": "rail_wagon_special",
+      "name": "Rail wagon special",
+      "description": "Tank/refrigerated/heavy-load wagons"
+    },
+    {
+      "id": "rail_wagon_modern_bogie",
+      "name": "Rail wagon modern bogie",
+      "description": "Modern hopper/tank/intermodal wagons"
+    },
+    {
+      "id": "road_horse_vehicle",
+      "name": "Road horse vehicle",
+      "description": "Wagon/body, harness and stable support"
+    },
+    {
+      "id": "road_early_petrol",
+      "name": "Road early petrol",
+      "description": "Primitive ignition/carburetion/solid-tyre motor vehicles"
+    },
+    {
+      "id": "road_early_steam",
+      "name": "Road early steam",
+      "description": "Steam road vehicle boiler and drive"
+    },
+    {
+      "id": "road_cz_medium_legacy",
+      "name": "Road Czech medium legacy",
+      "description": "Praga/light-medium domestic trucks and related buses"
+    },
+    {
+      "id": "road_cz_heavy_aircooled",
+      "name": "Road Czech heavy air-cooled",
+      "description": "Tatra heavy air-cooled truck families"
+    },
+    {
+      "id": "road_cz_v3s_family",
+      "name": "Road V3S family",
+      "description": "Praga V3S/S5T service ecosystem"
+    },
+    {
+      "id": "road_cz_liaz_legacy",
+      "name": "Road LIAZ legacy",
+      "description": "706/LIAZ heavy road-truck ecosystem"
+    },
+    {
+      "id": "road_cz_avio_light",
+      "name": "Road Avia light",
+      "description": "Avia medium/light truck ecosystem"
+    },
+    {
+      "id": "road_bus_karosa_legacy",
+      "name": "Road bus Karosa legacy",
+      "description": "RTO/Š/700/900 domestic bus ecosystem"
+    },
+    {
+      "id": "road_bus_ikarus_legacy",
+      "name": "Road bus Ikarus legacy",
+      "description": "Ikarus standard/articulated buses"
+    },
+    {
+      "id": "road_eu_heavy_modern",
+      "name": "Road EU heavy modern",
+      "description": "Modern EU diesel tractor electronics/diagnostics"
+    },
+    {
+      "id": "road_tatra_modern",
+      "name": "Road Tatra modern",
+      "description": "Modern Phoenix/Force-like heavy truck"
+    },
+    {
+      "id": "road_bus_eu_modern",
+      "name": "Road bus EU modern",
+      "description": "Modern CAN-bus diesel/HVO bus"
+    },
+    {
+      "id": "road_ev_bus",
+      "name": "Road EV bus",
+      "description": "HV battery/e-drive/charging bus"
+    },
+    {
+      "id": "road_ev_heavy",
+      "name": "Road EV heavy",
+      "description": "High-voltage heavy truck"
+    },
+    {
+      "id": "road_modern_van",
+      "name": "Road modern van",
+      "description": "Modern light commercial van"
+    }
+  ]
+}
