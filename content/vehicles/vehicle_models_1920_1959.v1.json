@@ -1,0 +1,1492 @@
+{
+  "schema_version": 1,
+  "scope": "1920-1959 vehicle models",
+  "models": [
+    {
+      "schema_version": 1,
+      "id": "neskoda_n534_dric_1923",
+      "display_name": "Neškoda N534 „Dříč“",
+      "real_prototype": "ČSD 534.0",
+      "introduction_year": 1923,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "heavy_freight",
+        "mixed"
+      ],
+      "support_family_id": "rail_steam_mainline",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 20.36,
+        "empty_mass_t": 84,
+        "service_mass_t": 93,
+        "max_speed_kph": 60,
+        "structural_speed_limit_kph": 60,
+        "power_kw": 1100,
+        "starting_tractive_effort_kn": 150,
+        "axle_count": 6,
+        "axle_load_t": 15.5,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 48,
+        "special_build_days": 70,
+        "base_cost_index": 125,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_mainline",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2500,
+        "workshop_exam_km": 11000,
+        "heavy_overhaul_km": 85000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.05,
+        "relative_water_per_useful_work": 1.05
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "neskoda_n534_freight"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skodagroup.com/cs/stranka/historie"
+        ],
+        "notes": "Škoda history anchors the 534.0 family in the interwar locomotive programme. Detailed dimensions/power are representative authoring values pending final batch-level validation.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_n387_mikado_1926",
+      "display_name": "Neškoda N387 „Mikádo“",
+      "real_prototype": "ČSD 387.0",
+      "introduction_year": 1926,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "express_passenger"
+      ],
+      "support_family_id": "rail_steam_mainline",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 23.05,
+        "empty_mass_t": 92.8,
+        "service_mass_t": 104,
+        "max_speed_kph": 110,
+        "structural_speed_limit_kph": 110,
+        "power_kw": 1546,
+        "starting_tractive_effort_kn": 109,
+        "axle_count": 6,
+        "axle_load_t": 16.5,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 56,
+        "special_build_days": 80,
+        "base_cost_index": 150,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_mainline",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2200,
+        "workshop_exam_km": 10000,
+        "heavy_overhaul_km": 80000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.15,
+        "relative_water_per_useful_work": 1.1
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "neskoda_n387_express"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.skodagroup.com/cs/stranka/historie",
+          "https://en.wikipedia.org/wiki/%C4%8CSD_Class_387.0"
+        ],
+        "notes": "1926 introduction and role are historically anchored; representative technical values follow preserved class data.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "fatra_m120_vezak_1930",
+      "display_name": "Fatra M120 „Věžák“",
+      "real_prototype": "ČSD M 120.4",
+      "introduction_year": 1930,
+      "date_precision": "year",
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "rail",
+      "vehicle_kind": "railcar",
+      "roles": [
+        "branch_passenger",
+        "light_regional"
+      ],
+      "support_family_id": "rail_diesel_mechanical_light",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 11.5,
+        "service_mass_t": 12,
+        "max_speed_kph": 55,
+        "structural_speed_limit_kph": 55,
+        "power_kw": 90,
+        "seats": 32,
+        "axle_count": 2,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 24,
+        "special_build_days": 36,
+        "base_cost_index": 85,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "light_railcar",
+        "light_service_km": 1200,
+        "workshop_service_km": 6000,
+        "major_overhaul_km": 45000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "fatra_m120_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Motorov%C3%BD_v%C5%AFz_M_120.4"
+        ],
+        "notes": "Representative authoring values for M120.4 branch railcar.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_n475_slechticna_1947",
+      "display_name": "Neškoda N475 „Šlechtična“",
+      "real_prototype": "ČSD 475.1",
+      "introduction_year": 1947,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "passenger",
+        "fast_mixed"
+      ],
+      "support_family_id": "rail_steam_heavy_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 24.8,
+        "service_mass_t": 102.7,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "power_kw": 1480,
+        "starting_tractive_effort_kn": 150,
+        "axle_count": 6,
+        "axle_load_t": 16.5,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 54,
+        "special_build_days": 78,
+        "base_cost_index": 145,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_heavy_modern",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2600,
+        "workshop_exam_km": 12000,
+        "heavy_overhaul_km": 90000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1,
+        "relative_water_per_useful_work": 1
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "neskoda_n475_universal"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://web.kurzy.cz/wiki/Lokomotiva_475.1"
+        ],
+        "notes": "Representative class 475.1 values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "fatra_m131_hurvinek_1948",
+      "display_name": "Fatra M131 „Hurvínek“",
+      "real_prototype": "ČSD M 131.1",
+      "introduction_year": 1948,
+      "date_precision": "year",
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "rail",
+      "vehicle_kind": "railcar",
+      "roles": [
+        "branch_passenger",
+        "local"
+      ],
+      "support_family_id": "rail_diesel_mechanical_light",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 12.1,
+        "service_mass_t": 16,
+        "max_speed_kph": 60,
+        "structural_speed_limit_kph": 60,
+        "power_kw": 114,
+        "seats": 48,
+        "axle_count": 2,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 32,
+        "base_cost_index": 80,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "light_railcar",
+        "light_service_km": 1800,
+        "workshop_service_km": 8500,
+        "major_overhaul_km": 60000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "fatra_m131_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/%C4%8CSD_Class_M_131.1"
+        ],
+        "notes": "Representative M131.1 values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "kralopole_m262_kredenc_1948",
+      "display_name": "Králopole M262 „Kredenc“",
+      "real_prototype": "ČSD M 262.0",
+      "introduction_year": 1948,
+      "date_precision": "year",
+      "manufacturer_id": "kralopole_brno",
+      "mode": "rail",
+      "vehicle_kind": "railcar",
+      "roles": [
+        "regional_passenger"
+      ],
+      "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 21.9,
+        "service_mass_t": 43,
+        "max_speed_kph": 90,
+        "structural_speed_limit_kph": 90,
+        "power_kw": 300,
+        "seats": 56,
+        "axle_count": 4,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_kralopole_brno"
+        ],
+        "series_build_days": 28,
+        "special_build_days": 40,
+        "base_cost_index": 105,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "regional_railcar",
+        "light_service_km": 2200,
+        "workshop_service_km": 10000,
+        "major_overhaul_km": 75000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "kralopole_m262_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Motorov%C3%BD_v%C5%AFz_M_262.0"
+        ],
+        "notes": "Representative M262.0 values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_n556_silak_1951",
+      "display_name": "Neškoda N556 „Silák“",
+      "real_prototype": "ČSD 556.0",
+      "introduction_year": 1951,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "heavy_freight"
+      ],
+      "support_family_id": "rail_steam_heavy_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 24.9,
+        "service_mass_t": 99,
+        "max_speed_kph": 80,
+        "structural_speed_limit_kph": 80,
+        "power_kw": 1620,
+        "starting_tractive_effort_kn": 218,
+        "axle_count": 6,
+        "axle_load_t": 16.8,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 55,
+        "special_build_days": 80,
+        "base_cost_index": 150,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_heavy_modern",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2800,
+        "workshop_exam_km": 12500,
+        "heavy_overhaul_km": 95000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.05,
+        "relative_water_per_useful_work": 1.02
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "neskoda_n556_freight"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://loco-info.com/locomotive/16923?lng=en&t=Type"
+        ],
+        "notes": "Representative class 556.0 values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_n498_albatros_1952",
+      "display_name": "Neškoda N498 „Albatros“",
+      "real_prototype": "ČSD 498.1",
+      "introduction_year": 1952,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "express_passenger"
+      ],
+      "support_family_id": "rail_steam_heavy_modern",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 25.5,
+        "service_mass_t": 113,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "power_kw": 2000,
+        "starting_tractive_effort_kn": 180,
+        "axle_count": 6,
+        "axle_load_t": 18,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "coal",
+          "water"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 58,
+        "special_build_days": 84,
+        "base_cost_index": 175,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "steam_heavy_modern",
+        "service_preparation": "each_operating_day",
+        "light_exam_km": 2500,
+        "workshop_exam_km": 11000,
+        "heavy_overhaul_km": 85000,
+        "heavy_overhaul_years": 3
+      },
+      "consumption_profile": {
+        "type": "steam_work_curve",
+        "relative_coal_per_useful_work": 1.2,
+        "relative_water_per_useful_work": 1.15
+      },
+      "equipment_group_ids": [
+        "rail_steam_safety_1900"
+      ],
+      "built_in_template_ids": [
+        "neskoda_n498_express"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Lokomotiva_498.1"
+        ],
+        "notes": "Representative 498.1 authoring values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda_e500_bobina_1953",
+      "display_name": "Neškoda E500 „Bobina“",
+      "real_prototype": "ČSD E 499.0 / class 140",
+      "introduction_year": 1953,
+      "date_precision": "year",
+      "manufacturer_id": "neskoda_plzen",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "electric_mainline",
+        "passenger",
+        "freight"
+      ],
+      "support_family_id": "rail_electric_skoda_legacy_dc",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 15.74,
+        "service_mass_t": 82,
+        "max_speed_kph": 120,
+        "structural_speed_limit_kph": 120,
+        "power_kw": 2032,
+        "starting_tractive_effort_kn": 212,
+        "axle_count": 4,
+        "axle_load_t": 20.5,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "electric_3kv_dc"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_neskoda_plzen"
+        ],
+        "series_build_days": 44,
+        "special_build_days": 66,
+        "base_cost_index": 135,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "electric_legacy_dc",
+        "light_exam_km": 5000,
+        "workshop_exam_km": 25000,
+        "major_overhaul_km": 180000
+      },
+      "consumption_profile": {
+        "type": "electric_work_curve",
+        "relative_kwh_per_useful_work": 1
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "neskoda_e500_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://de.wikipedia.org/wiki/%C4%8CSD-Baureihe_E_499.0"
+        ],
+        "notes": "Representative class 140 values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "cmd_d435_hektor_1958",
+      "display_name": "ČMD D435 „Hektor“",
+      "real_prototype": "ČSD T 435.0 / class 720",
+      "introduction_year": 1958,
+      "date_precision": "year",
+      "manufacturer_id": "cmd_praha",
+      "mode": "rail",
+      "vehicle_kind": "locomotive",
+      "roles": [
+        "shunting",
+        "local_freight"
+      ],
+      "support_family_id": "rail_diesel_electric_ckd",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 13.3,
+        "service_mass_t": 61,
+        "max_speed_kph": 60,
+        "structural_speed_limit_kph": 60,
+        "power_kw": 553,
+        "starting_tractive_effort_kn": 200,
+        "axle_count": 4,
+        "axle_load_t": 15.25,
+        "minimum_curve_m": 70,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_cmd_praha"
+        ],
+        "series_build_days": 32,
+        "special_build_days": 48,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "ckd_diesel_electric",
+        "light_service_km": 3000,
+        "workshop_service_km": 14000,
+        "major_overhaul_km": 100000
+      },
+      "consumption_profile": {
+        "type": "diesel_work_curve",
+        "relative_litres_per_useful_work": 1
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "cmd_d435_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.atlaslokomotiv.net/loko-720.html"
+        ],
+        "notes": "Representative class 720 values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "studena_m240_kacena_1959",
+      "display_name": "Studena M240 „Kačena“",
+      "real_prototype": "ČSD M 240.0 / class 820",
+      "introduction_year": 1959,
+      "date_precision": "year",
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "railcar",
+      "roles": [
+        "regional_passenger",
+        "branch_passenger"
+      ],
+      "support_family_id": "rail_diesel_hydraulic_mechanical_regional",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 20,
+        "service_mass_t": 40.8,
+        "max_speed_kph": 70,
+        "structural_speed_limit_kph": 70,
+        "power_kw": 206,
+        "seats": 56,
+        "standing": 46,
+        "axle_count": 4,
+        "gauge_mm": 1435,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 26,
+        "special_build_days": 38,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "regional_railcar",
+        "light_service_km": 2200,
+        "workshop_service_km": 10000,
+        "major_overhaul_km": 70000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [],
+      "built_in_template_ids": [
+        "studena_m240_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://web.kurzy.cz/wiki/Motorov%C3%BD_v%C5%AFz_820"
+        ],
+        "notes": "Representative class 820 values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "r20_open_1930",
+      "display_name": "R20 Open",
+      "real_prototype": "Representative interwar steel 2-axle open wagon",
+      "introduction_year": 1930,
+      "date_precision": "year",
+      "manufacturer_id": "ringhauer_smichov",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "bulk",
+        "general_open"
+      ],
+      "support_family_id": "rail_wagon_basic",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 8,
+        "empty_mass_t": 10,
+        "service_mass_t": 30,
+        "max_speed_kph": 65,
+        "structural_speed_limit_kph": 65,
+        "payload_t": 20,
+        "cargo_volume_m3": 35,
+        "axle_count": 2,
+        "axle_load_t": 15,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_ringhauer_smichov"
+        ],
+        "series_build_days": 8,
+        "special_build_days": 12,
+        "base_cost_index": 60,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_basic",
+        "workshop_exam_km": 30000,
+        "heavy_overhaul_km": 180000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "rail_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "r20_open_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Functional interwar open-wagon family uses representative authored dimensions/capacity.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "g25_standard_1950",
+      "display_name": "G25 Standard",
+      "real_prototype": "Representative post-war covered goods wagon",
+      "introduction_year": 1950,
+      "date_precision": "year",
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "general_cargo",
+        "covered"
+      ],
+      "support_family_id": "rail_wagon_basic",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 10,
+        "empty_mass_t": 12,
+        "service_mass_t": 37,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 25,
+        "cargo_volume_m3": 60,
+        "axle_count": 2,
+        "axle_load_t": 18.5,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 9,
+        "special_build_days": 14,
+        "base_cost_index": 70,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_basic",
+        "workshop_exam_km": 35000,
+        "heavy_overhaul_km": 200000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "rail_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "g25_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Functional post-war covered-wagon family uses representative authored values.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "e28_standard_1955",
+      "display_name": "E28 Standard",
+      "real_prototype": "Representative Es-family open wagon",
+      "introduction_year": 1955,
+      "date_precision": "year",
+      "manufacturer_id": "studena_vagonka",
+      "mode": "rail",
+      "vehicle_kind": "freight_wagon",
+      "roles": [
+        "bulk",
+        "scrap",
+        "stone"
+      ],
+      "support_family_id": "rail_wagon_basic",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 10.5,
+        "empty_mass_t": 12,
+        "service_mass_t": 40,
+        "max_speed_kph": 100,
+        "structural_speed_limit_kph": 100,
+        "payload_t": 28,
+        "cargo_volume_m3": 36,
+        "axle_count": 2,
+        "axle_load_t": 20,
+        "gauge_mm": 1435,
+        "fuel_energy": []
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_studena"
+        ],
+        "series_build_days": 9,
+        "special_build_days": 14,
+        "base_cost_index": 72,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "wagon_basic",
+        "workshop_exam_km": 35000,
+        "heavy_overhaul_km": 200000
+      },
+      "consumption_profile": {
+        "type": "none"
+      },
+      "equipment_group_ids": [
+        "rail_wagon_brake_1900"
+      ],
+      "built_in_template_ids": [
+        "e28_standard"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ntm.cz/en/about-our-museum/ntm-museums/railway-museum/railroad-cars"
+        ],
+        "notes": "Representative Es-family authoring values.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "fatra13_1924",
+      "display_name": "Fatra 13",
+      "real_prototype": "Tatra 13",
+      "introduction_year": 1924,
+      "date_precision": "year",
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "light_freight",
+        "urban_delivery"
+      ],
+      "support_family_id": "road_cz_medium_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 4.1,
+        "width_m": 1.65,
+        "empty_mass_t": 1.2,
+        "service_mass_t": 2.2,
+        "max_speed_kph": 45,
+        "structural_speed_limit_kph": 45,
+        "payload_t": 1,
+        "power_kw": 8.8,
+        "axle_count": 2,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 22,
+        "base_cost_index": 75,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "legacy_road_medium",
+        "light_service_km": 1500,
+        "workshop_service_km": 7000,
+        "major_overhaul_km": 50000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "fatra13_body_1924"
+      ],
+      "built_in_template_ids": [
+        "fatra13_flatbed",
+        "fatra13_box"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Tatra_13"
+        ],
+        "notes": "1 t payload, 8.8 kW and 45 km/h are representative documented values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "pragov_rn_1933",
+      "display_name": "Pragov RN",
+      "real_prototype": "Praga RN",
+      "introduction_year": 1933,
+      "date_precision": "year",
+      "manufacturer_id": "pragov_praha",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "medium_freight",
+        "general_delivery"
+      ],
+      "support_family_id": "road_cz_medium_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 6,
+        "width_m": 2.1,
+        "service_mass_t": 5,
+        "max_speed_kph": 60,
+        "structural_speed_limit_kph": 60,
+        "payload_t": 2.5,
+        "power_kw": 44,
+        "axle_count": 2,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_pragov_praha"
+        ],
+        "series_build_days": 16,
+        "special_build_days": 24,
+        "base_cost_index": 85,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "legacy_road_medium",
+        "light_service_km": 1800,
+        "workshop_service_km": 8000,
+        "major_overhaul_km": 55000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "pragov_rn_body_1933"
+      ],
+      "built_in_template_ids": [
+        "pragov_rn_flatbed",
+        "pragov_rn_box",
+        "pragov_rn_tipper"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Praga_RN"
+        ],
+        "notes": "Representative RN authoring configuration.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "fatra111_1942",
+      "display_name": "Fatra 111",
+      "real_prototype": "Tatra 111",
+      "introduction_year": 1942,
+      "date_precision": "year",
+      "manufacturer_id": "fatra_koprivnice",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "heavy_freight",
+        "rough_road",
+        "construction"
+      ],
+      "support_family_id": "road_cz_heavy_aircooled",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 8.55,
+        "width_m": 2.5,
+        "service_mass_t": 18,
+        "max_speed_kph": 65,
+        "structural_speed_limit_kph": 65,
+        "payload_t": 10,
+        "power_kw": 154,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_fatra_koprivnice"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 30,
+        "base_cost_index": 120,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "tatra_aircooled_heavy",
+        "light_service_km": 2500,
+        "workshop_service_km": 12000,
+        "major_overhaul_km": 80000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "fatra111_body_1942"
+      ],
+      "built_in_template_ids": [
+        "fatra111_flatbed",
+        "fatra111_tipper",
+        "fatra111_tractor"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://en.wikipedia.org/wiki/Tatra_111"
+        ],
+        "notes": "Representative Tatra 111 values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "pragov_v3s_1953",
+      "display_name": "Pragov V3S",
+      "real_prototype": "Praga V3S",
+      "introduction_year": 1953,
+      "date_precision": "year",
+      "manufacturer_id": "pragov_praha",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "rough_road",
+        "construction",
+        "recovery"
+      ],
+      "support_family_id": "road_cz_v3s_family",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 6.9,
+        "width_m": 2.32,
+        "service_mass_t": 10.6,
+        "max_speed_kph": 60,
+        "structural_speed_limit_kph": 60,
+        "payload_t": 5.5,
+        "power_kw": 70,
+        "axle_count": 3,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_pragov_praha"
+        ],
+        "series_build_days": 17,
+        "special_build_days": 26,
+        "base_cost_index": 90,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "v3s",
+        "light_service_km": 2200,
+        "workshop_service_km": 10000,
+        "major_overhaul_km": 70000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "pragov_v3s_body_1953"
+      ],
+      "built_in_template_ids": [
+        "pragov_v3s_flatbed",
+        "pragov_v3s_tipper",
+        "pragov_v3s_recovery"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Praga_V3S"
+        ],
+        "notes": "Representative V3S road payload and performance.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda706rt_1957",
+      "display_name": "Neškoda 706 RT",
+      "real_prototype": "Škoda 706 RT",
+      "introduction_year": 1957,
+      "date_precision": "year",
+      "manufacturer_id": "viaz",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "regional_freight",
+        "general_freight",
+        "tractor"
+      ],
+      "support_family_id": "road_cz_liaz_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 7.6,
+        "width_m": 2.5,
+        "service_mass_t": 15,
+        "max_speed_kph": 70,
+        "structural_speed_limit_kph": 75,
+        "payload_t": 8,
+        "power_kw": 118,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_viaz_mnichovo_hradiste"
+        ],
+        "series_build_days": 18,
+        "special_build_days": 28,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "liaz_legacy",
+        "light_service_km": 2500,
+        "workshop_service_km": 12000,
+        "major_overhaul_km": 85000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "neskoda706rt_body_1957"
+      ],
+      "built_in_template_ids": [
+        "neskoda706rt_flatbed",
+        "neskoda706rt_box",
+        "neskoda706rt_tractor"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.liaz.cz/historie.php"
+        ],
+        "notes": "LIAZ lineage and 706 RT production period anchored by manufacturer-history material; detailed dimensions are representative authoring values.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "pragov_no_1925",
+      "display_name": "Pragov NO",
+      "real_prototype": "Praga NO",
+      "introduction_year": 1925,
+      "date_precision": "year",
+      "manufacturer_id": "pragov_praha",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus",
+        "regional_bus"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 7.5,
+        "width_m": 2.2,
+        "service_mass_t": 7,
+        "max_speed_kph": 55,
+        "structural_speed_limit_kph": 60,
+        "seats": 32,
+        "standing": 10,
+        "power_kw": 55,
+        "axle_count": 2,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_pragov_praha"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 30,
+        "base_cost_index": 95,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "legacy_bus",
+        "light_service_km": 1800,
+        "workshop_service_km": 8000,
+        "major_overhaul_km": 55000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "pragov_no_factory_variant_1925"
+      ],
+      "built_in_template_ids": [
+        "pragov_no_city"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Praga_NO"
+        ],
+        "notes": "Representative Praga NO authoring configuration.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "pragov_ndo_1939",
+      "display_name": "Pragov NDO",
+      "real_prototype": "Praga NDO",
+      "introduction_year": 1939,
+      "date_precision": "year",
+      "manufacturer_id": "pragov_praha",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus",
+        "regional_bus",
+        "coach"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 9.1,
+        "width_m": 2.4,
+        "service_mass_t": 10,
+        "max_speed_kph": 65,
+        "structural_speed_limit_kph": 70,
+        "seats": 38,
+        "standing": 20,
+        "power_kw": 92,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_pragov_praha"
+        ],
+        "series_build_days": 21,
+        "special_build_days": 32,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "legacy_bus",
+        "light_service_km": 2000,
+        "workshop_service_km": 9000,
+        "major_overhaul_km": 65000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "pragov_ndo_factory_variant_1939"
+      ],
+      "built_in_template_ids": [
+        "pragov_ndo_city",
+        "pragov_ndo_coach"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://cs.wikipedia.org/wiki/Praga_NDO"
+        ],
+        "notes": "Representative Praga NDO authoring values; post-war body templates unlock later.",
+        "confidence": "authoring_estimate"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda706ro_1947",
+      "display_name": "Neškoda 706 RO",
+      "real_prototype": "Škoda 706 RO",
+      "introduction_year": 1947,
+      "date_precision": "year",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus",
+        "regional_bus",
+        "coach"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 10.66,
+        "width_m": 2.5,
+        "service_mass_t": 12.5,
+        "max_speed_kph": 65,
+        "structural_speed_limit_kph": 70,
+        "seats": 40,
+        "standing": 20,
+        "power_kw": 100,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 30,
+        "base_cost_index": 100,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy",
+        "light_service_km": 2200,
+        "workshop_service_km": 10000,
+        "major_overhaul_km": 70000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "neskoda706ro_factory_variant_1947"
+      ],
+      "built_in_template_ids": [
+        "neskoda706ro_city",
+        "neskoda706ro_regional",
+        "neskoda706ro_coach"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ivecocr.cz/en/article/company-history"
+        ],
+        "notes": "Karosa history confirms 706 RO production from 1947; capacities/performance are representative configuration values.",
+        "confidence": "medium_high"
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "neskoda706rto_1958",
+      "display_name": "Neškoda 706 RTO",
+      "real_prototype": "Škoda 706 RTO",
+      "introduction_year": 1958,
+      "date_precision": "year",
+      "manufacturer_id": "karusa_vysoke_myto",
+      "mode": "road",
+      "vehicle_kind": "bus",
+      "roles": [
+        "city_bus",
+        "regional_bus",
+        "coach"
+      ],
+      "support_family_id": "road_bus_karosa_legacy",
+      "regional_market_profile_id": "market_cz_domestic_general",
+      "platform": {
+        "length_m": 10.8,
+        "width_m": 2.5,
+        "service_mass_t": 13,
+        "max_speed_kph": 85,
+        "structural_speed_limit_kph": 90,
+        "seats": 41,
+        "standing": 30,
+        "power_kw": 118,
+        "axle_count": 2,
+        "fuel_energy": [
+          "diesel"
+        ]
+      },
+      "production": {
+        "source_kind": "active_map",
+        "factory_ids": [
+          "plant_karusa_vysoke_myto"
+        ],
+        "series_build_days": 20,
+        "special_build_days": 30,
+        "base_cost_index": 105,
+        "initial_capability_state": "series_production"
+      },
+      "maintenance_profile": {
+        "family": "karosa_legacy",
+        "light_service_km": 2500,
+        "workshop_service_km": 11000,
+        "major_overhaul_km": 75000
+      },
+      "consumption_profile": {
+        "type": "diesel_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "neskoda706rto_factory_variant_1958"
+      ],
+      "built_in_template_ids": [
+        "neskoda706rto_city",
+        "neskoda706rto_regional",
+        "neskoda706rto_lux"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://www.ivecocr.cz/clanek/historie-spolecnosti"
+        ],
+        "notes": "Karosa history anchors the RTO programme in the later 1950s; technical values are representative.",
+        "confidence": "medium_high"
+      }
+    }
+  ]
+}
