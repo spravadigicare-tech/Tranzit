@@ -1437,6 +1437,75 @@
         "notes": "3.7 kW, 1895 and eight total seats including driver are documented; game passenger capacity is seven plus driver. Production ended 1898, so 1900 supply is used/existing stock only.",
         "confidence": "high"
       }
+    },
+    {
+      "schema_version": 1,
+      "id": "benc_lieferwagen_300_1896",
+      "display_name": "Benc Lieferwagen 300",
+      "real_prototype": "Benz Lieferungswagen / Combinations-Lieferungswagen 1896",
+      "introduction_year": 1896,
+      "date_precision": "year",
+      "manufacturer_id": "benc_cie",
+      "mode": "road",
+      "vehicle_kind": "truck",
+      "roles": [
+        "early_motor_freight",
+        "light_distribution",
+        "urban_delivery"
+      ],
+      "support_family_id": "road_early_petrol",
+      "regional_market_profile_id": "market_german_early_motor_cz",
+      "platform": {
+        "length_m": null,
+        "width_m": null,
+        "height_m": null,
+        "empty_mass_t": null,
+        "service_mass_t": null,
+        "max_speed_kph": 20,
+        "structural_speed_limit_kph": 20,
+        "payload_t": 0.3,
+        "power_kw": 4.4,
+        "axle_count": 2,
+        "axle_load_t": null,
+        "fuel_energy": [
+          "petrol"
+        ]
+      },
+      "production": {
+        "source_kind": "off_map",
+        "factory_ids": [
+          "macro_de_benc"
+        ],
+        "series_build_days": 14,
+        "special_build_days": 24,
+        "base_cost_index": 125,
+        "initial_capability_state": "series_production",
+        "material_recipe_id": "prod_road_motor_early",
+        "capability_policy_id": "cap_pioneer_short_series"
+      },
+      "maintenance_profile": {
+        "family": "early_petrol",
+        "light_service_km": 500,
+        "workshop_service_km": 2500,
+        "major_overhaul_km": 18000
+      },
+      "consumption_profile": {
+        "type": "petrol_distance_load",
+        "litres_per_100km_reference": null
+      },
+      "equipment_group_ids": [
+        "early_delivery_body_1896"
+      ],
+      "built_in_template_ids": [
+        "benc_1896_delivery_box"
+      ],
+      "provenance": {
+        "source_urls": [
+          "https://media.mercedes-benz.com/article/f389440e-7b05-4182-b012-48e616269f83"
+        ],
+        "notes": "Official Mercedes-Benz history: delivery vehicle offered from 1896; documented 300 kg payload plus driver, 2.75–6 hp (~2.0–4.4 kW) and 15–20 km/h depending gearing/configuration. Game model uses the 6 hp / 20 km/h representative upper factory configuration while retaining the sourced range in provenance.",
+        "confidence": "high"
+      }
     }
   ]
 }
