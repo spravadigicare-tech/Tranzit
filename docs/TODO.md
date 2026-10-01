@@ -47,8 +47,8 @@ The market/economy/public-tender, V1 multi-operator passenger-ticket and final U
 
 ### Vehicle content authoring
 
-- [ ] **[CONTENT] Turn [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md) and [VEHICLE_COVERAGE_AUDIT.md](VEHICLE_COVERAGE_AUDIT.md) into versioned machine-readable vehicle/factory/import/dealer data** — validate the exact representative configuration for every prototype, author explicit `money` prices, production inputs/lead times, consumption, maintenance/support families and regional offer weights, then create functional prefabs/LODs/sounds. A catalogue row alone is not implemented content.
-- [ ] **[CONTENT] Author physical manufacturer and import supply for the vehicle roster** — active-map factories need dated capabilities/backlogs and real inputs; off-map manufacturers need finite macro capacity plus border/import delivery nodes. Dealer and used stock must reference physical assets rather than spawn vehicles on demand.
+- [ ] **[CONTENT] Finish release balancing/assets for the canonical 1900–2026 vehicle packs** — `content/vehicles/` now contains the versioned 100-model roster, 140 built-in templates, equipment options, manufacturers, support families, market profiles and the 1900 opening-market seed. Remaining content work is explicit `money` pricing, final prototype-value review where rows are marked as authoring estimates, production-input recipes/capability transitions, consumption/maintenance calibration, localization and functional prefabs/LODs/materials/sounds.
+- [ ] **[CONTENT/IMPL] Implement physical manufacturer, dealer, used-market and import/export supply for the authored roster** — active-map factories need dated capabilities/backlogs and real inputs; off-map manufacturers need finite macro capacity plus import routes; dealer/used stock must be concrete assets; inbound delivery and buyer-collected off-map resale must obey GAME_DESIGN physical-continuity/trade rules.
 
 ### Implementation handoff
 
@@ -82,6 +82,8 @@ These are intentional non-blockers for the current V1/UI direction:
 - [ ] **Early Ages pre-1900 playable start** — planned DLC scope.
 
 ## Done recently
+
+- [x] **[DESIGN/CONTENT] Historical vehicle roster and authoring data (2026-10-01)** — researched/finalized the fixed-date fictionalized vehicle catalogue and coverage rules, then authored canonical versioned model/template/equipment packs across 1900–2026. Current data contains 100 model families, 140 built-in templates, 57 equipment groups and 124 equipment options plus manufacturer, support, regional-market and 1900 seed data. Procurement/import, certification, template retrofits, used-condition identity, manufacturer capability lifecycle, large fleet orders, historical trade restrictions and buyer-collected off-map resale are reconciled with GAME_DESIGN. This is content design/data, not Unity implementation or release-complete art/balancing.
 
 These are completed design/documentation tasks, not implemented game features. Remaining parts of partially confirmed decisions stay open above and in the owning register.
 
