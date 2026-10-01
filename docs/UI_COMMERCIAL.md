@@ -1,16 +1,19 @@
 # Tranzit — Commercial opportunities, offers and contracts UI
 
-> **Status: CONFIRMED UI DIRECTION — UI-D17, 2026-09-30.** The player approved one commercial area with Opportunities, Offers and Contracts; compact list-based overviews; editable saved offer drafts; and direct navigation from commercial commitments into Shipments, Transport Plans, Lines, Trips and physical operation. Exact wording, columns and visual dimensions remain design work. This specification is not an implemented or tested UI.
+> **Status: CONFIRMED UI DIRECTION — UI-D17, refined 2026-10-01.** The player approved one commercial area with Market, Opportunities, Offers and Contracts; compact list-based overviews; editable saved offer/tender drafts; transparent market intelligence; and direct navigation from commercial commitments into Shipments, Transport Plans, Lines, Trips and physical operation. Exact wording, columns and visual dimensions remain design work. This specification is not an implemented or tested UI.
 
 Read with [UI_UX_DESIGN.md](UI_UX_DESIGN.md), especially UI-D09 (contextual object links), UI-D15 (global minimalism/tooltips/consistency), shared floating-window behaviour and pause rules. [GAME_DESIGN.md](GAME_DESIGN.md), especially Sections 10–12, owns demand, Opportunity Board rules, Contract Planner, contracts, Transport Plans, cargo and service endpoints. [CONTRACT_CANCELLATION.md](CONTRACT_CANCELLATION.md) owns proportionate cancellation and early capacity release. This document owns presentation only.
 
 ## 1. Commercial workspace
 
-Open **Business / Obchod** from the fixed bottom bar into one movable/resizable commercial window with three top-level views:
+Open **Business / Obchod** from the fixed bottom bar into one movable/resizable commercial window with four primary commercial views:
 
-1. **Opportunities / Příležitosti** — discoverable real market opportunities;
-2. **Offers / Nabídky** — saved drafts and already submitted bids/offers;
-3. **Contracts / Smlouvy** — binding accepted agreements and their operational fulfilment.
+1. **Market / Trh** — structural local supply/demand/reference-price intelligence before a concrete customer job exists;
+2. **Opportunities / Příležitosti** — discoverable real jobs, customer requests and public/private tenders;
+3. **Offers / Nabídky** — saved drafts and already submitted bids/offers;
+4. **Contracts / Smlouvy** — binding accepted agreements and their operational fulfilment.
+
+Other Business navigation entries such as Shipments, Procurement & suppliers and Tariffs & tickets remain separate canonical workspaces rather than being folded into these four views.
 
 Keep these states visually and semantically separate. An opportunity is not yet a company commitment. A saved offer draft is not submitted. A submitted bid is not a won contract. A contract is not the same object as a Line, Shipment or Trip.
 
@@ -39,7 +42,11 @@ The view must distinguish real known values from estimates/stale information.
 
 ### 2.2 Commodity detail and map
 
-Opening a commodity can project the same information spatially across the map.
+Opening a commodity automatically activates the corresponding commodity-market analysis on the **main map** while the Market window remains open. The map presents local **surplus/deficit and reference price together** for each visible/known market area; exact glyph, shading and label treatment remain visual implementation work.
+
+A market area can be smaller than a city. Large cities may contain several evolving local areas while small settlements may use one. The view must not imply that a market-area boundary teleports cargo: firms/facilities remain real physical origins/destinations and deliveries inside one area or city still require physical transport.
+
+The same information can therefore be inspected spatially across the map.
 
 Example:
 
@@ -56,6 +63,8 @@ Example:
 > Reference price: 27 money/t
 
 This does not guarantee that any specific firm will sign a contract or that a route is profitable.
+
+The displayed price is a **local reference price**, not an automatic buy/sell price. When a concrete seller or buyer is opened, show the relevant reference alongside the actual quoted/negotiated commercial terms where known, without exposing private reservation prices or margins.
 
 Market values are dynamic. If real freight flows reduce a surplus at the origin and a deficit at the destination, the displayed local prices and imbalance must update accordingly. A corridor that was initially highly attractive can become less attractive as it successfully integrates those markets.
 
@@ -82,6 +91,14 @@ Market intelligence and Opportunities are separate:
 - **Opportunities** shows concrete jobs, tenders and offers from real counterparties.
 
 Actions from Market can navigate to known producers/buyers, search/filter Opportunities for that commodity/area, or start a relevant planning workflow where one exists. They must not fabricate a customer contract.
+
+Three player paths are supported:
+
+1. **React** to an already discoverable Opportunity.
+2. **Propose a connection** between a legitimately known producer and buyer, pairing their real supply/demand with a transport offer. The seller and buyer still decide their own commodity transaction; the player does not purchase/resell the commodity as a speculative trader.
+3. **Prepare a strategic corridor/service** from the observed market imbalance and let real firms use it if it becomes a competitive transport option.
+
+If aggregate market intelligence shows a deficit but the player's company does not know a concrete buyer, show that information gap instead of revealing the hidden firm. Operational commodity purchases for the player's own coal, electricity, fuel, parts, construction materials and similar needs continue through Procurement & suppliers.
 
 ## 3. Opportunities
 
@@ -134,7 +151,7 @@ Exact card names can be refined, but preserve the task grouping and non-linear e
 
 A missing route or customer endpoint may prevent full costing without preventing the player from entering a price target or proposed fleet requirement. Mark dependent calculations as unavailable/stale rather than clearing other work.
 
-### 3.2 Offer draft versus submitted offer
+### 4.2 Offer draft versus submitted offer
 
 Provide **Save draft / Uložit návrh** separately from **Submit offer / Odeslat nabídku**.
 
@@ -152,9 +169,45 @@ After submission, retain the exact submitted version for history. Later editing 
 
 Show real states such as Draft, Submitted, Awaiting decision, Needs response, Won/Accepted, Rejected, Withdrawn or Expired only when supported by actual simulation state. Do not fabricate competing bids or a customer decision just to make the UI busy.
 
-## 4. Contracts
 
-### 4.1 Contract overview
+### 4.3 Public tender proposal and scoring
+
+A public/state/municipal tender is an Opportunity, not a separate top-level screen. It is clearly typed/filterable as **Public tender / Veřejný tendr**.
+
+The tender detail shows before bidding:
+
+- contracting authority and public need;
+- mandatory served points/corridor and mode where prescribed;
+- minimum frequency/capacity;
+- required operating window, start date and contract duration;
+- maximum journey time or other service-level constraint where applicable;
+- required comfort/quality where applicable;
+- qualification/history thresholds;
+- published scoring factors and their weights;
+- public contract/subsidy terms and material penalty/termination rules.
+
+The player submits a **concrete service plan** using the same Line/Pattern proposal model as normal planning. A bid can extend an existing Line, prepare a future version or propose a new Line/Pattern. It may choose a different operational solution from another bidder, but the UI must block submission until every mandatory tender condition is satisfied or legitimately planned to be satisfied by the required start date.
+
+Scoring is transparent. **Price/requested operating subsidy has the largest normal weight**, while published tenders can also consider:
+
+- operating reliability for the relevant mode (for example rail versus road);
+- company commercial reliability, such as contract fulfilment, promised launch dates and timely payments/fees;
+- comfort/service quality from the concrete proposed service where relevant;
+- company reputation.
+
+Do not merge these into an unexplained single reputation/reliability number. New carriers or a carrier entering a new mode use the mildly positive baseline defined by the core design until real history exists.
+
+Before the deadline, rival bids remain sealed. The player can see the scoring formula, their own known factors and a cost/revenue/subsidy estimate, but not a rival's submitted price or plan. Price points that depend on the final bid set are explicitly labelled as provisional/unknown.
+
+After award, show the public result with the published scoring breakdown for each legitimately public compliant bid, including why the winning proposal won.
+
+Winning commits the service outcomes promised by the tender, not immutable internal implementation. During the contract the player may change exact vehicles, detailed timetable or internal allocation if the service continues to meet the binding corridor/stops, minimum frequency/capacity, journey-time, comfort/quality and reliability terms. Falling below them exposes the real warning/penalty/cure/termination state.
+
+Public-service contracts may be fixed-term or explicitly indefinite. Indefinite/strategic opportunities can publish stricter history/qualification requirements. Expiry, authority termination, operator notice or serious unresolved breach can lead to a new tender rather than silently extending the old award.
+
+## 5. Contracts
+
+### 5.1 Contract overview
 
 The Contracts view lists binding agreements with:
 
@@ -170,7 +223,7 @@ Do not reduce contract health to an unexplained green/red score. A concise statu
 
 Opening a contract shows a compact live summary: what the company promised, what is currently happening, the next required action and any player decision. Keep automatic dispatcher/manager recovery distinct from unresolved player action.
 
-### 4.2 Contract cards
+### 5.2 Contract cards
 
 Use task-based cards:
 
@@ -186,7 +239,7 @@ Use task-based cards:
 
 Keep only relevant cards for the agreement type; one-off jobs need not display an empty recurring-renewal dashboard.
 
-## 5. Transport Plan and operational linkage
+## 6. Transport Plan and operational linkage
 
 The commercial UI must connect the promise to its real execution. In the Transport Plan card, show the ordered origin-to-destination chain as a compact leg list/flow that reflows with window size. Do not require a giant node editor.
 
@@ -204,7 +257,7 @@ Each specific Line, Pattern, Trip, terminal, external order and other inspectabl
 
 Where an existing Line is used, expose compatible available/committed capacity using the canonical ledgers. Do not show only nominal tonnes/seats if the relevant cargo/passengers cannot use that capacity. A contract allocation is not duplicated because it appears in both commercial and Line windows.
 
-## 6. Shipments inside a contract
+## 7. Shipments inside a contract
 
 The contract includes a compact Shipment list with filters for current/upcoming/completed/problematic items. Each Shipment remains one commercial consignment even when split into several CargoLots or Trips.
 
@@ -221,7 +274,7 @@ Clicking opens the Shipment detail; the commercial list itself must not imply th
 
 A missed transfer, rebooking or external recovery does not erase the original failure/SLA consequence. Preserve direct links from the commercial obligation to the responsible Trip, Line, vehicle, terminal or partner order where the simulation knows it.
 
-## 7. Contract lifecycle actions
+## 8. Contract lifecycle actions
 
 Keep **Amend/Renegotiate**, **Renew/Auto-renew**, **Do not renew**, **Suspend/replace service where contractually relevant**, and **Terminate/Cancel contract** visually distinct.
 
@@ -237,7 +290,7 @@ Never make cancellation a casual toggle. Before a binding change, show:
 
 Follow CONTRACT_CANCELLATION for ordinary early release/cancellation calculations. Turning Auto-renew off is not early cancellation. Ending a Line does not automatically end the customer contract, and ending a contract does not silently demolish infrastructure or teleport/remove cargo.
 
-## 8. Minimalism, tooltips and permissions
+## 9. Minimalism, tooltips and permissions
 
 Apply UI-D15 throughout:
 
@@ -246,11 +299,11 @@ Apply UI-D15 throughout:
 - complete terms, histories and editable policies live in opened details;
 - deadlines, binding prices, penalties, blockers and confirmation consequences remain visible.
 
-Do not reveal competitors' private bids, internal cost assumptions or confidential contracts unless gameplay rules explicitly make that information available. A public tender can reveal its public terms without exposing rival submissions.
+Do not reveal competitors' private bids, internal cost assumptions or confidential contracts unless gameplay rules explicitly make that information available. A public tender exposes its rules/weights and, after award where legitimately public, the material result breakdown; rival submissions stay sealed before the deadline.
 
 Disabled Submit/Accept actions explain the blocker and link to the corrective workflow where possible. A tooltip or link never submits a bid, accepts a contract, acknowledges a breach or changes simulation time.
 
-## 9. Acceptance evidence to collect
+## 10. Acceptance evidence to collect
 
 These scenarios extend the UI evidence contract; they are not claims of implementation.
 
@@ -264,11 +317,15 @@ These scenarios extend the UI evidence contract; they are not claims of implemen
 | COMUI-A06 | Trigger customer-side delay, carrier-side missed transfer and external recovery. Commercial obligations and SLA consequences stay traceable through replanning rather than disappearing when cargo is rebooked. |
 | COMUI-A07 | Exercise renewal/non-renewal and early termination. Show notice/effective dates, cancellation settlement and remaining operational dependencies; no unrelated Line, slot, cargo or asset is silently deleted. |
 | COMUI-A08 | Verify CZ/EN, enlarged UI, tooltips/focus access, running/manual-pause/critical-pause use and save/load. Opening commercial windows or hovering explanations never changes time or executes a commercial command. |
+| COMUI-A09 | Open timber in Market. The main map automatically shows known market areas with surplus/deficit and local reference prices together while the Market window remains usable. Inspect two areas in one city and verify their physical firms/endpoints remain distinct and cargo never teleports across the market boundary. |
+| COMUI-A10 | From a real known producer with surplus, compare a known buyer in a deficit market, inspect reference versus concrete commercial terms and propose a transport connection. Both counterparties evaluate real supply/demand; no player commodity ownership, fabricated buyer or fabricated cargo is created. |
+| COMUI-A11 | Submit a public tender using a concrete extension/new-Line proposal. Invalid mandatory conditions block submission with exact reasons. Rival bids remain sealed before deadline; after award the published weighted price/reliability/commercial-reliability/comfort/reputation breakdown explains the outcome. |
+| COMUI-A12 | Operate an awarded public-service contract, change internal vehicle/timetable implementation while retaining all binding service outcomes, then trigger isolated and repeated failures. Verify progressive reliability/penalty/cure behaviour and eventual legitimate termination/re-tender without one minor incident instantly cancelling the contract. |
 
-## 10. Decision record
+## 11. Decision record
 
 | ID | Decision | Status |
 |---|---|---|
-| UI-D17 | One commercial workspace with Opportunities, Offers and Contracts; compact list views; non-linear persistent offer drafts separated from submission; contract views directly linked to Transport Plans, Shipments, Lines, Trips and real operational fulfilment | CONFIRMED on 2026-09-30 |
+| UI-D17 | One commercial workspace with Market, Opportunities, Offers and Contracts; commodity Market auto-projects surplus/deficit + reference price onto the main map; Market can lead to real producer/buyer transport proposals without commodity speculation; public tenders use concrete compliant service plans, sealed rival bids and transparent published weighted scoring; persistent drafts remain separate from submission and contracts link directly to real execution | CONFIRMED on 2026-09-30; refined on 2026-10-01 |
 
-UI-D17 complements UI-D01–UI-D16. It does not change contract economics, customer behaviour, capacity priority, cargo identity or cancellation rules.
+UI-D17 complements UI-D01–UI-D16. Core market formation, freight-contract/open-carriage rules and public-tender award mechanics remain owned by GAME_DESIGN; this document defines their commercial presentation and workflow.
