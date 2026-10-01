@@ -58,6 +58,7 @@ The names should feel recognisable enough to be a historical wink without using 
 | **Karusa Vysoké Mýto** | Karosa | Vysoké Mýto | Active-map bus factory |
 | **SORA Libchavy** | SOR | Libchavy | Active-map bus factory |
 | **Studena Vagónka** | Vagonka Studénka | Studénka | Active-map railcar/EMU factory |
+| **Králopole Brno** | Královopolská strojírna | Brno-Královo Pole | Active-map railcar/heavy-engineering factory; selected joint production with ČMD |
 | **CZ LOKA** | CZ LOKO | Česká Třebová / Jihlava lineage | Active-map modern locomotive works / rebuild specialist |
 | **Daimlar Motoren** | Daimler | off-map Germany unless the final clipping includes the plant | Import |
 | **Benc & Cie.** | Benz | off-map Germany | Import |
