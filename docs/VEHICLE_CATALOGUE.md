@@ -897,6 +897,16 @@ Exact prices, service intervals and fuel consumption values should be balanced o
 The following sources were used to anchor dates and representative specifications. The content definitions should retain per-model provenance rather than relying only on this summary.
 
 ### Rail
+- ČSD 534.0: https://web.kurzy.cz/wiki/%C4%8CSD_%C5%99ada_534.0
+- ČSD 464.0: https://de.wikipedia.org/wiki/%C4%8CSD-Baureihe_464.0
+- ČSD S 489.0 / class 230: https://www.www2.zelpage.cz/loko-230.html
+- ČSD T 669.0 / class 770: https://web.kurzy.cz/wiki/Lokomotiva_770
+- ČSD T 466.2 / class 742: https://web.kurzy.cz/wiki/Lokomotiva_742
+- Siemens ER20: https://de.wikipedia.org/wiki/Siemens_ER20
+- Bombardier TRAXX F140 MS: https://railpool.pl/zestawianie-pakietow-krajowych/
+- CityElefant / class 471: https://www.skodagroup.com/cs/reference/elektricka-jednotka-rady-471-cityelefant
+- M 240.0 / class 820: https://web.kurzy.cz/wiki/Motorov%C3%BD_v%C5%AFz_820
+- class 842: https://www.atlasvozu.cz/rada/cd/218-842.html
 - kkStB 97 / ČSD 310.0: https://en.wikipedia.org/wiki/KkStB_97
 - kkStB 99 / ČSD 320.0: https://en.wikipedia.org/wiki/KkStB_99
 - kkStB 170 / ČSD 434.0: https://de.wikipedia.org/wiki/KkStB_170
@@ -917,6 +927,15 @@ The following sources were used to anchor dates and representative specification
 - class 680 Pendolino: public ČD/class technical data
 
 ### Road
+- Daimler Motor-Lastwagen 1896: https://de.wikipedia.org/wiki/Daimler_Motor-Lastwagen_%281896%29
+- Laurin & Klement Type E commercial/omnibus: https://www.skoda-storyboard.com/cs/tiskove-zpravy-archiv/pribehy-mene-znamych-modelu-z-historie-125-let-skoda-auto-laurin-klement-e-cerna-hora/
+- Tatra 138: https://www.csla.cz/technika/automobily/tatra138vnv.htm
+- Tatra 148: https://en.wikipedia.org/wiki/Tatra_148
+- LIAZ 100/110 lineage: https://www.automobilrevue.cz/rubriky/clanky/historie/liaz-liberecke-automobilove-zavody-byl-jednou_44696.html
+- Ikarus 280: https://www.ikarusy.net/o_ikarusu.html
+- Mercedes-Benz O303: https://archive.commercialmotor.com/article/13th-december-1974/18/0303-complex-coach-range-from-mercedes
+- Solaris Urbino 12: https://en.wikipedia.org/wiki/Solaris_Urbino_12
+- MAN Lion's City: https://www.man.eu/cz/cs/autobus/man-lion_s-city/technika-a-specifikace/vsechny-modely-a-specifikace.html
 - Benz Omnibus 1895: https://de.wikipedia.org/wiki/Benz_Omnibus_%281895%29
 - Daimler Motor-Lastwagen 1896: https://de.wikipedia.org/wiki/Daimler_Motor-Lastwagen_%281896%29
 - Thornycroft steam carriage: period Automotor and Horseless Vehicle Journal material
