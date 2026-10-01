@@ -241,7 +241,7 @@ Required player screens/workflows:
 | Commercial | Market with local commodity surplus/deficit/reference prices and map handoff; filterable Opportunity Board including public tenders; producer/buyer transport proposals; concrete tender/service plans with sealed rivals and transparent scoring; contract planner/readiness/economics, bid/accept/amend/cancel/renew, shipment progress |
 | Operations | Lines/Pattern versions/calendars, capacity orders/timeline, duties/fleet assignment, departures, actual delays and action reasons |
 | Assets | Marketplace, order/delivery tracking, physical fleet details, workshops/service policies, fuel/storage/support |
-| Passenger/cargo detail | Per-leg commitments, actual quantity/capacity, queues/transfers, protected reservations, recovery and cost consequences |
+| Passenger/cargo detail | Per-leg commitments, actual quantity/capacity, queues/transfers, confirmed passenger reservations, protected contractual cargo/passenger allocations, recovery and cost consequences |
 | World/business context | Cities/firms/production/final consumption, stable city/locality markets with evolving internal economic centres, public state/region/city priorities, competitors, partnerships, UI-D39 company/infrastructure acquisitions, UI-D38 Technology/research/adoption, UI-D40 World News/history and major disruptions |
 
 Aggregate data must be drillable. A disabled action explains its specific blocker and links to a corrective workflow. Distinguish simulation facts, estimates and commercial promises. No decorative financial chart with invented data.
