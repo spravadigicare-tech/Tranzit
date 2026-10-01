@@ -146,6 +146,15 @@ class VehicleContentValidatorTests(unittest.TestCase):
             path.write_text(json.dumps(data), encoding="utf-8")
             self.assertTrue(any("does not support" in x for x in check_vehicle_content(root).errors))
 
+    def test_template_reverse_link_required(self):
+        directory, root, base = self.fixture()
+        with directory:
+            path = base / "vehicle_models_1900.v1.json"
+            data = json.loads(path.read_text())
+            data["models"][0]["built_in_template_ids"] = []
+            path.write_text(json.dumps(data), encoding="utf-8")
+            self.assertTrue(any("template is not listed in model" in x for x in check_vehicle_content(root).errors))
+
     def test_material_recipe_required(self):
         directory, root, base = self.fixture()
         with directory:
