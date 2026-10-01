@@ -15,6 +15,7 @@ The scope is already decided:
 - Complete Czech geographic coverage plus adjoining German, Polish, Austrian and Slovak territory, real locations/relief and a historically plausible offline authored world.
 - Existing infrastructure and real AI competitors; the player starts small with a loan, not a free branch/fleet.
 - One unit named `money`; Czech and English UI; coherent stylized 3D model-world graphics.
+- Passenger inter-operator cooperation uses the defined partner-capacity-sale through-ticket mechanism only. Ordinary transfers may exist when schedules and interchange permit them, but do not implement a separate passenger connection-agreement, guaranteed/protected-transfer or connection-hold subsystem.
 - One shared simulation clock: 1 real second = 1 game minute at 1x, 14 days/month, 168 days/year, speeds 0.5x through 16x and pause. Geographic length and actual performance determine travel time.
 - Physical assets/cargo never teleport. Shipments split across Trips while quantities, capacity, custody and obligations remain conserved. Protected commitments cannot be silently displaced by a profitability/priority score.
 - No end-year removal of introduced vehicle models. Real offers/support capacity can change economically; own compatible support can keep old equipment useful.
