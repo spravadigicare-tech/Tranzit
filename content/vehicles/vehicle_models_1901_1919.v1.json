@@ -45,7 +45,8 @@
         "series_build_days": 18,
         "special_build_days": 28,
         "base_cost_index": 115,
-        "initial_capability_state": "series_production"
+        "initial_capability_state": "series_production",
+        "material_recipe_id": "prod_road_motor_early"
       },
       "maintenance_profile": {
         "family": "early_petrol",
@@ -115,7 +116,8 @@
         "series_build_days": 20,
         "special_build_days": 30,
         "base_cost_index": 125,
-        "initial_capability_state": "series_production"
+        "initial_capability_state": "series_production",
+        "material_recipe_id": "prod_road_motor_early"
       },
       "maintenance_profile": {
         "family": "early_petrol",
@@ -184,7 +186,8 @@
         "series_build_days": 24,
         "special_build_days": 36,
         "base_cost_index": 130,
-        "initial_capability_state": "series_production"
+        "initial_capability_state": "series_production",
+        "material_recipe_id": "prod_road_motor_early"
       },
       "maintenance_profile": {
         "family": "early_petrol",
