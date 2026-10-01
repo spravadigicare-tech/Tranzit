@@ -29,7 +29,7 @@ Document responsibility is explicit:
 
 There is no universal "last paragraph wins" rule. A genuine mechanics conflict still requires correcting the owning section and its dependent summaries/tests; do not treat a release-scope document or example as blanket permission to override it.
 
-Run `python3 Tools/check_docs.py` and `python3 -m unittest discover -s Tools/tests -v` after documentation edits. These check documentation structure and selected explicit regressions, not the correctness or completion of the unimplemented game.
+Run `python3 Tools/check_docs.py`, `python3 Tools/check_vehicle_content.py` when vehicle content data is touched, and `python3 -m unittest discover -s Tools/tests -v` after documentation/content edits. These check documentation/data structure and selected explicit regressions, not the correctness or completion of the unimplemented game.
 
 Together these form the **living source of truth**, not a historical log. The core design describes the wider game; V1_SCOPE explicitly narrows the first release's modes and start presets without deleting the broader design. Focused specifications elaborate core rules and are not optional notes.
 
