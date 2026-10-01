@@ -77,7 +77,7 @@ Example, illustrative only:
 >
 > Expected destination delay: +7 min
 
-The breakdown uses actual structured events/reason codes. Do not attribute a delay to “traffic” or “operations” when the simulation knows the specific capacity conflict, dwell overrun, connection hold, vehicle restriction or other cause.
+The breakdown uses actual structured events/reason codes. Do not attribute a delay to “traffic” or “operations” when the simulation knows the specific capacity conflict, dwell overrun, vehicle restriction or other cause.
 
 Distinguish:
 
@@ -206,9 +206,9 @@ For protected passengers, the Trip can show:
 - planned/minimum transfer time;
 - hold-policy state;
 - current risk;
-- authorized hold/rebooking action.
+- authorized passenger recovery action that is defined by the applicable approved passenger rules.
 
-A connection hold must respect slot, duty and downstream constraints. High company priority does not override another operator's stronger infrastructure rights.
+If a future approved passenger connection-agreement specification permits connection holds, those holds must still respect slot, duty and downstream constraints. High company priority does not override another operator's stronger infrastructure rights.
 
 For freight, show cargo readiness cutoff, transfer readiness and responsibility when a protected CargoLot may miss the Trip. The Trip detail must not call carrier-delayed cargo a customer no-show.
 
@@ -240,7 +240,7 @@ Example:
 >
 > Passengers carried: 184
 >
-> Protected connections: 3 maintained
+> Passenger transfers affected: 3
 >
 > Incidents: 1
 >
