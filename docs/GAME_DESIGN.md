@@ -4618,12 +4618,12 @@ Exports to off-map buyers use the inverse commercial relationship but a delibera
 For an off-map sale:
 
 - the sold vehicle remains a real physical asset until handover;
-- the player must make it available at an agreed physically reachable collection point inside the active world;
-- the buyer or its contracted carrier is responsible for collection and all onward transport beyond that handover;
+- the vehicle must simply be parked/stored at a physically reachable location where handover can occur; the player does not have to reposition it to a special export terminal;
+- the buyer or its contracted carrier travels to that location, collects the vehicle and is responsible for all onward transport;
 - the player does not plan or pay the off-map export transport unless a special sale contract explicitly says otherwise;
 - once the buyer has physically taken custody at the handover point, the vehicle can leave detailed simulation and continue only as a recorded historical ownership/export event.
 
-The game therefore does not require the player to simulate long-distance outbound delivery chains for ordinary off-map vehicle sales.
+The game therefore does not require the player to reposition an ordinary exported vehicle merely for export or to simulate the buyer's long-distance outbound delivery chain.
 
 At new-game initialization, period-appropriate used vehicles can already exist with manufacture dates before the chosen start. Their age and condition are initialized rather than manufactured by replaying earlier decades.
 
