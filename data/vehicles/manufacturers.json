@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "manufacturers": [
+    {
+      "id": "mfr_cms_praha",
+      "name": "ČMS Praha",
+      "prototype_lineage": "BMMF / later ČKD lineage",
+      "source_type": "active_map",
+      "home_region": "czech_bohemian",
+      "roles": [
+        "rail_manufacturer",
+        "workshop"
+      ],
+      "opening_1900": true
+    },
+    {
+      "id": "mfr_ringhauer_smichov",
+      "name": "Ringhauer Smíchov",
+      "prototype_lineage": "Ringhoffer",
+      "source_type": "active_map",
+      "home_region": "czech_bohemian",
+      "roles": [
+        "coach_builder",
+        "wagon_builder"
+      ],
+      "opening_1900": true
+    },
+    {
+      "id": "mfr_regional_austrian_steam",
+      "name": "Alpské lokomotivky",
+      "prototype_lineage": "Floridsdorf / Wiener Neustadt / StEG aggregate",
+      "source_type": "off_map_macro",
+      "home_region": "austria",
+      "roles": [
+        "rail_manufacturer"
+      ],
+      "opening_1900": true
+    },
+    {
+      "id": "mfr_local_coachbuilder",
+      "name": "Místní vozárna",
+      "prototype_lineage": "local coachbuilders",
+      "source_type": "distributed_local",
+      "home_region": "local",
+      "roles": [
+        "coachbuilder",
+        "horse_vehicle_builder"
+      ],
+      "opening_1900": true
+    },
+    {
+      "id": "mfr_daimlar_motoren",
+      "name": "Daimlar Motoren",
+      "prototype_lineage": "Daimler-Motoren-Gesellschaft",
+      "source_type": "off_map_macro",
+      "home_region": "germany",
+      "roles": [
+        "road_manufacturer"
+      ],
+      "opening_1900": true
+    },
+    {
+      "id": "mfr_benc_cie",
+      "name": "Benc & Cie.",
+      "prototype_lineage": "Benz & Cie.",
+      "source_type": "off_map_macro",
+      "home_region": "germany",
+      "roles": [
+        "road_manufacturer"
+      ],
+      "opening_1900": true
+    },
+    {
+      "id": "mfr_thornycroft_uk",
+      "name": "Thornycroft",
+      "prototype_lineage": "Thornycroft Steam Wagon Co. lineage",
+      "source_type": "off_map_macro",
+      "home_region": "britain",
+      "roles": [
+        "road_manufacturer"
+      ],
+      "opening_1900": true
+    }
+  ]
+}
