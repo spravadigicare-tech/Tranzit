@@ -1822,6 +1822,8 @@ The economy supports three broad physical-goods roles without forcing every firm
 2. **Processors/manufacturers** consume physical inputs and create other physical commodities.
 3. **Final consumers/services** consume physical commodities but can produce a non-transportable economic effect instead of another cargo item.
 
+A processor/manufacturer recipe can require **several independent inputs at the same time**. Production is constrained by the actual required bundle: abundant steel cannot replace missing electronics, and abundant chemicals cannot replace missing processed wood, unless a separately authored recipe/version explicitly permits that substitution. This multi-input rule applies equally to AI firms and player-relevant procurement/forecast UI.
+
 Industrial/fleet/facility ownership also creates **maintenance demand**. Operating factories, vehicles, workshops, utilities and infrastructure consume spare parts and selected technical supplies over time according to asset type, age, utilization, condition and technology. This recurring demand is physical and must be sourced/transported; it is not an abstract maintenance-cost modifier that bypasses the commodity system.
 
 Representative shops, distributors, hospitality/services, institutions and similar entities can stand in for household-facing consumption. Do not simulate every household or every small shop individually. Their physical inputs still have real inventories and delivery needs; their non-cargo output can contribute to local commercial activity, service availability and city development.
@@ -1835,7 +1837,7 @@ For heavy industry, **coke is not a separate player-facing transport commodity**
 Heavy industry also feeds the installed economy after initial construction through two spare-parts generations:
 
 - **basic spare parts** for older/mechanical vehicles, factories, workshops, utilities and infrastructure;
-- **modern spare parts**, introduced later for newer equipment and systems and increasingly using plastics, industrial chemicals, electronics and semiconductor components.
+- **modern spare parts**, introduced later for newer equipment and systems and increasingly using plastics, industrial chemicals and electronics.
 
 An asset's technology/content definition determines which spare-parts generation it consumes. Newer parts do not automatically replace the needs of older equipment, so a long-lived legacy fleet or factory can keep supporting real basic-spare-parts demand while modern assets create a parallel newer supply chain. Asset maintenance must therefore create recurring secondary freight flows instead of being represented only by a money expense.
 
@@ -1887,7 +1889,7 @@ A new industry can buy and adapt a suitable existing property when plausible. In
 
 ### 10.3 Historical and seasonal demand
 
-Commodity importance and the available commodity catalogue change over time. New technologies and industries can introduce new physical commodities and supply chains, for example later petroleum products, plastics, electronics and semiconductor products. These are world/economic developments, not player-level unlock rewards.
+Commodity importance and the available commodity catalogue change over time. New technologies and industries can introduce new physical commodity groups and supply chains, for example later petroleum products, plastics, industrial chemicals and electronics. These are world/economic developments, not player-level unlock rewards.
 
 Older commodities do not disappear on a hard global end date. Their demand can decline, relocate or survive for decades according to actual industries, technologies, prices and regional conditions. Existing viable firms and flows continue until real economic causes change them.
 
@@ -1904,7 +1906,7 @@ Examples:
 
 Demand can also be seasonal where the underlying economy supports it. Examples include harvests, food processing, heating fuel, construction seasons and other recurring production/consumption cycles.
 
-The canonical first-playable 1900 commodity/chain catalogue is owned by [V1_CONTENT_MANIFEST.md](V1_CONTENT_MANIFEST.md). It includes forestry/furniture/construction, several food chains, textiles, distinct construction materials, coal/iron/steel/metal/machinery, early gas/electric utility demand, historically bounded oil products and general consumer goods. Later historical content adds chemicals, plastics, natural gas, fertilizers, electronics and semiconductor components without globally deleting older viable routes.
+The canonical commodity-group/chain catalogue is owned by [V1_CONTENT_MANIFEST.md](V1_CONTENT_MANIFEST.md). It includes forestry/furniture/paper, several food chains, textiles/clothing, distinct construction materials including glass, coal/iron/steel/metal/machinery, maintenance supplies, early gas/electric utility demand, historically bounded oil products and general consumer goods. Later historical content adds chemicals, plastics, natural gas, fertilizers, medical supplies and electronics. **Electronics includes semiconductor chips/components rather than exposing chips as a separate cargo group.** Older viable routes are displaced only through real modernization/economics, never a global cutoff.
 
 Seasonality must come from the actual simulated business/population context rather than flat global multipliers. Its intensity and cargo mix can change by era, region, technology and economic development.
 
