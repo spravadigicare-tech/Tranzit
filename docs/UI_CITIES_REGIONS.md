@@ -63,6 +63,8 @@ Economic centres can appear, grow, decline or change role as the physical city d
 
 Intra-city passenger demand should use these centres as major origin/destination nodes. Urban public transport connecting homes, jobs, services and transport hubs can improve actual accessibility and influence later urban growth. The UI should therefore make it easy to inspect centre-to-centre passenger flows and existing services without pretending that every individual resident is simulated.
 
+A rail/bus passenger station does not automatically serve every centre in the city. City detail should distinguish centres with direct walking access to a selected station from centres that require an urban feeder. This allows the player to identify, for example, a large residential centre with strong rail demand but poor access to the main station and plan a bus/tram connection rather than receiving that demand for free.
+
 A branch elsewhere in the same city market is sufficient for ordinary city-level commercial presence under the current coverage rules; the player does not need a separate office for every internal centre.
 
 ## 3. Demand is directional and time-scoped
