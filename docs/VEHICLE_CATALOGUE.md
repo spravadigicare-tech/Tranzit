@@ -86,10 +86,10 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **ČMS 99 “Lokálka”** | 1897 | kkStB 99 / ČSD 320.0 | local mixed traffic | ~221 kW continuous / ~294 kW peak | 50 km/h | 39.3 t | light branch-line locomotive; low coal/water endurance | Praha/BMMF + Austrian plants; used stock common in 1900 |
 | **ČMS 170 “Horal”** | 1897 | kkStB 170 / ČSD 434.0 | heavy freight, gradients | ~690 kW continuous / ~880 kW peak | 60 km/h | ~69 t locomotive | heavy adhesion locomotive; tender requires turning/run-around planning | multiple Austro-Hungarian plants; Praha build or regional import |
 | **ČMS 6 “Rychlík”** | 1894 | kkStB 6 / ČSD 264.0 | passenger / express | ~588 kW continuous / ~736 kW peak | 90 km/h | 56.1 t locomotive | high-speed passenger gearing and relatively low adhesion mass; production ended before 1900 so opening supply is used stock | Austrian off-map used stock / existing world assets |
-| **Neškoda N534 “Dříč”** | 1923 | ČSD 534.0 | heavy general freight | ~1,000 kW class / high adhesion | 60 km/h | 81–86 t loco | five coupled axles; freight-biased; stronger track than local engines | Plzeň/Praha active-map manufacture |
+| **Neškoda N534 “Dříč”** | 1923 | ČSD 534.0 | heavy general freight | 1,208 kW indicated / high adhesion | 60 km/h | 81.3–84 t loco | five coupled axles, 150 m curves; freight-biased | Plzeň/Praha active-map manufacture |
 | **Neškoda N387 “Mikádo”** | 1926 | ČSD 387.0 | premier express | 1,546 kW / 109 kN | 110 km/h | 92.8 t loco | 150 m curves, high coal/water use, good track required | **Plzeň factory**, active-map manufacture |
 | **Neškoda N475 “Šlechtična”** | 1947 | ČSD 475.1 | universal passenger / fast mixed | 1,480 kW / ~150 kN | 100 km/h | 102.7 t loco | 150 m curves; stronger track and depot facilities | **Plzeň factory** |
-| **Neškoda N556 “Silák”** | 1951 | ČSD 556.0 | maximum steam freight | 1,620 kW / 218 kN | 80 km/h | 99 t loco, ~185 t with tender | 16.8 t axle load; large turntable/service demand | **Plzeň factory** |
+| **Neškoda N556 “Silák”** | 1951 | ČSD 556.0 | maximum steam freight | 1,472 kW continuous / ~218 kN | 80 km/h | 99 t loco | 120 m curves; large tender/turning/service demand | **Plzeň factory** |
 | **Neškoda N498 “Albatros”** | 1954 | ČSD 498.1 | top steam express | 2,000 kW / ~180 kN | 120 km/h | 113 t loco | premium track; expensive coal/water/service | **Plzeň factory** |
 | **Neškoda E500 “Bobina”** | 1953 | ČSD E 499.0 / class 140 | early mainline DC electric | 2,032 kW cont. / 212 kN | 120 km/h | 80–82 t | 3 kV DC only, ~20 t axle load | **Plzeň factory** |
 | **ČMD D435 “Hektor”** | 1958 | ČSD T 435.0 / class 720 | shunting, local freight | 553 kW / 200 kN start | 60 km/h | 61 t | no train heating in base build; excellent 70 m curve access | **Praha factory** |
@@ -123,10 +123,10 @@ A corporate merger or ownership change must not delete old physical vehicles or 
 | **Ringhauer B4 Corridor** | 1895 | 4-axle bogie corridor coach | coach | 50–58 seats | 80 km/h | ~25–30 t | smoother ride, through circulation, heavier/more expensive | Smíchov factory |
 | **Ringhauer Luxus Schlaf** | 1898 | period sleeping/dining stock | sleeper/service | 18–24 berths or 28 dining seats | 80 km/h | ~28–32 t | premium fares, service staff/supplies, low capacity | Smíchov or off-map luxury-car builder |
 | **Ringhauer Post/Gepäck** | 1885 | baggage/post/service coach | service | baggage/mail volume instead of seats | 65 km/h | ~14 t | luggage/mail/guards; no ordinary passenger capacity | Smíchov factory |
-| **ČMS M120 “Věžák”** | 1930 | ČSD M 120.4 | petrol railcar | ~32 seats | ~55 km/h | ~90 kW / ~12 t | very cheap branch-line train, no locomotive/run-around | Praha factory |
-| **Studena M131 “Hurvínek”** | 1948 | ČSD M 131.1 | diesel railcar | ~48 seats | 60 km/h | ~114 kW / ~16 t | branch-line economy, can work with trailers | Studénka factory |
-| **Studena M262 “Kredenc”** | 1949 | ČSD M 262.0 | diesel railcar | ~56 seats | 90 km/h | ~300 kW / ~43 t | faster regional service, more comfort/cost | Studénka factory |
-| **Studena M240 “Kačena”** | 1959 | ČSD M 240.0 / class 820 | diesel railcar | 56 seated + 46 standing | 70 km/h | 206 kW / 40.8 t | stronger/more spacious regional railcar than M131; still branch-line oriented | Studénka factory |
+| **Fatra M120 “Věžák”** | 1930 | ČSD M 120.4 | petrol railcar | 36 seated + ~10 standing | 50 km/h | ~75 kW / ~17 t occupied | very cheap branch-line train, no locomotive/run-around | Kopřivnice factory |
+| **Fatra–Studena M131 “Hurvínek”** | 1948 | ČSD M 131.1 | diesel railcar | 48 seated + 21 standing | 60 km/h | 113.9 kW / ~20.9 t occupied | branch-line economy, can work with trailers | Kopřivnice, later Studénka |
+| **Králopole–ČMD M262 “Kredenc”** | 1949 | ČSD M 262.0 | diesel-electric railcar | 56 seats | 90 km/h | 301 kW / 48.6 t service | faster regional service, more comfort/cost | Královopolská + ČMD; later Studénka |
+| **Studena M240 “Kačena”** | 1959 | ČSD M 240.0 / class 820 | diesel railcar | 56 seated + 46 standing | 70 km/h | 206 kW / representative ~31.6 t empty | stronger/more spacious regional railcar than M131; still branch-line oriented | Studénka factory |
 | **Ringhauer Y64** | 1964 | UIC-Y family | bogie coach | 72–88 seats by class | 140 km/h | ~38–42 t | standardized mainline coach, steam/electric heating variants | domestic works or regional licence build |
 | **Studena M152 “Orchestrion”** | 1975 | ČSD M 152.0 / class 810 | diesel railcar | 55 seated + 40 standing | 80 km/h | 155 kW / 20 t | tiny lines, very low axle load/cost, modest acceleration/comfort | Studénka factory |
 | **Studena 842 “Rakvička”** | 1988 | ČD/ČSD class 842 | diesel railcar | 64 fixed + 16 folding seats | 100 km/h | ~2×242 kW class / ~47 t | faster regional diesel unit with more luggage/bike flexibility | Studénka factory |
@@ -192,10 +192,10 @@ This already gives four different 1900 freight choices without introducing an an
 | **Pragov N** | 1915 | early Praga N truck family | rigid, ~3 t | ~30 kW | ~35 km/h | general freight | Praha |
 | **Fatra 13** | 1924 | Tatra 13 | light rigid, 1.0 t payload | 8.8 kW | 45 km/h | city/local light freight | Kopřivnice |
 | **Pragov RN** | 1933 | Praga RN | medium rigid, ~2–3 t | ~38–50 kW | ~60 km/h | versatile medium freight | Praha |
-| **Fatra 111** | 1942 | Tatra 111 | 6×6, ~8–10 t | ~154 kW | 65 km/h | heavy/rough-road freight | Kopřivnice |
+| **Fatra 111** | 1942 | Tatra 111 | 6×6; 8 t early, ~10 t mature series | ~154 kW early; ~129–132 kW reliability series | 60–75 km/h by series | heavy/rough-road freight; dated factory-series packages | Kopřivnice |
 | **Pragov V3S** | 1953 | Praga V3S | 6×6, 5.5 t road / 3.5 t off-road | 70 kW | 60 km/h | construction, rough roads, recovery | Praha |
 | **Fatra 138** | 1959 | Tatra 138 | 6×6, up to 12 t road payload | 132.5 kW | 72 km/h | heavy construction/terrain freight | Kopřivnice |
-| **Neškoda 706 RT** | 1957 | Škoda 706 RT | rigid/tractor, ~7–9 t chassis payload | ~118 kW | ~70 km/h | normal regional freight | domestic heavy truck works |
+| **Neškoda 706 RT** | 1957 | Škoda 706 RT | rigid/tractor, 8.6 t base flatbed payload | 118 kW | 75 km/h default; gearing up to 85 km/h | normal regional freight | VIAZ/LIAZ lineage works |
 | **Aviat A30** | 1970 | Avia A30 | medium rigid, ~3 t payload | ~59 kW | ~80 km/h | urban/regional distribution between van and heavy-truck classes | Letňany |
 | **Fatra 148** | 1972 | Tatra 148 | 6×6 heavy rigid, up to ~12 t road payload by body | 148.6 kW | ~70 km/h | quarry/construction/heavy regional work | Kopřivnice |
 | **VIAZ 100** | 1974 | LIAZ 100 | rigid or tractor; ~16–38 t GVW/GCW class | ~200–235 kW | 85 km/h | highway freight | Liberec/Mnichovo Hradiště lineage |
@@ -227,10 +227,11 @@ Body changes alter tare mass, payload, cargo compatibility, price, loading metho
 |---|---:|---|---|---:|---:|---|---|
 | **Koňský omnibus O12** | pre-1900 | horse omnibus | 12 seated | animal | 8 km/h practical | city/local | local coachbuilder |
 | **Benc Omnibus 1895** | 1895 | Benz Omnibus | 7 passengers + driver | 3.7 kW | 20 km/h technical max; ~15 km/h practical average | tiny pioneering motor service | off-map used/import stock; production ended 1898 |
-| **Lorin & Klement H-Bus** | 1908 | L&K Type H omnibus | ~12 seats authoring configuration | ~23.5 kW (32 hp) | ~30 km/h authoring target | local/interurban | Mladá Boleslav |
-| **Pragov NO** | 1930 | Praga NO bus family | ~30–40 seats | ~60–75 kW | ~60 km/h | interurban/city | Praha |
-| **Neškoda 706 RO** | 1947 | Škoda 706 RO | ~35–40 seated, ~60 total | ~100 kW | ~65 km/h | first post-war mass bus | domestic build |
-| **Neškoda 706 RTO** | 1958 | Škoda 706 RTO | ~38–41 seated; urban total ~70 | ~118 kW | ~85 km/h | city/intercity variants | domestic build / Karusa bodywork |
+| **Lorin & Klement E Omnibus** | 1908 | L&K Type E Černá Hora | 5-seat postal + cargo or 12-seat summer body | 25.7 kW | 20–30 km/h practical | local/postal/interurban; fixed factory body variants | Mladá Boleslav |
+| **Pragov NO** | 1925 | Praga NO | 20 seated + 20 standing | ~40.4 kW | ~45 km/h authoring service speed | early purpose-built city/local bus | Praha |
+| **Pragov NDO** | 1939 | Praga NDO | city ~30 seated + 35 standing; coach factory variant | ~91.9 kW | ~55 km/h city authoring speed | larger diesel city/coach platform; production resumes post-war | Pragov chassis + Sodomka/Karusa body |
+| **Neškoda 706 RO** | 1947 | Škoda 706 RO | city 24 seated + 56 standing; regional/coach variants | 99.2 kW | 65 km/h city, faster coach variants | first post-war mass bus | Avia chassis + Karusa body |
+| **Neškoda 706 RTO** | 1958 | Škoda 706 RTO | city 29+41; regional 41+20; coach 39 seats | 117.6 kW | 65–85 km/h by factory variant | city/regional/coach variants | Karusa + domestic chassis works |
 | **Karusa ŠM 11** | 1965 | Karosa ŠM 11 | 24–31 seated + 59–67 standing | 132–154 kW | 65 km/h | high-capacity city bus | Vysoké Mýto |
 | **Karusa ŠL 11** | 1965 | Karosa ŠL 11 | ~45 seated + ~30–40 standing | ~132–147 kW | 70–100 km/h by version | regional bus | Vysoké Mýto |
 | **Ikarusz 280 “Harmonika”** | 1973 | Ikarus 280 | 37 seated + ~103 standing in common city configuration | 141–184 kW | ~70 km/h authoring cap | articulated high-capacity city bus | off-map Hungary import |
