@@ -106,6 +106,7 @@ Operational incidents are not duplicated here because UI-D24 has dedicated event
 
 Contains:
 
+- **Market / Trh**
 - **Opportunities / Příležitosti**
 - **Offers / Nabídky**
 - **Contracts / Smlouvy**
@@ -148,7 +149,10 @@ Contains:
 
 - **Cities & regions / Města a regiony**
 - **Companies / Firmy**
+- **Public priorities / Veřejné priority**
 - **News / Zprávy**
+
+Public priorities is the central known/public overview of current state, regional and municipal development/transport goals. The same priority objects remain reachable from the relevant authority/city/region detail; this screen does not create a second tender database. Concrete advertised tenders remain **Business → Opportunities**.
 
 Do not include Map Layers here; Layers is a direct upper-right HUD tool.
 
