@@ -128,82 +128,109 @@ Use a generic final commodity **consumer goods** for manufactured retail product
 
 At least one chain supplies vehicle operations, one supplies construction, one contains perishable cargo and one supports a multi-leg road/rail transfer. Exact recipes and ratios are balancing data, with explicit unit conversions.
 
-### Canonical 1900 commodity chains
+### Commodity grouping and recipe rules
 
-The first-playable 1900 economy uses the following **canonical chain families**. Regional maps need not contain every producer, but the content set and simulation must support these identities and relationships.
+Player-facing commodities are **logistics/economic groups, not individual SKUs**. Split a product into its own commodity only when the distinction creates a meaningful difference in origin geography, handling/storage, compatible vehicles, perishability/hazard, historical transition, contract market or final demand.
 
-| Chain | Physical flow | Final-use sink / purpose |
+A facility recipe may require **multiple physical inputs in parallel**. There is no one-input/one-output assumption. For example:
+
+- a machinery plant can require steel + metal products + basic/modern spare-parts inputs;
+- modern furniture can require processed wood + industrial chemicals + textiles or plastics;
+- modern consumer manufacturing can require plastics + metal products + electronics + textiles;
+- advanced workshops can require modern spare parts + lubricants/technical fluids + electronics.
+
+All mandatory inputs are independently stocked and consumed. Missing one required input constrains the part of production that depends on it; another abundant input cannot silently substitute unless the facility has a separately authored recipe/version that explicitly permits that alternative. Optional inputs can improve throughput/quality only when a real authored rule exists.
+
+### Canonical 1900 chain network
+
+The first-playable 1900 economy uses the following **commodity groups and chain families**. A regional fixture need not contain every industry, but the content set and simulation must support these identities and relationships.
+
+| Chain / sector | Main physical inputs | Output group(s) | Final use / downstream demand |
+|---|---|---|---|
+| Forestry | resource/land | timber | processed wood, paper, construction |
+| Sawmill / wood processing | timber | processed wood | furniture, construction, manufactured goods |
+| Furniture | processed wood; later recipes may also require textiles, chemicals, plastics or metal products | furniture | furniture retail / city consumption |
+| Paper | timber/processed wood + energy; later chemicals where applicable | paper products | offices, public institutions, retail/consumer goods and packaging use |
+| Grain | agricultural production | grain | flour/bakery products, selected later food processing |
+| Bakery / milling | grain + energy | flour/bakery products | food retail / city consumption |
+| Livestock / meat | livestock | meat | food retail / city consumption |
+| Dairy | dairy production | dairy products | food retail / city consumption |
+| Produce | fruit/vegetables | fruit/vegetables | food retail / city consumption |
+| Textiles | textile raw materials + energy | textiles/fabric | clothing, furniture/upholstery, later consumer manufacturing |
+| Clothing | textiles/fabric | clothing/garments | clothing retail / city consumption |
+| Aggregates | quarry/resource | stone/gravel | construction and infrastructure |
+| Bricks | local mineral/clay resource + coal/energy | bricks | buildings and infrastructure |
+| Cement | local mineral/limestone resource + coal/energy | cement | buildings and infrastructure |
+| Glass | local mineral inputs + coal/energy | glass | buildings, city consumption and later manufactured goods |
+| Iron production | iron ore + coal | iron | steel, metal products, machinery |
+| Steel production | iron + coal/energy | steel | metal products, machinery, construction, spare parts |
+| Metalworking | iron and/or steel | metal products | construction, machinery, spare parts, manufactured goods |
+| Machinery | iron and/or steel + metal products | machinery | factories, utilities, construction, transport investment/modernization |
+| Basic spare parts | iron/steel + metal products + machinery-sector inputs | basic spare parts | older vehicles, workshops, factories, utilities and infrastructure maintenance |
+| Coal economy | coal | fuel/energy input | steam transport, industry, heating, electricity and gasworks |
+| Distribution gas | coal → gasworks | distribution gas | city/industrial utility demand through gas network |
+| Electricity | coal/other historically available generation inputs | electricity | city, industry and later electric transport through power network |
+| Petroleum | crude oil | refined fuels | transport, industry and selected utility/city use; initially regional/limited |
+| Lubricants / technical fluids | refined fuels and/or chemical processing | lubricants/technical fluids | vehicles, workshops and industrial machinery |
+| General manufacturing | processed wood + textiles/fabric + metal products + paper products and other recipe-specific inputs | consumer goods | retail / city consumption |
+
+**Construction projects are multi-input consumers.** A project can require stone/gravel + bricks + cement + processed wood + iron/steel/metal products + glass in parallel according to project type/era. Construction must not consume a single generic “building materials” token.
+
+**Furniture, clothing, paper products, glass and consumer goods remain separate final/intermediate groups** because they create materially different upstream chains or handling/demand. Minor retail variants inside those groups remain abstracted.
+
+**Livestock is a physical cargo** where the transport/region supports it. Meat is a separate downstream commodity. The design does not require raw milk as a separate V1 cargo; dairy production can output dairy products directly at this abstraction.
+
+Brickworks may use local on-site clay/mineral resources rather than creating a dedicated clay cargo. Cement and glass plants may likewise use suitable local mineral inputs while still requiring transported fuel/other inputs. Add a mineral as a transport commodity only when moving it creates meaningful logistics.
+
+Iron and steel remain independent. A downstream recipe can require iron, steel, or both simultaneously. Steel is not a universal upgrade token and neither commodity substitutes for the other unless a separate recipe explicitly says so.
+
+### Maintenance and installed-base demand
+
+The economy must create freight not only from **new production**, but from the installed asset base.
+
+Use two spare-parts generations:
+
+- **basic spare parts** — older/mechanical vehicles, machinery, factories, workshops, utilities and infrastructure;
+- **modern spare parts** — later equipment and systems; typical recipe inputs include metal products + plastics + industrial chemicals + electronics.
+
+Older assets keep consuming basic spare parts after modern parts appear. A modern workshop/factory can require several supplies in parallel, for example modern spare parts + lubricants/technical fluids + electronics.
+
+Routine operating supplies also evolve: steam equipment uses coal/water; combustion equipment increasingly uses refined fuels + lubricants; electric equipment shifts energy demand to electricity while still requiring physical maintenance supplies.
+
+### Historical chain expansion
+
+Later development adds new **groups** and new recipe dependencies rather than replacing the whole graph at once.
+
+| Later commodity group | Typical production / parallel inputs | Typical downstream demand |
 |---|---|---|
-| Forestry and furniture | timber → processed wood → furniture | furniture retail / city consumption |
-| Forestry and construction | timber → processed wood → construction | buildings, infrastructure and city development |
-| Grain and bakery | grain → flour/bakery products | food retail / city consumption |
-| Meat | livestock → meat | food retail / city consumption |
-| Dairy | dairy production → dairy products | food retail / city consumption |
-| Produce | fruit/vegetables → distribution/retail | food retail / city consumption |
-| Textile | textile raw materials → textiles/fabric → clothing/garments | clothing retail / city consumption |
-| Stone and aggregates | stone/gravel → construction | buildings, roads, rail works and city development |
-| Bricks | local clay/resource + fuel → bricks → construction | buildings and infrastructure |
-| Cement | stone/limestone resource + fuel → cement → construction | buildings and infrastructure |
-| Iron | iron ore + coal → iron | metalworking, machinery and construction inputs |
-| Steel | iron + coal/energy → steel | higher-grade metalworking, machinery and construction inputs |
-| Metal products | iron and/or steel → metal products | construction, workshops, equipment and later consumer manufacturing |
-| Machinery | iron and/or steel + metal products → machinery | industrial/utility/transport investment, replacement and modernization |
-| Coal energy | coal → industrial/transport fuel use | steam transport, industry, heating and power/gas production |
-| Town/distribution gas | coal → gasworks → distribution gas | city/industrial gas utility demand |
-| Electricity | coal/other historically available generation input → electricity | city, industry and later electric transport; utility-network delivery |
-| Oil products | crude oil → refined fuels | transport, industry and selected city/utility use; low/region-specific importance in 1900, growing later |
-| General manufactured goods | metal products + textiles/wood/other relevant inputs → consumer goods | retail / city consumption |
-| Basic spare parts | iron/steel + metal products + machinery-sector inputs → basic spare parts | older vehicles, workshops, factories, utilities and infrastructure maintenance |
-| Modern spare parts (later) | metal products + plastics + industrial chemicals + electronics/chips where relevant → modern spare parts | newer vehicles, advanced machinery, modern facilities and systems |
-| Lubricants and technical fluids | refined fuels / chemical processing → lubricants/technical fluids | vehicles, workshops and industrial machinery |
+| raw natural gas | extraction | gas treatment, industrial chemicals, selected industry |
+| distribution gas | treated natural gas **or** legacy coal gasworks | city/industry utility demand; one canonical downstream gas product |
+| industrial chemicals | oil/gas/coal/other authored feedstocks + energy | plastics, fertilizer, paper/textile processing, furniture, medical supplies, consumer manufacturing |
+| fertilizer | industrial chemicals | grain, produce and other agriculture as a production input |
+| plastics | industrial chemicals + energy | consumer goods, furniture, machinery, modern spare parts, electronics |
+| electronics | metal products + plastics + industrial chemicals + electricity | consumer goods, modern machinery, modern spare parts, utilities/transport systems |
+| medical supplies | industrial chemicals + plastics + textiles/glass where applicable | hospitals, pharmacies/public institutions and city consumption |
+| modern spare parts | metal products + plastics + industrial chemicals + electronics | modern vehicles, factories, utilities and infrastructure |
+| LPG / transportable gas products where authored | gas/oil processing | tank-compatible city/industry/transport demand |
 
-**Furniture is a distinct final commodity.** Later furniture recipes may add industrial chemicals, plastics, textiles or other materials, but processed wood remains a meaningful core input.
+**Electronics includes semiconductor chips/components.** Do not create a separate player-facing “chips” commodity. As technology advances, the internal sophistication of the electronics recipe can increase through higher chemical, plastics, metal-products and electricity requirements, plant modernization and more demanding production conditions.
 
-**Spare parts use two player-facing generations.** **Basic spare parts** cover older mechanical equipment, vehicles, factories, workshops, utilities and infrastructure and are produced mainly from iron/steel, metal products and machinery-sector inputs. Later, **modern spare parts** become a separate commodity for newer equipment and systems and can require plastics, industrial chemicals, electronics and semiconductor components.
+Synthetic fibres are likewise normally represented as a newer input route into the existing **textile raw materials / textiles** chain rather than a mandatory separate cargo group. Add a separate cargo only if later content demonstrates a real logistics reason.
 
-Do not globally convert basic spare-parts demand into modern spare-parts demand when the latter appears. Each asset/facility technology declares which generation it requires. Older equipment can therefore continue creating demand for basic spare parts while newer fleets/factories create increasing demand for modern spare parts. This creates recurring secondary freight tied to the installed asset base rather than only to new construction.
+### How chains evolve and displace each other
 
-Routine consumables can likewise evolve. Coal-fired/steam equipment consumes coal and water; later combustion equipment increasingly consumes refined fuels plus lubricants/technical fluids; electric equipment shifts operating demand toward electricity while still needing physical spare parts and maintenance supplies.
+Historical development changes both recipes and market shares.
 
-**Livestock is a physical cargo** where the transport/region supports it. Meat is a separate downstream commodity. The design does not require a separate raw-milk cargo in V1; dairy production can output the canonical dairy-products commodity directly at the chosen simulation abstraction.
+- Coal can lose transport, heating, gasworks and electricity demand to refined fuels, electricity, natural gas and later generation technologies.
+- Natural-gas treatment can take over production of the same distribution-gas product from coal gasworks.
+- Plastics can replace part of wood, metal, glass or textile demand in specific modernized recipes.
+- Electronics can replace part of mechanical/electromechanical content in machinery, spare parts and consumer goods.
+- Fertilizer and machinery can raise/change agricultural output and therefore downstream food freight.
+- Paper, plastics and other materials can change packaging/consumer-manufacturing recipes without creating a separate SKU for every packaging type.
 
-Brickworks may use a local on-site clay/resource rather than requiring clay to become another transport commodity. Cement plants similarly use the appropriate local mineral resource plus transported fuel/inputs where needed. This preserves distinct brick/cement logistics without adding low-value intermediate cargo solely for recipe completeness.
+Displacement is **use-specific, gradual and regional**. A new commodity does not globally erase its predecessor. Old firms keep their current recipe until they modernize; old assets keep consuming the supplies they genuinely require.
 
-Iron and steel remain independent. A machinery or metal-products recipe may require one or both simultaneously. Steel production is not an automatic conversion of every unit of iron; each facility has its own real recipe/capacity.
-
-The 1900 set intentionally includes **crude oil/refined fuels** only where historically and regionally plausible; it must not create a modern petroleum economy everywhere at game start. **Raw natural gas is a later/region-dependent primary resource** unless the authored 1900 region genuinely supports it. Coal-based gasworks provide the normal early route into the canonical distribution-gas utility product.
-
-### Historical chain expansion after 1900
-
-Later economic development adds new commodities and recipe inputs while preserving older viable chains:
-
-| Later addition | Typical relationships |
-|---|---|
-| raw natural gas | extraction → treatment → canonical distribution gas; can also feed chemicals where appropriate |
-| industrial chemicals | oil/gas/coal/other feedstocks → chemicals → textiles, furniture, plastics, fertilizers and manufactured goods |
-| plastics | industrial chemicals → plastics → consumer goods, furniture, equipment and later manufacturing |
-| fertilizers | industrial chemicals → fertilizer → agriculture → higher/changed food production |
-| synthetic textile inputs | industrial chemicals → canonical textile raw materials or a later explicit input where content warrants it |
-| electronics | metal products + plastics + industrial chemicals + electricity → electronics/consumer goods |
-| semiconductor chips/components | advanced industrial chemicals + metal products + electricity/high-tech production → chips/components → electronics, machinery and advanced equipment |
-| LPG or other transportable gas-derived products | gas/oil processing → dedicated tank-compatible cargo → city/industry/transport consumers where historically appropriate |
-
-Do not add a later commodity merely because it existed historically. It should create a distinct supply, handling, transport, investment or demand decision. Conversely, new technology can add an input to an existing recipe without requiring a brand-new final commodity.
-
-Historical development changes **market shares and demand composition**, not only the catalogue. A new technology can reduce demand for an older commodity by replacing some of its actual uses. This displacement is gradual, regional and sector-specific rather than a hard global switch.
-
-Coal is the canonical example:
-
-- around 1900 it can dominate steam transport, heavy industry, heating, electricity generation and town-gas production;
-- later oil/refined fuels can displace part of transport and industrial fuel demand;
-- electricity can displace direct coal use in traction, machinery and some city/industrial uses;
-- processed natural gas can displace coal-based town gas and some heating/industrial demand;
-- cleaner/newer generation technologies can reduce power-sector coal demand;
-- surviving steelmaking, legacy boilers, heating, heritage equipment or regions with favourable coal economics can continue consuming coal.
-
-The same principle applies elsewhere: plastics can replace some wood/metal/textile uses, electronics can replace mechanical/electromechanical components, synthetic fibres can take some textile-raw-material share, but none of these transitions globally deletes the older commodity.
-
-Older production routes stay valid until real economics/technology/support cause firms to modernize, shrink or close. A new chain does not globally delete its predecessor.
+Do not add a commodity merely because it existed historically. It must create a distinct sourcing, transport, storage/handling, investment, maintenance or demand decision.
 
 Consumption/production cannot create free inventory. A recipe is an explicit conversion, with declared waste/loss where used. Cargo conservation tests concern transportation quantities; production is an authorized inventory transformation, not a false invariant violation.
 
