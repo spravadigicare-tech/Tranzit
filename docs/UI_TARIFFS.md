@@ -65,7 +65,7 @@ Example, illustrative only:
 >
 > Distance fare: 10 money, before any explicitly configured base fare or supplement
 
-An integrated fare is not automatically a guaranteed connection. Protected-connection/rebooking rights remain an explicit entitlement under Section 32.4.
+An integrated fare is not automatically a guaranteed connection. Connection-protection and connection-specific rebooking rights are intentionally undefined until [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is redesigned and approved; do not infer them from tariff integration.
 
 ## 5. Ticket products
 
@@ -133,7 +133,7 @@ A sale creates one payment under the financial rules. A pass-covered boarding mu
 
 ### Changes and expiry
 
-Store the purchased product/version and its actual price and validity. New rates affect new eligible sales from an explicit effective time, not existing paid tickets. Removing a Line or partner, shortening validity or changing classes must not silently revoke sold rights. Before publication, expose affected holders, outstanding reservations and any required honouring, replacement or refund plan. Already sold products retain their purchased version, price, scope and validity. Service/product changes default to honouring sold period-ticket rights until individual expiry where the promised travel remains physically/legal operable; otherwise normal passenger rebooking/refund rules apply. The infrastructure cancellation formula must not be applied to passengers.
+Store the purchased product/version and its actual price and validity. New rates affect new eligible sales from an explicit effective time, not existing paid tickets. Removing a Line or partner, shortening validity or changing classes must not silently revoke sold rights. Before publication, expose affected holders, outstanding reservations and any required honouring, replacement or refund plan. Already sold products retain their purchased version, price, scope and validity. Service/product changes default to honouring sold period-ticket rights until individual expiry where the promised travel remains physically/legal operable; otherwise apply only passenger cancellation/refund/recovery rules that are defined independently of the still-open connection-agreement design. The infrastructure cancellation formula must not be applied to passengers.
 
 ### Other operators
 
@@ -163,7 +163,7 @@ A through-ticket sale has one retailing carrier and one partner carrier in V1. T
 
 In the ticket quote/detail show the passenger-facing breakdown by operator/segment, applied tariff/product, class/supplement and total. In the player's commercial detail additionally show the captured partner rate, tariff distance, settlement and resulting margin. Later changes to tariffs or the bilateral agreement do not rewrite those stored values for an already sold ticket.
 
-The capacity-sales agreement alone does not promise a protected transfer. Label a multi-operator itinerary as **Unprotected transfer** unless separate connection/recovery rights actually protect it; do not imply timetable holds or automatic partner rebooking from capacity resale alone. Reservation-required partner legs can be sold only after a real compatible reservation is confirmed through an available period-appropriate partner sales/booking channel.
+The defined capacity-sales agreement alone does not promise a protected transfer. With the currently approved clause, label the transfer **Unprotected transfer**. Any future protected status must come from an approved [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md); do not imply timetable holds or automatic partner rebooking from capacity resale alone. Reservation-required partner legs can be sold only after a real compatible reservation is confirmed through an available period-appropriate partner sales/booking channel.
 
 ## 8. Consistency rules
 
@@ -171,7 +171,7 @@ Implementation must remain consistent with the owning mechanics and dependent pr
 
 - GAME_DESIGN Section 31 owns global/system/Line hierarchy, integrated fares, product validity/coverage and change protection;
 - Sections 6.2 and 32.2 govern aggregate passenger choice, paid entitlement, real sales channels and specific-Trip reservations;
-- Section 32.4 governs fare integration versus protected connections and passenger recovery;
+- GAME_DESIGN Section 32.4 records that passenger connection protection/coordination/recovery is intentionally unspecified, with [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) reserved as its future owner;
 - Section 30.3 governs multi-operator cooperation; another operator can participate only through a real agreement;
 - Section 38 and UI_FINANCE: one payment, pass-related reporting and no duplicate revenue;
 - UI_UX_DESIGN, Line/Trip/station/firm screens and relevant acceptance/save contracts: shared identities, readiness and exact-object navigation.
