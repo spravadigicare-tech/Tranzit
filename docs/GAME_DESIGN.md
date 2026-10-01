@@ -1840,7 +1840,7 @@ Industrial recipes can **evolve historically** as new materials and processes be
 
 The energy/chemical economy distinguishes **crude oil**, **raw natural gas**, **processed/distribution gas**, and **refined fuels**. Crude oil and raw natural gas are separate primary resources. Refined fuels are downstream products of crude-oil processing. Raw natural gas requires real treatment/processing before becoming distribution-quality gas for city and industrial consumption.
 
-City/industrial gas supply can use different historically valid production routes. Around the 1900 start, coal-based gasworks can produce town/distribution gas; later, processed natural gas can increasingly replace that route as extraction, treatment and gas-network technology develops. Existing coal-gas plants do not disappear automatically when natural gas becomes available.
+City/industrial gas supply can use different historically valid production routes. Around the 1900 start, coal-based gasworks can produce distribution gas; later, processed natural gas can increasingly replace that route as extraction, treatment and gas-network technology develops. Both routes feed the **same canonical distribution-gas commodity and downstream demand**. Existing coal-gas plants do not disappear automatically when natural gas becomes available.
 
 Distribution gas is a fixed-network utility product, analogous to electricity in that it is delivered through real gas-network connections/capacity rather than teleported or treated as generic wagon/truck cargo. Player-facing pipeline construction/operation is not implied unless separately included in scope. A later transportable gas-derived product such as LPG may be authored as its own physical cargo with appropriate tank/storage compatibility.
 
