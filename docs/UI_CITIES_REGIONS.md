@@ -41,7 +41,7 @@ Use independently openable cards:
 | Transport network / Doprava | Stations/terminals, relevant infrastructure and visible services/operators serving the city |
 | Opportunities / Příležitosti | Discoverable jobs/tenders, known passenger/freight gaps and evidence-backed potential from UI-D21 |
 | Our presence / Naše působení | Branches, Lines/Patterns, facilities, commercial coverage, licences/permissions and dependencies in the city; legal gaps open the canonical UI-D33 Licences and expansion workflow |
-| City and authority / Město a autorita | Municipal relationship, permissions/concessions, public-service contracts, public infrastructure/access and all agreements between the city/authority and the player's company; permit/application detail reuses UI-D33 |
+| City and authority / Město a autorita | Municipal relationship, public development/transport priorities, permissions/concessions, public-service contracts, public infrastructure/access and all agreements between the city/authority and the player's company; permit/application detail reuses UI-D33 |
 
 Hide cards/subsections that truly have no relevance, but do not hide a material missing licence, municipal requirement or active agreement.
 
@@ -265,6 +265,16 @@ Do not create one fake umbrella “city contract” when the simulation contains
 
 Pending approval does not grant the right before approval.
 
+### 9.1 Public priorities and prospective tenders
+
+Cities, regions and states can expose a small, readable set of **current public priorities** before a concrete tender exists. Examples include improving a weak intercity passenger connection, increasing freight-corridor capacity, serving an underconnected area or supporting a strategically important economic corridor.
+
+A priority shows the real public problem/evidence, its geographic/service scope, relative importance and state such as **Monitoring**, **Considering intervention**, **Preparing tender** or **Addressed**. Where supported, show the relevant demand/capacity/economic evidence rather than a hidden authority desire score.
+
+A priority is **not a promise that a tender will be issued** and does not reserve budget/capacity. If the authority later advertises a concrete service tender, that tender appears as the same canonical public Opportunity in Business → Opportunities.
+
+The same legitimately known priority objects are aggregated in **World → Public priorities** so a larger company can scan known state/regional/municipal goals without opening every city. The central list links back to the owning authority/area and never reveals undiscovered private opportunities.
+
 ## 10. City history and trend views
 
 Important values can expose historical development, for example:
@@ -325,6 +335,7 @@ Use compact cards:
 - Economy;
 - Transport;
 - Opportunities;
+- Public priorities;
 - Our network/presence.
 
 The Region view should help answer **where to inspect next**. It must not replace City, company, station, Contract or Line details.
