@@ -113,7 +113,7 @@ Example:
 When the offer materially shifts the service, show the **practical impact before acceptance**, such as:
 
 - connection becomes invalid or weaker;
-- another protected connection improves;
+- another planned passenger transfer becomes more or less viable;
 - vehicle duty/turnaround becomes infeasible;
 - additional vehicle/crew may be needed;
 - contract/SLA window is missed;
