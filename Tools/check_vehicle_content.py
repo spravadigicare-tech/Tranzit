@@ -358,6 +358,10 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
             continue
         template_model_counts[model_id] += 1
         model = next(x for x in models if isinstance(x, dict) and x.get("id") == model_id)
+        if template_id not in set(model.get("built_in_template_ids", [])):
+            errors.append(
+                f"{location}: template is not listed in model {model_id}.built_in_template_ids"
+            )
         allowed_groups = set(model.get("equipment_group_ids", []))
         for option_id in template.get("equipment_option_ids", []):
             if option_id not in option_set:
