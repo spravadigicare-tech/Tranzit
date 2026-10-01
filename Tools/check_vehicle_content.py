@@ -14,6 +14,21 @@ import sys
 from typing import Any
 
 
+VALID_VEHICLE_KINDS_BY_MODE = {
+    "rail": {
+        "locomotive",
+        "railcar",
+        "emu",
+        "dmu",
+        "passenger_coach",
+        "passenger_coach_set",
+        "service_coach",
+        "freight_wagon",
+    },
+    "road": {"truck", "bus", "horse_freight", "horse_bus"},
+}
+
+
 @dataclass(frozen=True)
 class VehicleContentResult:
     files: int
@@ -245,6 +260,14 @@ def check_vehicle_content(root: Path) -> VehicleContentResult:
         location = f"{source_name}:{model_id if model_id is not None else index}"
         if model.get("schema_version") != 1:
             errors.append(f"{location}: schema_version must be 1")
+        mode = model.get("mode")
+        vehicle_kind = model.get("vehicle_kind")
+        if mode not in VALID_VEHICLE_KINDS_BY_MODE:
+            errors.append(f"{location}: unknown or missing mode {mode!r}")
+        elif vehicle_kind not in VALID_VEHICLE_KINDS_BY_MODE[mode]:
+            errors.append(
+                f"{location}: vehicle_kind {vehicle_kind!r} is invalid for mode {mode!r}"
+            )
         manufacturer_id = model.get("manufacturer_id")
         if manufacturer_id not in manufacturer_set:
             errors.append(f"{location}: unknown manufacturer_id {manufacturer_id}")
