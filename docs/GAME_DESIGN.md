@@ -1990,9 +1990,9 @@ Prices must be explainable. The UI should be able to show why a market is expens
 
 Do not expose perfect information the player's company could not plausibly know. Market visibility follows the same branch/communications/information rules as other commercial intelligence; unknown or stale information should be labelled accordingly.
 
-Local price changes are event/coarse-tick driven and aggregated. The **normal market-price update cadence is once per game day**. Physical deliveries, production, consumption and inventories still update when they actually occur, but the local reference price reacts on the next daily market update rather than after every wagon or truck movement.
+Local price changes are coarse-tick driven and aggregated. Physical deliveries, production, consumption and inventories still update when they actually occur, but they do not reprice the market after every wagon or truck movement. The ordinary cadence is the two market calculations and four lightweight price-adjustment steps per game day defined below.
 
-On an ordinary daily market update, the local reference price may move by at most **±5% of its previous reference price**. This is a cap, not a target movement: a near-balanced market can move only fractionally, while a severe sustained imbalance can hit the cap across several successive days. The model therefore responds visibly without allowing one ordinary delivery or one routine day to create a large price spike.
+Across one ordinary game day, the local reference price may move by at most **±5% of the previous day's reference price**. This is a cap, not a target movement: a near-balanced market can move only fractionally, while a severe sustained imbalance can hit the cap across several successive days. The model therefore responds visibly without allowing one ordinary delivery or one routine day to create a large price spike.
 
 For performance and predictability, each **city/locality market × commodity** pair performs at most **two ordinary market calculations per game day** (nominally one every 12 game hours). Multiple deliveries, production events and consumption events update authoritative inventories/flows immediately but are aggregated until the next scheduled market calculation rather than causing a full recalculation after every event.
 
