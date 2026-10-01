@@ -224,6 +224,35 @@ This matrix is the balancing target for **new offers plus credible used stock**,
 
 A later calendar date can continue beyond authored modern events. The catalogue does not artificially stop the game; genuinely future vehicle technology is not invented until separately authored.
 
+## 8.1 Manufacturer capability lifecycle
+
+A vehicle model remains in the historical catalogue indefinitely, but the manufacturer's ability to produce a **new physical unit** evolves through explicit capability states.
+
+A model can move through these stages:
+
+1. **Series production** — ordinary catalogue production with normal tooling, suppliers and workforce.
+2. **Low-rate / special-order production** — no longer mass-produced, but the manufacturer can still build occasional new units at higher cost and longer lead time.
+3. **Parts and overhaul support only** — the manufacturer or successor can still supply parts, documentation, rebuilds or selected retrofit packages, but cannot build a complete new vehicle.
+4. **External specialist support only** — independent workshops/suppliers may preserve parts, tooling or know-how for service/renovation; new complete builds are unavailable unless a real specialist capability is authored.
+5. **Used/heritage market only** — no current new-build capability exists. Existing vehicles can still be traded, restored and operated if technically/legal serviceable.
+
+These are **offer/capability states**, not hard calendar gates on ownership or operation.
+
+A manufacturer can lose or regain a capability because of:
+
+- tooling disposal or preservation;
+- plant conversion;
+- merger/successor ownership;
+- supplier availability;
+- specialist workforce/know-how;
+- economics and order volume;
+- regulation/certification;
+- deliberate heritage/special-production revival.
+
+A player cannot order a factory-new obsolete model merely because it is visible in the catalogue. The marketplace must show the current reason, e.g. `no current new-build capability`, while still showing real used assets, rebuild services and compatible parts/support offers.
+
+If a successor or specialist later restores a real production capability, the model may again receive new-build offers with explicit finite capacity, cost and lead time. This is a real world-state change, not an automatic "retro vehicle" toggle.
+
 ## 9. Acquisition, manufacture and import implementation
 
 ### 9.1 Active-map production
