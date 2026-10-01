@@ -6231,6 +6231,33 @@ Do not turn this into a separate revenue-management or negotiation minigame.
 
 Partner settlement creates a real inter-company payable/receivable and must post exactly once. Settlement/accounting timing follows the normal agreement/finance rules; do not create a second hidden passenger ledger.
 
+#### V1 through-ticket scope and lifecycle
+
+For first-playable V1, partner-capacity sales supports **single-journey through tickets only**. Shared multi-company weekly/monthly passes, one jointly governed multi-operator tariff and cross-company period-product revenue allocation are outside the required V1 scope. Each carrier can still offer its own weekly/monthly/company/integrated-system products under Section 31.
+
+A V1 partner through ticket has one **retailing/selling carrier** and at most one **partner operating carrier**. It must contain at least one passenger leg operated by the seller and at least one eligible passenger leg operated by the partner. The clause is therefore a network-extension right, not permission to become a pure ticket broker for journeys operated entirely by the other company.
+
+The seller may use only partner Lines explicitly covered by the applicable directional agreement. Partner capacity cannot be recursively resold: an A↔B agreement does not let A sell capacity that B obtained from carrier C. A future ticket involving another operator requires its own directly valid cooperation right and is outside the required two-operator V1 through-ticket scope.
+
+Passenger pricing remains segment-based:
+
+- the seller-operated part uses the seller's applicable public single-journey tariff/system rules;
+- the partner-operated part uses the partner operator's applicable public single-journey tariff, class and disclosed supplements;
+- the through-ticket total is the sum of those passenger-facing segment amounts after only the discounts/entitlements genuinely valid on each segment;
+- no new shared multi-operator base fare, zone system or hidden interline discount is created.
+
+A seller's own weekly/monthly/pass entitlement may cover an eligible seller-operated segment, but it does not automatically cover the partner segment. The partner segment still requires a valid partner single-journey entitlement and settlement. V1 does not convert two companies' period products into one common pass.
+
+The selling carrier collects the passenger-facing payment for the through ticket and records the partner-segment settlement as the existing inter-company payable. The agreement rate captured for the sale is the effective directional partner rate multiplied by the partner segment's tariff distance. The sold ticket stores the agreement/version, covered partner Line, tariff/fare version, partner rate, distance and settlement amount so later tariff or agreement changes cannot rewrite an already sold ticket.
+
+Passenger refund/change handling keeps the segment terms that were actually sold. The player-facing refund is the aggregate of the refundable segment amounts under their stored tariff versions; any corresponding partner-settlement reversal/credit is an explicit idempotent finance transaction, not deletion or recalculation of the original posting.
+
+Partner-capacity rights do **not** create physical capacity. For reservation-required capacity, the seller must obtain a real compatible reservation through a period-appropriate supported partner booking channel before confirming that Trip. Optional reservation and open boarding retain their normal capacity rules. A paper/agent-era interline sale can exist where administration and validation support it; the agreement does not imply modern live inventory or communications.
+
+The capacity-sales clause also does **not** coordinate timetables, impose hold rules or create a protected connection. It only allows the commercial through-ticket sale. A transfer is protected/rebookable across companies only when the separately defined connection/recovery rights support that protection. Until CONNECTION_AGREEMENTS.md is redesigned, capacity-sale-only itineraries are explicitly **unprotected transfers** for Section 32.4 purposes.
+
+An agreement amendment, expiry or termination cannot silently erase a through ticket already sold while the right was valid. Existing sold tickets are honoured where legally/physically possible; otherwise the seller must use the normal passenger replacement/refund/recovery workflow. New sales require the cooperation right to be valid for the intended travel and the relevant Lines at sale time.
+
 Connection agreements, once redefined, remain conceptually separate from partner-capacity sales.
 
 Missed connections and reliability influence passenger attractiveness.
