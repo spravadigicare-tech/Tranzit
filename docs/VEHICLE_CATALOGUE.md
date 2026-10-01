@@ -342,6 +342,67 @@ A dealer can sell three trucks from stock only if three trucks exist there.
 
 Used listings always reference an existing asset. For 1900 initialization, older models are seeded with plausible manufacture years and condition. Later used supply emerges from actual AI/player fleet sales, repossessions, dealer trade-ins and withdrawals from service.
 
+### 9.4.1 Individual used-vehicle condition
+
+Every used listing references one concrete physical vehicle instance with its own history. Used vehicles are never represented only by a generic model-level wear percentage.
+
+A vehicle instance retains, where relevant:
+
+- manufacture date;
+- previous owners;
+- mileage / operating hours;
+- duty severity history;
+- maintenance and inspection history;
+- major failures/repairs;
+- retrofit/template history;
+- accident/damage history where applicable;
+- current condition by relevant aggregate subsystem;
+- current legal/inspection status;
+- current physical location.
+
+The marketplace keeps this understandable by showing a concise player-facing condition summary, for example:
+
+- **Excellent**
+- **Good**
+- **Worn**
+- **Overhaul due**
+
+The summary is derived from real underlying condition/history and can be opened to inspect the contributing causes. It must not be an unexplained hidden quality tier.
+
+Two vehicles of the same model and manufacture year can therefore have different:
+
+- purchase prices;
+- expected maintenance demand;
+- remaining inspection margin;
+- breakdown risk;
+- retrofit value;
+- readiness date.
+
+### Overhaul and restoration
+
+A major overhaul/restoration can substantially recover the vehicle's technical condition when physically justified.
+
+It can renew or replace authored wear-sensitive systems and may return those systems close to their supported post-overhaul condition, but it does **not**:
+
+- reset the manufacture date;
+- erase lifetime mileage/hours/history;
+- remove the original platform's structural/route limits;
+- magically add unsupported modern capabilities;
+- guarantee new-vehicle reliability forever.
+
+After overhaul, the vehicle remains the same physical asset and keeps its serial/ownership/service history.
+
+A restoration can therefore make an old vehicle operationally excellent while it still remains historically old and potentially less efficient, less powerful, less comfortable or harder to support than a newer design.
+
+The overhaul price, duration and achievable result depend on:
+
+- current condition;
+- model/platform;
+- available parts;
+- workshop capability;
+- retained manufacturer/specialist know-how;
+- chosen target template/retrofit scope.
+
 ### 9.5 Historical production changes
 
 Ordinary factory production can change because:
