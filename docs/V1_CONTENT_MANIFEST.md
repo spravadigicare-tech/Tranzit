@@ -280,6 +280,47 @@ At least two contractor capability/scale groups, two maintenance support familie
 
 These are starting balancing conventions, not a historical financial reconstruction. Record actual values in a versioned configuration and revise them using measured playthroughs.
 
+### 7.1 Economic-centre formation defaults
+
+Economic centres use the rules in GAME_DESIGN Sections 6.2 and 10.5. The following values are **initial tunable defaults**, not separate mechanics:
+
+| Parameter | Initial default | Meaning |
+|---|---:|---|
+| Ordinary centre-development evaluation | once per game month | Re-evaluate formation, split, growth, decline and merge on the shared 14-day month; material edits may dirty the next pass but do not add a second daily system |
+| Target maximum centre walk-network diameter | 800 m | Preferred upper span between representative occupied/access points inside one centre |
+| Forced split/reassignment review | >1,000 m for 2 consecutive evaluations | Prevents a growing centre from remaining an implausible whole-centre walk catchment because of one temporary outlier |
+| New-centre persistence | 2 game months | Candidate spatial cluster must remain qualifying before becoming a new stable centre |
+| Residential activity gate | at least 600 residents | One way a persistent outlying cluster can qualify |
+| Employment activity gate | at least 300 jobs | Independent qualification path for employment/commercial clusters |
+| Industrial/transport-anchor gate | one material industrial/freight/passenger anchor plus at least 150 on-site/adjacent jobs | Allows a real works, freight cluster or major hub to form a centre without requiring housing |
+| Minimum separation for a detached candidate | at least 250 m walk-network gap from the occupied edge of an existing centre | Avoids creating a second centre for an immediately adjoining block; overlarge contiguous areas are handled by the diameter/split rule |
+| Decline persistence before merge/inactivation review | 12 game months | Prevents centre identities from flickering during short downturns |
+| Decline floor for an unanchored centre | below 150 residents **and** below 75 jobs | A centre below both can be reviewed for merge/inactivation after the persistence window; a material anchor keeps it alive |
+| Merge geometry | combined walk-network diameter at most 800 m | A merge may not recreate an implausibly large direct-walk catchment |
+
+Every populated locality still has at least one centre even below these gates. There is no hard gameplay cap on centre count. For performance, inactive/far-city centre-to-centre demand may use cached/aggregated LOD while preserving centre identities and access results.
+
+### 7.2 Firm-owned logistics and captive-road defaults
+
+Firm logistics uses GAME_DESIGN Section 10's make-or-buy rules. Local first/last-mile capability and exceptional intercity captive road capacity are separate decisions.
+
+| Parameter | Initial default | Meaning |
+|---|---:|---|
+| Routine firm-logistics planning review | once per game month | Also re-evaluate on a material new/ended recurring flow, facility opening/closure or persistent capacity failure |
+| Local own-road acquisition utilization gate | >=35% forecast productive utilization over next 6 game months | A small firm may still justify one vehicle; the test is whether the actual recurring work can use it |
+| Local own-road cost gate | own equivalent annualized all-in cost <= expected external cost | Acquisition, staffing, maintenance, storage/parking and expected empty running count; up to 10% own-cost premium is allowed only when an explicit reliability/control/handling benefit is valued at least as highly |
+| Existing local asset low-use review | <20% productive utilization for 6 game months | Triggers a sell/retire/redeploy versus keep decision; it does not delete the asset automatically |
+| Private siding investment horizon | at least 12 game months of physically supportable rail-compatible flow | Siding economics compare annualized facility/handling cost against avoided transfer cost, reliability and throughput benefit; no separate hidden firm-size threshold |
+| Intercity captive-road investment horizon | at least 6 game months of physically supportable recurring flow | One-off peaks and speculative growth do not qualify |
+| Large-flow eligibility path | enough stable lane work for at least 3 suitable vehicles at >=60% productive utilization | Makes ordinary intercity self-haulage a large-flow exception rather than a default response to carrier prices |
+| Specialist eligibility path | at least 1 suitable dedicated vehicle at >=60% productive utilization **and** no reliable compatible external offer or external all-in cost at least 20% higher | Covers genuinely specialist recurring captive flows without granting a general fleet |
+| Stable base-load window | 6 game weeks trailing + 6 game weeks forecast | With history, use the lower of trailing P25 weekly eligible flow and forecast P25 weekly eligible flow. For a new binding recurring flow without history, use the lower of enforceable contract minimum and physically supported forecast |
+| Captive-road target share | 25–35% of stable base load | AI may choose within the band from economics/strategy; it is not applied to peaks |
+| Captive-road hard ceiling | 40% of stable base load | A normal non-transport firm cannot internalize the entire qualifying intercity lane; at least the remaining base share plus peaks/overflow stays carrier demand |
+| Non-transport captive mainline rail haulage | 0% | Private siding, wagons and internal shunting are allowed, but intercity/mainline haulage requires a legitimate railway carrier |
+
+The intercity road ceiling is per real origin-destination/cargo/handling lane and cannot be multiplied by splitting one flow into nominal internal departments. A genuinely licensed transport subsidiary is a carrier and follows normal carrier economics, licensing, capacity and competition rules instead of this captive exception.
+
 - Currency is exactly `money`. Use fixed-point arithmetic, for example 100 internal subunits per money, and make display precision independent of simulation units.
 - Three founding-loan tiers have predictable favourable terms. A possible initial convention is 2% nominal annual interest over 20 game years, monthly amortizing repayments and no punitive tier-specific interest increase. The same 168-day year/12-month calendar applies. If using this convention, derive the monthly payment from principal and monthly rate; do not charge accrued interest twice.
 - Set the principal of each tier from a tested setup basket, not an arbitrary impressive number. The small basket includes real office setup/director/staff, the necessary licences, endpoint access, one viable road vehicle, delivery and support, plus a working-capital reserve. The standard/large baskets offer broader options and a credible modest rail setup where justified.
