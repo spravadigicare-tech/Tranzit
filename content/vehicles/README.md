@@ -11,6 +11,7 @@ The committed authoring pack now covers:
 - manufacturer/source identities;
 - support/maintenance families;
 - regional market-presence profiles;
+- production-input recipes mapped to every vehicle model;
 - the complete 1900 opening vehicle families required by the current V1 content target;
 - dated model/template/equipment packs for **1900, 1901–1919, 1920–1959, 1960–1989 and 1990–2026**;
 - opening-market seeding defaults for the 1900 start;
@@ -35,3 +36,10 @@ Authoring rules are defined in:
 - `docs/VEHICLE_CATALOGUE.md`
 - `docs/VEHICLE_CONTENT_AUTHORING.md`
 - `docs/VEHICLE_COVERAGE_AUDIT.md`
+
+
+## Production inputs
+
+`production_input_groups.v1.json` defines relative bills of material for vehicle production. Every authored vehicle model references one recipe through `production.material_recipe_id`.
+
+The current recipe inputs use stable logical groups such as `steel_metal`, `machinery_engine`, `electrical_traction`, `electronics`, `interior` and `battery_pack`. They are deliberately not duplicate economy commodities. When the canonical economy commodity manifest is created, these logical groups must be mapped to its IDs without changing vehicle identity or silently creating free inputs.
