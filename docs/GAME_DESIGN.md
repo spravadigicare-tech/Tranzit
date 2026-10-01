@@ -4985,7 +4985,11 @@ Infrastructure can be:
 
 A state may commission construction and retain ownership.
 
-It can later tender transport services over the infrastructure.
+Publicly supported corridor/infrastructure projects use a **small enumerated set of contract/ownership models**, not arbitrary mixes of funding, ownership and operating rights assembled per tender. Each model must make the following explicit before bidding: who finances construction, who owns the completed asset, who operates/manages it, what access obligations apply, how long the arrangement lasts and what happens at expiry/termination.
+
+The exact supported model set is defined separately; do not create a free-form legal/PPP contract builder merely because real-world arrangements can be more complex.
+
+The state can later tender transport services over the infrastructure.
 
 ### 19.2 Private infrastructure
 
