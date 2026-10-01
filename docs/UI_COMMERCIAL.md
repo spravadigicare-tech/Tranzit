@@ -261,6 +261,8 @@ Each specific Line, Pattern, Trip, terminal, external order and other inspectabl
 
 When the counterparty offers terminal pickup/delivery or a private industrial siding, present it as a concrete operating option in the proposal—not as an invisible simplification. Show whether the customer capability is currently available/adequate for the proposed quantity and time window where that information is contractually known.
 
+If the customer-provided leg is exceptional captive intercity **road** transport, the proposal must show the specific qualifying lane/cargo scope and bounded quantity rather than treating the customer as a general carrier. Private siding/wagon/shunter capability may change the rail handover endpoint, but mainline/intercity rail still names a legitimate railway carrier as the responsible operator.
+
 Where an existing Line is used, expose compatible available/committed capacity using the canonical ledgers. Do not show only nominal tonnes/seats if the relevant cargo/passengers cannot use that capacity. A contract allocation is not duplicated because it appears in both commercial and Line windows.
 
 ## 7. Shipments inside a contract
