@@ -92,7 +92,9 @@ Do not add `available_until` as a hard purchase/operation gate. Physical dealer/
 
 ### Cargo minimum
 
-Initial target: at least 12 meaningful cargo/operating-supply definitions. Use historically appropriate packaging and technology. Recommended functional coverage includes coal, timber, processed wood, grain, milled/food products, perishable produce/dairy, ore, metal/steel products, stone/building materials, liquid fuel or other industrial liquids, manufactured goods and indivisible machinery. Water and traction feed/consumables may be additional supplies.
+Initial target: at least 12 meaningful cargo/operating-supply definitions. Use historically appropriate packaging and technology. The 1900 food economy should use several concrete transportable commodities rather than one generic food item; baseline coverage includes **grain, flour/bakery products, meat, dairy products, and fruit/vegetables** where the regional economy supports them. Recommended wider functional coverage also includes coal, timber, processed wood, ore, metal/steel products, stone/building materials, liquid fuel or other industrial liquids, manufactured goods and indivisible machinery. Water and traction feed/consumables may be additional supplies.
+
+Do not split consumer goods down to individual retail SKUs. The purpose of the extra food categories is to create distinct production, perishability/handling and transport decisions, not to simulate every product sold by a shop.
 
 The catalogue must exercise bulk mass, volume-limited goods, indivisible units, perishable/temperature-sensitive cargo and a restricted/hazardous handling case. Standardized modern container/pallet systems must not appear in 1900 merely because the generic allocation engine supports them; introduce them with the appropriate later content.
 
