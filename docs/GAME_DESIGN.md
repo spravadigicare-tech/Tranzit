@@ -6369,6 +6369,8 @@ Required baseline products include:
 - **Weekly ticket** — repeated eligible travel in its defined scope for **7 game days**;
 - **Monthly ticket** — repeated eligible travel in its defined scope for **14 game days**.
 
+For V1, weekly/monthly products are owned and governed by one carrier/company-integrated tariff system. Section 30.3 partner-capacity sales can extend a **single journey** onto one partner carrier, but it does not merge two carriers' weekly/monthly products into a shared pass or shared tariff authority.
+
 The player can set weekly/monthly products cheaper than repeated equivalent single fares. Their price is independently configurable; the game must not force a fixed discount percentage.
 
 The same framework can also support, where the player chooses and the era/rules allow:
