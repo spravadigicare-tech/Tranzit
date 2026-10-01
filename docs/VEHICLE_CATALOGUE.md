@@ -179,10 +179,11 @@ These are physical wagons, not abstract cargo-capacity tokens. The exact 1900 de
 |---|---:|---|---:|---:|---:|---|---|
 | **Městský valník H2** | pre-1900 | 2-horse urban dray | 2.0 t | animal traction | 8 km/h practical | driver | local coachbuilder + horse/stable supply |
 | **Těžký povoz H4** | pre-1900 | 4-horse heavy wagon | 4.0 t | animal traction | 6 km/h practical | driver/handler | local coachbuilder |
+| **Benc Lieferwagen 300** | 1896 | Benz Lieferungswagen / Combinations-Lieferungswagen | 0.3 t + driver | 2.0–4.4 kW | 15–20 km/h | driver | off-map Mannheim import; compact urban motor delivery |
 | **Daimlar Lastwagen 1896** | 1896 | Daimler Motor-Lastwagen | 1.5 t representative first-truck configuration | 2.9 kW (4 hp) | 12 km/h | driver | off-map German import |
 | **Thornycroft Steam 1T “Konvice”** | 1896 | Thornycroft steam carriage/wagon | ~1.0 t | compound steam | ~12–16 km/h | driver/fireman on heavier duty | off-map British import; rare dealer/special order |
 
-This already gives four different 1900 freight choices without introducing an anachronistic modern truck: cheap horses, heavy horse haulage, scarce petrol trucks and a specialist steam vehicle.
+This gives five distinct 1900 freight choices without introducing an anachronistic modern truck: light/heavy horse haulage, compact petrol delivery, a heavier pioneering motor truck and a specialist steam vehicle.
 
 ### 6.2 Successor road vehicles
 
@@ -1001,6 +1002,7 @@ The following sources were used to anchor dates and representative specification
 - class 680 Pendolino: public ČD/class technical data
 
 ### Road
+- Benz delivery van 1896: https://media.mercedes-benz.com/article/f389440e-7b05-4182-b012-48e616269f83
 - Daimler Motor-Lastwagen 1896: https://de.wikipedia.org/wiki/Daimler_Motor-Lastwagen_%281896%29
 - Laurin & Klement Type E commercial/omnibus: https://www.skoda-storyboard.com/cs/tiskove-zpravy-archiv/pribehy-mene-znamych-modelu-z-historie-125-let-skoda-auto-laurin-klement-e-cerna-hora/
 - Tatra 138: https://www.csla.cz/technika/automobily/tatra138vnv.htm
