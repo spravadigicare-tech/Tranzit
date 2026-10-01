@@ -1822,6 +1822,8 @@ The economy supports three broad physical-goods roles without forcing every firm
 2. **Processors/manufacturers** consume physical inputs and create other physical commodities.
 3. **Final consumers/services** consume physical commodities but can produce a non-transportable economic effect instead of another cargo item.
 
+Industrial/fleet/facility ownership also creates **maintenance demand**. Operating factories, vehicles, workshops, utilities and infrastructure consume spare parts and selected technical supplies over time according to asset type, age, utilization, condition and technology. This recurring demand is physical and must be sourced/transported; it is not an abstract maintenance-cost modifier that bypasses the commodity system.
+
 Representative shops, distributors, hospitality/services, institutions and similar entities can stand in for household-facing consumption. Do not simulate every household or every small shop individually. Their physical inputs still have real inventories and delivery needs; their non-cargo output can contribute to local commercial activity, service availability and city development.
 
 For the 1900 economy, food consumption is not one generic commodity. Use a limited set of meaningful categories such as grain, flour/bakery products, meat, dairy products and fruit/vegetables, with appropriate production/processing/storage and perishability differences. Keep the level above individual retail products so the system remains legible and scalable.
@@ -1829,6 +1831,8 @@ For the 1900 economy, food consumption is not one generic commodity. Use a limit
 Construction demand likewise uses distinct physical commodities rather than one generic building-material item. Baseline 1900 coverage includes stone/gravel, bricks, cement, processed timber and steel products where historically/regionally appropriate. Their different sources, storage/handling requirements and compatible vehicles should create materially different logistics without splitting into unnecessary retail-level variants.
 
 For heavy industry, **coke is not a separate player-facing transport commodity** in the baseline design. Coal covers the relevant solid-fuel/reductant input at the gameplay level; internal processing detail may be abstracted inside the industrial recipe where needed. This keeps the useful transport decisions around coal, iron ore, iron/steel, metal products and machinery without an extra near-duplicate cargo step.
+
+Heavy industry also feeds the installed economy after initial construction. Iron/steel, metal-products and machinery sectors can produce **spare parts** consumed by factories, vehicles, depots/workshops, utilities and infrastructure maintenance. Later spare-part recipes can incorporate industrial chemicals, plastics, electronics and chips as technologies evolve. Asset maintenance must therefore create recurring secondary freight flows instead of being represented only by a money expense.
 
 Resource extraction remains **resource-specific**. Coal mines, iron-ore mines, stone/gravel quarries and other extraction industries are separate facility/industry types tied to plausible deposits and producing their own commodities. Do not collapse them into one generic mine merely because some downstream processing detail is abstracted.
 
@@ -1851,6 +1855,8 @@ City/industrial gas supply can use different historically valid production route
 Distribution gas is a fixed-network utility product, analogous to electricity in that it is delivered through real gas-network connections/capacity rather than teleported or treated as generic wagon/truck cargo. Player-facing pipeline construction/operation is not implied unless separately included in scope. A later transportable gas-derived product such as LPG may be authored as its own physical cargo with appropriate tank/storage compatibility.
 
 Demand for oil/gas/fuels should emerge and grow with the relevant technologies and industries rather than being globally modern from the 1900 start.
+
+Later liquid-fuel economies can also create transportable **lubricants/technical fluids** consumed by combustion vehicles, workshops and industrial machinery. These are operating supplies distinct from fuel itself where the content/balance justifies the additional logistics.
 
 Shortage is gradual rather than binary. A final consumer that receives only part of its requirement continues operating at the supported level. Persistent material shortage can raise local unmet demand/reference prices, reduce commercial activity and slow city growth, and can cause real firms to seek additional supply or publish discoverable transport/business opportunities. One missed delivery does not instantly close the business or collapse city growth.
 
@@ -1879,6 +1885,10 @@ A new industry can buy and adapt a suitable existing property when plausible. In
 Commodity importance and the available commodity catalogue change over time. New technologies and industries can introduce new physical commodities and supply chains, for example later petroleum products, plastics, electronics and semiconductor products. These are world/economic developments, not player-level unlock rewards.
 
 Older commodities do not disappear on a hard global end date. Their demand can decline, relocate or survive for decades according to actual industries, technologies, prices and regional conditions. Existing viable firms and flows continue until real economic causes change them.
+
+Historical substitution acts on **specific uses** of a commodity. When a new technology appears, it can take market share from an older input only where firms, utilities, transport operators or households actually modernize and where the new alternative is available/economic. This changes production volumes, local prices and freight demand over time.
+
+Coal is the reference case: it can begin as a major input to steam transport, heavy industry, heating, electricity and town gas, then lose portions of those markets to refined fuels, electricity, processed natural gas and later generation technologies. Coal demand can therefore fall sharply without the commodity or its mines being globally disabled. Regions/firms with remaining viable uses can continue producing and consuming it.
 
 Examples:
 
