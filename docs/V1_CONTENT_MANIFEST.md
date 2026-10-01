@@ -124,6 +124,8 @@ At least four complete linked economic chains must operate, including extraction
 
 The ultimate sink of every chain must be part of the city/urban economy, directly or indirectly: household-facing retail/services, construction/buildings, utilities, public institutions, transport/operating consumption, or another final-use activity that ultimately supports city population, employment, services or development. Intermediate industrial firms can of course consume each other's outputs, but every chain must eventually reach one of these final-use sinks.
 
+Use a generic final commodity **consumer goods** for manufactured retail products that do not justify their own gameplay-relevant category. Keep clearly distinct categories such as food groups, clothing/garments and furniture separate where their production, handling or demand creates meaningful transport decisions. Do not proliferate dozens of retail SKUs solely for realism.
+
 At least one chain supplies vehicle operations, one supplies construction, one contains perishable cargo and one supports a multi-leg road/rail transfer. Example authoring chains are timber → processed wood → furniture/construction → city use, grain → food processing → retail → city consumption, ore/energy → iron/steel → machinery/manufactured goods → city/industrial final use, and local food → distribution → consumers. Exact recipes and ratios are balancing data, with explicit unit conversions.
 
 Consumption/production cannot create free inventory. A recipe is an explicit conversion, with declared waste/loss where used. Cargo conservation tests concern transportation quantities; production is an authorized inventory transformation, not a false invariant violation.
