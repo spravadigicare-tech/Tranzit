@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "start_year": 1900,
+  "date_assumption": "The 1900 preset initializes at the game's configured beginning of year unless a later exact start date is authored. Capabilities with source dates later in 1900 activate through normal historical events.",
+  "factory_capability_events": [
+    {
+      "manufacturer_id": "cms_praha",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "steam_locomotive_series",
+        "rail_wagon_series",
+        "rail_repair"
+      ]
+    },
+    {
+      "manufacturer_id": "ringhauer_smichov",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "passenger_coach_series",
+        "freight_wagon_series",
+        "special_rail_body"
+      ]
+    },
+    {
+      "manufacturer_id": "neskoda_plzen",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "heavy_engineering",
+        "rail_components"
+      ],
+      "explicitly_excluded": [
+        "complete_locomotive_new_build"
+      ]
+    },
+    {
+      "manufacturer_id": "neskoda_plzen",
+      "effective_game_date": {
+        "year": 1920,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "complete_locomotive_series"
+      ],
+      "source_precision": "year"
+    },
+    {
+      "manufacturer_id": "studena_vagonka",
+      "source_date": "1900-12-12",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 12,
+        "day": 5
+      },
+      "state": "founded",
+      "capabilities": [
+        "rail_wagon_initial"
+      ],
+      "notes": "Gregorian 12 December maps to game month 12 day 5 under DATA_PIPELINE date conversion."
+    },
+    {
+      "manufacturer_id": "lorin_klement",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "early_motor_vehicle_engineering"
+      ],
+      "explicitly_excluded": [
+        "lk_type_e_commercial"
+      ]
+    },
+    {
+      "manufacturer_id": "lorin_klement",
+      "effective_game_date": {
+        "year": 1908,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "lk_type_e_commercial"
+      ],
+      "source_precision": "year"
+    },
+    {
+      "manufacturer_id": "fatra_koprivnice",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "active",
+      "capabilities": [
+        "rail_wagon_series",
+        "early_motor_vehicle",
+        "truck_series"
+      ]
+    },
+    {
+      "manufacturer_id": "daimlar_motoren",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "off_map_active",
+      "capabilities": [
+        "early_motor_truck_series"
+      ]
+    },
+    {
+      "manufacturer_id": "benc_cie",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "off_map_active",
+      "capabilities": [
+        "parts_support"
+      ],
+      "explicitly_excluded": [
+        "benc_omnibus_1895_new_build"
+      ],
+      "notes": "The 1895 omnibus family is opening-world used stock, not a current 1900 series-production offer."
+    },
+    {
+      "manufacturer_id": "thornycroft_import",
+      "effective_game_date": {
+        "year": 1900,
+        "month": 1,
+        "day": 1
+      },
+      "state": "off_map_active",
+      "capabilities": [
+        "steam_road_special_order"
+      ]
+    }
+  ],
+  "opening_market_ranges": {
+    "rail_used_per_reachable_start_market": {
+      "light_yard_local_locomotives": [
+        2,
+        5
+      ],
+      "mixed_general_locomotives": [
+        1,
+        3
+      ],
+      "passenger_express_locomotives": [
+        1,
+        2
+      ],
+      "ordinary_freight_wagons": [
+        12,
+        30
+      ],
+      "specialist_freight_wagons": [
+        3,
+        8
+      ],
+      "passenger_service_coaches": [
+        4,
+        12
+      ]
+    },
+    "road_per_reachable_start_market": {
+      "horse_freight_available": [
+        4,
+        12
+      ],
+      "horse_omnibus_available": [
+        2,
+        6
+      ],
+      "early_motor_freight_stock": [
+        0,
+        3
+      ],
+      "motor_omnibus_stock": [
+        0,
+        2
+      ],
+      "additional_motor_factory_import_quotes": true
+    }
+  },
+  "used_condition_distribution": {
+    "excellent": 0.1,
+    "good": 0.45,
+    "worn": 0.35,
+    "overhaul_due": 0.1,
+    "notes": "Owner/model age may bias this distribution; it is not forced per tiny market."
+  },
+  "used_vehicle_generation_rules": [
+    "Every seeded used listing creates a concrete physical vehicle instance with manufacture year, owner, mileage/hours, condition, template and location.",
+    "Manufacture year must be between the model introduction and the start date and compatible with known production history.",
+    "Used stock is assigned to real world owners before listing; no ownerless marketplace objects.",
+    "A model whose original production ended before 1900 can appear only through physical existing/used stock unless an explicit special-order capability exists."
+  ],
+  "dealer_stock_rules": {
+    "road_small_local": {
+      "total_new_stock": [
+        2,
+        6
+      ],
+      "specialist_stock": [
+        0,
+        0
+      ]
+    },
+    "road_regional": {
+      "total_new_stock": [
+        6,
+        18
+      ],
+      "specialist_stock": [
+        0,
+        2
+      ]
+    },
+    "road_large_import": {
+      "total_new_stock": [
+        15,
+        40
+      ],
+      "specialist_stock": [
+        1,
+        5
+      ]
+    },
+    "rail_sales_yard": {
+      "locomotives_or_railcars": [
+        0,
+        4
+      ],
+      "wagons_or_coaches": [
+        4,
+        20
+      ]
+    },
+    "specialist": {
+      "total_stock": [
+        0,
+        3
+      ]
+    }
+  },
+  "import_corridor_policies": [
+    {
+      "id": "continental_direct",
+      "origins": [
+        "de",
+        "at",
+        "pl",
+        "hu",
+        "nearby_europe"
+      ],
+      "entry": "nearest legal technically usable active-world border/gateway",
+      "buyer_pays": true,
+      "uses_finite_carrier_capacity": true
+    },
+    {
+      "id": "britain_via_continent",
+      "origins": [
+        "gb"
+      ],
+      "entry": "off-map sea/land chain then a legal western/northern active-world gateway",
+      "buyer_pays": true,
+      "uses_finite_carrier_capacity": true,
+      "notes": "The player pays inbound long-distance transport; the sea segment need not be rendered outside the active world."
+    },
+    {
+      "id": "distant_global",
+      "origins": [
+        "fr",
+        "it",
+        "us",
+        "other_global"
+      ],
+      "entry": "authored off-map macro route then legal active-world gateway",
+      "buyer_pays": true,
+      "uses_finite_carrier_capacity": true
+    }
+  ],
+  "viability_constraints": [
+    "Each supported starting region must expose at least one financially plausible small road opening after branch/licence/setup costs.",
+    "Each rail-capable recommended opening must have at least one credible acquisition path through used stock or a current factory/import order.",
+    "The seed may not guarantee every model or body type in dealer stock.",
+    "Motor vehicles are deliberately scarce in 1900; horse operation remains economically normal."
+  ]
+}
