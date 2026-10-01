@@ -1,0 +1,600 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tranzit.game/schemas/vehicle-content.v1.json",
+  "title": "Tranzit vehicle content v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "manufacturers",
+    "factories",
+    "support_families",
+    "model_families"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "manufacturers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name_key",
+          "real_inspiration",
+          "home_market_tags"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_\\-]+$"
+          },
+          "name_key": {
+            "type": "string"
+          },
+          "real_inspiration": {
+            "type": "string"
+          },
+          "home_market_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "factories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "manufacturer_id",
+          "location_mode",
+          "location_key",
+          "capabilities"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "manufacturer_id": {
+            "type": "string"
+          },
+          "location_mode": {
+            "enum": [
+              "active_map",
+              "off_map"
+            ]
+          },
+          "location_key": {
+            "type": "string"
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "model_family_id",
+                "from",
+                "state"
+              ],
+              "properties": {
+                "model_family_id": {
+                  "type": "string"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "to": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "state": {
+                  "enum": [
+                    "series",
+                    "low_rate",
+                    "support_only",
+                    "specialist_only",
+                    "heritage_only",
+                    "none"
+                  ]
+                },
+                "base_work_units": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "batch_efficiency": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "mode",
+          "required_capabilities"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "rail",
+              "road",
+              "horse"
+            ]
+          },
+          "required_capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "model_families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "manufacturer_id",
+          "display_name_key",
+          "real_prototype_reference",
+          "introduction_date",
+          "mode",
+          "role_tags",
+          "platform",
+          "performance",
+          "support_family_id",
+          "regional_market_profile",
+          "factory_variants"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "manufacturer_id": {
+            "type": "string"
+          },
+          "display_name_key": {
+            "type": "string"
+          },
+          "real_prototype_reference": {
+            "type": "string"
+          },
+          "introduction_date": {
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "rail",
+              "road",
+              "horse"
+            ]
+          },
+          "role_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "support_family_id": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "object",
+            "required": [
+              "empty_mass_t",
+              "structural_max_speed_kph"
+            ],
+            "properties": {
+              "empty_mass_t": {
+                "type": "number",
+                "minimum": 0
+              },
+              "service_mass_t": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "length_m": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "width_m": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "height_m": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "axle_count": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "axle_load_t": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "structural_max_speed_kph": {
+                "type": "number",
+                "minimum": 0
+              },
+              "minimum_curve_m": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "gauge_mm": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "fixed_body_family": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "performance": {
+            "type": "object",
+            "properties": {
+              "power_kw": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "starting_tractive_effort_kn": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "fuel_or_energy": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "energy_systems": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "consumption_model_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "regional_market_profile": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "market_tag",
+                "from",
+                "relationship"
+              ],
+              "properties": {
+                "market_tag": {
+                  "type": "string"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "to": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "relationship": {
+                  "enum": [
+                    "home",
+                    "strong_export",
+                    "secondary_export",
+                    "rare_export",
+                    "no_network"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "failure_characteristics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maintenance_band": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "maintenance_triggers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "value"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "km",
+                    "hours",
+                    "calendar_days",
+                    "engine_hours"
+                  ]
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "hard_limit": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "factory_variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "capacity",
+                "supported_equipment_groups",
+                "default_templates"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "capacity": {
+                  "type": "object",
+                  "properties": {
+                    "payload_t": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "cargo_volume_m3": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "seated": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "standing": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "berths": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "supported_equipment_groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "default_templates": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "equipment_options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "group",
+                "from",
+                "mass_delta_t",
+                "cost_index_delta"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "group": {
+                  "type": "string"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "to": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "mass_delta_t": {
+                  "type": "number"
+                },
+                "cost_index_delta": {
+                  "type": "number"
+                },
+                "capacity_delta": {
+                  "type": "object"
+                },
+                "requires": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "excludes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "certified_speed_kph": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "support_family_override": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "retrofit_paths": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "from_template",
+                "to_template",
+                "work_units",
+                "provider_capabilities"
+              ],
+              "properties": {
+                "from_template": {
+                  "type": "string"
+                },
+                "to_template": {
+                  "type": "string"
+                },
+                "work_units": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "provider_capabilities": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "requires_inspection": {
+                  "type": "boolean"
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
