@@ -1933,6 +1933,19 @@ Rules:
 
 Captive intercity capacity should normally be sized around stable base-load economics rather than total theoretical production. It must therefore remain plausible for even very large firms to outsource a substantial part of their transport.
 
+Intercity own-account qualification is **lane-specific and mode-specific**, not a generic firm-size flag. A bounded planning review can run when a recurring flow/contract begins or materially changes and at the configured periodic review interval. For a non-transport firm, road captive transport can be considered only when either:
+
+1. a stable recurring origin-destination/cargo flow is large enough to keep several suitable vehicles materially utilized for a sustained forward horizon; or
+2. a genuinely specialist cargo/handling requirement can keep at least one dedicated vehicle materially utilized and makes available external carriage materially more expensive, scarce or operationally unsuitable.
+
+Temporary peaks, one-off shortages and speculative future growth do not establish captive-intercity eligibility by themselves.
+
+For an eligible road lane, owned intercity capacity is calculated from **stable base load**, not average or peak demand, and remains subject to a configured target share plus a hard ceiling below 100%. The ceiling applies to the firm's captive non-transport operation and cannot be evaded by dividing the same flow among internal departments. Overflow, the un-internalized base share and any flow outside the qualifying lane remain carrier demand. Local first/last-mile own-account vehicles do not use this intercity share ceiling; they remain constrained by their real vehicles, route, handling, economics and availability.
+
+For a non-transport firm the captive **mainline rail-haulage share is zero**. A private siding, customer-owned wagons and internal shunting can reduce transfers and change the handover point, but a legitimate railway carrier still performs the mainline/intercity haul. A separately licensed transport subsidiary is treated as a real carrier under the normal transport-company rules rather than as a loophole in the captive exception.
+
+The initial review horizon, utilization gates and road captive-share defaults are versioned balancing parameters in V1_CONTENT_MANIFEST.
+
 Firms, operating facilities and physical buildings are separate identities. A firm can close a plant, fail or be acquired without deleting the building. A vacated industrial property can remain idle, be purchased and adapted by another firm, or be converted over time to another plausible use such as warehousing, offices or housing. New industries may therefore reuse older industrial sites rather than always building on untouched land.
 
 The economy supports three broad physical-goods roles without forcing every firm to have a transportable output:
@@ -2057,6 +2070,19 @@ Inside a city market, several **economic centres** can exist and evolve over tim
 - later-developed suburban centre.
 
 Economic centres are not independent commodity markets and do not receive their own local reference price. They are spatial concentrations of population, jobs, firms, services and transport demand inside the same city economy. New centres can emerge, grow, decline, change role or become brownfields as real firms, housing, infrastructure and accessibility change. The city's market identity remains stable while its internal economic geography evolves.
+
+Centre formation and boundaries follow **physical urban structure and sustained activity**, not an arbitrary city-population tier or a hidden "number of districts" score:
+
+- every populated locality has at least one economic centre;
+- a centre footprint must remain connected through usable walk/access fabric and compact enough that the whole-centre direct-walk abstraction in Section 6.2 stays believable;
+- the ordinary city-development pass evaluates centre formation, splitting, growth, decline and merging at most once per game month; material world edits can mark the next evaluation dirty but do not create a second parallel centre system;
+- a new centre must remain a qualifying spatial cluster for the configured persistence window and meet at least one explicit activity gate based on residents, jobs or a material industrial/transport anchor;
+- a large industrial/freight site can therefore form a centre without requiring a residential population, but a speculative road, empty station or short-lived construction camp does not create one by itself;
+- when growth makes one centre exceed the configured walking-span limit or produces two clearly separated persistent activity lobes, the next development evaluation splits/reassigns the affected area rather than silently allowing an implausibly large walk catchment;
+- declining centres retain stable identity/history while they are still materially occupied or anchored; they may merge or become inactive only after sustained decline and only when the resulting footprint still satisfies the same walkability rule;
+- there is no gameplay hard cap on the number of centres in a large city. Simulation LOD may aggregate inactive/far-city calculations, but it cannot enlarge centre catchments or change which centre a physical endpoint belongs to.
+
+The initial numeric gates, walking-span targets and persistence windows are versioned balancing parameters in V1_CONTENT_MANIFEST. When centre creation/splitting materially affects passenger access or development, the simulation retains the contributing values/reason codes so the result can be explained rather than appearing as a hidden boundary change.
 
 A city/locality market is also **not a teleportation zone**. Two firms in the same market still require real physical transport between their actual endpoints. Internal road distance, congestion, handling, terminal access and delivery cost remain real even though both firms observe the same city-level commodity reference signal.
 
