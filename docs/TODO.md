@@ -37,10 +37,13 @@ Rules:
 
 ## Now
 
-Continue independent V1 work. Do not reopen connection-agreement design in this conversation; its separate-thread handoff remains under Open decisions rather than Deferred or Done.
+Continue the current market/economy/public-tender design pass and reconcile each accepted decision immediately into its owning documents. Do not reopen connection-agreement design in this conversation; its separate-thread handoff remains under Open decisions rather than Deferred or Done.
 
 ## Open decisions
 
+- [ ] **[DESIGN] Open freight share policy** — open/spot freight is confirmed as supplementary, priced by public cargo-category tariffs with optional commodity overrides, and limited to a percentage of each firm's real uncontracted flow. Decide whether that percentage is globally fixed or varies transparently by firm/commodity/flow characteristics and define the player-facing explanation.
+- [ ] **[DESIGN] Public infrastructure/concession tender models** — the player can participate in transport-corridor projects tied to operating/infrastructure rights, but a standalone construction-company business is not currently wanted. Finalize which authority/ownership structures are supported (state-owned after build, concession/operate-transfer, co-funded private ownership, state-owned infrastructure under operator concession) and which belong in first-playable V1.
+- [ ] **[DESIGN/CONTENT] Market-area and commodity balancing parameters** — mechanics are confirmed: sub-city market areas, gradual boundary evolution, historically evolving base/reference values and local supply/demand/access adjustments. Define authorable update thresholds/ranges and the initial 1900 commodity/final-consumer catalogue without turning them into hidden mechanics.
 - [ ] **[DESIGN] Connection agreements — redesign from scratch in separate thread** — still required for V1. The dedicated [CONNECTION_AGREEMENTS.md](CONNECTION_AGREEMENTS.md) is intentionally blank; do not carry forward prior draft mechanics unless explicitly re-approved there.
 - [ ] **[DESIGN] Remaining multi-operator passenger ticket cooperation details for V1** — retain the already agreed capacity-sales clause, two directional partner rates and public-tariff-versus-partner-rate margin model, including negative margins. Complete remaining ticket cooperation and product-scope details without reopening those choices. Shared multi-company weekly/monthly products and tariff governance remain a separate unresolved scope question. Connection coordination and partner-capacity sales remain independent; pausing the connection discussion does not remove or finalize the capacity-sales workflow.
 
@@ -48,6 +51,7 @@ Continue independent V1 work. Do not reopen connection-agreement design in this 
 
 ### After the remaining UI decisions
 
+- [ ] **[CONTENT] Author the first 1900 commodity/industry/final-consumer set** and the historical introduction/decline metadata for later commodity families; preserve organic decline rather than hard end dates.
 - [ ] **[DOC] Run a final UI consistency audit** — remove stale “proposed/open” wording only where a decision has actually been confirmed, verify cross-links, decision table and acceptance scenarios. UI-D41 navigation/search and UI-D08 focus/notification behaviour are already confirmed. Keep connection-agreement details open until the separate-thread decisions are reconciled; do not report all V1 design decisions as closed in the meantime.
 - [ ] **[DOC] Reconcile final navigation with README, UI_UX_DESIGN and V1_IMPLEMENTATION_BRIEF**.
 
@@ -97,5 +101,6 @@ These are completed design/documentation tasks, not implemented game features. R
 - [x] UI-D39 — ownership/acquisitions/infrastructure market; controlled subsidiaries remain AI-managed, with a small owner-action set and separate company economies.
 - [x] UI-D40 — simple World News/history feed with significant world changes, known player impact and strict separation from UI-D24 incidents.
 - [x] UI-D41 — final HUD/navigation and global search, with company/finance top-left, Search/Layers top-right and grouped bottom navigation.
+- [x] **[DESIGN/DOC] Market/economy refinement (2026-10-01)** — confirmed sub-city evolving market areas, final-consumer sinks, historical commodity evolution, reference-versus-negotiated prices, active producer/buyer transport proposals, contract-first freight with bounded open carriage, and transparent concrete-plan public-service tenders; owning design/UI/test documents updated. Remaining parameter/public-infrastructure choices stay open above.
 - [x] **[DESIGN/DOC] UI-D37 — External Company & Competitor Detail** — expanded [UI_EXTERNAL_COMPANIES.md](UI_EXTERNAL_COMPANIES.md) around preserved UI-D27 agreements, registered the decision/acceptance scenarios in [UI_UX_DESIGN.md](UI_UX_DESIGN.md), and reconciled README and obsolete company-layout-open wording. Six adaptive cards, source/time/permission limits, canonical offer routing and retained company history are confirmed.
 - [x] Documentation checks cover structural validation and validator tests; they are **not** gameplay implementation evidence.
