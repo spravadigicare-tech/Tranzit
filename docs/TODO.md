@@ -45,6 +45,11 @@ The market/economy/public-tender, V1 multi-operator passenger-ticket and final U
 
 ## Next
 
+### Vehicle content authoring
+
+- [ ] **[CONTENT] Turn [VEHICLE_CATALOGUE.md](VEHICLE_CATALOGUE.md) into versioned machine-readable vehicle/factory/import/dealer data** — validate the exact representative configuration for every prototype, author explicit `money` prices, production inputs/lead times, consumption, maintenance/support families and regional offer weights, then create functional prefabs/LODs/sounds. A catalogue row alone is not implemented content.
+- [ ] **[CONTENT] Author physical manufacturer and import supply for the vehicle roster** — active-map factories need dated capabilities/backlogs and real inputs; off-map manufacturers need finite macro capacity plus border/import delivery nodes. Dealer and used stock must reference physical assets rather than spawn vehicles on demand.
+
 ### Implementation handoff
 
 - [ ] **[IMPL] Reinspect the current repository/toolchain and begin M0** according to [OPENCODE_START.md](OPENCODE_START.md) and [V1_IMPLEMENTATION_BRIEF.md](V1_IMPLEMENTATION_BRIEF.md).
