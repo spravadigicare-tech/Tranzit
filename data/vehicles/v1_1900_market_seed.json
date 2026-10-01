@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "year": 1900,
+  "road_commercial_composition_targets": {
+    "developed_urban_industrial": {
+      "horse_drawn_share": [
+        0.92,
+        0.97
+      ],
+      "motor_or_steam_share": [
+        0.03,
+        0.08
+      ]
+    },
+    "ordinary_small_market": {
+      "horse_drawn_share": [
+        0.97,
+        0.995
+      ],
+      "motor_or_steam_share": [
+        0.005,
+        0.03
+      ]
+    }
+  },
+  "used_listing_rate_targets": {
+    "horse_commercial": [
+      0.02,
+      0.06
+    ],
+    "early_motor_road": [
+      0.01,
+      0.04
+    ],
+    "freight_passenger_wagons": [
+      0.01,
+      0.03
+    ],
+    "locomotives": [
+      0.005,
+      0.02
+    ]
+  },
+  "rail_manufacture_year_distribution": {
+    "1875_1884": [
+      0.1,
+      0.15
+    ],
+    "1885_1894": [
+      0.35,
+      0.45
+    ],
+    "1895_1900": [
+      0.4,
+      0.5
+    ]
+  },
+  "safeguards": [
+    "No seeded listing without a concrete physical vehicle instance.",
+    "No later-introduction vehicle may be seeded early.",
+    "Reasonable opening regions may guarantee a plausible starter opportunity over an opening time window, not necessarily on day 1.",
+    "Condition is individual and not inferred solely from age."
+  ]
+}
