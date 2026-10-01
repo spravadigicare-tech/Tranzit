@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0.0",
+  "game_start_year": 1900,
+  "dealer_archetypes": [
+    {
+      "id": "dealer_local_coachbuilder",
+      "name_key": "dealer.local_coachbuilder",
+      "settlement_scale": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "roles": [
+        "horse_vehicle_new",
+        "horse_vehicle_used",
+        "basic_repairs"
+      ],
+      "normal_stock_rules": [
+        {
+          "model_family_id": "road_horse_h2",
+          "min": 1,
+          "max": 4,
+          "condition": "new_or_used"
+        },
+        {
+          "model_family_id": "road_horse_h4",
+          "min": 0,
+          "max": 2,
+          "condition": "new_or_used"
+        },
+        {
+          "model_family_id": "bus_horse_omnibus_o12",
+          "min": 0,
+          "max": 2,
+          "condition": "new_or_used"
+        }
+      ],
+      "quote_only_models": [],
+      "notes": "Common local supplier; stock depends on settlement size and local demand."
+    },
+    {
+      "id": "dealer_major_city_motor_importer",
+      "name_key": "dealer.major_city_motor_importer",
+      "settlement_scale": [
+        "large"
+      ],
+      "roles": [
+        "foreign_motor_import",
+        "broker",
+        "dealer_stock",
+        "registration_assistance"
+      ],
+      "normal_stock_rules": [
+        {
+          "model_family_id": "road_benc_lieferwagen_300",
+          "min": 0,
+          "max": 1,
+          "condition": "new"
+        },
+        {
+          "model_family_id": "road_daimlar_lastwagen_1896",
+          "min": 0,
+          "max": 1,
+          "condition": "new"
+        },
+        {
+          "model_family_id": "bus_benc_omnibus_1895",
+          "min": 0,
+          "max": 1,
+          "condition": "used_or_new_old_stock"
+        }
+      ],
+      "quote_only_models": [
+        "road_thornycroft_steam_1t"
+      ],
+      "notes": "Most starts have quotes; physical stock is intentionally rare."
+    },
+    {
+      "id": "dealer_railway_works_sales",
+      "name_key": "dealer.railway_works_sales",
+      "settlement_scale": [
+        "medium",
+        "large"
+      ],
+      "roles": [
+        "manufacturer_agent",
+        "used_rail_sales",
+        "wagon_stock"
+      ],
+      "normal_stock_rules": [
+        {
+          "model_family_id": "wagon_ringhauer_o10",
+          "min": 1,
+          "max": 8,
+          "condition": "new_or_used"
+        },
+        {
+          "model_family_id": "wagon_ringhauer_g10",
+          "min": 1,
+          "max": 8,
+          "condition": "new_or_used"
+        },
+        {
+          "model_family_id": "wagon_ringhauer_p12",
+          "min": 0,
+          "max": 4,
+          "condition": "new_or_used"
+        },
+        {
+          "model_family_id": "coach_ringhauer_l2",
+          "min": 0,
+          "max": 4,
+          "condition": "new_or_used"
+        },
+        {
+          "model_family_id": "coach_ringhauer_b4_corridor",
+          "min": 0,
+          "max": 2,
+          "condition": "new_or_used"
+        }
+      ],
+      "quote_only_models": [
+        "rail_cms_97_mravenec",
+        "rail_cms_99_lokalka",
+        "rail_cms_170_horal",
+        "coach_ringhauer_luxus_schlaf",
+        "coach_ringhauer_post_gepack",
+        "wagon_ringhauer_z10",
+        "wagon_ringhauer_i8",
+        "wagon_ringhauer_h15"
+      ],
+      "notes": "Can represent factory sales office or railway works; locomotives are normally order/used-listing rather than speculative stock."
+    }
+  ],
+  "used_market_seed_rules": [
+    {
+      "id": "used_light_steam_near_start",
+      "scope": "starting_macro_area",
+      "model_family_ids": [
+        "rail_cms_97_mravenec",
+        "rail_cms_99_lokalka"
+      ],
+      "count_min": 2,
+      "count_max": 4,
+      "manufacture_year_min": 1885,
+      "manufacture_year_max": 1899,
+      "condition_weights": {
+        "excellent": 0.1,
+        "good": 0.45,
+        "worn": 0.35,
+        "overhaul_due": 0.1
+      },
+      "seller_types": [
+        "railway_operator",
+        "industrial_firm",
+        "dealer"
+      ],
+      "notes": "Potentially tradeable physical assets; not all need to be simultaneously listed."
+    },
+    {
+      "id": "used_mainline_steam_near_start",
+      "scope": "starting_macro_area",
+      "model_family_ids": [
+        "rail_cms_170_horal",
+        "rail_cms_6_rychlik"
+      ],
+      "count_min": 1,
+      "count_max": 3,
+      "manufacture_year_min": 1894,
+      "manufacture_year_max": 1899,
+      "condition_weights": {
+        "excellent": 0.05,
+        "good": 0.45,
+        "worn": 0.4,
+        "overhaul_due": 0.1
+      },
+      "seller_types": [
+        "railway_operator",
+        "dealer"
+      ],
+      "notes": "Express family is used-only in normal 1900 opening supply."
+    },
+    {
+      "id": "used_passenger_stock_near_start",
+      "scope": "starting_macro_area",
+      "model_family_ids": [
+        "coach_ringhauer_l2",
+        "coach_ringhauer_b4_corridor",
+        "coach_ringhauer_post_gepack"
+      ],
+      "count_min": 4,
+      "count_max": 12,
+      "manufacture_year_min": 1885,
+      "manufacture_year_max": 1899,
+      "condition_weights": {
+        "excellent": 0.1,
+        "good": 0.5,
+        "worn": 0.3,
+        "overhaul_due": 0.1
+      },
+      "seller_types": [
+        "railway_operator",
+        "dealer"
+      ]
+    },
+    {
+      "id": "used_freight_wagons_near_start",
+      "scope": "starting_macro_area",
+      "model_family_ids": [
+        "wagon_ringhauer_o10",
+        "wagon_ringhauer_g10",
+        "wagon_ringhauer_p12",
+        "wagon_ringhauer_z10",
+        "wagon_ringhauer_i8",
+        "wagon_ringhauer_h15"
+      ],
+      "count_min": 8,
+      "count_max": 24,
+      "manufacture_year_min": 1880,
+      "manufacture_year_max": 1899,
+      "condition_weights": {
+        "excellent": 0.05,
+        "good": 0.45,
+        "worn": 0.4,
+        "overhaul_due": 0.1
+      },
+      "seller_types": [
+        "railway_operator",
+        "industrial_firm",
+        "dealer"
+      ]
+    },
+    {
+      "id": "used_horse_road_stock",
+      "scope": "locality",
+      "model_family_ids": [
+        "road_horse_h2",
+        "road_horse_h4",
+        "bus_horse_omnibus_o12"
+      ],
+      "count_min": 1,
+      "count_max": 6,
+      "manufacture_year_min": 1890,
+      "manufacture_year_max": 1899,
+      "condition_weights": {
+        "excellent": 0.1,
+        "good": 0.5,
+        "worn": 0.35,
+        "overhaul_due": 0.05
+      },
+      "seller_types": [
+        "local_business",
+        "coachbuilder",
+        "municipality",
+        "carrier"
+      ]
+    }
+  ],
+  "direct_quote_paths": [
+    {
+      "model_family_id": "road_benc_lieferwagen_300",
+      "source_factory_id": "factory_benc_mannheim",
+      "destination_market_relationship": "rare_export",
+      "broker_required_by_default": true,
+      "normal_stock_common": false,
+      "notes": "Compact motor delivery option; high purchase/import friction in 1900."
+    },
+    {
+      "model_family_id": "road_daimlar_lastwagen_1896",
+      "source_factory_id": "factory_daimlar_cannstatt",
+      "destination_market_relationship": "rare_export",
+      "broker_required_by_default": true,
+      "normal_stock_common": false,
+      "notes": "Heavier pioneering motor-truck order."
+    },
+    {
+      "model_family_id": "road_thornycroft_steam_1t",
+      "source_factory_id": "factory_thornycroft_britain",
+      "destination_market_relationship": "no_network",
+      "broker_required_by_default": true,
+      "normal_stock_common": false,
+      "notes": "Rare British specialist import with paid long-distance delivery."
+    },
+    {
+      "model_family_id": "bus_benc_omnibus_1895",
+      "source_factory_id": "factory_benc_mannheim",
+      "destination_market_relationship": "rare_export",
+      "broker_required_by_default": true,
+      "normal_stock_common": false,
+      "notes": "Rare pioneering/used-old-stock passenger motor option by 1900."
+    }
+  ],
+  "viability_checks": [
+    {
+      "id": "road_start_supply",
+      "requirement": "A supported starting macro-area must expose at least one affordable horse-freight path and at least one motor-freight quote path.",
+      "failure_action": "Reseed seller/dealer ownership or choose another approved world seed; do not spawn a free player vehicle."
+    },
+    {
+      "id": "rail_start_supply",
+      "requirement": "A supported starting macro-area must expose enough real purchase/order paths to assemble a small freight or passenger train from compatible traction and rolling stock.",
+      "failure_action": "Reseed world-owned stock/offers before start; do not waive production or physical delivery."
+    },
+    {
+      "id": "no_superdealer",
+      "requirement": "No single dealer should normally hold every 1900 road/rail role.",
+      "failure_action": "Redistribute physical stock across specialized sellers."
+    }
+  ]
+}
